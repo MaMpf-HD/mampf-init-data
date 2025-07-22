@@ -2,14 +2,15 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.4 (Debian 14.4-1.pgdg110+1)
--- Dumped by pg_dump version 14.5 (Debian 14.5-1.pgdg110+1)
+-- Dumped from database version 17.5 (Debian 17.5-1.pgdg120+1)
+-- Dumped by pg_dump version 17.5 (Debian 17.5-1.pgdg120+1)
 
--- Started on 2022-09-23 12:08:41 UTC
+-- Started on 2025-07-15 12:20:01 UTC
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
+SET transaction_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -19,7 +20,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- TOC entry 2 (class 3079 OID 26237)
+-- TOC entry 2 (class 3079 OID 16395)
 -- Name: pgcrypto; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -27,7 +28,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
 
 
 --
--- TOC entry 4345 (class 0 OID 0)
+-- TOC entry 4657 (class 0 OID 0)
 -- Dependencies: 2
 -- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: -
 --
@@ -40,7 +41,199 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 210 (class 1259 OID 26274)
+-- TOC entry 386 (class 1259 OID 17646)
+-- Name: action_text_rich_texts; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.action_text_rich_texts (
+    id bigint NOT NULL,
+    name character varying NOT NULL,
+    body text,
+    record_type character varying NOT NULL,
+    record_id bigint NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 385 (class 1259 OID 17645)
+-- Name: action_text_rich_texts_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.action_text_rich_texts_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4658 (class 0 OID 0)
+-- Dependencies: 385
+-- Name: action_text_rich_texts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.action_text_rich_texts_id_seq OWNED BY public.action_text_rich_texts.id;
+
+
+--
+-- TOC entry 382 (class 1259 OID 17615)
+-- Name: active_storage_attachments; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.active_storage_attachments (
+    id bigint NOT NULL,
+    name character varying NOT NULL,
+    record_type character varying NOT NULL,
+    record_id bigint NOT NULL,
+    blob_id bigint NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 381 (class 1259 OID 17614)
+-- Name: active_storage_attachments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.active_storage_attachments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4659 (class 0 OID 0)
+-- Dependencies: 381
+-- Name: active_storage_attachments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.active_storage_attachments_id_seq OWNED BY public.active_storage_attachments.id;
+
+
+--
+-- TOC entry 380 (class 1259 OID 17605)
+-- Name: active_storage_blobs; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.active_storage_blobs (
+    id bigint NOT NULL,
+    key character varying NOT NULL,
+    filename character varying NOT NULL,
+    content_type character varying,
+    metadata text,
+    service_name character varying NOT NULL,
+    byte_size bigint NOT NULL,
+    checksum character varying,
+    created_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 379 (class 1259 OID 17604)
+-- Name: active_storage_blobs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.active_storage_blobs_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4660 (class 0 OID 0)
+-- Dependencies: 379
+-- Name: active_storage_blobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.active_storage_blobs_id_seq OWNED BY public.active_storage_blobs.id;
+
+
+--
+-- TOC entry 384 (class 1259 OID 17631)
+-- Name: active_storage_variant_records; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.active_storage_variant_records (
+    id bigint NOT NULL,
+    blob_id bigint NOT NULL,
+    variation_digest character varying NOT NULL
+);
+
+
+--
+-- TOC entry 383 (class 1259 OID 17630)
+-- Name: active_storage_variant_records_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.active_storage_variant_records_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4661 (class 0 OID 0)
+-- Dependencies: 383
+-- Name: active_storage_variant_records_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.active_storage_variant_records_id_seq OWNED BY public.active_storage_variant_records.id;
+
+
+--
+-- TOC entry 373 (class 1259 OID 17530)
+-- Name: annotations; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.annotations (
+    id bigint NOT NULL,
+    medium_id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    "timestamp" text NOT NULL,
+    comment text,
+    color character varying NOT NULL,
+    category integer NOT NULL,
+    subcategory integer,
+    visible_for_teacher boolean DEFAULT false NOT NULL,
+    public_comment_id integer,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 372 (class 1259 OID 17529)
+-- Name: annotations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.annotations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4662 (class 0 OID 0)
+-- Dependencies: 372
+-- Name: annotations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.annotations_id_seq OWNED BY public.annotations.id;
+
+
+--
+-- TOC entry 218 (class 1259 OID 16432)
 -- Name: announcements; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -56,7 +249,7 @@ CREATE TABLE public.announcements (
 
 
 --
--- TOC entry 211 (class 1259 OID 26280)
+-- TOC entry 219 (class 1259 OID 16438)
 -- Name: announcements_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -69,8 +262,8 @@ CREATE SEQUENCE public.announcements_id_seq
 
 
 --
--- TOC entry 4346 (class 0 OID 0)
--- Dependencies: 211
+-- TOC entry 4663 (class 0 OID 0)
+-- Dependencies: 219
 -- Name: announcements_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -78,7 +271,7 @@ ALTER SEQUENCE public.announcements_id_seq OWNED BY public.announcements.id;
 
 
 --
--- TOC entry 212 (class 1259 OID 26281)
+-- TOC entry 220 (class 1259 OID 16439)
 -- Name: answers; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -94,7 +287,7 @@ CREATE TABLE public.answers (
 
 
 --
--- TOC entry 213 (class 1259 OID 26286)
+-- TOC entry 221 (class 1259 OID 16444)
 -- Name: answers_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -107,8 +300,8 @@ CREATE SEQUENCE public.answers_id_seq
 
 
 --
--- TOC entry 4347 (class 0 OID 0)
--- Dependencies: 213
+-- TOC entry 4664 (class 0 OID 0)
+-- Dependencies: 221
 -- Name: answers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -116,7 +309,7 @@ ALTER SEQUENCE public.answers_id_seq OWNED BY public.answers.id;
 
 
 --
--- TOC entry 214 (class 1259 OID 26287)
+-- TOC entry 222 (class 1259 OID 16445)
 -- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -129,7 +322,7 @@ CREATE TABLE public.ar_internal_metadata (
 
 
 --
--- TOC entry 215 (class 1259 OID 26292)
+-- TOC entry 223 (class 1259 OID 16450)
 -- Name: assignments; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -142,12 +335,12 @@ CREATE TABLE public.assignments (
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL,
     accepted_file_type text DEFAULT '.pdf'::text,
-    deletion_date date DEFAULT '2020-10-15'::date NOT NULL
+    deletion_date date DEFAULT '2200-01-01'::date NOT NULL
 );
 
 
 --
--- TOC entry 216 (class 1259 OID 26298)
+-- TOC entry 224 (class 1259 OID 16457)
 -- Name: assignments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -160,8 +353,8 @@ CREATE SEQUENCE public.assignments_id_seq
 
 
 --
--- TOC entry 4348 (class 0 OID 0)
--- Dependencies: 216
+-- TOC entry 4665 (class 0 OID 0)
+-- Dependencies: 224
 -- Name: assignments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -169,7 +362,7 @@ ALTER SEQUENCE public.assignments_id_seq OWNED BY public.assignments.id;
 
 
 --
--- TOC entry 217 (class 1259 OID 26299)
+-- TOC entry 225 (class 1259 OID 16458)
 -- Name: chapters; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -187,7 +380,7 @@ CREATE TABLE public.chapters (
 
 
 --
--- TOC entry 218 (class 1259 OID 26304)
+-- TOC entry 226 (class 1259 OID 16463)
 -- Name: chapters_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -200,8 +393,8 @@ CREATE SEQUENCE public.chapters_id_seq
 
 
 --
--- TOC entry 4349 (class 0 OID 0)
--- Dependencies: 218
+-- TOC entry 4666 (class 0 OID 0)
+-- Dependencies: 226
 -- Name: chapters_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -209,7 +402,44 @@ ALTER SEQUENCE public.chapters_id_seq OWNED BY public.chapters.id;
 
 
 --
--- TOC entry 219 (class 1259 OID 26305)
+-- TOC entry 378 (class 1259 OID 17589)
+-- Name: claims; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.claims (
+    id bigint NOT NULL,
+    redemption_id bigint NOT NULL,
+    claimable_type character varying NOT NULL,
+    claimable_id bigint NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 377 (class 1259 OID 17588)
+-- Name: claims_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.claims_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4667 (class 0 OID 0)
+-- Dependencies: 377
+-- Name: claims_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.claims_id_seq OWNED BY public.claims.id;
+
+
+--
+-- TOC entry 227 (class 1259 OID 16464)
 -- Name: clicker_votes; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -223,7 +453,7 @@ CREATE TABLE public.clicker_votes (
 
 
 --
--- TOC entry 220 (class 1259 OID 26308)
+-- TOC entry 228 (class 1259 OID 16467)
 -- Name: clicker_votes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -236,8 +466,8 @@ CREATE SEQUENCE public.clicker_votes_id_seq
 
 
 --
--- TOC entry 4350 (class 0 OID 0)
--- Dependencies: 220
+-- TOC entry 4668 (class 0 OID 0)
+-- Dependencies: 228
 -- Name: clicker_votes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -245,7 +475,7 @@ ALTER SEQUENCE public.clicker_votes_id_seq OWNED BY public.clicker_votes.id;
 
 
 --
--- TOC entry 221 (class 1259 OID 26309)
+-- TOC entry 229 (class 1259 OID 16468)
 -- Name: clickers; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -264,7 +494,7 @@ CREATE TABLE public.clickers (
 
 
 --
--- TOC entry 222 (class 1259 OID 26314)
+-- TOC entry 230 (class 1259 OID 16473)
 -- Name: clickers_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -277,8 +507,8 @@ CREATE SEQUENCE public.clickers_id_seq
 
 
 --
--- TOC entry 4351 (class 0 OID 0)
--- Dependencies: 222
+-- TOC entry 4669 (class 0 OID 0)
+-- Dependencies: 230
 -- Name: clickers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -286,7 +516,7 @@ ALTER SEQUENCE public.clickers_id_seq OWNED BY public.clickers.id;
 
 
 --
--- TOC entry 223 (class 1259 OID 26315)
+-- TOC entry 231 (class 1259 OID 16474)
 -- Name: commontator_comments; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -308,7 +538,7 @@ CREATE TABLE public.commontator_comments (
 
 
 --
--- TOC entry 224 (class 1259 OID 26322)
+-- TOC entry 232 (class 1259 OID 16481)
 -- Name: commontator_comments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -321,8 +551,8 @@ CREATE SEQUENCE public.commontator_comments_id_seq
 
 
 --
--- TOC entry 4352 (class 0 OID 0)
--- Dependencies: 224
+-- TOC entry 4670 (class 0 OID 0)
+-- Dependencies: 232
 -- Name: commontator_comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -330,7 +560,7 @@ ALTER SEQUENCE public.commontator_comments_id_seq OWNED BY public.commontator_co
 
 
 --
--- TOC entry 225 (class 1259 OID 26323)
+-- TOC entry 233 (class 1259 OID 16482)
 -- Name: commontator_subscriptions; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -345,7 +575,7 @@ CREATE TABLE public.commontator_subscriptions (
 
 
 --
--- TOC entry 226 (class 1259 OID 26328)
+-- TOC entry 234 (class 1259 OID 16487)
 -- Name: commontator_subscriptions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -358,8 +588,8 @@ CREATE SEQUENCE public.commontator_subscriptions_id_seq
 
 
 --
--- TOC entry 4353 (class 0 OID 0)
--- Dependencies: 226
+-- TOC entry 4671 (class 0 OID 0)
+-- Dependencies: 234
 -- Name: commontator_subscriptions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -367,7 +597,7 @@ ALTER SEQUENCE public.commontator_subscriptions_id_seq OWNED BY public.commontat
 
 
 --
--- TOC entry 227 (class 1259 OID 26329)
+-- TOC entry 235 (class 1259 OID 16488)
 -- Name: commontator_threads; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -384,7 +614,7 @@ CREATE TABLE public.commontator_threads (
 
 
 --
--- TOC entry 228 (class 1259 OID 26334)
+-- TOC entry 236 (class 1259 OID 16493)
 -- Name: commontator_threads_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -397,8 +627,8 @@ CREATE SEQUENCE public.commontator_threads_id_seq
 
 
 --
--- TOC entry 4354 (class 0 OID 0)
--- Dependencies: 228
+-- TOC entry 4672 (class 0 OID 0)
+-- Dependencies: 236
 -- Name: commontator_threads_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -406,7 +636,7 @@ ALTER SEQUENCE public.commontator_threads_id_seq OWNED BY public.commontator_thr
 
 
 --
--- TOC entry 229 (class 1259 OID 26335)
+-- TOC entry 237 (class 1259 OID 16494)
 -- Name: course_self_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -420,7 +650,7 @@ CREATE TABLE public.course_self_joins (
 
 
 --
--- TOC entry 230 (class 1259 OID 26338)
+-- TOC entry 238 (class 1259 OID 16497)
 -- Name: course_self_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -433,8 +663,8 @@ CREATE SEQUENCE public.course_self_joins_id_seq
 
 
 --
--- TOC entry 4355 (class 0 OID 0)
--- Dependencies: 230
+-- TOC entry 4673 (class 0 OID 0)
+-- Dependencies: 238
 -- Name: course_self_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -442,7 +672,7 @@ ALTER SEQUENCE public.course_self_joins_id_seq OWNED BY public.course_self_joins
 
 
 --
--- TOC entry 231 (class 1259 OID 26339)
+-- TOC entry 239 (class 1259 OID 16498)
 -- Name: course_tag_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -456,7 +686,7 @@ CREATE TABLE public.course_tag_joins (
 
 
 --
--- TOC entry 232 (class 1259 OID 26342)
+-- TOC entry 240 (class 1259 OID 16501)
 -- Name: course_tag_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -469,8 +699,8 @@ CREATE SEQUENCE public.course_tag_joins_id_seq
 
 
 --
--- TOC entry 4356 (class 0 OID 0)
--- Dependencies: 232
+-- TOC entry 4674 (class 0 OID 0)
+-- Dependencies: 240
 -- Name: course_tag_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -478,7 +708,7 @@ ALTER SEQUENCE public.course_tag_joins_id_seq OWNED BY public.course_tag_joins.i
 
 
 --
--- TOC entry 233 (class 1259 OID 26347)
+-- TOC entry 241 (class 1259 OID 16502)
 -- Name: courses; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -497,7 +727,7 @@ CREATE TABLE public.courses (
 
 
 --
--- TOC entry 234 (class 1259 OID 26353)
+-- TOC entry 242 (class 1259 OID 16508)
 -- Name: courses_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -510,8 +740,8 @@ CREATE SEQUENCE public.courses_id_seq
 
 
 --
--- TOC entry 4357 (class 0 OID 0)
--- Dependencies: 234
+-- TOC entry 4675 (class 0 OID 0)
+-- Dependencies: 242
 -- Name: courses_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -519,7 +749,7 @@ ALTER SEQUENCE public.courses_id_seq OWNED BY public.courses.id;
 
 
 --
--- TOC entry 235 (class 1259 OID 26354)
+-- TOC entry 243 (class 1259 OID 16509)
 -- Name: division_course_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -533,7 +763,7 @@ CREATE TABLE public.division_course_joins (
 
 
 --
--- TOC entry 236 (class 1259 OID 26357)
+-- TOC entry 244 (class 1259 OID 16512)
 -- Name: division_course_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -546,8 +776,8 @@ CREATE SEQUENCE public.division_course_joins_id_seq
 
 
 --
--- TOC entry 4358 (class 0 OID 0)
--- Dependencies: 236
+-- TOC entry 4676 (class 0 OID 0)
+-- Dependencies: 244
 -- Name: division_course_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -555,7 +785,7 @@ ALTER SEQUENCE public.division_course_joins_id_seq OWNED BY public.division_cour
 
 
 --
--- TOC entry 237 (class 1259 OID 26358)
+-- TOC entry 245 (class 1259 OID 16513)
 -- Name: division_translations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -570,7 +800,7 @@ CREATE TABLE public.division_translations (
 
 
 --
--- TOC entry 238 (class 1259 OID 26363)
+-- TOC entry 246 (class 1259 OID 16518)
 -- Name: division_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -583,8 +813,8 @@ CREATE SEQUENCE public.division_translations_id_seq
 
 
 --
--- TOC entry 4359 (class 0 OID 0)
--- Dependencies: 238
+-- TOC entry 4677 (class 0 OID 0)
+-- Dependencies: 246
 -- Name: division_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -592,7 +822,7 @@ ALTER SEQUENCE public.division_translations_id_seq OWNED BY public.division_tran
 
 
 --
--- TOC entry 239 (class 1259 OID 26364)
+-- TOC entry 247 (class 1259 OID 16519)
 -- Name: divisions; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -605,7 +835,7 @@ CREATE TABLE public.divisions (
 
 
 --
--- TOC entry 240 (class 1259 OID 26367)
+-- TOC entry 248 (class 1259 OID 16522)
 -- Name: divisions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -618,8 +848,8 @@ CREATE SEQUENCE public.divisions_id_seq
 
 
 --
--- TOC entry 4360 (class 0 OID 0)
--- Dependencies: 240
+-- TOC entry 4678 (class 0 OID 0)
+-- Dependencies: 248
 -- Name: divisions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -627,7 +857,7 @@ ALTER SEQUENCE public.divisions_id_seq OWNED BY public.divisions.id;
 
 
 --
--- TOC entry 241 (class 1259 OID 26368)
+-- TOC entry 249 (class 1259 OID 16523)
 -- Name: editable_user_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -640,7 +870,7 @@ CREATE TABLE public.editable_user_joins (
 
 
 --
--- TOC entry 242 (class 1259 OID 26373)
+-- TOC entry 250 (class 1259 OID 16528)
 -- Name: editable_user_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -653,8 +883,8 @@ CREATE SEQUENCE public.editable_user_joins_id_seq
 
 
 --
--- TOC entry 4361 (class 0 OID 0)
--- Dependencies: 242
+-- TOC entry 4679 (class 0 OID 0)
+-- Dependencies: 250
 -- Name: editable_user_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -662,7 +892,45 @@ ALTER SEQUENCE public.editable_user_joins_id_seq OWNED BY public.editable_user_j
 
 
 --
--- TOC entry 243 (class 1259 OID 26374)
+-- TOC entry 371 (class 1259 OID 17514)
+-- Name: feedbacks; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.feedbacks (
+    id bigint NOT NULL,
+    title text,
+    feedback text,
+    can_contact boolean DEFAULT false NOT NULL,
+    user_id bigint NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 370 (class 1259 OID 17513)
+-- Name: feedbacks_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.feedbacks_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4680 (class 0 OID 0)
+-- Dependencies: 370
+-- Name: feedbacks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.feedbacks_id_seq OWNED BY public.feedbacks.id;
+
+
+--
+-- TOC entry 251 (class 1259 OID 16529)
 -- Name: friendly_id_slugs; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -677,7 +945,7 @@ CREATE TABLE public.friendly_id_slugs (
 
 
 --
--- TOC entry 244 (class 1259 OID 26379)
+-- TOC entry 252 (class 1259 OID 16534)
 -- Name: friendly_id_slugs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -690,8 +958,8 @@ CREATE SEQUENCE public.friendly_id_slugs_id_seq
 
 
 --
--- TOC entry 4362 (class 0 OID 0)
--- Dependencies: 244
+-- TOC entry 4681 (class 0 OID 0)
+-- Dependencies: 252
 -- Name: friendly_id_slugs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -699,7 +967,7 @@ ALTER SEQUENCE public.friendly_id_slugs_id_seq OWNED BY public.friendly_id_slugs
 
 
 --
--- TOC entry 245 (class 1259 OID 26380)
+-- TOC entry 253 (class 1259 OID 16535)
 -- Name: imports; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -714,7 +982,7 @@ CREATE TABLE public.imports (
 
 
 --
--- TOC entry 246 (class 1259 OID 26385)
+-- TOC entry 254 (class 1259 OID 16540)
 -- Name: imports_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -727,8 +995,8 @@ CREATE SEQUENCE public.imports_id_seq
 
 
 --
--- TOC entry 4363 (class 0 OID 0)
--- Dependencies: 246
+-- TOC entry 4682 (class 0 OID 0)
+-- Dependencies: 254
 -- Name: imports_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -736,7 +1004,7 @@ ALTER SEQUENCE public.imports_id_seq OWNED BY public.imports.id;
 
 
 --
--- TOC entry 247 (class 1259 OID 26386)
+-- TOC entry 255 (class 1259 OID 16541)
 -- Name: item_self_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -748,7 +1016,7 @@ CREATE TABLE public.item_self_joins (
 
 
 --
--- TOC entry 248 (class 1259 OID 26389)
+-- TOC entry 256 (class 1259 OID 16544)
 -- Name: item_self_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -761,8 +1029,8 @@ CREATE SEQUENCE public.item_self_joins_id_seq
 
 
 --
--- TOC entry 4364 (class 0 OID 0)
--- Dependencies: 248
+-- TOC entry 4683 (class 0 OID 0)
+-- Dependencies: 256
 -- Name: item_self_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -770,7 +1038,7 @@ ALTER SEQUENCE public.item_self_joins_id_seq OWNED BY public.item_self_joins.id;
 
 
 --
--- TOC entry 249 (class 1259 OID 26390)
+-- TOC entry 257 (class 1259 OID 16545)
 -- Name: items; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -795,7 +1063,7 @@ CREATE TABLE public.items (
 
 
 --
--- TOC entry 250 (class 1259 OID 26395)
+-- TOC entry 258 (class 1259 OID 16550)
 -- Name: items_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -808,8 +1076,8 @@ CREATE SEQUENCE public.items_id_seq
 
 
 --
--- TOC entry 4365 (class 0 OID 0)
--- Dependencies: 250
+-- TOC entry 4684 (class 0 OID 0)
+-- Dependencies: 258
 -- Name: items_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -817,7 +1085,7 @@ ALTER SEQUENCE public.items_id_seq OWNED BY public.items.id;
 
 
 --
--- TOC entry 251 (class 1259 OID 26396)
+-- TOC entry 259 (class 1259 OID 16551)
 -- Name: lecture_user_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -831,7 +1099,7 @@ CREATE TABLE public.lecture_user_joins (
 
 
 --
--- TOC entry 252 (class 1259 OID 26399)
+-- TOC entry 260 (class 1259 OID 16554)
 -- Name: lecture_user_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -844,8 +1112,8 @@ CREATE SEQUENCE public.lecture_user_joins_id_seq
 
 
 --
--- TOC entry 4366 (class 0 OID 0)
--- Dependencies: 252
+-- TOC entry 4685 (class 0 OID 0)
+-- Dependencies: 260
 -- Name: lecture_user_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -853,7 +1121,7 @@ ALTER SEQUENCE public.lecture_user_joins_id_seq OWNED BY public.lecture_user_joi
 
 
 --
--- TOC entry 253 (class 1259 OID 26400)
+-- TOC entry 261 (class 1259 OID 16555)
 -- Name: lectures; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -882,12 +1150,13 @@ CREATE TABLE public.lectures (
     disable_teacher_display boolean DEFAULT false,
     submission_max_team_size integer,
     submission_grace_period integer DEFAULT 15,
-    legacy_seminar boolean DEFAULT false
+    legacy_seminar boolean DEFAULT false,
+    annotations_status integer DEFAULT 1 NOT NULL
 );
 
 
 --
--- TOC entry 254 (class 1259 OID 26407)
+-- TOC entry 262 (class 1259 OID 16563)
 -- Name: lectures_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -900,8 +1169,8 @@ CREATE SEQUENCE public.lectures_id_seq
 
 
 --
--- TOC entry 4367 (class 0 OID 0)
--- Dependencies: 254
+-- TOC entry 4686 (class 0 OID 0)
+-- Dependencies: 262
 -- Name: lectures_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -909,7 +1178,7 @@ ALTER SEQUENCE public.lectures_id_seq OWNED BY public.lectures.id;
 
 
 --
--- TOC entry 255 (class 1259 OID 26408)
+-- TOC entry 263 (class 1259 OID 16564)
 -- Name: lesson_section_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -923,7 +1192,7 @@ CREATE TABLE public.lesson_section_joins (
 
 
 --
--- TOC entry 256 (class 1259 OID 26411)
+-- TOC entry 264 (class 1259 OID 16567)
 -- Name: lesson_section_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -936,8 +1205,8 @@ CREATE SEQUENCE public.lesson_section_joins_id_seq
 
 
 --
--- TOC entry 4368 (class 0 OID 0)
--- Dependencies: 256
+-- TOC entry 4687 (class 0 OID 0)
+-- Dependencies: 264
 -- Name: lesson_section_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -945,7 +1214,7 @@ ALTER SEQUENCE public.lesson_section_joins_id_seq OWNED BY public.lesson_section
 
 
 --
--- TOC entry 257 (class 1259 OID 26412)
+-- TOC entry 265 (class 1259 OID 16568)
 -- Name: lesson_tag_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -959,7 +1228,7 @@ CREATE TABLE public.lesson_tag_joins (
 
 
 --
--- TOC entry 258 (class 1259 OID 26415)
+-- TOC entry 266 (class 1259 OID 16571)
 -- Name: lesson_tag_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -972,8 +1241,8 @@ CREATE SEQUENCE public.lesson_tag_joins_id_seq
 
 
 --
--- TOC entry 4369 (class 0 OID 0)
--- Dependencies: 258
+-- TOC entry 4688 (class 0 OID 0)
+-- Dependencies: 266
 -- Name: lesson_tag_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -981,7 +1250,7 @@ ALTER SEQUENCE public.lesson_tag_joins_id_seq OWNED BY public.lesson_tag_joins.i
 
 
 --
--- TOC entry 259 (class 1259 OID 26416)
+-- TOC entry 267 (class 1259 OID 16572)
 -- Name: lessons; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -998,7 +1267,7 @@ CREATE TABLE public.lessons (
 
 
 --
--- TOC entry 260 (class 1259 OID 26421)
+-- TOC entry 268 (class 1259 OID 16577)
 -- Name: lessons_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1011,8 +1280,8 @@ CREATE SEQUENCE public.lessons_id_seq
 
 
 --
--- TOC entry 4370 (class 0 OID 0)
--- Dependencies: 260
+-- TOC entry 4689 (class 0 OID 0)
+-- Dependencies: 268
 -- Name: lessons_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1020,7 +1289,7 @@ ALTER SEQUENCE public.lessons_id_seq OWNED BY public.lessons.id;
 
 
 --
--- TOC entry 261 (class 1259 OID 26422)
+-- TOC entry 269 (class 1259 OID 16578)
 -- Name: links; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1034,7 +1303,7 @@ CREATE TABLE public.links (
 
 
 --
--- TOC entry 262 (class 1259 OID 26425)
+-- TOC entry 270 (class 1259 OID 16581)
 -- Name: links_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1047,8 +1316,8 @@ CREATE SEQUENCE public.links_id_seq
 
 
 --
--- TOC entry 4371 (class 0 OID 0)
--- Dependencies: 262
+-- TOC entry 4690 (class 0 OID 0)
+-- Dependencies: 270
 -- Name: links_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1056,7 +1325,7 @@ ALTER SEQUENCE public.links_id_seq OWNED BY public.links.id;
 
 
 --
--- TOC entry 263 (class 1259 OID 26426)
+-- TOC entry 271 (class 1259 OID 16582)
 -- Name: media; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1083,7 +1352,6 @@ CREATE TABLE public.media (
     type text,
     text text,
     independent boolean,
-    keks_id integer,
     locale text,
     solution text,
     question_sort text,
@@ -1095,12 +1363,14 @@ CREATE TABLE public.media (
     boost double precision DEFAULT 0.0,
     released_at timestamp without time zone,
     publisher text,
-    file_last_edited timestamp without time zone
+    file_last_edited timestamp without time zone,
+    external_link_description text,
+    annotations_status integer DEFAULT '-1'::integer NOT NULL
 );
 
 
 --
--- TOC entry 264 (class 1259 OID 26433)
+-- TOC entry 272 (class 1259 OID 16589)
 -- Name: media_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1113,8 +1383,8 @@ CREATE SEQUENCE public.media_id_seq
 
 
 --
--- TOC entry 4372 (class 0 OID 0)
--- Dependencies: 264
+-- TOC entry 4691 (class 0 OID 0)
+-- Dependencies: 272
 -- Name: media_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1122,7 +1392,7 @@ ALTER SEQUENCE public.media_id_seq OWNED BY public.media.id;
 
 
 --
--- TOC entry 265 (class 1259 OID 26434)
+-- TOC entry 273 (class 1259 OID 16590)
 -- Name: medium_tag_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1136,7 +1406,7 @@ CREATE TABLE public.medium_tag_joins (
 
 
 --
--- TOC entry 266 (class 1259 OID 26437)
+-- TOC entry 274 (class 1259 OID 16593)
 -- Name: medium_tag_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1149,8 +1419,8 @@ CREATE SEQUENCE public.medium_tag_joins_id_seq
 
 
 --
--- TOC entry 4373 (class 0 OID 0)
--- Dependencies: 266
+-- TOC entry 4692 (class 0 OID 0)
+-- Dependencies: 274
 -- Name: medium_tag_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1158,7 +1428,7 @@ ALTER SEQUENCE public.medium_tag_joins_id_seq OWNED BY public.medium_tag_joins.i
 
 
 --
--- TOC entry 267 (class 1259 OID 26438)
+-- TOC entry 275 (class 1259 OID 16594)
 -- Name: notifications; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1174,7 +1444,7 @@ CREATE TABLE public.notifications (
 
 
 --
--- TOC entry 268 (class 1259 OID 26443)
+-- TOC entry 276 (class 1259 OID 16599)
 -- Name: notifications_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1187,8 +1457,8 @@ CREATE SEQUENCE public.notifications_id_seq
 
 
 --
--- TOC entry 4374 (class 0 OID 0)
--- Dependencies: 268
+-- TOC entry 4693 (class 0 OID 0)
+-- Dependencies: 276
 -- Name: notifications_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1196,7 +1466,7 @@ ALTER SEQUENCE public.notifications_id_seq OWNED BY public.notifications.id;
 
 
 --
--- TOC entry 269 (class 1259 OID 26444)
+-- TOC entry 277 (class 1259 OID 16600)
 -- Name: notions; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1212,7 +1482,7 @@ CREATE TABLE public.notions (
 
 
 --
--- TOC entry 270 (class 1259 OID 26449)
+-- TOC entry 278 (class 1259 OID 16605)
 -- Name: notions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1225,8 +1495,8 @@ CREATE SEQUENCE public.notions_id_seq
 
 
 --
--- TOC entry 4375 (class 0 OID 0)
--- Dependencies: 270
+-- TOC entry 4694 (class 0 OID 0)
+-- Dependencies: 278
 -- Name: notions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1234,7 +1504,7 @@ ALTER SEQUENCE public.notions_id_seq OWNED BY public.notions.id;
 
 
 --
--- TOC entry 271 (class 1259 OID 26450)
+-- TOC entry 279 (class 1259 OID 16606)
 -- Name: program_translations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1249,7 +1519,7 @@ CREATE TABLE public.program_translations (
 
 
 --
--- TOC entry 272 (class 1259 OID 26455)
+-- TOC entry 280 (class 1259 OID 16611)
 -- Name: program_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1262,8 +1532,8 @@ CREATE SEQUENCE public.program_translations_id_seq
 
 
 --
--- TOC entry 4376 (class 0 OID 0)
--- Dependencies: 272
+-- TOC entry 4695 (class 0 OID 0)
+-- Dependencies: 280
 -- Name: program_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1271,7 +1541,7 @@ ALTER SEQUENCE public.program_translations_id_seq OWNED BY public.program_transl
 
 
 --
--- TOC entry 273 (class 1259 OID 26456)
+-- TOC entry 281 (class 1259 OID 16612)
 -- Name: programs; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1284,7 +1554,7 @@ CREATE TABLE public.programs (
 
 
 --
--- TOC entry 274 (class 1259 OID 26459)
+-- TOC entry 282 (class 1259 OID 16615)
 -- Name: programs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1297,8 +1567,8 @@ CREATE SEQUENCE public.programs_id_seq
 
 
 --
--- TOC entry 4377 (class 0 OID 0)
--- Dependencies: 274
+-- TOC entry 4696 (class 0 OID 0)
+-- Dependencies: 282
 -- Name: programs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1306,7 +1576,7 @@ ALTER SEQUENCE public.programs_id_seq OWNED BY public.programs.id;
 
 
 --
--- TOC entry 275 (class 1259 OID 26460)
+-- TOC entry 283 (class 1259 OID 16616)
 -- Name: quiz_certificates; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1321,7 +1591,7 @@ CREATE TABLE public.quiz_certificates (
 
 
 --
--- TOC entry 276 (class 1259 OID 26466)
+-- TOC entry 284 (class 1259 OID 16622)
 -- Name: readers; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1335,7 +1605,7 @@ CREATE TABLE public.readers (
 
 
 --
--- TOC entry 277 (class 1259 OID 26469)
+-- TOC entry 285 (class 1259 OID 16625)
 -- Name: readers_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1348,8 +1618,8 @@ CREATE SEQUENCE public.readers_id_seq
 
 
 --
--- TOC entry 4378 (class 0 OID 0)
--- Dependencies: 277
+-- TOC entry 4697 (class 0 OID 0)
+-- Dependencies: 285
 -- Name: readers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1357,7 +1627,43 @@ ALTER SEQUENCE public.readers_id_seq OWNED BY public.readers.id;
 
 
 --
--- TOC entry 278 (class 1259 OID 26470)
+-- TOC entry 376 (class 1259 OID 17570)
+-- Name: redemptions; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.redemptions (
+    id bigint NOT NULL,
+    voucher_id uuid NOT NULL,
+    user_id bigint NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 375 (class 1259 OID 17569)
+-- Name: redemptions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.redemptions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4698 (class 0 OID 0)
+-- Dependencies: 375
+-- Name: redemptions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.redemptions_id_seq OWNED BY public.redemptions.id;
+
+
+--
+-- TOC entry 286 (class 1259 OID 16626)
 -- Name: referrals; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1374,7 +1680,7 @@ CREATE TABLE public.referrals (
 
 
 --
--- TOC entry 279 (class 1259 OID 26475)
+-- TOC entry 287 (class 1259 OID 16631)
 -- Name: referrals_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1387,8 +1693,8 @@ CREATE SEQUENCE public.referrals_id_seq
 
 
 --
--- TOC entry 4379 (class 0 OID 0)
--- Dependencies: 279
+-- TOC entry 4699 (class 0 OID 0)
+-- Dependencies: 287
 -- Name: referrals_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1396,7 +1702,7 @@ ALTER SEQUENCE public.referrals_id_seq OWNED BY public.referrals.id;
 
 
 --
--- TOC entry 280 (class 1259 OID 26476)
+-- TOC entry 288 (class 1259 OID 16632)
 -- Name: relations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1410,7 +1716,7 @@ CREATE TABLE public.relations (
 
 
 --
--- TOC entry 281 (class 1259 OID 26479)
+-- TOC entry 289 (class 1259 OID 16635)
 -- Name: relations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1423,8 +1729,8 @@ CREATE SEQUENCE public.relations_id_seq
 
 
 --
--- TOC entry 4380 (class 0 OID 0)
--- Dependencies: 281
+-- TOC entry 4700 (class 0 OID 0)
+-- Dependencies: 289
 -- Name: relations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1432,7 +1738,7 @@ ALTER SEQUENCE public.relations_id_seq OWNED BY public.relations.id;
 
 
 --
--- TOC entry 282 (class 1259 OID 26480)
+-- TOC entry 290 (class 1259 OID 16636)
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1442,7 +1748,7 @@ CREATE TABLE public.schema_migrations (
 
 
 --
--- TOC entry 283 (class 1259 OID 26485)
+-- TOC entry 291 (class 1259 OID 16641)
 -- Name: section_tag_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1457,7 +1763,7 @@ CREATE TABLE public.section_tag_joins (
 
 
 --
--- TOC entry 284 (class 1259 OID 26488)
+-- TOC entry 292 (class 1259 OID 16644)
 -- Name: section_tag_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1470,8 +1776,8 @@ CREATE SEQUENCE public.section_tag_joins_id_seq
 
 
 --
--- TOC entry 4381 (class 0 OID 0)
--- Dependencies: 284
+-- TOC entry 4701 (class 0 OID 0)
+-- Dependencies: 292
 -- Name: section_tag_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1479,7 +1785,7 @@ ALTER SEQUENCE public.section_tag_joins_id_seq OWNED BY public.section_tag_joins
 
 
 --
--- TOC entry 285 (class 1259 OID 26489)
+-- TOC entry 293 (class 1259 OID 16645)
 -- Name: sections; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1498,7 +1804,7 @@ CREATE TABLE public.sections (
 
 
 --
--- TOC entry 286 (class 1259 OID 26494)
+-- TOC entry 294 (class 1259 OID 16650)
 -- Name: sections_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1511,8 +1817,8 @@ CREATE SEQUENCE public.sections_id_seq
 
 
 --
--- TOC entry 4382 (class 0 OID 0)
--- Dependencies: 286
+-- TOC entry 4702 (class 0 OID 0)
+-- Dependencies: 294
 -- Name: sections_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1520,7 +1826,7 @@ ALTER SEQUENCE public.sections_id_seq OWNED BY public.sections.id;
 
 
 --
--- TOC entry 355 (class 1259 OID 27252)
+-- TOC entry 295 (class 1259 OID 16651)
 -- Name: speaker_talk_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1534,7 +1840,7 @@ CREATE TABLE public.speaker_talk_joins (
 
 
 --
--- TOC entry 354 (class 1259 OID 27251)
+-- TOC entry 296 (class 1259 OID 16654)
 -- Name: speaker_talk_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1547,8 +1853,8 @@ CREATE SEQUENCE public.speaker_talk_joins_id_seq
 
 
 --
--- TOC entry 4383 (class 0 OID 0)
--- Dependencies: 354
+-- TOC entry 4703 (class 0 OID 0)
+-- Dependencies: 296
 -- Name: speaker_talk_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1556,7 +1862,7 @@ ALTER SEQUENCE public.speaker_talk_joins_id_seq OWNED BY public.speaker_talk_joi
 
 
 --
--- TOC entry 287 (class 1259 OID 26495)
+-- TOC entry 297 (class 1259 OID 16655)
 -- Name: subject_translations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1571,7 +1877,7 @@ CREATE TABLE public.subject_translations (
 
 
 --
--- TOC entry 288 (class 1259 OID 26500)
+-- TOC entry 298 (class 1259 OID 16660)
 -- Name: subject_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1584,8 +1890,8 @@ CREATE SEQUENCE public.subject_translations_id_seq
 
 
 --
--- TOC entry 4384 (class 0 OID 0)
--- Dependencies: 288
+-- TOC entry 4704 (class 0 OID 0)
+-- Dependencies: 298
 -- Name: subject_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1593,7 +1899,7 @@ ALTER SEQUENCE public.subject_translations_id_seq OWNED BY public.subject_transl
 
 
 --
--- TOC entry 289 (class 1259 OID 26501)
+-- TOC entry 299 (class 1259 OID 16661)
 -- Name: subjects; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1605,7 +1911,7 @@ CREATE TABLE public.subjects (
 
 
 --
--- TOC entry 290 (class 1259 OID 26504)
+-- TOC entry 300 (class 1259 OID 16664)
 -- Name: subjects_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1618,8 +1924,8 @@ CREATE SEQUENCE public.subjects_id_seq
 
 
 --
--- TOC entry 4385 (class 0 OID 0)
--- Dependencies: 290
+-- TOC entry 4705 (class 0 OID 0)
+-- Dependencies: 300
 -- Name: subjects_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1627,7 +1933,7 @@ ALTER SEQUENCE public.subjects_id_seq OWNED BY public.subjects.id;
 
 
 --
--- TOC entry 291 (class 1259 OID 26505)
+-- TOC entry 301 (class 1259 OID 16665)
 -- Name: submissions; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1647,7 +1953,7 @@ CREATE TABLE public.submissions (
 
 
 --
--- TOC entry 292 (class 1259 OID 26513)
+-- TOC entry 302 (class 1259 OID 16672)
 -- Name: tags; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1660,7 +1966,7 @@ CREATE TABLE public.tags (
 
 
 --
--- TOC entry 293 (class 1259 OID 26518)
+-- TOC entry 303 (class 1259 OID 16677)
 -- Name: tags_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1673,8 +1979,8 @@ CREATE SEQUENCE public.tags_id_seq
 
 
 --
--- TOC entry 4386 (class 0 OID 0)
--- Dependencies: 293
+-- TOC entry 4706 (class 0 OID 0)
+-- Dependencies: 303
 -- Name: tags_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1682,7 +1988,7 @@ ALTER SEQUENCE public.tags_id_seq OWNED BY public.tags.id;
 
 
 --
--- TOC entry 361 (class 1259 OID 27313)
+-- TOC entry 304 (class 1259 OID 16678)
 -- Name: talk_tag_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1696,7 +2002,7 @@ CREATE TABLE public.talk_tag_joins (
 
 
 --
--- TOC entry 360 (class 1259 OID 27312)
+-- TOC entry 305 (class 1259 OID 16681)
 -- Name: talk_tag_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1709,8 +2015,8 @@ CREATE SEQUENCE public.talk_tag_joins_id_seq
 
 
 --
--- TOC entry 4387 (class 0 OID 0)
--- Dependencies: 360
+-- TOC entry 4707 (class 0 OID 0)
+-- Dependencies: 305
 -- Name: talk_tag_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1718,7 +2024,7 @@ ALTER SEQUENCE public.talk_tag_joins_id_seq OWNED BY public.talk_tag_joins.id;
 
 
 --
--- TOC entry 353 (class 1259 OID 27239)
+-- TOC entry 306 (class 1259 OID 16682)
 -- Name: talks; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1737,7 +2043,7 @@ CREATE TABLE public.talks (
 
 
 --
--- TOC entry 352 (class 1259 OID 27238)
+-- TOC entry 307 (class 1259 OID 16689)
 -- Name: talks_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1750,8 +2056,8 @@ CREATE SEQUENCE public.talks_id_seq
 
 
 --
--- TOC entry 4388 (class 0 OID 0)
--- Dependencies: 352
+-- TOC entry 4708 (class 0 OID 0)
+-- Dependencies: 307
 -- Name: talks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1759,7 +2065,7 @@ ALTER SEQUENCE public.talks_id_seq OWNED BY public.talks.id;
 
 
 --
--- TOC entry 294 (class 1259 OID 26519)
+-- TOC entry 308 (class 1259 OID 16690)
 -- Name: terms; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1777,7 +2083,7 @@ CREATE TABLE public.terms (
 
 
 --
--- TOC entry 295 (class 1259 OID 26525)
+-- TOC entry 309 (class 1259 OID 16696)
 -- Name: terms_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1790,8 +2096,8 @@ CREATE SEQUENCE public.terms_id_seq
 
 
 --
--- TOC entry 4389 (class 0 OID 0)
--- Dependencies: 295
+-- TOC entry 4709 (class 0 OID 0)
+-- Dependencies: 309
 -- Name: terms_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1799,7 +2105,7 @@ ALTER SEQUENCE public.terms_id_seq OWNED BY public.terms.id;
 
 
 --
--- TOC entry 296 (class 1259 OID 26526)
+-- TOC entry 310 (class 1259 OID 16697)
 -- Name: thredded_categories; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1815,7 +2121,7 @@ CREATE TABLE public.thredded_categories (
 
 
 --
--- TOC entry 297 (class 1259 OID 26531)
+-- TOC entry 311 (class 1259 OID 16702)
 -- Name: thredded_categories_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1828,8 +2134,8 @@ CREATE SEQUENCE public.thredded_categories_id_seq
 
 
 --
--- TOC entry 4390 (class 0 OID 0)
--- Dependencies: 297
+-- TOC entry 4710 (class 0 OID 0)
+-- Dependencies: 311
 -- Name: thredded_categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1837,7 +2143,7 @@ ALTER SEQUENCE public.thredded_categories_id_seq OWNED BY public.thredded_catego
 
 
 --
--- TOC entry 298 (class 1259 OID 26532)
+-- TOC entry 312 (class 1259 OID 16703)
 -- Name: thredded_messageboard_groups; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1851,7 +2157,7 @@ CREATE TABLE public.thredded_messageboard_groups (
 
 
 --
--- TOC entry 299 (class 1259 OID 26537)
+-- TOC entry 313 (class 1259 OID 16708)
 -- Name: thredded_messageboard_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1864,8 +2170,8 @@ CREATE SEQUENCE public.thredded_messageboard_groups_id_seq
 
 
 --
--- TOC entry 4391 (class 0 OID 0)
--- Dependencies: 299
+-- TOC entry 4711 (class 0 OID 0)
+-- Dependencies: 313
 -- Name: thredded_messageboard_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1873,7 +2179,7 @@ ALTER SEQUENCE public.thredded_messageboard_groups_id_seq OWNED BY public.thredd
 
 
 --
--- TOC entry 300 (class 1259 OID 26538)
+-- TOC entry 314 (class 1259 OID 16709)
 -- Name: thredded_messageboard_notifications_for_followed_topics; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1887,7 +2193,7 @@ CREATE TABLE public.thredded_messageboard_notifications_for_followed_topics (
 
 
 --
--- TOC entry 301 (class 1259 OID 26542)
+-- TOC entry 315 (class 1259 OID 16713)
 -- Name: thredded_messageboard_notifications_for_followed_topics_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1900,8 +2206,8 @@ CREATE SEQUENCE public.thredded_messageboard_notifications_for_followed_topics_i
 
 
 --
--- TOC entry 4392 (class 0 OID 0)
--- Dependencies: 301
+-- TOC entry 4712 (class 0 OID 0)
+-- Dependencies: 315
 -- Name: thredded_messageboard_notifications_for_followed_topics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1909,7 +2215,7 @@ ALTER SEQUENCE public.thredded_messageboard_notifications_for_followed_topics_id
 
 
 --
--- TOC entry 302 (class 1259 OID 26543)
+-- TOC entry 316 (class 1259 OID 16714)
 -- Name: thredded_messageboard_users; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1922,7 +2228,7 @@ CREATE TABLE public.thredded_messageboard_users (
 
 
 --
--- TOC entry 303 (class 1259 OID 26546)
+-- TOC entry 317 (class 1259 OID 16717)
 -- Name: thredded_messageboard_users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1935,8 +2241,8 @@ CREATE SEQUENCE public.thredded_messageboard_users_id_seq
 
 
 --
--- TOC entry 4393 (class 0 OID 0)
--- Dependencies: 303
+-- TOC entry 4713 (class 0 OID 0)
+-- Dependencies: 317
 -- Name: thredded_messageboard_users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1944,7 +2250,7 @@ ALTER SEQUENCE public.thredded_messageboard_users_id_seq OWNED BY public.thredde
 
 
 --
--- TOC entry 304 (class 1259 OID 26547)
+-- TOC entry 318 (class 1259 OID 16718)
 -- Name: thredded_messageboards; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1965,7 +2271,7 @@ CREATE TABLE public.thredded_messageboards (
 
 
 --
--- TOC entry 305 (class 1259 OID 26555)
+-- TOC entry 319 (class 1259 OID 16726)
 -- Name: thredded_messageboards_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1978,8 +2284,8 @@ CREATE SEQUENCE public.thredded_messageboards_id_seq
 
 
 --
--- TOC entry 4394 (class 0 OID 0)
--- Dependencies: 305
+-- TOC entry 4714 (class 0 OID 0)
+-- Dependencies: 319
 -- Name: thredded_messageboards_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -1987,7 +2293,7 @@ ALTER SEQUENCE public.thredded_messageboards_id_seq OWNED BY public.thredded_mes
 
 
 --
--- TOC entry 306 (class 1259 OID 26556)
+-- TOC entry 320 (class 1259 OID 16727)
 -- Name: thredded_notifications_for_followed_topics; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2000,7 +2306,7 @@ CREATE TABLE public.thredded_notifications_for_followed_topics (
 
 
 --
--- TOC entry 307 (class 1259 OID 26560)
+-- TOC entry 321 (class 1259 OID 16731)
 -- Name: thredded_notifications_for_followed_topics_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2013,8 +2319,8 @@ CREATE SEQUENCE public.thredded_notifications_for_followed_topics_id_seq
 
 
 --
--- TOC entry 4395 (class 0 OID 0)
--- Dependencies: 307
+-- TOC entry 4715 (class 0 OID 0)
+-- Dependencies: 321
 -- Name: thredded_notifications_for_followed_topics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2022,7 +2328,7 @@ ALTER SEQUENCE public.thredded_notifications_for_followed_topics_id_seq OWNED BY
 
 
 --
--- TOC entry 308 (class 1259 OID 26561)
+-- TOC entry 322 (class 1259 OID 16732)
 -- Name: thredded_notifications_for_private_topics; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2035,7 +2341,7 @@ CREATE TABLE public.thredded_notifications_for_private_topics (
 
 
 --
--- TOC entry 309 (class 1259 OID 26565)
+-- TOC entry 323 (class 1259 OID 16736)
 -- Name: thredded_notifications_for_private_topics_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2048,8 +2354,8 @@ CREATE SEQUENCE public.thredded_notifications_for_private_topics_id_seq
 
 
 --
--- TOC entry 4396 (class 0 OID 0)
--- Dependencies: 309
+-- TOC entry 4716 (class 0 OID 0)
+-- Dependencies: 323
 -- Name: thredded_notifications_for_private_topics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2057,7 +2363,7 @@ ALTER SEQUENCE public.thredded_notifications_for_private_topics_id_seq OWNED BY 
 
 
 --
--- TOC entry 310 (class 1259 OID 26566)
+-- TOC entry 324 (class 1259 OID 16737)
 -- Name: thredded_post_moderation_records; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2076,7 +2382,7 @@ CREATE TABLE public.thredded_post_moderation_records (
 
 
 --
--- TOC entry 311 (class 1259 OID 26571)
+-- TOC entry 325 (class 1259 OID 16742)
 -- Name: thredded_post_moderation_records_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2089,8 +2395,8 @@ CREATE SEQUENCE public.thredded_post_moderation_records_id_seq
 
 
 --
--- TOC entry 4397 (class 0 OID 0)
--- Dependencies: 311
+-- TOC entry 4717 (class 0 OID 0)
+-- Dependencies: 325
 -- Name: thredded_post_moderation_records_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2098,7 +2404,7 @@ ALTER SEQUENCE public.thredded_post_moderation_records_id_seq OWNED BY public.th
 
 
 --
--- TOC entry 312 (class 1259 OID 26572)
+-- TOC entry 326 (class 1259 OID 16743)
 -- Name: thredded_posts; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2116,7 +2422,7 @@ CREATE TABLE public.thredded_posts (
 
 
 --
--- TOC entry 313 (class 1259 OID 26578)
+-- TOC entry 327 (class 1259 OID 16749)
 -- Name: thredded_posts_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2129,8 +2435,8 @@ CREATE SEQUENCE public.thredded_posts_id_seq
 
 
 --
--- TOC entry 4398 (class 0 OID 0)
--- Dependencies: 313
+-- TOC entry 4718 (class 0 OID 0)
+-- Dependencies: 327
 -- Name: thredded_posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2138,7 +2444,7 @@ ALTER SEQUENCE public.thredded_posts_id_seq OWNED BY public.thredded_posts.id;
 
 
 --
--- TOC entry 314 (class 1259 OID 26579)
+-- TOC entry 328 (class 1259 OID 16750)
 -- Name: thredded_private_posts; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2153,7 +2459,7 @@ CREATE TABLE public.thredded_private_posts (
 
 
 --
--- TOC entry 315 (class 1259 OID 26584)
+-- TOC entry 329 (class 1259 OID 16755)
 -- Name: thredded_private_posts_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2166,8 +2472,8 @@ CREATE SEQUENCE public.thredded_private_posts_id_seq
 
 
 --
--- TOC entry 4399 (class 0 OID 0)
--- Dependencies: 315
+-- TOC entry 4719 (class 0 OID 0)
+-- Dependencies: 329
 -- Name: thredded_private_posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2175,7 +2481,7 @@ ALTER SEQUENCE public.thredded_private_posts_id_seq OWNED BY public.thredded_pri
 
 
 --
--- TOC entry 316 (class 1259 OID 26585)
+-- TOC entry 330 (class 1259 OID 16756)
 -- Name: thredded_private_topics; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2194,7 +2500,7 @@ CREATE TABLE public.thredded_private_topics (
 
 
 --
--- TOC entry 317 (class 1259 OID 26591)
+-- TOC entry 331 (class 1259 OID 16762)
 -- Name: thredded_private_topics_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2207,8 +2513,8 @@ CREATE SEQUENCE public.thredded_private_topics_id_seq
 
 
 --
--- TOC entry 4400 (class 0 OID 0)
--- Dependencies: 317
+-- TOC entry 4720 (class 0 OID 0)
+-- Dependencies: 331
 -- Name: thredded_private_topics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2216,7 +2522,7 @@ ALTER SEQUENCE public.thredded_private_topics_id_seq OWNED BY public.thredded_pr
 
 
 --
--- TOC entry 318 (class 1259 OID 26592)
+-- TOC entry 332 (class 1259 OID 16763)
 -- Name: thredded_private_users; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2230,7 +2536,7 @@ CREATE TABLE public.thredded_private_users (
 
 
 --
--- TOC entry 319 (class 1259 OID 26595)
+-- TOC entry 333 (class 1259 OID 16766)
 -- Name: thredded_private_users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2243,8 +2549,8 @@ CREATE SEQUENCE public.thredded_private_users_id_seq
 
 
 --
--- TOC entry 4401 (class 0 OID 0)
--- Dependencies: 319
+-- TOC entry 4721 (class 0 OID 0)
+-- Dependencies: 333
 -- Name: thredded_private_users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2252,7 +2558,7 @@ ALTER SEQUENCE public.thredded_private_users_id_seq OWNED BY public.thredded_pri
 
 
 --
--- TOC entry 320 (class 1259 OID 26596)
+-- TOC entry 334 (class 1259 OID 16767)
 -- Name: thredded_topic_categories; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2264,7 +2570,7 @@ CREATE TABLE public.thredded_topic_categories (
 
 
 --
--- TOC entry 321 (class 1259 OID 26599)
+-- TOC entry 335 (class 1259 OID 16770)
 -- Name: thredded_topic_categories_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2277,8 +2583,8 @@ CREATE SEQUENCE public.thredded_topic_categories_id_seq
 
 
 --
--- TOC entry 4402 (class 0 OID 0)
--- Dependencies: 321
+-- TOC entry 4722 (class 0 OID 0)
+-- Dependencies: 335
 -- Name: thredded_topic_categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2286,7 +2592,7 @@ ALTER SEQUENCE public.thredded_topic_categories_id_seq OWNED BY public.thredded_
 
 
 --
--- TOC entry 322 (class 1259 OID 26600)
+-- TOC entry 336 (class 1259 OID 16771)
 -- Name: thredded_topics; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2309,7 +2615,7 @@ CREATE TABLE public.thredded_topics (
 
 
 --
--- TOC entry 323 (class 1259 OID 26608)
+-- TOC entry 337 (class 1259 OID 16779)
 -- Name: thredded_topics_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2322,8 +2628,8 @@ CREATE SEQUENCE public.thredded_topics_id_seq
 
 
 --
--- TOC entry 4403 (class 0 OID 0)
--- Dependencies: 323
+-- TOC entry 4723 (class 0 OID 0)
+-- Dependencies: 337
 -- Name: thredded_topics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2331,7 +2637,7 @@ ALTER SEQUENCE public.thredded_topics_id_seq OWNED BY public.thredded_topics.id;
 
 
 --
--- TOC entry 324 (class 1259 OID 26609)
+-- TOC entry 338 (class 1259 OID 16780)
 -- Name: thredded_user_details; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2350,7 +2656,7 @@ CREATE TABLE public.thredded_user_details (
 
 
 --
--- TOC entry 325 (class 1259 OID 26615)
+-- TOC entry 339 (class 1259 OID 16786)
 -- Name: thredded_user_details_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2363,8 +2669,8 @@ CREATE SEQUENCE public.thredded_user_details_id_seq
 
 
 --
--- TOC entry 4404 (class 0 OID 0)
--- Dependencies: 325
+-- TOC entry 4724 (class 0 OID 0)
+-- Dependencies: 339
 -- Name: thredded_user_details_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2372,7 +2678,7 @@ ALTER SEQUENCE public.thredded_user_details_id_seq OWNED BY public.thredded_user
 
 
 --
--- TOC entry 326 (class 1259 OID 26616)
+-- TOC entry 340 (class 1259 OID 16787)
 -- Name: thredded_user_messageboard_preferences; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2388,7 +2694,7 @@ CREATE TABLE public.thredded_user_messageboard_preferences (
 
 
 --
--- TOC entry 327 (class 1259 OID 26621)
+-- TOC entry 341 (class 1259 OID 16792)
 -- Name: thredded_user_messageboard_preferences_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2401,8 +2707,8 @@ CREATE SEQUENCE public.thredded_user_messageboard_preferences_id_seq
 
 
 --
--- TOC entry 4405 (class 0 OID 0)
--- Dependencies: 327
+-- TOC entry 4725 (class 0 OID 0)
+-- Dependencies: 341
 -- Name: thredded_user_messageboard_preferences_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2410,7 +2716,7 @@ ALTER SEQUENCE public.thredded_user_messageboard_preferences_id_seq OWNED BY pub
 
 
 --
--- TOC entry 328 (class 1259 OID 26622)
+-- TOC entry 342 (class 1259 OID 16793)
 -- Name: thredded_user_post_notifications; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2423,7 +2729,7 @@ CREATE TABLE public.thredded_user_post_notifications (
 
 
 --
--- TOC entry 329 (class 1259 OID 26625)
+-- TOC entry 343 (class 1259 OID 16796)
 -- Name: thredded_user_post_notifications_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2436,8 +2742,8 @@ CREATE SEQUENCE public.thredded_user_post_notifications_id_seq
 
 
 --
--- TOC entry 4406 (class 0 OID 0)
--- Dependencies: 329
+-- TOC entry 4726 (class 0 OID 0)
+-- Dependencies: 343
 -- Name: thredded_user_post_notifications_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2445,7 +2751,7 @@ ALTER SEQUENCE public.thredded_user_post_notifications_id_seq OWNED BY public.th
 
 
 --
--- TOC entry 330 (class 1259 OID 26626)
+-- TOC entry 344 (class 1259 OID 16797)
 -- Name: thredded_user_preferences; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2460,7 +2766,7 @@ CREATE TABLE public.thredded_user_preferences (
 
 
 --
--- TOC entry 331 (class 1259 OID 26631)
+-- TOC entry 345 (class 1259 OID 16802)
 -- Name: thredded_user_preferences_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2473,8 +2779,8 @@ CREATE SEQUENCE public.thredded_user_preferences_id_seq
 
 
 --
--- TOC entry 4407 (class 0 OID 0)
--- Dependencies: 331
+-- TOC entry 4727 (class 0 OID 0)
+-- Dependencies: 345
 -- Name: thredded_user_preferences_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2482,7 +2788,7 @@ ALTER SEQUENCE public.thredded_user_preferences_id_seq OWNED BY public.thredded_
 
 
 --
--- TOC entry 332 (class 1259 OID 26632)
+-- TOC entry 346 (class 1259 OID 16803)
 -- Name: thredded_user_private_topic_read_states; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2498,7 +2804,7 @@ CREATE TABLE public.thredded_user_private_topic_read_states (
 
 
 --
--- TOC entry 333 (class 1259 OID 26638)
+-- TOC entry 347 (class 1259 OID 16809)
 -- Name: thredded_user_private_topic_read_states_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2511,8 +2817,8 @@ CREATE SEQUENCE public.thredded_user_private_topic_read_states_id_seq
 
 
 --
--- TOC entry 4408 (class 0 OID 0)
--- Dependencies: 333
+-- TOC entry 4728 (class 0 OID 0)
+-- Dependencies: 347
 -- Name: thredded_user_private_topic_read_states_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2520,7 +2826,7 @@ ALTER SEQUENCE public.thredded_user_private_topic_read_states_id_seq OWNED BY pu
 
 
 --
--- TOC entry 334 (class 1259 OID 26639)
+-- TOC entry 348 (class 1259 OID 16810)
 -- Name: thredded_user_topic_follows; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2534,7 +2840,7 @@ CREATE TABLE public.thredded_user_topic_follows (
 
 
 --
--- TOC entry 335 (class 1259 OID 26642)
+-- TOC entry 349 (class 1259 OID 16813)
 -- Name: thredded_user_topic_follows_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2547,8 +2853,8 @@ CREATE SEQUENCE public.thredded_user_topic_follows_id_seq
 
 
 --
--- TOC entry 4409 (class 0 OID 0)
--- Dependencies: 335
+-- TOC entry 4729 (class 0 OID 0)
+-- Dependencies: 349
 -- Name: thredded_user_topic_follows_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2556,7 +2862,7 @@ ALTER SEQUENCE public.thredded_user_topic_follows_id_seq OWNED BY public.thredde
 
 
 --
--- TOC entry 336 (class 1259 OID 26643)
+-- TOC entry 350 (class 1259 OID 16814)
 -- Name: thredded_user_topic_read_states; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2573,7 +2879,7 @@ CREATE TABLE public.thredded_user_topic_read_states (
 
 
 --
--- TOC entry 337 (class 1259 OID 26649)
+-- TOC entry 351 (class 1259 OID 16820)
 -- Name: thredded_user_topic_read_states_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2586,8 +2892,8 @@ CREATE SEQUENCE public.thredded_user_topic_read_states_id_seq
 
 
 --
--- TOC entry 4410 (class 0 OID 0)
--- Dependencies: 337
+-- TOC entry 4730 (class 0 OID 0)
+-- Dependencies: 351
 -- Name: thredded_user_topic_read_states_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2595,7 +2901,7 @@ ALTER SEQUENCE public.thredded_user_topic_read_states_id_seq OWNED BY public.thr
 
 
 --
--- TOC entry 338 (class 1259 OID 26650)
+-- TOC entry 352 (class 1259 OID 16821)
 -- Name: tutor_tutorial_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2609,7 +2915,7 @@ CREATE TABLE public.tutor_tutorial_joins (
 
 
 --
--- TOC entry 339 (class 1259 OID 26653)
+-- TOC entry 353 (class 1259 OID 16824)
 -- Name: tutor_tutorial_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2622,8 +2928,8 @@ CREATE SEQUENCE public.tutor_tutorial_joins_id_seq
 
 
 --
--- TOC entry 4411 (class 0 OID 0)
--- Dependencies: 339
+-- TOC entry 4731 (class 0 OID 0)
+-- Dependencies: 353
 -- Name: tutor_tutorial_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2631,7 +2937,7 @@ ALTER SEQUENCE public.tutor_tutorial_joins_id_seq OWNED BY public.tutor_tutorial
 
 
 --
--- TOC entry 340 (class 1259 OID 26654)
+-- TOC entry 354 (class 1259 OID 16825)
 -- Name: tutorials; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2645,7 +2951,7 @@ CREATE TABLE public.tutorials (
 
 
 --
--- TOC entry 341 (class 1259 OID 26659)
+-- TOC entry 355 (class 1259 OID 16830)
 -- Name: tutorials_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2658,8 +2964,8 @@ CREATE SEQUENCE public.tutorials_id_seq
 
 
 --
--- TOC entry 4412 (class 0 OID 0)
--- Dependencies: 341
+-- TOC entry 4732 (class 0 OID 0)
+-- Dependencies: 355
 -- Name: tutorials_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2667,7 +2973,7 @@ ALTER SEQUENCE public.tutorials_id_seq OWNED BY public.tutorials.id;
 
 
 --
--- TOC entry 342 (class 1259 OID 26660)
+-- TOC entry 356 (class 1259 OID 16831)
 -- Name: user_favorite_lecture_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2681,7 +2987,7 @@ CREATE TABLE public.user_favorite_lecture_joins (
 
 
 --
--- TOC entry 343 (class 1259 OID 26663)
+-- TOC entry 357 (class 1259 OID 16834)
 -- Name: user_favorite_lecture_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2694,8 +3000,8 @@ CREATE SEQUENCE public.user_favorite_lecture_joins_id_seq
 
 
 --
--- TOC entry 4413 (class 0 OID 0)
--- Dependencies: 343
+-- TOC entry 4733 (class 0 OID 0)
+-- Dependencies: 357
 -- Name: user_favorite_lecture_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2703,7 +3009,7 @@ ALTER SEQUENCE public.user_favorite_lecture_joins_id_seq OWNED BY public.user_fa
 
 
 --
--- TOC entry 344 (class 1259 OID 26664)
+-- TOC entry 358 (class 1259 OID 16835)
 -- Name: user_submission_joins; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2717,7 +3023,7 @@ CREATE TABLE public.user_submission_joins (
 
 
 --
--- TOC entry 345 (class 1259 OID 26667)
+-- TOC entry 359 (class 1259 OID 16838)
 -- Name: user_submission_joins_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2730,8 +3036,8 @@ CREATE SEQUENCE public.user_submission_joins_id_seq
 
 
 --
--- TOC entry 4414 (class 0 OID 0)
--- Dependencies: 345
+-- TOC entry 4734 (class 0 OID 0)
+-- Dependencies: 359
 -- Name: user_submission_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2739,7 +3045,7 @@ ALTER SEQUENCE public.user_submission_joins_id_seq OWNED BY public.user_submissi
 
 
 --
--- TOC entry 346 (class 1259 OID 26668)
+-- TOC entry 360 (class 1259 OID 16839)
 -- Name: users; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2780,12 +3086,18 @@ CREATE TABLE public.users (
     name_in_tutorials text,
     archived boolean,
     locked_at timestamp without time zone,
-    image_data text
+    image_data text,
+    sign_in_count integer DEFAULT 0 NOT NULL,
+    current_sign_in_at timestamp(6) without time zone,
+    last_sign_in_at timestamp(6) without time zone,
+    current_sign_in_ip character varying,
+    last_sign_in_ip character varying,
+    deletion_date date
 );
 
 
 --
--- TOC entry 347 (class 1259 OID 26678)
+-- TOC entry 361 (class 1259 OID 16849)
 -- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2798,8 +3110,8 @@ CREATE SEQUENCE public.users_id_seq
 
 
 --
--- TOC entry 4415 (class 0 OID 0)
--- Dependencies: 347
+-- TOC entry 4735 (class 0 OID 0)
+-- Dependencies: 361
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2807,7 +3119,407 @@ ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- TOC entry 348 (class 1259 OID 26679)
+-- TOC entry 398 (class 1259 OID 17739)
+-- Name: vignettes_answers; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vignettes_answers (
+    id bigint NOT NULL,
+    type character varying,
+    vignettes_question_id bigint NOT NULL,
+    vignettes_slide_id bigint NOT NULL,
+    vignettes_user_answer_id bigint NOT NULL,
+    text text,
+    likert_scale_value character varying,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 397 (class 1259 OID 17738)
+-- Name: vignettes_answers_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.vignettes_answers_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4736 (class 0 OID 0)
+-- Dependencies: 397
+-- Name: vignettes_answers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.vignettes_answers_id_seq OWNED BY public.vignettes_answers.id;
+
+
+--
+-- TOC entry 399 (class 1259 OID 17765)
+-- Name: vignettes_answers_options; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vignettes_answers_options (
+    vignettes_answer_id bigint NOT NULL,
+    vignettes_option_id bigint NOT NULL
+);
+
+
+--
+-- TOC entry 406 (class 1259 OID 17807)
+-- Name: vignettes_codenames; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vignettes_codenames (
+    id bigint NOT NULL,
+    pseudonym character varying,
+    user_id bigint,
+    lecture_id bigint,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 405 (class 1259 OID 17806)
+-- Name: vignettes_codenames_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.vignettes_codenames_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4737 (class 0 OID 0)
+-- Dependencies: 405
+-- Name: vignettes_codenames_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.vignettes_codenames_id_seq OWNED BY public.vignettes_codenames.id;
+
+
+--
+-- TOC entry 408 (class 1259 OID 17828)
+-- Name: vignettes_completion_messages; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vignettes_completion_messages (
+    id bigint NOT NULL,
+    lecture_id bigint NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 407 (class 1259 OID 17827)
+-- Name: vignettes_completion_messages_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.vignettes_completion_messages_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4738 (class 0 OID 0)
+-- Dependencies: 407
+-- Name: vignettes_completion_messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.vignettes_completion_messages_id_seq OWNED BY public.vignettes_completion_messages.id;
+
+
+--
+-- TOC entry 401 (class 1259 OID 17771)
+-- Name: vignettes_info_slides; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vignettes_info_slides (
+    id bigint NOT NULL,
+    title character varying NOT NULL,
+    vignettes_questionnaire_id bigint NOT NULL,
+    icon_type character varying,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 400 (class 1259 OID 17770)
+-- Name: vignettes_info_slides_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.vignettes_info_slides_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4739 (class 0 OID 0)
+-- Dependencies: 400
+-- Name: vignettes_info_slides_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.vignettes_info_slides_id_seq OWNED BY public.vignettes_info_slides.id;
+
+
+--
+-- TOC entry 404 (class 1259 OID 17801)
+-- Name: vignettes_info_slides_slides; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vignettes_info_slides_slides (
+    vignettes_info_slide_id bigint NOT NULL,
+    vignettes_slide_id bigint NOT NULL
+);
+
+
+--
+-- TOC entry 394 (class 1259 OID 17705)
+-- Name: vignettes_options; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vignettes_options (
+    id bigint NOT NULL,
+    text character varying,
+    vignettes_question_id bigint NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 393 (class 1259 OID 17704)
+-- Name: vignettes_options_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.vignettes_options_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4740 (class 0 OID 0)
+-- Dependencies: 393
+-- Name: vignettes_options_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.vignettes_options_id_seq OWNED BY public.vignettes_options.id;
+
+
+--
+-- TOC entry 388 (class 1259 OID 17656)
+-- Name: vignettes_questionnaires; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vignettes_questionnaires (
+    id bigint NOT NULL,
+    title character varying,
+    lecture_id bigint NOT NULL,
+    published boolean,
+    editable boolean DEFAULT true,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 387 (class 1259 OID 17655)
+-- Name: vignettes_questionnaires_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.vignettes_questionnaires_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4741 (class 0 OID 0)
+-- Dependencies: 387
+-- Name: vignettes_questionnaires_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.vignettes_questionnaires_id_seq OWNED BY public.vignettes_questionnaires.id;
+
+
+--
+-- TOC entry 392 (class 1259 OID 17688)
+-- Name: vignettes_questions; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vignettes_questions (
+    id bigint NOT NULL,
+    type character varying,
+    question_text text,
+    vignettes_slide_id bigint NOT NULL,
+    only_integer boolean DEFAULT false,
+    min_number numeric(10,0),
+    max_number numeric(10,0),
+    language character varying DEFAULT 'en'::character varying,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 391 (class 1259 OID 17687)
+-- Name: vignettes_questions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.vignettes_questions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4742 (class 0 OID 0)
+-- Dependencies: 391
+-- Name: vignettes_questions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.vignettes_questions_id_seq OWNED BY public.vignettes_questions.id;
+
+
+--
+-- TOC entry 403 (class 1259 OID 17781)
+-- Name: vignettes_slide_statistics; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vignettes_slide_statistics (
+    id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    vignettes_answer_id bigint,
+    time_on_slide integer,
+    total_time_on_slide integer,
+    time_on_info_slides text,
+    info_slides_access_count text,
+    info_slides_first_access_time text,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 402 (class 1259 OID 17780)
+-- Name: vignettes_slide_statistics_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.vignettes_slide_statistics_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4743 (class 0 OID 0)
+-- Dependencies: 402
+-- Name: vignettes_slide_statistics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.vignettes_slide_statistics_id_seq OWNED BY public.vignettes_slide_statistics.id;
+
+
+--
+-- TOC entry 390 (class 1259 OID 17672)
+-- Name: vignettes_slides; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vignettes_slides (
+    id bigint NOT NULL,
+    title character varying NOT NULL,
+    vignettes_questionnaire_id bigint NOT NULL,
+    "position" integer NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 389 (class 1259 OID 17671)
+-- Name: vignettes_slides_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.vignettes_slides_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4744 (class 0 OID 0)
+-- Dependencies: 389
+-- Name: vignettes_slides_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.vignettes_slides_id_seq OWNED BY public.vignettes_slides.id;
+
+
+--
+-- TOC entry 396 (class 1259 OID 17720)
+-- Name: vignettes_user_answers; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vignettes_user_answers (
+    id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    vignettes_questionnaire_id bigint NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 395 (class 1259 OID 17719)
+-- Name: vignettes_user_answers_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.vignettes_user_answers_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 4745 (class 0 OID 0)
+-- Dependencies: 395
+-- Name: vignettes_user_answers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.vignettes_user_answers_id_seq OWNED BY public.vignettes_user_answers.id;
+
+
+--
+-- TOC entry 362 (class 1259 OID 16850)
 -- Name: votes; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2826,7 +3538,7 @@ CREATE TABLE public.votes (
 
 
 --
--- TOC entry 349 (class 1259 OID 26684)
+-- TOC entry 363 (class 1259 OID 16855)
 -- Name: votes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2839,8 +3551,8 @@ CREATE SEQUENCE public.votes_id_seq
 
 
 --
--- TOC entry 4416 (class 0 OID 0)
--- Dependencies: 349
+-- TOC entry 4746 (class 0 OID 0)
+-- Dependencies: 363
 -- Name: votes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2848,7 +3560,24 @@ ALTER SEQUENCE public.votes_id_seq OWNED BY public.votes.id;
 
 
 --
--- TOC entry 350 (class 1259 OID 26685)
+-- TOC entry 374 (class 1259 OID 17554)
+-- Name: vouchers; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.vouchers (
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    role integer NOT NULL,
+    lecture_id bigint NOT NULL,
+    secure_hash character varying NOT NULL,
+    invalidated_at timestamp(6) without time zone,
+    expires_at timestamp(6) without time zone,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- TOC entry 364 (class 1259 OID 16856)
 -- Name: vtt_containers; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2862,7 +3591,7 @@ CREATE TABLE public.vtt_containers (
 
 
 --
--- TOC entry 351 (class 1259 OID 26690)
+-- TOC entry 365 (class 1259 OID 16861)
 -- Name: vtt_containers_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2875,8 +3604,8 @@ CREATE SEQUENCE public.vtt_containers_id_seq
 
 
 --
--- TOC entry 4417 (class 0 OID 0)
--- Dependencies: 351
+-- TOC entry 4747 (class 0 OID 0)
+-- Dependencies: 365
 -- Name: vtt_containers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2884,7 +3613,7 @@ ALTER SEQUENCE public.vtt_containers_id_seq OWNED BY public.vtt_containers.id;
 
 
 --
--- TOC entry 359 (class 1259 OID 27282)
+-- TOC entry 366 (class 1259 OID 16862)
 -- Name: watchlist_entries; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2899,7 +3628,7 @@ CREATE TABLE public.watchlist_entries (
 
 
 --
--- TOC entry 358 (class 1259 OID 27281)
+-- TOC entry 367 (class 1259 OID 16865)
 -- Name: watchlist_entries_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2912,8 +3641,8 @@ CREATE SEQUENCE public.watchlist_entries_id_seq
 
 
 --
--- TOC entry 4418 (class 0 OID 0)
--- Dependencies: 358
+-- TOC entry 4748 (class 0 OID 0)
+-- Dependencies: 367
 -- Name: watchlist_entries_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2921,7 +3650,7 @@ ALTER SEQUENCE public.watchlist_entries_id_seq OWNED BY public.watchlist_entries
 
 
 --
--- TOC entry 357 (class 1259 OID 27275)
+-- TOC entry 368 (class 1259 OID 16866)
 -- Name: watchlists; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2938,7 +3667,7 @@ CREATE TABLE public.watchlists (
 
 
 --
--- TOC entry 356 (class 1259 OID 27274)
+-- TOC entry 369 (class 1259 OID 16872)
 -- Name: watchlists_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -2951,8 +3680,8 @@ CREATE SEQUENCE public.watchlists_id_seq
 
 
 --
--- TOC entry 4419 (class 0 OID 0)
--- Dependencies: 356
+-- TOC entry 4749 (class 0 OID 0)
+-- Dependencies: 369
 -- Name: watchlists_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
@@ -2960,7 +3689,47 @@ ALTER SEQUENCE public.watchlists_id_seq OWNED BY public.watchlists.id;
 
 
 --
--- TOC entry 3586 (class 2604 OID 26691)
+-- TOC entry 3864 (class 2604 OID 17649)
+-- Name: action_text_rich_texts id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.action_text_rich_texts ALTER COLUMN id SET DEFAULT nextval('public.action_text_rich_texts_id_seq'::regclass);
+
+
+--
+-- TOC entry 3862 (class 2604 OID 17618)
+-- Name: active_storage_attachments id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.active_storage_attachments ALTER COLUMN id SET DEFAULT nextval('public.active_storage_attachments_id_seq'::regclass);
+
+
+--
+-- TOC entry 3861 (class 2604 OID 17608)
+-- Name: active_storage_blobs id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.active_storage_blobs ALTER COLUMN id SET DEFAULT nextval('public.active_storage_blobs_id_seq'::regclass);
+
+
+--
+-- TOC entry 3863 (class 2604 OID 17634)
+-- Name: active_storage_variant_records id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.active_storage_variant_records ALTER COLUMN id SET DEFAULT nextval('public.active_storage_variant_records_id_seq'::regclass);
+
+
+--
+-- TOC entry 3856 (class 2604 OID 17533)
+-- Name: annotations id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.annotations ALTER COLUMN id SET DEFAULT nextval('public.annotations_id_seq'::regclass);
+
+
+--
+-- TOC entry 3730 (class 2604 OID 16873)
 -- Name: announcements id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2968,7 +3737,7 @@ ALTER TABLE ONLY public.announcements ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3587 (class 2604 OID 26692)
+-- TOC entry 3732 (class 2604 OID 16874)
 -- Name: answers id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2976,7 +3745,7 @@ ALTER TABLE ONLY public.answers ALTER COLUMN id SET DEFAULT nextval('public.answ
 
 
 --
--- TOC entry 3589 (class 2604 OID 26693)
+-- TOC entry 3733 (class 2604 OID 16875)
 -- Name: assignments id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2984,7 +3753,7 @@ ALTER TABLE ONLY public.assignments ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 3591 (class 2604 OID 26694)
+-- TOC entry 3736 (class 2604 OID 16876)
 -- Name: chapters id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2992,7 +3761,15 @@ ALTER TABLE ONLY public.chapters ALTER COLUMN id SET DEFAULT nextval('public.cha
 
 
 --
--- TOC entry 3592 (class 2604 OID 26695)
+-- TOC entry 3860 (class 2604 OID 17592)
+-- Name: claims id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.claims ALTER COLUMN id SET DEFAULT nextval('public.claims_id_seq'::regclass);
+
+
+--
+-- TOC entry 3737 (class 2604 OID 16877)
 -- Name: clicker_votes id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3000,7 +3777,7 @@ ALTER TABLE ONLY public.clicker_votes ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3593 (class 2604 OID 26696)
+-- TOC entry 3738 (class 2604 OID 16878)
 -- Name: clickers id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3008,7 +3785,7 @@ ALTER TABLE ONLY public.clickers ALTER COLUMN id SET DEFAULT nextval('public.cli
 
 
 --
--- TOC entry 3596 (class 2604 OID 26697)
+-- TOC entry 3739 (class 2604 OID 16879)
 -- Name: commontator_comments id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3016,7 +3793,7 @@ ALTER TABLE ONLY public.commontator_comments ALTER COLUMN id SET DEFAULT nextval
 
 
 --
--- TOC entry 3597 (class 2604 OID 26698)
+-- TOC entry 3742 (class 2604 OID 16880)
 -- Name: commontator_subscriptions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3024,7 +3801,7 @@ ALTER TABLE ONLY public.commontator_subscriptions ALTER COLUMN id SET DEFAULT ne
 
 
 --
--- TOC entry 3598 (class 2604 OID 26699)
+-- TOC entry 3743 (class 2604 OID 16881)
 -- Name: commontator_threads id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3032,7 +3809,7 @@ ALTER TABLE ONLY public.commontator_threads ALTER COLUMN id SET DEFAULT nextval(
 
 
 --
--- TOC entry 3599 (class 2604 OID 26700)
+-- TOC entry 3744 (class 2604 OID 16882)
 -- Name: course_self_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3040,7 +3817,7 @@ ALTER TABLE ONLY public.course_self_joins ALTER COLUMN id SET DEFAULT nextval('p
 
 
 --
--- TOC entry 3600 (class 2604 OID 26701)
+-- TOC entry 3745 (class 2604 OID 16883)
 -- Name: course_tag_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3048,7 +3825,7 @@ ALTER TABLE ONLY public.course_tag_joins ALTER COLUMN id SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 3602 (class 2604 OID 26703)
+-- TOC entry 3746 (class 2604 OID 16884)
 -- Name: courses id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3056,7 +3833,7 @@ ALTER TABLE ONLY public.courses ALTER COLUMN id SET DEFAULT nextval('public.cour
 
 
 --
--- TOC entry 3603 (class 2604 OID 26704)
+-- TOC entry 3748 (class 2604 OID 16885)
 -- Name: division_course_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3064,7 +3841,7 @@ ALTER TABLE ONLY public.division_course_joins ALTER COLUMN id SET DEFAULT nextva
 
 
 --
--- TOC entry 3604 (class 2604 OID 26705)
+-- TOC entry 3749 (class 2604 OID 16886)
 -- Name: division_translations id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3072,7 +3849,7 @@ ALTER TABLE ONLY public.division_translations ALTER COLUMN id SET DEFAULT nextva
 
 
 --
--- TOC entry 3605 (class 2604 OID 26706)
+-- TOC entry 3750 (class 2604 OID 16887)
 -- Name: divisions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3080,7 +3857,7 @@ ALTER TABLE ONLY public.divisions ALTER COLUMN id SET DEFAULT nextval('public.di
 
 
 --
--- TOC entry 3606 (class 2604 OID 26707)
+-- TOC entry 3751 (class 2604 OID 16888)
 -- Name: editable_user_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3088,7 +3865,15 @@ ALTER TABLE ONLY public.editable_user_joins ALTER COLUMN id SET DEFAULT nextval(
 
 
 --
--- TOC entry 3607 (class 2604 OID 26708)
+-- TOC entry 3854 (class 2604 OID 17517)
+-- Name: feedbacks id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.feedbacks ALTER COLUMN id SET DEFAULT nextval('public.feedbacks_id_seq'::regclass);
+
+
+--
+-- TOC entry 3752 (class 2604 OID 16889)
 -- Name: friendly_id_slugs id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3096,7 +3881,7 @@ ALTER TABLE ONLY public.friendly_id_slugs ALTER COLUMN id SET DEFAULT nextval('p
 
 
 --
--- TOC entry 3608 (class 2604 OID 26709)
+-- TOC entry 3753 (class 2604 OID 16890)
 -- Name: imports id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3104,7 +3889,7 @@ ALTER TABLE ONLY public.imports ALTER COLUMN id SET DEFAULT nextval('public.impo
 
 
 --
--- TOC entry 3609 (class 2604 OID 26710)
+-- TOC entry 3754 (class 2604 OID 16891)
 -- Name: item_self_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3112,7 +3897,7 @@ ALTER TABLE ONLY public.item_self_joins ALTER COLUMN id SET DEFAULT nextval('pub
 
 
 --
--- TOC entry 3610 (class 2604 OID 26711)
+-- TOC entry 3755 (class 2604 OID 16892)
 -- Name: items id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3120,7 +3905,7 @@ ALTER TABLE ONLY public.items ALTER COLUMN id SET DEFAULT nextval('public.items_
 
 
 --
--- TOC entry 3611 (class 2604 OID 26712)
+-- TOC entry 3756 (class 2604 OID 16893)
 -- Name: lecture_user_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3128,7 +3913,7 @@ ALTER TABLE ONLY public.lecture_user_joins ALTER COLUMN id SET DEFAULT nextval('
 
 
 --
--- TOC entry 3614 (class 2604 OID 26713)
+-- TOC entry 3757 (class 2604 OID 16894)
 -- Name: lectures id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3136,7 +3921,7 @@ ALTER TABLE ONLY public.lectures ALTER COLUMN id SET DEFAULT nextval('public.lec
 
 
 --
--- TOC entry 3616 (class 2604 OID 26714)
+-- TOC entry 3762 (class 2604 OID 16895)
 -- Name: lesson_section_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3144,7 +3929,7 @@ ALTER TABLE ONLY public.lesson_section_joins ALTER COLUMN id SET DEFAULT nextval
 
 
 --
--- TOC entry 3617 (class 2604 OID 26715)
+-- TOC entry 3763 (class 2604 OID 16896)
 -- Name: lesson_tag_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3152,7 +3937,7 @@ ALTER TABLE ONLY public.lesson_tag_joins ALTER COLUMN id SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 3618 (class 2604 OID 26716)
+-- TOC entry 3764 (class 2604 OID 16897)
 -- Name: lessons id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3160,7 +3945,7 @@ ALTER TABLE ONLY public.lessons ALTER COLUMN id SET DEFAULT nextval('public.less
 
 
 --
--- TOC entry 3619 (class 2604 OID 26717)
+-- TOC entry 3765 (class 2604 OID 16898)
 -- Name: links id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3168,7 +3953,7 @@ ALTER TABLE ONLY public.links ALTER COLUMN id SET DEFAULT nextval('public.links_
 
 
 --
--- TOC entry 3622 (class 2604 OID 26718)
+-- TOC entry 3766 (class 2604 OID 16899)
 -- Name: media id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3176,7 +3961,7 @@ ALTER TABLE ONLY public.media ALTER COLUMN id SET DEFAULT nextval('public.media_
 
 
 --
--- TOC entry 3623 (class 2604 OID 26719)
+-- TOC entry 3770 (class 2604 OID 16900)
 -- Name: medium_tag_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3184,7 +3969,7 @@ ALTER TABLE ONLY public.medium_tag_joins ALTER COLUMN id SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 3624 (class 2604 OID 26720)
+-- TOC entry 3771 (class 2604 OID 16901)
 -- Name: notifications id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3192,7 +3977,7 @@ ALTER TABLE ONLY public.notifications ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3625 (class 2604 OID 26721)
+-- TOC entry 3772 (class 2604 OID 16902)
 -- Name: notions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3200,7 +3985,7 @@ ALTER TABLE ONLY public.notions ALTER COLUMN id SET DEFAULT nextval('public.noti
 
 
 --
--- TOC entry 3626 (class 2604 OID 26722)
+-- TOC entry 3773 (class 2604 OID 16903)
 -- Name: program_translations id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3208,7 +3993,7 @@ ALTER TABLE ONLY public.program_translations ALTER COLUMN id SET DEFAULT nextval
 
 
 --
--- TOC entry 3627 (class 2604 OID 26723)
+-- TOC entry 3774 (class 2604 OID 16904)
 -- Name: programs id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3216,7 +4001,7 @@ ALTER TABLE ONLY public.programs ALTER COLUMN id SET DEFAULT nextval('public.pro
 
 
 --
--- TOC entry 3629 (class 2604 OID 26724)
+-- TOC entry 3776 (class 2604 OID 16905)
 -- Name: readers id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3224,7 +4009,15 @@ ALTER TABLE ONLY public.readers ALTER COLUMN id SET DEFAULT nextval('public.read
 
 
 --
--- TOC entry 3630 (class 2604 OID 26725)
+-- TOC entry 3859 (class 2604 OID 17573)
+-- Name: redemptions id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.redemptions ALTER COLUMN id SET DEFAULT nextval('public.redemptions_id_seq'::regclass);
+
+
+--
+-- TOC entry 3777 (class 2604 OID 16906)
 -- Name: referrals id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3232,7 +4025,7 @@ ALTER TABLE ONLY public.referrals ALTER COLUMN id SET DEFAULT nextval('public.re
 
 
 --
--- TOC entry 3631 (class 2604 OID 26726)
+-- TOC entry 3778 (class 2604 OID 16907)
 -- Name: relations id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3240,7 +4033,7 @@ ALTER TABLE ONLY public.relations ALTER COLUMN id SET DEFAULT nextval('public.re
 
 
 --
--- TOC entry 3632 (class 2604 OID 26727)
+-- TOC entry 3779 (class 2604 OID 16908)
 -- Name: section_tag_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3248,7 +4041,7 @@ ALTER TABLE ONLY public.section_tag_joins ALTER COLUMN id SET DEFAULT nextval('p
 
 
 --
--- TOC entry 3633 (class 2604 OID 26728)
+-- TOC entry 3780 (class 2604 OID 16909)
 -- Name: sections id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3256,7 +4049,7 @@ ALTER TABLE ONLY public.sections ALTER COLUMN id SET DEFAULT nextval('public.sec
 
 
 --
--- TOC entry 3701 (class 2604 OID 27255)
+-- TOC entry 3781 (class 2604 OID 16910)
 -- Name: speaker_talk_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3264,7 +4057,7 @@ ALTER TABLE ONLY public.speaker_talk_joins ALTER COLUMN id SET DEFAULT nextval('
 
 
 --
--- TOC entry 3634 (class 2604 OID 26729)
+-- TOC entry 3782 (class 2604 OID 16911)
 -- Name: subject_translations id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3272,7 +4065,7 @@ ALTER TABLE ONLY public.subject_translations ALTER COLUMN id SET DEFAULT nextval
 
 
 --
--- TOC entry 3635 (class 2604 OID 26730)
+-- TOC entry 3783 (class 2604 OID 16912)
 -- Name: subjects id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3280,7 +4073,7 @@ ALTER TABLE ONLY public.subjects ALTER COLUMN id SET DEFAULT nextval('public.sub
 
 
 --
--- TOC entry 3638 (class 2604 OID 26732)
+-- TOC entry 3786 (class 2604 OID 16913)
 -- Name: tags id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3288,7 +4081,7 @@ ALTER TABLE ONLY public.tags ALTER COLUMN id SET DEFAULT nextval('public.tags_id
 
 
 --
--- TOC entry 3705 (class 2604 OID 27316)
+-- TOC entry 3787 (class 2604 OID 16914)
 -- Name: talk_tag_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3296,7 +4089,7 @@ ALTER TABLE ONLY public.talk_tag_joins ALTER COLUMN id SET DEFAULT nextval('publ
 
 
 --
--- TOC entry 3698 (class 2604 OID 27242)
+-- TOC entry 3788 (class 2604 OID 16915)
 -- Name: talks id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3304,7 +4097,7 @@ ALTER TABLE ONLY public.talks ALTER COLUMN id SET DEFAULT nextval('public.talks_
 
 
 --
--- TOC entry 3640 (class 2604 OID 26733)
+-- TOC entry 3791 (class 2604 OID 16916)
 -- Name: terms id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3312,7 +4105,7 @@ ALTER TABLE ONLY public.terms ALTER COLUMN id SET DEFAULT nextval('public.terms_
 
 
 --
--- TOC entry 3641 (class 2604 OID 26734)
+-- TOC entry 3793 (class 2604 OID 16917)
 -- Name: thredded_categories id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3320,7 +4113,7 @@ ALTER TABLE ONLY public.thredded_categories ALTER COLUMN id SET DEFAULT nextval(
 
 
 --
--- TOC entry 3642 (class 2604 OID 26735)
+-- TOC entry 3794 (class 2604 OID 16918)
 -- Name: thredded_messageboard_groups id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3328,7 +4121,7 @@ ALTER TABLE ONLY public.thredded_messageboard_groups ALTER COLUMN id SET DEFAULT
 
 
 --
--- TOC entry 3644 (class 2604 OID 26736)
+-- TOC entry 3795 (class 2604 OID 16919)
 -- Name: thredded_messageboard_notifications_for_followed_topics id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3336,7 +4129,7 @@ ALTER TABLE ONLY public.thredded_messageboard_notifications_for_followed_topics 
 
 
 --
--- TOC entry 3645 (class 2604 OID 26737)
+-- TOC entry 3797 (class 2604 OID 16920)
 -- Name: thredded_messageboard_users id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3344,7 +4137,7 @@ ALTER TABLE ONLY public.thredded_messageboard_users ALTER COLUMN id SET DEFAULT 
 
 
 --
--- TOC entry 3649 (class 2604 OID 26738)
+-- TOC entry 3798 (class 2604 OID 16921)
 -- Name: thredded_messageboards id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3352,7 +4145,7 @@ ALTER TABLE ONLY public.thredded_messageboards ALTER COLUMN id SET DEFAULT nextv
 
 
 --
--- TOC entry 3651 (class 2604 OID 26739)
+-- TOC entry 3802 (class 2604 OID 16922)
 -- Name: thredded_notifications_for_followed_topics id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3360,7 +4153,7 @@ ALTER TABLE ONLY public.thredded_notifications_for_followed_topics ALTER COLUMN 
 
 
 --
--- TOC entry 3653 (class 2604 OID 26740)
+-- TOC entry 3804 (class 2604 OID 16923)
 -- Name: thredded_notifications_for_private_topics id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3368,7 +4161,7 @@ ALTER TABLE ONLY public.thredded_notifications_for_private_topics ALTER COLUMN i
 
 
 --
--- TOC entry 3654 (class 2604 OID 26741)
+-- TOC entry 3806 (class 2604 OID 16924)
 -- Name: thredded_post_moderation_records id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3376,7 +4169,7 @@ ALTER TABLE ONLY public.thredded_post_moderation_records ALTER COLUMN id SET DEF
 
 
 --
--- TOC entry 3656 (class 2604 OID 26742)
+-- TOC entry 3807 (class 2604 OID 16925)
 -- Name: thredded_posts id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3384,7 +4177,7 @@ ALTER TABLE ONLY public.thredded_posts ALTER COLUMN id SET DEFAULT nextval('publ
 
 
 --
--- TOC entry 3657 (class 2604 OID 26743)
+-- TOC entry 3809 (class 2604 OID 16926)
 -- Name: thredded_private_posts id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3392,7 +4185,7 @@ ALTER TABLE ONLY public.thredded_private_posts ALTER COLUMN id SET DEFAULT nextv
 
 
 --
--- TOC entry 3659 (class 2604 OID 26744)
+-- TOC entry 3810 (class 2604 OID 16927)
 -- Name: thredded_private_topics id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3400,7 +4193,7 @@ ALTER TABLE ONLY public.thredded_private_topics ALTER COLUMN id SET DEFAULT next
 
 
 --
--- TOC entry 3660 (class 2604 OID 26745)
+-- TOC entry 3812 (class 2604 OID 16928)
 -- Name: thredded_private_users id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3408,7 +4201,7 @@ ALTER TABLE ONLY public.thredded_private_users ALTER COLUMN id SET DEFAULT nextv
 
 
 --
--- TOC entry 3661 (class 2604 OID 26746)
+-- TOC entry 3813 (class 2604 OID 16929)
 -- Name: thredded_topic_categories id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3416,7 +4209,7 @@ ALTER TABLE ONLY public.thredded_topic_categories ALTER COLUMN id SET DEFAULT ne
 
 
 --
--- TOC entry 3665 (class 2604 OID 26747)
+-- TOC entry 3814 (class 2604 OID 16930)
 -- Name: thredded_topics id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3424,7 +4217,7 @@ ALTER TABLE ONLY public.thredded_topics ALTER COLUMN id SET DEFAULT nextval('pub
 
 
 --
--- TOC entry 3669 (class 2604 OID 26748)
+-- TOC entry 3818 (class 2604 OID 16931)
 -- Name: thredded_user_details id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3432,7 +4225,7 @@ ALTER TABLE ONLY public.thredded_user_details ALTER COLUMN id SET DEFAULT nextva
 
 
 --
--- TOC entry 3672 (class 2604 OID 26749)
+-- TOC entry 3822 (class 2604 OID 16932)
 -- Name: thredded_user_messageboard_preferences id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3440,7 +4233,7 @@ ALTER TABLE ONLY public.thredded_user_messageboard_preferences ALTER COLUMN id S
 
 
 --
--- TOC entry 3673 (class 2604 OID 26750)
+-- TOC entry 3825 (class 2604 OID 16933)
 -- Name: thredded_user_post_notifications id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3448,7 +4241,7 @@ ALTER TABLE ONLY public.thredded_user_post_notifications ALTER COLUMN id SET DEF
 
 
 --
--- TOC entry 3676 (class 2604 OID 26751)
+-- TOC entry 3826 (class 2604 OID 16934)
 -- Name: thredded_user_preferences id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3456,7 +4249,7 @@ ALTER TABLE ONLY public.thredded_user_preferences ALTER COLUMN id SET DEFAULT ne
 
 
 --
--- TOC entry 3680 (class 2604 OID 26752)
+-- TOC entry 3829 (class 2604 OID 16935)
 -- Name: thredded_user_private_topic_read_states id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3464,7 +4257,7 @@ ALTER TABLE ONLY public.thredded_user_private_topic_read_states ALTER COLUMN id 
 
 
 --
--- TOC entry 3681 (class 2604 OID 26753)
+-- TOC entry 3833 (class 2604 OID 16936)
 -- Name: thredded_user_topic_follows id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3472,7 +4265,7 @@ ALTER TABLE ONLY public.thredded_user_topic_follows ALTER COLUMN id SET DEFAULT 
 
 
 --
--- TOC entry 3685 (class 2604 OID 26754)
+-- TOC entry 3834 (class 2604 OID 16937)
 -- Name: thredded_user_topic_read_states id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3480,7 +4273,7 @@ ALTER TABLE ONLY public.thredded_user_topic_read_states ALTER COLUMN id SET DEFA
 
 
 --
--- TOC entry 3686 (class 2604 OID 26755)
+-- TOC entry 3838 (class 2604 OID 16938)
 -- Name: tutor_tutorial_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3488,7 +4281,7 @@ ALTER TABLE ONLY public.tutor_tutorial_joins ALTER COLUMN id SET DEFAULT nextval
 
 
 --
--- TOC entry 3687 (class 2604 OID 26756)
+-- TOC entry 3839 (class 2604 OID 16939)
 -- Name: tutorials id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3496,7 +4289,7 @@ ALTER TABLE ONLY public.tutorials ALTER COLUMN id SET DEFAULT nextval('public.tu
 
 
 --
--- TOC entry 3688 (class 2604 OID 26757)
+-- TOC entry 3840 (class 2604 OID 16940)
 -- Name: user_favorite_lecture_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3504,7 +4297,7 @@ ALTER TABLE ONLY public.user_favorite_lecture_joins ALTER COLUMN id SET DEFAULT 
 
 
 --
--- TOC entry 3689 (class 2604 OID 26758)
+-- TOC entry 3841 (class 2604 OID 16941)
 -- Name: user_submission_joins id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3512,7 +4305,7 @@ ALTER TABLE ONLY public.user_submission_joins ALTER COLUMN id SET DEFAULT nextva
 
 
 --
--- TOC entry 3695 (class 2604 OID 26759)
+-- TOC entry 3842 (class 2604 OID 16942)
 -- Name: users id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3520,7 +4313,87 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 
 --
--- TOC entry 3696 (class 2604 OID 26760)
+-- TOC entry 3873 (class 2604 OID 17742)
+-- Name: vignettes_answers id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_answers ALTER COLUMN id SET DEFAULT nextval('public.vignettes_answers_id_seq'::regclass);
+
+
+--
+-- TOC entry 3876 (class 2604 OID 17810)
+-- Name: vignettes_codenames id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_codenames ALTER COLUMN id SET DEFAULT nextval('public.vignettes_codenames_id_seq'::regclass);
+
+
+--
+-- TOC entry 3877 (class 2604 OID 17831)
+-- Name: vignettes_completion_messages id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_completion_messages ALTER COLUMN id SET DEFAULT nextval('public.vignettes_completion_messages_id_seq'::regclass);
+
+
+--
+-- TOC entry 3874 (class 2604 OID 17774)
+-- Name: vignettes_info_slides id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_info_slides ALTER COLUMN id SET DEFAULT nextval('public.vignettes_info_slides_id_seq'::regclass);
+
+
+--
+-- TOC entry 3871 (class 2604 OID 17708)
+-- Name: vignettes_options id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_options ALTER COLUMN id SET DEFAULT nextval('public.vignettes_options_id_seq'::regclass);
+
+
+--
+-- TOC entry 3865 (class 2604 OID 17659)
+-- Name: vignettes_questionnaires id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_questionnaires ALTER COLUMN id SET DEFAULT nextval('public.vignettes_questionnaires_id_seq'::regclass);
+
+
+--
+-- TOC entry 3868 (class 2604 OID 17691)
+-- Name: vignettes_questions id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_questions ALTER COLUMN id SET DEFAULT nextval('public.vignettes_questions_id_seq'::regclass);
+
+
+--
+-- TOC entry 3875 (class 2604 OID 17784)
+-- Name: vignettes_slide_statistics id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_slide_statistics ALTER COLUMN id SET DEFAULT nextval('public.vignettes_slide_statistics_id_seq'::regclass);
+
+
+--
+-- TOC entry 3867 (class 2604 OID 17675)
+-- Name: vignettes_slides id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_slides ALTER COLUMN id SET DEFAULT nextval('public.vignettes_slides_id_seq'::regclass);
+
+
+--
+-- TOC entry 3872 (class 2604 OID 17723)
+-- Name: vignettes_user_answers id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_user_answers ALTER COLUMN id SET DEFAULT nextval('public.vignettes_user_answers_id_seq'::regclass);
+
+
+--
+-- TOC entry 3849 (class 2604 OID 16943)
 -- Name: votes id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3528,7 +4401,7 @@ ALTER TABLE ONLY public.votes ALTER COLUMN id SET DEFAULT nextval('public.votes_
 
 
 --
--- TOC entry 3697 (class 2604 OID 26761)
+-- TOC entry 3850 (class 2604 OID 16944)
 -- Name: vtt_containers id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3536,7 +4409,7 @@ ALTER TABLE ONLY public.vtt_containers ALTER COLUMN id SET DEFAULT nextval('publ
 
 
 --
--- TOC entry 3704 (class 2604 OID 27285)
+-- TOC entry 3851 (class 2604 OID 16945)
 -- Name: watchlist_entries id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3544,7 +4417,7 @@ ALTER TABLE ONLY public.watchlist_entries ALTER COLUMN id SET DEFAULT nextval('p
 
 
 --
--- TOC entry 3702 (class 2604 OID 27278)
+-- TOC entry 3852 (class 2604 OID 16946)
 -- Name: watchlists id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3552,8 +4425,76 @@ ALTER TABLE ONLY public.watchlists ALTER COLUMN id SET DEFAULT nextval('public.w
 
 
 --
--- TOC entry 4188 (class 0 OID 26274)
--- Dependencies: 210
+-- TOC entry 4629 (class 0 OID 17646)
+-- Dependencies: 386
+-- Data for Name: action_text_rich_texts; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.action_text_rich_texts (id, name, body, record_type, record_id, created_at, updated_at) FROM stdin;
+7	content	<div><action-text-attachment sgid="eyJfcmFpbHMiOnsiZGF0YSI6ImdpZDovL21hbXBmL0FjdGl2ZVN0b3JhZ2U6OkJsb2IvNj9leHBpcmVzX2luIiwicHVyIjoiYXR0YWNoYWJsZSJ9fQ==--615d6ebbec4c72a2331d1c80b1b8e3cec4d58f16" content-type="image/jpeg" url="http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NiwicHVyIjoiYmxvYl9pZCJ9fQ==--fd958f5a679f7aa955027eb1aa21be0072bca9cf/tastatur.jpg" filename="tastatur.jpg" filesize="1402645" width="3950" height="1584" presentation="gallery"></action-text-attachment></div>	Vignettes::Slide	5	2025-07-14 15:11:22.019999	2025-07-14 15:11:22.052028
+8	content		Vignettes::Slide	6	2025-07-14 15:11:52.251469	2025-07-14 15:11:52.251469
+5	content	<div>Bitte durchlesen!</div>	Vignettes::InfoSlide	2	2025-07-14 15:09:29.115796	2025-07-14 15:09:29.115796
+6	content	<div>Toller Inhalt.<action-text-attachment sgid="eyJfcmFpbHMiOnsiZGF0YSI6ImdpZDovL21hbXBmL0FjdGl2ZVN0b3JhZ2U6OkJsb2IvNT9leHBpcmVzX2luIiwicHVyIjoiYXR0YWNoYWJsZSJ9fQ==--607d17d7c9e4312b77c26c8f48d3610916e6df8a" content-type="image/png" url="http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NSwicHVyIjoiYmxvYl9pZCJ9fQ==--4eb9e75cf64bea211cf6c53313b82b6d4d7df597/Screenshot%202025-06-03%20172757.png" filename="Screenshot 2025-06-03 172757.png" filesize="25125" width="708" height="316" presentation="gallery"></action-text-attachment></div>	Vignettes::Slide	4	2025-07-14 15:10:15.628111	2025-07-14 15:10:15.678124
+\.
+
+
+--
+-- TOC entry 4625 (class 0 OID 17615)
+-- Dependencies: 382
+-- Data for Name: active_storage_attachments; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.active_storage_attachments (id, name, record_type, record_id, blob_id, created_at) FROM stdin;
+5	embeds	ActionText::RichText	6	5	2025-07-14 15:10:15.637747
+6	embeds	ActionText::RichText	7	6	2025-07-14 15:11:22.026505
+7	image	ActiveStorage::VariantRecord	3	7	2025-07-14 15:12:18.737584
+8	image	ActiveStorage::VariantRecord	4	8	2025-07-14 15:12:42.431624
+\.
+
+
+--
+-- TOC entry 4623 (class 0 OID 17605)
+-- Dependencies: 380
+-- Data for Name: active_storage_blobs; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.active_storage_blobs (id, key, filename, content_type, metadata, service_name, byte_size, checksum, created_at) FROM stdin;
+5	qgzgwq1dc5858lg1wzdhace37i48	Screenshot 2025-06-03 172757.png	image/png	{"identified":true,"width":708,"height":316,"analyzed":true}	development	25125	KCnVXo3CVnb3jSCvOweGeA==	2025-07-14 15:10:08.464248
+6	dn46q40a36irllg85e4on7fn990w	tastatur.jpg	image/jpeg	{"identified":true,"width":3950,"height":1584,"analyzed":true}	development	1402645	tfC5FiG/ILRsq1xUkvCG9A==	2025-07-14 15:11:18.915158
+7	errb2kvp1x0ftm0q46hbcz8fk4ym	Screenshot 2025-06-03 172757.png	image/png	{"identified":true,"width":708,"height":316,"analyzed":true}	development	22038	gQPC5tgnMHWELlip5A7eNg==	2025-07-14 15:12:18.736021
+8	5it2sori3mauv68avn2tuob08zps	tastatur.jpg	image/jpeg	{"identified":true,"width":1024,"height":411,"analyzed":true}	development	74117	ekLcjqhoQ+9o8UsapSq8oA==	2025-07-14 15:12:42.428673
+\.
+
+
+--
+-- TOC entry 4627 (class 0 OID 17631)
+-- Dependencies: 384
+-- Data for Name: active_storage_variant_records; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.active_storage_variant_records (id, blob_id, variation_digest) FROM stdin;
+3	5	wjqVtOuFppDd1oEBBMUc2TyD8vk=
+4	6	g9oDsuZ2Ke1OimlPvx7V2sj306E=
+\.
+
+
+--
+-- TOC entry 4616 (class 0 OID 17530)
+-- Dependencies: 373
+-- Data for Name: annotations; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.annotations (id, medium_id, user_id, "timestamp", comment, color, category, subcategory, visible_for_teacher, public_comment_id, created_at, updated_at) FROM stdin;
+1	9	7	--- !ruby/object:TimeStamp\nmilliseconds: 284\nminutes: 0\nseconds: 11\nhours: 0\n	Die Rechnung muss ich mir mal in Ruhe später ansehen.	#F2711C	0	\N	t	\N	2025-07-14 11:25:30.853804	2025-07-14 11:25:30.853804
+2	9	7	--- !ruby/object:TimeStamp\nmilliseconds: 448\nminutes: 0\nseconds: 19\nhours: 0\n	\N	#21BA45	0	\N	f	8	2025-07-14 11:26:44.703541	2025-07-14 11:26:44.716281
+3	9	7	--- !ruby/object:TimeStamp\nmilliseconds: 616\nminutes: 0\nseconds: 39\nhours: 0\n	Ganz schöne Sauklaue.	#D05D41	3	\N	t	\N	2025-07-14 11:27:07.83318	2025-07-14 11:27:07.83318
+4	9	8	--- !ruby/object:TimeStamp\nmilliseconds: 910\nminutes: 0\nseconds: 24\nhours: 0\n	Hä?	#00B5AD	1	1	t	\N	2025-07-14 11:31:11.663613	2025-07-14 11:31:11.663613
+\.
+
+
+--
+-- TOC entry 4461 (class 0 OID 16432)
+-- Dependencies: 218
 -- Data for Name: announcements; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3566,8 +4507,8 @@ COPY public.announcements (id, lecture_id, announcer_id, details, created_at, up
 
 
 --
--- TOC entry 4190 (class 0 OID 26281)
--- Dependencies: 212
+-- TOC entry 4463 (class 0 OID 16439)
+-- Dependencies: 220
 -- Data for Name: answers; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3615,51 +4556,64 @@ COPY public.answers (id, text, value, explanation, created_at, updated_at, quest
 
 
 --
--- TOC entry 4192 (class 0 OID 26287)
--- Dependencies: 214
+-- TOC entry 4465 (class 0 OID 16445)
+-- Dependencies: 222
 -- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.ar_internal_metadata (key, value, created_at, updated_at) FROM stdin;
-environment	docker_development	2020-07-24 13:03:53.932392	2020-07-24 13:03:53.932392
+environment	development	2020-07-24 13:03:53.932392	2025-07-14 10:42:06.530578
 \.
 
 
 --
--- TOC entry 4193 (class 0 OID 26292)
--- Dependencies: 215
+-- TOC entry 4466 (class 0 OID 16450)
+-- Dependencies: 223
 -- Data for Name: assignments; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.assignments (id, lecture_id, medium_id, title, deadline, created_at, updated_at, accepted_file_type, deletion_date) FROM stdin;
-1	1	12	Blatt 4	2020-11-28 16:50:00	2020-11-28 16:32:30.987364	2020-11-28 16:49:59.902518	.pdf	2020-10-15
-2	1	45	Blatt 5	2021-03-28 16:00:00	2020-11-28 16:54:41.933526	2020-11-28 16:54:41.933526	.pdf	2020-10-15
-3	1	12	Blatt 6	2022-08-07 17:00:00	2022-08-05 14:49:41.819884	2022-08-05 14:49:41.819884	.pdf	2023-04-14
+2	1	45	Blatt 5	2025-05-09 16:00:00	2020-11-28 16:54:41.933526	2025-07-14 11:05:22.969571	.pdf	2025-10-15
+1	1	12	Blatt 4	2025-05-01 15:50:00	2020-11-28 16:32:30.987364	2025-07-14 11:05:48.488131	.pdf	2025-10-15
+3	1	45	Blatt 6	2025-09-03 17:00:00	2022-08-05 14:49:41.819884	2025-07-14 11:06:21.422622	.pdf	2025-10-15
 \.
 
 
 --
--- TOC entry 4195 (class 0 OID 26299)
--- Dependencies: 217
+-- TOC entry 4468 (class 0 OID 16458)
+-- Dependencies: 225
 -- Data for Name: chapters; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.chapters (id, lecture_id, title, created_at, updated_at, "position", display_number, hidden, details) FROM stdin;
-6	3	Inzidenzgeometrie	2020-07-24 17:04:34.200541	2020-07-24 17:05:02.885966	2	\N	\N	\N
-7	3	Hilbertebenen	2020-07-24 17:04:34.220647	2020-07-24 17:05:02.885966	3	\N	\N	\N
-8	3	Euklidische Geometrie	2020-07-24 17:04:34.241839	2020-07-24 17:05:02.885966	4	\N	\N	\N
-9	3	Nichteuklidische Geometrie	2020-07-24 17:04:34.263575	2020-07-24 17:05:02.885966	5	\N	\N	\N
-5	3	Analytische Geometrie	2020-07-24 17:04:34.178653	2020-07-24 17:05:02.885966	1	\N	\N	\N
-4	2	Einführung	2020-07-24 16:52:55.533057	2022-08-05 14:06:57.253776	1	\N	\N	\N
-1	1	Unitäre Räume und der Spektralsatz	2020-07-24 13:17:57.127274	2022-09-20 10:34:42.714363	1	\N	\N	\N
-2	1	Ringe	2020-07-24 13:18:08.753046	2022-09-20 10:34:42.714363	2	\N	\N	\N
-3	1	Normalformen von Endomorphismen	2020-07-24 13:18:28.913528	2022-09-20 10:34:42.714363	3	\N	\N	\N
+1	1	Unitäre Räume und der Spektralsatz	2020-07-24 13:17:57.127274	2025-07-14 10:50:08.885313	1	\N	\N	\N
+3	1	Normalformen von Endomorphismen	2020-07-24 13:18:28.913528	2025-07-14 10:57:51.353522	3	\N	\N	\N
+2	1	Ringe	2020-07-24 13:18:08.753046	2025-07-14 11:01:53.20273	2	\N	\N	\N
+6	3	Inzidenzgeometrie	2020-07-24 17:04:34.200541	2025-07-14 11:09:05.147181	2	\N	\N	\N
+7	3	Hilbertebenen	2020-07-24 17:04:34.220647	2025-07-14 11:09:05.147181	3	\N	\N	\N
+8	3	Euklidische Geometrie	2020-07-24 17:04:34.241839	2025-07-14 11:09:05.147181	4	\N	\N	\N
+9	3	Nichteuklidische Geometrie	2020-07-24 17:04:34.263575	2025-07-14 11:09:05.147181	5	\N	\N	\N
+5	3	Analytische Geometrie	2020-07-24 17:04:34.178653	2025-07-14 11:09:05.147181	1	\N	\N	\N
+4	2	Einführung	2020-07-24 16:52:55.533057	2025-07-14 11:12:42.261212	1	\N	\N	\N
 \.
 
 
 --
--- TOC entry 4197 (class 0 OID 26305)
--- Dependencies: 219
+-- TOC entry 4621 (class 0 OID 17589)
+-- Dependencies: 378
+-- Data for Name: claims; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.claims (id, redemption_id, claimable_type, claimable_id, created_at, updated_at) FROM stdin;
+1	1	Talk	2	2025-07-15 12:11:14.690491	2025-07-15 12:11:14.690491
+2	2	Talk	2	2025-07-15 12:11:39.225067	2025-07-15 12:11:39.225067
+3	3	Talk	3	2025-07-15 12:11:59.002407	2025-07-15 12:11:59.002407
+\.
+
+
+--
+-- TOC entry 4470 (class 0 OID 16464)
+-- Dependencies: 227
 -- Data for Name: clicker_votes; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3668,8 +4622,8 @@ COPY public.clicker_votes (id, value, clicker_id, created_at, updated_at) FROM s
 
 
 --
--- TOC entry 4199 (class 0 OID 26309)
--- Dependencies: 221
+-- TOC entry 4472 (class 0 OID 16468)
+-- Dependencies: 229
 -- Data for Name: clickers; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3678,21 +4632,26 @@ COPY public.clickers (id, editor_id, question_id, code, created_at, updated_at, 
 
 
 --
--- TOC entry 4201 (class 0 OID 26315)
--- Dependencies: 223
+-- TOC entry 4474 (class 0 OID 16474)
+-- Dependencies: 231
 -- Data for Name: commontator_comments; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.commontator_comments (id, thread_id, creator_type, creator_id, editor_type, editor_id, body, deleted_at, cached_votes_up, cached_votes_down, created_at, updated_at, parent_id) FROM stdin;
 3	11	User	5	User	5	Mistake in line 3. Please correct!	\N	1	0	2022-08-05 13:39:19.597298	2022-08-05 13:59:15.135944	\N
 4	11	User	6	User	6	Yes, it should be: "Let $f : G \\to H$ be a group homomorphism" and not "Let $f : H \\to G$ be a group homomorphism".	\N	0	0	2022-08-05 13:41:25.73298	2022-08-05 14:00:28.792243	3
-5	39	User	6	User	6	The script sucks!	\N	0	0	2022-08-05 13:42:38.790462	2022-08-05 14:03:59.866379	\N
+5	39	User	6	User	2	The script sucks!	2025-07-14 11:22:37.639036	0	0	2022-08-05 13:42:38.790462	2025-07-14 11:22:37.642746	\N
+6	10	User	7	\N	\N	Ich versteh das alles nicht.	\N	0	0	2025-07-14 11:23:54.813143	2025-07-14 11:23:54.813143	\N
+7	8	User	7	\N	\N	Das scheint alles falsch zu sein.	\N	0	0	2025-07-14 11:24:08.39051	2025-07-14 11:24:08.39051	\N
+8	9	User	7	\N	\N	Die Umformung verstehe ich nicht. Können Sie das nochmal erklären?	\N	0	0	2025-07-14 11:26:44.700756	2025-07-14 11:26:44.700756	\N
+9	9	User	2	\N	\N	Nö. Ist doch offensichtlich.	\N	0	0	2025-07-14 11:29:09.689494	2025-07-14 11:29:09.689494	8
+10	9	User	8	\N	\N	Nicht nett!	\N	0	0	2025-07-14 11:30:38.539342	2025-07-14 11:30:38.539342	9
 \.
 
 
 --
--- TOC entry 4203 (class 0 OID 26323)
--- Dependencies: 225
+-- TOC entry 4476 (class 0 OID 16482)
+-- Dependencies: 233
 -- Data for Name: commontator_subscriptions; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3701,8 +4660,8 @@ COPY public.commontator_subscriptions (id, thread_id, subscriber_type, subscribe
 
 
 --
--- TOC entry 4205 (class 0 OID 26329)
--- Dependencies: 227
+-- TOC entry 4478 (class 0 OID 16488)
+-- Dependencies: 235
 -- Data for Name: commontator_threads; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3757,12 +4716,13 @@ COPY public.commontator_threads (id, commontable_type, commontable_id, closer_ty
 49	Medium	49	\N	\N	\N	2022-08-05 14:33:54.451435	2022-08-05 14:33:54.451435
 50	Medium	50	\N	\N	\N	2022-08-05 14:34:37.277142	2022-08-05 14:34:37.277142
 51	Medium	51	\N	\N	\N	2022-08-05 14:35:35.037828	2022-08-05 14:35:35.037828
+52	Medium	52	\N	\N	\N	2025-07-15 12:12:56.403872	2025-07-15 12:12:56.403872
 \.
 
 
 --
--- TOC entry 4207 (class 0 OID 26335)
--- Dependencies: 229
+-- TOC entry 4480 (class 0 OID 16494)
+-- Dependencies: 237
 -- Data for Name: course_self_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3771,8 +4731,8 @@ COPY public.course_self_joins (id, course_id, preceding_course_id, created_at, u
 
 
 --
--- TOC entry 4209 (class 0 OID 26339)
--- Dependencies: 231
+-- TOC entry 4482 (class 0 OID 16498)
+-- Dependencies: 239
 -- Data for Name: course_tag_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3822,27 +4782,32 @@ COPY public.course_tag_joins (id, course_id, tag_id, created_at, updated_at) FRO
 43	1	43	2020-09-02 09:52:36.082389	2020-09-02 09:52:36.082389
 44	2	44	2022-08-05 13:29:45.50487	2022-08-05 13:29:45.50487
 45	2	45	2022-08-05 13:30:12.629886	2022-08-05 13:30:12.629886
+46	10	46	2025-07-15 12:04:34.672335	2025-07-15 12:04:34.672335
+47	10	47	2025-07-15 12:05:40.385413	2025-07-15 12:05:40.385413
+48	10	48	2025-07-15 12:08:23.033734	2025-07-15 12:08:23.033734
 \.
 
 
 --
--- TOC entry 4211 (class 0 OID 26347)
--- Dependencies: 233
+-- TOC entry 4484 (class 0 OID 16502)
+-- Dependencies: 241
 -- Data for Name: courses; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.courses (id, title, created_at, updated_at, short_title, organizational, organizational_concept, locale, term_independent, image_data) FROM stdin;
 4	Helpdesk	2020-08-10 12:54:28.387314	2020-09-07 12:25:44.679002	HD	f	<div>Hier sollte der Text stehen.&nbsp;</div>	\N	t	{"id":"course/4/image/80c00f71d63f21d92020a936eeecc728.png","storage":"store","metadata":{"filename":"helpdesk.png","size":30867,"mime_type":"image/png","width":900,"height":600},"derivatives":{"normalized":{"id":"course/4/image/normalized-aa71fdb577d70fde1083f216ce8563d9.png","storage":"store","metadata":{"filename":"image_processing20200907-1-1w6el95.png","size":18019,"mime_type":"image/png","width":405,"height":270}}}}
 6	Analysis 2	2020-08-11 11:44:11.176117	2020-09-07 12:26:21.527624	Ana 2	f	<div>Hier sollte der Text stehen.&nbsp;</div>	\N	t	{"id":"course/6/image/7d24a01da797ce8669eaab17e3bc45da.png","storage":"store","metadata":{"filename":"ana2.png","size":269867,"mime_type":"image/png","width":900,"height":600},"derivatives":{"normalized":{"id":"course/6/image/normalized-afa8ff83b44f99b73400537d57837766.png","storage":"store","metadata":{"filename":"image_processing20200907-1-16ceokm.png","size":69514,"mime_type":"image/png","width":405,"height":270}}}}
-1	Lineare Algebra 2	2020-07-24 13:12:16.486836	2020-11-28 16:23:47.421142	LA 2	t	<div><strong>Code<br></strong>MA5<br><strong><br>Leistungspunkte<br></strong>8 LP<strong><br><br>Turnus<br></strong>jährlich im Sommer<br><strong><br>Inhalt<br></strong>Ringe und Ideale, Moduln und Homomorphismen, Basis und Rang, direkte Summen und Produkte, Tensorprodukt, äußere und symmetrische Potenzen und Determinanten, Moduln über Hauptidealringen, Elementarteilertheorie, Normalformen von Endomorphismen, verallgemeinerte Eigenräume, Jordansche Normalform, nilpotente und halbeinfache Endomorphismen<br><br><strong>Lernziele</strong></div><ul><li>Vertiefende Kenntnisse der Linearen Algebra</li><li>Fähigkeit zum selbständigen Beweisen von Aussagen und Lösen von Aufgaben aus dem Themenbereich und zur schriftlichen und mündlichen Darstellung der Ergebnisse.&nbsp;</li></ul>	\N	f	{"id":"course/1/image/bfb434f11f4a6497215deac1c697070a.png","storage":"store","metadata":{"filename":"la2.png","size":26525,"mime_type":"image/png","width":900,"height":600},"derivatives":{"normalized":{"id":"course/1/image/normalized-311085190da94b42debb1be7692d0c3f.png","storage":"store","metadata":{"filename":"image_processing20200907-1-q5pu9w.png","size":6381,"mime_type":"image/png","width":405,"height":270}}}}
 3	Einführung in die Geometrie	2020-07-24 17:00:32.17088	2022-08-05 14:04:31.601177	Geo	f	<div>Hier sollte der Text stehen.&nbsp;</div>	\N	f	{"id":"course/3/image/56a232dfe44377a5ca931c1795aa5961.png","storage":"store","metadata":{"filename":"geo.png","size":73632,"mime_type":"image/png","width":900,"height":600},"derivatives":{"normalized":{"id":"course/3/image/normalized-e18ecac8857423650c300b6efe0bf166.png","storage":"store","metadata":{"filename":"image_processing20200907-1-ta0s1a.png","size":28943,"mime_type":"image/png","width":405,"height":270}}}}
 2	Algebra 1	2020-07-24 16:51:16.294796	2022-08-05 15:10:44.122858	Alg 1	f	<div>Hier sollte der Text stehen.&nbsp;</div>	\N	f	{"id":"course/2/image/120c081f6b2ff912c6780eb019513ab5.png","storage":"store","metadata":{"filename":"alg1.png","size":45268,"mime_type":"image/png","width":900,"height":600},"derivatives":{"normalized":{"id":"course/2/image/normalized-cc8984eb278d816596ba6e04d68bbf05.png","storage":"store","metadata":{"filename":"image_processing20200907-1-p61xj5.png","size":18109,"mime_type":"image/png","width":405,"height":270}}}}
+1	Lineare Algebra 2	2020-07-24 13:12:16.486836	2025-07-14 11:01:53.21293	LA 2	t	<div><strong>Code<br></strong>MA5<br><strong><br>Leistungspunkte<br></strong>8 LP<strong><br><br>Turnus<br></strong>jährlich im Sommer<br><strong><br>Inhalt<br></strong>Ringe und Ideale, Moduln und Homomorphismen, Basis und Rang, direkte Summen und Produkte, Tensorprodukt, äußere und symmetrische Potenzen und Determinanten, Moduln über Hauptidealringen, Elementarteilertheorie, Normalformen von Endomorphismen, verallgemeinerte Eigenräume, Jordansche Normalform, nilpotente und halbeinfache Endomorphismen<br><br><strong>Lernziele</strong></div><ul><li>Vertiefende Kenntnisse der Linearen Algebra</li><li>Fähigkeit zum selbständigen Beweisen von Aussagen und Lösen von Aufgaben aus dem Themenbereich und zur schriftlichen und mündlichen Darstellung der Ergebnisse.&nbsp;</li></ul>	\N	f	{"id":"course/1/image/bfb434f11f4a6497215deac1c697070a.png","storage":"store","metadata":{"filename":"la2.png","size":26525,"mime_type":"image/png","width":900,"height":600},"derivatives":{"normalized":{"id":"course/1/image/normalized-311085190da94b42debb1be7692d0c3f.png","storage":"store","metadata":{"filename":"image_processing20200907-1-q5pu9w.png","size":6381,"mime_type":"image/png","width":405,"height":270}}}}
+9	Vignetten	2025-07-14 11:37:14.472885	2025-07-14 11:37:14.49565	VI	\N	<!-- BEGIN app/views/courses/_organizational_default.html.erb -->This should be the text.\n<!-- END app/views/courses/_organizational_default.html.erb -->	\N	f	\N
+10	Elementare Zahlentheorie	2025-07-15 12:03:01.866319	2025-07-15 12:14:43.289142	EZT	\N	<!-- BEGIN app/views/courses/_organizational_default.html.erb -->This should be the text.\n<!-- END app/views/courses/_organizational_default.html.erb -->	\N	f	\N
 \.
 
 
 --
--- TOC entry 4213 (class 0 OID 26354)
--- Dependencies: 235
+-- TOC entry 4486 (class 0 OID 16509)
+-- Dependencies: 243
 -- Data for Name: division_course_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3853,12 +4818,13 @@ COPY public.division_course_joins (id, division_id, course_id, created_at, updat
 4	2	3	2020-07-24 17:00:32.178423	2020-07-24 17:00:32.178423
 5	1	4	2020-08-10 12:54:28.395682	2020-08-10 12:54:28.395682
 7	1	6	2020-08-11 11:44:11.181446	2020-08-11 11:44:11.181446
+9	2	10	2025-07-15 12:03:01.877605	2025-07-15 12:03:01.877605
 \.
 
 
 --
--- TOC entry 4215 (class 0 OID 26358)
--- Dependencies: 237
+-- TOC entry 4488 (class 0 OID 16513)
+-- Dependencies: 245
 -- Data for Name: division_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3875,8 +4841,8 @@ COPY public.division_translations (id, division_id, locale, created_at, updated_
 
 
 --
--- TOC entry 4217 (class 0 OID 26364)
--- Dependencies: 239
+-- TOC entry 4490 (class 0 OID 16519)
+-- Dependencies: 247
 -- Data for Name: divisions; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3889,8 +4855,8 @@ COPY public.divisions (id, program_id, created_at, updated_at) FROM stdin;
 
 
 --
--- TOC entry 4219 (class 0 OID 26368)
--- Dependencies: 241
+-- TOC entry 4492 (class 0 OID 16523)
+-- Dependencies: 249
 -- Data for Name: editable_user_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3953,12 +4919,26 @@ COPY public.editable_user_joins (id, editable_id, editable_type, user_id) FROM s
 60	50	Medium	1
 61	51	Medium	1
 184	1	Lecture	5
+185	9	Course	2
+186	10	Course	2
+187	52	Medium	5
 \.
 
 
 --
--- TOC entry 4221 (class 0 OID 26374)
--- Dependencies: 243
+-- TOC entry 4614 (class 0 OID 17514)
+-- Dependencies: 371
+-- Data for Name: feedbacks; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.feedbacks (id, title, feedback, can_contact, user_id, created_at, updated_at) FROM stdin;
+1	Beschwerde	Alles Mist!	t	8	2025-07-14 11:29:43.122178	2025-07-14 11:29:43.122178
+\.
+
+
+--
+-- TOC entry 4494 (class 0 OID 16529)
+-- Dependencies: 251
 -- Data for Name: friendly_id_slugs; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3969,8 +4949,8 @@ COPY public.friendly_id_slugs (id, slug, sluggable_id, sluggable_type, scope, cr
 
 
 --
--- TOC entry 4223 (class 0 OID 26380)
--- Dependencies: 245
+-- TOC entry 4496 (class 0 OID 16535)
+-- Dependencies: 253
 -- Data for Name: imports; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3979,8 +4959,8 @@ COPY public.imports (id, medium_id, teachable_type, teachable_id, created_at, up
 
 
 --
--- TOC entry 4225 (class 0 OID 26386)
--- Dependencies: 247
+-- TOC entry 4498 (class 0 OID 16541)
+-- Dependencies: 255
 -- Data for Name: item_self_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -3989,8 +4969,8 @@ COPY public.item_self_joins (id, item_id, related_item_id) FROM stdin;
 
 
 --
--- TOC entry 4227 (class 0 OID 26390)
--- Dependencies: 249
+-- TOC entry 4500 (class 0 OID 16545)
+-- Dependencies: 257
 -- Data for Name: items; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4381,12 +5361,13 @@ COPY public.items (id, start_time, sort, page, description, link, explanation, m
 385	--- &1 !ruby/object:TimeStamp\nmilliseconds: 719\nminutes: 0\nseconds: 14\nhours: 0\nvalidation_context: \nerrors: !ruby/object:ActiveModel::Errors\n  base: *1\n  errors: []\n	example	\N	Beispiel - Schritt 1	\N	\N	47	\N	2022-08-05 15:10:00.484351	2022-08-05 15:10:00.484351		\N	\N	\N	f
 386	--- &1 !ruby/object:TimeStamp\nmilliseconds: 129\nminutes: 0\nseconds: 36\nhours: 0\nvalidation_context: \nerrors: !ruby/object:ActiveModel::Errors\n  base: *1\n  errors: []\n	example	\N	Beispiel - Schritt 2	\N	\N	47	\N	2022-08-05 15:10:21.426082	2022-08-05 15:10:21.426082		\N	\N	\N	f
 387	\N	link	\N	Irreduzibilitätskriterium nach Eisenstein	https://de.wikipedia.org/wiki/Eisensteinkriterium	Hier ein Wikipedia-Link zum Eisensteinkriterium.	\N	\N	2022-08-05 15:13:01.877288	2022-08-05 15:13:01.877288	\N	\N	\N	\N	\N
+388	\N	self	\N	\N	\N	\N	52	\N	2025-07-15 12:12:56.39715	2025-07-15 12:12:56.39715	\N	\N	\N	\N	\N
 \.
 
 
 --
--- TOC entry 4229 (class 0 OID 26396)
--- Dependencies: 251
+-- TOC entry 4502 (class 0 OID 16551)
+-- Dependencies: 259
 -- Data for Name: lecture_user_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4420,30 +5401,39 @@ COPY public.lecture_user_joins (id, lecture_id, user_id, created_at, updated_at)
 84	27	1	2022-08-05 13:55:28.690828	2022-08-05 13:55:28.690828
 85	1	1	2022-08-05 14:16:57.55146	2022-08-05 14:16:57.55146
 86	26	1	2022-08-05 14:18:41.927074	2022-08-05 14:18:41.927074
+87	28	5	2025-07-14 11:50:06.67689	2025-07-14 11:50:06.67689
+88	28	6	2025-07-14 14:02:21.433853	2025-07-14 14:02:21.433853
+89	28	7	2025-07-14 15:04:15.7398	2025-07-14 15:04:15.7398
+90	29	5	2025-07-15 12:10:41.761171	2025-07-15 12:10:41.761171
+91	29	6	2025-07-15 12:11:39.23344	2025-07-15 12:11:39.23344
+92	29	7	2025-07-15 12:11:59.013782	2025-07-15 12:11:59.013782
+93	29	2	2025-07-15 12:17:43.535431	2025-07-15 12:17:43.535431
 \.
 
 
 --
--- TOC entry 4231 (class 0 OID 26400)
--- Dependencies: 253
+-- TOC entry 4504 (class 0 OID 16555)
+-- Dependencies: 261
 -- Data for Name: lectures; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.lectures (id, created_at, updated_at, course_id, term_id, teacher_id, start_chapter, absolute_numbering, start_section, organizational_concept, organizational, muesli, released, content_mode, passphrase, locale, sort, forum_id, structure_ids, comments_disabled, organizational_on_top, disable_teacher_display, submission_max_team_size, submission_grace_period, legacy_seminar) FROM stdin;
-24	2020-08-12 10:25:53.80801	2020-09-07 12:25:30.26636	1	3	2	\N	\N	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	\N	\N	\N	video	\N	de	lecture	\N	\N	\N	\N	f	\N	15	f
-25	2020-08-12 10:26:24.860043	2020-09-07 12:25:30.26636	1	2	2	1	f	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	\N	\N	all	video	test	de	lecture	\N	\N	\N	\N	f	\N	15	f
-1	2020-07-24 13:17:08.173027	2022-09-20 10:34:42.729475	1	4	2	0	t	0	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	t	t	all	video		de	lecture	1	---\n- 1\n	\N	\N	f	2	15	f
-2	2020-07-24 16:52:00.370572	2022-08-05 14:06:57.280964	2	2	2	1	f	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	t	t	all	video		de	lecture	2	\N	\N	\N	f	\N	15	f
-26	2020-09-01 09:16:03.22769	2022-08-05 14:47:48.139782	2	1	2	\N	\N	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	\N	\N	\N	video	\N	de	lecture	\N	\N	\N	\N	f	\N	15	f
-3	2020-07-24 17:01:18.424312	2022-08-05 14:47:48.139782	3	1	2	1	f	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	\N	\N	all	manuscript		de	lecture	\N	\N	\N	\N	f	\N	15	f
-4	2020-08-10 12:56:57.917228	2022-09-02 16:52:53.227357	4	\N	2	1	f	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	t	f	all	video		de	special	\N	\N	\N	t	t	\N	15	f
-27	2022-08-05 13:19:57.44893	2022-08-05 15:10:44.123936	2	1	2	\N	\N	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Seminar: Do 14-16 Uhr im SR 4 im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Tutorium: n.V. bei <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a></li><li>Vorbesprechung: Mi, 24. Juli 2019, 13.15 Uhr in SR 3&nbsp; im Mathematikon, INF 205</li></ul><div><br></div><div><strong>Vorträge</strong></div><div><br>Im Seminar wird jede TeilnehmerIn einen Vortrag halten. Die Vorträge werden bei der <strong>Vorbesprechung</strong> vergeben. Ob nach der Vorbesprechung noch Themen frei sind, können Sie bei der DozentIn in Erfahrung bringen. Beim Vortrag sollen Sie&nbsp; den Ihnen zugewiesenen Stoff in der Ihnen zugewiesenen Zeit behandeln - und zwar so, dass jeder dass jeder der Anwesenden davon profitiert. Um das zu erreichen, ist es wichtig, dass Sie <em>frühzeitig</em> mit der Vorbereitung Ihres Vortrags beginnen. Außerdem erwarten wir, dass Sie rechtzeitig vor dem Vortrag Kontakt mit <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a> aufnehmen, um Details zum Inhalt und zur Strukturierung des Vortrags zu besprechen. Rechtzeitig wäre beispielsweise zwei Wochen vor Ihrem Vortrag - eine Viertelstunde vor Vortragsbeginn ist nicht rechtzeitig. Sie sollten daraufhin arbeiten, sämtliche Details ihres Vortragsinhaltes gründlich zu verstehen. Auf der anderen Seite ist es wichtig für Ihren Vortrag, dass Sie diesen so gestalten, dass Ihre KommilitonInnen - für die der Inhalt Ihres Vortrages in der Regel neu sein wird - eine Chance haben, diesen auch zu verstehen. Viele nützliche Hinweise zum Halten mathematischer Vorträge finden Sie <a href="http://download.uni-mainz.de/mathematik/Topologie%20und%20Geometrie/Lehre/Wie-halte-ich-einen-Seminarvortrag.pdf">hier</a>.<br><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen des Vortrags notwendig.</li><li>Die Anmeldung zum Vortrag erfolgt über MÜSLI. Die Anmeldung wird am 15. August 2019 geschlossen. Wer danach noch im MÜSLI für das Seminar eingetragen ist, erhält bei Nichtabhalten seines/ihres Vortrags die Note 5 (nicht bestanden).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note des bestandenen Vortrags, bzw. der Note 5.0, wenn der Vortrag nicht bestanden oder nicht abgehalten wurde.</li></ul>	\N	\N	all	video	key	en	seminar	\N	\N	\N	\N	f	\N	15	f
+COPY public.lectures (id, created_at, updated_at, course_id, term_id, teacher_id, start_chapter, absolute_numbering, start_section, organizational_concept, organizational, muesli, released, content_mode, passphrase, locale, sort, forum_id, structure_ids, comments_disabled, organizational_on_top, disable_teacher_display, submission_max_team_size, submission_grace_period, legacy_seminar, annotations_status) FROM stdin;
+24	2020-08-12 10:25:53.80801	2020-09-07 12:25:30.26636	1	3	2	\N	\N	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	\N	\N	\N	video	\N	de	lecture	\N	\N	\N	\N	f	\N	15	f	1
+25	2020-08-12 10:26:24.860043	2020-09-07 12:25:30.26636	1	2	2	1	f	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	\N	\N	all	video	test	de	lecture	\N	\N	\N	\N	f	\N	15	f	1
+4	2020-08-10 12:56:57.917228	2022-09-02 16:52:53.227357	4	\N	2	1	f	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	t	f	all	video		de	special	\N	\N	\N	t	t	\N	15	f	1
+26	2020-09-01 09:16:03.22769	2025-07-14 11:11:15.58856	2	6	2	1	f	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	\N	\N	\N	video		de	lecture	\N	\N	\N	\N	f	\N	15	f	1
+2	2020-07-24 16:52:00.370572	2025-07-14 11:12:42.279881	2	9	2	1	f	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	t	t	all	video		de	lecture	2	\N	\N	\N	f	\N	15	f	1
+1	2020-07-24 13:17:08.173027	2025-07-14 11:07:37.676682	1	5	2	0	t	0	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	t	t	all	video		de	lecture	1	---\n- 1\n	\N	\N	f	2	15	f	1
+3	2020-07-24 17:01:18.424312	2025-07-14 11:09:16.712331	3	5	2	1	f	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul>	\N	\N	all	manuscript		de	lecture	\N	\N	\N	\N	f	\N	15	f	1
+27	2022-08-05 13:19:57.44893	2025-07-14 11:12:30.473055	2	10	2	\N	\N	\N	<div><strong>Termine</strong></div><div><br></div><ul><li>Seminar: Do 14-16 Uhr im SR 4 im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Tutorium: n.V. bei <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a></li><li>Vorbesprechung: Mi, 24. Juli 2019, 13.15 Uhr in SR 3&nbsp; im Mathematikon, INF 205</li></ul><div><br></div><div><strong>Vorträge</strong></div><div><br>Im Seminar wird jede TeilnehmerIn einen Vortrag halten. Die Vorträge werden bei der <strong>Vorbesprechung</strong> vergeben. Ob nach der Vorbesprechung noch Themen frei sind, können Sie bei der DozentIn in Erfahrung bringen. Beim Vortrag sollen Sie&nbsp; den Ihnen zugewiesenen Stoff in der Ihnen zugewiesenen Zeit behandeln - und zwar so, dass jeder dass jeder der Anwesenden davon profitiert. Um das zu erreichen, ist es wichtig, dass Sie <em>frühzeitig</em> mit der Vorbereitung Ihres Vortrags beginnen. Außerdem erwarten wir, dass Sie rechtzeitig vor dem Vortrag Kontakt mit <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a> aufnehmen, um Details zum Inhalt und zur Strukturierung des Vortrags zu besprechen. Rechtzeitig wäre beispielsweise zwei Wochen vor Ihrem Vortrag - eine Viertelstunde vor Vortragsbeginn ist nicht rechtzeitig. Sie sollten daraufhin arbeiten, sämtliche Details ihres Vortragsinhaltes gründlich zu verstehen. Auf der anderen Seite ist es wichtig für Ihren Vortrag, dass Sie diesen so gestalten, dass Ihre KommilitonInnen - für die der Inhalt Ihres Vortrages in der Regel neu sein wird - eine Chance haben, diesen auch zu verstehen. Viele nützliche Hinweise zum Halten mathematischer Vorträge finden Sie <a href="http://download.uni-mainz.de/mathematik/Topologie%20und%20Geometrie/Lehre/Wie-halte-ich-einen-Seminarvortrag.pdf">hier</a>.<br><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen des Vortrags notwendig.</li><li>Die Anmeldung zum Vortrag erfolgt über MÜSLI. Die Anmeldung wird am 15. August 2019 geschlossen. Wer danach noch im MÜSLI für das Seminar eingetragen ist, erhält bei Nichtabhalten seines/ihres Vortrags die Note 5 (nicht bestanden).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note des bestandenen Vortrags, bzw. der Note 5.0, wenn der Vortrag nicht bestanden oder nicht abgehalten wurde.</li></ul>	\N	\N	all	video	key	en	seminar	\N	\N	\N	\N	f	\N	15	f	1
+28	2025-07-14 11:37:42.454732	2025-07-14 15:09:11.922978	9	5	2	\N	\N	\N	<!-- BEGIN app/views/lectures/organizational/_lecture.html.erb --><div><strong>Termine</strong></div><div><br></div><ul><li>Vorlesung: Mo, Mi 9-11 Uhr im Hörsaal im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Plenarübung: Do 14-16 Uhr in SR A im Mathematikon, INF 205 (Dozentin: <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a>)</li><li>Modulprüfung:&nbsp;<ul><li>Erste Klausur: Montag, den 30. Februar 2001 von 9.30-11.30 Uhr in SR A+B im Mathematikon, INF 205</li><li>Zweite Klausur: Termin wird noch bekanntgegeben&nbsp;</li></ul></li></ul><div><br></div><div><strong>Übungsbetrieb</strong></div><div><br></div><div>Für die Zulassung zur Modulklausur ist die erfolgreiche Teilnahme am Übungsbetrieb erforderlich. Jeden Montag wird das jeweils neue Aufgabenblatt über MaMpf online gestellt. <br>Die Lösungen sollen bis Montag der Folgewoche um 12 Uhr in die dafür vorgesehenen Einwurfkästen im Mathematikon abgegeben werden. Zum Besprechen der Lösungen und für Fragen zum aktuellen Stoff gibt es Tutorien, die im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet werden. Bitte tragen Sie sich rechtzeitig für diese ein. Die Tutorien werden ab der zweiten Vorlesungswoche stattfinden. Die Abgabe der Übungsaufgaben ist nachdrücklich in Zweierteams gewünscht.</div><div><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen einer der beiden Klausuren notwendig.</li><li><strong>Klausurzulassung:</strong>&nbsp;<ul><li>Für die Zulassung zur <em>ersten Klausur</em> ist die regelmäßige Teilnahme an den Tutorien und die erfolgreiche Bearbeitung der Übungsblätter notwendig. Hinreichend für die erfolgreiche Bearbeitung ist dabei das Erreichen von 50% der erreichbaren Punkte in den Übungsaufgaben.&nbsp;</li><li>Zur <em>zweiten Klausur</em> ist zugelassen, wer zur ersten Klausur zugelassen war und diese nicht bestanden hat (sei es durch Nicht-Erreichen der nötigen Punktzahl oder durch Nicht-Antreten).</li><li><em>Achtung:</em> Wer an der ersten Klausur nicht teilnimmt, verschenkt somit einen Versuch, das Modul zu bestehen.</li></ul></li><li><strong>Klausuranmeldung:</strong> Die Anmeldung zur Klausur wird im <a href="https://www.mathi.uni-heidelberg.de/muesli/user/login">MÜSLI</a> verwaltet und läuft vom 15. Januar 2001&nbsp; bis zum 31. Januar 2001.</li><li><strong>Teilnahme an der Modulprüfung:</strong> Wer zur Klausur zugelassen und angemeldet ist, nimmt offiziell an der Modulprüfung teil, selbst wenn er/sie an keiner Klausur teilnimmt. In letzterem Falle erhält er/sie die Note 5.0.&nbsp;</li><li><strong>Nachprüfung:</strong> Für diejenigen, die bei einem der Klausurtermine verhindert waren und bei dem anderen nicht bestanden haben, wird die Möglichkeit einer mündlichen oder schriftlichen Nachprüfung eingeräumt. "Verhindert" bedeutet dabei verhindert durch Krankheit (ärztliches Attest bis eine Woche nach der betreffenden Klausur im Prüfungssekretariat nachreichen) oder ähnlich triftige Gründe. <em>Achtung:</em> Wer etwa an der ersten Klausur nicht teilnimmt ohne im obigem Sinne verhindert zu sein und die zweite Klausur nicht besteht, bekommt keine Möglichkeit zur Nachprüfung. Der erste Versuch wurde schlichtweg verschenkt (s.o.).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note der bestandenen Klausur (oder evtl. gewährte Nachprüfung), bzw. der Note 5.0, wenn keine Klausur (oder evtl. gewährte Nachprüfung) bestanden wurde.</li></ul><!-- END app/views/lectures/organizational/_lecture.html.erb -->	\N	\N	all	video	\N	de	vignettes	\N	\N	\N	\N	f	\N	15	f	1
+29	2025-07-15 12:03:30.235477	2025-07-15 12:14:43.291211	10	5	2	\N	\N	\N	<!-- BEGIN app/views/lectures/organizational/_seminar.html.erb --><div><strong>Termine</strong></div><div><br></div><ul><li>Seminar: Do 14-16 Uhr im SR 4 im Mathematikon, INF 205 (Dozent: <a href="https://en.wikipedia.org/wiki/Mickey_Mouse">Mickey Mouse</a>)</li><li>Tutorium: n.V. bei <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a></li><li>Vorbesprechung: Mi, 24. Juli 2019, 13.15 Uhr in SR 3&nbsp; im Mathematikon, INF 205</li></ul><div><br></div><div><strong>Vorträge</strong></div><div><br>Im Seminar wird jede TeilnehmerIn einen Vortrag halten. Die Vorträge werden bei der <strong>Vorbesprechung</strong> vergeben. Ob nach der Vorbesprechung noch Themen frei sind, können Sie bei der DozentIn in Erfahrung bringen. Beim Vortrag sollen Sie&nbsp; den Ihnen zugewiesenen Stoff in der Ihnen zugewiesenen Zeit behandeln - und zwar so, dass jeder dass jeder der Anwesenden davon profitiert. Um das zu erreichen, ist es wichtig, dass Sie <em>frühzeitig</em> mit der Vorbereitung Ihres Vortrags beginnen. Außerdem erwarten wir, dass Sie rechtzeitig vor dem Vortrag Kontakt mit <a href="https://en.wikipedia.org/wiki/Minnie_Mouse">Minnie Mouse</a> aufnehmen, um Details zum Inhalt und zur Strukturierung des Vortrags zu besprechen. Rechtzeitig wäre beispielsweise zwei Wochen vor Ihrem Vortrag - eine Viertelstunde vor Vortragsbeginn ist nicht rechtzeitig. Sie sollten daraufhin arbeiten, sämtliche Details ihres Vortragsinhaltes gründlich zu verstehen. Auf der anderen Seite ist es wichtig für Ihren Vortrag, dass Sie diesen so gestalten, dass Ihre KommilitonInnen - für die der Inhalt Ihres Vortrages in der Regel neu sein wird - eine Chance haben, diesen auch zu verstehen. Viele nützliche Hinweise zum Halten mathematischer Vorträge finden Sie <a href="http://download.uni-mainz.de/mathematik/Topologie%20und%20Geometrie/Lehre/Wie-halte-ich-einen-Seminarvortrag.pdf">hier</a>.<br><br></div><div><strong>Literatur</strong></div><div><br></div><ul><li>G. Fischer: <a href="https://link.springer.com/book/10.1007%2F978-3-322-88921-8">Analytische Geometrie</a></li><li>H. Kasten, D. Vogel: <a href="http://www.ub.uni-heidelberg.de/cgi-bin/edok?dok=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-57621-2&amp;katkey=68311803">Grundlagen der ebenen Geometrie</a></li></ul><div><br></div><div><strong>Prüfungs- und Benotungsregeln</strong></div><div><br></div><ul><li>Zum erfolgreichen Absolvieren der Modulprüfung ist das Bestehen des Vortrags notwendig.</li><li>Die Anmeldung zum Vortrag erfolgt über MÜSLI. Die Anmeldung wird am 15. August 2019 geschlossen. Wer danach noch im MÜSLI für das Seminar eingetragen ist, erhält bei Nichtabhalten seines/ihres Vortrags die Note 5 (nicht bestanden).</li><li><strong>Benotung:</strong> Die Note für das Modul besteht aus der Note des bestandenen Vortrags, bzw. der Note 5.0, wenn der Vortrag nicht bestanden oder nicht abgehalten wurde.</li></ul><!-- END app/views/lectures/organizational/_seminar.html.erb -->	\N	\N	all	video	\N	de	proseminar	\N	\N	\N	\N	f	\N	15	f	1
 \.
 
 
 --
--- TOC entry 4233 (class 0 OID 26408)
--- Dependencies: 255
+-- TOC entry 4506 (class 0 OID 16564)
+-- Dependencies: 263
 -- Data for Name: lesson_section_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4463,8 +5453,8 @@ COPY public.lesson_section_joins (id, lesson_id, section_id, created_at, updated
 
 
 --
--- TOC entry 4235 (class 0 OID 26412)
--- Dependencies: 257
+-- TOC entry 4508 (class 0 OID 16568)
+-- Dependencies: 265
 -- Data for Name: lesson_tag_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4502,29 +5492,29 @@ COPY public.lesson_tag_joins (id, lesson_id, tag_id, created_at, updated_at) FRO
 
 
 --
--- TOC entry 4237 (class 0 OID 26416)
--- Dependencies: 259
+-- TOC entry 4510 (class 0 OID 16572)
+-- Dependencies: 267
 -- Data for Name: lessons; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.lessons (id, date, lecture_id, created_at, updated_at, start_destination, end_destination, details) FROM stdin;
-12	2019-10-21	2	2020-07-24 16:53:25.575141	2022-08-05 14:06:57.252287	\N	\N	
-5	2020-05-05	1	2020-07-24 13:49:32.40135	2022-09-20 10:34:42.713344	\N	\N	
-6	2020-05-07	1	2020-07-24 13:49:56.825933	2022-09-20 10:34:42.713344	\N	\N	\N
-7	2020-05-12	1	2020-07-24 13:50:20.217324	2022-09-20 10:34:42.713344	\N	\N	
-8	2020-05-14	1	2020-07-24 13:50:41.367319	2022-09-20 10:34:42.713344	\N	\N	
-1	2020-04-21	1	2020-07-24 13:46:15.926855	2022-09-20 10:34:42.713344	\N	\N	
-2	2020-04-23	1	2020-07-24 13:47:35.445993	2022-09-20 10:34:42.713344	\N	\N	
-3	2020-04-28	1	2020-07-24 13:48:26.566012	2022-09-20 10:34:42.713344	\N	\N	
-9	2020-05-19	1	2020-07-24 13:52:24.40245	2022-09-20 10:34:42.713344	\N	\N	
-4	2020-04-30	1	2020-07-24 13:49:04.235057	2022-09-20 10:34:42.713344	\N	\N	
-10	2020-05-28	1	2020-07-24 13:52:50.724565	2022-09-20 10:34:42.713344	\N	\N	
+12	2019-10-21	2	2020-07-24 16:53:25.575141	2025-07-14 11:12:42.259389	\N	\N	
+1	2025-04-21	1	2020-07-24 13:46:15.926855	2025-07-14 11:01:53.204542	\N	\N	
+2	2025-04-23	1	2020-07-24 13:47:35.445993	2025-07-14 11:01:53.204542	\N	\N	
+9	2025-05-19	1	2020-07-24 13:52:24.40245	2025-07-14 11:01:53.204542	\N	\N	
+10	2025-05-28	1	2020-07-24 13:52:50.724565	2025-07-14 11:01:53.204542	\N	\N	
+3	2025-04-28	1	2020-07-24 13:48:26.566012	2025-07-14 11:01:53.204542	\N	\N	
+5	2025-05-05	1	2020-07-24 13:49:32.40135	2025-07-14 11:01:53.204542	\N	\N	
+4	2025-04-30	1	2020-07-24 13:49:04.235057	2025-07-14 11:01:53.204542	\N	\N	
+6	2025-05-07	1	2020-07-24 13:49:56.825933	2025-07-14 11:01:53.204542	\N	\N	
+7	2025-05-12	1	2020-07-24 13:50:20.217324	2025-07-14 11:01:53.204542	\N	\N	
+8	2025-05-14	1	2020-07-24 13:50:41.367319	2025-07-14 11:01:53.213988	\N	\N	
 \.
 
 
 --
--- TOC entry 4239 (class 0 OID 26422)
--- Dependencies: 261
+-- TOC entry 4512 (class 0 OID 16578)
+-- Dependencies: 269
 -- Data for Name: links; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4533,68 +5523,69 @@ COPY public.links (id, medium_id, linked_medium_id, created_at, updated_at) FROM
 
 
 --
--- TOC entry 4241 (class 0 OID 26426)
--- Dependencies: 263
+-- TOC entry 4514 (class 0 OID 16582)
+-- Dependencies: 271
 -- Data for Name: media; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.media (id, external_reference_link, created_at, updated_at, sort, description, teachable_type, teachable_id, video_data, screenshot_data, manuscript_data, released, imported_manuscript, quizzable_type, quizzable_id, hint, parent_id, quiz_graph, level, type, text, independent, keks_id, locale, solution, question_sort, content, geogebra_data, geogebra_app_name, "position", text_input, boost, released_at, publisher, file_last_edited) FROM stdin;
-42	\N	2020-09-02 11:47:59.54323	2020-09-02 11:47:59.54323	RandomQuiz	Zufallsquiz Lineare Algebra 2 2020-09-02 11:47:59 +0000	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	--- !ruby/object:QuizGraph\nvertices:\n  1:\n    :type: Question\n    :id: 17\n  2:\n    :type: Question\n    :id: 18\n  3:\n    :type: Question\n    :id: 35\n  4:\n    :type: Question\n    :id: 20\n  5:\n    :type: Question\n    :id: 37\nedges: {}\nroot: 1\ndefault_table:\n  1: 2\n  2: 3\n  3: 4\n  4: 5\n  5: -1\nhide_solution: []\n	1	Quiz	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	f	0	\N	\N	\N
-28	\N	2020-07-24 16:23:22.686316	2022-09-20 10:34:42.711631	Question	Ideale in Z Division mit Rest	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Sei wie zuvor $0 \\neq I\\subset \\mathbb{Z}$ ein Ideal und $x \\in I$ die kleinste natürliche Zahl in $I$. Sei weiterhin $y \\in I$ ein weiteres Element. Mit Hilfe von Division mit Rest finden wir ein $a \\in \\mathbb{Z}$ und ein $0 \\leq r < \\lvert x\\rvert$ mit $$y = ax+r.$$\nWas können wir ableiten?	f	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	16	f	0	2020-07-24 16:23:22.686316	\N	\N
-43	\N	2020-09-03 10:31:05.824135	2020-09-07 12:25:30.264455	Quiz	Testquiz	Course	1	\N	\N	\N	all	\N	\N	\N	\N	\N	--- !ruby/object:QuizGraph\nvertices:\n  1:\n    :type: Question\n    :id: 24\nedges: {}\nroot: 1\ndefault_table:\n  1: -1\nhide_solution: []\n	1	Quiz	\N	\N	\N	\N	\N	\N	\N	\N	\N	2	f	0	2020-09-03 10:31:05.824135	\N	\N
-39	\N	2020-07-24 17:03:37.785021	2022-08-05 14:47:48.142248	Script	Vorlesungsskript	Lecture	3	\N	\N	{"id":"medium/39/manuscript/02c2ff5ef750d0b3bdbd44dad9b0ceea.pdf","storage":"store","metadata":{"filename":"Skript.V.Geo.SS20.Vorlesungsskript.pdf","size":6388579,"mime_type":"application/pdf","pages":152,"destinations":["chap:Analytische-Geometrie","sect:Affine-Raeume","defn:affiner-Raum","defn:affine-Dimension","bsp:affiner-Standardraum","Aktion-der-Translationen","Vektoraddition","defn:affiner-Unterraum","bsp:affine-Unterraeume","prop:Dimension-affiner-Unterraum","defn:Dimension-affiner-Unterraum","prop:affine-Unterraeume-sind-affine-Raeume","prop:Durchschnitt-und-Verbindungsraum-affin","Durchschnitt","Verbindungsraum-Fall-1","Verbindungsraum-Fall-2","satz:Verbindungsraum-als-Vereinigung-von-Verbindungsgeraden","satz:Dimensionsformel-fuer-affine-Unterraeume","defn:parallel-und-windschief","bem:keine-windschiefen-Hyperebenen","bem:Verbindungsraum-als-Vereinigung-von-Verbindungsgeraden","sect:Affine-Abbildungen","defn:affine-Abbildung","affine-Abbildung","bsp:affine-Abb","prop:Kriterium-fuer-affine-Abbildung","prop:Zusammenhang-affine-und-lineare-Abbildungen","affine-Abbildung-aus-linearer-Abbildung","bsp:affine-Abbildungen-in-der-affinen-Standardebene","W-Bahn","prop:Parallelprojektion","defn:kollinear","defn:n-Eck","defn:Parallelogramm","prop:affine-Abbildungen-erhalten-Parallelogramme","affine-Abbildungen-erhalten-Parallelogramme","Bild-ist-Parallelogramm-1","Bild-ist-Parallelogramm-2","gegenueberliegende-Seiten-im-Parallelogramm-schneiden-sich-nicht","sect:Affine-Koordinaten","defn:affine-Basis","bsp:Standardbasis-des-affinen-Standardraums","bem:affine-Unabhaengigkeit","satz:affine-Abbildung","defn:affines-Koordinatensystem","defn:Teilverhaeltnis","Teilverhaeltnis","bem:Teilverhaeltnis-in-Standardraum","prop:TV-affine-Invariante","satz:affiner-Strahlensatz","defn:Mittelpunkt","satz:Diagonalensatz","satz:Schwerpunktsatz","defn:Winkel-affin","euklidisches-Winkelmass","Winkelgroesse","defn:Seitenlaengen-und-Innenwinkelgroessen","satz:Kosinussatz","Kosinussatz","coro:Pythagoras","satz:Winkelsumme-im-Dreieck","Winkelsumme-Kosinuswerte","Sinus-des-Winkelmasses","Rechnung-zu-Cauchy-Schwartz","Winkelsumme-Sinuswerte","satz:Sinussatz","coro:Hypothenuse-und-Katheten","sect:Polytope","defn:Polytop","bsp:Durchschnitt-von-Halbraeumen","bem:Rand-eines-Polytops","defn:Ecken-Kanten-Flaechen","bsp:Wuerfel","satz:Polyederformel","defn:Platonischer-Koerper","prop:Polytop","coro:Platonische-Koerper","defn:Aehnlichkeitsabbildung-analytisch","satz:Klassifikation-der-Platonischen-Koerper","sect:Projektive-Raeume","defn:projektiver-Raum","bsp:projektiver-Standardraum","bsp:Einbettungen-projektiver-Standardraeume","defn:projektiver-Unterraum","prop:Durchschnitt-und-Verbindungsraum-projektiv","abb:Boyflaeche","Beschreibung-projektiver-Verbindungsraum","satz:Dimensionsformel-fuer-projektive-Unterraeume","sect:Projektive-Abbildungen","defn:projektive-Abbildung","prop:Uneindeutigkeit-der-lin-Abb-zu-einer-proj-Abb","bsp:kanonische-Einbettung","defn:Zentralprojektion","Wohldefiniertheit-Zentralprojektion-1","Wohldefiniertheit-Zentralprojektion-2","bem:Beschreibung-Zentralprojektion","prop:Zentralprojektionen-sind-Projektivitaeten","satz:projektiver-Abschluss","bsp:projektiver-Abschluss","ZcapX","dim-ZcapX","sect:Projektive-Koordinaten","defn:projektive-Basis","bsp:kanonische-projektive-Basis","abb:projektive-Standardbasis","lemma:Zusammenhang-zwischen-projektiver-Basis-und-VR-Basis","satz:projektive-Raeume-gleicher-Dimension-sind-kanonisch-isomorph","defn:projektives-Koordinatensystem","defn:Doppelverhaeltnis-projektiv","prop:DV-projektive-Invariante","DV-projektive-Invariante","prop:DV-Berechnung","bem:Zusammenhang-DV-und-TV","satz:projektiver-Desargues","sect:Computergraphik","Transformationen-in-R3","defn:Quader","defn:Kegelstumpf","sect:Uebungsaufgaben-Analytische-Geometrie","aufg:Verbindungsgerade-ist-Gerade","aufg:Eigenschaften-affiner-Abbildungen","aufg:Abbildungsgeometrie","aufg:Tangenssatz","aufg:Heronsche-Formel","aufg:Vergleich-rechtwinkliger-Dreiecke","aufg:Durchschnitt-Gerade-mit-Einheitssphaere","aufg:fast-jede-Projektivitaet-ist-Zentralprojektion","aufg:projektiver-Pappos","chap:Inzidenzgeometrie","sect:Inzidenzebenen","defn:Inzidenzebene","bsp:Inzidenzebene","prop:Geradenschnittpunkt","prop:Kriterium-Punkt-auf-Gerade","prop:Trennung-von-Punkt-und-Gerade","satz:A2(K)-Inzidenzebene","bem:Parallelitaet-in-A2(K)","defn:Isomorphismus-von-Inzidenzebenen","bsp:affine-Ebenen-sind-Inzidenzebenen","sect:affine-Ebenen","defn:Parallelenaxiome","defn:affine-Ebene","bsp:Parallelenaxiome","prop:Parallelitaet-Aequivalenzrelation","defn:Parallelenbueschel-und-Geradenbueschel","bsp:Parallelenbueschel-und-Geradenbueschel","defn:affiner-Isomorphismus","bsp:affiner-Isomorphismus","sect:Uebungsaufgaben-Inzidenzgeometrie","aufg:Isomorphismen-von-Inzidenzebenen","aufg:affine-Ebene-mit-fuenf-Punkten","aufg:Geraden-in-affiner-Ebene-sind-gleichmaechtig","chap:Hilbertebenen","sect:Anordnungsaxiome","defn:Anordnungsaxiome","prop:Seiten-einer-Geraden","abb:Geradenseiten","bsp:affine-Standardebene-und-Anordnung","Anordnung-fuer-affine-Standardebenen","Hessesche-Normalform","defn:Lage-auf-verschiedenen-Geradenseiten","prop:Seiten-von-Geraden-und-Punkten","coro:Seiten-eines-Punktes","defn:Anordnung-vieler-Punkte","prop:Anordnung-von-Punkten-auf-Geraden","bem:alternatives-Anordnungsaxiom","defn:strecke-und-strahl","prop:Strecken-und-Strahlen","prop:gerade-vereinigung-von-strahlen","satz:Pasch","sect:Die-Kongruenzaxiome-fuer-Strecken","defn:Kongruenzaxiome-fuer-Strecken","bsp:affine-Standardebene-und-Kongruenzen-von-Strecken","prop:Streckensubtraktion","defn:<-fuer-Strecken","prop:<-fuer-Strecken","sect:Kongruenzaxiome-fuer-Winkel","defn:Winkel","abb:Winkel","prop:winkel","defn:Inneres-eines-Winkels","lemma:im-Inneren-eines-Winkels","defn:Kongruenzaxiome-fuer-Winkel","defn:<-fuer-Winkel","prop:<-fuer-Winkel","defn:Dreieck","bem:dreieck","defn:ebene-Geometrie","defn:Bewegung","bsp:Bewegungen-in-der-affinen-Standardebene","defn:gvB","satz:genug-Bewegung","Voraussetzungen-SWS","bsp:affine-Standardebene-und-Kongruenzen-von-Winkeln","Kongruenz-von-Winkeln-in-der-affinen-Standardebene","sect:Ergaenzungswinkel,-Gegenwinkel-und-rechte-Winkel","defn:Ergaenzungswinkel-Gegenwinkel","prop:Ergaenzungswinkel","coro:Gegenwinkel","defn:rechter-Winkel","prop:rechter-Winkel","satz:Viertes-euklidisches-Postulat","coro:rechte-Winkel","sect:Orthogonalitaet-und-Parallelitaet","defn:orthogonal","satz:Orthogonale-Gerade","abb:Orthogonale","defn:Wechselwinkel-und-Stufenwinkel","bem:Wechselwinkel-und-Stufenwinkel","satz:Schwacher-Wechselwinkelsatz-und-schwacher-Stufenwinkelsatz","coro:zum-schwachen-wws","coro:Lot-eindeutig","coro:Existenz-von-Parallelen","satz:Parallelenaxiom-in-Hilbertebenen","sect:Kongruenzsatz","prop:eindeutiges-Dreieck","defn:gleichschenkliges-Dreieck","prop:gleichschenkliges-Dreieck","prop:Winkeladdsubtraktion","satz:Kongruenzsatz-fuer-Dreiecke","wsw-1","sect:Mittelsenkrechte-und-Winkelhalbierende","defn:Streckenmittelpunkt","lemma:Mittelpunkt-liegt-zwischen-Randpunkten","satz:Mittelpunkt","Mittelpunkt-1","Mittelpunkt-2","defn:Mittelsenkrechte","prop:Charakterisierung-Mittelsenkrechte","defn:Winkelhalbierende","prop:Existenz-der-Winkelhalbierenden","sect:Innen-und-Aussenwinkel-im-Dreieck","defn:Innenwinkel","prop:schwache-Winkelsumme-im-Dreieck-1","schwache-Winkelsumme-im-Dreieck","satz:Aussenwinkelsatz","satz:grosse-Dreiecksseite-hat-grossen-Winkel","abb:grosse-Dreiecksseite-hat-grossen-Winkel","satz:SSrechterWinkel","sect:Kreise","defn:Kreis","prop:Kreise-haben-genau-einen-Mittelpunkt","satz:Umkreissatz","defn:Hoehe","satz:Hoehensatz","satz:Inkreissatz","sect:Uebungsaufgaben-Hilbertebenen","aufg:Anordnung-von-Punkten-auf-Geraden","aufg:unendlich-viele-Punkte-mit-I-+-A","aufg:Anordnung-Modell-alternativ","aufg:<-fuer-Winkel","aufg:Inneres-bestimmt-den-Winkel","aufg:konvexe-Mengen","aufg:Parallelogramm-synthetisch","aufg:Spiegelungen-in-Hilbertebenen","aufg:Abschaetzung-Abstand-Punkt-Gerade","aufg:Hoehenformel","chap:Euklidische-Geometrie-kurz","sect:Vollstaendigkeitsaxiom","defn:Dedekindschnitt","defn:Vollstaendigkeitsaxiom","bsp:Vollstaendigkeitsaxiom","satz:Archimedisches-Axiom","sect:Euklidische-Ebenen","defn:Euklidsche-Ebene","defn:Isomorphismus-euklidischer-Ebenen","satz:Hauptsatz-fuer-euklidische-Ebenen","prop:Groesse-der-Winkelsumme","sect:Kreise-in-der-euklidischen-Ebene","prop:Durchschnitt-Kreis-Gerade","coro:Tangente","defn:Potenz","satz:Zweisehnensatz","satz:Sehnen-Tangenten-Satz","prop:potenzgerade","satz:Kreis-Kreis-Schnitt-Eigenschaft","coro:Kreis-Kreis-Schnitt-Eigenschaft","satz:Peripheriewinkelsatz","satz:Thales","satz:Sinussatz-Verschaerfung","satz:Eulergleichung","coro:Eulergerade","sect:Inversion-am-Kreis","defn:Inversion-am-Kreis","prop:Inversionen-am-Kreis-sind-bijektiv","prop:Tangentenschnittpunkt-mit-Inversion","prop:Eigenschaften-der-Inversion","defn:verallgemeinerte-Gerade","prop:orthogonale-verallgemeinerte-Geraden","prop:orthogonale-Kreise","prop:Inversion-Kreis-an-Kreis","Schnittpunktanzahl-bleibt-unter-Inversion-erhalten","Schnittpunktanzahl-bleibt-unter-Inversion-erhalten-2","Inversion-fuer-verallgemeinerte-Geraden","lemma:Beruehrpunkte-unter-der-Inversion","prop:Inversion-und-Tangenten","defn:verallgemeinerte-Winkelgroesse","satz:Inversion-winkeltreu","defn:Doppelverhaeltnis","prop:Inversion-am-Kreis-erhaelt-Doppelverhaeltnis","DV-1","DV-2","sect:Uebungsaufgaben-Euklidische-Geometrie","aufg:zwischen-Kreis-und-Tangente-passt-kein-Strahl","aufg:Peripheriewinkelsatz","aufg:Tangentenschnittpunkt-mit-Inversion","aufg:gleichseitige-Dreiecke-SHU","chap:Nichteuklidsche-Geometrie","sect:Hyperbolische-Ebenen","defn:Hyperbolische-Ebene","defn:Endpunkte-von-k-Geraden","prop:Kreismodell-ist-Inzidenzebene","I2-hyperbolisch","Anordnung-von-Punkten-auf-k-Gerader-zweiten-Typs","prop:Kreismodell-erfuellt-Anordnungsaxiome","hyperbolischer-Abstand","lemma:k-Anordnung-von-k-Punkten","Kongruenz-von-k-Strecken","prop:Kreismodell-erfuellt-Streckenkongruenzaxiome","prop:Kreismodell-erfuellt-Winkelkongruenzaxiome","prop:k-Bewegung-in-den-Ursprung","prop:Kreismodell-erfuellt-Vollstaendigkeitsaxiom","prop:hyperbolisches-Axiom-im-Poincaremodell","satz:Kreismodell-ist-hyperbolische-Ebene","sect:Hyperbolische-Geometrie","Additionstheorem-cosh","hyperbolisches-Pythagorasaequivalent","lemma:k-Abstand-zum-Ursprung","lemma:sinh-und-cosh-vom-k-Abstand-zum-Ursprung","lemma:Norm-im-Klein-Modell","satz:Trigonometrie-rechtwinkliges-k-Dreieck","satz:hyperbolische-Trigonometrie","hyperbolische-Trigonometrie","satz:Winkelsumme-im-k-Dreieck","beta+gamma<pi","sect:Uebungsaufgaben-Nichteuklidische-Geometrie","aufg:hyperbolische-Geradenspiegelung-ist-Bewegung","aufg:Poincarehalbebene"],"bookmarks":[{"destination":"chap:Analytische-Geometrie","sort":"Kapitel","label":"1","description":"Analytische Geometrie","chapter":"1","section":"1.0","subsection":"1.0.0","page":"3","counter":0},{"destination":"sect:Affine-Raeume","sort":"Abschnitt","label":"1.1","description":"Affine Räume","chapter":"1","section":"1.1","subsection":"1.1.0","page":"3","counter":1},{"destination":"defn:affiner-Raum","sort":"Definition","label":"1.1","description":"affiner Raum","chapter":"1","section":"1.1","subsection":"1.1.0","page":"3","counter":2},{"destination":"defn:affine-Dimension","sort":"Definition","label":"1.2","description":"affine Dimension","chapter":"1","section":"1.1","subsection":"1.1.0","page":"4","counter":3},{"destination":"bsp:affiner-Standardraum","sort":"Beispiel","label":"1.3","description":"affiner Standardraum","chapter":"1","section":"1.1","subsection":"1.1.0","page":"4","counter":4},{"destination":"Aktion-der-Translationen","sort":"Gleichung","label":"1.1","description":"","chapter":"1","section":"1.1","subsection":"1.1.0","page":"5","counter":5},{"destination":"Vektoraddition","sort":"Gleichung","label":"1.2","description":"","chapter":"1","section":"1.1","subsection":"1.1.0","page":"5","counter":6},{"destination":"defn:affiner-Unterraum","sort":"Definition","label":"1.4","description":"affiner Unterraum","chapter":"1","section":"1.1","subsection":"1.1.0","page":"5","counter":7},{"destination":"bsp:affine-Unterraeume","sort":"Beispiel","label":"1.5","description":"affine Unterräume der affinen Standardräume","chapter":"1","section":"1.1","subsection":"1.1.0","page":"5","counter":8},{"destination":"prop:Dimension-affiner-Unterraum","sort":"Proposition","label":"1.6","description":"Beliebigkeit des Aufpunkts eines affinen Unterraums","chapter":"1","section":"1.1","subsection":"1.1.0","page":"6","counter":9},{"destination":"defn:Dimension-affiner-Unterraum","sort":"Definition","label":"1.7","description":"Dimension eines affinen Unterraums","chapter":"1","section":"1.1","subsection":"1.1.0","page":"6","counter":10},{"destination":"prop:affine-Unterraeume-sind-affine-Raeume","sort":"Proposition","label":"1.8","description":"affine Unterräume sind affine Räume","chapter":"1","section":"1.1","subsection":"1.1.0","page":"6","counter":11},{"destination":"prop:Durchschnitt-und-Verbindungsraum-affin","sort":"Proposition","label":"1.9","description":"Durchschnitt und Verbindungsraum affiner Räume","chapter":"1","section":"1.1","subsection":"1.1.0","page":"7","counter":12},{"destination":"Durchschnitt","sort":"Gleichung","label":"1.3","description":"","chapter":"1","section":"1.1","subsection":"1.1.0","page":"7","counter":13},{"destination":"Verbindungsraum-Fall-1","sort":"Gleichung","label":"1.4","description":"","chapter":"1","section":"1.1","subsection":"1.1.0","page":"7","counter":14},{"destination":"Verbindungsraum-Fall-2","sort":"Gleichung","label":"1.5","description":"","chapter":"1","section":"1.1","subsection":"1.1.0","page":"8","counter":15},{"destination":"satz:Verbindungsraum-als-Vereinigung-von-Verbindungsgeraden","sort":"Satz","label":"1.10","description":"Verbindungsraum als Vereinigung von Verbindungsgeraden","chapter":"1","section":"1.1","subsection":"1.1.0","page":"9","counter":16},{"destination":"satz:Dimensionsformel-fuer-affine-Unterraeume","sort":"Satz","label":"1.11","description":"Dimensionsformel für affine Unterräume","chapter":"1","section":"1.1","subsection":"1.1.0","page":"9","counter":17},{"destination":"defn:parallel-und-windschief","sort":"Definition","label":"1.12","description":"parallel und windschief","chapter":"1","section":"1.1","subsection":"1.1.0","page":"10","counter":18},{"destination":"bem:keine-windschiefen-Hyperebenen","sort":"Bemerkung","label":"1.13","description":"eine Hyperebene ist zu keinem affinen Unterraum windschief","chapter":"1","section":"1.1","subsection":"1.1.0","page":"10","counter":19},{"destination":"bem:Verbindungsraum-als-Vereinigung-von-Verbindungsgeraden","sort":"Bemerkung","label":"1.14","description":"","chapter":"1","section":"1.1","subsection":"1.1.0","page":"10","counter":20},{"destination":"sect:Affine-Abbildungen","sort":"Abschnitt","label":"1.2","description":"Affine Abbildungen","chapter":"1","section":"1.2","subsection":"1.2.0","page":"11","counter":21},{"destination":"defn:affine-Abbildung","sort":"Definition","label":"1.15","description":"affine Abbildung","chapter":"1","section":"1.2","subsection":"1.2.0","page":"11","counter":22},{"destination":"affine-Abbildung","sort":"Gleichung","label":"1.6","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"11","counter":23},{"destination":"bsp:affine-Abb","sort":"Beispiel","label":"1.16","description":"affine Abbildungen","chapter":"1","section":"1.2","subsection":"1.2.0","page":"11","counter":24},{"destination":"prop:Kriterium-fuer-affine-Abbildung","sort":"Proposition","label":"1.17","description":"Kriterium für affine Abbildung","chapter":"1","section":"1.2","subsection":"1.2.0","page":"11","counter":25},{"destination":"prop:Zusammenhang-affine-und-lineare-Abbildungen","sort":"Proposition","label":"1.18","description":"Zusammenhang zwischen affinen und linearen Abbildungen","chapter":"1","section":"1.2","subsection":"1.2.0","page":"11","counter":26},{"destination":"affine-Abbildung-aus-linearer-Abbildung","sort":"Gleichung","label":"1.7","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"12","counter":27},{"destination":"bsp:affine-Abbildungen-in-der-affinen-Standardebene","sort":"Beispiel","label":"1.19","description":"affine Abbildungen in der affinen Standardebene","chapter":"1","section":"1.2","subsection":"1.2.0","page":"12","counter":28},{"destination":"W-Bahn","sort":"Gleichung","label":"1.8","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"13","counter":29},{"destination":"prop:Parallelprojektion","sort":"Proposition","label":"1.20","description":"Parallelprojektionen","chapter":"1","section":"1.2","subsection":"1.2.0","page":"13","counter":30},{"destination":"defn:kollinear","sort":"Definition","label":"1.21","description":"kollinear","chapter":"1","section":"1.2","subsection":"1.2.0","page":"14","counter":31},{"destination":"defn:n-Eck","sort":"Definition","label":"1.22","description":"n-Eck","chapter":"1","section":"1.2","subsection":"1.2.0","page":"14","counter":32},{"destination":"defn:Parallelogramm","sort":"Definition","label":"1.23","description":"Parallelogramm","chapter":"1","section":"1.2","subsection":"1.2.0","page":"15","counter":33},{"destination":"prop:affine-Abbildungen-erhalten-Parallelogramme","sort":"Proposition","label":"1.24","description":"affine Abbildungen erhalten Parallelogramme","chapter":"1","section":"1.2","subsection":"1.2.0","page":"15","counter":34},{"destination":"affine-Abbildungen-erhalten-Parallelogramme","sort":"Gleichung","label":"1.9","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"15","counter":35},{"destination":"Bild-ist-Parallelogramm-1","sort":"Gleichung","label":"1.10","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"15","counter":36},{"destination":"Bild-ist-Parallelogramm-2","sort":"Gleichung","label":"1.11","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"15","counter":37},{"destination":"gegenueberliegende-Seiten-im-Parallelogramm-schneiden-sich-nicht","sort":"Gleichung","label":"1.12","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"15","counter":38},{"destination":"sect:Affine-Koordinaten","sort":"Abschnitt","label":"1.3","description":"Affine Koordinaten","chapter":"1","section":"1.3","subsection":"1.3.0","page":"16","counter":39},{"destination":"defn:affine-Basis","sort":"Definition","label":"1.25","description":"affine Basis","chapter":"1","section":"1.3","subsection":"1.3.0","page":"16","counter":40},{"destination":"bsp:Standardbasis-des-affinen-Standardraums","sort":"Beispiel","label":"1.26","description":"Standardbasis des affinen Standardraums","chapter":"1","section":"1.3","subsection":"1.3.0","page":"16","counter":41},{"destination":"bem:affine-Unabhaengigkeit","sort":"Bemerkung","label":"1.27","description":"affine Unabhängigkeit hängt nicht von der Reihenfolge ab","chapter":"1","section":"1.3","subsection":"1.3.0","page":"16","counter":42},{"destination":"satz:affine-Abbildung","sort":"Satz","label":"1.28","description":"Eindeutigkeit der affinen Abbildung mit gegebenen Bildern einer affinen Basis","chapter":"1","section":"1.3","subsection":"1.3.0","page":"17","counter":43},{"destination":"defn:affines-Koordinatensystem","sort":"Definition","label":"1.29","description":"affines Koordinatensystem","chapter":"1","section":"1.3","subsection":"1.3.0","page":"17","counter":44},{"destination":"defn:Teilverhaeltnis","sort":"Definition","label":"1.30","description":"Teilverhältnis","chapter":"1","section":"1.3","subsection":"1.3.0","page":"18","counter":45},{"destination":"Teilverhaeltnis","sort":"Gleichung","label":"1.13","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"18","counter":46},{"destination":"bem:Teilverhaeltnis-in-Standardraum","sort":"Bemerkung","label":"1.31","description":"Teilverhältnis im affinen Standardraum","chapter":"1","section":"1.3","subsection":"1.3.0","page":"18","counter":47},{"destination":"prop:TV-affine-Invariante","sort":"Proposition","label":"1.32","description":"Teilverhältnis ist affine Invariante","chapter":"1","section":"1.3","subsection":"1.3.0","page":"19","counter":48},{"destination":"satz:affiner-Strahlensatz","sort":"Satz","label":"1.33","description":"Strahlensatz","chapter":"1","section":"1.3","subsection":"1.3.0","page":"19","counter":49},{"destination":"defn:Mittelpunkt","sort":"Definition","label":"1.35","description":"Mittelpunkt","chapter":"1","section":"1.3","subsection":"1.3.0","page":"21","counter":50},{"destination":"satz:Diagonalensatz","sort":"Satz","label":"1.36","description":"Diagonalensatz","chapter":"1","section":"1.3","subsection":"1.3.0","page":"21","counter":51},{"destination":"satz:Schwerpunktsatz","sort":"Satz","label":"1.37","description":"Schwerpunktsatz","chapter":"1","section":"1.3","subsection":"1.3.0","page":"22","counter":52},{"destination":"defn:Winkel-affin","sort":"Definition","label":"1.38","description":"Strecke, Strahl und Winkel","chapter":"1","section":"1.3","subsection":"1.3.0","page":"23","counter":53},{"destination":"euklidisches-Winkelmass","sort":"Gleichung","label":"1.14","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"23","counter":54},{"destination":"Winkelgroesse","sort":"Gleichung","label":"1.15","description":"Winkelgröße","chapter":"1","section":"1.3","subsection":"1.3.0","page":"23","counter":55},{"destination":"defn:Seitenlaengen-und-Innenwinkelgroessen","sort":"Definition","label":"1.39","description":"Seitenlängen und Innenwinkelgrößen eines Dreicks","chapter":"1","section":"1.3","subsection":"1.3.0","page":"23","counter":56},{"destination":"satz:Kosinussatz","sort":"Satz","label":"1.40","description":"Kosinussatz","chapter":"1","section":"1.3","subsection":"1.3.0","page":"23","counter":57},{"destination":"Kosinussatz","sort":"Gleichung","label":"1.16","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"24","counter":58},{"destination":"coro:Pythagoras","sort":"Korollar","label":"1.41","description":"Satz des Pythagoras","chapter":"1","section":"1.3","subsection":"1.3.0","page":"24","counter":59},{"destination":"satz:Winkelsumme-im-Dreieck","sort":"Satz","label":"1.42","description":"Winkelsumme im Dreieck","chapter":"1","section":"1.3","subsection":"1.3.0","page":"24","counter":60},{"destination":"Winkelsumme-Kosinuswerte","sort":"Gleichung","label":"1.17","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"25","counter":61},{"destination":"Sinus-des-Winkelmasses","sort":"Gleichung","label":"1.18","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"25","counter":62},{"destination":"Rechnung-zu-Cauchy-Schwartz","sort":"Gleichung","label":"1.19","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"25","counter":63},{"destination":"Winkelsumme-Sinuswerte","sort":"Gleichung","label":"1.20","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"26","counter":64},{"destination":"satz:Sinussatz","sort":"Satz","label":"1.43","description":"Sinussatz","chapter":"1","section":"1.3","subsection":"1.3.0","page":"26","counter":65},{"destination":"coro:Hypothenuse-und-Katheten","sort":"Korollar","label":"1.44","description":"Sinus und Kosinus als Quotient der Katheten durch die Hypothenuse","chapter":"1","section":"1.3","subsection":"1.3.0","page":"27","counter":66},{"destination":"sect:Polytope","sort":"Abschnitt","label":"1.4","description":"Polytope","chapter":"1","section":"1.4","subsection":"1.4.0","page":"27","counter":67},{"destination":"defn:Polytop","sort":"Definition","label":"1.45","description":"Konvexes Polyeder und Polytop","chapter":"1","section":"1.4","subsection":"1.4.0","page":"27","counter":68},{"destination":"bsp:Durchschnitt-von-Halbraeumen","sort":"Beispiel","label":"1.46","description":"Durchschnitte orthogonaler Halbräume","chapter":"1","section":"1.4","subsection":"1.4.0","page":"28","counter":69},{"destination":"bem:Rand-eines-Polytops","sort":"Bemerkung","label":"1.47","description":"Rand eines Polytops","chapter":"1","section":"1.4","subsection":"1.4.0","page":"28","counter":70},{"destination":"defn:Ecken-Kanten-Flaechen","sort":"Definition","label":"1.48","description":"Ecken, Kanten, Flächen eines Polytops","chapter":"1","section":"1.4","subsection":"1.4.0","page":"28","counter":71},{"destination":"bsp:Wuerfel","sort":"Beispiel","label":"1.49","description":"Ecken, Kanten, Flächen beim Würfel","chapter":"1","section":"1.4","subsection":"1.4.0","page":"28","counter":72},{"destination":"satz:Polyederformel","sort":"Satz","label":"1.50","description":"Euler'sche Polyederformel","chapter":"1","section":"1.4","subsection":"1.4.0","page":"29","counter":73},{"destination":"defn:Platonischer-Koerper","sort":"Definition","label":"1.51","description":"regelmäßige n-Ecke und Platonische Körper","chapter":"1","section":"1.4","subsection":"1.4.0","page":"33","counter":74},{"destination":"prop:Polytop","sort":"Proposition","label":"1.52","description":"Beschreibung regulärer Polytope durch Grad und Anzahl der Kanten pro Ecke","chapter":"1","section":"1.4","subsection":"1.4.0","page":"33","counter":75},{"destination":"coro:Platonische-Koerper","sort":"Korollar","label":"1.53","description":"Platonische Körper","chapter":"1","section":"1.4","subsection":"1.4.0","page":"33","counter":76},{"destination":"defn:Aehnlichkeitsabbildung-analytisch","sort":"Definition","label":"1.54","description":"Ähnlichkeitsabbildung","chapter":"1","section":"1.4","subsection":"1.4.0","page":"34","counter":77},{"destination":"satz:Klassifikation-der-Platonischen-Koerper","sort":"Satz","label":"1.55","description":"Klassifikation der Platonischen Körper","chapter":"1","section":"1.4","subsection":"1.4.0","page":"34","counter":78},{"destination":"sect:Projektive-Raeume","sort":"Abschnitt","label":"1.5","description":"Projektive Räume","chapter":"1","section":"1.5","subsection":"1.5.0","page":"36","counter":79},{"destination":"defn:projektiver-Raum","sort":"Definition","label":"1.56","description":"projektiver Raum","chapter":"1","section":"1.5","subsection":"1.5.0","page":"36","counter":80},{"destination":"bsp:projektiver-Standardraum","sort":"Beispiel","label":"1.57","description":"projektiver Standardraum","chapter":"1","section":"1.5","subsection":"1.5.0","page":"37","counter":81},{"destination":"bsp:Einbettungen-projektiver-Standardraeume","sort":"Beispiel","label":"1.58","description":"Veranschaulichung projektiver Standardräume der Dimension 1 und 2 als affine Einbettungen","chapter":"1","section":"1.5","subsection":"1.5.0","page":"37","counter":82},{"destination":"defn:projektiver-Unterraum","sort":"Definition","label":"1.59","description":"projektiver Unterraum","chapter":"1","section":"1.5","subsection":"1.5.0","page":"38","counter":83},{"destination":"prop:Durchschnitt-und-Verbindungsraum-projektiv","sort":"Proposition","label":"1.60","description":"Durchschnitt und Verbindungsraum projektiver Räume","chapter":"1","section":"1.5","subsection":"1.5.0","page":"38","counter":84},{"destination":"abb:Boyflaeche","sort":"Abbildung","label":"1.3","description":"","chapter":"1","section":"1.5","subsection":"1.5.0","page":"39","counter":85},{"destination":"Beschreibung-projektiver-Verbindungsraum","sort":"Gleichung","label":"1.21","description":"","chapter":"1","section":"1.5","subsection":"1.5.0","page":"40","counter":86},{"destination":"satz:Dimensionsformel-fuer-projektive-Unterraeume","sort":"Satz","label":"1.61","description":"Dimensionsformel für projektive Unterräume","chapter":"1","section":"1.5","subsection":"1.5.0","page":"40","counter":87},{"destination":"sect:Projektive-Abbildungen","sort":"Abschnitt","label":"1.6","description":"Projektive Abbildungen","chapter":"1","section":"1.6","subsection":"1.6.0","page":"40","counter":88},{"destination":"defn:projektive-Abbildung","sort":"Definition","label":"1.62","description":"projektive Abbildung","chapter":"1","section":"1.6","subsection":"1.6.0","page":"40","counter":89},{"destination":"prop:Uneindeutigkeit-der-lin-Abb-zu-einer-proj-Abb","sort":"Proposition","label":"1.63","description":"Zusammenhang zwischen den linearen Abbildungen zu einer gegebenen projektiven Abbildung","chapter":"1","section":"1.6","subsection":"1.6.0","page":"41","counter":90},{"destination":"bsp:kanonische-Einbettung","sort":"Beispiel","label":"1.64","description":"kanonische Einbettung","chapter":"1","section":"1.6","subsection":"1.6.0","page":"41","counter":91},{"destination":"defn:Zentralprojektion","sort":"Definition","label":"1.65","description":"Zentralprojektion","chapter":"1","section":"1.6","subsection":"1.6.0","page":"42","counter":92},{"destination":"Wohldefiniertheit-Zentralprojektion-1","sort":"Gleichung","label":"1.22","description":"","chapter":"1","section":"1.6","subsection":"1.6.0","page":"43","counter":93},{"destination":"Wohldefiniertheit-Zentralprojektion-2","sort":"Gleichung","label":"1.23","description":"","chapter":"1","section":"1.6","subsection":"1.6.0","page":"43","counter":94},{"destination":"bem:Beschreibung-Zentralprojektion","sort":"Bemerkung","label":"1.66","description":"alternative Beschreibung des Begriffs der Zentralprojektion","chapter":"1","section":"1.6","subsection":"1.6.0","page":"43","counter":95},{"destination":"prop:Zentralprojektionen-sind-Projektivitaeten","sort":"Proposition","label":"1.67","description":"Zentralprojektionen sind Projektivitäten","chapter":"1","section":"1.6","subsection":"1.6.0","page":"43","counter":96},{"destination":"satz:projektiver-Abschluss","sort":"Satz","label":"1.68","description":"projektiver Abschluss","chapter":"1","section":"1.6","subsection":"1.6.0","page":"44","counter":97},{"destination":"bsp:projektiver-Abschluss","sort":"Beispiel","label":"1.69","description":"projektiver Abschluss einer Hyperebene in K³","chapter":"1","section":"1.6","subsection":"1.6.0","page":"45","counter":98},{"destination":"ZcapX","sort":"Gleichung","label":"1.24","description":"","chapter":"1","section":"1.6","subsection":"1.6.0","page":"46","counter":99},{"destination":"dim-ZcapX","sort":"Gleichung","label":"1.25","description":"","chapter":"1","section":"1.6","subsection":"1.6.0","page":"47","counter":100},{"destination":"sect:Projektive-Koordinaten","sort":"Abschnitt","label":"1.7","description":"Projektive Koordinaten","chapter":"1","section":"1.7","subsection":"1.7.0","page":"49","counter":101},{"destination":"defn:projektive-Basis","sort":"Definition","label":"1.70","description":"projektive Basis","chapter":"1","section":"1.7","subsection":"1.7.0","page":"49","counter":102},{"destination":"bsp:kanonische-projektive-Basis","sort":"Beispiel","label":"1.71","description":"Standardbasis des projektiven Standardraums","chapter":"1","section":"1.7","subsection":"1.7.0","page":"49","counter":103},{"destination":"abb:projektive-Standardbasis","sort":"Abbildung","label":"1.4","description":"","chapter":"1","section":"1.7","subsection":"1.7.0","page":"49","counter":104},{"destination":"lemma:Zusammenhang-zwischen-projektiver-Basis-und-VR-Basis","sort":"Lemma","label":"1.72","description":"Zusammenhang zwischen projektiver Basis und Basis des zugrunde liegenden Vektorraums","chapter":"1","section":"1.7","subsection":"1.7.0","page":"50","counter":105},{"destination":"satz:projektive-Raeume-gleicher-Dimension-sind-kanonisch-isomorph","sort":"Satz","label":"1.73","description":"projektive Räume gleicher Dimension sind kanonisch isomorph","chapter":"1","section":"1.7","subsection":"1.7.0","page":"50","counter":106},{"destination":"defn:projektives-Koordinatensystem","sort":"Definition","label":"1.74","description":"projektives Koordinatensystem","chapter":"1","section":"1.7","subsection":"1.7.0","page":"51","counter":107},{"destination":"defn:Doppelverhaeltnis-projektiv","sort":"Definition","label":"1.75","description":"Doppelverhältnis","chapter":"1","section":"1.7","subsection":"1.7.0","page":"51","counter":108},{"destination":"prop:DV-projektive-Invariante","sort":"Proposition","label":"1.76","description":"Doppelverhältnis ist projektive Invariante","chapter":"1","section":"1.7","subsection":"1.7.0","page":"52","counter":109},{"destination":"DV-projektive-Invariante","sort":"Gleichung","label":"1.26","description":"","chapter":"1","section":"1.7","subsection":"1.7.0","page":"52","counter":110},{"destination":"prop:DV-Berechnung","sort":"Proposition","label":"1.77","description":"Berechnung des Doppelverhältnisses aus den homogenen Koordinaten","chapter":"1","section":"1.7","subsection":"1.7.0","page":"52","counter":111},{"destination":"bem:Zusammenhang-DV-und-TV","sort":"Bemerkung","label":"1.78","description":"Zusammenhang zwischen Doppelverhältnis und bestimmten Teilverhältnissen","chapter":"1","section":"1.7","subsection":"1.7.0","page":"54","counter":112},{"destination":"satz:projektiver-Desargues","sort":"Satz","label":"1.79","description":"projektiver Satz von Desargues","chapter":"1","section":"1.7","subsection":"1.7.0","page":"55","counter":113},{"destination":"sect:Computergraphik","sort":"Abschnitt","label":"1.8","description":"Computergraphik","chapter":"1","section":"1.8","subsection":"1.8.0","page":"58","counter":114},{"destination":"Transformationen-in-R3","sort":"Gleichung","label":"1.27","description":"","chapter":"1","section":"1.8","subsection":"1.8.0","page":"59","counter":115},{"destination":"defn:Quader","sort":"Definition","label":"1.80","description":"Quader","chapter":"1","section":"1.8","subsection":"1.8.0","page":"60","counter":116},{"destination":"defn:Kegelstumpf","sort":"Definition","label":"1.81","description":"Rechteckkegelstumpf","chapter":"1","section":"1.8","subsection":"1.8.0","page":"60","counter":117},{"destination":"sect:Uebungsaufgaben-Analytische-Geometrie","sort":"Abschnitt","label":"1.9","description":"Übungsaufgaben","chapter":"1","section":"1.9","subsection":"1.9.0","page":"61","counter":118},{"destination":"aufg:Verbindungsgerade-ist-Gerade","sort":"Aufgabe","label":"1.1","description":"","chapter":"1","section":"1.9","subsection":"1.9.0","page":"61","counter":119},{"destination":"aufg:Eigenschaften-affiner-Abbildungen","sort":"Aufgabe","label":"1.2","description":"","chapter":"1","section":"1.9","subsection":"1.9.0","page":"61","counter":120},{"destination":"aufg:Abbildungsgeometrie","sort":"Aufgabe","label":"1.4","description":"Transfer: Abbildungsgeometrie","chapter":"1","section":"1.9","subsection":"1.9.0","page":"61","counter":121},{"destination":"aufg:Tangenssatz","sort":"Aufgabe","label":"1.5","description":"Tangenssatz","chapter":"1","section":"1.9","subsection":"1.9.0","page":"62","counter":122},{"destination":"aufg:Heronsche-Formel","sort":"Aufgabe","label":"1.6","description":"Heron'sche Formel","chapter":"1","section":"1.9","subsection":"1.9.0","page":"62","counter":123},{"destination":"aufg:Vergleich-rechtwinkliger-Dreiecke","sort":"Aufgabe","label":"1.8","description":"","chapter":"1","section":"1.9","subsection":"1.9.0","page":"62","counter":124},{"destination":"aufg:Durchschnitt-Gerade-mit-Einheitssphaere","sort":"Aufgabe","label":"1.9","description":"","chapter":"1","section":"1.9","subsection":"1.9.0","page":"62","counter":125},{"destination":"aufg:fast-jede-Projektivitaet-ist-Zentralprojektion","sort":"Aufgabe","label":"1.11","description":"Jede Projektivität, die den Durchschnitt von Start- und Zielraum punktweise festlässt, ist eine Zentralprojektion","chapter":"1","section":"1.9","subsection":"1.9.0","page":"63","counter":126},{"destination":"aufg:projektiver-Pappos","sort":"Aufgabe","label":"1.13","description":"projektiver Satz von Pappos","chapter":"1","section":"1.9","subsection":"1.9.0","page":"63","counter":127},{"destination":"chap:Inzidenzgeometrie","sort":"Kapitel","label":"2","description":"Inzidenzgeometrie","chapter":"2","section":"2.0","subsection":"2.0.0","page":"64","counter":128},{"destination":"sect:Inzidenzebenen","sort":"Abschnitt","label":"2.1","description":"Inzidenzebenen","chapter":"2","section":"2.1","subsection":"2.1.0","page":"64","counter":129},{"destination":"defn:Inzidenzebene","sort":"Definition","label":"2.1","description":"Inzidenzebene","chapter":"2","section":"2.1","subsection":"2.1.0","page":"65","counter":130},{"destination":"bsp:Inzidenzebene","sort":"Beispiel","label":"2.2","description":"Inzidenzebene","chapter":"2","section":"2.1","subsection":"2.1.0","page":"65","counter":131},{"destination":"prop:Geradenschnittpunkt","sort":"Proposition","label":"2.3","description":"nichtparallele Geraden besitzen eindeutigen Schnittpunkt","chapter":"2","section":"2.1","subsection":"2.1.0","page":"65","counter":132},{"destination":"prop:Kriterium-Punkt-auf-Gerade","sort":"Proposition","label":"2.4","description":"Kriterium dafür, ob ein Punkt auf einer Geraden liegt","chapter":"2","section":"2.1","subsection":"2.1.0","page":"66","counter":133},{"destination":"prop:Trennung-von-Punkt-und-Gerade","sort":"Proposition","label":"2.5","description":"Trennung von Punkt und Gerade","chapter":"2","section":"2.1","subsection":"2.1.0","page":"66","counter":134},{"destination":"satz:A2(K)-Inzidenzebene","sort":"Satz","label":"2.6","description":"affine Standardebene ist Inzidenzebene","chapter":"2","section":"2.1","subsection":"2.1.0","page":"66","counter":135},{"destination":"bem:Parallelitaet-in-A2(K)","sort":"Bemerkung","label":"2.7","description":"Parallelitätsbegriffe in der affinen Standardebene stimmen überein","chapter":"2","section":"2.1","subsection":"2.1.0","page":"67","counter":136},{"destination":"defn:Isomorphismus-von-Inzidenzebenen","sort":"Definition","label":"2.8","description":"Isomorphismus von Inzidenzebenen","chapter":"2","section":"2.1","subsection":"2.1.0","page":"67","counter":137},{"destination":"bsp:affine-Ebenen-sind-Inzidenzebenen","sort":"Beispiel","label":"2.9","description":"affine Ebenen (analytisch definiert) sind Inzidenzebenen","chapter":"2","section":"2.1","subsection":"2.1.0","page":"67","counter":138},{"destination":"sect:affine-Ebenen","sort":"Abschnitt","label":"2.2","description":"Affine Ebenen","chapter":"2","section":"2.2","subsection":"2.2.0","page":"67","counter":139},{"destination":"defn:Parallelenaxiome","sort":"Definition","label":"2.10","description":"Parallelenaxiom","chapter":"2","section":"2.2","subsection":"2.2.0","page":"67","counter":140},{"destination":"defn:affine-Ebene","sort":"Definition","label":"2.11","description":"affine Ebene","chapter":"2","section":"2.2","subsection":"2.2.0","page":"68","counter":141},{"destination":"bsp:Parallelenaxiome","sort":"Beispiel","label":"2.12","description":"Parallelenaxiom","chapter":"2","section":"2.2","subsection":"2.2.0","page":"68","counter":142},{"destination":"prop:Parallelitaet-Aequivalenzrelation","sort":"Proposition","label":"2.13","description":"Parallelität ist Äquivalenzrelation","chapter":"2","section":"2.2","subsection":"2.2.0","page":"69","counter":143},{"destination":"defn:Parallelenbueschel-und-Geradenbueschel","sort":"Definition","label":"2.14","description":"Parallelenbüschel und Geradenbüschel","chapter":"2","section":"2.2","subsection":"2.2.0","page":"69","counter":144},{"destination":"bsp:Parallelenbueschel-und-Geradenbueschel","sort":"Beispiel","label":"2.15","description":"Parallelenbüschel und Geradenbüschel in der affinen Standardebene","chapter":"2","section":"2.2","subsection":"2.2.0","page":"69","counter":145},{"destination":"defn:affiner-Isomorphismus","sort":"Definition","label":"2.16","description":"affiner Isomorphismus","chapter":"2","section":"2.2","subsection":"2.2.0","page":"70","counter":146},{"destination":"bsp:affiner-Isomorphismus","sort":"Beispiel","label":"2.17","description":"affiner Isomorphismus","chapter":"2","section":"2.2","subsection":"2.2.0","page":"70","counter":147},{"destination":"sect:Uebungsaufgaben-Inzidenzgeometrie","sort":"Abschnitt","label":"2.3","description":"Übungsaufgaben","chapter":"2","section":"2.3","subsection":"2.3.0","page":"70","counter":148},{"destination":"aufg:Isomorphismen-von-Inzidenzebenen","sort":"Aufgabe","label":"2.2","description":"","chapter":"2","section":"2.3","subsection":"2.3.0","page":"70","counter":149},{"destination":"aufg:affine-Ebene-mit-fuenf-Punkten","sort":"Aufgabe","label":"2.3","description":"","chapter":"2","section":"2.3","subsection":"2.3.0","page":"70","counter":150},{"destination":"aufg:Geraden-in-affiner-Ebene-sind-gleichmaechtig","sort":"Aufgabe","label":"2.4","description":"","chapter":"2","section":"2.3","subsection":"2.3.0","page":"70","counter":151},{"destination":"chap:Hilbertebenen","sort":"Kapitel","label":"3","description":"Hilbertebenen","chapter":"3","section":"3.0","subsection":"3.0.0","page":"72","counter":152},{"destination":"sect:Anordnungsaxiome","sort":"Abschnitt","label":"3.1","description":"Die Anordnungsaxiome","chapter":"3","section":"3.1","subsection":"3.1.0","page":"72","counter":153},{"destination":"defn:Anordnungsaxiome","sort":"Definition","label":"3.1","description":"Anordnungsaxiome","chapter":"3","section":"3.1","subsection":"3.1.0","page":"72","counter":154},{"destination":"prop:Seiten-einer-Geraden","sort":"Proposition","label":"3.2","description":"Seiten einer Geraden","chapter":"3","section":"3.1","subsection":"3.1.0","page":"73","counter":155},{"destination":"abb:Geradenseiten","sort":"Abbildung","label":"3.1","description":"Seiten einer Geraden","chapter":"3","section":"3.1","subsection":"3.1.0","page":"73","counter":156},{"destination":"bsp:affine-Standardebene-und-Anordnung","sort":"Beispiel","label":"3.3","description":"Anordnung in der affinen Standardebene","chapter":"3","section":"3.1","subsection":"3.1.0","page":"74","counter":157},{"destination":"Anordnung-fuer-affine-Standardebenen","sort":"Gleichung","label":"3.1","description":"","chapter":"3","section":"3.1","subsection":"3.1.0","page":"74","counter":158},{"destination":"Hessesche-Normalform","sort":"Gleichung","label":"3.2","description":"Hesse'sche Normalform","chapter":"3","section":"3.1","subsection":"3.1.0","page":"75","counter":159},{"destination":"defn:Lage-auf-verschiedenen-Geradenseiten","sort":"Definition","label":"3.4","description":"Lage auf verschiedenen Seiten einer Geraden","chapter":"3","section":"3.1","subsection":"3.1.0","page":"75","counter":160},{"destination":"prop:Seiten-von-Geraden-und-Punkten","sort":"Proposition","label":"3.5","description":"Seiten von Geraden und Punkten","chapter":"3","section":"3.1","subsection":"3.1.0","page":"75","counter":161},{"destination":"coro:Seiten-eines-Punktes","sort":"Korollar","label":"3.6","description":"Lage auf gleicher Seite ist Äquivalenzrelation","chapter":"3","section":"3.1","subsection":"3.1.0","page":"76","counter":162},{"destination":"defn:Anordnung-vieler-Punkte","sort":"Definition","label":"3.7","description":"Erweiterung des Anordnungsbegriffs auf beliebig viele kollineare Punkte","chapter":"3","section":"3.1","subsection":"3.1.0","page":"76","counter":163},{"destination":"prop:Anordnung-von-Punkten-auf-Geraden","sort":"Proposition","label":"3.8","description":"Anordnungen von Punkten auf Geraden","chapter":"3","section":"3.1","subsection":"3.1.0","page":"76","counter":164},{"destination":"bem:alternatives-Anordnungsaxiom","sort":"Bemerkung","label":"3.9","description":"alternatives Anordnungsaxiom (A'2)","chapter":"3","section":"3.1","subsection":"3.1.0","page":"77","counter":165},{"destination":"defn:strecke-und-strahl","sort":"Definition","label":"3.10","description":"Strecke und Strahl","chapter":"3","section":"3.1","subsection":"3.1.0","page":"77","counter":166},{"destination":"prop:Strecken-und-Strahlen","sort":"Proposition","label":"3.11","description":"Strecken und Strahlen","chapter":"3","section":"3.1","subsection":"3.1.0","page":"77","counter":167},{"destination":"prop:gerade-vereinigung-von-strahlen","sort":"Proposition","label":"3.12","description":"Gerade als Vereinigung von Strahlen","chapter":"3","section":"3.1","subsection":"3.1.0","page":"77","counter":168},{"destination":"satz:Pasch","sort":"Satz","label":"3.13","description":"Satz von Pasch","chapter":"3","section":"3.1","subsection":"3.1.0","page":"78","counter":169},{"destination":"sect:Die-Kongruenzaxiome-fuer-Strecken","sort":"Abschnitt","label":"3.2","description":"Die Kongruenzaxiome für Strecken","chapter":"3","section":"3.2","subsection":"3.2.0","page":"78","counter":170},{"destination":"defn:Kongruenzaxiome-fuer-Strecken","sort":"Definition","label":"3.14","description":"Kongruenzaxiome für Strecken","chapter":"3","section":"3.2","subsection":"3.2.0","page":"78","counter":171},{"destination":"bsp:affine-Standardebene-und-Kongruenzen-von-Strecken","sort":"Beispiel","label":"3.15","description":"Streckenkongruenzen in der affinen Standardebene","chapter":"3","section":"3.2","subsection":"3.2.0","page":"79","counter":172},{"destination":"prop:Streckensubtraktion","sort":"Proposition","label":"3.16","description":"Streckensubtraktion","chapter":"3","section":"3.2","subsection":"3.2.0","page":"79","counter":173},{"destination":"defn:<-fuer-Strecken","sort":"Definition","label":"3.17","description":"Vergleich von Strecken","chapter":"3","section":"3.2","subsection":"3.2.0","page":"79","counter":174},{"destination":"prop:<-fuer-Strecken","sort":"Proposition","label":"3.18","description":"Vergleich von Strecken","chapter":"3","section":"3.2","subsection":"3.2.0","page":"80","counter":175},{"destination":"sect:Kongruenzaxiome-fuer-Winkel","sort":"Abschnitt","label":"3.3","description":"Die Kongruenzaxiome für Winkel","chapter":"3","section":"3.3","subsection":"3.3.0","page":"80","counter":176},{"destination":"defn:Winkel","sort":"Definition","label":"3.19","description":"Winkel","chapter":"3","section":"3.3","subsection":"3.3.0","page":"80","counter":177},{"destination":"abb:Winkel","sort":"Abbildung","label":"3.2","description":"Winkel","chapter":"3","section":"3.3","subsection":"3.3.0","page":"80","counter":178},{"destination":"prop:winkel","sort":"Proposition","label":"3.20","description":"Identitätskriterium für Winkel","chapter":"3","section":"3.3","subsection":"3.3.0","page":"80","counter":179},{"destination":"defn:Inneres-eines-Winkels","sort":"Definition","label":"3.21","description":"Inneres eines Winkels","chapter":"3","section":"3.3","subsection":"3.3.0","page":"81","counter":180},{"destination":"lemma:im-Inneren-eines-Winkels","sort":"Lemma","label":"3.22","description":"Kriterium für die Lage im Inneren eines Winkels","chapter":"3","section":"3.3","subsection":"3.3.0","page":"81","counter":181},{"destination":"defn:Kongruenzaxiome-fuer-Winkel","sort":"Definition","label":"3.23","description":"Kongruenzaxiome für Winkel","chapter":"3","section":"3.3","subsection":"3.3.0","page":"82","counter":182},{"destination":"defn:<-fuer-Winkel","sort":"Definition","label":"3.24","description":"Vergleich von Winkeln","chapter":"3","section":"3.3","subsection":"3.3.0","page":"83","counter":183},{"destination":"prop:<-fuer-Winkel","sort":"Proposition","label":"3.25","description":"Vergleich von Winkeln","chapter":"3","section":"3.3","subsection":"3.3.0","page":"83","counter":184},{"destination":"defn:Dreieck","sort":"Definition","label":"3.26","description":"Dreieck","chapter":"3","section":"3.3","subsection":"3.3.0","page":"83","counter":185},{"destination":"bem:dreieck","sort":"Bemerkung","label":"3.27","description":"Kongruenz von Dreiecken","chapter":"3","section":"3.3","subsection":"3.3.0","page":"84","counter":186},{"destination":"defn:ebene-Geometrie","sort":"Definition","label":"3.28","description":"ebene Geometrie","chapter":"3","section":"3.3","subsection":"3.3.0","page":"84","counter":187},{"destination":"defn:Bewegung","sort":"Definition","label":"3.29","description":"Bewegung","chapter":"3","section":"3.3","subsection":"3.3.0","page":"84","counter":188},{"destination":"bsp:Bewegungen-in-der-affinen-Standardebene","sort":"Beispiel","label":"3.30","description":"Bewegungen in der affinen Standardebene","chapter":"3","section":"3.3","subsection":"3.3.0","page":"85","counter":189},{"destination":"defn:gvB","sort":"Definition","label":"3.31","description":"genügend viele Bewegungen","chapter":"3","section":"3.3","subsection":"3.3.0","page":"85","counter":190},{"destination":"satz:genug-Bewegung","sort":"Satz","label":"3.32","description":"Existenz genügend vieler Bewegungen impliziert (K'6)","chapter":"3","section":"3.3","subsection":"3.3.0","page":"86","counter":191},{"destination":"Voraussetzungen-SWS","sort":"Gleichung","label":"3.3","description":"","chapter":"3","section":"3.3","subsection":"3.3.0","page":"86","counter":192},{"destination":"bsp:affine-Standardebene-und-Kongruenzen-von-Winkeln","sort":"Beispiel","label":"3.33","description":"Winkelkongruenzen in der affinen Standardebene","chapter":"3","section":"3.3","subsection":"3.3.0","page":"86","counter":193},{"destination":"Kongruenz-von-Winkeln-in-der-affinen-Standardebene","sort":"Gleichung","label":"3.4","description":"","chapter":"3","section":"3.3","subsection":"3.3.0","page":"86","counter":194},{"destination":"sect:Ergaenzungswinkel,-Gegenwinkel-und-rechte-Winkel","sort":"Abschnitt","label":"3.4","description":"Ergänzungswinkel, Gegenwinkel und rechte Winkel","chapter":"3","section":"3.4","subsection":"3.4.0","page":"87","counter":195},{"destination":"defn:Ergaenzungswinkel-Gegenwinkel","sort":"Definition","label":"3.34","description":"Ergänzungswinkel und Gegenwinkel","chapter":"3","section":"3.4","subsection":"3.4.0","page":"87","counter":196},{"destination":"prop:Ergaenzungswinkel","sort":"Proposition","label":"3.35","description":"Ergänzungswinkel kongruenter Winkel sind kongruent","chapter":"3","section":"3.4","subsection":"3.4.0","page":"87","counter":197},{"destination":"coro:Gegenwinkel","sort":"Korollar","label":"3.36","description":"ein Winkel ist zu seinem Gegenwinkel kongruent","chapter":"3","section":"3.4","subsection":"3.4.0","page":"88","counter":198},{"destination":"defn:rechter-Winkel","sort":"Definition","label":"3.37","description":"rechter Winkel","chapter":"3","section":"3.4","subsection":"3.4.0","page":"88","counter":199},{"destination":"prop:rechter-Winkel","sort":"Proposition","label":"3.38","description":"Ergänzungswinkel eines rechten Winkels ist rechter Winkel","chapter":"3","section":"3.4","subsection":"3.4.0","page":"88","counter":200},{"destination":"satz:Viertes-euklidisches-Postulat","sort":"Satz","label":"3.39","description":"rechte Winkel sind zueinander kongruent","chapter":"3","section":"3.4","subsection":"3.4.0","page":"89","counter":201},{"destination":"coro:rechte-Winkel","sort":"Korollar","label":"3.40","description":"die rechten Winkel bilden eine Kongruenzklasse","chapter":"3","section":"3.4","subsection":"3.4.0","page":"89","counter":202},{"destination":"sect:Orthogonalitaet-und-Parallelitaet","sort":"Abschnitt","label":"3.5","description":"Orthogonalität und Parallelität","chapter":"3","section":"3.5","subsection":"3.5.0","page":"89","counter":203},{"destination":"defn:orthogonal","sort":"Definition","label":"3.41","description":"orthogonal","chapter":"3","section":"3.5","subsection":"3.5.0","page":"89","counter":204},{"destination":"satz:Orthogonale-Gerade","sort":"Satz","label":"3.42","description":"Existenz des Lots","chapter":"3","section":"3.5","subsection":"3.5.0","page":"89","counter":205},{"destination":"abb:Orthogonale","sort":"Abbildung","label":"3.3","description":"Existenz des Lots","chapter":"3","section":"3.5","subsection":"3.5.0","page":"90","counter":206},{"destination":"defn:Wechselwinkel-und-Stufenwinkel","sort":"Definition","label":"3.43","description":"Wechselwinkel und Stufenwinkel","chapter":"3","section":"3.5","subsection":"3.5.0","page":"90","counter":207},{"destination":"bem:Wechselwinkel-und-Stufenwinkel","sort":"Bemerkung","label":"3.44","description":"Zusammenhang zwischen Wechsel- und Stufenwinkel","chapter":"3","section":"3.5","subsection":"3.5.0","page":"91","counter":208},{"destination":"satz:Schwacher-Wechselwinkelsatz-und-schwacher-Stufenwinkelsatz","sort":"Satz","label":"3.45","description":"schwacher Wechselwinkelsatz","chapter":"3","section":"3.5","subsection":"3.5.0","page":"91","counter":209},{"destination":"coro:zum-schwachen-wws","sort":"Korollar","label":"3.46","description":"zweifaches Lotfällen gibt Parallele","chapter":"3","section":"3.5","subsection":"3.5.0","page":"92","counter":210},{"destination":"coro:Lot-eindeutig","sort":"Korollar","label":"3.47","description":"Eindeutigkeit des Lots","chapter":"3","section":"3.5","subsection":"3.5.0","page":"92","counter":211},{"destination":"coro:Existenz-von-Parallelen","sort":"Korollar","label":"3.48","description":"Existenz von Parallelen","chapter":"3","section":"3.5","subsection":"3.5.0","page":"92","counter":212},{"destination":"satz:Parallelenaxiom-in-Hilbertebenen","sort":"Satz","label":"3.49","description":"starker Wechselwinkelsatz","chapter":"3","section":"3.5","subsection":"3.5.0","page":"92","counter":213},{"destination":"sect:Kongruenzsatz","sort":"Abschnitt","label":"3.6","description":"Der Kongruenzsatz für Dreiecke","chapter":"3","section":"3.6","subsection":"3.6.0","page":"94","counter":214},{"destination":"prop:eindeutiges-Dreieck","sort":"Proposition","label":"3.51","description":"Abtragung eines Dreiecks","chapter":"3","section":"3.6","subsection":"3.6.0","page":"94","counter":215},{"destination":"defn:gleichschenkliges-Dreieck","sort":"Definition","label":"3.52","description":"gleichschenkliges Dreieck","chapter":"3","section":"3.6","subsection":"3.6.0","page":"94","counter":216},{"destination":"prop:gleichschenkliges-Dreieck","sort":"Proposition","label":"3.53","description":"gleichschenkliges Dreieck","chapter":"3","section":"3.6","subsection":"3.6.0","page":"94","counter":217},{"destination":"prop:Winkeladdsubtraktion","sort":"Proposition","label":"3.54","description":"Winkeladdition und -subtraktion","chapter":"3","section":"3.6","subsection":"3.6.0","page":"94","counter":218},{"destination":"satz:Kongruenzsatz-fuer-Dreiecke","sort":"Satz","label":"3.55","description":"Kongruenzsatz für Dreiecke","chapter":"3","section":"3.6","subsection":"3.6.0","page":"95","counter":219},{"destination":"wsw-1","sort":"Gleichung","label":"3.5","description":"","chapter":"3","section":"3.6","subsection":"3.6.0","page":"96","counter":220},{"destination":"sect:Mittelsenkrechte-und-Winkelhalbierende","sort":"Abschnitt","label":"3.7","description":"Mittelsenkrechte und Winkelhalbierende","chapter":"3","section":"3.7","subsection":"3.7.0","page":"97","counter":221},{"destination":"defn:Streckenmittelpunkt","sort":"Definition","label":"3.56","description":"Streckenmittelpunkt","chapter":"3","section":"3.7","subsection":"3.7.0","page":"97","counter":222},{"destination":"lemma:Mittelpunkt-liegt-zwischen-Randpunkten","sort":"Lemma","label":"3.57","description":"Streckenmittelpunkt liegt zwischen den Randpunkten der Strecke","chapter":"3","section":"3.7","subsection":"3.7.0","page":"97","counter":223},{"destination":"satz:Mittelpunkt","sort":"Satz","label":"3.58","description":"Existenz und Eindeutigkeit des Streckenmittelpunkts","chapter":"3","section":"3.7","subsection":"3.7.0","page":"98","counter":224},{"destination":"Mittelpunkt-1","sort":"Gleichung","label":"3.6","description":"","chapter":"3","section":"3.7","subsection":"3.7.0","page":"98","counter":225},{"destination":"Mittelpunkt-2","sort":"Gleichung","label":"3.7","description":"","chapter":"3","section":"3.7","subsection":"3.7.0","page":"98","counter":226},{"destination":"defn:Mittelsenkrechte","sort":"Definition","label":"3.59","description":"Mittelsenkrechte","chapter":"3","section":"3.7","subsection":"3.7.0","page":"99","counter":227},{"destination":"prop:Charakterisierung-Mittelsenkrechte","sort":"Proposition","label":"3.60","description":"Charakterisierung der Mittelsenkrechten","chapter":"3","section":"3.7","subsection":"3.7.0","page":"99","counter":228},{"destination":"defn:Winkelhalbierende","sort":"Definition","label":"3.61","description":"Winkelhalbierende","chapter":"3","section":"3.7","subsection":"3.7.0","page":"99","counter":229},{"destination":"prop:Existenz-der-Winkelhalbierenden","sort":"Proposition","label":"3.62","description":"Existenz der Winkelhalbierenden","chapter":"3","section":"3.7","subsection":"3.7.0","page":"100","counter":230},{"destination":"sect:Innen-und-Aussenwinkel-im-Dreieck","sort":"Abschnitt","label":"3.8","description":"Innen- und Außenwinkel im Dreieck","chapter":"3","section":"3.8","subsection":"3.8.0","page":"100","counter":231},{"destination":"defn:Innenwinkel","sort":"Definition","label":"3.63","description":"Innenwinkel","chapter":"3","section":"3.8","subsection":"3.8.0","page":"100","counter":232},{"destination":"prop:schwache-Winkelsumme-im-Dreieck-1","sort":"Proposition","label":"3.64","description":"schwache Winkelsumme im Dreieck","chapter":"3","section":"3.8","subsection":"3.8.0","page":"100","counter":233},{"destination":"schwache-Winkelsumme-im-Dreieck","sort":"Gleichung","label":"3.8","description":"","chapter":"3","section":"3.8","subsection":"3.8.0","page":"101","counter":234},{"destination":"satz:Aussenwinkelsatz","sort":"Satz","label":"3.65","description":"Außenwinkelsatz","chapter":"3","section":"3.8","subsection":"3.8.0","page":"101","counter":235},{"destination":"satz:grosse-Dreiecksseite-hat-grossen-Winkel","sort":"Satz","label":"3.66","description":"der größeren Dreiecksseite liegt der größere Winkel gegenüber","chapter":"3","section":"3.8","subsection":"3.8.0","page":"102","counter":236},{"destination":"abb:grosse-Dreiecksseite-hat-grossen-Winkel","sort":"Abbildung","label":"3.4","description":"der größeren Dreiecksseite liegt der größere Winkel gegenüber","chapter":"3","section":"3.8","subsection":"3.8.0","page":"102","counter":237},{"destination":"satz:SSrechterWinkel","sort":"Satz","label":"3.67","description":"SSrW-Kriterium","chapter":"3","section":"3.8","subsection":"3.8.0","page":"103","counter":238},{"destination":"sect:Kreise","sort":"Abschnitt","label":"3.9","description":"In- und Umkreis","chapter":"3","section":"3.9","subsection":"3.9.0","page":"104","counter":239},{"destination":"defn:Kreis","sort":"Definition","label":"3.68","description":"Kreis","chapter":"3","section":"3.9","subsection":"3.9.0","page":"104","counter":240},{"destination":"prop:Kreise-haben-genau-einen-Mittelpunkt","sort":"Proposition","label":"3.69","description":"Eindeutigkeit des Kreismittelpunkts","chapter":"3","section":"3.9","subsection":"3.9.0","page":"104","counter":241},{"destination":"satz:Umkreissatz","sort":"Satz","label":"3.70","description":"Umkreissatz","chapter":"3","section":"3.9","subsection":"3.9.0","page":"105","counter":242},{"destination":"defn:Hoehe","sort":"Definition","label":"3.72","description":"Höhe","chapter":"3","section":"3.9","subsection":"3.9.0","page":"105","counter":243},{"destination":"satz:Hoehensatz","sort":"Satz","label":"3.73","description":"Höhensatz","chapter":"3","section":"3.9","subsection":"3.9.0","page":"105","counter":244},{"destination":"satz:Inkreissatz","sort":"Satz","label":"3.74","description":"Inkreissatz","chapter":"3","section":"3.9","subsection":"3.9.0","page":"106","counter":245},{"destination":"sect:Uebungsaufgaben-Hilbertebenen","sort":"Abschnitt","label":"3.10","description":"Übungsaufgaben","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":246},{"destination":"aufg:Anordnung-von-Punkten-auf-Geraden","sort":"Aufgabe","label":"3.1","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":247},{"destination":"aufg:unendlich-viele-Punkte-mit-I-+-A","sort":"Aufgabe","label":"3.2","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":248},{"destination":"aufg:Anordnung-Modell-alternativ","sort":"Aufgabe","label":"3.4","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":249},{"destination":"aufg:<-fuer-Winkel","sort":"Aufgabe","label":"3.5","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":250},{"destination":"aufg:Inneres-bestimmt-den-Winkel","sort":"Aufgabe","label":"3.6","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":251},{"destination":"aufg:konvexe-Mengen","sort":"Aufgabe","label":"3.7","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":252},{"destination":"aufg:Parallelogramm-synthetisch","sort":"Aufgabe","label":"3.10","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"109","counter":253},{"destination":"aufg:Spiegelungen-in-Hilbertebenen","sort":"Aufgabe","label":"3.12","description":"Geradenspiegelung","chapter":"3","section":"3.10","subsection":"3.10.0","page":"109","counter":254},{"destination":"aufg:Abschaetzung-Abstand-Punkt-Gerade","sort":"Aufgabe","label":"3.13","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"110","counter":255},{"destination":"aufg:Hoehenformel","sort":"Aufgabe","label":"3.14","description":"Höhenformel","chapter":"3","section":"3.10","subsection":"3.10.0","page":"110","counter":256},{"destination":"chap:Euklidische-Geometrie-kurz","sort":"Kapitel","label":"4","description":"Euklidische Geometrie","chapter":"4","section":"4.0","subsection":"4.0.0","page":"111","counter":257},{"destination":"sect:Vollstaendigkeitsaxiom","sort":"Abschnitt","label":"4.1","description":"Das Vollständigkeitsaxiom","chapter":"4","section":"4.1","subsection":"4.1.0","page":"111","counter":258},{"destination":"defn:Dedekindschnitt","sort":"Definition","label":"4.1","description":"Dedekindschnitt","chapter":"4","section":"4.1","subsection":"4.1.0","page":"112","counter":259},{"destination":"defn:Vollstaendigkeitsaxiom","sort":"Definition","label":"4.2","description":"Vollständigkeitsaxiom","chapter":"4","section":"4.1","subsection":"4.1.0","page":"112","counter":260},{"destination":"bsp:Vollstaendigkeitsaxiom","sort":"Beispiel","label":"4.3","description":"Vollständigkeitsaxiom","chapter":"4","section":"4.1","subsection":"4.1.0","page":"113","counter":261},{"destination":"satz:Archimedisches-Axiom","sort":"Satz","label":"4.4","description":"Archimedisches Axiom","chapter":"4","section":"4.1","subsection":"4.1.0","page":"113","counter":262},{"destination":"sect:Euklidische-Ebenen","sort":"Abschnitt","label":"4.2","description":"Euklidische Ebenen","chapter":"4","section":"4.2","subsection":"4.2.0","page":"114","counter":263},{"destination":"defn:Euklidsche-Ebene","sort":"Definition","label":"4.5","description":"euklidische Ebene","chapter":"4","section":"4.2","subsection":"4.2.0","page":"114","counter":264},{"destination":"defn:Isomorphismus-euklidischer-Ebenen","sort":"Definition","label":"4.6","description":"Isomorphismus euklidischer Ebenen","chapter":"4","section":"4.2","subsection":"4.2.0","page":"114","counter":265},{"destination":"satz:Hauptsatz-fuer-euklidische-Ebenen","sort":"Satz","label":"4.8","description":"Hauptsatz für euklidische Ebenen","chapter":"4","section":"4.2","subsection":"4.2.0","page":"114","counter":266},{"destination":"prop:Groesse-der-Winkelsumme","sort":"Proposition","label":"4.9","description":"Größe der Winkelsumme","chapter":"4","section":"4.2","subsection":"4.2.0","page":"115","counter":267},{"destination":"sect:Kreise-in-der-euklidischen-Ebene","sort":"Abschnitt","label":"4.3","description":"Kreise","chapter":"4","section":"4.3","subsection":"4.3.0","page":"116","counter":268},{"destination":"prop:Durchschnitt-Kreis-Gerade","sort":"Proposition","label":"4.10","description":"Durchschnitt von Kreis und Gerade","chapter":"4","section":"4.3","subsection":"4.3.0","page":"117","counter":269},{"destination":"coro:Tangente","sort":"Korollar","label":"4.11","description":"Charakterisierung der Tangente","chapter":"4","section":"4.3","subsection":"4.3.0","page":"118","counter":270},{"destination":"defn:Potenz","sort":"Definition","label":"4.12","description":"Potenz","chapter":"4","section":"4.3","subsection":"4.3.0","page":"118","counter":271},{"destination":"satz:Zweisehnensatz","sort":"Satz","label":"4.13","description":"Zweisehnensatz","chapter":"4","section":"4.3","subsection":"4.3.0","page":"119","counter":272},{"destination":"satz:Sehnen-Tangenten-Satz","sort":"Satz","label":"4.14","description":"Sehnen-Tangenten-Satz","chapter":"4","section":"4.3","subsection":"4.3.0","page":"119","counter":273},{"destination":"prop:potenzgerade","sort":"Proposition","label":"4.15","description":"Potenzgerade","chapter":"4","section":"4.3","subsection":"4.3.0","page":"120","counter":274},{"destination":"satz:Kreis-Kreis-Schnitt-Eigenschaft","sort":"Satz","label":"4.17","description":"Kreis-Kreis-Schnitt-Eigenschaft","chapter":"4","section":"4.3","subsection":"4.3.0","page":"121","counter":275},{"destination":"coro:Kreis-Kreis-Schnitt-Eigenschaft","sort":"Korollar","label":"4.18","description":"Kreis-Kreis-Schnitt-Eigenschaft","chapter":"4","section":"4.3","subsection":"4.3.0","page":"122","counter":276},{"destination":"satz:Peripheriewinkelsatz","sort":"Satz","label":"4.19","description":"Peripheriewinkelsatz","chapter":"4","section":"4.3","subsection":"4.3.0","page":"123","counter":277},{"destination":"satz:Thales","sort":"Satz","label":"4.20","description":"Satz des Thales","chapter":"4","section":"4.3","subsection":"4.3.0","page":"124","counter":278},{"destination":"satz:Sinussatz-Verschaerfung","sort":"Satz","label":"4.21","description":"Verschärfung des Sinussatzes","chapter":"4","section":"4.3","subsection":"4.3.0","page":"124","counter":279},{"destination":"satz:Eulergleichung","sort":"Satz","label":"4.22","description":"Eulergleichung","chapter":"4","section":"4.3","subsection":"4.3.0","page":"125","counter":280},{"destination":"coro:Eulergerade","sort":"Korollar","label":"4.23","description":"Eulergerade","chapter":"4","section":"4.3","subsection":"4.3.0","page":"125","counter":281},{"destination":"sect:Inversion-am-Kreis","sort":"Abschnitt","label":"4.4","description":"Die Inversion am Kreis","chapter":"4","section":"4.4","subsection":"4.4.0","page":"126","counter":282},{"destination":"defn:Inversion-am-Kreis","sort":"Definition","label":"4.24","description":"Inversion am Kreis","chapter":"4","section":"4.4","subsection":"4.4.0","page":"126","counter":283},{"destination":"prop:Inversionen-am-Kreis-sind-bijektiv","sort":"Proposition","label":"4.25","description":"Inversionen am Kreis sind bijektiv und bilden Punkte von innen nach außen ab","chapter":"4","section":"4.4","subsection":"4.4.0","page":"126","counter":284},{"destination":"prop:Tangentenschnittpunkt-mit-Inversion","sort":"Proposition","label":"4.26","description":"Konstruktion des Bildpunkts unter der Inversion","chapter":"4","section":"4.4","subsection":"4.4.0","page":"127","counter":285},{"destination":"prop:Eigenschaften-der-Inversion","sort":"Proposition","label":"4.27","description":"Eigenschaften der Inversion am Kreis","chapter":"4","section":"4.4","subsection":"4.4.0","page":"127","counter":286},{"destination":"defn:verallgemeinerte-Gerade","sort":"Definition","label":"4.28","description":"verallgemeinerte Gerade","chapter":"4","section":"4.4","subsection":"4.4.0","page":"129","counter":287},{"destination":"prop:orthogonale-verallgemeinerte-Geraden","sort":"Proposition","label":"4.29","description":"orthogonale verallgemeinerte Gerade","chapter":"4","section":"4.4","subsection":"4.4.0","page":"129","counter":288},{"destination":"prop:orthogonale-Kreise","sort":"Proposition","label":"4.30","description":"Eigenschaften orthogonaler Kreise","chapter":"4","section":"4.4","subsection":"4.4.0","page":"130","counter":289},{"destination":"prop:Inversion-Kreis-an-Kreis","sort":"Proposition","label":"4.31","description":"Inversion eines Kreises an einem anderen Kreis","chapter":"4","section":"4.4","subsection":"4.4.0","page":"131","counter":290},{"destination":"Schnittpunktanzahl-bleibt-unter-Inversion-erhalten","sort":"Gleichung","label":"4.1","description":"","chapter":"4","section":"4.4","subsection":"4.4.0","page":"131","counter":291},{"destination":"Schnittpunktanzahl-bleibt-unter-Inversion-erhalten-2","sort":"Gleichung","label":"4.2","description":"","chapter":"4","section":"4.4","subsection":"4.4.0","page":"131","counter":292},{"destination":"Inversion-fuer-verallgemeinerte-Geraden","sort":"Gleichung","label":"4.3","description":"","chapter":"4","section":"4.4","subsection":"4.4.0","page":"131","counter":293},{"destination":"lemma:Beruehrpunkte-unter-der-Inversion","sort":"Lemma","label":"4.32","description":"Verhalten von Berührpunkten unter der Inversion","chapter":"4","section":"4.4","subsection":"4.4.0","page":"132","counter":294},{"destination":"prop:Inversion-und-Tangenten","sort":"Proposition","label":"4.33","description":"Verhalten von Tangenten unter der Inversion","chapter":"4","section":"4.4","subsection":"4.4.0","page":"132","counter":295},{"destination":"defn:verallgemeinerte-Winkelgroesse","sort":"Definition","label":"4.34","description":"verallgemeinerte Winkelgröße","chapter":"4","section":"4.4","subsection":"4.4.0","page":"132","counter":296},{"destination":"satz:Inversion-winkeltreu","sort":"Satz","label":"4.35","description":"Inversion ist winkeltreu","chapter":"4","section":"4.4","subsection":"4.4.0","page":"133","counter":297},{"destination":"defn:Doppelverhaeltnis","sort":"Definition","label":"4.36","description":"Doppelverhältnis","chapter":"4","section":"4.4","subsection":"4.4.0","page":"133","counter":298},{"destination":"prop:Inversion-am-Kreis-erhaelt-Doppelverhaeltnis","sort":"Proposition","label":"4.37","description":"Inversion erhält Doppelverhältnis","chapter":"4","section":"4.4","subsection":"4.4.0","page":"133","counter":299},{"destination":"DV-1","sort":"Gleichung","label":"4.4","description":"","chapter":"4","section":"4.4","subsection":"4.4.0","page":"133","counter":300},{"destination":"DV-2","sort":"Gleichung","label":"4.5","description":"","chapter":"4","section":"4.4","subsection":"4.4.0","page":"134","counter":301},{"destination":"sect:Uebungsaufgaben-Euklidische-Geometrie","sort":"Abschnitt","label":"4.5","description":"Übungsaufgaben","chapter":"4","section":"4.5","subsection":"4.5.0","page":"135","counter":302},{"destination":"aufg:zwischen-Kreis-und-Tangente-passt-kein-Strahl","sort":"Aufgabe","label":"4.1","description":"","chapter":"4","section":"4.5","subsection":"4.5.0","page":"135","counter":303},{"destination":"aufg:Peripheriewinkelsatz","sort":"Aufgabe","label":"4.4","description":"","chapter":"4","section":"4.5","subsection":"4.5.0","page":"135","counter":304},{"destination":"aufg:Tangentenschnittpunkt-mit-Inversion","sort":"Aufgabe","label":"4.5","description":"","chapter":"4","section":"4.5","subsection":"4.5.0","page":"135","counter":305},{"destination":"aufg:gleichseitige-Dreiecke-SHU","sort":"Aufgabe","label":"4.6","description":"gleichseitiges Dreieck","chapter":"4","section":"4.5","subsection":"4.5.0","page":"136","counter":306},{"destination":"chap:Nichteuklidsche-Geometrie","sort":"Kapitel","label":"5","description":"Nichteuklidische Geometrie","chapter":"5","section":"5.0","subsection":"5.0.0","page":"137","counter":307},{"destination":"sect:Hyperbolische-Ebenen","sort":"Abschnitt","label":"5.1","description":"Das Poincaré'sche Kreismodell","chapter":"5","section":"5.1","subsection":"5.1.0","page":"137","counter":308},{"destination":"defn:Hyperbolische-Ebene","sort":"Definition","label":"5.1","description":"hyperbolische Ebene","chapter":"5","section":"5.1","subsection":"5.1.0","page":"137","counter":309},{"destination":"defn:Endpunkte-von-k-Geraden","sort":"Definition","label":"5.2","description":"Endpunkte einer k-Geraden","chapter":"5","section":"5.1","subsection":"5.1.0","page":"138","counter":310},{"destination":"prop:Kreismodell-ist-Inzidenzebene","sort":"Proposition","label":"5.3","description":"Poincaré'sches Kreismodell ist Inzidenzebene","chapter":"5","section":"5.1","subsection":"5.1.0","page":"138","counter":311},{"destination":"I2-hyperbolisch","sort":"Gleichung","label":"5.1","description":"","chapter":"5","section":"5.1","subsection":"5.1.0","page":"139","counter":312},{"destination":"Anordnung-von-Punkten-auf-k-Gerader-zweiten-Typs","sort":"Gleichung","label":"5.2","description":"","chapter":"5","section":"5.1","subsection":"5.1.0","page":"140","counter":313},{"destination":"prop:Kreismodell-erfuellt-Anordnungsaxiome","sort":"Proposition","label":"5.4","description":"Poincaré'sches Kreismodell erfüllt Anordnungsaxiome","chapter":"5","section":"5.1","subsection":"5.1.0","page":"140","counter":314},{"destination":"hyperbolischer-Abstand","sort":"Gleichung","label":"5.3","description":"","chapter":"5","section":"5.1","subsection":"5.1.0","page":"140","counter":315},{"destination":"lemma:k-Anordnung-von-k-Punkten","sort":"Lemma","label":"5.5","description":"k-Anordnung von k-Punkten","chapter":"5","section":"5.1","subsection":"5.1.0","page":"141","counter":316},{"destination":"Kongruenz-von-k-Strecken","sort":"Gleichung","label":"5.4","description":"","chapter":"5","section":"5.1","subsection":"5.1.0","page":"141","counter":317},{"destination":"prop:Kreismodell-erfuellt-Streckenkongruenzaxiome","sort":"Proposition","label":"5.6","description":"Poincaré'sches Kreismodell erfüllt Kongruenzaxiome für Strecken","chapter":"5","section":"5.1","subsection":"5.1.0","page":"141","counter":318},{"destination":"prop:Kreismodell-erfuellt-Winkelkongruenzaxiome","sort":"Proposition","label":"5.7","description":"Poincaré'sches Kreismodell erfüllt Kongruenzaxiome für Winkel","chapter":"5","section":"5.1","subsection":"5.1.0","page":"142","counter":319},{"destination":"prop:k-Bewegung-in-den-Ursprung","sort":"Proposition","label":"5.8","description":"Existenz einer k-Bewegung, die gegebenen k-Punkt auf den Ursprung schickt","chapter":"5","section":"5.1","subsection":"5.1.0","page":"142","counter":320},{"destination":"prop:Kreismodell-erfuellt-Vollstaendigkeitsaxiom","sort":"Proposition","label":"5.9","description":"Poincaré'sches Kreismodell erfüllt Vollständigkeitsaxiom","chapter":"5","section":"5.1","subsection":"5.1.0","page":"143","counter":321},{"destination":"prop:hyperbolisches-Axiom-im-Poincaremodell","sort":"Proposition","label":"5.10","description":"Poincaré'sche Kreismodell erfüllt das hyperbolische Axiom","chapter":"5","section":"5.1","subsection":"5.1.0","page":"143","counter":322},{"destination":"satz:Kreismodell-ist-hyperbolische-Ebene","sort":"Satz","label":"5.11","description":"Poincaré'sches Kreismodell ist hyperbolische Ebene","chapter":"5","section":"5.1","subsection":"5.1.0","page":"144","counter":323},{"destination":"sect:Hyperbolische-Geometrie","sort":"Abschnitt","label":"5.2","description":"Hyperbolische Geometrie","chapter":"5","section":"5.2","subsection":"5.2.0","page":"144","counter":324},{"destination":"Additionstheorem-cosh","sort":"Gleichung","label":"5.5","description":"","chapter":"5","section":"5.2","subsection":"5.2.0","page":"144","counter":325},{"destination":"hyperbolisches-Pythagorasaequivalent","sort":"Gleichung","label":"5.6","description":"","chapter":"5","section":"5.2","subsection":"5.2.0","page":"144","counter":326},{"destination":"lemma:k-Abstand-zum-Ursprung","sort":"Lemma","label":"5.12","description":"k-Abstand zum Ursprung","chapter":"5","section":"5.2","subsection":"5.2.0","page":"144","counter":327},{"destination":"lemma:sinh-und-cosh-vom-k-Abstand-zum-Ursprung","sort":"Lemma","label":"5.13","description":"sinh und cosh vom k-Abstand zum Ursprung","chapter":"5","section":"5.2","subsection":"5.2.0","page":"145","counter":328},{"destination":"lemma:Norm-im-Klein-Modell","sort":"Lemma","label":"5.14","description":"Projektion von k-Punkten auf die Verbindungssehne der Endpunkte der zugehörigen k-Geraden","chapter":"5","section":"5.2","subsection":"5.2.0","page":"145","counter":329},{"destination":"satz:Trigonometrie-rechtwinkliges-k-Dreieck","sort":"Satz","label":"5.15","description":"Trigonometrie im rechtwinkligen k-Dreieck","chapter":"5","section":"5.2","subsection":"5.2.0","page":"146","counter":330},{"destination":"satz:hyperbolische-Trigonometrie","sort":"Satz","label":"5.16","description":"hyperbolische Trigonometrie","chapter":"5","section":"5.2","subsection":"5.2.0","page":"148","counter":331},{"destination":"hyperbolische-Trigonometrie","sort":"Gleichung","label":"5.7","description":"","chapter":"5","section":"5.2","subsection":"5.2.0","page":"149","counter":332},{"destination":"satz:Winkelsumme-im-k-Dreieck","sort":"Satz","label":"5.17","description":"Winkelsumme im k-Dreieck","chapter":"5","section":"5.2","subsection":"5.2.0","page":"150","counter":333},{"destination":"beta+gamma<pi","sort":"Gleichung","label":"5.8","description":"","chapter":"5","section":"5.2","subsection":"5.2.0","page":"150","counter":334},{"destination":"sect:Uebungsaufgaben-Nichteuklidische-Geometrie","sort":"Abschnitt","label":"5.3","description":"Übungsaufgaben","chapter":"5","section":"5.3","subsection":"5.3.0","page":"151","counter":335},{"destination":"aufg:hyperbolische-Geradenspiegelung-ist-Bewegung","sort":"Aufgabe","label":"5.1","description":"","chapter":"5","section":"5.3","subsection":"5.3.0","page":"151","counter":336},{"destination":"aufg:Poincarehalbebene","sort":"Aufgabe","label":"5.2","description":"","chapter":"5","section":"5.3","subsection":"5.3.0","page":"151","counter":337}],"linked_media":[102,98,10,104,10,95,98,98,98,110,491,349,350,351,353,360]},"derivatives":{"screenshot":{"id":"medium/39/manuscript/screenshot-3decee3284df294f13fd31a8a444715d.png","storage":"store","metadata":{"filename":"image_processing20200724-1-7uc3mi.png","size":7126,"mime_type":"image/png"}}}}	all	t	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 17:03:37.785021	\N	\N
-46	https://en.wikipedia.org/wiki/Group_(mathematics)	2022-08-05 13:33:25.078745	2022-08-05 14:07:15.514842	Reste	Groups	Talk	1	\N	\N	{"id":"medium/46/manuscript/16faf389e47502a6662ef2168b02f312.pdf","storage":"store","metadata":{"filename":"empty.pdf","size":1154,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[],"version":null},"derivatives":{"screenshot":{"id":"medium/46/manuscript/screenshot-5842b6968e935e05ee874bdbbffa6918.png","storage":"store","metadata":{"filename":"image_processing20220805-1-hgctcd.png","size":10234,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	en	\N	\N	<div>Paper with lines.</div>	\N	\N	0	f	0	2022-08-05 13:36:01.791177	\N	\N
-26	\N	2020-07-24 16:20:48.588701	2022-09-20 10:34:42.711631	Question	Ideal in Z minimales Element	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Sei nun $I \\subset \\mathbb{Z}$ ein Ideal. Um zu zeigen, dass $I$ von einem Element erzeugt wird, müssen wir einen Kandidaten für dieses Element finden. \nAus dem Beispiel davor geht hervor, dass ein sinnvoller Kandidat "die kleinste natürliche Zahl, welche in $I$ liegt" wäre. Formal müssen wir noch ein bisschen aufpassen. Welche der folgenden Aussagen sind wahr?	f	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	14	f	0	2020-07-24 16:20:48.588701	\N	\N
-33	\N	2020-07-24 16:42:58.569127	2022-09-20 10:34:42.711631	Quiz	Invarianten- und Determinantenteiler	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	--- !ruby/object:QuizGraph\nvertices:\n  1:\n    :type: Question\n    :id: 34\n  2:\n    :type: Question\n    :id: 35\n  3:\n    :type: Question\n    :id: 36\n  4:\n    :type: Question\n    :id: 37\nedges: {}\nroot: 1\ndefault_table:\n  1: 2\n  2: 3\n  3: 4\n  4: -1\nhide_solution: []\n	1	Quiz	\N	\N	\N	de	\N	\N		\N	\N	21	f	0	2020-07-24 16:42:58.569127	\N	\N
-5		2020-07-24 14:23:41.519702	2022-09-20 10:34:42.711631	Kaviar		Lesson	5	{"id":"medium/5/video/20c0f8f5b7f84bdba5fc08789f703533.mp4","storage":"store","metadata":{"filename":"LA2E05.mp4","size":2035152,"mime_type":"video/mp4","duration":60.024,"bitrate":271245,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/5/screenshot/df65c704b2cd27b51f4e1bc1a8e3d346.png","storage":"store","metadata":{"filename":"screenshot20200724-1-swmdmi.png","size":260866,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/5/screenshot/normalized-b13c583f59f7c34e185c02b71341b31b.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1sz19jf.png","size":65008,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/5/manuscript/aa230cc1ddea2de68359e0e4a47bb7dc.pdf","storage":"store","metadata":{"filename":"LA2.E05.pdf","size":1446454,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/5/manuscript/screenshot-42ea4fa7150abd860db7e446ad95426b.png","storage":"store","metadata":{"filename":"image_processing20200724-1-g5cacj.png","size":164433,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:23:41.519702	\N	\N
-1		2020-07-24 13:54:47.104217	2022-09-20 10:34:42.711631	Kaviar		Lesson	1	{"id":"medium/1/video/269c5ce0c48ed4a23891abd1346125aa.mp4","storage":"store","metadata":{"filename":"LA2.E01.mp4","size":2078859,"mime_type":"video/mp4","duration":60.024,"bitrate":277070,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/1/screenshot/9b259def551649d827b7a40d33ece6d6.png","storage":"store","metadata":{"filename":"screenshot20200724-1-16f6c1d.png","size":230732,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/1/screenshot/normalized-62b8405499916239163ce7ff3df213e7.png","storage":"store","metadata":{"filename":"image_processing20200724-1-x9wc6t.png","size":60200,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/1/manuscript/d7d911f3ade1888e7c44445c573aa3d4.pdf","storage":"store","metadata":{"filename":"LA2.E01.pdf","size":1138473,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/1/manuscript/screenshot-d85053a28beb894430567279403be368.png","storage":"store","metadata":{"filename":"image_processing20200724-1-h1cbbu.png","size":149022,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 13:54:47.104217	\N	\N
-51	\N	2022-08-05 14:35:35.026043	2022-08-05 14:47:48.142248	Sesam	Worked Example Locked	Lecture	27	\N	\N	\N	locked	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	en	\N	\N	\N	\N	\N	4	f	0	2022-08-05 14:35:41.774619	\N	\N
-9		2020-07-24 14:51:14.920111	2022-09-20 10:34:42.711631	Kaviar		Lesson	9	{"id":"medium/9/video/6187a6877c63eb1f436c609233b6734f.mp4","storage":"store","metadata":{"filename":"LA2E09.mp4","size":1956825,"mime_type":"video/mp4","duration":60.024,"bitrate":260805,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/9/screenshot/50ce3e38dfa67e91de39afe6e819a55e.png","storage":"store","metadata":{"filename":"screenshot20200724-1-17n4aon.png","size":181298,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/9/screenshot/normalized-208498c706d6e610ce9bedd0c1423b54.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1dieo3r.png","size":52223,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/9/manuscript/7f21bce51aa2568c3b2735f06ee6fae9.pdf","storage":"store","metadata":{"filename":"LA2.E09.pdf","size":1166711,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/9/manuscript/screenshot-c314b7d368b987b1ced90857682be068.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1jcn8b5.png","size":148996,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:51:14.920111	\N	\N
-32		2020-07-24 16:34:24.982063	2022-09-20 10:34:42.711631	Remark	nächster Versuch	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	\N	\N	Remark	Damit gehen wir die obige Frage nochmal an.	\N	\N	\N	\N	\N		\N	classic	20	f	0	2020-07-24 16:34:24.982063	\N	\N
-47		2022-08-05 14:30:40.379007	2022-08-05 15:10:44.120522	Sesam	Worked Example Free	Lecture	27	{"id":"medium/47/video/8fbbda33353ed60cae247f1e5230dcb0.mp4","storage":"store","metadata":{"filename":"WorkedExample.mp4","size":1461881,"mime_type":"video/mp4","duration":53.526,"bitrate":218492,"resolution":"1624x1080","frame_rate":"20/1"}}	{"id":"medium/47/screenshot/a85c6e67b74319702fe1226b2084cbf4.png","storage":"store","metadata":{"filename":"screenshot20220805-1-bony1x.png","size":150856,"mime_type":"image/png","width":750,"height":498},"derivatives":{"normalized":{"id":"medium/47/screenshot/normalized-1ff53c1c3c65c4119a4e0d8f1bf088c4.png","storage":"store","metadata":{"filename":"image_processing20220805-1-43smh4.png","size":31267,"mime_type":"image/png","width":405,"height":269}}}}	\N	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	en	\N	\N		\N	classic	0	f	0	2022-08-05 14:31:00.873873	\N	\N
-48	\N	2022-08-05 14:32:29.847968	2022-08-05 14:47:48.142248	Sesam	Worked Example Unpublished	Lecture	27	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	en	\N	\N	\N	\N	\N	1	f	0	\N	\N	\N
-49	\N	2022-08-05 14:33:54.439745	2022-08-05 14:47:48.142248	Sesam	Worked Example Registered	Lecture	27	\N	\N	\N	users	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	en	\N	\N	\N	\N	\N	2	f	0	2022-08-05 14:34:12.32618	\N	\N
-50	\N	2022-08-05 14:34:37.266105	2022-08-05 14:47:48.142248	Sesam	Worked Example Subscribers	Lecture	27	\N	\N	\N	subscribers	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	en	\N	\N	\N	\N	\N	3	f	0	2022-08-05 14:34:46.647792	\N	\N
-37	\N	2020-07-24 16:48:30.034301	2022-09-20 10:34:42.711631	Question	Frobenius-Normalform bestimmen	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Die Matrix $A\\in M_{4,4}(\\mathbb{Q})$ habe die Invariantenteiler $1,1,(t-3)^2,(t-3)^2$. Gib die Frobenius-Normalform von $A$ an.	t	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfMatrix\n  row_count: 4\n  column_count: 4\n  coefficients:\n  - '0'\n  - "-9"\n  - '0'\n  - '0'\n  - '1'\n  - '6'\n  - '0'\n  - '0'\n  - '0'\n  - '0'\n  - '0'\n  - "-9"\n  - '0'\n  - '0'\n  - '1'\n  - '6'\n  tex: "\\\\begin{pmatrix}0 & -9 & 0 & 0 \\\\cr 1 & 6 & 0 & 0 \\\\cr 0 & 0 & 0 & -9 \\\\cr\n    0 & 0 & 1 & 6\\\\end{pmatrix}"\n  nerd: matrix([0,-9,0,0],[1,6,0,0],[0,0,0,-9],[0,0,1,6])\nexplanation: ''\n	free	\N	\N	\N	25	f	0	2020-07-24 16:48:30.034301	\N	\N
-41	\N	2020-09-01 14:30:02.64804	2020-09-07 12:25:30.264455	Quiz	Tensorprodukt	Course	1	\N	\N	\N	all	\N	\N	\N	\N	\N	--- !ruby/object:QuizGraph\nvertices:\n  1:\n    :type: Question\n    :id: 25\nedges: {}\nroot: 1\ndefault_table:\n  1: -1\nhide_solution: []\n	1	Quiz	\N	\N	\N	\N	\N	\N		\N	\N	1	f	0	2020-09-01 14:30:02.64804	\N	\N
-13		2020-07-24 15:43:22.719009	2020-09-07 12:25:30.264455	Sesam	Frobenius-Normalform	Course	1	{"id":"medium/13/video/a6ea48bef517cd2fb6b2a56e0c30c80a.mp4","storage":"store","metadata":{"filename":"Worked Example.v.la 2.ss17.frobenius-normalform.mp4","size":1556998,"mime_type":"video/mp4","duration":60.024,"bitrate":207516,"resolution":"1620x1080","frame_rate":"20/1"}}	\N	{"id":"medium/13/manuscript/bb2ae64c3a094be17d3b1addb8c43c15.pdf","storage":"store","metadata":{"filename":"Worked Example.V.LA 2.SS17.Frobenius-Normalform.pdf","size":593628,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/13/manuscript/screenshot-1b2c2c1a6b4412914b430ffb21c7231f.png","storage":"store","metadata":{"filename":"image_processing20200724-1-vyhz0w.png","size":36276,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	classic	0	f	0	2020-07-24 15:43:22.719009	\N	\N
-25	\N	2020-07-24 16:18:56.962113	2022-09-20 10:34:42.711631	Question	Ideale in Z Erzeuger finden	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Bevor wir einen allgemeinen Beweis der Aussage führen, schauen wir uns ein Beispiel an. Betrachte das Ideal $$I:= 4\\mathbb{Z} + 6 \\mathbb{Z} = \\{a4+b6 \\mid a,b \\in \\mathbb{Z}\\}.$$\nWir wollen zeigen, dass jedes Ideal in $\\mathbb{Z}$ von einem Element erzeugt wird. Diese Aussage müsste insbesondere für $I$ stimmen.\nWelche der folgenden Antwortoptionen sind wahr?	f	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	13	f	0	2020-07-24 16:18:56.962113	\N	\N
-18		2020-07-24 16:04:00.205352	2022-09-20 10:34:42.711631	Question	Beispiele für Primideale in Z	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Welche dieser Aussagen sind wahr?	t	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc		\N	\N	6	f	0	2020-07-24 16:04:00.205352	\N	\N
-7		2020-07-24 14:33:16.150404	2022-09-20 10:34:42.711631	Kaviar		Lesson	7	{"id":"medium/7/video/9a75b21e25ae51bee58281bff24ae7e2.mp4","storage":"store","metadata":{"filename":"LA2E07.mp4","size":1742925,"mime_type":"video/mp4","duration":60.024,"bitrate":232297,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/7/screenshot/f452ec799399d32c84390c6bfec896c3.png","storage":"store","metadata":{"filename":"screenshot20200724-1-1i8ba8i.png","size":169612,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/7/screenshot/normalized-f7108a74864a48d622f1ca0d0ea18e8b.png","storage":"store","metadata":{"filename":"image_processing20200724-1-16c2dut.png","size":41756,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/7/manuscript/abe54aaef2c42a27155ce88753ed59ba.pdf","storage":"store","metadata":{"filename":"LA2.E07.pdf","size":1106134,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/7/manuscript/screenshot-7b8d24fe3103d89a98e0cd135abf1390.png","storage":"store","metadata":{"filename":"image_processing20200724-1-vqwyb8.png","size":133262,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:33:16.150404	\N	\N
-40	\N	2020-08-10 16:09:44.690925	2022-09-02 16:52:53.2142	Kaviar	Vorlesungszusatzvideo	Lecture	4	\N	\N	\N	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N	\N	\N	\N	0	f	0	2020-08-10 16:09:44.690925	\N	\N
-21	\N	2020-07-24 16:10:17.951738	2022-09-20 10:34:42.711631	Question	Beispiele für Primideale in K[X]	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Sei $K$ ein Körper und $a\\in K$. Betrachte den Polynomring in einer Variable $K[X]$ über $K$.\n\nWelche der folgenden Ideale sind Primideale in $K[X]$?	t	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	9	f	0	2020-07-24 16:10:17.951738	\N	\N
-17	\N	2020-07-24 16:02:04.55872	2022-09-20 10:34:42.711631	Question	Primideale in Körpern	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Welche dieser Aussagen ist stets wahr?\n	t	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	5	f	0	2020-07-24 16:02:04.55872	\N	\N
-34		2020-07-24 16:43:21.322066	2022-09-20 10:34:42.711631	Question	Zusammenhang Invarianten- und Determinantenteiler	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Die Matrix $A\\in M_{4,4}(\\mathbb{Q})$ habe die Invariantenteiler $1,t-2,t-2,(t-2)(t-3)$. Gib die Determinantenteiler $d_1(A),\\ldots,d_4(A)$ als Tupel von Polynomen aus $\\mathbb{Q}[t]$ an.	t	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfTuple\n  value: 1,t-2,(t-2)^2,(t-2)^3*(t-3)\n  tex: "(1, t-2, \\\\left(t-2\\\\right)^{2}, \\\\left(t-2\\\\right)^{3} \\\\cdot \\\\left(t-3\\\\right))"\n  nerd: vector(1,t-2,(t-2)^2,(t-2)^3*(t-3))\nexplanation: ''\n	free		\N	\N	22	f	0	2020-07-24 16:43:21.322066	\N	\N
-11	\N	2020-07-24 15:09:22.028739	2022-09-20 10:34:42.711631	Script	Skript	Lecture	1	\N	\N	{"id":"medium/11/manuscript/6a7f68166c0f73c5e52e5c3e04edbe91.pdf","storage":"store","metadata":{"filename":"skript.pdf","size":958764,"mime_type":"application/pdf","pages":2,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/11/manuscript/screenshot-9bfae6984bf1c9058e39961b5e47209e.png","storage":"store","metadata":{"filename":"image_processing20200724-1-7kqb5h.png","size":10393,"mime_type":"image/png"}}}}	all	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 15:09:22.028739	\N	\N
-14		2020-07-24 15:54:03.017896	2022-09-20 10:34:42.711631	Kiwi	Euklidische Räume	Lecture	1	{"id":"medium/14/video/2f175f5305281b157e749a69cb29df98.mp4","storage":"store","metadata":{"filename":"Wiederholung.v.la 2.ss20.euklidische Räume-1.mp4","size":1952112,"mime_type":"video/mp4","duration":60.024,"bitrate":260177,"resolution":"1620x1080","frame_rate":"20/1"}}	\N	{"id":"medium/14/manuscript/b442dd2f1fa978c2e097c18a9c00d4e7.pdf","storage":"store","metadata":{"filename":"Wiederholung.V.LA 2.SS20.Euklidische Räume.pdf","size":76310,"mime_type":"application/pdf","pages":2,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/14/manuscript/screenshot-5a6c59528e7a5f4867c4cf55f65b6070.png","storage":"store","metadata":{"filename":"image_processing20200724-1-131qq54.png","size":9310,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	2	f	0	2020-07-24 15:54:03.017896	\N	\N
-22	\N	2020-07-24 16:15:52.01113	2022-09-20 10:34:42.711631	Quiz	Angeleiteter Beweis: Ideale in Z	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	--- !ruby/object:QuizGraph\nvertices:\n  1:\n    :type: Remark\n    :id: 23\n  2:\n    :type: Question\n    :id: 24\n  3:\n    :type: Question\n    :id: 25\n  4:\n    :type: Question\n    :id: 26\n  5:\n    :type: Remark\n    :id: 27\n  6:\n    :type: Question\n    :id: 28\n  7:\n    :type: Remark\n    :id: 29\n  8:\n    :type: Remark\n    :id: 30\n  9:\n    :type: Question\n    :id: 31\n  10:\n    :type: Remark\n    :id: 32\nedges:\n  ? - 2\n    - 8\n  : - 20: false\n      21: false\n      22: true\n    - 20: false\n      21: true\n      22: false\n    - 20: false\n      21: true\n      22: true\n    - 20: true\n      21: false\n      22: false\n    - 20: true\n      21: false\n      22: true\n    - 20: false\n      21: false\n      22: false\n    - 20: true\n      21: true\n      22: true\nroot: 1\ndefault_table:\n  1: 2\n  2: 3\n  3: 4\n  4: 5\n  5: 6\n  6: 7\n  7: -1\n  8: 9\n  9: 10\n  10: 2\nhide_solution:\n- - 2\n  - 20: false\n    21: false\n    22: true\n- - 2\n  - 20: false\n    21: true\n    22: false\n- - 2\n  - 20: false\n    21: true\n    22: true\n- - 2\n  - 20: true\n    21: false\n    22: false\n- - 2\n  - 20: true\n    21: false\n    22: true\n- - 2\n  - 20: false\n    21: false\n    22: false\n- - 2\n  - 20: true\n    21: true\n    22: true\n	1	Quiz	\N	\N	\N	de	\N	\N		\N	\N	10	f	0	2020-07-24 16:15:52.01113	\N	\N
-23	\N	2020-07-24 16:16:21.665364	2022-09-20 10:34:42.711631	Remark	Ideale in Z Start	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	\N	\N	Remark	In diesem angeleiteten Beweis wollen wir zeigen, dass jedes Ideal in $\\mathbb{Z}$ von einem Element erzeugt wird. Ein Ideal $I$ eins (kommutativen) Ringes $R,$ welches von einem Element erzeugt wird, nennt man $\\textbf{Hauptideal}.$ In diesem Fall gibt es ein $x \\in I,$ sodass für jedes $y\\in I$ ein $a \\in R$ existiert mit $y = ax.$ Man schreibt dann auch $$I = (x) := Rx = \\{ax \\mid a\\in R\\}.$$\nEin kommutativer nullteilerfreier Ring, in dem jedes Ideal ein Hauptideal ist, wird $\\textbf{Hauptidealring}$ genannt. Die ganzen Zahlen $\\mathbb{Z}$ sind bekanntlich nullteilerfrei. Wir werden in diesem Quiz folglich zeigen, dass $\\mathbb{Z}$ ein Hauptidealring ist.	\N	\N	\N	\N	\N	\N	\N	\N	11	f	0	2020-07-24 16:16:21.665364	\N	\N
-35		2020-07-24 16:44:51.271122	2022-09-20 10:34:42.711631	Question	Zusammenhang Invariantenteiler und charakteristisches Polynom	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Die Matrix $A\\in M_{5,5}(\\mathbb{Q})$ habe die Invariantenteiler $1,1,t-2,(t-2)(t-3),(t-2)(t-3)$. Gib das charakteristische Polynom von $A$ (als Polynom aus $\\mathbb{Q}[t]$) an.	t	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: "(t-2)^3*(t-3)^2"\n  tex: "\\\\left(t-2\\\\right)^{3} \\\\cdot \\\\left(t-3\\\\right)^{2}"\n  nerd: "(t-2)^3*(t-3)^2"\nexplanation: Es ist $d_5(A)=c_1(A)\\cdot\\ldots\\cdot c_5(A)$ und $d_5(A)=\\chi^{\\operatorname{char}}_A$.\n	free		\N	\N	23	f	0	2020-07-24 16:44:51.271122	\N	\N
-38		2020-07-24 16:56:38.642606	2022-08-05 14:06:57.250837	Kaviar		Lesson	12	{"id":"medium/38/video/fd2c06150fe18ebfee91b6a73c833be3.mp4","storage":"store","metadata":{"filename":"Lektion.v.alg 1.ws17 18.e1-1.mp4","size":1915023,"mime_type":"video/mp4","duration":60.024,"bitrate":255234,"resolution":"1440x1070","frame_rate":"20/1"}}	\N	{"id":"medium/38/manuscript/66ca156dcebc7c8b2f4497dd65d68a9b.pdf","storage":"store","metadata":{"filename":"Lektion.V.Alg 1.WS17_18.E1.pdf","size":486317,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/38/manuscript/screenshot-e21a2c087545cd09eef48c484fd2081a.png","storage":"store","metadata":{"filename":"image_processing20200724-1-12owwue.png","size":7455,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 16:56:38.642606	\N	\N
-27	\N	2020-07-24 16:22:40.781556	2022-09-20 10:34:42.711631	Remark	Ideale in Z Erzeuger Kandidat	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	\N	\N	Remark	Wir können annehmen, dass $I$ nicht das Nullideal ist, da dieses bereits ein Hauptideal ist.\nWenn $I$ nicht das Nullideal ist, dann enthält es ein von $0$ verschiedenes Element $y$ und damit auch eine natürliche Zahl $\\lvert y \\rvert.$\nInsgesamt können wir folgern, dass $I\\cap \\mathbb{N}$ eine nicht-leere Teilmenge der natürlichen Zahlen ist und daher ein minimales Element $x$ besitzt. \nUm zu zeigen, dass $x$ ein Erzeuger von $I$ ist, müssen wir zeigen, dass jedes Element $y \\in I$ von der Form $y=ax$ ist für ein $a \\in \\mathbb{Z}.$  Eine wichtige Zutat wird die Division mit Rest.	\N	\N	\N	\N	\N	\N	\N	\N	15	f	0	2020-07-24 16:22:40.781556	\N	\N
-30	\N	2020-07-24 16:29:29.670149	2022-09-20 10:34:42.711631	Remark	Wiederholung Ideal ankündigen	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	\N	\N	Remark	Wir schauen uns nochmal den Begriff des Ideals genauer an.	\N	\N	\N	\N	\N	\N	\N	\N	18	f	0	2020-07-24 16:29:29.670149	\N	\N
-24	\N	2020-07-24 16:17:11.021084	2022-09-20 10:34:42.711631	Question	Ideale in Z erkennen	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Welche der folgenden Teilmengen von $\\mathbb{Z}$ sind Ideale?	t	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	12	f	0	2020-07-24 16:17:11.021084	\N	\N
-20	\N	2020-07-24 16:08:25.960801	2022-09-20 10:34:42.711631	Question	Beispiele für Maximalideale in Z	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Betrachte den Ring der ganzen Zahlen $\\mathbb Z$. \n\nWelche dieser Ideale sind Maximalideale in $\\mathbb Z$?	t	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	8	f	0	2020-07-24 16:08:25.960801	\N	\N
-45		2020-11-28 16:23:26.308384	2022-09-20 10:34:42.711631	Nuesse	Blatt 5	Lecture	1	\N	\N	{"id":"medium/45/manuscript/1cf0c8f0baf4dcb98931fd2c1bb9a6b5.pdf","storage":"store","metadata":{"filename":"Übung.V.LA 2.SS20.LA2-Blatt05.pdf","size":70765,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/45/manuscript/screenshot-06c628555c0925a1461a265e77b619ca.png","storage":"store","metadata":{"filename":"image_processing20201128-1-h318j9.png","size":43176,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	26	f	0	2020-11-28 16:23:26.308384	\N	\N
-2		2020-07-24 14:06:58.962512	2022-09-20 10:34:42.711631	Kaviar		Lesson	2	{"id":"medium/2/video/6e46aab6179623cfed897b663cd723a9.mp4","storage":"store","metadata":{"filename":"LA2E02.mp4","size":1955566,"mime_type":"video/mp4","duration":60.024,"bitrate":260637,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/2/screenshot/da504c00a54f7ff2cb78cd1062af949b.png","storage":"store","metadata":{"filename":"screenshot20200724-1-1k4u0et.png","size":190159,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/2/screenshot/normalized-a0b4b7e41202fb1abd8b5a8360c54f37.png","storage":"store","metadata":{"filename":"image_processing20200724-1-18sealr.png","size":45542,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/2/manuscript/e1582e2dea166d0e78f6504bbacc625a.pdf","storage":"store","metadata":{"filename":"LA2.E02.pdf","size":1130194,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/2/manuscript/screenshot-f4b924397fe7ada1576b2f8d0360f1f9.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1levfn8.png","size":149968,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:06:58.962512	\N	\N
-4		2020-07-24 14:18:30.391486	2022-09-20 10:34:42.711631	Kaviar		Lesson	4	{"id":"medium/4/video/dd9017f21d168a56f365f54d24236133.mp4","storage":"store","metadata":{"filename":"LA2E04.mp4","size":2332822,"mime_type":"video/mp4","duration":60.024,"bitrate":310918,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/4/screenshot/91927569e5f74dd421a334cf864bf97f.png","storage":"store","metadata":{"filename":"screenshot20200724-1-18t9svm.png","size":217053,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/4/screenshot/normalized-ce2d108f74aa61caf947f27b7f2e91d7.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1i2mktm.png","size":63907,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/4/manuscript/cdb87ae3926c61a4989cfc0d97b1277e.pdf","storage":"store","metadata":{"filename":"LA2.E04.pdf","size":1359479,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/4/manuscript/screenshot-9ab7c7f3c704645eb480721a53a4614e.png","storage":"store","metadata":{"filename":"image_processing20200724-1-qhhu3w.png","size":158255,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:18:30.391486	\N	\N
-36	\N	2020-07-24 16:46:02.067418	2022-09-20 10:34:42.711631	Question	Zusammenhang Invarianten- und Determinantenteiler	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Die Matrix $A\\in M_{6,6}(\\mathbb{Q})$ habe die Determinantenteiler $1,1,t-2,(t-2)^2,(t-2)^3,(t-2)^5(t-3)$. Gib die Invariantenteiler $c_1(A),\\ldots,c_6(A)$ als Tupel von Polynomen aus $\\mathbb{Q}[t]$ an.	t	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfTuple\n  value: 1,1,t-2,t-2,t-2,(t-2)^2*(t-3)\n  tex: "(1, 1, t-2, t-2, t-2, \\\\left(t-2\\\\right)^{2} \\\\cdot \\\\left(t-3\\\\right))"\n  nerd: vector(1,1,t-2,t-2,t-2,(t-2)^2*(t-3))\nexplanation: ''\n	free	\N	\N	\N	24	f	0	2020-07-24 16:46:02.067418	\N	\N
-3		2020-07-24 14:12:39.663351	2022-09-20 10:34:42.711631	Kaviar		Lesson	3	{"id":"medium/3/video/9c61a69cb2ad6b460f32810ed366d8f4.mp4","storage":"store","metadata":{"filename":"LAL2E03.mp4","size":1752814,"mime_type":"video/mp4","duration":60.024,"bitrate":233615,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/3/screenshot/3366a1ac75c28b56e165987c425574ba.png","storage":"store","metadata":{"filename":"screenshot20200724-1-6gkzy3.png","size":174370,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/3/screenshot/normalized-c6188e6a3d396811d283a153ddafa567.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1qykrfz.png","size":42558,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/3/manuscript/02875aacacb6c00ceedf955ed0885bf8.pdf","storage":"store","metadata":{"filename":"LA2.E03.pdf","size":911950,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/3/manuscript/screenshot-09d32e534c82c32213076811e637c5d5.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1jctkbr.png","size":108707,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:12:39.663351	\N	\N
-19	\N	2020-07-24 16:06:37.911565	2022-09-20 10:34:42.711631	Question	Beispiele für Primideale in Q	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Welche dieser Aussagen sind wahr?	t	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	7	f	0	2020-07-24 16:06:37.911565	\N	\N
-6		2020-07-24 14:29:17.501435	2022-09-20 10:34:42.711631	Kaviar		Lesson	6	{"id":"medium/6/video/71f29269c49e634630e53741e5c4b80c.mp4","storage":"store","metadata":{"filename":"LA2E06.mp4","size":1914014,"mime_type":"video/mp4","duration":60.024,"bitrate":255099,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/6/screenshot/32c82f68b8808e9c2550c5918c034918.png","storage":"store","metadata":{"filename":"screenshot20200724-1-1ar4gk2.png","size":213364,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/6/screenshot/normalized-5c573a2d2d5e5a0d93c932e51fcb95cc.png","storage":"store","metadata":{"filename":"image_processing20200724-1-dzinn4.png","size":57533,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/6/manuscript/48ce537f46f30e41f531c0dd4a1155fb.pdf","storage":"store","metadata":{"filename":"LA2.E06.pdf","size":1146440,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/6/manuscript/screenshot-80c2cb074e0c72693d3221b4d926c5ec.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1v5nulk.png","size":142931,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:29:17.501435	\N	\N
-12		2020-07-24 15:15:19.693823	2022-09-20 10:34:42.711631	Nuesse	Blatt4	Lecture	1	\N	\N	{"id":"medium/12/manuscript/d8024479ea26e6e6b5d17cdfb9bf02b3.pdf","storage":"store","metadata":{"filename":"Übung.V.LA 2.SS20.LA2-Blatt02.pdf","size":67599,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/12/manuscript/screenshot-16b55aeefffa834857b4a3e1e515a8f3.png","storage":"store","metadata":{"filename":"image_processing20200724-1-12sjf5y.png","size":40172,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	1	f	0	2020-07-24 15:15:19.693823	\N	\N
-29	\N	2020-07-24 16:24:37.74309	2022-09-20 10:34:42.711631	Remark	Ideale in Z final	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	\N	\N	Remark	Damit haben wir gezeigt: Jedes $y \\in I$ ist von der Form $y= ax$ für ein $a \\in \\mathbb{Z}.$ Daher wird $I$ von $x$ erzeugt. Essentiell für den Beweis war die Division mit Rest. Divison mit Rest ist in jedem $\\textbf{``euklidischen Ring''}$ möglich. Die ganzen Zahl sind ein Beispiel eines euklidischen Rings. Der Beweis, den wir in diesem Quiz geführt haben, lässt sich auch auf euklidische Ringe übertragen. Damit würde man das folgende Ergebnis erhalten: Jeder $\\textbf{euklidische Ring}$ ist ein $\\textbf{Hauptidealring}.$	\N	\N	\N	\N	\N	\N	\N	\N	17	f	0	2020-07-24 16:24:37.74309	\N	\N
-15		2020-07-24 15:58:26.59272	2022-09-20 10:34:42.711631	Reste	Informationen zur Vorlesung	Lecture	1	\N	\N	{"id":"medium/15/manuscript/6abae2f9d76fc3cf81f061e982a17b4c.pdf","storage":"store","metadata":{"filename":"Sonstiges.V.LA 2.SS20.Informationen zur Vorlesung.pdf","size":134035,"mime_type":"application/pdf","pages":2,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/15/manuscript/screenshot-78c940c61c11b7ea563edd44d9e08b11.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1gee8hy.png","size":73051,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	3	f	0	2020-07-24 15:58:26.59272	\N	\N
-31		2020-07-24 16:30:41.490936	2022-09-20 10:34:42.711631	Question	Ideale Definition	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Sei $R$ ein kommutativer Ring mit Eins. Eine Teilmenge $I$ von $R$ von heißt Ideal, wenn $0\\in I$ ist, für alle $a,b\\in I$ stets $a+b\\in I$ gilt und	f	\N	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc		\N	\N	19	f	0	2020-07-24 16:30:41.490936	\N	\N
-16	\N	2020-07-24 16:01:47.120356	2022-09-20 10:34:42.711631	Quiz	Primideale und maximale Ideale	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	--- !ruby/object:QuizGraph\nvertices:\n  1:\n    :type: Question\n    :id: 17\n  2:\n    :type: Question\n    :id: 18\n  3:\n    :type: Question\n    :id: 19\n  4:\n    :type: Question\n    :id: 20\n  5:\n    :type: Question\n    :id: 21\nedges: {}\nroot: 1\ndefault_table:\n  1: 2\n  2: 3\n  3: 4\n  4: 5\n  5: -1\nhide_solution: []\n	1	Quiz	\N	\N	\N	de	\N	\N		\N	\N	4	f	0	2020-07-24 16:01:47.120356	\N	\N
-10		2020-07-24 14:56:40.100167	2022-09-20 10:34:42.711631	Kaviar		Lesson	10	{"id":"medium/10/video/4d452e06ae4c401055930a78f3c99e5b.mp4","storage":"store","metadata":{"filename":"LA2E10.mp4","size":1770925,"mime_type":"video/mp4","duration":60.024,"bitrate":236028,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/10/screenshot/c4d2ddda7fe38c385e8dca2341ffc8e6.png","storage":"store","metadata":{"filename":"screenshot20200724-1-mo0aeb.png","size":125109,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/10/screenshot/normalized-e0e7e6399d6a452317e3f2eb9e640cf7.png","storage":"store","metadata":{"filename":"image_processing20200724-1-13kkkad.png","size":32713,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/10/manuscript/a02e7d985f2c2a514071775902e439c8.pdf","storage":"store","metadata":{"filename":"LA2.E10.pdf","size":638000,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/10/manuscript/screenshot-83029d5d314509f94f5d2f545dc587a3.png","storage":"store","metadata":{"filename":"image_processing20200724-1-o1213x.png","size":78449,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:56:40.100167	\N	\N
-8		2020-07-24 14:46:06.857134	2022-09-20 10:34:42.711631	Kaviar		Lesson	8	{"id":"medium/8/video/c66bbf9059e1cb15f4ef25fca67a5d81.mp4","storage":"store","metadata":{"filename":"LA2E08.mp4","size":1636141,"mime_type":"video/mp4","duration":60.024,"bitrate":218064,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/8/screenshot/b1b718054ad08f98391c9e370a66949a.png","storage":"store","metadata":{"filename":"screenshot20200724-1-18a3lza.png","size":119674,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/8/screenshot/normalized-55cae70265a6b310bbbe6b95af8c0462.png","storage":"store","metadata":{"filename":"image_processing20200724-1-12sd2sb.png","size":12571,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/8/manuscript/bbc747724b0ff16f074a0ed4d6241c65.pdf","storage":"store","metadata":{"filename":"LA2.E08.pdf","size":816914,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/8/manuscript/screenshot-cf1744a864646413b4678bddbc9a6704.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1kmhlcg.png","size":108129,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:46:06.857134	\N	\N
+COPY public.media (id, external_reference_link, created_at, updated_at, sort, description, teachable_type, teachable_id, video_data, screenshot_data, manuscript_data, released, imported_manuscript, quizzable_type, quizzable_id, hint, parent_id, quiz_graph, level, type, text, independent, locale, solution, question_sort, content, geogebra_data, geogebra_app_name, "position", text_input, boost, released_at, publisher, file_last_edited, external_link_description, annotations_status) FROM stdin;
+42	\N	2020-09-02 11:47:59.54323	2020-09-02 11:47:59.54323	RandomQuiz	Zufallsquiz Lineare Algebra 2 2020-09-02 11:47:59 +0000	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	--- !ruby/object:QuizGraph\nvertices:\n  1:\n    :type: Question\n    :id: 17\n  2:\n    :type: Question\n    :id: 18\n  3:\n    :type: Question\n    :id: 35\n  4:\n    :type: Question\n    :id: 20\n  5:\n    :type: Question\n    :id: 37\nedges: {}\nroot: 1\ndefault_table:\n  1: 2\n  2: 3\n  3: 4\n  4: 5\n  5: -1\nhide_solution: []\n	1	Quiz	\N	\N	\N	\N	\N	\N	\N	\N	0	f	0	\N	\N	\N	\N	-1
+43	\N	2020-09-03 10:31:05.824135	2020-09-07 12:25:30.264455	Quiz	Testquiz	Course	1	\N	\N	\N	all	\N	\N	\N	\N	\N	--- !ruby/object:QuizGraph\nvertices:\n  1:\n    :type: Question\n    :id: 24\nedges: {}\nroot: 1\ndefault_table:\n  1: -1\nhide_solution: []\n	1	Quiz	\N	\N	\N	\N	\N	\N	\N	\N	2	f	0	2020-09-03 10:31:05.824135	\N	\N	\N	-1
+51	\N	2022-08-05 14:35:35.026043	2025-07-14 11:12:30.462343	WorkedExample	Worked Example Locked	Lecture	27	\N	\N	\N	locked	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	en	\N	\N	\N	\N	\N	4	f	0	2022-08-05 14:35:41.774619	\N	\N	\N	-1
+28	\N	2020-07-24 16:23:22.686316	2025-07-14 11:01:53.19958	Question	Ideale in Z Division mit Rest	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Sei wie zuvor $0 \\neq I\\subset \\mathbb{Z}$ ein Ideal und $x \\in I$ die kleinste natürliche Zahl in $I$. Sei weiterhin $y \\in I$ ein weiteres Element. Mit Hilfe von Division mit Rest finden wir ein $a \\in \\mathbb{Z}$ und ein $0 \\leq r < \\lvert x\\rvert$ mit $$y = ax+r.$$\nWas können wir ableiten?	f	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	16	f	0	2020-07-24 16:23:22.686316	\N	\N	\N	-1
+26	\N	2020-07-24 16:20:48.588701	2025-07-14 11:01:53.19958	Question	Ideal in Z minimales Element	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Sei nun $I \\subset \\mathbb{Z}$ ein Ideal. Um zu zeigen, dass $I$ von einem Element erzeugt wird, müssen wir einen Kandidaten für dieses Element finden. \nAus dem Beispiel davor geht hervor, dass ein sinnvoller Kandidat "die kleinste natürliche Zahl, welche in $I$ liegt" wäre. Formal müssen wir noch ein bisschen aufpassen. Welche der folgenden Aussagen sind wahr?	f	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	14	f	0	2020-07-24 16:20:48.588701	\N	\N	\N	-1
+39	\N	2020-07-24 17:03:37.785021	2025-07-14 11:09:05.145819	Script	Vorlesungsskript	Lecture	3	\N	\N	{"id":"medium/39/manuscript/02c2ff5ef750d0b3bdbd44dad9b0ceea.pdf","storage":"store","metadata":{"filename":"Skript.V.Geo.SS20.Vorlesungsskript.pdf","size":6388579,"mime_type":"application/pdf","pages":152,"destinations":["chap:Analytische-Geometrie","sect:Affine-Raeume","defn:affiner-Raum","defn:affine-Dimension","bsp:affiner-Standardraum","Aktion-der-Translationen","Vektoraddition","defn:affiner-Unterraum","bsp:affine-Unterraeume","prop:Dimension-affiner-Unterraum","defn:Dimension-affiner-Unterraum","prop:affine-Unterraeume-sind-affine-Raeume","prop:Durchschnitt-und-Verbindungsraum-affin","Durchschnitt","Verbindungsraum-Fall-1","Verbindungsraum-Fall-2","satz:Verbindungsraum-als-Vereinigung-von-Verbindungsgeraden","satz:Dimensionsformel-fuer-affine-Unterraeume","defn:parallel-und-windschief","bem:keine-windschiefen-Hyperebenen","bem:Verbindungsraum-als-Vereinigung-von-Verbindungsgeraden","sect:Affine-Abbildungen","defn:affine-Abbildung","affine-Abbildung","bsp:affine-Abb","prop:Kriterium-fuer-affine-Abbildung","prop:Zusammenhang-affine-und-lineare-Abbildungen","affine-Abbildung-aus-linearer-Abbildung","bsp:affine-Abbildungen-in-der-affinen-Standardebene","W-Bahn","prop:Parallelprojektion","defn:kollinear","defn:n-Eck","defn:Parallelogramm","prop:affine-Abbildungen-erhalten-Parallelogramme","affine-Abbildungen-erhalten-Parallelogramme","Bild-ist-Parallelogramm-1","Bild-ist-Parallelogramm-2","gegenueberliegende-Seiten-im-Parallelogramm-schneiden-sich-nicht","sect:Affine-Koordinaten","defn:affine-Basis","bsp:Standardbasis-des-affinen-Standardraums","bem:affine-Unabhaengigkeit","satz:affine-Abbildung","defn:affines-Koordinatensystem","defn:Teilverhaeltnis","Teilverhaeltnis","bem:Teilverhaeltnis-in-Standardraum","prop:TV-affine-Invariante","satz:affiner-Strahlensatz","defn:Mittelpunkt","satz:Diagonalensatz","satz:Schwerpunktsatz","defn:Winkel-affin","euklidisches-Winkelmass","Winkelgroesse","defn:Seitenlaengen-und-Innenwinkelgroessen","satz:Kosinussatz","Kosinussatz","coro:Pythagoras","satz:Winkelsumme-im-Dreieck","Winkelsumme-Kosinuswerte","Sinus-des-Winkelmasses","Rechnung-zu-Cauchy-Schwartz","Winkelsumme-Sinuswerte","satz:Sinussatz","coro:Hypothenuse-und-Katheten","sect:Polytope","defn:Polytop","bsp:Durchschnitt-von-Halbraeumen","bem:Rand-eines-Polytops","defn:Ecken-Kanten-Flaechen","bsp:Wuerfel","satz:Polyederformel","defn:Platonischer-Koerper","prop:Polytop","coro:Platonische-Koerper","defn:Aehnlichkeitsabbildung-analytisch","satz:Klassifikation-der-Platonischen-Koerper","sect:Projektive-Raeume","defn:projektiver-Raum","bsp:projektiver-Standardraum","bsp:Einbettungen-projektiver-Standardraeume","defn:projektiver-Unterraum","prop:Durchschnitt-und-Verbindungsraum-projektiv","abb:Boyflaeche","Beschreibung-projektiver-Verbindungsraum","satz:Dimensionsformel-fuer-projektive-Unterraeume","sect:Projektive-Abbildungen","defn:projektive-Abbildung","prop:Uneindeutigkeit-der-lin-Abb-zu-einer-proj-Abb","bsp:kanonische-Einbettung","defn:Zentralprojektion","Wohldefiniertheit-Zentralprojektion-1","Wohldefiniertheit-Zentralprojektion-2","bem:Beschreibung-Zentralprojektion","prop:Zentralprojektionen-sind-Projektivitaeten","satz:projektiver-Abschluss","bsp:projektiver-Abschluss","ZcapX","dim-ZcapX","sect:Projektive-Koordinaten","defn:projektive-Basis","bsp:kanonische-projektive-Basis","abb:projektive-Standardbasis","lemma:Zusammenhang-zwischen-projektiver-Basis-und-VR-Basis","satz:projektive-Raeume-gleicher-Dimension-sind-kanonisch-isomorph","defn:projektives-Koordinatensystem","defn:Doppelverhaeltnis-projektiv","prop:DV-projektive-Invariante","DV-projektive-Invariante","prop:DV-Berechnung","bem:Zusammenhang-DV-und-TV","satz:projektiver-Desargues","sect:Computergraphik","Transformationen-in-R3","defn:Quader","defn:Kegelstumpf","sect:Uebungsaufgaben-Analytische-Geometrie","aufg:Verbindungsgerade-ist-Gerade","aufg:Eigenschaften-affiner-Abbildungen","aufg:Abbildungsgeometrie","aufg:Tangenssatz","aufg:Heronsche-Formel","aufg:Vergleich-rechtwinkliger-Dreiecke","aufg:Durchschnitt-Gerade-mit-Einheitssphaere","aufg:fast-jede-Projektivitaet-ist-Zentralprojektion","aufg:projektiver-Pappos","chap:Inzidenzgeometrie","sect:Inzidenzebenen","defn:Inzidenzebene","bsp:Inzidenzebene","prop:Geradenschnittpunkt","prop:Kriterium-Punkt-auf-Gerade","prop:Trennung-von-Punkt-und-Gerade","satz:A2(K)-Inzidenzebene","bem:Parallelitaet-in-A2(K)","defn:Isomorphismus-von-Inzidenzebenen","bsp:affine-Ebenen-sind-Inzidenzebenen","sect:affine-Ebenen","defn:Parallelenaxiome","defn:affine-Ebene","bsp:Parallelenaxiome","prop:Parallelitaet-Aequivalenzrelation","defn:Parallelenbueschel-und-Geradenbueschel","bsp:Parallelenbueschel-und-Geradenbueschel","defn:affiner-Isomorphismus","bsp:affiner-Isomorphismus","sect:Uebungsaufgaben-Inzidenzgeometrie","aufg:Isomorphismen-von-Inzidenzebenen","aufg:affine-Ebene-mit-fuenf-Punkten","aufg:Geraden-in-affiner-Ebene-sind-gleichmaechtig","chap:Hilbertebenen","sect:Anordnungsaxiome","defn:Anordnungsaxiome","prop:Seiten-einer-Geraden","abb:Geradenseiten","bsp:affine-Standardebene-und-Anordnung","Anordnung-fuer-affine-Standardebenen","Hessesche-Normalform","defn:Lage-auf-verschiedenen-Geradenseiten","prop:Seiten-von-Geraden-und-Punkten","coro:Seiten-eines-Punktes","defn:Anordnung-vieler-Punkte","prop:Anordnung-von-Punkten-auf-Geraden","bem:alternatives-Anordnungsaxiom","defn:strecke-und-strahl","prop:Strecken-und-Strahlen","prop:gerade-vereinigung-von-strahlen","satz:Pasch","sect:Die-Kongruenzaxiome-fuer-Strecken","defn:Kongruenzaxiome-fuer-Strecken","bsp:affine-Standardebene-und-Kongruenzen-von-Strecken","prop:Streckensubtraktion","defn:<-fuer-Strecken","prop:<-fuer-Strecken","sect:Kongruenzaxiome-fuer-Winkel","defn:Winkel","abb:Winkel","prop:winkel","defn:Inneres-eines-Winkels","lemma:im-Inneren-eines-Winkels","defn:Kongruenzaxiome-fuer-Winkel","defn:<-fuer-Winkel","prop:<-fuer-Winkel","defn:Dreieck","bem:dreieck","defn:ebene-Geometrie","defn:Bewegung","bsp:Bewegungen-in-der-affinen-Standardebene","defn:gvB","satz:genug-Bewegung","Voraussetzungen-SWS","bsp:affine-Standardebene-und-Kongruenzen-von-Winkeln","Kongruenz-von-Winkeln-in-der-affinen-Standardebene","sect:Ergaenzungswinkel,-Gegenwinkel-und-rechte-Winkel","defn:Ergaenzungswinkel-Gegenwinkel","prop:Ergaenzungswinkel","coro:Gegenwinkel","defn:rechter-Winkel","prop:rechter-Winkel","satz:Viertes-euklidisches-Postulat","coro:rechte-Winkel","sect:Orthogonalitaet-und-Parallelitaet","defn:orthogonal","satz:Orthogonale-Gerade","abb:Orthogonale","defn:Wechselwinkel-und-Stufenwinkel","bem:Wechselwinkel-und-Stufenwinkel","satz:Schwacher-Wechselwinkelsatz-und-schwacher-Stufenwinkelsatz","coro:zum-schwachen-wws","coro:Lot-eindeutig","coro:Existenz-von-Parallelen","satz:Parallelenaxiom-in-Hilbertebenen","sect:Kongruenzsatz","prop:eindeutiges-Dreieck","defn:gleichschenkliges-Dreieck","prop:gleichschenkliges-Dreieck","prop:Winkeladdsubtraktion","satz:Kongruenzsatz-fuer-Dreiecke","wsw-1","sect:Mittelsenkrechte-und-Winkelhalbierende","defn:Streckenmittelpunkt","lemma:Mittelpunkt-liegt-zwischen-Randpunkten","satz:Mittelpunkt","Mittelpunkt-1","Mittelpunkt-2","defn:Mittelsenkrechte","prop:Charakterisierung-Mittelsenkrechte","defn:Winkelhalbierende","prop:Existenz-der-Winkelhalbierenden","sect:Innen-und-Aussenwinkel-im-Dreieck","defn:Innenwinkel","prop:schwache-Winkelsumme-im-Dreieck-1","schwache-Winkelsumme-im-Dreieck","satz:Aussenwinkelsatz","satz:grosse-Dreiecksseite-hat-grossen-Winkel","abb:grosse-Dreiecksseite-hat-grossen-Winkel","satz:SSrechterWinkel","sect:Kreise","defn:Kreis","prop:Kreise-haben-genau-einen-Mittelpunkt","satz:Umkreissatz","defn:Hoehe","satz:Hoehensatz","satz:Inkreissatz","sect:Uebungsaufgaben-Hilbertebenen","aufg:Anordnung-von-Punkten-auf-Geraden","aufg:unendlich-viele-Punkte-mit-I-+-A","aufg:Anordnung-Modell-alternativ","aufg:<-fuer-Winkel","aufg:Inneres-bestimmt-den-Winkel","aufg:konvexe-Mengen","aufg:Parallelogramm-synthetisch","aufg:Spiegelungen-in-Hilbertebenen","aufg:Abschaetzung-Abstand-Punkt-Gerade","aufg:Hoehenformel","chap:Euklidische-Geometrie-kurz","sect:Vollstaendigkeitsaxiom","defn:Dedekindschnitt","defn:Vollstaendigkeitsaxiom","bsp:Vollstaendigkeitsaxiom","satz:Archimedisches-Axiom","sect:Euklidische-Ebenen","defn:Euklidsche-Ebene","defn:Isomorphismus-euklidischer-Ebenen","satz:Hauptsatz-fuer-euklidische-Ebenen","prop:Groesse-der-Winkelsumme","sect:Kreise-in-der-euklidischen-Ebene","prop:Durchschnitt-Kreis-Gerade","coro:Tangente","defn:Potenz","satz:Zweisehnensatz","satz:Sehnen-Tangenten-Satz","prop:potenzgerade","satz:Kreis-Kreis-Schnitt-Eigenschaft","coro:Kreis-Kreis-Schnitt-Eigenschaft","satz:Peripheriewinkelsatz","satz:Thales","satz:Sinussatz-Verschaerfung","satz:Eulergleichung","coro:Eulergerade","sect:Inversion-am-Kreis","defn:Inversion-am-Kreis","prop:Inversionen-am-Kreis-sind-bijektiv","prop:Tangentenschnittpunkt-mit-Inversion","prop:Eigenschaften-der-Inversion","defn:verallgemeinerte-Gerade","prop:orthogonale-verallgemeinerte-Geraden","prop:orthogonale-Kreise","prop:Inversion-Kreis-an-Kreis","Schnittpunktanzahl-bleibt-unter-Inversion-erhalten","Schnittpunktanzahl-bleibt-unter-Inversion-erhalten-2","Inversion-fuer-verallgemeinerte-Geraden","lemma:Beruehrpunkte-unter-der-Inversion","prop:Inversion-und-Tangenten","defn:verallgemeinerte-Winkelgroesse","satz:Inversion-winkeltreu","defn:Doppelverhaeltnis","prop:Inversion-am-Kreis-erhaelt-Doppelverhaeltnis","DV-1","DV-2","sect:Uebungsaufgaben-Euklidische-Geometrie","aufg:zwischen-Kreis-und-Tangente-passt-kein-Strahl","aufg:Peripheriewinkelsatz","aufg:Tangentenschnittpunkt-mit-Inversion","aufg:gleichseitige-Dreiecke-SHU","chap:Nichteuklidsche-Geometrie","sect:Hyperbolische-Ebenen","defn:Hyperbolische-Ebene","defn:Endpunkte-von-k-Geraden","prop:Kreismodell-ist-Inzidenzebene","I2-hyperbolisch","Anordnung-von-Punkten-auf-k-Gerader-zweiten-Typs","prop:Kreismodell-erfuellt-Anordnungsaxiome","hyperbolischer-Abstand","lemma:k-Anordnung-von-k-Punkten","Kongruenz-von-k-Strecken","prop:Kreismodell-erfuellt-Streckenkongruenzaxiome","prop:Kreismodell-erfuellt-Winkelkongruenzaxiome","prop:k-Bewegung-in-den-Ursprung","prop:Kreismodell-erfuellt-Vollstaendigkeitsaxiom","prop:hyperbolisches-Axiom-im-Poincaremodell","satz:Kreismodell-ist-hyperbolische-Ebene","sect:Hyperbolische-Geometrie","Additionstheorem-cosh","hyperbolisches-Pythagorasaequivalent","lemma:k-Abstand-zum-Ursprung","lemma:sinh-und-cosh-vom-k-Abstand-zum-Ursprung","lemma:Norm-im-Klein-Modell","satz:Trigonometrie-rechtwinkliges-k-Dreieck","satz:hyperbolische-Trigonometrie","hyperbolische-Trigonometrie","satz:Winkelsumme-im-k-Dreieck","beta+gamma<pi","sect:Uebungsaufgaben-Nichteuklidische-Geometrie","aufg:hyperbolische-Geradenspiegelung-ist-Bewegung","aufg:Poincarehalbebene"],"bookmarks":[{"destination":"chap:Analytische-Geometrie","sort":"Kapitel","label":"1","description":"Analytische Geometrie","chapter":"1","section":"1.0","subsection":"1.0.0","page":"3","counter":0},{"destination":"sect:Affine-Raeume","sort":"Abschnitt","label":"1.1","description":"Affine Räume","chapter":"1","section":"1.1","subsection":"1.1.0","page":"3","counter":1},{"destination":"defn:affiner-Raum","sort":"Definition","label":"1.1","description":"affiner Raum","chapter":"1","section":"1.1","subsection":"1.1.0","page":"3","counter":2},{"destination":"defn:affine-Dimension","sort":"Definition","label":"1.2","description":"affine Dimension","chapter":"1","section":"1.1","subsection":"1.1.0","page":"4","counter":3},{"destination":"bsp:affiner-Standardraum","sort":"Beispiel","label":"1.3","description":"affiner Standardraum","chapter":"1","section":"1.1","subsection":"1.1.0","page":"4","counter":4},{"destination":"Aktion-der-Translationen","sort":"Gleichung","label":"1.1","description":"","chapter":"1","section":"1.1","subsection":"1.1.0","page":"5","counter":5},{"destination":"Vektoraddition","sort":"Gleichung","label":"1.2","description":"","chapter":"1","section":"1.1","subsection":"1.1.0","page":"5","counter":6},{"destination":"defn:affiner-Unterraum","sort":"Definition","label":"1.4","description":"affiner Unterraum","chapter":"1","section":"1.1","subsection":"1.1.0","page":"5","counter":7},{"destination":"bsp:affine-Unterraeume","sort":"Beispiel","label":"1.5","description":"affine Unterräume der affinen Standardräume","chapter":"1","section":"1.1","subsection":"1.1.0","page":"5","counter":8},{"destination":"prop:Dimension-affiner-Unterraum","sort":"Proposition","label":"1.6","description":"Beliebigkeit des Aufpunkts eines affinen Unterraums","chapter":"1","section":"1.1","subsection":"1.1.0","page":"6","counter":9},{"destination":"defn:Dimension-affiner-Unterraum","sort":"Definition","label":"1.7","description":"Dimension eines affinen Unterraums","chapter":"1","section":"1.1","subsection":"1.1.0","page":"6","counter":10},{"destination":"prop:affine-Unterraeume-sind-affine-Raeume","sort":"Proposition","label":"1.8","description":"affine Unterräume sind affine Räume","chapter":"1","section":"1.1","subsection":"1.1.0","page":"6","counter":11},{"destination":"prop:Durchschnitt-und-Verbindungsraum-affin","sort":"Proposition","label":"1.9","description":"Durchschnitt und Verbindungsraum affiner Räume","chapter":"1","section":"1.1","subsection":"1.1.0","page":"7","counter":12},{"destination":"Durchschnitt","sort":"Gleichung","label":"1.3","description":"","chapter":"1","section":"1.1","subsection":"1.1.0","page":"7","counter":13},{"destination":"Verbindungsraum-Fall-1","sort":"Gleichung","label":"1.4","description":"","chapter":"1","section":"1.1","subsection":"1.1.0","page":"7","counter":14},{"destination":"Verbindungsraum-Fall-2","sort":"Gleichung","label":"1.5","description":"","chapter":"1","section":"1.1","subsection":"1.1.0","page":"8","counter":15},{"destination":"satz:Verbindungsraum-als-Vereinigung-von-Verbindungsgeraden","sort":"Satz","label":"1.10","description":"Verbindungsraum als Vereinigung von Verbindungsgeraden","chapter":"1","section":"1.1","subsection":"1.1.0","page":"9","counter":16},{"destination":"satz:Dimensionsformel-fuer-affine-Unterraeume","sort":"Satz","label":"1.11","description":"Dimensionsformel für affine Unterräume","chapter":"1","section":"1.1","subsection":"1.1.0","page":"9","counter":17},{"destination":"defn:parallel-und-windschief","sort":"Definition","label":"1.12","description":"parallel und windschief","chapter":"1","section":"1.1","subsection":"1.1.0","page":"10","counter":18},{"destination":"bem:keine-windschiefen-Hyperebenen","sort":"Bemerkung","label":"1.13","description":"eine Hyperebene ist zu keinem affinen Unterraum windschief","chapter":"1","section":"1.1","subsection":"1.1.0","page":"10","counter":19},{"destination":"bem:Verbindungsraum-als-Vereinigung-von-Verbindungsgeraden","sort":"Bemerkung","label":"1.14","description":"","chapter":"1","section":"1.1","subsection":"1.1.0","page":"10","counter":20},{"destination":"sect:Affine-Abbildungen","sort":"Abschnitt","label":"1.2","description":"Affine Abbildungen","chapter":"1","section":"1.2","subsection":"1.2.0","page":"11","counter":21},{"destination":"defn:affine-Abbildung","sort":"Definition","label":"1.15","description":"affine Abbildung","chapter":"1","section":"1.2","subsection":"1.2.0","page":"11","counter":22},{"destination":"affine-Abbildung","sort":"Gleichung","label":"1.6","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"11","counter":23},{"destination":"bsp:affine-Abb","sort":"Beispiel","label":"1.16","description":"affine Abbildungen","chapter":"1","section":"1.2","subsection":"1.2.0","page":"11","counter":24},{"destination":"prop:Kriterium-fuer-affine-Abbildung","sort":"Proposition","label":"1.17","description":"Kriterium für affine Abbildung","chapter":"1","section":"1.2","subsection":"1.2.0","page":"11","counter":25},{"destination":"prop:Zusammenhang-affine-und-lineare-Abbildungen","sort":"Proposition","label":"1.18","description":"Zusammenhang zwischen affinen und linearen Abbildungen","chapter":"1","section":"1.2","subsection":"1.2.0","page":"11","counter":26},{"destination":"affine-Abbildung-aus-linearer-Abbildung","sort":"Gleichung","label":"1.7","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"12","counter":27},{"destination":"bsp:affine-Abbildungen-in-der-affinen-Standardebene","sort":"Beispiel","label":"1.19","description":"affine Abbildungen in der affinen Standardebene","chapter":"1","section":"1.2","subsection":"1.2.0","page":"12","counter":28},{"destination":"W-Bahn","sort":"Gleichung","label":"1.8","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"13","counter":29},{"destination":"prop:Parallelprojektion","sort":"Proposition","label":"1.20","description":"Parallelprojektionen","chapter":"1","section":"1.2","subsection":"1.2.0","page":"13","counter":30},{"destination":"defn:kollinear","sort":"Definition","label":"1.21","description":"kollinear","chapter":"1","section":"1.2","subsection":"1.2.0","page":"14","counter":31},{"destination":"defn:n-Eck","sort":"Definition","label":"1.22","description":"n-Eck","chapter":"1","section":"1.2","subsection":"1.2.0","page":"14","counter":32},{"destination":"defn:Parallelogramm","sort":"Definition","label":"1.23","description":"Parallelogramm","chapter":"1","section":"1.2","subsection":"1.2.0","page":"15","counter":33},{"destination":"prop:affine-Abbildungen-erhalten-Parallelogramme","sort":"Proposition","label":"1.24","description":"affine Abbildungen erhalten Parallelogramme","chapter":"1","section":"1.2","subsection":"1.2.0","page":"15","counter":34},{"destination":"affine-Abbildungen-erhalten-Parallelogramme","sort":"Gleichung","label":"1.9","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"15","counter":35},{"destination":"Bild-ist-Parallelogramm-1","sort":"Gleichung","label":"1.10","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"15","counter":36},{"destination":"Bild-ist-Parallelogramm-2","sort":"Gleichung","label":"1.11","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"15","counter":37},{"destination":"gegenueberliegende-Seiten-im-Parallelogramm-schneiden-sich-nicht","sort":"Gleichung","label":"1.12","description":"","chapter":"1","section":"1.2","subsection":"1.2.0","page":"15","counter":38},{"destination":"sect:Affine-Koordinaten","sort":"Abschnitt","label":"1.3","description":"Affine Koordinaten","chapter":"1","section":"1.3","subsection":"1.3.0","page":"16","counter":39},{"destination":"defn:affine-Basis","sort":"Definition","label":"1.25","description":"affine Basis","chapter":"1","section":"1.3","subsection":"1.3.0","page":"16","counter":40},{"destination":"bsp:Standardbasis-des-affinen-Standardraums","sort":"Beispiel","label":"1.26","description":"Standardbasis des affinen Standardraums","chapter":"1","section":"1.3","subsection":"1.3.0","page":"16","counter":41},{"destination":"bem:affine-Unabhaengigkeit","sort":"Bemerkung","label":"1.27","description":"affine Unabhängigkeit hängt nicht von der Reihenfolge ab","chapter":"1","section":"1.3","subsection":"1.3.0","page":"16","counter":42},{"destination":"satz:affine-Abbildung","sort":"Satz","label":"1.28","description":"Eindeutigkeit der affinen Abbildung mit gegebenen Bildern einer affinen Basis","chapter":"1","section":"1.3","subsection":"1.3.0","page":"17","counter":43},{"destination":"defn:affines-Koordinatensystem","sort":"Definition","label":"1.29","description":"affines Koordinatensystem","chapter":"1","section":"1.3","subsection":"1.3.0","page":"17","counter":44},{"destination":"defn:Teilverhaeltnis","sort":"Definition","label":"1.30","description":"Teilverhältnis","chapter":"1","section":"1.3","subsection":"1.3.0","page":"18","counter":45},{"destination":"Teilverhaeltnis","sort":"Gleichung","label":"1.13","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"18","counter":46},{"destination":"bem:Teilverhaeltnis-in-Standardraum","sort":"Bemerkung","label":"1.31","description":"Teilverhältnis im affinen Standardraum","chapter":"1","section":"1.3","subsection":"1.3.0","page":"18","counter":47},{"destination":"prop:TV-affine-Invariante","sort":"Proposition","label":"1.32","description":"Teilverhältnis ist affine Invariante","chapter":"1","section":"1.3","subsection":"1.3.0","page":"19","counter":48},{"destination":"satz:affiner-Strahlensatz","sort":"Satz","label":"1.33","description":"Strahlensatz","chapter":"1","section":"1.3","subsection":"1.3.0","page":"19","counter":49},{"destination":"defn:Mittelpunkt","sort":"Definition","label":"1.35","description":"Mittelpunkt","chapter":"1","section":"1.3","subsection":"1.3.0","page":"21","counter":50},{"destination":"satz:Diagonalensatz","sort":"Satz","label":"1.36","description":"Diagonalensatz","chapter":"1","section":"1.3","subsection":"1.3.0","page":"21","counter":51},{"destination":"satz:Schwerpunktsatz","sort":"Satz","label":"1.37","description":"Schwerpunktsatz","chapter":"1","section":"1.3","subsection":"1.3.0","page":"22","counter":52},{"destination":"defn:Winkel-affin","sort":"Definition","label":"1.38","description":"Strecke, Strahl und Winkel","chapter":"1","section":"1.3","subsection":"1.3.0","page":"23","counter":53},{"destination":"euklidisches-Winkelmass","sort":"Gleichung","label":"1.14","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"23","counter":54},{"destination":"Winkelgroesse","sort":"Gleichung","label":"1.15","description":"Winkelgröße","chapter":"1","section":"1.3","subsection":"1.3.0","page":"23","counter":55},{"destination":"defn:Seitenlaengen-und-Innenwinkelgroessen","sort":"Definition","label":"1.39","description":"Seitenlängen und Innenwinkelgrößen eines Dreicks","chapter":"1","section":"1.3","subsection":"1.3.0","page":"23","counter":56},{"destination":"satz:Kosinussatz","sort":"Satz","label":"1.40","description":"Kosinussatz","chapter":"1","section":"1.3","subsection":"1.3.0","page":"23","counter":57},{"destination":"Kosinussatz","sort":"Gleichung","label":"1.16","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"24","counter":58},{"destination":"coro:Pythagoras","sort":"Korollar","label":"1.41","description":"Satz des Pythagoras","chapter":"1","section":"1.3","subsection":"1.3.0","page":"24","counter":59},{"destination":"satz:Winkelsumme-im-Dreieck","sort":"Satz","label":"1.42","description":"Winkelsumme im Dreieck","chapter":"1","section":"1.3","subsection":"1.3.0","page":"24","counter":60},{"destination":"Winkelsumme-Kosinuswerte","sort":"Gleichung","label":"1.17","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"25","counter":61},{"destination":"Sinus-des-Winkelmasses","sort":"Gleichung","label":"1.18","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"25","counter":62},{"destination":"Rechnung-zu-Cauchy-Schwartz","sort":"Gleichung","label":"1.19","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"25","counter":63},{"destination":"Winkelsumme-Sinuswerte","sort":"Gleichung","label":"1.20","description":"","chapter":"1","section":"1.3","subsection":"1.3.0","page":"26","counter":64},{"destination":"satz:Sinussatz","sort":"Satz","label":"1.43","description":"Sinussatz","chapter":"1","section":"1.3","subsection":"1.3.0","page":"26","counter":65},{"destination":"coro:Hypothenuse-und-Katheten","sort":"Korollar","label":"1.44","description":"Sinus und Kosinus als Quotient der Katheten durch die Hypothenuse","chapter":"1","section":"1.3","subsection":"1.3.0","page":"27","counter":66},{"destination":"sect:Polytope","sort":"Abschnitt","label":"1.4","description":"Polytope","chapter":"1","section":"1.4","subsection":"1.4.0","page":"27","counter":67},{"destination":"defn:Polytop","sort":"Definition","label":"1.45","description":"Konvexes Polyeder und Polytop","chapter":"1","section":"1.4","subsection":"1.4.0","page":"27","counter":68},{"destination":"bsp:Durchschnitt-von-Halbraeumen","sort":"Beispiel","label":"1.46","description":"Durchschnitte orthogonaler Halbräume","chapter":"1","section":"1.4","subsection":"1.4.0","page":"28","counter":69},{"destination":"bem:Rand-eines-Polytops","sort":"Bemerkung","label":"1.47","description":"Rand eines Polytops","chapter":"1","section":"1.4","subsection":"1.4.0","page":"28","counter":70},{"destination":"defn:Ecken-Kanten-Flaechen","sort":"Definition","label":"1.48","description":"Ecken, Kanten, Flächen eines Polytops","chapter":"1","section":"1.4","subsection":"1.4.0","page":"28","counter":71},{"destination":"bsp:Wuerfel","sort":"Beispiel","label":"1.49","description":"Ecken, Kanten, Flächen beim Würfel","chapter":"1","section":"1.4","subsection":"1.4.0","page":"28","counter":72},{"destination":"satz:Polyederformel","sort":"Satz","label":"1.50","description":"Euler'sche Polyederformel","chapter":"1","section":"1.4","subsection":"1.4.0","page":"29","counter":73},{"destination":"defn:Platonischer-Koerper","sort":"Definition","label":"1.51","description":"regelmäßige n-Ecke und Platonische Körper","chapter":"1","section":"1.4","subsection":"1.4.0","page":"33","counter":74},{"destination":"prop:Polytop","sort":"Proposition","label":"1.52","description":"Beschreibung regulärer Polytope durch Grad und Anzahl der Kanten pro Ecke","chapter":"1","section":"1.4","subsection":"1.4.0","page":"33","counter":75},{"destination":"coro:Platonische-Koerper","sort":"Korollar","label":"1.53","description":"Platonische Körper","chapter":"1","section":"1.4","subsection":"1.4.0","page":"33","counter":76},{"destination":"defn:Aehnlichkeitsabbildung-analytisch","sort":"Definition","label":"1.54","description":"Ähnlichkeitsabbildung","chapter":"1","section":"1.4","subsection":"1.4.0","page":"34","counter":77},{"destination":"satz:Klassifikation-der-Platonischen-Koerper","sort":"Satz","label":"1.55","description":"Klassifikation der Platonischen Körper","chapter":"1","section":"1.4","subsection":"1.4.0","page":"34","counter":78},{"destination":"sect:Projektive-Raeume","sort":"Abschnitt","label":"1.5","description":"Projektive Räume","chapter":"1","section":"1.5","subsection":"1.5.0","page":"36","counter":79},{"destination":"defn:projektiver-Raum","sort":"Definition","label":"1.56","description":"projektiver Raum","chapter":"1","section":"1.5","subsection":"1.5.0","page":"36","counter":80},{"destination":"bsp:projektiver-Standardraum","sort":"Beispiel","label":"1.57","description":"projektiver Standardraum","chapter":"1","section":"1.5","subsection":"1.5.0","page":"37","counter":81},{"destination":"bsp:Einbettungen-projektiver-Standardraeume","sort":"Beispiel","label":"1.58","description":"Veranschaulichung projektiver Standardräume der Dimension 1 und 2 als affine Einbettungen","chapter":"1","section":"1.5","subsection":"1.5.0","page":"37","counter":82},{"destination":"defn:projektiver-Unterraum","sort":"Definition","label":"1.59","description":"projektiver Unterraum","chapter":"1","section":"1.5","subsection":"1.5.0","page":"38","counter":83},{"destination":"prop:Durchschnitt-und-Verbindungsraum-projektiv","sort":"Proposition","label":"1.60","description":"Durchschnitt und Verbindungsraum projektiver Räume","chapter":"1","section":"1.5","subsection":"1.5.0","page":"38","counter":84},{"destination":"abb:Boyflaeche","sort":"Abbildung","label":"1.3","description":"","chapter":"1","section":"1.5","subsection":"1.5.0","page":"39","counter":85},{"destination":"Beschreibung-projektiver-Verbindungsraum","sort":"Gleichung","label":"1.21","description":"","chapter":"1","section":"1.5","subsection":"1.5.0","page":"40","counter":86},{"destination":"satz:Dimensionsformel-fuer-projektive-Unterraeume","sort":"Satz","label":"1.61","description":"Dimensionsformel für projektive Unterräume","chapter":"1","section":"1.5","subsection":"1.5.0","page":"40","counter":87},{"destination":"sect:Projektive-Abbildungen","sort":"Abschnitt","label":"1.6","description":"Projektive Abbildungen","chapter":"1","section":"1.6","subsection":"1.6.0","page":"40","counter":88},{"destination":"defn:projektive-Abbildung","sort":"Definition","label":"1.62","description":"projektive Abbildung","chapter":"1","section":"1.6","subsection":"1.6.0","page":"40","counter":89},{"destination":"prop:Uneindeutigkeit-der-lin-Abb-zu-einer-proj-Abb","sort":"Proposition","label":"1.63","description":"Zusammenhang zwischen den linearen Abbildungen zu einer gegebenen projektiven Abbildung","chapter":"1","section":"1.6","subsection":"1.6.0","page":"41","counter":90},{"destination":"bsp:kanonische-Einbettung","sort":"Beispiel","label":"1.64","description":"kanonische Einbettung","chapter":"1","section":"1.6","subsection":"1.6.0","page":"41","counter":91},{"destination":"defn:Zentralprojektion","sort":"Definition","label":"1.65","description":"Zentralprojektion","chapter":"1","section":"1.6","subsection":"1.6.0","page":"42","counter":92},{"destination":"Wohldefiniertheit-Zentralprojektion-1","sort":"Gleichung","label":"1.22","description":"","chapter":"1","section":"1.6","subsection":"1.6.0","page":"43","counter":93},{"destination":"Wohldefiniertheit-Zentralprojektion-2","sort":"Gleichung","label":"1.23","description":"","chapter":"1","section":"1.6","subsection":"1.6.0","page":"43","counter":94},{"destination":"bem:Beschreibung-Zentralprojektion","sort":"Bemerkung","label":"1.66","description":"alternative Beschreibung des Begriffs der Zentralprojektion","chapter":"1","section":"1.6","subsection":"1.6.0","page":"43","counter":95},{"destination":"prop:Zentralprojektionen-sind-Projektivitaeten","sort":"Proposition","label":"1.67","description":"Zentralprojektionen sind Projektivitäten","chapter":"1","section":"1.6","subsection":"1.6.0","page":"43","counter":96},{"destination":"satz:projektiver-Abschluss","sort":"Satz","label":"1.68","description":"projektiver Abschluss","chapter":"1","section":"1.6","subsection":"1.6.0","page":"44","counter":97},{"destination":"bsp:projektiver-Abschluss","sort":"Beispiel","label":"1.69","description":"projektiver Abschluss einer Hyperebene in K³","chapter":"1","section":"1.6","subsection":"1.6.0","page":"45","counter":98},{"destination":"ZcapX","sort":"Gleichung","label":"1.24","description":"","chapter":"1","section":"1.6","subsection":"1.6.0","page":"46","counter":99},{"destination":"dim-ZcapX","sort":"Gleichung","label":"1.25","description":"","chapter":"1","section":"1.6","subsection":"1.6.0","page":"47","counter":100},{"destination":"sect:Projektive-Koordinaten","sort":"Abschnitt","label":"1.7","description":"Projektive Koordinaten","chapter":"1","section":"1.7","subsection":"1.7.0","page":"49","counter":101},{"destination":"defn:projektive-Basis","sort":"Definition","label":"1.70","description":"projektive Basis","chapter":"1","section":"1.7","subsection":"1.7.0","page":"49","counter":102},{"destination":"bsp:kanonische-projektive-Basis","sort":"Beispiel","label":"1.71","description":"Standardbasis des projektiven Standardraums","chapter":"1","section":"1.7","subsection":"1.7.0","page":"49","counter":103},{"destination":"abb:projektive-Standardbasis","sort":"Abbildung","label":"1.4","description":"","chapter":"1","section":"1.7","subsection":"1.7.0","page":"49","counter":104},{"destination":"lemma:Zusammenhang-zwischen-projektiver-Basis-und-VR-Basis","sort":"Lemma","label":"1.72","description":"Zusammenhang zwischen projektiver Basis und Basis des zugrunde liegenden Vektorraums","chapter":"1","section":"1.7","subsection":"1.7.0","page":"50","counter":105},{"destination":"satz:projektive-Raeume-gleicher-Dimension-sind-kanonisch-isomorph","sort":"Satz","label":"1.73","description":"projektive Räume gleicher Dimension sind kanonisch isomorph","chapter":"1","section":"1.7","subsection":"1.7.0","page":"50","counter":106},{"destination":"defn:projektives-Koordinatensystem","sort":"Definition","label":"1.74","description":"projektives Koordinatensystem","chapter":"1","section":"1.7","subsection":"1.7.0","page":"51","counter":107},{"destination":"defn:Doppelverhaeltnis-projektiv","sort":"Definition","label":"1.75","description":"Doppelverhältnis","chapter":"1","section":"1.7","subsection":"1.7.0","page":"51","counter":108},{"destination":"prop:DV-projektive-Invariante","sort":"Proposition","label":"1.76","description":"Doppelverhältnis ist projektive Invariante","chapter":"1","section":"1.7","subsection":"1.7.0","page":"52","counter":109},{"destination":"DV-projektive-Invariante","sort":"Gleichung","label":"1.26","description":"","chapter":"1","section":"1.7","subsection":"1.7.0","page":"52","counter":110},{"destination":"prop:DV-Berechnung","sort":"Proposition","label":"1.77","description":"Berechnung des Doppelverhältnisses aus den homogenen Koordinaten","chapter":"1","section":"1.7","subsection":"1.7.0","page":"52","counter":111},{"destination":"bem:Zusammenhang-DV-und-TV","sort":"Bemerkung","label":"1.78","description":"Zusammenhang zwischen Doppelverhältnis und bestimmten Teilverhältnissen","chapter":"1","section":"1.7","subsection":"1.7.0","page":"54","counter":112},{"destination":"satz:projektiver-Desargues","sort":"Satz","label":"1.79","description":"projektiver Satz von Desargues","chapter":"1","section":"1.7","subsection":"1.7.0","page":"55","counter":113},{"destination":"sect:Computergraphik","sort":"Abschnitt","label":"1.8","description":"Computergraphik","chapter":"1","section":"1.8","subsection":"1.8.0","page":"58","counter":114},{"destination":"Transformationen-in-R3","sort":"Gleichung","label":"1.27","description":"","chapter":"1","section":"1.8","subsection":"1.8.0","page":"59","counter":115},{"destination":"defn:Quader","sort":"Definition","label":"1.80","description":"Quader","chapter":"1","section":"1.8","subsection":"1.8.0","page":"60","counter":116},{"destination":"defn:Kegelstumpf","sort":"Definition","label":"1.81","description":"Rechteckkegelstumpf","chapter":"1","section":"1.8","subsection":"1.8.0","page":"60","counter":117},{"destination":"sect:Uebungsaufgaben-Analytische-Geometrie","sort":"Abschnitt","label":"1.9","description":"Übungsaufgaben","chapter":"1","section":"1.9","subsection":"1.9.0","page":"61","counter":118},{"destination":"aufg:Verbindungsgerade-ist-Gerade","sort":"Aufgabe","label":"1.1","description":"","chapter":"1","section":"1.9","subsection":"1.9.0","page":"61","counter":119},{"destination":"aufg:Eigenschaften-affiner-Abbildungen","sort":"Aufgabe","label":"1.2","description":"","chapter":"1","section":"1.9","subsection":"1.9.0","page":"61","counter":120},{"destination":"aufg:Abbildungsgeometrie","sort":"Aufgabe","label":"1.4","description":"Transfer: Abbildungsgeometrie","chapter":"1","section":"1.9","subsection":"1.9.0","page":"61","counter":121},{"destination":"aufg:Tangenssatz","sort":"Aufgabe","label":"1.5","description":"Tangenssatz","chapter":"1","section":"1.9","subsection":"1.9.0","page":"62","counter":122},{"destination":"aufg:Heronsche-Formel","sort":"Aufgabe","label":"1.6","description":"Heron'sche Formel","chapter":"1","section":"1.9","subsection":"1.9.0","page":"62","counter":123},{"destination":"aufg:Vergleich-rechtwinkliger-Dreiecke","sort":"Aufgabe","label":"1.8","description":"","chapter":"1","section":"1.9","subsection":"1.9.0","page":"62","counter":124},{"destination":"aufg:Durchschnitt-Gerade-mit-Einheitssphaere","sort":"Aufgabe","label":"1.9","description":"","chapter":"1","section":"1.9","subsection":"1.9.0","page":"62","counter":125},{"destination":"aufg:fast-jede-Projektivitaet-ist-Zentralprojektion","sort":"Aufgabe","label":"1.11","description":"Jede Projektivität, die den Durchschnitt von Start- und Zielraum punktweise festlässt, ist eine Zentralprojektion","chapter":"1","section":"1.9","subsection":"1.9.0","page":"63","counter":126},{"destination":"aufg:projektiver-Pappos","sort":"Aufgabe","label":"1.13","description":"projektiver Satz von Pappos","chapter":"1","section":"1.9","subsection":"1.9.0","page":"63","counter":127},{"destination":"chap:Inzidenzgeometrie","sort":"Kapitel","label":"2","description":"Inzidenzgeometrie","chapter":"2","section":"2.0","subsection":"2.0.0","page":"64","counter":128},{"destination":"sect:Inzidenzebenen","sort":"Abschnitt","label":"2.1","description":"Inzidenzebenen","chapter":"2","section":"2.1","subsection":"2.1.0","page":"64","counter":129},{"destination":"defn:Inzidenzebene","sort":"Definition","label":"2.1","description":"Inzidenzebene","chapter":"2","section":"2.1","subsection":"2.1.0","page":"65","counter":130},{"destination":"bsp:Inzidenzebene","sort":"Beispiel","label":"2.2","description":"Inzidenzebene","chapter":"2","section":"2.1","subsection":"2.1.0","page":"65","counter":131},{"destination":"prop:Geradenschnittpunkt","sort":"Proposition","label":"2.3","description":"nichtparallele Geraden besitzen eindeutigen Schnittpunkt","chapter":"2","section":"2.1","subsection":"2.1.0","page":"65","counter":132},{"destination":"prop:Kriterium-Punkt-auf-Gerade","sort":"Proposition","label":"2.4","description":"Kriterium dafür, ob ein Punkt auf einer Geraden liegt","chapter":"2","section":"2.1","subsection":"2.1.0","page":"66","counter":133},{"destination":"prop:Trennung-von-Punkt-und-Gerade","sort":"Proposition","label":"2.5","description":"Trennung von Punkt und Gerade","chapter":"2","section":"2.1","subsection":"2.1.0","page":"66","counter":134},{"destination":"satz:A2(K)-Inzidenzebene","sort":"Satz","label":"2.6","description":"affine Standardebene ist Inzidenzebene","chapter":"2","section":"2.1","subsection":"2.1.0","page":"66","counter":135},{"destination":"bem:Parallelitaet-in-A2(K)","sort":"Bemerkung","label":"2.7","description":"Parallelitätsbegriffe in der affinen Standardebene stimmen überein","chapter":"2","section":"2.1","subsection":"2.1.0","page":"67","counter":136},{"destination":"defn:Isomorphismus-von-Inzidenzebenen","sort":"Definition","label":"2.8","description":"Isomorphismus von Inzidenzebenen","chapter":"2","section":"2.1","subsection":"2.1.0","page":"67","counter":137},{"destination":"bsp:affine-Ebenen-sind-Inzidenzebenen","sort":"Beispiel","label":"2.9","description":"affine Ebenen (analytisch definiert) sind Inzidenzebenen","chapter":"2","section":"2.1","subsection":"2.1.0","page":"67","counter":138},{"destination":"sect:affine-Ebenen","sort":"Abschnitt","label":"2.2","description":"Affine Ebenen","chapter":"2","section":"2.2","subsection":"2.2.0","page":"67","counter":139},{"destination":"defn:Parallelenaxiome","sort":"Definition","label":"2.10","description":"Parallelenaxiom","chapter":"2","section":"2.2","subsection":"2.2.0","page":"67","counter":140},{"destination":"defn:affine-Ebene","sort":"Definition","label":"2.11","description":"affine Ebene","chapter":"2","section":"2.2","subsection":"2.2.0","page":"68","counter":141},{"destination":"bsp:Parallelenaxiome","sort":"Beispiel","label":"2.12","description":"Parallelenaxiom","chapter":"2","section":"2.2","subsection":"2.2.0","page":"68","counter":142},{"destination":"prop:Parallelitaet-Aequivalenzrelation","sort":"Proposition","label":"2.13","description":"Parallelität ist Äquivalenzrelation","chapter":"2","section":"2.2","subsection":"2.2.0","page":"69","counter":143},{"destination":"defn:Parallelenbueschel-und-Geradenbueschel","sort":"Definition","label":"2.14","description":"Parallelenbüschel und Geradenbüschel","chapter":"2","section":"2.2","subsection":"2.2.0","page":"69","counter":144},{"destination":"bsp:Parallelenbueschel-und-Geradenbueschel","sort":"Beispiel","label":"2.15","description":"Parallelenbüschel und Geradenbüschel in der affinen Standardebene","chapter":"2","section":"2.2","subsection":"2.2.0","page":"69","counter":145},{"destination":"defn:affiner-Isomorphismus","sort":"Definition","label":"2.16","description":"affiner Isomorphismus","chapter":"2","section":"2.2","subsection":"2.2.0","page":"70","counter":146},{"destination":"bsp:affiner-Isomorphismus","sort":"Beispiel","label":"2.17","description":"affiner Isomorphismus","chapter":"2","section":"2.2","subsection":"2.2.0","page":"70","counter":147},{"destination":"sect:Uebungsaufgaben-Inzidenzgeometrie","sort":"Abschnitt","label":"2.3","description":"Übungsaufgaben","chapter":"2","section":"2.3","subsection":"2.3.0","page":"70","counter":148},{"destination":"aufg:Isomorphismen-von-Inzidenzebenen","sort":"Aufgabe","label":"2.2","description":"","chapter":"2","section":"2.3","subsection":"2.3.0","page":"70","counter":149},{"destination":"aufg:affine-Ebene-mit-fuenf-Punkten","sort":"Aufgabe","label":"2.3","description":"","chapter":"2","section":"2.3","subsection":"2.3.0","page":"70","counter":150},{"destination":"aufg:Geraden-in-affiner-Ebene-sind-gleichmaechtig","sort":"Aufgabe","label":"2.4","description":"","chapter":"2","section":"2.3","subsection":"2.3.0","page":"70","counter":151},{"destination":"chap:Hilbertebenen","sort":"Kapitel","label":"3","description":"Hilbertebenen","chapter":"3","section":"3.0","subsection":"3.0.0","page":"72","counter":152},{"destination":"sect:Anordnungsaxiome","sort":"Abschnitt","label":"3.1","description":"Die Anordnungsaxiome","chapter":"3","section":"3.1","subsection":"3.1.0","page":"72","counter":153},{"destination":"defn:Anordnungsaxiome","sort":"Definition","label":"3.1","description":"Anordnungsaxiome","chapter":"3","section":"3.1","subsection":"3.1.0","page":"72","counter":154},{"destination":"prop:Seiten-einer-Geraden","sort":"Proposition","label":"3.2","description":"Seiten einer Geraden","chapter":"3","section":"3.1","subsection":"3.1.0","page":"73","counter":155},{"destination":"abb:Geradenseiten","sort":"Abbildung","label":"3.1","description":"Seiten einer Geraden","chapter":"3","section":"3.1","subsection":"3.1.0","page":"73","counter":156},{"destination":"bsp:affine-Standardebene-und-Anordnung","sort":"Beispiel","label":"3.3","description":"Anordnung in der affinen Standardebene","chapter":"3","section":"3.1","subsection":"3.1.0","page":"74","counter":157},{"destination":"Anordnung-fuer-affine-Standardebenen","sort":"Gleichung","label":"3.1","description":"","chapter":"3","section":"3.1","subsection":"3.1.0","page":"74","counter":158},{"destination":"Hessesche-Normalform","sort":"Gleichung","label":"3.2","description":"Hesse'sche Normalform","chapter":"3","section":"3.1","subsection":"3.1.0","page":"75","counter":159},{"destination":"defn:Lage-auf-verschiedenen-Geradenseiten","sort":"Definition","label":"3.4","description":"Lage auf verschiedenen Seiten einer Geraden","chapter":"3","section":"3.1","subsection":"3.1.0","page":"75","counter":160},{"destination":"prop:Seiten-von-Geraden-und-Punkten","sort":"Proposition","label":"3.5","description":"Seiten von Geraden und Punkten","chapter":"3","section":"3.1","subsection":"3.1.0","page":"75","counter":161},{"destination":"coro:Seiten-eines-Punktes","sort":"Korollar","label":"3.6","description":"Lage auf gleicher Seite ist Äquivalenzrelation","chapter":"3","section":"3.1","subsection":"3.1.0","page":"76","counter":162},{"destination":"defn:Anordnung-vieler-Punkte","sort":"Definition","label":"3.7","description":"Erweiterung des Anordnungsbegriffs auf beliebig viele kollineare Punkte","chapter":"3","section":"3.1","subsection":"3.1.0","page":"76","counter":163},{"destination":"prop:Anordnung-von-Punkten-auf-Geraden","sort":"Proposition","label":"3.8","description":"Anordnungen von Punkten auf Geraden","chapter":"3","section":"3.1","subsection":"3.1.0","page":"76","counter":164},{"destination":"bem:alternatives-Anordnungsaxiom","sort":"Bemerkung","label":"3.9","description":"alternatives Anordnungsaxiom (A'2)","chapter":"3","section":"3.1","subsection":"3.1.0","page":"77","counter":165},{"destination":"defn:strecke-und-strahl","sort":"Definition","label":"3.10","description":"Strecke und Strahl","chapter":"3","section":"3.1","subsection":"3.1.0","page":"77","counter":166},{"destination":"prop:Strecken-und-Strahlen","sort":"Proposition","label":"3.11","description":"Strecken und Strahlen","chapter":"3","section":"3.1","subsection":"3.1.0","page":"77","counter":167},{"destination":"prop:gerade-vereinigung-von-strahlen","sort":"Proposition","label":"3.12","description":"Gerade als Vereinigung von Strahlen","chapter":"3","section":"3.1","subsection":"3.1.0","page":"77","counter":168},{"destination":"satz:Pasch","sort":"Satz","label":"3.13","description":"Satz von Pasch","chapter":"3","section":"3.1","subsection":"3.1.0","page":"78","counter":169},{"destination":"sect:Die-Kongruenzaxiome-fuer-Strecken","sort":"Abschnitt","label":"3.2","description":"Die Kongruenzaxiome für Strecken","chapter":"3","section":"3.2","subsection":"3.2.0","page":"78","counter":170},{"destination":"defn:Kongruenzaxiome-fuer-Strecken","sort":"Definition","label":"3.14","description":"Kongruenzaxiome für Strecken","chapter":"3","section":"3.2","subsection":"3.2.0","page":"78","counter":171},{"destination":"bsp:affine-Standardebene-und-Kongruenzen-von-Strecken","sort":"Beispiel","label":"3.15","description":"Streckenkongruenzen in der affinen Standardebene","chapter":"3","section":"3.2","subsection":"3.2.0","page":"79","counter":172},{"destination":"prop:Streckensubtraktion","sort":"Proposition","label":"3.16","description":"Streckensubtraktion","chapter":"3","section":"3.2","subsection":"3.2.0","page":"79","counter":173},{"destination":"defn:<-fuer-Strecken","sort":"Definition","label":"3.17","description":"Vergleich von Strecken","chapter":"3","section":"3.2","subsection":"3.2.0","page":"79","counter":174},{"destination":"prop:<-fuer-Strecken","sort":"Proposition","label":"3.18","description":"Vergleich von Strecken","chapter":"3","section":"3.2","subsection":"3.2.0","page":"80","counter":175},{"destination":"sect:Kongruenzaxiome-fuer-Winkel","sort":"Abschnitt","label":"3.3","description":"Die Kongruenzaxiome für Winkel","chapter":"3","section":"3.3","subsection":"3.3.0","page":"80","counter":176},{"destination":"defn:Winkel","sort":"Definition","label":"3.19","description":"Winkel","chapter":"3","section":"3.3","subsection":"3.3.0","page":"80","counter":177},{"destination":"abb:Winkel","sort":"Abbildung","label":"3.2","description":"Winkel","chapter":"3","section":"3.3","subsection":"3.3.0","page":"80","counter":178},{"destination":"prop:winkel","sort":"Proposition","label":"3.20","description":"Identitätskriterium für Winkel","chapter":"3","section":"3.3","subsection":"3.3.0","page":"80","counter":179},{"destination":"defn:Inneres-eines-Winkels","sort":"Definition","label":"3.21","description":"Inneres eines Winkels","chapter":"3","section":"3.3","subsection":"3.3.0","page":"81","counter":180},{"destination":"lemma:im-Inneren-eines-Winkels","sort":"Lemma","label":"3.22","description":"Kriterium für die Lage im Inneren eines Winkels","chapter":"3","section":"3.3","subsection":"3.3.0","page":"81","counter":181},{"destination":"defn:Kongruenzaxiome-fuer-Winkel","sort":"Definition","label":"3.23","description":"Kongruenzaxiome für Winkel","chapter":"3","section":"3.3","subsection":"3.3.0","page":"82","counter":182},{"destination":"defn:<-fuer-Winkel","sort":"Definition","label":"3.24","description":"Vergleich von Winkeln","chapter":"3","section":"3.3","subsection":"3.3.0","page":"83","counter":183},{"destination":"prop:<-fuer-Winkel","sort":"Proposition","label":"3.25","description":"Vergleich von Winkeln","chapter":"3","section":"3.3","subsection":"3.3.0","page":"83","counter":184},{"destination":"defn:Dreieck","sort":"Definition","label":"3.26","description":"Dreieck","chapter":"3","section":"3.3","subsection":"3.3.0","page":"83","counter":185},{"destination":"bem:dreieck","sort":"Bemerkung","label":"3.27","description":"Kongruenz von Dreiecken","chapter":"3","section":"3.3","subsection":"3.3.0","page":"84","counter":186},{"destination":"defn:ebene-Geometrie","sort":"Definition","label":"3.28","description":"ebene Geometrie","chapter":"3","section":"3.3","subsection":"3.3.0","page":"84","counter":187},{"destination":"defn:Bewegung","sort":"Definition","label":"3.29","description":"Bewegung","chapter":"3","section":"3.3","subsection":"3.3.0","page":"84","counter":188},{"destination":"bsp:Bewegungen-in-der-affinen-Standardebene","sort":"Beispiel","label":"3.30","description":"Bewegungen in der affinen Standardebene","chapter":"3","section":"3.3","subsection":"3.3.0","page":"85","counter":189},{"destination":"defn:gvB","sort":"Definition","label":"3.31","description":"genügend viele Bewegungen","chapter":"3","section":"3.3","subsection":"3.3.0","page":"85","counter":190},{"destination":"satz:genug-Bewegung","sort":"Satz","label":"3.32","description":"Existenz genügend vieler Bewegungen impliziert (K'6)","chapter":"3","section":"3.3","subsection":"3.3.0","page":"86","counter":191},{"destination":"Voraussetzungen-SWS","sort":"Gleichung","label":"3.3","description":"","chapter":"3","section":"3.3","subsection":"3.3.0","page":"86","counter":192},{"destination":"bsp:affine-Standardebene-und-Kongruenzen-von-Winkeln","sort":"Beispiel","label":"3.33","description":"Winkelkongruenzen in der affinen Standardebene","chapter":"3","section":"3.3","subsection":"3.3.0","page":"86","counter":193},{"destination":"Kongruenz-von-Winkeln-in-der-affinen-Standardebene","sort":"Gleichung","label":"3.4","description":"","chapter":"3","section":"3.3","subsection":"3.3.0","page":"86","counter":194},{"destination":"sect:Ergaenzungswinkel,-Gegenwinkel-und-rechte-Winkel","sort":"Abschnitt","label":"3.4","description":"Ergänzungswinkel, Gegenwinkel und rechte Winkel","chapter":"3","section":"3.4","subsection":"3.4.0","page":"87","counter":195},{"destination":"defn:Ergaenzungswinkel-Gegenwinkel","sort":"Definition","label":"3.34","description":"Ergänzungswinkel und Gegenwinkel","chapter":"3","section":"3.4","subsection":"3.4.0","page":"87","counter":196},{"destination":"prop:Ergaenzungswinkel","sort":"Proposition","label":"3.35","description":"Ergänzungswinkel kongruenter Winkel sind kongruent","chapter":"3","section":"3.4","subsection":"3.4.0","page":"87","counter":197},{"destination":"coro:Gegenwinkel","sort":"Korollar","label":"3.36","description":"ein Winkel ist zu seinem Gegenwinkel kongruent","chapter":"3","section":"3.4","subsection":"3.4.0","page":"88","counter":198},{"destination":"defn:rechter-Winkel","sort":"Definition","label":"3.37","description":"rechter Winkel","chapter":"3","section":"3.4","subsection":"3.4.0","page":"88","counter":199},{"destination":"prop:rechter-Winkel","sort":"Proposition","label":"3.38","description":"Ergänzungswinkel eines rechten Winkels ist rechter Winkel","chapter":"3","section":"3.4","subsection":"3.4.0","page":"88","counter":200},{"destination":"satz:Viertes-euklidisches-Postulat","sort":"Satz","label":"3.39","description":"rechte Winkel sind zueinander kongruent","chapter":"3","section":"3.4","subsection":"3.4.0","page":"89","counter":201},{"destination":"coro:rechte-Winkel","sort":"Korollar","label":"3.40","description":"die rechten Winkel bilden eine Kongruenzklasse","chapter":"3","section":"3.4","subsection":"3.4.0","page":"89","counter":202},{"destination":"sect:Orthogonalitaet-und-Parallelitaet","sort":"Abschnitt","label":"3.5","description":"Orthogonalität und Parallelität","chapter":"3","section":"3.5","subsection":"3.5.0","page":"89","counter":203},{"destination":"defn:orthogonal","sort":"Definition","label":"3.41","description":"orthogonal","chapter":"3","section":"3.5","subsection":"3.5.0","page":"89","counter":204},{"destination":"satz:Orthogonale-Gerade","sort":"Satz","label":"3.42","description":"Existenz des Lots","chapter":"3","section":"3.5","subsection":"3.5.0","page":"89","counter":205},{"destination":"abb:Orthogonale","sort":"Abbildung","label":"3.3","description":"Existenz des Lots","chapter":"3","section":"3.5","subsection":"3.5.0","page":"90","counter":206},{"destination":"defn:Wechselwinkel-und-Stufenwinkel","sort":"Definition","label":"3.43","description":"Wechselwinkel und Stufenwinkel","chapter":"3","section":"3.5","subsection":"3.5.0","page":"90","counter":207},{"destination":"bem:Wechselwinkel-und-Stufenwinkel","sort":"Bemerkung","label":"3.44","description":"Zusammenhang zwischen Wechsel- und Stufenwinkel","chapter":"3","section":"3.5","subsection":"3.5.0","page":"91","counter":208},{"destination":"satz:Schwacher-Wechselwinkelsatz-und-schwacher-Stufenwinkelsatz","sort":"Satz","label":"3.45","description":"schwacher Wechselwinkelsatz","chapter":"3","section":"3.5","subsection":"3.5.0","page":"91","counter":209},{"destination":"coro:zum-schwachen-wws","sort":"Korollar","label":"3.46","description":"zweifaches Lotfällen gibt Parallele","chapter":"3","section":"3.5","subsection":"3.5.0","page":"92","counter":210},{"destination":"coro:Lot-eindeutig","sort":"Korollar","label":"3.47","description":"Eindeutigkeit des Lots","chapter":"3","section":"3.5","subsection":"3.5.0","page":"92","counter":211},{"destination":"coro:Existenz-von-Parallelen","sort":"Korollar","label":"3.48","description":"Existenz von Parallelen","chapter":"3","section":"3.5","subsection":"3.5.0","page":"92","counter":212},{"destination":"satz:Parallelenaxiom-in-Hilbertebenen","sort":"Satz","label":"3.49","description":"starker Wechselwinkelsatz","chapter":"3","section":"3.5","subsection":"3.5.0","page":"92","counter":213},{"destination":"sect:Kongruenzsatz","sort":"Abschnitt","label":"3.6","description":"Der Kongruenzsatz für Dreiecke","chapter":"3","section":"3.6","subsection":"3.6.0","page":"94","counter":214},{"destination":"prop:eindeutiges-Dreieck","sort":"Proposition","label":"3.51","description":"Abtragung eines Dreiecks","chapter":"3","section":"3.6","subsection":"3.6.0","page":"94","counter":215},{"destination":"defn:gleichschenkliges-Dreieck","sort":"Definition","label":"3.52","description":"gleichschenkliges Dreieck","chapter":"3","section":"3.6","subsection":"3.6.0","page":"94","counter":216},{"destination":"prop:gleichschenkliges-Dreieck","sort":"Proposition","label":"3.53","description":"gleichschenkliges Dreieck","chapter":"3","section":"3.6","subsection":"3.6.0","page":"94","counter":217},{"destination":"prop:Winkeladdsubtraktion","sort":"Proposition","label":"3.54","description":"Winkeladdition und -subtraktion","chapter":"3","section":"3.6","subsection":"3.6.0","page":"94","counter":218},{"destination":"satz:Kongruenzsatz-fuer-Dreiecke","sort":"Satz","label":"3.55","description":"Kongruenzsatz für Dreiecke","chapter":"3","section":"3.6","subsection":"3.6.0","page":"95","counter":219},{"destination":"wsw-1","sort":"Gleichung","label":"3.5","description":"","chapter":"3","section":"3.6","subsection":"3.6.0","page":"96","counter":220},{"destination":"sect:Mittelsenkrechte-und-Winkelhalbierende","sort":"Abschnitt","label":"3.7","description":"Mittelsenkrechte und Winkelhalbierende","chapter":"3","section":"3.7","subsection":"3.7.0","page":"97","counter":221},{"destination":"defn:Streckenmittelpunkt","sort":"Definition","label":"3.56","description":"Streckenmittelpunkt","chapter":"3","section":"3.7","subsection":"3.7.0","page":"97","counter":222},{"destination":"lemma:Mittelpunkt-liegt-zwischen-Randpunkten","sort":"Lemma","label":"3.57","description":"Streckenmittelpunkt liegt zwischen den Randpunkten der Strecke","chapter":"3","section":"3.7","subsection":"3.7.0","page":"97","counter":223},{"destination":"satz:Mittelpunkt","sort":"Satz","label":"3.58","description":"Existenz und Eindeutigkeit des Streckenmittelpunkts","chapter":"3","section":"3.7","subsection":"3.7.0","page":"98","counter":224},{"destination":"Mittelpunkt-1","sort":"Gleichung","label":"3.6","description":"","chapter":"3","section":"3.7","subsection":"3.7.0","page":"98","counter":225},{"destination":"Mittelpunkt-2","sort":"Gleichung","label":"3.7","description":"","chapter":"3","section":"3.7","subsection":"3.7.0","page":"98","counter":226},{"destination":"defn:Mittelsenkrechte","sort":"Definition","label":"3.59","description":"Mittelsenkrechte","chapter":"3","section":"3.7","subsection":"3.7.0","page":"99","counter":227},{"destination":"prop:Charakterisierung-Mittelsenkrechte","sort":"Proposition","label":"3.60","description":"Charakterisierung der Mittelsenkrechten","chapter":"3","section":"3.7","subsection":"3.7.0","page":"99","counter":228},{"destination":"defn:Winkelhalbierende","sort":"Definition","label":"3.61","description":"Winkelhalbierende","chapter":"3","section":"3.7","subsection":"3.7.0","page":"99","counter":229},{"destination":"prop:Existenz-der-Winkelhalbierenden","sort":"Proposition","label":"3.62","description":"Existenz der Winkelhalbierenden","chapter":"3","section":"3.7","subsection":"3.7.0","page":"100","counter":230},{"destination":"sect:Innen-und-Aussenwinkel-im-Dreieck","sort":"Abschnitt","label":"3.8","description":"Innen- und Außenwinkel im Dreieck","chapter":"3","section":"3.8","subsection":"3.8.0","page":"100","counter":231},{"destination":"defn:Innenwinkel","sort":"Definition","label":"3.63","description":"Innenwinkel","chapter":"3","section":"3.8","subsection":"3.8.0","page":"100","counter":232},{"destination":"prop:schwache-Winkelsumme-im-Dreieck-1","sort":"Proposition","label":"3.64","description":"schwache Winkelsumme im Dreieck","chapter":"3","section":"3.8","subsection":"3.8.0","page":"100","counter":233},{"destination":"schwache-Winkelsumme-im-Dreieck","sort":"Gleichung","label":"3.8","description":"","chapter":"3","section":"3.8","subsection":"3.8.0","page":"101","counter":234},{"destination":"satz:Aussenwinkelsatz","sort":"Satz","label":"3.65","description":"Außenwinkelsatz","chapter":"3","section":"3.8","subsection":"3.8.0","page":"101","counter":235},{"destination":"satz:grosse-Dreiecksseite-hat-grossen-Winkel","sort":"Satz","label":"3.66","description":"der größeren Dreiecksseite liegt der größere Winkel gegenüber","chapter":"3","section":"3.8","subsection":"3.8.0","page":"102","counter":236},{"destination":"abb:grosse-Dreiecksseite-hat-grossen-Winkel","sort":"Abbildung","label":"3.4","description":"der größeren Dreiecksseite liegt der größere Winkel gegenüber","chapter":"3","section":"3.8","subsection":"3.8.0","page":"102","counter":237},{"destination":"satz:SSrechterWinkel","sort":"Satz","label":"3.67","description":"SSrW-Kriterium","chapter":"3","section":"3.8","subsection":"3.8.0","page":"103","counter":238},{"destination":"sect:Kreise","sort":"Abschnitt","label":"3.9","description":"In- und Umkreis","chapter":"3","section":"3.9","subsection":"3.9.0","page":"104","counter":239},{"destination":"defn:Kreis","sort":"Definition","label":"3.68","description":"Kreis","chapter":"3","section":"3.9","subsection":"3.9.0","page":"104","counter":240},{"destination":"prop:Kreise-haben-genau-einen-Mittelpunkt","sort":"Proposition","label":"3.69","description":"Eindeutigkeit des Kreismittelpunkts","chapter":"3","section":"3.9","subsection":"3.9.0","page":"104","counter":241},{"destination":"satz:Umkreissatz","sort":"Satz","label":"3.70","description":"Umkreissatz","chapter":"3","section":"3.9","subsection":"3.9.0","page":"105","counter":242},{"destination":"defn:Hoehe","sort":"Definition","label":"3.72","description":"Höhe","chapter":"3","section":"3.9","subsection":"3.9.0","page":"105","counter":243},{"destination":"satz:Hoehensatz","sort":"Satz","label":"3.73","description":"Höhensatz","chapter":"3","section":"3.9","subsection":"3.9.0","page":"105","counter":244},{"destination":"satz:Inkreissatz","sort":"Satz","label":"3.74","description":"Inkreissatz","chapter":"3","section":"3.9","subsection":"3.9.0","page":"106","counter":245},{"destination":"sect:Uebungsaufgaben-Hilbertebenen","sort":"Abschnitt","label":"3.10","description":"Übungsaufgaben","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":246},{"destination":"aufg:Anordnung-von-Punkten-auf-Geraden","sort":"Aufgabe","label":"3.1","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":247},{"destination":"aufg:unendlich-viele-Punkte-mit-I-+-A","sort":"Aufgabe","label":"3.2","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":248},{"destination":"aufg:Anordnung-Modell-alternativ","sort":"Aufgabe","label":"3.4","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":249},{"destination":"aufg:<-fuer-Winkel","sort":"Aufgabe","label":"3.5","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":250},{"destination":"aufg:Inneres-bestimmt-den-Winkel","sort":"Aufgabe","label":"3.6","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":251},{"destination":"aufg:konvexe-Mengen","sort":"Aufgabe","label":"3.7","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"108","counter":252},{"destination":"aufg:Parallelogramm-synthetisch","sort":"Aufgabe","label":"3.10","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"109","counter":253},{"destination":"aufg:Spiegelungen-in-Hilbertebenen","sort":"Aufgabe","label":"3.12","description":"Geradenspiegelung","chapter":"3","section":"3.10","subsection":"3.10.0","page":"109","counter":254},{"destination":"aufg:Abschaetzung-Abstand-Punkt-Gerade","sort":"Aufgabe","label":"3.13","description":"","chapter":"3","section":"3.10","subsection":"3.10.0","page":"110","counter":255},{"destination":"aufg:Hoehenformel","sort":"Aufgabe","label":"3.14","description":"Höhenformel","chapter":"3","section":"3.10","subsection":"3.10.0","page":"110","counter":256},{"destination":"chap:Euklidische-Geometrie-kurz","sort":"Kapitel","label":"4","description":"Euklidische Geometrie","chapter":"4","section":"4.0","subsection":"4.0.0","page":"111","counter":257},{"destination":"sect:Vollstaendigkeitsaxiom","sort":"Abschnitt","label":"4.1","description":"Das Vollständigkeitsaxiom","chapter":"4","section":"4.1","subsection":"4.1.0","page":"111","counter":258},{"destination":"defn:Dedekindschnitt","sort":"Definition","label":"4.1","description":"Dedekindschnitt","chapter":"4","section":"4.1","subsection":"4.1.0","page":"112","counter":259},{"destination":"defn:Vollstaendigkeitsaxiom","sort":"Definition","label":"4.2","description":"Vollständigkeitsaxiom","chapter":"4","section":"4.1","subsection":"4.1.0","page":"112","counter":260},{"destination":"bsp:Vollstaendigkeitsaxiom","sort":"Beispiel","label":"4.3","description":"Vollständigkeitsaxiom","chapter":"4","section":"4.1","subsection":"4.1.0","page":"113","counter":261},{"destination":"satz:Archimedisches-Axiom","sort":"Satz","label":"4.4","description":"Archimedisches Axiom","chapter":"4","section":"4.1","subsection":"4.1.0","page":"113","counter":262},{"destination":"sect:Euklidische-Ebenen","sort":"Abschnitt","label":"4.2","description":"Euklidische Ebenen","chapter":"4","section":"4.2","subsection":"4.2.0","page":"114","counter":263},{"destination":"defn:Euklidsche-Ebene","sort":"Definition","label":"4.5","description":"euklidische Ebene","chapter":"4","section":"4.2","subsection":"4.2.0","page":"114","counter":264},{"destination":"defn:Isomorphismus-euklidischer-Ebenen","sort":"Definition","label":"4.6","description":"Isomorphismus euklidischer Ebenen","chapter":"4","section":"4.2","subsection":"4.2.0","page":"114","counter":265},{"destination":"satz:Hauptsatz-fuer-euklidische-Ebenen","sort":"Satz","label":"4.8","description":"Hauptsatz für euklidische Ebenen","chapter":"4","section":"4.2","subsection":"4.2.0","page":"114","counter":266},{"destination":"prop:Groesse-der-Winkelsumme","sort":"Proposition","label":"4.9","description":"Größe der Winkelsumme","chapter":"4","section":"4.2","subsection":"4.2.0","page":"115","counter":267},{"destination":"sect:Kreise-in-der-euklidischen-Ebene","sort":"Abschnitt","label":"4.3","description":"Kreise","chapter":"4","section":"4.3","subsection":"4.3.0","page":"116","counter":268},{"destination":"prop:Durchschnitt-Kreis-Gerade","sort":"Proposition","label":"4.10","description":"Durchschnitt von Kreis und Gerade","chapter":"4","section":"4.3","subsection":"4.3.0","page":"117","counter":269},{"destination":"coro:Tangente","sort":"Korollar","label":"4.11","description":"Charakterisierung der Tangente","chapter":"4","section":"4.3","subsection":"4.3.0","page":"118","counter":270},{"destination":"defn:Potenz","sort":"Definition","label":"4.12","description":"Potenz","chapter":"4","section":"4.3","subsection":"4.3.0","page":"118","counter":271},{"destination":"satz:Zweisehnensatz","sort":"Satz","label":"4.13","description":"Zweisehnensatz","chapter":"4","section":"4.3","subsection":"4.3.0","page":"119","counter":272},{"destination":"satz:Sehnen-Tangenten-Satz","sort":"Satz","label":"4.14","description":"Sehnen-Tangenten-Satz","chapter":"4","section":"4.3","subsection":"4.3.0","page":"119","counter":273},{"destination":"prop:potenzgerade","sort":"Proposition","label":"4.15","description":"Potenzgerade","chapter":"4","section":"4.3","subsection":"4.3.0","page":"120","counter":274},{"destination":"satz:Kreis-Kreis-Schnitt-Eigenschaft","sort":"Satz","label":"4.17","description":"Kreis-Kreis-Schnitt-Eigenschaft","chapter":"4","section":"4.3","subsection":"4.3.0","page":"121","counter":275},{"destination":"coro:Kreis-Kreis-Schnitt-Eigenschaft","sort":"Korollar","label":"4.18","description":"Kreis-Kreis-Schnitt-Eigenschaft","chapter":"4","section":"4.3","subsection":"4.3.0","page":"122","counter":276},{"destination":"satz:Peripheriewinkelsatz","sort":"Satz","label":"4.19","description":"Peripheriewinkelsatz","chapter":"4","section":"4.3","subsection":"4.3.0","page":"123","counter":277},{"destination":"satz:Thales","sort":"Satz","label":"4.20","description":"Satz des Thales","chapter":"4","section":"4.3","subsection":"4.3.0","page":"124","counter":278},{"destination":"satz:Sinussatz-Verschaerfung","sort":"Satz","label":"4.21","description":"Verschärfung des Sinussatzes","chapter":"4","section":"4.3","subsection":"4.3.0","page":"124","counter":279},{"destination":"satz:Eulergleichung","sort":"Satz","label":"4.22","description":"Eulergleichung","chapter":"4","section":"4.3","subsection":"4.3.0","page":"125","counter":280},{"destination":"coro:Eulergerade","sort":"Korollar","label":"4.23","description":"Eulergerade","chapter":"4","section":"4.3","subsection":"4.3.0","page":"125","counter":281},{"destination":"sect:Inversion-am-Kreis","sort":"Abschnitt","label":"4.4","description":"Die Inversion am Kreis","chapter":"4","section":"4.4","subsection":"4.4.0","page":"126","counter":282},{"destination":"defn:Inversion-am-Kreis","sort":"Definition","label":"4.24","description":"Inversion am Kreis","chapter":"4","section":"4.4","subsection":"4.4.0","page":"126","counter":283},{"destination":"prop:Inversionen-am-Kreis-sind-bijektiv","sort":"Proposition","label":"4.25","description":"Inversionen am Kreis sind bijektiv und bilden Punkte von innen nach außen ab","chapter":"4","section":"4.4","subsection":"4.4.0","page":"126","counter":284},{"destination":"prop:Tangentenschnittpunkt-mit-Inversion","sort":"Proposition","label":"4.26","description":"Konstruktion des Bildpunkts unter der Inversion","chapter":"4","section":"4.4","subsection":"4.4.0","page":"127","counter":285},{"destination":"prop:Eigenschaften-der-Inversion","sort":"Proposition","label":"4.27","description":"Eigenschaften der Inversion am Kreis","chapter":"4","section":"4.4","subsection":"4.4.0","page":"127","counter":286},{"destination":"defn:verallgemeinerte-Gerade","sort":"Definition","label":"4.28","description":"verallgemeinerte Gerade","chapter":"4","section":"4.4","subsection":"4.4.0","page":"129","counter":287},{"destination":"prop:orthogonale-verallgemeinerte-Geraden","sort":"Proposition","label":"4.29","description":"orthogonale verallgemeinerte Gerade","chapter":"4","section":"4.4","subsection":"4.4.0","page":"129","counter":288},{"destination":"prop:orthogonale-Kreise","sort":"Proposition","label":"4.30","description":"Eigenschaften orthogonaler Kreise","chapter":"4","section":"4.4","subsection":"4.4.0","page":"130","counter":289},{"destination":"prop:Inversion-Kreis-an-Kreis","sort":"Proposition","label":"4.31","description":"Inversion eines Kreises an einem anderen Kreis","chapter":"4","section":"4.4","subsection":"4.4.0","page":"131","counter":290},{"destination":"Schnittpunktanzahl-bleibt-unter-Inversion-erhalten","sort":"Gleichung","label":"4.1","description":"","chapter":"4","section":"4.4","subsection":"4.4.0","page":"131","counter":291},{"destination":"Schnittpunktanzahl-bleibt-unter-Inversion-erhalten-2","sort":"Gleichung","label":"4.2","description":"","chapter":"4","section":"4.4","subsection":"4.4.0","page":"131","counter":292},{"destination":"Inversion-fuer-verallgemeinerte-Geraden","sort":"Gleichung","label":"4.3","description":"","chapter":"4","section":"4.4","subsection":"4.4.0","page":"131","counter":293},{"destination":"lemma:Beruehrpunkte-unter-der-Inversion","sort":"Lemma","label":"4.32","description":"Verhalten von Berührpunkten unter der Inversion","chapter":"4","section":"4.4","subsection":"4.4.0","page":"132","counter":294},{"destination":"prop:Inversion-und-Tangenten","sort":"Proposition","label":"4.33","description":"Verhalten von Tangenten unter der Inversion","chapter":"4","section":"4.4","subsection":"4.4.0","page":"132","counter":295},{"destination":"defn:verallgemeinerte-Winkelgroesse","sort":"Definition","label":"4.34","description":"verallgemeinerte Winkelgröße","chapter":"4","section":"4.4","subsection":"4.4.0","page":"132","counter":296},{"destination":"satz:Inversion-winkeltreu","sort":"Satz","label":"4.35","description":"Inversion ist winkeltreu","chapter":"4","section":"4.4","subsection":"4.4.0","page":"133","counter":297},{"destination":"defn:Doppelverhaeltnis","sort":"Definition","label":"4.36","description":"Doppelverhältnis","chapter":"4","section":"4.4","subsection":"4.4.0","page":"133","counter":298},{"destination":"prop:Inversion-am-Kreis-erhaelt-Doppelverhaeltnis","sort":"Proposition","label":"4.37","description":"Inversion erhält Doppelverhältnis","chapter":"4","section":"4.4","subsection":"4.4.0","page":"133","counter":299},{"destination":"DV-1","sort":"Gleichung","label":"4.4","description":"","chapter":"4","section":"4.4","subsection":"4.4.0","page":"133","counter":300},{"destination":"DV-2","sort":"Gleichung","label":"4.5","description":"","chapter":"4","section":"4.4","subsection":"4.4.0","page":"134","counter":301},{"destination":"sect:Uebungsaufgaben-Euklidische-Geometrie","sort":"Abschnitt","label":"4.5","description":"Übungsaufgaben","chapter":"4","section":"4.5","subsection":"4.5.0","page":"135","counter":302},{"destination":"aufg:zwischen-Kreis-und-Tangente-passt-kein-Strahl","sort":"Aufgabe","label":"4.1","description":"","chapter":"4","section":"4.5","subsection":"4.5.0","page":"135","counter":303},{"destination":"aufg:Peripheriewinkelsatz","sort":"Aufgabe","label":"4.4","description":"","chapter":"4","section":"4.5","subsection":"4.5.0","page":"135","counter":304},{"destination":"aufg:Tangentenschnittpunkt-mit-Inversion","sort":"Aufgabe","label":"4.5","description":"","chapter":"4","section":"4.5","subsection":"4.5.0","page":"135","counter":305},{"destination":"aufg:gleichseitige-Dreiecke-SHU","sort":"Aufgabe","label":"4.6","description":"gleichseitiges Dreieck","chapter":"4","section":"4.5","subsection":"4.5.0","page":"136","counter":306},{"destination":"chap:Nichteuklidsche-Geometrie","sort":"Kapitel","label":"5","description":"Nichteuklidische Geometrie","chapter":"5","section":"5.0","subsection":"5.0.0","page":"137","counter":307},{"destination":"sect:Hyperbolische-Ebenen","sort":"Abschnitt","label":"5.1","description":"Das Poincaré'sche Kreismodell","chapter":"5","section":"5.1","subsection":"5.1.0","page":"137","counter":308},{"destination":"defn:Hyperbolische-Ebene","sort":"Definition","label":"5.1","description":"hyperbolische Ebene","chapter":"5","section":"5.1","subsection":"5.1.0","page":"137","counter":309},{"destination":"defn:Endpunkte-von-k-Geraden","sort":"Definition","label":"5.2","description":"Endpunkte einer k-Geraden","chapter":"5","section":"5.1","subsection":"5.1.0","page":"138","counter":310},{"destination":"prop:Kreismodell-ist-Inzidenzebene","sort":"Proposition","label":"5.3","description":"Poincaré'sches Kreismodell ist Inzidenzebene","chapter":"5","section":"5.1","subsection":"5.1.0","page":"138","counter":311},{"destination":"I2-hyperbolisch","sort":"Gleichung","label":"5.1","description":"","chapter":"5","section":"5.1","subsection":"5.1.0","page":"139","counter":312},{"destination":"Anordnung-von-Punkten-auf-k-Gerader-zweiten-Typs","sort":"Gleichung","label":"5.2","description":"","chapter":"5","section":"5.1","subsection":"5.1.0","page":"140","counter":313},{"destination":"prop:Kreismodell-erfuellt-Anordnungsaxiome","sort":"Proposition","label":"5.4","description":"Poincaré'sches Kreismodell erfüllt Anordnungsaxiome","chapter":"5","section":"5.1","subsection":"5.1.0","page":"140","counter":314},{"destination":"hyperbolischer-Abstand","sort":"Gleichung","label":"5.3","description":"","chapter":"5","section":"5.1","subsection":"5.1.0","page":"140","counter":315},{"destination":"lemma:k-Anordnung-von-k-Punkten","sort":"Lemma","label":"5.5","description":"k-Anordnung von k-Punkten","chapter":"5","section":"5.1","subsection":"5.1.0","page":"141","counter":316},{"destination":"Kongruenz-von-k-Strecken","sort":"Gleichung","label":"5.4","description":"","chapter":"5","section":"5.1","subsection":"5.1.0","page":"141","counter":317},{"destination":"prop:Kreismodell-erfuellt-Streckenkongruenzaxiome","sort":"Proposition","label":"5.6","description":"Poincaré'sches Kreismodell erfüllt Kongruenzaxiome für Strecken","chapter":"5","section":"5.1","subsection":"5.1.0","page":"141","counter":318},{"destination":"prop:Kreismodell-erfuellt-Winkelkongruenzaxiome","sort":"Proposition","label":"5.7","description":"Poincaré'sches Kreismodell erfüllt Kongruenzaxiome für Winkel","chapter":"5","section":"5.1","subsection":"5.1.0","page":"142","counter":319},{"destination":"prop:k-Bewegung-in-den-Ursprung","sort":"Proposition","label":"5.8","description":"Existenz einer k-Bewegung, die gegebenen k-Punkt auf den Ursprung schickt","chapter":"5","section":"5.1","subsection":"5.1.0","page":"142","counter":320},{"destination":"prop:Kreismodell-erfuellt-Vollstaendigkeitsaxiom","sort":"Proposition","label":"5.9","description":"Poincaré'sches Kreismodell erfüllt Vollständigkeitsaxiom","chapter":"5","section":"5.1","subsection":"5.1.0","page":"143","counter":321},{"destination":"prop:hyperbolisches-Axiom-im-Poincaremodell","sort":"Proposition","label":"5.10","description":"Poincaré'sche Kreismodell erfüllt das hyperbolische Axiom","chapter":"5","section":"5.1","subsection":"5.1.0","page":"143","counter":322},{"destination":"satz:Kreismodell-ist-hyperbolische-Ebene","sort":"Satz","label":"5.11","description":"Poincaré'sches Kreismodell ist hyperbolische Ebene","chapter":"5","section":"5.1","subsection":"5.1.0","page":"144","counter":323},{"destination":"sect:Hyperbolische-Geometrie","sort":"Abschnitt","label":"5.2","description":"Hyperbolische Geometrie","chapter":"5","section":"5.2","subsection":"5.2.0","page":"144","counter":324},{"destination":"Additionstheorem-cosh","sort":"Gleichung","label":"5.5","description":"","chapter":"5","section":"5.2","subsection":"5.2.0","page":"144","counter":325},{"destination":"hyperbolisches-Pythagorasaequivalent","sort":"Gleichung","label":"5.6","description":"","chapter":"5","section":"5.2","subsection":"5.2.0","page":"144","counter":326},{"destination":"lemma:k-Abstand-zum-Ursprung","sort":"Lemma","label":"5.12","description":"k-Abstand zum Ursprung","chapter":"5","section":"5.2","subsection":"5.2.0","page":"144","counter":327},{"destination":"lemma:sinh-und-cosh-vom-k-Abstand-zum-Ursprung","sort":"Lemma","label":"5.13","description":"sinh und cosh vom k-Abstand zum Ursprung","chapter":"5","section":"5.2","subsection":"5.2.0","page":"145","counter":328},{"destination":"lemma:Norm-im-Klein-Modell","sort":"Lemma","label":"5.14","description":"Projektion von k-Punkten auf die Verbindungssehne der Endpunkte der zugehörigen k-Geraden","chapter":"5","section":"5.2","subsection":"5.2.0","page":"145","counter":329},{"destination":"satz:Trigonometrie-rechtwinkliges-k-Dreieck","sort":"Satz","label":"5.15","description":"Trigonometrie im rechtwinkligen k-Dreieck","chapter":"5","section":"5.2","subsection":"5.2.0","page":"146","counter":330},{"destination":"satz:hyperbolische-Trigonometrie","sort":"Satz","label":"5.16","description":"hyperbolische Trigonometrie","chapter":"5","section":"5.2","subsection":"5.2.0","page":"148","counter":331},{"destination":"hyperbolische-Trigonometrie","sort":"Gleichung","label":"5.7","description":"","chapter":"5","section":"5.2","subsection":"5.2.0","page":"149","counter":332},{"destination":"satz:Winkelsumme-im-k-Dreieck","sort":"Satz","label":"5.17","description":"Winkelsumme im k-Dreieck","chapter":"5","section":"5.2","subsection":"5.2.0","page":"150","counter":333},{"destination":"beta+gamma<pi","sort":"Gleichung","label":"5.8","description":"","chapter":"5","section":"5.2","subsection":"5.2.0","page":"150","counter":334},{"destination":"sect:Uebungsaufgaben-Nichteuklidische-Geometrie","sort":"Abschnitt","label":"5.3","description":"Übungsaufgaben","chapter":"5","section":"5.3","subsection":"5.3.0","page":"151","counter":335},{"destination":"aufg:hyperbolische-Geradenspiegelung-ist-Bewegung","sort":"Aufgabe","label":"5.1","description":"","chapter":"5","section":"5.3","subsection":"5.3.0","page":"151","counter":336},{"destination":"aufg:Poincarehalbebene","sort":"Aufgabe","label":"5.2","description":"","chapter":"5","section":"5.3","subsection":"5.3.0","page":"151","counter":337}],"linked_media":[102,98,10,104,10,95,98,98,98,110,491,349,350,351,353,360]},"derivatives":{"screenshot":{"id":"medium/39/manuscript/screenshot-3decee3284df294f13fd31a8a444715d.png","storage":"store","metadata":{"filename":"image_processing20200724-1-7uc3mi.png","size":7126,"mime_type":"image/png"}}}}	all	t	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 17:03:37.785021	\N	\N	\N	-1
+52		2025-07-15 12:12:56.371975	2025-07-15 12:14:43.28763	LessonMaterial	Teilbarkeit	Talk	2	\N	\N	{"id":"medium/52/manuscript/1d248e204bee6e98adcc72bc1bb78caf.pdf","storage":"store","metadata":{"filename":"Vortrag1.pdf","size":61563,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[],"version":null},"derivatives":{"screenshot":{"id":"medium/52/manuscript/screenshot-c50180167bc81e896748fa0189b4a57f.png","storage":"store","metadata":{"filename":"image_processing20250715-149-3um9kx.png","size":7014,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2025-07-15 12:14:43.286356	\N	\N		-1
+8		2020-07-24 14:46:06.857134	2025-07-14 11:01:53.19958	LessonMaterial		Lesson	8	{"id":"medium/8/video/c66bbf9059e1cb15f4ef25fca67a5d81.mp4","storage":"store","metadata":{"filename":"LA2E08.mp4","size":1636141,"mime_type":"video/mp4","duration":60.024,"bitrate":218064,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/8/screenshot/b1b718054ad08f98391c9e370a66949a.png","storage":"store","metadata":{"filename":"screenshot20200724-1-18a3lza.png","size":119674,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/8/screenshot/normalized-55cae70265a6b310bbbe6b95af8c0462.png","storage":"store","metadata":{"filename":"image_processing20200724-1-12sd2sb.png","size":12571,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/8/manuscript/bbc747724b0ff16f074a0ed4d6241c65.pdf","storage":"store","metadata":{"filename":"LA2.E08.pdf","size":816914,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/8/manuscript/screenshot-cf1744a864646413b4678bddbc9a6704.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1kmhlcg.png","size":108129,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:46:06.857134	\N	\N	\N	-1
+37	\N	2020-07-24 16:48:30.034301	2025-07-14 11:01:53.19958	Question	Frobenius-Normalform bestimmen	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Die Matrix $A\\in M_{4,4}(\\mathbb{Q})$ habe die Invariantenteiler $1,1,(t-3)^2,(t-3)^2$. Gib die Frobenius-Normalform von $A$ an.	t	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfMatrix\n  row_count: 4\n  column_count: 4\n  coefficients:\n  - '0'\n  - "-9"\n  - '0'\n  - '0'\n  - '1'\n  - '6'\n  - '0'\n  - '0'\n  - '0'\n  - '0'\n  - '0'\n  - "-9"\n  - '0'\n  - '0'\n  - '1'\n  - '6'\n  tex: "\\\\begin{pmatrix}0 & -9 & 0 & 0 \\\\cr 1 & 6 & 0 & 0 \\\\cr 0 & 0 & 0 & -9 \\\\cr\n    0 & 0 & 1 & 6\\\\end{pmatrix}"\n  nerd: matrix([0,-9,0,0],[1,6,0,0],[0,0,0,-9],[0,0,1,6])\nexplanation: ''\n	free	\N	\N	\N	25	f	0	2020-07-24 16:48:30.034301	\N	\N	\N	-1
+41	\N	2020-09-01 14:30:02.64804	2020-09-07 12:25:30.264455	Quiz	Tensorprodukt	Course	1	\N	\N	\N	all	\N	\N	\N	\N	\N	--- !ruby/object:QuizGraph\nvertices:\n  1:\n    :type: Question\n    :id: 25\nedges: {}\nroot: 1\ndefault_table:\n  1: -1\nhide_solution: []\n	1	Quiz	\N	\N	\N	\N	\N		\N	\N	1	f	0	2020-09-01 14:30:02.64804	\N	\N	\N	-1
+48	\N	2022-08-05 14:32:29.847968	2025-07-14 11:12:30.462343	WorkedExample	Worked Example Unpublished	Lecture	27	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	en	\N	\N	\N	\N	\N	1	f	0	\N	\N	\N	\N	-1
+49	\N	2022-08-05 14:33:54.439745	2025-07-14 11:12:30.462343	WorkedExample	Worked Example Registered	Lecture	27	\N	\N	\N	users	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	en	\N	\N	\N	\N	\N	2	f	0	2022-08-05 14:34:12.32618	\N	\N	\N	-1
+18		2020-07-24 16:04:00.205352	2025-07-14 11:01:53.19958	Question	Beispiele für Primideale in Z	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Welche dieser Aussagen sind wahr?	t	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc		\N	\N	6	f	0	2020-07-24 16:04:00.205352	\N	\N	\N	-1
+40	\N	2020-08-10 16:09:44.690925	2022-09-02 16:52:53.2142	LessonMaterial	Vorlesungszusatzvideo	Lecture	4	\N	\N	\N	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N	\N	\N	\N	0	f	0	2020-08-10 16:09:44.690925	\N	\N	\N	-1
+38		2020-07-24 16:56:38.642606	2025-07-14 11:12:42.258782	LessonMaterial		Lesson	12	{"id":"medium/38/video/fd2c06150fe18ebfee91b6a73c833be3.mp4","storage":"store","metadata":{"filename":"Lektion.v.alg 1.ws17 18.e1-1.mp4","size":1915023,"mime_type":"video/mp4","duration":60.024,"bitrate":255234,"resolution":"1440x1070","frame_rate":"20/1"}}	\N	{"id":"medium/38/manuscript/66ca156dcebc7c8b2f4497dd65d68a9b.pdf","storage":"store","metadata":{"filename":"Lektion.V.Alg 1.WS17_18.E1.pdf","size":486317,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/38/manuscript/screenshot-e21a2c087545cd09eef48c484fd2081a.png","storage":"store","metadata":{"filename":"image_processing20200724-1-12owwue.png","size":7455,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 16:56:38.642606	\N	\N	\N	-1
+22	\N	2020-07-24 16:15:52.01113	2025-07-14 11:01:53.19958	Quiz	Angeleiteter Beweis: Ideale in Z	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	--- !ruby/object:QuizGraph\nvertices:\n  1:\n    :type: Remark\n    :id: 23\n  2:\n    :type: Question\n    :id: 24\n  3:\n    :type: Question\n    :id: 25\n  4:\n    :type: Question\n    :id: 26\n  5:\n    :type: Remark\n    :id: 27\n  6:\n    :type: Question\n    :id: 28\n  7:\n    :type: Remark\n    :id: 29\n  8:\n    :type: Remark\n    :id: 30\n  9:\n    :type: Question\n    :id: 31\n  10:\n    :type: Remark\n    :id: 32\nedges:\n  ? - 2\n    - 8\n  : - 20: false\n      21: false\n      22: true\n    - 20: false\n      21: true\n      22: false\n    - 20: false\n      21: true\n      22: true\n    - 20: true\n      21: false\n      22: false\n    - 20: true\n      21: false\n      22: true\n    - 20: false\n      21: false\n      22: false\n    - 20: true\n      21: true\n      22: true\nroot: 1\ndefault_table:\n  1: 2\n  2: 3\n  3: 4\n  4: 5\n  5: 6\n  6: 7\n  7: -1\n  8: 9\n  9: 10\n  10: 2\nhide_solution:\n- - 2\n  - 20: false\n    21: false\n    22: true\n- - 2\n  - 20: false\n    21: true\n    22: false\n- - 2\n  - 20: false\n    21: true\n    22: true\n- - 2\n  - 20: true\n    21: false\n    22: false\n- - 2\n  - 20: true\n    21: false\n    22: true\n- - 2\n  - 20: false\n    21: false\n    22: false\n- - 2\n  - 20: true\n    21: true\n    22: true\n	1	Quiz	\N	\N	de	\N	\N		\N	\N	10	f	0	2020-07-24 16:15:52.01113	\N	\N	\N	-1
+30	\N	2020-07-24 16:29:29.670149	2025-07-14 11:01:53.19958	Remark	Wiederholung Ideal ankündigen	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	\N	\N	Remark	Wir schauen uns nochmal den Begriff des Ideals genauer an.	\N	\N	\N	\N	\N	\N	\N	18	f	0	2020-07-24 16:29:29.670149	\N	\N	\N	-1
+9		2020-07-24 14:51:14.920111	2025-07-14 11:01:53.19958	LessonMaterial		Lesson	9	{"id":"medium/9/video/6187a6877c63eb1f436c609233b6734f.mp4","storage":"store","metadata":{"filename":"LA2E09.mp4","size":1956825,"mime_type":"video/mp4","duration":60.024,"bitrate":260805,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/9/screenshot/50ce3e38dfa67e91de39afe6e819a55e.png","storage":"store","metadata":{"filename":"screenshot20200724-1-17n4aon.png","size":181298,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/9/screenshot/normalized-208498c706d6e610ce9bedd0c1423b54.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1dieo3r.png","size":52223,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/9/manuscript/7f21bce51aa2568c3b2735f06ee6fae9.pdf","storage":"store","metadata":{"filename":"LA2.E09.pdf","size":1166711,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/9/manuscript/screenshot-c314b7d368b987b1ced90857682be068.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1jcn8b5.png","size":148996,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:51:14.920111	\N	\N	\N	-1
+10		2020-07-24 14:56:40.100167	2025-07-14 11:01:53.19958	LessonMaterial		Lesson	10	{"id":"medium/10/video/4d452e06ae4c401055930a78f3c99e5b.mp4","storage":"store","metadata":{"filename":"LA2E10.mp4","size":1770925,"mime_type":"video/mp4","duration":60.024,"bitrate":236028,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/10/screenshot/c4d2ddda7fe38c385e8dca2341ffc8e6.png","storage":"store","metadata":{"filename":"screenshot20200724-1-mo0aeb.png","size":125109,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/10/screenshot/normalized-e0e7e6399d6a452317e3f2eb9e640cf7.png","storage":"store","metadata":{"filename":"image_processing20200724-1-13kkkad.png","size":32713,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/10/manuscript/a02e7d985f2c2a514071775902e439c8.pdf","storage":"store","metadata":{"filename":"LA2.E10.pdf","size":638000,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/10/manuscript/screenshot-83029d5d314509f94f5d2f545dc587a3.png","storage":"store","metadata":{"filename":"image_processing20200724-1-o1213x.png","size":78449,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:56:40.100167	\N	\N	\N	-1
+19	\N	2020-07-24 16:06:37.911565	2025-07-14 11:01:53.19958	Question	Beispiele für Primideale in Q	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Welche dieser Aussagen sind wahr?	t	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	7	f	0	2020-07-24 16:06:37.911565	\N	\N	\N	-1
+2		2020-07-24 14:06:58.962512	2025-07-14 11:01:53.19958	LessonMaterial		Lesson	2	{"id":"medium/2/video/6e46aab6179623cfed897b663cd723a9.mp4","storage":"store","metadata":{"filename":"LA2E02.mp4","size":1955566,"mime_type":"video/mp4","duration":60.024,"bitrate":260637,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/2/screenshot/da504c00a54f7ff2cb78cd1062af949b.png","storage":"store","metadata":{"filename":"screenshot20200724-1-1k4u0et.png","size":190159,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/2/screenshot/normalized-a0b4b7e41202fb1abd8b5a8360c54f37.png","storage":"store","metadata":{"filename":"image_processing20200724-1-18sealr.png","size":45542,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/2/manuscript/e1582e2dea166d0e78f6504bbacc625a.pdf","storage":"store","metadata":{"filename":"LA2.E02.pdf","size":1130194,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/2/manuscript/screenshot-f4b924397fe7ada1576b2f8d0360f1f9.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1levfn8.png","size":149968,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:06:58.962512	\N	\N	\N	-1
+6		2020-07-24 14:29:17.501435	2025-07-14 11:01:53.19958	LessonMaterial		Lesson	6	{"id":"medium/6/video/71f29269c49e634630e53741e5c4b80c.mp4","storage":"store","metadata":{"filename":"LA2E06.mp4","size":1914014,"mime_type":"video/mp4","duration":60.024,"bitrate":255099,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/6/screenshot/32c82f68b8808e9c2550c5918c034918.png","storage":"store","metadata":{"filename":"screenshot20200724-1-1ar4gk2.png","size":213364,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/6/screenshot/normalized-5c573a2d2d5e5a0d93c932e51fcb95cc.png","storage":"store","metadata":{"filename":"image_processing20200724-1-dzinn4.png","size":57533,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/6/manuscript/48ce537f46f30e41f531c0dd4a1155fb.pdf","storage":"store","metadata":{"filename":"LA2.E06.pdf","size":1146440,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/6/manuscript/screenshot-80c2cb074e0c72693d3221b4d926c5ec.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1v5nulk.png","size":142931,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:29:17.501435	\N	\N	\N	-1
+25	\N	2020-07-24 16:18:56.962113	2025-07-14 11:01:53.19958	Question	Ideale in Z Erzeuger finden	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Bevor wir einen allgemeinen Beweis der Aussage führen, schauen wir uns ein Beispiel an. Betrachte das Ideal $$I:= 4\\mathbb{Z} + 6 \\mathbb{Z} = \\{a4+b6 \\mid a,b \\in \\mathbb{Z}\\}.$$\nWir wollen zeigen, dass jedes Ideal in $\\mathbb{Z}$ von einem Element erzeugt wird. Diese Aussage müsste insbesondere für $I$ stimmen.\nWelche der folgenden Antwortoptionen sind wahr?	f	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	13	f	0	2020-07-24 16:18:56.962113	\N	\N	\N	-1
+21	\N	2020-07-24 16:10:17.951738	2025-07-14 11:01:53.19958	Question	Beispiele für Primideale in K[X]	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Sei $K$ ein Körper und $a\\in K$. Betrachte den Polynomring in einer Variable $K[X]$ über $K$.\n\nWelche der folgenden Ideale sind Primideale in $K[X]$?	t	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	9	f	0	2020-07-24 16:10:17.951738	\N	\N	\N	-1
+13		2020-07-24 15:43:22.719009	2020-09-07 12:25:30.264455	WorkedExample	Frobenius-Normalform	Course	1	{"id":"medium/13/video/a6ea48bef517cd2fb6b2a56e0c30c80a.mp4","storage":"store","metadata":{"filename":"Worked Example.v.la 2.ss17.frobenius-normalform.mp4","size":1556998,"mime_type":"video/mp4","duration":60.024,"bitrate":207516,"resolution":"1620x1080","frame_rate":"20/1"}}	\N	{"id":"medium/13/manuscript/bb2ae64c3a094be17d3b1addb8c43c15.pdf","storage":"store","metadata":{"filename":"Worked Example.V.LA 2.SS17.Frobenius-Normalform.pdf","size":593628,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/13/manuscript/screenshot-1b2c2c1a6b4412914b430ffb21c7231f.png","storage":"store","metadata":{"filename":"image_processing20200724-1-vyhz0w.png","size":36276,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	classic	0	f	0	2020-07-24 15:43:22.719009	\N	\N	\N	-1
+47		2022-08-05 14:30:40.379007	2025-07-14 11:12:30.462343	WorkedExample	Worked Example Free	Lecture	27	{"id":"medium/47/video/8fbbda33353ed60cae247f1e5230dcb0.mp4","storage":"store","metadata":{"filename":"WorkedExample.mp4","size":1461881,"mime_type":"video/mp4","duration":53.526,"bitrate":218492,"resolution":"1624x1080","frame_rate":"20/1"}}	{"id":"medium/47/screenshot/a85c6e67b74319702fe1226b2084cbf4.png","storage":"store","metadata":{"filename":"screenshot20220805-1-bony1x.png","size":150856,"mime_type":"image/png","width":750,"height":498},"derivatives":{"normalized":{"id":"medium/47/screenshot/normalized-1ff53c1c3c65c4119a4e0d8f1bf088c4.png","storage":"store","metadata":{"filename":"image_processing20220805-1-43smh4.png","size":31267,"mime_type":"image/png","width":405,"height":269}}}}	\N	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	en	\N	\N		\N	classic	0	f	0	2022-08-05 14:31:00.873873	\N	\N	\N	-1
+3		2020-07-24 14:12:39.663351	2025-07-14 11:01:53.19958	LessonMaterial		Lesson	3	{"id":"medium/3/video/9c61a69cb2ad6b460f32810ed366d8f4.mp4","storage":"store","metadata":{"filename":"LAL2E03.mp4","size":1752814,"mime_type":"video/mp4","duration":60.024,"bitrate":233615,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/3/screenshot/3366a1ac75c28b56e165987c425574ba.png","storage":"store","metadata":{"filename":"screenshot20200724-1-6gkzy3.png","size":174370,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/3/screenshot/normalized-c6188e6a3d396811d283a153ddafa567.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1qykrfz.png","size":42558,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/3/manuscript/02875aacacb6c00ceedf955ed0885bf8.pdf","storage":"store","metadata":{"filename":"LA2.E03.pdf","size":911950,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/3/manuscript/screenshot-09d32e534c82c32213076811e637c5d5.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1jctkbr.png","size":108707,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:12:39.663351	\N	\N	\N	-1
+50	\N	2022-08-05 14:34:37.266105	2025-07-14 11:12:30.462343	WorkedExample	Worked Example Subscribers	Lecture	27	\N	\N	\N	subscribers	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	en	\N	\N	\N	\N	\N	3	f	0	2022-08-05 14:34:46.647792	\N	\N	\N	-1
+31		2020-07-24 16:30:41.490936	2025-07-14 11:01:53.19958	Question	Ideale Definition	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Sei $R$ ein kommutativer Ring mit Eins. Eine Teilmenge $I$ von $R$ von heißt Ideal, wenn $0\\in I$ ist, für alle $a,b\\in I$ stets $a+b\\in I$ gilt und	f	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc		\N	\N	19	f	0	2020-07-24 16:30:41.490936	\N	\N	\N	-1
+46	https://en.wikipedia.org/wiki/Group_(mathematics)	2022-08-05 13:33:25.078745	2025-07-14 11:12:30.462343	Miscellaneous	Groups	Talk	1	\N	\N	{"id":"medium/46/manuscript/16faf389e47502a6662ef2168b02f312.pdf","storage":"store","metadata":{"filename":"empty.pdf","size":1154,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[],"version":null},"derivatives":{"screenshot":{"id":"medium/46/manuscript/screenshot-5842b6968e935e05ee874bdbbffa6918.png","storage":"store","metadata":{"filename":"image_processing20220805-1-hgctcd.png","size":10234,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	en	\N	\N	<div>Paper with lines.</div>	\N	\N	0	f	0	2022-08-05 13:36:01.791177	\N	\N	\N	-1
+7		2020-07-24 14:33:16.150404	2025-07-14 11:01:53.19958	LessonMaterial		Lesson	7	{"id":"medium/7/video/9a75b21e25ae51bee58281bff24ae7e2.mp4","storage":"store","metadata":{"filename":"LA2E07.mp4","size":1742925,"mime_type":"video/mp4","duration":60.024,"bitrate":232297,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/7/screenshot/f452ec799399d32c84390c6bfec896c3.png","storage":"store","metadata":{"filename":"screenshot20200724-1-1i8ba8i.png","size":169612,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/7/screenshot/normalized-f7108a74864a48d622f1ca0d0ea18e8b.png","storage":"store","metadata":{"filename":"image_processing20200724-1-16c2dut.png","size":41756,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/7/manuscript/abe54aaef2c42a27155ce88753ed59ba.pdf","storage":"store","metadata":{"filename":"LA2.E07.pdf","size":1106134,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/7/manuscript/screenshot-7b8d24fe3103d89a98e0cd135abf1390.png","storage":"store","metadata":{"filename":"image_processing20200724-1-vqwyb8.png","size":133262,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:33:16.150404	\N	\N	\N	-1
+36	\N	2020-07-24 16:46:02.067418	2025-07-14 11:01:53.19958	Question	Zusammenhang Invarianten- und Determinantenteiler	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Die Matrix $A\\in M_{6,6}(\\mathbb{Q})$ habe die Determinantenteiler $1,1,t-2,(t-2)^2,(t-2)^3,(t-2)^5(t-3)$. Gib die Invariantenteiler $c_1(A),\\ldots,c_6(A)$ als Tupel von Polynomen aus $\\mathbb{Q}[t]$ an.	t	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfTuple\n  value: 1,1,t-2,t-2,t-2,(t-2)^2*(t-3)\n  tex: "(1, 1, t-2, t-2, t-2, \\\\left(t-2\\\\right)^{2} \\\\cdot \\\\left(t-3\\\\right))"\n  nerd: vector(1,1,t-2,t-2,t-2,(t-2)^2*(t-3))\nexplanation: ''\n	free	\N	\N	\N	24	f	0	2020-07-24 16:46:02.067418	\N	\N	\N	-1
+16	\N	2020-07-24 16:01:47.120356	2025-07-14 11:01:53.19958	Quiz	Primideale und maximale Ideale	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	--- !ruby/object:QuizGraph\nvertices:\n  1:\n    :type: Question\n    :id: 17\n  2:\n    :type: Question\n    :id: 18\n  3:\n    :type: Question\n    :id: 19\n  4:\n    :type: Question\n    :id: 20\n  5:\n    :type: Question\n    :id: 21\nedges: {}\nroot: 1\ndefault_table:\n  1: 2\n  2: 3\n  3: 4\n  4: 5\n  5: -1\nhide_solution: []\n	1	Quiz	\N	\N	de	\N	\N		\N	\N	4	f	0	2020-07-24 16:01:47.120356	\N	\N	\N	-1
+5		2020-07-24 14:23:41.519702	2025-07-14 11:01:53.19958	LessonMaterial		Lesson	5	{"id":"medium/5/video/20c0f8f5b7f84bdba5fc08789f703533.mp4","storage":"store","metadata":{"filename":"LA2E05.mp4","size":2035152,"mime_type":"video/mp4","duration":60.024,"bitrate":271245,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/5/screenshot/df65c704b2cd27b51f4e1bc1a8e3d346.png","storage":"store","metadata":{"filename":"screenshot20200724-1-swmdmi.png","size":260866,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/5/screenshot/normalized-b13c583f59f7c34e185c02b71341b31b.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1sz19jf.png","size":65008,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/5/manuscript/aa230cc1ddea2de68359e0e4a47bb7dc.pdf","storage":"store","metadata":{"filename":"LA2.E05.pdf","size":1446454,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/5/manuscript/screenshot-42ea4fa7150abd860db7e446ad95426b.png","storage":"store","metadata":{"filename":"image_processing20200724-1-g5cacj.png","size":164433,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:23:41.519702	\N	\N	\N	-1
+23	\N	2020-07-24 16:16:21.665364	2025-07-14 11:01:53.19958	Remark	Ideale in Z Start	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	\N	\N	Remark	In diesem angeleiteten Beweis wollen wir zeigen, dass jedes Ideal in $\\mathbb{Z}$ von einem Element erzeugt wird. Ein Ideal $I$ eins (kommutativen) Ringes $R,$ welches von einem Element erzeugt wird, nennt man $\\textbf{Hauptideal}.$ In diesem Fall gibt es ein $x \\in I,$ sodass für jedes $y\\in I$ ein $a \\in R$ existiert mit $y = ax.$ Man schreibt dann auch $$I = (x) := Rx = \\{ax \\mid a\\in R\\}.$$\nEin kommutativer nullteilerfreier Ring, in dem jedes Ideal ein Hauptideal ist, wird $\\textbf{Hauptidealring}$ genannt. Die ganzen Zahlen $\\mathbb{Z}$ sind bekanntlich nullteilerfrei. Wir werden in diesem Quiz folglich zeigen, dass $\\mathbb{Z}$ ein Hauptidealring ist.	\N	\N	\N	\N	\N	\N	\N	11	f	0	2020-07-24 16:16:21.665364	\N	\N	\N	-1
+24	\N	2020-07-24 16:17:11.021084	2025-07-14 11:01:53.19958	Question	Ideale in Z erkennen	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Welche der folgenden Teilmengen von $\\mathbb{Z}$ sind Ideale?	t	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	12	f	0	2020-07-24 16:17:11.021084	\N	\N	\N	-1
+15		2020-07-24 15:58:26.59272	2025-07-14 11:01:53.19958	Miscellaneous	Informationen zur Vorlesung	Lecture	1	\N	\N	{"id":"medium/15/manuscript/6abae2f9d76fc3cf81f061e982a17b4c.pdf","storage":"store","metadata":{"filename":"Sonstiges.V.LA 2.SS20.Informationen zur Vorlesung.pdf","size":134035,"mime_type":"application/pdf","pages":2,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/15/manuscript/screenshot-78c940c61c11b7ea563edd44d9e08b11.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1gee8hy.png","size":73051,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	3	f	0	2020-07-24 15:58:26.59272	\N	\N	\N	-1
+14		2020-07-24 15:54:03.017896	2025-07-14 11:01:53.19958	Repetition	Euklidische Räume	Lecture	1	{"id":"medium/14/video/2f175f5305281b157e749a69cb29df98.mp4","storage":"store","metadata":{"filename":"Wiederholung.v.la 2.ss20.euklidische Räume-1.mp4","size":1952112,"mime_type":"video/mp4","duration":60.024,"bitrate":260177,"resolution":"1620x1080","frame_rate":"20/1"}}	\N	{"id":"medium/14/manuscript/b442dd2f1fa978c2e097c18a9c00d4e7.pdf","storage":"store","metadata":{"filename":"Wiederholung.V.LA 2.SS20.Euklidische Räume.pdf","size":76310,"mime_type":"application/pdf","pages":2,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/14/manuscript/screenshot-5a6c59528e7a5f4867c4cf55f65b6070.png","storage":"store","metadata":{"filename":"image_processing20200724-1-131qq54.png","size":9310,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	2	f	0	2020-07-24 15:54:03.017896	\N	\N	\N	-1
+17	\N	2020-07-24 16:02:04.55872	2025-07-14 11:01:53.19958	Question	Primideale in Körpern	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Welche dieser Aussagen ist stets wahr?\n	t	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	5	f	0	2020-07-24 16:02:04.55872	\N	\N	\N	-1
+4		2020-07-24 14:18:30.391486	2025-07-14 11:01:53.19958	LessonMaterial		Lesson	4	{"id":"medium/4/video/dd9017f21d168a56f365f54d24236133.mp4","storage":"store","metadata":{"filename":"LA2E04.mp4","size":2332822,"mime_type":"video/mp4","duration":60.024,"bitrate":310918,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/4/screenshot/91927569e5f74dd421a334cf864bf97f.png","storage":"store","metadata":{"filename":"screenshot20200724-1-18t9svm.png","size":217053,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/4/screenshot/normalized-ce2d108f74aa61caf947f27b7f2e91d7.png","storage":"store","metadata":{"filename":"image_processing20200724-1-1i2mktm.png","size":63907,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/4/manuscript/cdb87ae3926c61a4989cfc0d97b1277e.pdf","storage":"store","metadata":{"filename":"LA2.E04.pdf","size":1359479,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/4/manuscript/screenshot-9ab7c7f3c704645eb480721a53a4614e.png","storage":"store","metadata":{"filename":"image_processing20200724-1-qhhu3w.png","size":158255,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 14:18:30.391486	\N	\N	\N	-1
+11	\N	2020-07-24 15:09:22.028739	2025-07-14 11:01:53.19958	Script	Skript	Lecture	1	\N	\N	{"id":"medium/11/manuscript/6a7f68166c0f73c5e52e5c3e04edbe91.pdf","storage":"store","metadata":{"filename":"skript.pdf","size":958764,"mime_type":"application/pdf","pages":2,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/11/manuscript/screenshot-9bfae6984bf1c9058e39961b5e47209e.png","storage":"store","metadata":{"filename":"image_processing20200724-1-7kqb5h.png","size":10393,"mime_type":"image/png"}}}}	all	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 15:09:22.028739	\N	\N	\N	-1
+35		2020-07-24 16:44:51.271122	2025-07-14 11:01:53.19958	Question	Zusammenhang Invariantenteiler und charakteristisches Polynom	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Die Matrix $A\\in M_{5,5}(\\mathbb{Q})$ habe die Invariantenteiler $1,1,t-2,(t-2)(t-3),(t-2)(t-3)$. Gib das charakteristische Polynom von $A$ (als Polynom aus $\\mathbb{Q}[t]$) an.	t	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: "(t-2)^3*(t-3)^2"\n  tex: "\\\\left(t-2\\\\right)^{3} \\\\cdot \\\\left(t-3\\\\right)^{2}"\n  nerd: "(t-2)^3*(t-3)^2"\nexplanation: Es ist $d_5(A)=c_1(A)\\cdot\\ldots\\cdot c_5(A)$ und $d_5(A)=\\chi^{\\operatorname{char}}_A$.\n	free		\N	\N	23	f	0	2020-07-24 16:44:51.271122	\N	\N	\N	-1
+45		2020-11-28 16:23:26.308384	2025-07-14 11:01:53.19958	Exercise	Blatt 5	Lecture	1	\N	\N	{"id":"medium/45/manuscript/1cf0c8f0baf4dcb98931fd2c1bb9a6b5.pdf","storage":"store","metadata":{"filename":"Übung.V.LA 2.SS20.LA2-Blatt05.pdf","size":70765,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/45/manuscript/screenshot-06c628555c0925a1461a265e77b619ca.png","storage":"store","metadata":{"filename":"image_processing20201128-1-h318j9.png","size":43176,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	26	f	0	2020-11-28 16:23:26.308384	\N	\N	\N	-1
+12		2020-07-24 15:15:19.693823	2025-07-14 11:01:53.19958	Exercise	Blatt4	Lecture	1	\N	\N	{"id":"medium/12/manuscript/d8024479ea26e6e6b5d17cdfb9bf02b3.pdf","storage":"store","metadata":{"filename":"Übung.V.LA 2.SS20.LA2-Blatt02.pdf","size":67599,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/12/manuscript/screenshot-16b55aeefffa834857b4a3e1e515a8f3.png","storage":"store","metadata":{"filename":"image_processing20200724-1-12sjf5y.png","size":40172,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	1	f	0	2020-07-24 15:15:19.693823	\N	\N	\N	-1
+34		2020-07-24 16:43:21.322066	2025-07-14 11:01:53.19958	Question	Zusammenhang Invarianten- und Determinantenteiler	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Die Matrix $A\\in M_{4,4}(\\mathbb{Q})$ habe die Invariantenteiler $1,t-2,t-2,(t-2)(t-3)$. Gib die Determinantenteiler $d_1(A),\\ldots,d_4(A)$ als Tupel von Polynomen aus $\\mathbb{Q}[t]$ an.	t	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfTuple\n  value: 1,t-2,(t-2)^2,(t-2)^3*(t-3)\n  tex: "(1, t-2, \\\\left(t-2\\\\right)^{2}, \\\\left(t-2\\\\right)^{3} \\\\cdot \\\\left(t-3\\\\right))"\n  nerd: vector(1,t-2,(t-2)^2,(t-2)^3*(t-3))\nexplanation: ''\n	free		\N	\N	22	f	0	2020-07-24 16:43:21.322066	\N	\N	\N	-1
+33	\N	2020-07-24 16:42:58.569127	2025-07-14 11:01:53.19958	Quiz	Invarianten- und Determinantenteiler	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	--- !ruby/object:QuizGraph\nvertices:\n  1:\n    :type: Question\n    :id: 34\n  2:\n    :type: Question\n    :id: 35\n  3:\n    :type: Question\n    :id: 36\n  4:\n    :type: Question\n    :id: 37\nedges: {}\nroot: 1\ndefault_table:\n  1: 2\n  2: 3\n  3: 4\n  4: -1\nhide_solution: []\n	1	Quiz	\N	\N	de	\N	\N		\N	\N	21	f	0	2020-07-24 16:42:58.569127	\N	\N	\N	-1
+32		2020-07-24 16:34:24.982063	2025-07-14 11:01:53.19958	Remark	nächster Versuch	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	\N	\N	Remark	Damit gehen wir die obige Frage nochmal an.	\N	\N	\N	\N		\N	classic	20	f	0	2020-07-24 16:34:24.982063	\N	\N	\N	-1
+27	\N	2020-07-24 16:22:40.781556	2025-07-14 11:01:53.19958	Remark	Ideale in Z Erzeuger Kandidat	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	\N	\N	Remark	Wir können annehmen, dass $I$ nicht das Nullideal ist, da dieses bereits ein Hauptideal ist.\nWenn $I$ nicht das Nullideal ist, dann enthält es ein von $0$ verschiedenes Element $y$ und damit auch eine natürliche Zahl $\\lvert y \\rvert.$\nInsgesamt können wir folgern, dass $I\\cap \\mathbb{N}$ eine nicht-leere Teilmenge der natürlichen Zahlen ist und daher ein minimales Element $x$ besitzt. \nUm zu zeigen, dass $x$ ein Erzeuger von $I$ ist, müssen wir zeigen, dass jedes Element $y \\in I$ von der Form $y=ax$ ist für ein $a \\in \\mathbb{Z}.$  Eine wichtige Zutat wird die Division mit Rest.	\N	\N	\N	\N	\N	\N	\N	15	f	0	2020-07-24 16:22:40.781556	\N	\N	\N	-1
+20	\N	2020-07-24 16:08:25.960801	2025-07-14 11:01:53.19958	Question	Beispiele für Maximalideale in Z	Lecture	1	\N	\N	\N	all	\N	\N	\N		\N	\N	1	Question	Betrachte den Ring der ganzen Zahlen $\\mathbb Z$. \n\nWelche dieser Ideale sind Maximalideale in $\\mathbb Z$?	t	\N	--- !ruby/object:Solution\ncontent: !ruby/object:MampfExpression\n  value: '0'\n  tex: '0'\n  nerd: '0'\n	mc	\N	\N	\N	8	f	0	2020-07-24 16:08:25.960801	\N	\N	\N	-1
+29	\N	2020-07-24 16:24:37.74309	2025-07-14 11:01:53.19958	Remark	Ideale in Z final	Lecture	1	\N	\N	\N	all	\N	\N	\N	\N	\N	\N	\N	Remark	Damit haben wir gezeigt: Jedes $y \\in I$ ist von der Form $y= ax$ für ein $a \\in \\mathbb{Z}.$ Daher wird $I$ von $x$ erzeugt. Essentiell für den Beweis war die Division mit Rest. Divison mit Rest ist in jedem $\\textbf{``euklidischen Ring''}$ möglich. Die ganzen Zahl sind ein Beispiel eines euklidischen Rings. Der Beweis, den wir in diesem Quiz geführt haben, lässt sich auch auf euklidische Ringe übertragen. Damit würde man das folgende Ergebnis erhalten: Jeder $\\textbf{euklidische Ring}$ ist ein $\\textbf{Hauptidealring}.$	\N	\N	\N	\N	\N	\N	\N	17	f	0	2020-07-24 16:24:37.74309	\N	\N	\N	-1
+1		2020-07-24 13:54:47.104217	2025-07-14 11:01:53.19958	LessonMaterial		Lesson	1	{"id":"medium/1/video/269c5ce0c48ed4a23891abd1346125aa.mp4","storage":"store","metadata":{"filename":"LA2.E01.mp4","size":2078859,"mime_type":"video/mp4","duration":60.024,"bitrate":277070,"resolution":"1620x1080","frame_rate":"20/1"}}	{"id":"medium/1/screenshot/9b259def551649d827b7a40d33ece6d6.png","storage":"store","metadata":{"filename":"screenshot20200724-1-16f6c1d.png","size":230732,"mime_type":"image/png","width":1071,"height":714},"derivatives":{"normalized":{"id":"medium/1/screenshot/normalized-62b8405499916239163ce7ff3df213e7.png","storage":"store","metadata":{"filename":"image_processing20200724-1-x9wc6t.png","size":60200,"mime_type":"image/png","width":405,"height":270}}}}	{"id":"medium/1/manuscript/d7d911f3ade1888e7c44445c573aa3d4.pdf","storage":"store","metadata":{"filename":"LA2.E01.pdf","size":1138473,"mime_type":"application/pdf","pages":1,"destinations":[],"bookmarks":[],"linked_media":[]},"derivatives":{"screenshot":{"id":"medium/1/manuscript/screenshot-d85053a28beb894430567279403be368.png","storage":"store","metadata":{"filename":"image_processing20200724-1-h1cbbu.png","size":149022,"mime_type":"image/png"}}}}	all	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	de	\N	\N		\N	\N	0	f	0	2020-07-24 13:54:47.104217	\N	\N	\N	-1
 \.
 
 
 --
--- TOC entry 4243 (class 0 OID 26434)
--- Dependencies: 265
+-- TOC entry 4516 (class 0 OID 16590)
+-- Dependencies: 273
 -- Data for Name: medium_tag_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4650,8 +5641,8 @@ COPY public.medium_tag_joins (id, medium_id, tag_id, created_at, updated_at) FRO
 
 
 --
--- TOC entry 4245 (class 0 OID 26438)
--- Dependencies: 267
+-- TOC entry 4518 (class 0 OID 16594)
+-- Dependencies: 275
 -- Data for Name: notifications; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4694,7 +5685,6 @@ COPY public.notifications (id, recipient_id, notifiable_id, notifiable_type, act
 104	12	4	Announcement	create	2022-08-05 14:26:46.636809	2022-08-05 14:26:46.636809
 105	13	4	Announcement	create	2022-08-05 14:26:46.636809	2022-08-05 14:26:46.636809
 106	1	47	Medium	create	2022-08-05 14:31:00.900278	2022-08-05 14:31:00.900278
-107	2	47	Medium	create	2022-08-05 14:31:00.900278	2022-08-05 14:31:00.900278
 108	5	47	Medium	create	2022-08-05 14:31:00.900278	2022-08-05 14:31:00.900278
 109	1	49	Medium	create	2022-08-05 14:34:12.377754	2022-08-05 14:34:12.377754
 110	2	49	Medium	create	2022-08-05 14:34:12.377754	2022-08-05 14:34:12.377754
@@ -4705,12 +5695,32 @@ COPY public.notifications (id, recipient_id, notifiable_id, notifiable_type, act
 115	1	51	Medium	create	2022-08-05 14:35:41.798564	2022-08-05 14:35:41.798564
 116	2	51	Medium	create	2022-08-05 14:35:41.798564	2022-08-05 14:35:41.798564
 117	5	51	Medium	create	2022-08-05 14:35:41.798564	2022-08-05 14:35:41.798564
+118	1	28	Lecture	create	2025-07-14 11:44:51.866687	2025-07-14 11:44:51.866687
+119	2	28	Lecture	create	2025-07-14 11:44:51.866687	2025-07-14 11:44:51.866687
+123	8	28	Lecture	create	2025-07-14 11:44:51.866687	2025-07-14 11:44:51.866687
+124	9	28	Lecture	create	2025-07-14 11:44:51.866687	2025-07-14 11:44:51.866687
+125	10	28	Lecture	create	2025-07-14 11:44:51.866687	2025-07-14 11:44:51.866687
+126	12	28	Lecture	create	2025-07-14 11:44:51.866687	2025-07-14 11:44:51.866687
+127	13	28	Lecture	create	2025-07-14 11:44:51.866687	2025-07-14 11:44:51.866687
+128	1	29	Lecture	create	2025-07-15 12:10:30.264902	2025-07-15 12:10:30.264902
+129	2	29	Lecture	create	2025-07-15 12:10:30.264902	2025-07-15 12:10:30.264902
+133	8	29	Lecture	create	2025-07-15 12:10:30.264902	2025-07-15 12:10:30.264902
+134	9	29	Lecture	create	2025-07-15 12:10:30.264902	2025-07-15 12:10:30.264902
+135	10	29	Lecture	create	2025-07-15 12:10:30.264902	2025-07-15 12:10:30.264902
+136	12	29	Lecture	create	2025-07-15 12:10:30.264902	2025-07-15 12:10:30.264902
+137	13	29	Lecture	create	2025-07-15 12:10:30.264902	2025-07-15 12:10:30.264902
+138	2	1	Redemption	\N	2025-07-15 12:11:14.695912	2025-07-15 12:11:14.695912
+139	2	2	Redemption	\N	2025-07-15 12:11:39.228347	2025-07-15 12:11:39.228347
+140	2	3	Redemption	\N	2025-07-15 12:11:59.007461	2025-07-15 12:11:59.007461
+141	5	52	Medium	create	2025-07-15 12:14:43.271386	2025-07-15 12:14:43.271386
+142	6	52	Medium	create	2025-07-15 12:14:43.271386	2025-07-15 12:14:43.271386
+143	7	52	Medium	create	2025-07-15 12:14:43.271386	2025-07-15 12:14:43.271386
 \.
 
 
 --
--- TOC entry 4247 (class 0 OID 26444)
--- Dependencies: 269
+-- TOC entry 4520 (class 0 OID 16600)
+-- Dependencies: 277
 -- Data for Name: notions; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4793,12 +5803,18 @@ COPY public.notions (id, created_at, updated_at, title, locale, tag_id, aliased_
 76	2022-08-05 13:29:45.553965	2022-08-05 13:29:45.553965	group	en	44	\N
 77	2022-08-05 13:30:12.632794	2022-08-05 13:30:12.632794	Gruppenhomomorphismus	de	45	\N
 78	2022-08-05 13:30:12.643284	2022-08-05 13:30:12.643284	group homomorphism	en	45	\N
+79	2025-07-15 12:04:34.67541	2025-07-15 12:04:34.67541	divisibility	en	46	\N
+80	2025-07-15 12:04:34.685301	2025-07-15 12:04:34.685301	Teilbarkeit	de	46	\N
+81	2025-07-15 12:05:40.4062	2025-07-15 12:05:40.4062	prime number	en	47	\N
+82	2025-07-15 12:05:40.410207	2025-07-15 12:05:40.410207	Primzahl	de	47	\N
+83	2025-07-15 12:08:23.04139	2025-07-15 12:08:23.04139	RSA cryptosystem	en	48	\N
+84	2025-07-15 12:08:23.047457	2025-07-15 12:08:23.047457	RSA-Verschlusselung	de	48	\N
 \.
 
 
 --
--- TOC entry 4249 (class 0 OID 26450)
--- Dependencies: 271
+-- TOC entry 4522 (class 0 OID 16606)
+-- Dependencies: 279
 -- Data for Name: program_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4811,8 +5827,8 @@ COPY public.program_translations (id, program_id, locale, created_at, updated_at
 
 
 --
--- TOC entry 4251 (class 0 OID 26456)
--- Dependencies: 273
+-- TOC entry 4524 (class 0 OID 16612)
+-- Dependencies: 281
 -- Data for Name: programs; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4823,8 +5839,8 @@ COPY public.programs (id, created_at, updated_at, subject_id) FROM stdin;
 
 
 --
--- TOC entry 4253 (class 0 OID 26460)
--- Dependencies: 275
+-- TOC entry 4526 (class 0 OID 16616)
+-- Dependencies: 283
 -- Data for Name: quiz_certificates; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4833,8 +5849,8 @@ COPY public.quiz_certificates (id, quiz_id, user_id, code, created_at, updated_a
 
 
 --
--- TOC entry 4254 (class 0 OID 26466)
--- Dependencies: 276
+-- TOC entry 4527 (class 0 OID 16622)
+-- Dependencies: 284
 -- Data for Name: readers; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4844,8 +5860,21 @@ COPY public.readers (id, user_id, thread_id, created_at, updated_at) FROM stdin;
 
 
 --
--- TOC entry 4256 (class 0 OID 26470)
--- Dependencies: 278
+-- TOC entry 4619 (class 0 OID 17570)
+-- Dependencies: 376
+-- Data for Name: redemptions; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.redemptions (id, voucher_id, user_id, created_at, updated_at) FROM stdin;
+1	8ed8a767-7faa-486c-a757-7417ffd04c3d	5	2025-07-15 12:11:14.688568	2025-07-15 12:11:14.688568
+2	8ed8a767-7faa-486c-a757-7417ffd04c3d	6	2025-07-15 12:11:39.223198	2025-07-15 12:11:39.223198
+3	8ed8a767-7faa-486c-a757-7417ffd04c3d	7	2025-07-15 12:11:58.999334	2025-07-15 12:11:58.999334
+\.
+
+
+--
+-- TOC entry 4529 (class 0 OID 16626)
+-- Dependencies: 286
 -- Data for Name: referrals; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4866,8 +5895,8 @@ COPY public.referrals (id, start_time, end_time, explanation, item_id, medium_id
 
 
 --
--- TOC entry 4258 (class 0 OID 26476)
--- Dependencies: 280
+-- TOC entry 4531 (class 0 OID 16632)
+-- Dependencies: 288
 -- Data for Name: relations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -4922,12 +5951,20 @@ COPY public.relations (id, tag_id, related_tag_id, created_at, updated_at) FROM 
 48	27	28	2020-07-24 16:13:15.846438	2020-07-24 16:13:15.846438
 49	45	44	2022-08-05 13:31:09.019332	2022-08-05 13:31:09.019332
 50	44	45	2022-08-05 13:31:09.026362	2022-08-05 13:31:09.026362
+51	47	27	2025-07-15 12:05:40.388425	2025-07-15 12:05:40.388425
+52	27	47	2025-07-15 12:05:40.392671	2025-07-15 12:05:40.392671
+53	47	17	2025-07-15 12:05:40.395841	2025-07-15 12:05:40.395841
+54	17	47	2025-07-15 12:05:40.398498	2025-07-15 12:05:40.398498
+55	47	46	2025-07-15 12:05:40.401641	2025-07-15 12:05:40.401641
+56	46	47	2025-07-15 12:05:40.403955	2025-07-15 12:05:40.403955
+57	48	47	2025-07-15 12:08:23.035912	2025-07-15 12:08:23.035912
+58	47	48	2025-07-15 12:08:23.039059	2025-07-15 12:08:23.039059
 \.
 
 
 --
--- TOC entry 4260 (class 0 OID 26480)
--- Dependencies: 282
+-- TOC entry 4533 (class 0 OID 16636)
+-- Dependencies: 290
 -- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5195,12 +6232,45 @@ COPY public.schema_migrations (version) FROM stdin;
 20210923113111
 20211119181430
 20220125162730
+20220810152049
+20230407093205
+20230427124337
+20231101100015
+20240116180000
+20240215100000
+20240319130000
+20240329230000
+20240329230010
+20240422200000
+20240530200000
+20240605200000
+20240906200000
+20240921200000
+20240921221000
+20250419000000
+20250419000001
+20250419000002
+20250419000003
+20250419000004
+20250419000005
+20250419000006
+20250419000007
+20250419000008
+20250419000009
+20250419000010
+20250419000011
+20250419000012
+20250518000000
+20250518000001
+20250612000000
+20250612000001
+20250612000002
 \.
 
 
 --
--- TOC entry 4261 (class 0 OID 26485)
--- Dependencies: 283
+-- TOC entry 4534 (class 0 OID 16641)
+-- Dependencies: 291
 -- Data for Name: section_tag_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5246,71 +6316,75 @@ COPY public.section_tag_joins (id, section_id, tag_id, created_at, updated_at, t
 42	8	42	2020-07-24 17:04:36.261647	2020-07-24 17:04:36.261647	12
 25	6	25	2020-07-24 13:45:40.489071	2020-09-01 15:21:00.408056	0
 26	6	26	2020-07-24 13:45:40.496223	2020-09-01 15:21:00.423973	1
+45	6	24	2025-07-14 10:57:51.390816	2025-07-14 10:57:51.390816	2
 \.
 
 
 --
--- TOC entry 4263 (class 0 OID 26489)
--- Dependencies: 285
+-- TOC entry 4536 (class 0 OID 16645)
+-- Dependencies: 293
 -- Data for Name: sections; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.sections (id, chapter_id, title, created_at, updated_at, "position", display_number, hidden, tags_order, details) FROM stdin;
-25	7	Der Kongruenzsatz für Dreiecke	2020-07-24 17:04:34.840428	2020-07-24 17:05:02.889962	6	\N	\N	\N	\N
-26	7	Mittelsenkrechte und Winkelhalbierende	2020-07-24 17:04:34.871461	2020-07-24 17:05:02.889962	7	\N	\N	\N	\N
-27	7	Innen- und Außenwinkel im Dreieck	2020-07-24 17:04:34.90258	2020-07-24 17:05:02.889962	8	\N	\N	\N	\N
-28	7	In- und Umkreis	2020-07-24 17:04:34.934588	2020-07-24 17:05:02.889962	9	\N	\N	\N	\N
-9	5	Affine Abbildungen	2020-07-24 17:04:34.31982	2020-07-24 17:05:02.889962	2	\N	\N	\N	\N
-10	5	Affine Koordinaten	2020-07-24 17:04:34.351367	2020-07-24 17:05:02.889962	3	\N	\N	\N	\N
-11	5	Polytope	2020-07-24 17:04:34.386976	2020-07-24 17:05:02.889962	4	\N	\N	\N	\N
-29	7	Übungsaufgaben	2020-07-24 17:04:34.966316	2020-07-24 17:05:02.889962	10	\N	\N	\N	\N
-12	5	Projektive Räume	2020-07-24 17:04:34.426172	2020-07-24 17:05:02.889962	5	\N	\N	\N	\N
-13	5	Projektive Abbildungen	2020-07-24 17:04:34.459566	2020-07-24 17:05:02.889962	6	\N	\N	\N	\N
-14	5	Projektive Koordinaten	2020-07-24 17:04:34.491447	2020-07-24 17:05:02.889962	7	\N	\N	\N	\N
-30	8	Das Vollständigkeitsaxiom	2020-07-24 17:04:34.99914	2020-07-24 17:05:02.889962	1	\N	\N	\N	\N
-15	5	Computergraphik	2020-07-24 17:04:34.523458	2020-07-24 17:05:02.889962	8	\N	\N	\N	\N
-16	5	Übungsaufgaben	2020-07-24 17:04:34.556461	2020-07-24 17:05:02.889962	9	\N	\N	\N	\N
-31	8	Euklidische Ebenen	2020-07-24 17:04:35.027944	2020-07-24 17:05:02.889962	2	\N	\N	\N	\N
-32	8	Kreise	2020-07-24 17:04:35.060817	2020-07-24 17:05:02.889962	3	\N	\N	\N	\N
-17	6	Inzidenzebenen	2020-07-24 17:04:34.590767	2020-07-24 17:05:02.889962	1	\N	\N	\N	\N
-33	8	Die Inversion am Kreis	2020-07-24 17:04:35.092405	2020-07-24 17:05:02.889962	4	\N	\N	\N	\N
-18	6	Affine Ebenen	2020-07-24 17:04:34.621909	2020-07-24 17:05:02.889962	2	\N	\N	\N	\N
-19	6	Übungsaufgaben	2020-07-24 17:04:34.651674	2020-07-24 17:05:02.889962	3	\N	\N	\N	\N
-20	7	Die Anordnungsaxiome	2020-07-24 17:04:34.684294	2020-07-24 17:05:02.889962	1	\N	\N	\N	\N
-34	8	Übungsaufgaben	2020-07-24 17:04:35.123464	2020-07-24 17:05:02.889962	5	\N	\N	\N	\N
-21	7	Die Kongruenzaxiome für Strecken	2020-07-24 17:04:34.715512	2020-07-24 17:05:02.889962	2	\N	\N	\N	\N
-22	7	Die Kongruenzaxiome für Winkel	2020-07-24 17:04:34.745589	2020-07-24 17:05:02.889962	3	\N	\N	\N	\N
-23	7	Ergänzungswinkel, Gegenwinkel und rechte Winkel	2020-07-24 17:04:34.77568	2020-07-24 17:05:02.889962	4	\N	\N	\N	\N
-35	9	Das Poincaré'sche Kreismodell	2020-07-24 17:04:35.160116	2020-07-24 17:05:02.889962	1	\N	\N	\N	\N
-24	7	Orthogonalität und Parallelität	2020-07-24 17:04:34.806388	2020-07-24 17:05:02.889962	5	\N	\N	\N	\N
-36	9	Hyperbolische Geometrie	2020-07-24 17:04:35.190516	2020-07-24 17:05:02.889962	2	\N	\N	\N	\N
-8	5	Affine Räume	2020-07-24 17:04:34.287564	2020-07-24 17:05:02.889962	1	\N	\N	\N	\N
-37	9	Übungsaufgaben	2020-07-24 17:04:35.220559	2020-07-24 17:05:02.889962	3	\N	\N	\N	\N
-7	4	Eine kurze Geschichte der Algebra	2020-07-24 16:53:07.753998	2022-08-05 14:06:57.256083	1	\N	\N	\N	\N
-5	3	Invarianten- und Determinantenteiler	2020-07-24 13:19:58.558913	2022-09-20 10:34:42.716211	1		f	\N	
-2	1	Unitäre Räume und der Spektralsatz	2020-07-24 13:19:21.145061	2022-09-20 10:34:42.716211	1		f	\N	
-3	2	Teilbarkeit	2020-07-24 13:19:33.31142	2022-09-20 10:34:42.716211	2		f	\N	
-4	2	Euklidische Ringe	2020-07-24 13:19:42.036437	2022-09-20 10:34:42.716211	3		f	\N	
-1	2	Ringe und Ideale	2020-07-24 13:18:45.156279	2022-09-20 10:34:42.716211	1		f	\N	
-6	3	Normalformen	2020-07-24 13:20:07.536377	2022-09-20 10:34:42.716211	2		f	\N	
+7	4	Eine kurze Geschichte der Algebra	2020-07-24 16:53:07.753998	2025-07-14 11:12:42.262119	1	\N	\N	\N	\N
+2	1	Unitäre Räume und der Spektralsatz	2020-07-24 13:19:21.145061	2025-07-14 10:50:08.883405	1		f	\N	
+5	3	Invarianten- und Determinantenteiler	2020-07-24 13:19:58.558913	2025-07-14 10:57:31.46756	1		f	\N	
+6	3	Normalformen	2020-07-24 13:20:07.536377	2025-07-14 10:57:51.35145	2		f	\N	
+1	2	Ringe und Ideale	2020-07-24 13:18:45.156279	2025-07-14 10:58:59.950033	1		f	\N	
+3	2	Teilbarkeit	2020-07-24 13:19:33.31142	2025-07-14 11:01:16.885737	2		f	\N	
+4	2	Euklidische Ringe	2020-07-24 13:19:42.036437	2025-07-14 11:01:53.200333	3		f	\N	
+25	7	Der Kongruenzsatz für Dreiecke	2020-07-24 17:04:34.840428	2025-07-14 11:09:05.147992	6	\N	\N	\N	\N
+26	7	Mittelsenkrechte und Winkelhalbierende	2020-07-24 17:04:34.871461	2025-07-14 11:09:05.147992	7	\N	\N	\N	\N
+27	7	Innen- und Außenwinkel im Dreieck	2020-07-24 17:04:34.90258	2025-07-14 11:09:05.147992	8	\N	\N	\N	\N
+28	7	In- und Umkreis	2020-07-24 17:04:34.934588	2025-07-14 11:09:05.147992	9	\N	\N	\N	\N
+9	5	Affine Abbildungen	2020-07-24 17:04:34.31982	2025-07-14 11:09:05.147992	2	\N	\N	\N	\N
+10	5	Affine Koordinaten	2020-07-24 17:04:34.351367	2025-07-14 11:09:05.147992	3	\N	\N	\N	\N
+11	5	Polytope	2020-07-24 17:04:34.386976	2025-07-14 11:09:05.147992	4	\N	\N	\N	\N
+29	7	Übungsaufgaben	2020-07-24 17:04:34.966316	2025-07-14 11:09:05.147992	10	\N	\N	\N	\N
+12	5	Projektive Räume	2020-07-24 17:04:34.426172	2025-07-14 11:09:05.147992	5	\N	\N	\N	\N
+13	5	Projektive Abbildungen	2020-07-24 17:04:34.459566	2025-07-14 11:09:05.147992	6	\N	\N	\N	\N
+14	5	Projektive Koordinaten	2020-07-24 17:04:34.491447	2025-07-14 11:09:05.147992	7	\N	\N	\N	\N
+30	8	Das Vollständigkeitsaxiom	2020-07-24 17:04:34.99914	2025-07-14 11:09:05.147992	1	\N	\N	\N	\N
+15	5	Computergraphik	2020-07-24 17:04:34.523458	2025-07-14 11:09:05.147992	8	\N	\N	\N	\N
+16	5	Übungsaufgaben	2020-07-24 17:04:34.556461	2025-07-14 11:09:05.147992	9	\N	\N	\N	\N
+31	8	Euklidische Ebenen	2020-07-24 17:04:35.027944	2025-07-14 11:09:05.147992	2	\N	\N	\N	\N
+32	8	Kreise	2020-07-24 17:04:35.060817	2025-07-14 11:09:05.147992	3	\N	\N	\N	\N
+17	6	Inzidenzebenen	2020-07-24 17:04:34.590767	2025-07-14 11:09:05.147992	1	\N	\N	\N	\N
+33	8	Die Inversion am Kreis	2020-07-24 17:04:35.092405	2025-07-14 11:09:05.147992	4	\N	\N	\N	\N
+18	6	Affine Ebenen	2020-07-24 17:04:34.621909	2025-07-14 11:09:05.147992	2	\N	\N	\N	\N
+19	6	Übungsaufgaben	2020-07-24 17:04:34.651674	2025-07-14 11:09:05.147992	3	\N	\N	\N	\N
+20	7	Die Anordnungsaxiome	2020-07-24 17:04:34.684294	2025-07-14 11:09:05.147992	1	\N	\N	\N	\N
+34	8	Übungsaufgaben	2020-07-24 17:04:35.123464	2025-07-14 11:09:05.147992	5	\N	\N	\N	\N
+21	7	Die Kongruenzaxiome für Strecken	2020-07-24 17:04:34.715512	2025-07-14 11:09:05.147992	2	\N	\N	\N	\N
+22	7	Die Kongruenzaxiome für Winkel	2020-07-24 17:04:34.745589	2025-07-14 11:09:05.147992	3	\N	\N	\N	\N
+23	7	Ergänzungswinkel, Gegenwinkel und rechte Winkel	2020-07-24 17:04:34.77568	2025-07-14 11:09:05.147992	4	\N	\N	\N	\N
+35	9	Das Poincaré'sche Kreismodell	2020-07-24 17:04:35.160116	2025-07-14 11:09:05.147992	1	\N	\N	\N	\N
+24	7	Orthogonalität und Parallelität	2020-07-24 17:04:34.806388	2025-07-14 11:09:05.147992	5	\N	\N	\N	\N
+36	9	Hyperbolische Geometrie	2020-07-24 17:04:35.190516	2025-07-14 11:09:05.147992	2	\N	\N	\N	\N
+8	5	Affine Räume	2020-07-24 17:04:34.287564	2025-07-14 11:09:05.147992	1	\N	\N	\N	\N
+37	9	Übungsaufgaben	2020-07-24 17:04:35.220559	2025-07-14 11:09:05.147992	3	\N	\N	\N	\N
 \.
 
 
 --
--- TOC entry 4333 (class 0 OID 27252)
--- Dependencies: 355
+-- TOC entry 4538 (class 0 OID 16651)
+-- Dependencies: 295
 -- Data for Name: speaker_talk_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.speaker_talk_joins (id, talk_id, speaker_id, created_at, updated_at) FROM stdin;
 1	1	5	2022-08-05 13:27:59.320402	2022-08-05 13:27:59.320402
 2	1	6	2022-08-05 13:31:37.207743	2022-08-05 13:31:37.207743
+3	2	5	2025-07-15 12:11:14.651103	2025-07-15 12:11:14.651103
+4	2	6	2025-07-15 12:11:39.202251	2025-07-15 12:11:39.202251
+5	3	7	2025-07-15 12:11:58.989642	2025-07-15 12:11:58.989642
 \.
 
 
 --
--- TOC entry 4265 (class 0 OID 26495)
--- Dependencies: 287
+-- TOC entry 4540 (class 0 OID 16655)
+-- Dependencies: 297
 -- Data for Name: subject_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5323,8 +6397,8 @@ COPY public.subject_translations (id, subject_id, locale, created_at, updated_at
 
 
 --
--- TOC entry 4267 (class 0 OID 26501)
--- Dependencies: 289
+-- TOC entry 4542 (class 0 OID 16661)
+-- Dependencies: 299
 -- Data for Name: subjects; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5335,8 +6409,8 @@ COPY public.subjects (id, created_at, updated_at) FROM stdin;
 
 
 --
--- TOC entry 4269 (class 0 OID 26505)
--- Dependencies: 291
+-- TOC entry 4544 (class 0 OID 16665)
+-- Dependencies: 301
 -- Data for Name: submissions; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5350,86 +6424,95 @@ COPY public.submissions (tutorial_id, assignment_id, token, created_at, updated_
 
 
 --
--- TOC entry 4270 (class 0 OID 26513)
--- Dependencies: 292
+-- TOC entry 4545 (class 0 OID 16672)
+-- Dependencies: 302
 -- Data for Name: tags; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.tags (id, created_at, updated_at, realizations) FROM stdin;
-10	2020-07-24 13:29:15.586878	2020-07-24 16:14:14.739601	\N
-12	2020-07-24 13:30:26.128269	2020-07-24 16:14:14.739601	\N
-27	2020-07-24 16:12:42.712164	2020-07-24 16:14:14.739601	\N
-28	2020-07-24 16:13:15.823817	2020-07-24 16:14:14.739601	\N
 29	2020-07-24 16:53:57.252477	2020-07-24 16:54:01.75246	\N
 30	2020-07-24 17:04:35.538948	2020-07-24 17:04:35.555225	\N
 31	2020-07-24 17:04:35.600794	2020-07-24 17:04:35.617884	\N
 32	2020-07-24 17:04:35.667531	2020-07-24 17:04:35.684388	\N
 33	2020-07-24 17:04:35.728915	2020-07-24 17:04:35.751162	\N
-11	2020-07-24 13:30:05.949715	2020-07-24 13:49:32.439558	\N
-9	2020-07-24 13:29:05.426574	2020-07-24 13:49:32.439558	\N
 34	2020-07-24 17:04:35.791338	2020-07-24 17:04:35.807314	\N
-14	2020-07-24 13:33:00.82869	2020-07-24 13:49:32.439558	\N
-13	2020-07-24 13:30:53.026747	2020-07-24 13:49:40.210127	\N
 35	2020-07-24 17:04:35.849766	2020-07-24 17:04:35.865359	\N
-18	2020-07-24 13:35:50.918108	2020-07-24 13:49:56.861716	\N
-15	2020-07-24 13:34:37.118068	2020-07-24 13:49:56.861716	\N
-16	2020-07-24 13:35:07.225423	2020-07-24 13:49:56.861716	\N
 36	2020-07-24 17:04:35.907599	2020-07-24 17:04:35.923252	\N
 37	2020-07-24 17:04:35.96849	2020-07-24 17:04:35.983968	\N
 38	2020-07-24 17:04:36.025163	2020-07-24 17:04:36.042888	\N
 39	2020-07-24 17:04:36.082368	2020-07-24 17:04:36.098185	\N
 40	2020-07-24 17:04:36.136735	2020-07-24 17:04:36.154507	\N
-19	2020-07-24 13:36:38.528431	2020-07-24 13:50:41.399322	\N
 41	2020-07-24 17:04:36.196549	2020-07-24 17:04:36.21251	\N
-20	2020-07-24 13:37:19.231512	2020-07-24 13:50:41.399322	\N
-21	2020-07-24 13:38:04.769944	2020-07-24 13:50:58.072537	\N
 42	2020-07-24 17:04:36.255396	2020-07-24 17:04:36.271542	\N
-25	2020-07-24 13:45:18.024992	2020-07-24 13:53:15.411455	\N
-24	2020-07-24 13:44:47.041647	2020-07-24 13:53:15.411455	\N
 26	2020-07-24 13:45:38.483423	2020-07-24 13:53:20.643563	\N
-8	2020-07-24 13:25:01.92009	2020-07-24 13:47:35.48708	\N
-7	2020-07-24 13:24:32.144852	2020-07-24 13:47:35.48708	\N
-1	2020-07-24 13:20:57.182882	2020-07-24 13:47:35.48708	\N
-23	2020-07-24 13:43:48.693729	2020-07-24 14:55:18.436726	\N
-4	2020-07-24 13:22:02.697548	2020-07-24 13:47:35.48708	\N
-2	2020-07-24 13:21:16.326791	2020-07-24 13:47:35.48708	\N
-22	2020-07-24 13:43:04.010122	2020-07-24 14:55:18.436726	\N
-3	2020-07-24 13:21:31.396819	2020-07-24 13:47:35.48708	\N
-6	2020-07-24 13:23:10.09721	2020-07-24 13:47:45.838218	\N
-5	2020-07-24 13:22:36.919083	2020-07-24 13:47:45.838218	\N
-17	2020-07-24 13:35:29.764739	2020-07-24 16:12:42.740556	\N
 43	2020-09-02 09:52:36.079263	2020-09-02 09:52:36.095856	\N
 44	2022-08-05 13:29:45.502148	2022-08-05 13:31:09.028357	\N
 45	2022-08-05 13:30:12.628652	2022-08-05 13:31:09.067861	\N
+2	2020-07-24 13:21:16.326791	2025-07-14 10:49:31.745518	\N
+4	2020-07-24 13:22:02.697548	2025-07-14 10:49:31.745518	\N
+8	2020-07-24 13:25:01.92009	2025-07-14 10:49:31.745518	\N
+7	2020-07-24 13:24:32.144852	2025-07-14 10:49:31.745518	\N
+1	2020-07-24 13:20:57.182882	2025-07-14 10:49:31.745518	\N
+3	2020-07-24 13:21:31.396819	2025-07-14 10:49:31.745518	\N
+5	2020-07-24 13:22:36.919083	2025-07-14 10:50:08.889067	\N
+6	2020-07-24 13:23:10.09721	2025-07-14 10:50:08.889067	\N
+23	2020-07-24 13:43:48.693729	2025-07-14 10:57:31.481097	\N
+22	2020-07-24 13:43:04.010122	2025-07-14 10:57:31.481097	\N
+24	2020-07-24 13:44:47.041647	2025-07-14 10:57:51.356664	\N
+25	2020-07-24 13:45:18.024992	2025-07-14 10:57:51.356664	\N
+14	2020-07-24 13:33:00.82869	2025-07-14 10:58:13.897868	\N
+11	2020-07-24 13:30:05.949715	2025-07-14 10:58:13.897868	\N
+9	2020-07-24 13:29:05.426574	2025-07-14 10:58:13.897868	\N
+13	2020-07-24 13:30:53.026747	2025-07-14 10:58:35.625552	\N
+10	2020-07-24 13:29:15.586878	2025-07-14 10:58:59.958823	\N
+12	2020-07-24 13:30:26.128269	2025-07-14 10:58:59.958823	\N
+28	2020-07-24 16:13:15.823817	2025-07-14 10:58:59.958823	\N
+18	2020-07-24 13:35:50.918108	2025-07-14 11:01:16.891972	\N
+16	2020-07-24 13:35:07.225423	2025-07-14 11:01:16.891972	\N
+15	2020-07-24 13:34:37.118068	2025-07-14 11:01:16.891972	\N
+19	2020-07-24 13:36:38.528431	2025-07-14 11:01:37.140818	\N
+20	2020-07-24 13:37:19.231512	2025-07-14 11:01:37.140818	\N
+21	2020-07-24 13:38:04.769944	2025-07-14 11:01:53.205627	\N
+27	2020-07-24 16:12:42.712164	2025-07-15 12:05:40.393678	\N
+17	2020-07-24 13:35:29.764739	2025-07-15 12:05:40.39958	\N
+46	2025-07-15 12:04:34.670117	2025-07-15 12:05:40.404852	\N
+47	2025-07-15 12:05:40.383979	2025-07-15 12:08:23.040003	\N
+48	2025-07-15 12:08:23.032703	2025-07-15 12:08:23.048194	\N
 \.
 
 
 --
--- TOC entry 4339 (class 0 OID 27313)
--- Dependencies: 361
+-- TOC entry 4547 (class 0 OID 16678)
+-- Dependencies: 304
 -- Data for Name: talk_tag_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.talk_tag_joins (id, talk_id, tag_id, created_at, updated_at) FROM stdin;
 1	1	44	2022-08-05 13:30:27.138879	2022-08-05 13:30:27.138879
 2	1	45	2022-08-05 13:30:27.140961	2022-08-05 13:30:27.140961
+3	2	46	2025-07-15 12:04:41.025091	2025-07-15 12:04:41.025091
+4	3	47	2025-07-15 12:05:42.944356	2025-07-15 12:05:42.944356
+5	4	48	2025-07-15 12:08:24.671656	2025-07-15 12:08:24.671656
 \.
 
 
 --
--- TOC entry 4331 (class 0 OID 27239)
--- Dependencies: 353
+-- TOC entry 4549 (class 0 OID 16682)
+-- Dependencies: 306
 -- Data for Name: talks; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.talks (id, lecture_id, created_at, updated_at, title, "position", details, dates, description, display_description) FROM stdin;
 1	27	2022-08-05 13:21:29.874189	2022-08-05 13:57:32.718902	Gruppen	1	<div>Test</div>	{2022-08-05}	<div>Ich halte einen Vortrag über Gruppen.</div>	t
+3	29	2025-07-15 12:05:05.908031	2025-07-15 12:05:05.908031	Primzahlen	2	<div>Es soll gezeigt werden, dass es unendlich viele Primzahlen gibt.</div>	{2025-07-23}	\N	f
+4	29	2025-07-15 12:06:17.796623	2025-07-15 12:06:17.796623	Das RSA-Verfahren	3	<div>Verschlüsselung mit dem RSA-Verfahren</div>	{2025-08-07}	\N	f
+2	29	2025-07-15 12:04:15.654601	2025-07-15 12:14:43.2905	Teilbarkeit	1	<div>Definition von Teilbarkeit, grundlegende Eigenschaften</div>	{2025-07-17}	\N	f
 \.
 
 
 --
--- TOC entry 4272 (class 0 OID 26519)
--- Dependencies: 294
+-- TOC entry 4551 (class 0 OID 16690)
+-- Dependencies: 308
 -- Data for Name: terms; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5437,13 +6520,19 @@ COPY public.terms (id, year, season, created_at, updated_at, active, submission_
 2	2019	WS	2020-07-24 16:51:35.08902	2020-07-24 16:51:35.08902	f	\N	\N	\N
 3	2018	WS	2020-08-10 15:45:28.438147	2020-08-10 15:45:28.438147	f	\N	\N	\N
 1	2020	SS	2020-07-24 13:12:32.284437	2022-08-05 14:47:48.138314	f	\N	\N	\N
-4	2022	WS	2022-08-05 14:47:26.131037	2022-08-05 14:47:48.158214	t	\N	\N	\N
+4	2022	WS	2022-08-05 14:47:26.131037	2025-07-14 10:47:22.034296	f	\N	\N	\N
+5	2025	SS	2025-07-14 10:47:08.430522	2025-07-14 10:47:22.045595	t	\N	\N	\N
+6	2025	WS	2025-07-14 10:47:32.760729	2025-07-14 10:47:32.760729	f	\N	\N	\N
+7	2026	SS	2025-07-14 10:47:56.10258	2025-07-14 10:47:56.10258	f	\N	\N	\N
+8	2026	WS	2025-07-14 10:48:06.98245	2025-07-14 10:48:06.98245	f	\N	\N	\N
+9	2024	WS	2025-07-14 11:10:03.815925	2025-07-14 11:10:03.815925	f	\N	\N	\N
+10	2023	WS	2025-07-14 11:12:05.689494	2025-07-14 11:12:05.689494	f	\N	\N	\N
 \.
 
 
 --
--- TOC entry 4274 (class 0 OID 26526)
--- Dependencies: 296
+-- TOC entry 4553 (class 0 OID 16697)
+-- Dependencies: 310
 -- Data for Name: thredded_categories; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5452,8 +6541,8 @@ COPY public.thredded_categories (id, messageboard_id, name, description, created
 
 
 --
--- TOC entry 4276 (class 0 OID 26532)
--- Dependencies: 298
+-- TOC entry 4555 (class 0 OID 16703)
+-- Dependencies: 312
 -- Data for Name: thredded_messageboard_groups; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5462,8 +6551,8 @@ COPY public.thredded_messageboard_groups (id, name, "position", created_at, upda
 
 
 --
--- TOC entry 4278 (class 0 OID 26538)
--- Dependencies: 300
+-- TOC entry 4557 (class 0 OID 16709)
+-- Dependencies: 314
 -- Data for Name: thredded_messageboard_notifications_for_followed_topics; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5472,8 +6561,8 @@ COPY public.thredded_messageboard_notifications_for_followed_topics (id, user_id
 
 
 --
--- TOC entry 4280 (class 0 OID 26543)
--- Dependencies: 302
+-- TOC entry 4559 (class 0 OID 16714)
+-- Dependencies: 316
 -- Data for Name: thredded_messageboard_users; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5483,20 +6572,20 @@ COPY public.thredded_messageboard_users (id, thredded_user_detail_id, thredded_m
 
 
 --
--- TOC entry 4282 (class 0 OID 26547)
--- Dependencies: 304
+-- TOC entry 4561 (class 0 OID 16718)
+-- Dependencies: 318
 -- Data for Name: thredded_messageboards; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.thredded_messageboards (id, name, slug, description, topics_count, posts_count, "position", last_topic_id, messageboard_group_id, created_at, updated_at, locked) FROM stdin;
-2	(L) Algebra 1, WS 2019/20 [DozentIn]	v-algebra-1-ws-2019-20-dozentin	\N	0	0	1595609557	\N	\N	2020-07-24 16:52:37.056125	2022-08-05 14:06:23.816032	f
-1	(V) Lineare Algebra 2, WS 2022/23 [DozentIn]	v-lineare-algebra-2-ss-2020-dozentin	\N	2	2	1595597956	2	\N	2020-07-24 13:39:16.058555	2022-09-20 10:08:41.655836	f
+1	(L) Lineare Algebra 2, SS 2025 [DozentIn]	v-lineare-algebra-2-ss-2020-dozentin	\N	2	2	1595597956	2	\N	2020-07-24 13:39:16.058555	2025-07-14 10:48:33.535715	f
+2	(L) Algebra 1, WS 2024/25 [DozentIn]	v-algebra-1-ws-2019-20-dozentin	\N	0	0	1595609557	\N	\N	2020-07-24 16:52:37.056125	2025-07-14 11:12:42.286122	f
 \.
 
 
 --
--- TOC entry 4284 (class 0 OID 26556)
--- Dependencies: 306
+-- TOC entry 4563 (class 0 OID 16727)
+-- Dependencies: 320
 -- Data for Name: thredded_notifications_for_followed_topics; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5505,8 +6594,8 @@ COPY public.thredded_notifications_for_followed_topics (id, user_id, notifier_ke
 
 
 --
--- TOC entry 4286 (class 0 OID 26561)
--- Dependencies: 308
+-- TOC entry 4565 (class 0 OID 16732)
+-- Dependencies: 322
 -- Data for Name: thredded_notifications_for_private_topics; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5515,8 +6604,8 @@ COPY public.thredded_notifications_for_private_topics (id, user_id, notifier_key
 
 
 --
--- TOC entry 4288 (class 0 OID 26566)
--- Dependencies: 310
+-- TOC entry 4567 (class 0 OID 16737)
+-- Dependencies: 324
 -- Data for Name: thredded_post_moderation_records; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5525,8 +6614,8 @@ COPY public.thredded_post_moderation_records (id, post_id, messageboard_id, post
 
 
 --
--- TOC entry 4290 (class 0 OID 26572)
--- Dependencies: 312
+-- TOC entry 4569 (class 0 OID 16743)
+-- Dependencies: 326
 -- Data for Name: thredded_posts; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5537,8 +6626,8 @@ COPY public.thredded_posts (id, user_id, content, source, postable_id, messagebo
 
 
 --
--- TOC entry 4292 (class 0 OID 26579)
--- Dependencies: 314
+-- TOC entry 4571 (class 0 OID 16750)
+-- Dependencies: 328
 -- Data for Name: thredded_private_posts; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5547,8 +6636,8 @@ COPY public.thredded_private_posts (id, user_id, content, postable_id, created_a
 
 
 --
--- TOC entry 4294 (class 0 OID 26585)
--- Dependencies: 316
+-- TOC entry 4573 (class 0 OID 16756)
+-- Dependencies: 330
 -- Data for Name: thredded_private_topics; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5557,8 +6646,8 @@ COPY public.thredded_private_topics (id, user_id, last_user_id, title, slug, pos
 
 
 --
--- TOC entry 4296 (class 0 OID 26592)
--- Dependencies: 318
+-- TOC entry 4575 (class 0 OID 16763)
+-- Dependencies: 332
 -- Data for Name: thredded_private_users; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5567,8 +6656,8 @@ COPY public.thredded_private_users (id, private_topic_id, user_id, created_at, u
 
 
 --
--- TOC entry 4298 (class 0 OID 26596)
--- Dependencies: 320
+-- TOC entry 4577 (class 0 OID 16767)
+-- Dependencies: 334
 -- Data for Name: thredded_topic_categories; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5577,8 +6666,8 @@ COPY public.thredded_topic_categories (id, topic_id, category_id) FROM stdin;
 
 
 --
--- TOC entry 4300 (class 0 OID 26600)
--- Dependencies: 322
+-- TOC entry 4579 (class 0 OID 16771)
+-- Dependencies: 336
 -- Data for Name: thredded_topics; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5589,8 +6678,8 @@ COPY public.thredded_topics (id, user_id, last_user_id, title, slug, messageboar
 
 
 --
--- TOC entry 4302 (class 0 OID 26609)
--- Dependencies: 324
+-- TOC entry 4581 (class 0 OID 16780)
+-- Dependencies: 338
 -- Data for Name: thredded_user_details; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5600,8 +6689,8 @@ COPY public.thredded_user_details (id, user_id, latest_activity_at, posts_count,
 
 
 --
--- TOC entry 4304 (class 0 OID 26616)
--- Dependencies: 326
+-- TOC entry 4583 (class 0 OID 16787)
+-- Dependencies: 340
 -- Data for Name: thredded_user_messageboard_preferences; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5610,8 +6699,8 @@ COPY public.thredded_user_messageboard_preferences (id, user_id, messageboard_id
 
 
 --
--- TOC entry 4306 (class 0 OID 26622)
--- Dependencies: 328
+-- TOC entry 4585 (class 0 OID 16793)
+-- Dependencies: 342
 -- Data for Name: thredded_user_post_notifications; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5620,8 +6709,8 @@ COPY public.thredded_user_post_notifications (id, user_id, post_id, notified_at)
 
 
 --
--- TOC entry 4308 (class 0 OID 26626)
--- Dependencies: 330
+-- TOC entry 4587 (class 0 OID 16797)
+-- Dependencies: 344
 -- Data for Name: thredded_user_preferences; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5630,8 +6719,8 @@ COPY public.thredded_user_preferences (id, user_id, follow_topics_on_mention, au
 
 
 --
--- TOC entry 4310 (class 0 OID 26632)
--- Dependencies: 332
+-- TOC entry 4589 (class 0 OID 16803)
+-- Dependencies: 346
 -- Data for Name: thredded_user_private_topic_read_states; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5640,8 +6729,8 @@ COPY public.thredded_user_private_topic_read_states (id, user_id, postable_id, u
 
 
 --
--- TOC entry 4312 (class 0 OID 26639)
--- Dependencies: 334
+-- TOC entry 4591 (class 0 OID 16810)
+-- Dependencies: 348
 -- Data for Name: thredded_user_topic_follows; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5651,8 +6740,8 @@ COPY public.thredded_user_topic_follows (id, user_id, topic_id, created_at, reas
 
 
 --
--- TOC entry 4314 (class 0 OID 26643)
--- Dependencies: 336
+-- TOC entry 4593 (class 0 OID 16814)
+-- Dependencies: 350
 -- Data for Name: thredded_user_topic_read_states; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5662,8 +6751,8 @@ COPY public.thredded_user_topic_read_states (id, messageboard_id, user_id, posta
 
 
 --
--- TOC entry 4316 (class 0 OID 26650)
--- Dependencies: 338
+-- TOC entry 4595 (class 0 OID 16821)
+-- Dependencies: 352
 -- Data for Name: tutor_tutorial_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5673,8 +6762,8 @@ COPY public.tutor_tutorial_joins (id, tutorial_id, tutor_id, created_at, updated
 
 
 --
--- TOC entry 4318 (class 0 OID 26654)
--- Dependencies: 340
+-- TOC entry 4597 (class 0 OID 16825)
+-- Dependencies: 354
 -- Data for Name: tutorials; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5684,8 +6773,8 @@ COPY public.tutorials (id, title, lecture_id, created_at, updated_at) FROM stdin
 
 
 --
--- TOC entry 4320 (class 0 OID 26660)
--- Dependencies: 342
+-- TOC entry 4599 (class 0 OID 16831)
+-- Dependencies: 356
 -- Data for Name: user_favorite_lecture_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5701,8 +6790,8 @@ COPY public.user_favorite_lecture_joins (id, user_id, lecture_id, created_at, up
 
 
 --
--- TOC entry 4322 (class 0 OID 26664)
--- Dependencies: 344
+-- TOC entry 4601 (class 0 OID 16835)
+-- Dependencies: 358
 -- Data for Name: user_submission_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5719,28 +6808,172 @@ COPY public.user_submission_joins (id, user_id, created_at, updated_at, submissi
 
 
 --
--- TOC entry 4324 (class 0 OID 26668)
--- Dependencies: 346
+-- TOC entry 4603 (class 0 OID 16839)
+-- Dependencies: 360
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, created_at, updated_at, admin, subscription_type, consents, consented_at, name, homepage, no_notifications, locale, email_for_medium, email_for_announcement, email_for_teachable, email_for_news, current_lecture_id, confirmation_token, confirmed_at, confirmation_sent_at, unconfirmed_email, unread_comments, study_participant, email_for_submission_upload, email_for_submission_removal, email_for_submission_join, email_for_submission_leave, email_for_correction_upload, email_for_submission_decision, name_in_tutorials, archived, locked_at, image_data) FROM stdin;
-2	teacher@mampf.edu	$2a$11$MZd9ZvYAyvOFZ6U0DYgCre1qdtL5sTn8iDpub4j7AXk./u6DzNPVi	\N	\N	\N	2020-07-24 13:14:59.543985	2022-08-05 14:35:41.794115	f	1	t	2020-07-24 13:14:59.547776	DozentIn	\N	f	en	t	t	t	t	\N	quSs9sq1VAMQCbDgRyhU	2020-07-24 13:15:13.670023	2020-07-24 13:14:59.544082	\N	t	f	f	f	f	f	f	f		\N	\N	\N
-7	student3@mampf.edu	$2a$11$TKVcUksEWf718eGXHbLe.uSU/ApCLpX6BK.bxIZWk9oe04NND.5fS	\N	\N	\N	2020-11-28 16:28:02.121432	2022-08-05 14:26:46.624773	f	1	t	2020-11-28 16:28:02.123082	student3	\N	f	en	t	t	t	f	\N	ZUzqyXACyQrBNVGGrWxm	2020-11-28 16:28:09.870025	2020-11-28 16:28:02.121486	\N	f	f	f	f	f	f	f	f	Berta Musterfrau	\N	\N	\N
-10	tutor@mampf.edu	$2a$11$sEuDSITI0nnp.PajiHATves48jIoWCI5QWuRnbEN.Tnjf9wk9zY..	\N	\N	\N	2020-11-28 16:34:08.325163	2022-08-05 14:26:46.624773	f	1	t	2020-11-28 16:34:08.326859	tutor	\N	f	en	t	t	t	f	\N	dbg8mcD6CmtfAfgAfX4Q	2020-11-28 16:34:11.824042	2020-11-28 16:34:08.325214	\N	f	f	f	f	f	f	f	f	Benjamin Tutor	\N	\N	\N
-1	admin@mampf.edu	$2a$11$2tfeqioIPbQDwJWCctfixu6NddQ2lanbWzfXr5yLpHKameFj/YA5e	\N	\N	\N	2020-07-24 13:07:48.807973	2022-09-20 10:34:52.574221	t	1	t	2020-07-24 13:07:48.811417	admin	\N	f	en	t	t	t	t	\N	UguwyiyL_B65bQkMZMQf	2020-07-24 13:07:56.770723	2020-07-24 13:07:48.808231	\N	f	f	f	f	f	f	f	f		\N	\N	\N
-8	student4@mampf.edu	$2a$11$pkQgXR2b04uE7gqLMXFK8O8bk/io0VUs6BcaZDQfkAHURkylRJHUC	\N	\N	\N	2020-11-28 16:29:07.923841	2022-08-05 14:26:46.624773	f	1	t	2020-11-28 16:29:07.925959	student4	\N	f	en	t	t	t	f	\N	j5hzKj7ePDPVbKGJsyqx	2020-11-28 16:29:14.406097	2020-11-28 16:29:07.923915	\N	f	f	f	f	f	f	f	f	Berta Mustermann	\N	\N	\N
-5	student1@mampf.edu	$2a$11$8xWSW0PTFhR2j18uAuXIw.NlueCM56TdhmzAwdc7d/PVDQeEkLYWe	\N	\N	\N	2020-11-28 16:25:23.437946	2022-09-20 10:35:08.959339	f	1	t	2020-11-28 16:25:23.440059	student1	\N	f	en	f	f	f	t	\N	qwPPGpBwzjn7o_NE1cMd	2020-11-28 16:25:28.248539	2020-11-28 16:25:23.438158	\N	f	f	t	t	t	t	t	t	Max Mustermann	\N	\N	\N
-9	student5@mampf.edu	$2a$11$OyfzzvQ7qZ35XmcFmQ0DVe2stv/tqaRpGSiMTqELgd/csxFH5bZ12	\N	\N	\N	2020-11-28 16:30:12.956799	2022-08-05 14:26:46.624773	f	1	t	2020-11-28 16:30:12.958778	student5	\N	f	en	f	f	f	t	\N	eWAAGQqtUt9P31_dpHey	2020-11-28 16:30:18.870235	2020-11-28 16:30:12.956859	\N	f	f	t	t	t	t	t	t	Erika Musterfrau	\N	\N	\N
-6	student2@mampf.edu	$2a$11$mtK0n1D2vgpu8NpKAMUyReVxieYRc.xML3qatLdlBZTSIGJ.v6hs2	\N	\N	\N	2020-11-28 16:26:55.50289	2022-08-05 14:26:46.624773	f	1	t	2020-11-28 16:26:55.504637	student2	\N	f	en	t	t	t	f	\N	4DVzmJnsA4PJx9StS_Js	2020-11-28 16:27:07.826099	2020-11-28 16:26:55.502947	\N	f	f	f	f	f	f	f	f	Max Musterfrau	\N	\N	\N
-13	ed@mampf.edu	$2a$11$4gip9VRW95exL5JfL0Laiu2U/nYcXyA3SAKENym3Nr/Q7IfNypGUi	\N	\N	\N	2022-08-05 13:14:08.705536	2022-08-05 14:26:46.624773	f	1	t	2022-08-05 13:14:08.706967	ed	\N	f	en	f	f	f	f	\N	NhEfb358TxX5788uqSZy	2022-08-05 13:14:16.480332	2022-08-05 13:14:08.705583	\N	f	f	f	f	f	f	f	f		\N	\N	\N
-12	moded@mampf.edu	$2a$11$AmI4u1dqQIw0mkPYJmS.U.axomFgcJxP65rw3BH0tl/08GgScOQvq	\N	\N	\N	2022-08-05 13:13:27.138526	2022-08-05 14:26:46.624773	f	1	t	2022-08-05 13:13:27.140572	moded	\N	f	en	f	f	f	f	\N	GEw-LMkj1zw73bsu-Jy5	2022-08-05 13:13:35.913881	2022-08-05 13:13:27.138906	\N	f	f	f	f	f	f	f	f		\N	\N	\N
+COPY public.users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, created_at, updated_at, admin, subscription_type, consents, consented_at, name, homepage, no_notifications, locale, email_for_medium, email_for_announcement, email_for_teachable, email_for_news, current_lecture_id, confirmation_token, confirmed_at, confirmation_sent_at, unconfirmed_email, unread_comments, study_participant, email_for_submission_upload, email_for_submission_removal, email_for_submission_join, email_for_submission_leave, email_for_correction_upload, email_for_submission_decision, name_in_tutorials, archived, locked_at, image_data, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, deletion_date) FROM stdin;
+13	ed@mampf.edu	$2a$11$4gip9VRW95exL5JfL0Laiu2U/nYcXyA3SAKENym3Nr/Q7IfNypGUi	\N	\N	\N	2022-08-05 13:14:08.705536	2022-08-05 14:26:46.624773	f	1	t	2022-08-05 13:14:08.706967	ed	\N	f	en	f	f	f	f	\N	NhEfb358TxX5788uqSZy	2022-08-05 13:14:16.480332	2022-08-05 13:14:08.705583	\N	f	f	f	f	f	f	f	f		\N	\N	\N	0	\N	\N	\N	\N	\N
+12	moded@mampf.edu	$2a$11$AmI4u1dqQIw0mkPYJmS.U.axomFgcJxP65rw3BH0tl/08GgScOQvq	\N	\N	\N	2022-08-05 13:13:27.138526	2022-08-05 14:26:46.624773	f	1	t	2022-08-05 13:13:27.140572	moded	\N	f	en	f	f	f	f	\N	GEw-LMkj1zw73bsu-Jy5	2022-08-05 13:13:35.913881	2022-08-05 13:13:27.138906	\N	f	f	f	f	f	f	f	f		\N	\N	\N	0	\N	\N	\N	\N	\N
+2	teacher@mampf.edu	$2a$11$MZd9ZvYAyvOFZ6U0DYgCre1qdtL5sTn8iDpub4j7AXk./u6DzNPVi	\N	\N	\N	2020-07-24 13:14:59.543985	2025-07-15 12:11:59.008383	f	1	t	2020-07-24 13:14:59.547776	DozentIn	\N	f	en	t	t	t	t	\N	quSs9sq1VAMQCbDgRyhU	2020-07-24 13:15:13.670023	2020-07-24 13:14:59.544082	\N	t	f	f	f	f	f	f	f		\N	\N	\N	12	2025-07-15 12:03:11.254407	2025-07-15 11:59:27.082351	\N	\N	\N
+9	student5@mampf.edu	$2a$11$OyfzzvQ7qZ35XmcFmQ0DVe2stv/tqaRpGSiMTqELgd/csxFH5bZ12	\N	\N	\N	2020-11-28 16:30:12.956799	2025-07-14 10:42:07.249735	f	1	t	2020-11-28 16:30:12.958778	student5	\N	f	en	f	f	f	t	\N	eWAAGQqtUt9P31_dpHey	2020-11-28 16:30:18.870235	2020-11-28 16:30:12.956859	\N	t	f	t	t	t	t	t	t	Erika Musterfrau	\N	\N	\N	0	\N	\N	\N	\N	\N
+10	tutor@mampf.edu	$2a$11$sEuDSITI0nnp.PajiHATves48jIoWCI5QWuRnbEN.Tnjf9wk9zY..	\N	\N	\N	2020-11-28 16:34:08.325163	2025-07-14 10:42:07.279244	f	1	t	2020-11-28 16:34:08.326859	tutor	\N	f	en	t	t	t	f	\N	dbg8mcD6CmtfAfgAfX4Q	2020-11-28 16:34:11.824042	2020-11-28 16:34:08.325214	\N	t	f	f	f	f	f	f	f	Benjamin Tutor	\N	\N	\N	0	\N	\N	\N	\N	\N
+7	student3@mampf.edu	$2a$11$TKVcUksEWf718eGXHbLe.uSU/ApCLpX6BK.bxIZWk9oe04NND.5fS	\N	\N	\N	2020-11-28 16:28:02.121432	2025-07-15 12:14:43.268293	f	1	t	2020-11-28 16:28:02.123082	student3	\N	f	en	t	t	t	f	\N	ZUzqyXACyQrBNVGGrWxm	2020-11-28 16:28:09.870025	2020-11-28 16:28:02.121486	\N	t	f	f	f	f	f	f	f	Berta Musterfrau	\N	\N	\N	3	2025-07-15 12:11:49.670511	2025-07-14 15:04:06.537713	\N	\N	\N
+5	student1@mampf.edu	$2a$11$8xWSW0PTFhR2j18uAuXIw.NlueCM56TdhmzAwdc7d/PVDQeEkLYWe	\N	\N	\N	2020-11-28 16:25:23.437946	2025-07-15 12:14:43.268293	f	1	t	2020-11-28 16:25:23.440059	student1	\N	f	en	f	f	f	t	\N	qwPPGpBwzjn7o_NE1cMd	2020-11-28 16:25:28.248539	2020-11-28 16:25:23.438158	\N	t	f	t	t	t	t	t	t	Max Mustermann	\N	\N	\N	6	2025-07-15 12:12:31.120017	2025-07-15 12:10:11.284039	\N	\N	\N
+8	student4@mampf.edu	$2a$11$pkQgXR2b04uE7gqLMXFK8O8bk/io0VUs6BcaZDQfkAHURkylRJHUC	\N	\N	\N	2020-11-28 16:29:07.923841	2025-07-14 11:29:25.560724	f	1	t	2020-11-28 16:29:07.925959	student4	\N	f	en	t	t	t	f	\N	j5hzKj7ePDPVbKGJsyqx	2020-11-28 16:29:14.406097	2020-11-28 16:29:07.923915	\N	t	f	f	f	f	f	f	f	Berta Mustermann	\N	\N	\N	1	2025-07-14 11:29:25.560481	2025-07-14 11:29:25.560481	\N	\N	\N
+6	student2@mampf.edu	$2a$11$mtK0n1D2vgpu8NpKAMUyReVxieYRc.xML3qatLdlBZTSIGJ.v6hs2	\N	\N	\N	2020-11-28 16:26:55.50289	2025-07-15 12:15:20.813888	f	1	t	2020-11-28 16:26:55.504637	student2	\N	f	en	t	t	t	f	\N	4DVzmJnsA4PJx9StS_Js	2020-11-28 16:27:07.826099	2020-11-28 16:26:55.502947	\N	t	f	f	f	f	f	f	f	Max Musterfrau	\N	\N	\N	4	2025-07-15 12:15:20.813542	2025-07-15 12:11:27.154704	\N	\N	\N
+1	admin@mampf.edu	$2a$11$2tfeqioIPbQDwJWCctfixu6NddQ2lanbWzfXr5yLpHKameFj/YA5e	\N	\N	\N	2020-07-24 13:07:48.807973	2025-07-15 12:02:24.490221	t	1	t	2020-07-24 13:07:48.811417	admin	\N	f	en	t	t	t	t	\N	UguwyiyL_B65bQkMZMQf	2020-07-24 13:07:56.770723	2020-07-24 13:07:48.808231	\N	t	f	f	f	f	f	f	f		\N	\N	\N	3	2025-07-15 12:02:24.48997	2025-07-14 11:35:13.666864	\N	\N	\N
 \.
 
 
 --
--- TOC entry 4326 (class 0 OID 26679)
--- Dependencies: 348
+-- TOC entry 4641 (class 0 OID 17739)
+-- Dependencies: 398
+-- Data for Name: vignettes_answers; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vignettes_answers (id, type, vignettes_question_id, vignettes_slide_id, vignettes_user_answer_id, text, likert_scale_value, created_at, updated_at) FROM stdin;
+8	Vignettes::TextAnswer	4	4	4	Schlangenlemma	\N	2025-07-14 15:12:42.170271	2025-07-14 15:12:42.170271
+9	Vignettes::MultipleChoiceAnswer	5	5	4	\N	\N	2025-07-14 15:13:10.788364	2025-07-14 15:13:10.788364
+10	Vignettes::LikertScaleAnswer	6	6	4	\N	disagree	2025-07-14 15:13:15.60867	2025-07-14 15:13:15.60867
+\.
+
+
+--
+-- TOC entry 4642 (class 0 OID 17765)
+-- Dependencies: 399
+-- Data for Name: vignettes_answers_options; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vignettes_answers_options (vignettes_answer_id, vignettes_option_id) FROM stdin;
+9	7
+\.
+
+
+--
+-- TOC entry 4649 (class 0 OID 17807)
+-- Dependencies: 406
+-- Data for Name: vignettes_codenames; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vignettes_codenames (id, pseudonym, user_id, lecture_id, created_at, updated_at) FROM stdin;
+1	HZUS57	5	28	2025-07-14 11:50:20.413531	2025-07-14 11:50:20.413531
+2	UJSBGATR	6	28	2025-07-14 14:02:29.627335	2025-07-14 14:02:29.627335
+3	7HZSGRE	7	28	2025-07-14 15:04:23.913466	2025-07-14 15:04:23.913466
+\.
+
+
+--
+-- TOC entry 4651 (class 0 OID 17828)
+-- Dependencies: 408
+-- Data for Name: vignettes_completion_messages; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vignettes_completion_messages (id, lecture_id, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4644 (class 0 OID 17771)
+-- Dependencies: 401
+-- Data for Name: vignettes_info_slides; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vignettes_info_slides (id, title, vignettes_questionnaire_id, icon_type, created_at, updated_at) FROM stdin;
+2	Informationen	2	eye	2025-07-14 15:09:29.112665	2025-07-14 15:09:29.116847
+\.
+
+
+--
+-- TOC entry 4647 (class 0 OID 17801)
+-- Dependencies: 404
+-- Data for Name: vignettes_info_slides_slides; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vignettes_info_slides_slides (vignettes_info_slide_id, vignettes_slide_id) FROM stdin;
+2	5
+\.
+
+
+--
+-- TOC entry 4637 (class 0 OID 17705)
+-- Dependencies: 394
+-- Data for Name: vignettes_options; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vignettes_options (id, text, vignettes_question_id, created_at, updated_at) FROM stdin;
+5	Tschechisch	5	2025-07-14 15:11:22.029809	2025-07-14 15:11:22.029809
+6	Slowakisch	5	2025-07-14 15:11:22.030968	2025-07-14 15:11:22.030968
+7	Slowenisch	5	2025-07-14 15:11:22.03184	2025-07-14 15:11:22.03184
+8	Kroatisch	5	2025-07-14 15:11:22.032543	2025-07-14 15:11:22.032543
+\.
+
+
+--
+-- TOC entry 4631 (class 0 OID 17656)
+-- Dependencies: 388
+-- Data for Name: vignettes_questionnaires; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vignettes_questionnaires (id, title, lecture_id, published, editable, created_at, updated_at) FROM stdin;
+2	Testvignette	28	t	f	2025-07-14 15:09:11.919174	2025-07-14 15:12:00.430996
+\.
+
+
+--
+-- TOC entry 4635 (class 0 OID 17688)
+-- Dependencies: 392
+-- Data for Name: vignettes_questions; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vignettes_questions (id, type, question_text, vignettes_slide_id, only_integer, min_number, max_number, language, created_at, updated_at) FROM stdin;
+4	Vignettes::TextQuestion	Was ist das?	4	f	\N	\N	en	2025-07-14 15:10:15.639754	2025-07-14 15:10:15.639754
+5	Vignettes::MultipleChoiceQuestion	Welches Tastaturlayout ist das?	5	f	\N	\N	en	2025-07-14 15:11:22.028604	2025-07-14 15:11:22.028604
+6	Vignettes::LikertScaleQuestion	Wurden deine Erwartungen erfüllt?	6	f	\N	\N	de	2025-07-14 15:11:52.25297	2025-07-14 15:11:52.25297
+\.
+
+
+--
+-- TOC entry 4646 (class 0 OID 17781)
+-- Dependencies: 403
+-- Data for Name: vignettes_slide_statistics; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vignettes_slide_statistics (id, user_id, vignettes_answer_id, time_on_slide, total_time_on_slide, time_on_info_slides, info_slides_access_count, info_slides_first_access_time, created_at, updated_at) FROM stdin;
+2	5	8	23	23	{}	{}	{}	2025-07-14 15:12:42.171486	2025-07-14 15:12:42.171486
+3	5	9	28	28	{}	{}	{}	2025-07-14 15:13:10.789473	2025-07-14 15:13:10.789473
+4	5	10	4	4	{}	{}	{}	2025-07-14 15:13:15.610299	2025-07-14 15:13:15.610299
+\.
+
+
+--
+-- TOC entry 4633 (class 0 OID 17672)
+-- Dependencies: 390
+-- Data for Name: vignettes_slides; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vignettes_slides (id, title, vignettes_questionnaire_id, "position", created_at, updated_at) FROM stdin;
+4	Erste Slide	2	1	2025-07-14 15:10:15.622982	2025-07-14 15:10:15.700008
+5	Zweite Slide	2	2	2025-07-14 15:11:22.015487	2025-07-14 15:11:22.055107
+6	Letzte Slide	2	3	2025-07-14 15:11:52.25048	2025-07-14 15:11:52.252295
+\.
+
+
+--
+-- TOC entry 4639 (class 0 OID 17720)
+-- Dependencies: 396
+-- Data for Name: vignettes_user_answers; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vignettes_user_answers (id, user_id, vignettes_questionnaire_id, created_at, updated_at) FROM stdin;
+4	5	2	2025-07-14 15:12:18.622235	2025-07-14 15:12:18.622235
+\.
+
+
+--
+-- TOC entry 4605 (class 0 OID 16850)
+-- Dependencies: 362
 -- Data for Name: votes; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5750,8 +6983,22 @@ COPY public.votes (id, votable_type, votable_id, voter_type, voter_id, vote_flag
 
 
 --
--- TOC entry 4328 (class 0 OID 26685)
--- Dependencies: 350
+-- TOC entry 4617 (class 0 OID 17554)
+-- Dependencies: 374
+-- Data for Name: vouchers; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.vouchers (id, role, lecture_id, secure_hash, invalidated_at, expires_at, created_at, updated_at) FROM stdin;
+1fd281f2-0192-4fa0-897b-27718cc28511	0	1	2e6af40b0f95b636aa2d1a974f876b8f	2025-07-14 11:07:37.673926	2025-07-28 11:07:23.901548	2025-07-14 11:07:23.901548	2025-07-14 11:07:37.674734
+e2273c2f-fd1d-4d58-950e-a01d33aeac33	1	3	50b4626ef862f2ea57711560312435ce	\N	2025-07-17 11:09:15.735269	2025-07-14 11:09:15.735269	2025-07-14 11:09:15.735269
+ccc50df8-0262-4372-bb3e-d8cc1650663e	0	3	551e12e67488e373418dd0ea9e22acbc	\N	2025-07-28 11:09:16.709169	2025-07-14 11:09:16.709169	2025-07-14 11:09:16.709169
+8ed8a767-7faa-486c-a757-7417ffd04c3d	3	29	431d5aa6f1131afcb2765a2d7053f1f6	\N	2025-08-14 12:09:41.03965	2025-07-15 12:09:41.03965	2025-07-15 12:09:41.03965
+\.
+
+
+--
+-- TOC entry 4607 (class 0 OID 16856)
+-- Dependencies: 364
 -- Data for Name: vtt_containers; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5861,12 +7108,16 @@ COPY public.vtt_containers (id, table_of_contents_data, references_data, created
 102	{"id":"vttcontainer/102/table_of_contents/3316043a0ccc2c03a811f5400531f1bb.vtt","storage":"store","metadata":{"filename":"toc-20220920-1-1dpzdk.vtt","size":172,"mime_type":null}}	{"id":"vttcontainer/102/references/3e6bc0517380fc3f9848f74e961cd8fb.vtt","storage":"store","metadata":{"filename":"ref-20220920-1-8izgle.vtt","size":493,"mime_type":null}}	2022-09-20 13:31:56.255542	2022-09-20 13:31:56.270393
 105	{"id":"vttcontainer/105/table_of_contents/2352670cddade63c45b8ada540ef9b80.vtt","storage":"store","metadata":{"filename":"toc-20220920-1-ud3s38.vtt","size":172,"mime_type":null}}	{"id":"vttcontainer/105/references/4b74009ea827a13387bfde826fe34233.vtt","storage":"store","metadata":{"filename":"ref-20220920-1-keq1c5.vtt","size":493,"mime_type":null}}	2022-09-20 13:33:55.515955	2022-09-20 13:33:55.528913
 104	{"id":"vttcontainer/104/table_of_contents/71d738fafc97f897bfa7c34fc8e855c1.vtt","storage":"store","metadata":{"filename":"toc-20220920-1-nb141a.vtt","size":172,"mime_type":null}}	{"id":"vttcontainer/104/references/5f057249479e21e8386ee56bf8102fe3.vtt","storage":"store","metadata":{"filename":"ref-20220920-1-antf99.vtt","size":493,"mime_type":null}}	2022-09-20 13:33:03.371551	2022-09-20 13:33:03.38635
+108	{"id":"vttcontainer/108/table_of_contents/4f0f37c6cb99e13269986e4ffc4f157e.vtt","storage":"store","metadata":{"filename":"toc-20250714-2346-goeab8.vtt","size":142,"mime_type":null}}	{"id":"vttcontainer/108/references/ddd49a9b7d931334be8ba9f9e0455e6c.vtt","storage":"store","metadata":{"filename":"ref-20250714-2346-sl6940.vtt","size":128,"mime_type":null}}	2025-07-14 11:30:56.228583	2025-07-14 11:30:56.235095
+106	{"id":"vttcontainer/106/table_of_contents/9583d8e95e34c28ff0ce7c9d6c5a322c.vtt","storage":"store","metadata":{"filename":"toc-20250714-2346-iqmbsf.vtt","size":301,"mime_type":null}}	{"id":"vttcontainer/106/references/4d1529af05145039e837435e43ddfa7d.vtt","storage":"store","metadata":{"filename":"ref-20250714-2346-2rwfg7.vtt","size":242,"mime_type":null}}	2025-07-14 11:24:53.030937	2025-07-14 11:24:53.041405
+107	{"id":"vttcontainer/107/table_of_contents/4188f9cf130a3ff989a5fad41d2b18b1.vtt","storage":"store","metadata":{"filename":"toc-20250714-2346-r7hxeo.vtt","size":142,"mime_type":null}}	{"id":"vttcontainer/107/references/d075bf25db4a3c393cdc80d9e30d7d2e.vtt","storage":"store","metadata":{"filename":"ref-20250714-2346-9vg2bw.vtt","size":128,"mime_type":null}}	2025-07-14 11:24:56.724702	2025-07-14 11:24:56.732558
+109	{"id":"vttcontainer/109/table_of_contents/32d208ceb7f98d24d196cc06c3798123.vtt","storage":"store","metadata":{"filename":"toc-20250714-2346-zf3pcu.vtt","size":172,"mime_type":null}}	{"id":"vttcontainer/109/references/62342af5cdd6ee99033cee935490b233.vtt","storage":"store","metadata":{"filename":"ref-20250714-2346-g13zg7.vtt","size":496,"mime_type":null}}	2025-07-14 11:47:45.308754	2025-07-14 11:47:45.316443
 \.
 
 
 --
--- TOC entry 4337 (class 0 OID 27282)
--- Dependencies: 359
+-- TOC entry 4609 (class 0 OID 16862)
+-- Dependencies: 366
 -- Data for Name: watchlist_entries; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -5874,24 +7125,72 @@ COPY public.watchlist_entries (id, watchlist_id, medium_id, medium_position, cre
 1	3	39	0	2022-08-05 13:52:07.795377	2022-08-05 13:52:07.795377
 2	3	11	1	2022-08-05 13:52:15.489454	2022-08-05 13:52:15.489454
 3	4	39	0	2022-08-05 13:53:14.826467	2022-08-05 13:53:14.826467
+4	5	9	0	2025-07-14 11:30:21.726398	2025-07-14 11:30:21.726398
+5	5	7	1	2025-07-14 11:30:24.602332	2025-07-14 11:30:24.602332
 \.
 
 
 --
--- TOC entry 4335 (class 0 OID 27275)
--- Dependencies: 357
+-- TOC entry 4611 (class 0 OID 16866)
+-- Dependencies: 368
 -- Data for Name: watchlists; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.watchlists (id, user_id, watchlist_entry_id, created_at, updated_at, name, public, description) FROM stdin;
 3	5	\N	2022-08-05 13:51:36.010128	2022-08-05 13:51:52.069354	My public watchlist	t	Here's my public watchlist
 4	5	\N	2022-08-05 13:52:49.485056	2022-08-05 13:52:49.485056	My private watchlist	f	Here's my private watchlist.
+5	8	\N	2025-07-14 11:30:08.902407	2025-07-14 11:30:08.902407	Neue Watchlist	f	Libeslingsmedien
 \.
 
 
 --
--- TOC entry 4420 (class 0 OID 0)
--- Dependencies: 211
+-- TOC entry 4750 (class 0 OID 0)
+-- Dependencies: 385
+-- Name: action_text_rich_texts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.action_text_rich_texts_id_seq', 8, true);
+
+
+--
+-- TOC entry 4751 (class 0 OID 0)
+-- Dependencies: 381
+-- Name: active_storage_attachments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.active_storage_attachments_id_seq', 8, true);
+
+
+--
+-- TOC entry 4752 (class 0 OID 0)
+-- Dependencies: 379
+-- Name: active_storage_blobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.active_storage_blobs_id_seq', 8, true);
+
+
+--
+-- TOC entry 4753 (class 0 OID 0)
+-- Dependencies: 383
+-- Name: active_storage_variant_records_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.active_storage_variant_records_id_seq', 4, true);
+
+
+--
+-- TOC entry 4754 (class 0 OID 0)
+-- Dependencies: 372
+-- Name: annotations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.annotations_id_seq', 4, true);
+
+
+--
+-- TOC entry 4755 (class 0 OID 0)
+-- Dependencies: 219
 -- Name: announcements_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -5899,8 +7198,8 @@ SELECT pg_catalog.setval('public.announcements_id_seq', 4, true);
 
 
 --
--- TOC entry 4421 (class 0 OID 0)
--- Dependencies: 213
+-- TOC entry 4756 (class 0 OID 0)
+-- Dependencies: 221
 -- Name: answers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -5908,8 +7207,8 @@ SELECT pg_catalog.setval('public.answers_id_seq', 39, true);
 
 
 --
--- TOC entry 4422 (class 0 OID 0)
--- Dependencies: 216
+-- TOC entry 4757 (class 0 OID 0)
+-- Dependencies: 224
 -- Name: assignments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -5917,8 +7216,8 @@ SELECT pg_catalog.setval('public.assignments_id_seq', 3, true);
 
 
 --
--- TOC entry 4423 (class 0 OID 0)
--- Dependencies: 218
+-- TOC entry 4758 (class 0 OID 0)
+-- Dependencies: 226
 -- Name: chapters_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -5926,8 +7225,17 @@ SELECT pg_catalog.setval('public.chapters_id_seq', 10, true);
 
 
 --
--- TOC entry 4424 (class 0 OID 0)
--- Dependencies: 220
+-- TOC entry 4759 (class 0 OID 0)
+-- Dependencies: 377
+-- Name: claims_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.claims_id_seq', 3, true);
+
+
+--
+-- TOC entry 4760 (class 0 OID 0)
+-- Dependencies: 228
 -- Name: clicker_votes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -5935,8 +7243,8 @@ SELECT pg_catalog.setval('public.clicker_votes_id_seq', 1, false);
 
 
 --
--- TOC entry 4425 (class 0 OID 0)
--- Dependencies: 222
+-- TOC entry 4761 (class 0 OID 0)
+-- Dependencies: 230
 -- Name: clickers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -5944,17 +7252,17 @@ SELECT pg_catalog.setval('public.clickers_id_seq', 1, false);
 
 
 --
--- TOC entry 4426 (class 0 OID 0)
--- Dependencies: 224
+-- TOC entry 4762 (class 0 OID 0)
+-- Dependencies: 232
 -- Name: commontator_comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.commontator_comments_id_seq', 5, true);
+SELECT pg_catalog.setval('public.commontator_comments_id_seq', 10, true);
 
 
 --
--- TOC entry 4427 (class 0 OID 0)
--- Dependencies: 226
+-- TOC entry 4763 (class 0 OID 0)
+-- Dependencies: 234
 -- Name: commontator_subscriptions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -5962,17 +7270,17 @@ SELECT pg_catalog.setval('public.commontator_subscriptions_id_seq', 1, false);
 
 
 --
--- TOC entry 4428 (class 0 OID 0)
--- Dependencies: 228
+-- TOC entry 4764 (class 0 OID 0)
+-- Dependencies: 236
 -- Name: commontator_threads_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.commontator_threads_id_seq', 51, true);
+SELECT pg_catalog.setval('public.commontator_threads_id_seq', 52, true);
 
 
 --
--- TOC entry 4429 (class 0 OID 0)
--- Dependencies: 230
+-- TOC entry 4765 (class 0 OID 0)
+-- Dependencies: 238
 -- Name: course_self_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -5980,35 +7288,35 @@ SELECT pg_catalog.setval('public.course_self_joins_id_seq', 1, false);
 
 
 --
--- TOC entry 4430 (class 0 OID 0)
--- Dependencies: 232
+-- TOC entry 4766 (class 0 OID 0)
+-- Dependencies: 240
 -- Name: course_tag_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.course_tag_joins_id_seq', 45, true);
+SELECT pg_catalog.setval('public.course_tag_joins_id_seq', 48, true);
 
 
 --
--- TOC entry 4431 (class 0 OID 0)
--- Dependencies: 234
+-- TOC entry 4767 (class 0 OID 0)
+-- Dependencies: 242
 -- Name: courses_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.courses_id_seq', 8, true);
+SELECT pg_catalog.setval('public.courses_id_seq', 10, true);
 
 
 --
--- TOC entry 4432 (class 0 OID 0)
--- Dependencies: 236
+-- TOC entry 4768 (class 0 OID 0)
+-- Dependencies: 244
 -- Name: division_course_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.division_course_joins_id_seq', 8, true);
+SELECT pg_catalog.setval('public.division_course_joins_id_seq', 9, true);
 
 
 --
--- TOC entry 4433 (class 0 OID 0)
--- Dependencies: 238
+-- TOC entry 4769 (class 0 OID 0)
+-- Dependencies: 246
 -- Name: division_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6016,8 +7324,8 @@ SELECT pg_catalog.setval('public.division_translations_id_seq', 8, true);
 
 
 --
--- TOC entry 4434 (class 0 OID 0)
--- Dependencies: 240
+-- TOC entry 4770 (class 0 OID 0)
+-- Dependencies: 248
 -- Name: divisions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6025,17 +7333,26 @@ SELECT pg_catalog.setval('public.divisions_id_seq', 4, true);
 
 
 --
--- TOC entry 4435 (class 0 OID 0)
--- Dependencies: 242
+-- TOC entry 4771 (class 0 OID 0)
+-- Dependencies: 250
 -- Name: editable_user_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.editable_user_joins_id_seq', 184, true);
+SELECT pg_catalog.setval('public.editable_user_joins_id_seq', 187, true);
 
 
 --
--- TOC entry 4436 (class 0 OID 0)
--- Dependencies: 244
+-- TOC entry 4772 (class 0 OID 0)
+-- Dependencies: 370
+-- Name: feedbacks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.feedbacks_id_seq', 1, true);
+
+
+--
+-- TOC entry 4773 (class 0 OID 0)
+-- Dependencies: 252
 -- Name: friendly_id_slugs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6043,8 +7360,8 @@ SELECT pg_catalog.setval('public.friendly_id_slugs_id_seq', 2, true);
 
 
 --
--- TOC entry 4437 (class 0 OID 0)
--- Dependencies: 246
+-- TOC entry 4774 (class 0 OID 0)
+-- Dependencies: 254
 -- Name: imports_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6052,8 +7369,8 @@ SELECT pg_catalog.setval('public.imports_id_seq', 1, false);
 
 
 --
--- TOC entry 4438 (class 0 OID 0)
--- Dependencies: 248
+-- TOC entry 4775 (class 0 OID 0)
+-- Dependencies: 256
 -- Name: item_self_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6061,35 +7378,35 @@ SELECT pg_catalog.setval('public.item_self_joins_id_seq', 1, false);
 
 
 --
--- TOC entry 4439 (class 0 OID 0)
--- Dependencies: 250
+-- TOC entry 4776 (class 0 OID 0)
+-- Dependencies: 258
 -- Name: items_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.items_id_seq', 387, true);
+SELECT pg_catalog.setval('public.items_id_seq', 388, true);
 
 
 --
--- TOC entry 4440 (class 0 OID 0)
--- Dependencies: 252
+-- TOC entry 4777 (class 0 OID 0)
+-- Dependencies: 260
 -- Name: lecture_user_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.lecture_user_joins_id_seq', 86, true);
+SELECT pg_catalog.setval('public.lecture_user_joins_id_seq', 93, true);
 
 
 --
--- TOC entry 4441 (class 0 OID 0)
--- Dependencies: 254
+-- TOC entry 4778 (class 0 OID 0)
+-- Dependencies: 262
 -- Name: lectures_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.lectures_id_seq', 27, true);
+SELECT pg_catalog.setval('public.lectures_id_seq', 29, true);
 
 
 --
--- TOC entry 4442 (class 0 OID 0)
--- Dependencies: 256
+-- TOC entry 4779 (class 0 OID 0)
+-- Dependencies: 264
 -- Name: lesson_section_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6097,8 +7414,8 @@ SELECT pg_catalog.setval('public.lesson_section_joins_id_seq', 12, true);
 
 
 --
--- TOC entry 4443 (class 0 OID 0)
--- Dependencies: 258
+-- TOC entry 4780 (class 0 OID 0)
+-- Dependencies: 266
 -- Name: lesson_tag_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6106,8 +7423,8 @@ SELECT pg_catalog.setval('public.lesson_tag_joins_id_seq', 55, true);
 
 
 --
--- TOC entry 4444 (class 0 OID 0)
--- Dependencies: 260
+-- TOC entry 4781 (class 0 OID 0)
+-- Dependencies: 268
 -- Name: lessons_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6115,8 +7432,8 @@ SELECT pg_catalog.setval('public.lessons_id_seq', 12, true);
 
 
 --
--- TOC entry 4445 (class 0 OID 0)
--- Dependencies: 262
+-- TOC entry 4782 (class 0 OID 0)
+-- Dependencies: 270
 -- Name: links_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6124,17 +7441,17 @@ SELECT pg_catalog.setval('public.links_id_seq', 1, false);
 
 
 --
--- TOC entry 4446 (class 0 OID 0)
--- Dependencies: 264
+-- TOC entry 4783 (class 0 OID 0)
+-- Dependencies: 272
 -- Name: media_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.media_id_seq', 51, true);
+SELECT pg_catalog.setval('public.media_id_seq', 52, true);
 
 
 --
--- TOC entry 4447 (class 0 OID 0)
--- Dependencies: 266
+-- TOC entry 4784 (class 0 OID 0)
+-- Dependencies: 274
 -- Name: medium_tag_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6142,26 +7459,26 @@ SELECT pg_catalog.setval('public.medium_tag_joins_id_seq', 49, true);
 
 
 --
--- TOC entry 4448 (class 0 OID 0)
--- Dependencies: 268
+-- TOC entry 4785 (class 0 OID 0)
+-- Dependencies: 276
 -- Name: notifications_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.notifications_id_seq', 117, true);
+SELECT pg_catalog.setval('public.notifications_id_seq', 143, true);
 
 
 --
--- TOC entry 4449 (class 0 OID 0)
--- Dependencies: 270
+-- TOC entry 4786 (class 0 OID 0)
+-- Dependencies: 278
 -- Name: notions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.notions_id_seq', 78, true);
+SELECT pg_catalog.setval('public.notions_id_seq', 84, true);
 
 
 --
--- TOC entry 4450 (class 0 OID 0)
--- Dependencies: 272
+-- TOC entry 4787 (class 0 OID 0)
+-- Dependencies: 280
 -- Name: program_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6169,8 +7486,8 @@ SELECT pg_catalog.setval('public.program_translations_id_seq', 4, true);
 
 
 --
--- TOC entry 4451 (class 0 OID 0)
--- Dependencies: 274
+-- TOC entry 4788 (class 0 OID 0)
+-- Dependencies: 282
 -- Name: programs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6178,8 +7495,8 @@ SELECT pg_catalog.setval('public.programs_id_seq', 2, true);
 
 
 --
--- TOC entry 4452 (class 0 OID 0)
--- Dependencies: 277
+-- TOC entry 4789 (class 0 OID 0)
+-- Dependencies: 285
 -- Name: readers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6187,8 +7504,17 @@ SELECT pg_catalog.setval('public.readers_id_seq', 1, true);
 
 
 --
--- TOC entry 4453 (class 0 OID 0)
--- Dependencies: 279
+-- TOC entry 4790 (class 0 OID 0)
+-- Dependencies: 375
+-- Name: redemptions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.redemptions_id_seq', 3, true);
+
+
+--
+-- TOC entry 4791 (class 0 OID 0)
+-- Dependencies: 287
 -- Name: referrals_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6196,26 +7522,26 @@ SELECT pg_catalog.setval('public.referrals_id_seq', 12, true);
 
 
 --
--- TOC entry 4454 (class 0 OID 0)
--- Dependencies: 281
+-- TOC entry 4792 (class 0 OID 0)
+-- Dependencies: 289
 -- Name: relations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.relations_id_seq', 50, true);
+SELECT pg_catalog.setval('public.relations_id_seq', 58, true);
 
 
 --
--- TOC entry 4455 (class 0 OID 0)
--- Dependencies: 284
+-- TOC entry 4793 (class 0 OID 0)
+-- Dependencies: 292
 -- Name: section_tag_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.section_tag_joins_id_seq', 44, true);
+SELECT pg_catalog.setval('public.section_tag_joins_id_seq', 45, true);
 
 
 --
--- TOC entry 4456 (class 0 OID 0)
--- Dependencies: 286
+-- TOC entry 4794 (class 0 OID 0)
+-- Dependencies: 294
 -- Name: sections_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6223,17 +7549,17 @@ SELECT pg_catalog.setval('public.sections_id_seq', 37, true);
 
 
 --
--- TOC entry 4457 (class 0 OID 0)
--- Dependencies: 354
+-- TOC entry 4795 (class 0 OID 0)
+-- Dependencies: 296
 -- Name: speaker_talk_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.speaker_talk_joins_id_seq', 2, true);
+SELECT pg_catalog.setval('public.speaker_talk_joins_id_seq', 5, true);
 
 
 --
--- TOC entry 4458 (class 0 OID 0)
--- Dependencies: 288
+-- TOC entry 4796 (class 0 OID 0)
+-- Dependencies: 298
 -- Name: subject_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6241,8 +7567,8 @@ SELECT pg_catalog.setval('public.subject_translations_id_seq', 4, true);
 
 
 --
--- TOC entry 4459 (class 0 OID 0)
--- Dependencies: 290
+-- TOC entry 4797 (class 0 OID 0)
+-- Dependencies: 300
 -- Name: subjects_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6250,44 +7576,44 @@ SELECT pg_catalog.setval('public.subjects_id_seq', 2, true);
 
 
 --
--- TOC entry 4460 (class 0 OID 0)
--- Dependencies: 293
+-- TOC entry 4798 (class 0 OID 0)
+-- Dependencies: 303
 -- Name: tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.tags_id_seq', 45, true);
+SELECT pg_catalog.setval('public.tags_id_seq', 48, true);
 
 
 --
--- TOC entry 4461 (class 0 OID 0)
--- Dependencies: 360
+-- TOC entry 4799 (class 0 OID 0)
+-- Dependencies: 305
 -- Name: talk_tag_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.talk_tag_joins_id_seq', 2, true);
+SELECT pg_catalog.setval('public.talk_tag_joins_id_seq', 5, true);
 
 
 --
--- TOC entry 4462 (class 0 OID 0)
--- Dependencies: 352
+-- TOC entry 4800 (class 0 OID 0)
+-- Dependencies: 307
 -- Name: talks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.talks_id_seq', 1, true);
+SELECT pg_catalog.setval('public.talks_id_seq', 4, true);
 
 
 --
--- TOC entry 4463 (class 0 OID 0)
--- Dependencies: 295
+-- TOC entry 4801 (class 0 OID 0)
+-- Dependencies: 309
 -- Name: terms_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.terms_id_seq', 4, true);
+SELECT pg_catalog.setval('public.terms_id_seq', 10, true);
 
 
 --
--- TOC entry 4464 (class 0 OID 0)
--- Dependencies: 297
+-- TOC entry 4802 (class 0 OID 0)
+-- Dependencies: 311
 -- Name: thredded_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6295,8 +7621,8 @@ SELECT pg_catalog.setval('public.thredded_categories_id_seq', 1, false);
 
 
 --
--- TOC entry 4465 (class 0 OID 0)
--- Dependencies: 299
+-- TOC entry 4803 (class 0 OID 0)
+-- Dependencies: 313
 -- Name: thredded_messageboard_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6304,8 +7630,8 @@ SELECT pg_catalog.setval('public.thredded_messageboard_groups_id_seq', 1, false)
 
 
 --
--- TOC entry 4466 (class 0 OID 0)
--- Dependencies: 301
+-- TOC entry 4804 (class 0 OID 0)
+-- Dependencies: 315
 -- Name: thredded_messageboard_notifications_for_followed_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6313,8 +7639,8 @@ SELECT pg_catalog.setval('public.thredded_messageboard_notifications_for_followe
 
 
 --
--- TOC entry 4467 (class 0 OID 0)
--- Dependencies: 303
+-- TOC entry 4805 (class 0 OID 0)
+-- Dependencies: 317
 -- Name: thredded_messageboard_users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6322,8 +7648,8 @@ SELECT pg_catalog.setval('public.thredded_messageboard_users_id_seq', 2, true);
 
 
 --
--- TOC entry 4468 (class 0 OID 0)
--- Dependencies: 305
+-- TOC entry 4806 (class 0 OID 0)
+-- Dependencies: 319
 -- Name: thredded_messageboards_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6331,8 +7657,8 @@ SELECT pg_catalog.setval('public.thredded_messageboards_id_seq', 2, true);
 
 
 --
--- TOC entry 4469 (class 0 OID 0)
--- Dependencies: 307
+-- TOC entry 4807 (class 0 OID 0)
+-- Dependencies: 321
 -- Name: thredded_notifications_for_followed_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6340,8 +7666,8 @@ SELECT pg_catalog.setval('public.thredded_notifications_for_followed_topics_id_s
 
 
 --
--- TOC entry 4470 (class 0 OID 0)
--- Dependencies: 309
+-- TOC entry 4808 (class 0 OID 0)
+-- Dependencies: 323
 -- Name: thredded_notifications_for_private_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6349,8 +7675,8 @@ SELECT pg_catalog.setval('public.thredded_notifications_for_private_topics_id_se
 
 
 --
--- TOC entry 4471 (class 0 OID 0)
--- Dependencies: 311
+-- TOC entry 4809 (class 0 OID 0)
+-- Dependencies: 325
 -- Name: thredded_post_moderation_records_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6358,8 +7684,8 @@ SELECT pg_catalog.setval('public.thredded_post_moderation_records_id_seq', 1, fa
 
 
 --
--- TOC entry 4472 (class 0 OID 0)
--- Dependencies: 313
+-- TOC entry 4810 (class 0 OID 0)
+-- Dependencies: 327
 -- Name: thredded_posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6367,8 +7693,8 @@ SELECT pg_catalog.setval('public.thredded_posts_id_seq', 2, true);
 
 
 --
--- TOC entry 4473 (class 0 OID 0)
--- Dependencies: 315
+-- TOC entry 4811 (class 0 OID 0)
+-- Dependencies: 329
 -- Name: thredded_private_posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6376,8 +7702,8 @@ SELECT pg_catalog.setval('public.thredded_private_posts_id_seq', 1, false);
 
 
 --
--- TOC entry 4474 (class 0 OID 0)
--- Dependencies: 317
+-- TOC entry 4812 (class 0 OID 0)
+-- Dependencies: 331
 -- Name: thredded_private_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6385,8 +7711,8 @@ SELECT pg_catalog.setval('public.thredded_private_topics_id_seq', 1, false);
 
 
 --
--- TOC entry 4475 (class 0 OID 0)
--- Dependencies: 319
+-- TOC entry 4813 (class 0 OID 0)
+-- Dependencies: 333
 -- Name: thredded_private_users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6394,8 +7720,8 @@ SELECT pg_catalog.setval('public.thredded_private_users_id_seq', 1, false);
 
 
 --
--- TOC entry 4476 (class 0 OID 0)
--- Dependencies: 321
+-- TOC entry 4814 (class 0 OID 0)
+-- Dependencies: 335
 -- Name: thredded_topic_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6403,8 +7729,8 @@ SELECT pg_catalog.setval('public.thredded_topic_categories_id_seq', 1, false);
 
 
 --
--- TOC entry 4477 (class 0 OID 0)
--- Dependencies: 323
+-- TOC entry 4815 (class 0 OID 0)
+-- Dependencies: 337
 -- Name: thredded_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6412,8 +7738,8 @@ SELECT pg_catalog.setval('public.thredded_topics_id_seq', 2, true);
 
 
 --
--- TOC entry 4478 (class 0 OID 0)
--- Dependencies: 325
+-- TOC entry 4816 (class 0 OID 0)
+-- Dependencies: 339
 -- Name: thredded_user_details_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6421,8 +7747,8 @@ SELECT pg_catalog.setval('public.thredded_user_details_id_seq', 2, true);
 
 
 --
--- TOC entry 4479 (class 0 OID 0)
--- Dependencies: 327
+-- TOC entry 4817 (class 0 OID 0)
+-- Dependencies: 341
 -- Name: thredded_user_messageboard_preferences_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6430,8 +7756,8 @@ SELECT pg_catalog.setval('public.thredded_user_messageboard_preferences_id_seq',
 
 
 --
--- TOC entry 4480 (class 0 OID 0)
--- Dependencies: 329
+-- TOC entry 4818 (class 0 OID 0)
+-- Dependencies: 343
 -- Name: thredded_user_post_notifications_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6439,8 +7765,8 @@ SELECT pg_catalog.setval('public.thredded_user_post_notifications_id_seq', 1, fa
 
 
 --
--- TOC entry 4481 (class 0 OID 0)
--- Dependencies: 331
+-- TOC entry 4819 (class 0 OID 0)
+-- Dependencies: 345
 -- Name: thredded_user_preferences_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6448,8 +7774,8 @@ SELECT pg_catalog.setval('public.thredded_user_preferences_id_seq', 1, false);
 
 
 --
--- TOC entry 4482 (class 0 OID 0)
--- Dependencies: 333
+-- TOC entry 4820 (class 0 OID 0)
+-- Dependencies: 347
 -- Name: thredded_user_private_topic_read_states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6457,8 +7783,8 @@ SELECT pg_catalog.setval('public.thredded_user_private_topic_read_states_id_seq'
 
 
 --
--- TOC entry 4483 (class 0 OID 0)
--- Dependencies: 335
+-- TOC entry 4821 (class 0 OID 0)
+-- Dependencies: 349
 -- Name: thredded_user_topic_follows_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6466,8 +7792,8 @@ SELECT pg_catalog.setval('public.thredded_user_topic_follows_id_seq', 2, true);
 
 
 --
--- TOC entry 4484 (class 0 OID 0)
--- Dependencies: 337
+-- TOC entry 4822 (class 0 OID 0)
+-- Dependencies: 351
 -- Name: thredded_user_topic_read_states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6475,8 +7801,8 @@ SELECT pg_catalog.setval('public.thredded_user_topic_read_states_id_seq', 2, tru
 
 
 --
--- TOC entry 4485 (class 0 OID 0)
--- Dependencies: 339
+-- TOC entry 4823 (class 0 OID 0)
+-- Dependencies: 353
 -- Name: tutor_tutorial_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6484,8 +7810,8 @@ SELECT pg_catalog.setval('public.tutor_tutorial_joins_id_seq', 1, true);
 
 
 --
--- TOC entry 4486 (class 0 OID 0)
--- Dependencies: 341
+-- TOC entry 4824 (class 0 OID 0)
+-- Dependencies: 355
 -- Name: tutorials_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6493,8 +7819,8 @@ SELECT pg_catalog.setval('public.tutorials_id_seq', 1, true);
 
 
 --
--- TOC entry 4487 (class 0 OID 0)
--- Dependencies: 343
+-- TOC entry 4825 (class 0 OID 0)
+-- Dependencies: 357
 -- Name: user_favorite_lecture_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6502,8 +7828,8 @@ SELECT pg_catalog.setval('public.user_favorite_lecture_joins_id_seq', 7, true);
 
 
 --
--- TOC entry 4488 (class 0 OID 0)
--- Dependencies: 345
+-- TOC entry 4826 (class 0 OID 0)
+-- Dependencies: 359
 -- Name: user_submission_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6511,8 +7837,8 @@ SELECT pg_catalog.setval('public.user_submission_joins_id_seq', 8, true);
 
 
 --
--- TOC entry 4489 (class 0 OID 0)
--- Dependencies: 347
+-- TOC entry 4827 (class 0 OID 0)
+-- Dependencies: 361
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6520,8 +7846,98 @@ SELECT pg_catalog.setval('public.users_id_seq', 13, true);
 
 
 --
--- TOC entry 4490 (class 0 OID 0)
--- Dependencies: 349
+-- TOC entry 4828 (class 0 OID 0)
+-- Dependencies: 397
+-- Name: vignettes_answers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.vignettes_answers_id_seq', 10, true);
+
+
+--
+-- TOC entry 4829 (class 0 OID 0)
+-- Dependencies: 405
+-- Name: vignettes_codenames_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.vignettes_codenames_id_seq', 3, true);
+
+
+--
+-- TOC entry 4830 (class 0 OID 0)
+-- Dependencies: 407
+-- Name: vignettes_completion_messages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.vignettes_completion_messages_id_seq', 1, false);
+
+
+--
+-- TOC entry 4831 (class 0 OID 0)
+-- Dependencies: 400
+-- Name: vignettes_info_slides_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.vignettes_info_slides_id_seq', 2, true);
+
+
+--
+-- TOC entry 4832 (class 0 OID 0)
+-- Dependencies: 393
+-- Name: vignettes_options_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.vignettes_options_id_seq', 8, true);
+
+
+--
+-- TOC entry 4833 (class 0 OID 0)
+-- Dependencies: 387
+-- Name: vignettes_questionnaires_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.vignettes_questionnaires_id_seq', 2, true);
+
+
+--
+-- TOC entry 4834 (class 0 OID 0)
+-- Dependencies: 391
+-- Name: vignettes_questions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.vignettes_questions_id_seq', 6, true);
+
+
+--
+-- TOC entry 4835 (class 0 OID 0)
+-- Dependencies: 402
+-- Name: vignettes_slide_statistics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.vignettes_slide_statistics_id_seq', 4, true);
+
+
+--
+-- TOC entry 4836 (class 0 OID 0)
+-- Dependencies: 389
+-- Name: vignettes_slides_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.vignettes_slides_id_seq', 6, true);
+
+
+--
+-- TOC entry 4837 (class 0 OID 0)
+-- Dependencies: 395
+-- Name: vignettes_user_answers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.vignettes_user_answers_id_seq', 4, true);
+
+
+--
+-- TOC entry 4838 (class 0 OID 0)
+-- Dependencies: 363
 -- Name: votes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -6529,34 +7945,79 @@ SELECT pg_catalog.setval('public.votes_id_seq', 1, true);
 
 
 --
--- TOC entry 4491 (class 0 OID 0)
--- Dependencies: 351
+-- TOC entry 4839 (class 0 OID 0)
+-- Dependencies: 365
 -- Name: vtt_containers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.vtt_containers_id_seq', 105, true);
+SELECT pg_catalog.setval('public.vtt_containers_id_seq', 109, true);
 
 
 --
--- TOC entry 4492 (class 0 OID 0)
--- Dependencies: 358
+-- TOC entry 4840 (class 0 OID 0)
+-- Dependencies: 367
 -- Name: watchlist_entries_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.watchlist_entries_id_seq', 3, true);
+SELECT pg_catalog.setval('public.watchlist_entries_id_seq', 5, true);
 
 
 --
--- TOC entry 4493 (class 0 OID 0)
--- Dependencies: 356
+-- TOC entry 4841 (class 0 OID 0)
+-- Dependencies: 369
 -- Name: watchlists_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.watchlists_id_seq', 4, true);
+SELECT pg_catalog.setval('public.watchlists_id_seq', 5, true);
 
 
 --
--- TOC entry 3707 (class 2606 OID 26771)
+-- TOC entry 4208 (class 2606 OID 17653)
+-- Name: action_text_rich_texts action_text_rich_texts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.action_text_rich_texts
+    ADD CONSTRAINT action_text_rich_texts_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4201 (class 2606 OID 17622)
+-- Name: active_storage_attachments active_storage_attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.active_storage_attachments
+    ADD CONSTRAINT active_storage_attachments_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4198 (class 2606 OID 17612)
+-- Name: active_storage_blobs active_storage_blobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.active_storage_blobs
+    ADD CONSTRAINT active_storage_blobs_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4205 (class 2606 OID 17638)
+-- Name: active_storage_variant_records active_storage_variant_records_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.active_storage_variant_records
+    ADD CONSTRAINT active_storage_variant_records_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4182 (class 2606 OID 17538)
+-- Name: annotations annotations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.annotations
+    ADD CONSTRAINT annotations_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 3879 (class 2606 OID 16956)
 -- Name: announcements announcements_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6565,7 +8026,7 @@ ALTER TABLE ONLY public.announcements
 
 
 --
--- TOC entry 3711 (class 2606 OID 26773)
+-- TOC entry 3883 (class 2606 OID 16958)
 -- Name: answers answers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6574,7 +8035,7 @@ ALTER TABLE ONLY public.answers
 
 
 --
--- TOC entry 3714 (class 2606 OID 26775)
+-- TOC entry 3886 (class 2606 OID 16960)
 -- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6583,7 +8044,7 @@ ALTER TABLE ONLY public.ar_internal_metadata
 
 
 --
--- TOC entry 3716 (class 2606 OID 26777)
+-- TOC entry 3888 (class 2606 OID 16962)
 -- Name: assignments assignments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6592,7 +8053,7 @@ ALTER TABLE ONLY public.assignments
 
 
 --
--- TOC entry 3720 (class 2606 OID 26779)
+-- TOC entry 3892 (class 2606 OID 16964)
 -- Name: chapters chapters_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6601,7 +8062,16 @@ ALTER TABLE ONLY public.chapters
 
 
 --
--- TOC entry 3723 (class 2606 OID 26781)
+-- TOC entry 4194 (class 2606 OID 17596)
+-- Name: claims claims_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.claims
+    ADD CONSTRAINT claims_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 3895 (class 2606 OID 16966)
 -- Name: clicker_votes clicker_votes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6610,7 +8080,7 @@ ALTER TABLE ONLY public.clicker_votes
 
 
 --
--- TOC entry 3725 (class 2606 OID 26783)
+-- TOC entry 3897 (class 2606 OID 16968)
 -- Name: clickers clickers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6619,7 +8089,7 @@ ALTER TABLE ONLY public.clickers
 
 
 --
--- TOC entry 3728 (class 2606 OID 26785)
+-- TOC entry 3900 (class 2606 OID 16970)
 -- Name: commontator_comments commontator_comments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6628,7 +8098,7 @@ ALTER TABLE ONLY public.commontator_comments
 
 
 --
--- TOC entry 3736 (class 2606 OID 26787)
+-- TOC entry 3908 (class 2606 OID 16972)
 -- Name: commontator_subscriptions commontator_subscriptions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6637,7 +8107,7 @@ ALTER TABLE ONLY public.commontator_subscriptions
 
 
 --
--- TOC entry 3740 (class 2606 OID 26789)
+-- TOC entry 3912 (class 2606 OID 16974)
 -- Name: commontator_threads commontator_threads_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6646,7 +8116,7 @@ ALTER TABLE ONLY public.commontator_threads
 
 
 --
--- TOC entry 3744 (class 2606 OID 26791)
+-- TOC entry 3916 (class 2606 OID 16976)
 -- Name: course_self_joins course_self_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6655,7 +8125,7 @@ ALTER TABLE ONLY public.course_self_joins
 
 
 --
--- TOC entry 3749 (class 2606 OID 26793)
+-- TOC entry 3921 (class 2606 OID 16978)
 -- Name: course_tag_joins course_tag_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6664,7 +8134,7 @@ ALTER TABLE ONLY public.course_tag_joins
 
 
 --
--- TOC entry 3753 (class 2606 OID 26797)
+-- TOC entry 3925 (class 2606 OID 16980)
 -- Name: courses courses_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6673,7 +8143,7 @@ ALTER TABLE ONLY public.courses
 
 
 --
--- TOC entry 3755 (class 2606 OID 26799)
+-- TOC entry 3927 (class 2606 OID 16982)
 -- Name: division_course_joins division_course_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6682,7 +8152,7 @@ ALTER TABLE ONLY public.division_course_joins
 
 
 --
--- TOC entry 3759 (class 2606 OID 26801)
+-- TOC entry 3931 (class 2606 OID 16984)
 -- Name: division_translations division_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6691,7 +8161,7 @@ ALTER TABLE ONLY public.division_translations
 
 
 --
--- TOC entry 3763 (class 2606 OID 26803)
+-- TOC entry 3935 (class 2606 OID 16986)
 -- Name: divisions divisions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6700,7 +8170,7 @@ ALTER TABLE ONLY public.divisions
 
 
 --
--- TOC entry 3766 (class 2606 OID 26805)
+-- TOC entry 3938 (class 2606 OID 16988)
 -- Name: editable_user_joins editable_user_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6709,7 +8179,16 @@ ALTER TABLE ONLY public.editable_user_joins
 
 
 --
--- TOC entry 3770 (class 2606 OID 26807)
+-- TOC entry 4179 (class 2606 OID 17522)
+-- Name: feedbacks feedbacks_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.feedbacks
+    ADD CONSTRAINT feedbacks_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 3942 (class 2606 OID 16990)
 -- Name: friendly_id_slugs friendly_id_slugs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6718,7 +8197,7 @@ ALTER TABLE ONLY public.friendly_id_slugs
 
 
 --
--- TOC entry 3776 (class 2606 OID 26809)
+-- TOC entry 3948 (class 2606 OID 16992)
 -- Name: imports imports_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6727,7 +8206,7 @@ ALTER TABLE ONLY public.imports
 
 
 --
--- TOC entry 3782 (class 2606 OID 26811)
+-- TOC entry 3954 (class 2606 OID 16994)
 -- Name: item_self_joins item_self_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6736,7 +8215,7 @@ ALTER TABLE ONLY public.item_self_joins
 
 
 --
--- TOC entry 3786 (class 2606 OID 26813)
+-- TOC entry 3958 (class 2606 OID 16996)
 -- Name: items items_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6745,7 +8224,7 @@ ALTER TABLE ONLY public.items
 
 
 --
--- TOC entry 3790 (class 2606 OID 26815)
+-- TOC entry 3962 (class 2606 OID 16998)
 -- Name: lecture_user_joins lecture_user_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6754,7 +8233,7 @@ ALTER TABLE ONLY public.lecture_user_joins
 
 
 --
--- TOC entry 3794 (class 2606 OID 26817)
+-- TOC entry 3966 (class 2606 OID 17000)
 -- Name: lectures lectures_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6763,7 +8242,7 @@ ALTER TABLE ONLY public.lectures
 
 
 --
--- TOC entry 3798 (class 2606 OID 26819)
+-- TOC entry 3970 (class 2606 OID 17002)
 -- Name: lesson_section_joins lesson_section_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6772,7 +8251,7 @@ ALTER TABLE ONLY public.lesson_section_joins
 
 
 --
--- TOC entry 3802 (class 2606 OID 26821)
+-- TOC entry 3974 (class 2606 OID 17004)
 -- Name: lesson_tag_joins lesson_tag_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6781,7 +8260,7 @@ ALTER TABLE ONLY public.lesson_tag_joins
 
 
 --
--- TOC entry 3805 (class 2606 OID 26823)
+-- TOC entry 3977 (class 2606 OID 17006)
 -- Name: lessons lessons_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6790,7 +8269,7 @@ ALTER TABLE ONLY public.lessons
 
 
 --
--- TOC entry 3810 (class 2606 OID 26825)
+-- TOC entry 3982 (class 2606 OID 17008)
 -- Name: links links_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6799,7 +8278,7 @@ ALTER TABLE ONLY public.links
 
 
 --
--- TOC entry 3814 (class 2606 OID 26827)
+-- TOC entry 3986 (class 2606 OID 17010)
 -- Name: media media_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6808,7 +8287,7 @@ ALTER TABLE ONLY public.media
 
 
 --
--- TOC entry 3818 (class 2606 OID 26829)
+-- TOC entry 3990 (class 2606 OID 17012)
 -- Name: medium_tag_joins medium_tag_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6817,7 +8296,7 @@ ALTER TABLE ONLY public.medium_tag_joins
 
 
 --
--- TOC entry 3822 (class 2606 OID 26831)
+-- TOC entry 3994 (class 2606 OID 17014)
 -- Name: notifications notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6826,7 +8305,7 @@ ALTER TABLE ONLY public.notifications
 
 
 --
--- TOC entry 3826 (class 2606 OID 26833)
+-- TOC entry 3998 (class 2606 OID 17016)
 -- Name: notions notions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6835,7 +8314,7 @@ ALTER TABLE ONLY public.notions
 
 
 --
--- TOC entry 3830 (class 2606 OID 26835)
+-- TOC entry 4002 (class 2606 OID 17018)
 -- Name: program_translations program_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6844,7 +8323,7 @@ ALTER TABLE ONLY public.program_translations
 
 
 --
--- TOC entry 3833 (class 2606 OID 26837)
+-- TOC entry 4005 (class 2606 OID 17020)
 -- Name: programs programs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6853,7 +8332,7 @@ ALTER TABLE ONLY public.programs
 
 
 --
--- TOC entry 3837 (class 2606 OID 26839)
+-- TOC entry 4009 (class 2606 OID 17022)
 -- Name: quiz_certificates quiz_certificates_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6862,7 +8341,7 @@ ALTER TABLE ONLY public.quiz_certificates
 
 
 --
--- TOC entry 3839 (class 2606 OID 26841)
+-- TOC entry 4011 (class 2606 OID 17024)
 -- Name: readers readers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6871,7 +8350,16 @@ ALTER TABLE ONLY public.readers
 
 
 --
--- TOC entry 3843 (class 2606 OID 26843)
+-- TOC entry 4192 (class 2606 OID 17575)
+-- Name: redemptions redemptions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.redemptions
+    ADD CONSTRAINT redemptions_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4015 (class 2606 OID 17026)
 -- Name: referrals referrals_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6880,7 +8368,7 @@ ALTER TABLE ONLY public.referrals
 
 
 --
--- TOC entry 3848 (class 2606 OID 26845)
+-- TOC entry 4020 (class 2606 OID 17028)
 -- Name: relations relations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6889,7 +8377,7 @@ ALTER TABLE ONLY public.relations
 
 
 --
--- TOC entry 3850 (class 2606 OID 26847)
+-- TOC entry 4022 (class 2606 OID 17030)
 -- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6898,7 +8386,7 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
--- TOC entry 3854 (class 2606 OID 26849)
+-- TOC entry 4026 (class 2606 OID 17032)
 -- Name: section_tag_joins section_tag_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6907,7 +8395,7 @@ ALTER TABLE ONLY public.section_tag_joins
 
 
 --
--- TOC entry 3857 (class 2606 OID 26851)
+-- TOC entry 4029 (class 2606 OID 17034)
 -- Name: sections sections_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6916,7 +8404,7 @@ ALTER TABLE ONLY public.sections
 
 
 --
--- TOC entry 3993 (class 2606 OID 27257)
+-- TOC entry 4033 (class 2606 OID 17036)
 -- Name: speaker_talk_joins speaker_talk_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6925,7 +8413,7 @@ ALTER TABLE ONLY public.speaker_talk_joins
 
 
 --
--- TOC entry 3861 (class 2606 OID 26853)
+-- TOC entry 4037 (class 2606 OID 17038)
 -- Name: subject_translations subject_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6934,7 +8422,7 @@ ALTER TABLE ONLY public.subject_translations
 
 
 --
--- TOC entry 3863 (class 2606 OID 26855)
+-- TOC entry 4039 (class 2606 OID 17040)
 -- Name: subjects subjects_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6943,7 +8431,7 @@ ALTER TABLE ONLY public.subjects
 
 
 --
--- TOC entry 3868 (class 2606 OID 26857)
+-- TOC entry 4044 (class 2606 OID 17042)
 -- Name: submissions submissions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6952,7 +8440,7 @@ ALTER TABLE ONLY public.submissions
 
 
 --
--- TOC entry 3870 (class 2606 OID 26859)
+-- TOC entry 4046 (class 2606 OID 17044)
 -- Name: tags tags_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6961,7 +8449,7 @@ ALTER TABLE ONLY public.tags
 
 
 --
--- TOC entry 4005 (class 2606 OID 27318)
+-- TOC entry 4050 (class 2606 OID 17046)
 -- Name: talk_tag_joins talk_tag_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6970,7 +8458,7 @@ ALTER TABLE ONLY public.talk_tag_joins
 
 
 --
--- TOC entry 3989 (class 2606 OID 27244)
+-- TOC entry 4053 (class 2606 OID 17048)
 -- Name: talks talks_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6979,7 +8467,7 @@ ALTER TABLE ONLY public.talks
 
 
 --
--- TOC entry 3872 (class 2606 OID 26861)
+-- TOC entry 4055 (class 2606 OID 17050)
 -- Name: terms terms_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6988,7 +8476,7 @@ ALTER TABLE ONLY public.terms
 
 
 --
--- TOC entry 3877 (class 2606 OID 26863)
+-- TOC entry 4060 (class 2606 OID 17052)
 -- Name: thredded_categories thredded_categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6997,7 +8485,7 @@ ALTER TABLE ONLY public.thredded_categories
 
 
 --
--- TOC entry 3879 (class 2606 OID 26865)
+-- TOC entry 4062 (class 2606 OID 17054)
 -- Name: thredded_messageboard_groups thredded_messageboard_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7006,7 +8494,7 @@ ALTER TABLE ONLY public.thredded_messageboard_groups
 
 
 --
--- TOC entry 3881 (class 2606 OID 26867)
+-- TOC entry 4064 (class 2606 OID 17056)
 -- Name: thredded_messageboard_notifications_for_followed_topics thredded_messageboard_notifications_for_followed_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7015,7 +8503,7 @@ ALTER TABLE ONLY public.thredded_messageboard_notifications_for_followed_topics
 
 
 --
--- TOC entry 3886 (class 2606 OID 26869)
+-- TOC entry 4069 (class 2606 OID 17058)
 -- Name: thredded_messageboard_users thredded_messageboard_users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7024,7 +8512,7 @@ ALTER TABLE ONLY public.thredded_messageboard_users
 
 
 --
--- TOC entry 3890 (class 2606 OID 26871)
+-- TOC entry 4073 (class 2606 OID 17060)
 -- Name: thredded_messageboards thredded_messageboards_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7033,7 +8521,7 @@ ALTER TABLE ONLY public.thredded_messageboards
 
 
 --
--- TOC entry 3892 (class 2606 OID 26873)
+-- TOC entry 4075 (class 2606 OID 17062)
 -- Name: thredded_notifications_for_followed_topics thredded_notifications_for_followed_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7042,7 +8530,7 @@ ALTER TABLE ONLY public.thredded_notifications_for_followed_topics
 
 
 --
--- TOC entry 3895 (class 2606 OID 26875)
+-- TOC entry 4078 (class 2606 OID 17064)
 -- Name: thredded_notifications_for_private_topics thredded_notifications_for_private_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7051,7 +8539,7 @@ ALTER TABLE ONLY public.thredded_notifications_for_private_topics
 
 
 --
--- TOC entry 3899 (class 2606 OID 26877)
+-- TOC entry 4082 (class 2606 OID 17066)
 -- Name: thredded_post_moderation_records thredded_post_moderation_records_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7060,7 +8548,7 @@ ALTER TABLE ONLY public.thredded_post_moderation_records
 
 
 --
--- TOC entry 3907 (class 2606 OID 26879)
+-- TOC entry 4090 (class 2606 OID 17068)
 -- Name: thredded_posts thredded_posts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7069,7 +8557,7 @@ ALTER TABLE ONLY public.thredded_posts
 
 
 --
--- TOC entry 3910 (class 2606 OID 26881)
+-- TOC entry 4093 (class 2606 OID 17070)
 -- Name: thredded_private_posts thredded_private_posts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7078,7 +8566,7 @@ ALTER TABLE ONLY public.thredded_private_posts
 
 
 --
--- TOC entry 3915 (class 2606 OID 26883)
+-- TOC entry 4098 (class 2606 OID 17072)
 -- Name: thredded_private_topics thredded_private_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7087,7 +8575,7 @@ ALTER TABLE ONLY public.thredded_private_topics
 
 
 --
--- TOC entry 3919 (class 2606 OID 26885)
+-- TOC entry 4102 (class 2606 OID 17074)
 -- Name: thredded_private_users thredded_private_users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7096,7 +8584,7 @@ ALTER TABLE ONLY public.thredded_private_users
 
 
 --
--- TOC entry 3923 (class 2606 OID 26887)
+-- TOC entry 4106 (class 2606 OID 17076)
 -- Name: thredded_topic_categories thredded_topic_categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7105,7 +8593,7 @@ ALTER TABLE ONLY public.thredded_topic_categories
 
 
 --
--- TOC entry 3931 (class 2606 OID 26889)
+-- TOC entry 4114 (class 2606 OID 17078)
 -- Name: thredded_topics thredded_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7114,7 +8602,7 @@ ALTER TABLE ONLY public.thredded_topics
 
 
 --
--- TOC entry 3937 (class 2606 OID 26891)
+-- TOC entry 4120 (class 2606 OID 17080)
 -- Name: thredded_user_details thredded_user_details_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7123,7 +8611,7 @@ ALTER TABLE ONLY public.thredded_user_details
 
 
 --
--- TOC entry 3939 (class 2606 OID 26893)
+-- TOC entry 4122 (class 2606 OID 17082)
 -- Name: thredded_user_messageboard_preferences thredded_user_messageboard_preferences_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7132,7 +8620,7 @@ ALTER TABLE ONLY public.thredded_user_messageboard_preferences
 
 
 --
--- TOC entry 3944 (class 2606 OID 26895)
+-- TOC entry 4127 (class 2606 OID 17084)
 -- Name: thredded_user_post_notifications thredded_user_post_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7141,7 +8629,7 @@ ALTER TABLE ONLY public.thredded_user_post_notifications
 
 
 --
--- TOC entry 3947 (class 2606 OID 26897)
+-- TOC entry 4130 (class 2606 OID 17086)
 -- Name: thredded_user_preferences thredded_user_preferences_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7150,7 +8638,7 @@ ALTER TABLE ONLY public.thredded_user_preferences
 
 
 --
--- TOC entry 3949 (class 2606 OID 26899)
+-- TOC entry 4132 (class 2606 OID 17088)
 -- Name: thredded_user_private_topic_read_states thredded_user_private_topic_read_states_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7159,7 +8647,7 @@ ALTER TABLE ONLY public.thredded_user_private_topic_read_states
 
 
 --
--- TOC entry 3952 (class 2606 OID 26901)
+-- TOC entry 4135 (class 2606 OID 17090)
 -- Name: thredded_user_topic_follows thredded_user_topic_follows_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7168,7 +8656,7 @@ ALTER TABLE ONLY public.thredded_user_topic_follows
 
 
 --
--- TOC entry 3956 (class 2606 OID 26903)
+-- TOC entry 4139 (class 2606 OID 17092)
 -- Name: thredded_user_topic_read_states thredded_user_topic_read_states_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7177,7 +8665,7 @@ ALTER TABLE ONLY public.thredded_user_topic_read_states
 
 
 --
--- TOC entry 3962 (class 2606 OID 26905)
+-- TOC entry 4145 (class 2606 OID 17094)
 -- Name: tutor_tutorial_joins tutor_tutorial_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7186,7 +8674,7 @@ ALTER TABLE ONLY public.tutor_tutorial_joins
 
 
 --
--- TOC entry 3965 (class 2606 OID 26907)
+-- TOC entry 4148 (class 2606 OID 17096)
 -- Name: tutorials tutorials_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7195,7 +8683,7 @@ ALTER TABLE ONLY public.tutorials
 
 
 --
--- TOC entry 3969 (class 2606 OID 26909)
+-- TOC entry 4152 (class 2606 OID 17098)
 -- Name: user_favorite_lecture_joins user_favorite_lecture_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7204,7 +8692,7 @@ ALTER TABLE ONLY public.user_favorite_lecture_joins
 
 
 --
--- TOC entry 3973 (class 2606 OID 26911)
+-- TOC entry 4156 (class 2606 OID 17100)
 -- Name: user_submission_joins user_submission_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7213,7 +8701,7 @@ ALTER TABLE ONLY public.user_submission_joins
 
 
 --
--- TOC entry 3978 (class 2606 OID 26913)
+-- TOC entry 4161 (class 2606 OID 17102)
 -- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7222,7 +8710,97 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 3984 (class 2606 OID 26915)
+-- TOC entry 4231 (class 2606 OID 17746)
+-- Name: vignettes_answers vignettes_answers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_answers
+    ADD CONSTRAINT vignettes_answers_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4246 (class 2606 OID 17814)
+-- Name: vignettes_codenames vignettes_codenames_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_codenames
+    ADD CONSTRAINT vignettes_codenames_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4249 (class 2606 OID 17833)
+-- Name: vignettes_completion_messages vignettes_completion_messages_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_completion_messages
+    ADD CONSTRAINT vignettes_completion_messages_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4236 (class 2606 OID 17778)
+-- Name: vignettes_info_slides vignettes_info_slides_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_info_slides
+    ADD CONSTRAINT vignettes_info_slides_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4222 (class 2606 OID 17712)
+-- Name: vignettes_options vignettes_options_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_options
+    ADD CONSTRAINT vignettes_options_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4212 (class 2606 OID 17664)
+-- Name: vignettes_questionnaires vignettes_questionnaires_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_questionnaires
+    ADD CONSTRAINT vignettes_questionnaires_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4219 (class 2606 OID 17697)
+-- Name: vignettes_questions vignettes_questions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_questions
+    ADD CONSTRAINT vignettes_questions_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4240 (class 2606 OID 17788)
+-- Name: vignettes_slide_statistics vignettes_slide_statistics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_slide_statistics
+    ADD CONSTRAINT vignettes_slide_statistics_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4216 (class 2606 OID 17679)
+-- Name: vignettes_slides vignettes_slides_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_slides
+    ADD CONSTRAINT vignettes_slides_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4226 (class 2606 OID 17725)
+-- Name: vignettes_user_answers vignettes_user_answers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_user_answers
+    ADD CONSTRAINT vignettes_user_answers_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4167 (class 2606 OID 17104)
 -- Name: votes votes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7231,7 +8809,16 @@ ALTER TABLE ONLY public.votes
 
 
 --
--- TOC entry 3986 (class 2606 OID 26917)
+-- TOC entry 4188 (class 2606 OID 17561)
+-- Name: vouchers vouchers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vouchers
+    ADD CONSTRAINT vouchers_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4169 (class 2606 OID 17106)
 -- Name: vtt_containers vtt_containers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7240,7 +8827,7 @@ ALTER TABLE ONLY public.vtt_containers
 
 
 --
--- TOC entry 4001 (class 2606 OID 27287)
+-- TOC entry 4173 (class 2606 OID 17108)
 -- Name: watchlist_entries watchlist_entries_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7249,7 +8836,7 @@ ALTER TABLE ONLY public.watchlist_entries
 
 
 --
--- TOC entry 3997 (class 2606 OID 27280)
+-- TOC entry 4177 (class 2606 OID 17110)
 -- Name: watchlists watchlists_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7258,7 +8845,79 @@ ALTER TABLE ONLY public.watchlists
 
 
 --
--- TOC entry 3708 (class 1259 OID 26918)
+-- TOC entry 4241 (class 1259 OID 17804)
+-- Name: idx_on_vignettes_info_slide_id_vignettes_slide_id_2bdc65ab76; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_on_vignettes_info_slide_id_vignettes_slide_id_2bdc65ab76 ON public.vignettes_info_slides_slides USING btree (vignettes_info_slide_id, vignettes_slide_id);
+
+
+--
+-- TOC entry 4242 (class 1259 OID 17805)
+-- Name: idx_on_vignettes_slide_id_vignettes_info_slide_id_c74f04e951; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX idx_on_vignettes_slide_id_vignettes_info_slide_id_c74f04e951 ON public.vignettes_info_slides_slides USING btree (vignettes_slide_id, vignettes_info_slide_id);
+
+
+--
+-- TOC entry 4209 (class 1259 OID 17654)
+-- Name: index_action_text_rich_texts_uniqueness; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_action_text_rich_texts_uniqueness ON public.action_text_rich_texts USING btree (record_type, record_id, name);
+
+
+--
+-- TOC entry 4202 (class 1259 OID 17628)
+-- Name: index_active_storage_attachments_on_blob_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_active_storage_attachments_on_blob_id ON public.active_storage_attachments USING btree (blob_id);
+
+
+--
+-- TOC entry 4203 (class 1259 OID 17629)
+-- Name: index_active_storage_attachments_uniqueness; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_active_storage_attachments_uniqueness ON public.active_storage_attachments USING btree (record_type, record_id, name, blob_id);
+
+
+--
+-- TOC entry 4199 (class 1259 OID 17613)
+-- Name: index_active_storage_blobs_on_key; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_active_storage_blobs_on_key ON public.active_storage_blobs USING btree (key);
+
+
+--
+-- TOC entry 4206 (class 1259 OID 17644)
+-- Name: index_active_storage_variant_records_uniqueness; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_active_storage_variant_records_uniqueness ON public.active_storage_variant_records USING btree (blob_id, variation_digest);
+
+
+--
+-- TOC entry 4183 (class 1259 OID 17549)
+-- Name: index_annotations_on_medium_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_annotations_on_medium_id ON public.annotations USING btree (medium_id);
+
+
+--
+-- TOC entry 4184 (class 1259 OID 17550)
+-- Name: index_annotations_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_annotations_on_user_id ON public.annotations USING btree (user_id);
+
+
+--
+-- TOC entry 3880 (class 1259 OID 17111)
 -- Name: index_announcements_on_announcer_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7266,7 +8925,7 @@ CREATE INDEX index_announcements_on_announcer_id ON public.announcements USING b
 
 
 --
--- TOC entry 3709 (class 1259 OID 26919)
+-- TOC entry 3881 (class 1259 OID 17112)
 -- Name: index_announcements_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7274,7 +8933,7 @@ CREATE INDEX index_announcements_on_lecture_id ON public.announcements USING btr
 
 
 --
--- TOC entry 3712 (class 1259 OID 26920)
+-- TOC entry 3884 (class 1259 OID 17113)
 -- Name: index_answers_on_question_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7282,7 +8941,23 @@ CREATE INDEX index_answers_on_question_id ON public.answers USING btree (questio
 
 
 --
--- TOC entry 3717 (class 1259 OID 26921)
+-- TOC entry 4232 (class 1259 OID 17768)
+-- Name: index_answers_options_on_answer_id_and_option_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_answers_options_on_answer_id_and_option_id ON public.vignettes_answers_options USING btree (vignettes_answer_id, vignettes_option_id);
+
+
+--
+-- TOC entry 4233 (class 1259 OID 17769)
+-- Name: index_answers_options_on_option_id_and_answer_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_answers_options_on_option_id_and_answer_id ON public.vignettes_answers_options USING btree (vignettes_option_id, vignettes_answer_id);
+
+
+--
+-- TOC entry 3889 (class 1259 OID 17114)
 -- Name: index_assignments_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7290,7 +8965,7 @@ CREATE INDEX index_assignments_on_lecture_id ON public.assignments USING btree (
 
 
 --
--- TOC entry 3718 (class 1259 OID 26922)
+-- TOC entry 3890 (class 1259 OID 17115)
 -- Name: index_assignments_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7298,7 +8973,7 @@ CREATE INDEX index_assignments_on_medium_id ON public.assignments USING btree (m
 
 
 --
--- TOC entry 3721 (class 1259 OID 26923)
+-- TOC entry 3893 (class 1259 OID 17116)
 -- Name: index_chapters_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7306,7 +8981,23 @@ CREATE INDEX index_chapters_on_lecture_id ON public.chapters USING btree (lectur
 
 
 --
--- TOC entry 3726 (class 1259 OID 26924)
+-- TOC entry 4195 (class 1259 OID 17603)
+-- Name: index_claims_on_claimable; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_claims_on_claimable ON public.claims USING btree (claimable_type, claimable_id);
+
+
+--
+-- TOC entry 4196 (class 1259 OID 17602)
+-- Name: index_claims_on_redemption_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_claims_on_redemption_id ON public.claims USING btree (redemption_id);
+
+
+--
+-- TOC entry 3898 (class 1259 OID 17117)
 -- Name: index_clickers_on_editor_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7314,7 +9005,7 @@ CREATE INDEX index_clickers_on_editor_id ON public.clickers USING btree (editor_
 
 
 --
--- TOC entry 3729 (class 1259 OID 26925)
+-- TOC entry 3901 (class 1259 OID 17118)
 -- Name: index_commontator_comments_on_c_id_and_c_type_and_t_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7322,7 +9013,7 @@ CREATE INDEX index_commontator_comments_on_c_id_and_c_type_and_t_id ON public.co
 
 
 --
--- TOC entry 3730 (class 1259 OID 26926)
+-- TOC entry 3902 (class 1259 OID 17119)
 -- Name: index_commontator_comments_on_cached_votes_down; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7330,7 +9021,7 @@ CREATE INDEX index_commontator_comments_on_cached_votes_down ON public.commontat
 
 
 --
--- TOC entry 3731 (class 1259 OID 26927)
+-- TOC entry 3903 (class 1259 OID 17120)
 -- Name: index_commontator_comments_on_cached_votes_up; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7338,7 +9029,7 @@ CREATE INDEX index_commontator_comments_on_cached_votes_up ON public.commontator
 
 
 --
--- TOC entry 3732 (class 1259 OID 26928)
+-- TOC entry 3904 (class 1259 OID 17121)
 -- Name: index_commontator_comments_on_editor_type_and_editor_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7346,7 +9037,7 @@ CREATE INDEX index_commontator_comments_on_editor_type_and_editor_id ON public.c
 
 
 --
--- TOC entry 3733 (class 1259 OID 26929)
+-- TOC entry 3905 (class 1259 OID 17122)
 -- Name: index_commontator_comments_on_parent_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7354,7 +9045,7 @@ CREATE INDEX index_commontator_comments_on_parent_id ON public.commontator_comme
 
 
 --
--- TOC entry 3734 (class 1259 OID 26930)
+-- TOC entry 3906 (class 1259 OID 17123)
 -- Name: index_commontator_comments_on_thread_id_and_created_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7362,7 +9053,7 @@ CREATE INDEX index_commontator_comments_on_thread_id_and_created_at ON public.co
 
 
 --
--- TOC entry 3737 (class 1259 OID 26931)
+-- TOC entry 3909 (class 1259 OID 17124)
 -- Name: index_commontator_subscriptions_on_s_id_and_s_type_and_t_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7370,7 +9061,7 @@ CREATE UNIQUE INDEX index_commontator_subscriptions_on_s_id_and_s_type_and_t_id 
 
 
 --
--- TOC entry 3738 (class 1259 OID 26932)
+-- TOC entry 3910 (class 1259 OID 17125)
 -- Name: index_commontator_subscriptions_on_thread_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7378,7 +9069,7 @@ CREATE INDEX index_commontator_subscriptions_on_thread_id ON public.commontator_
 
 
 --
--- TOC entry 3741 (class 1259 OID 26933)
+-- TOC entry 3913 (class 1259 OID 17126)
 -- Name: index_commontator_threads_on_c_id_and_c_type; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7386,7 +9077,7 @@ CREATE UNIQUE INDEX index_commontator_threads_on_c_id_and_c_type ON public.commo
 
 
 --
--- TOC entry 3742 (class 1259 OID 26934)
+-- TOC entry 3914 (class 1259 OID 17127)
 -- Name: index_commontator_threads_on_closer_type_and_closer_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7394,7 +9085,7 @@ CREATE INDEX index_commontator_threads_on_closer_type_and_closer_id ON public.co
 
 
 --
--- TOC entry 3745 (class 1259 OID 26935)
+-- TOC entry 3917 (class 1259 OID 17128)
 -- Name: index_course_self_joins_on_course_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7402,7 +9093,7 @@ CREATE INDEX index_course_self_joins_on_course_id ON public.course_self_joins US
 
 
 --
--- TOC entry 3746 (class 1259 OID 26936)
+-- TOC entry 3918 (class 1259 OID 17129)
 -- Name: index_course_self_joins_on_course_id_and_preceding_course_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7410,7 +9101,7 @@ CREATE UNIQUE INDEX index_course_self_joins_on_course_id_and_preceding_course_id
 
 
 --
--- TOC entry 3747 (class 1259 OID 26937)
+-- TOC entry 3919 (class 1259 OID 17130)
 -- Name: index_course_self_joins_on_preceding_course_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7418,7 +9109,7 @@ CREATE INDEX index_course_self_joins_on_preceding_course_id ON public.course_sel
 
 
 --
--- TOC entry 3750 (class 1259 OID 26938)
+-- TOC entry 3922 (class 1259 OID 17131)
 -- Name: index_course_tag_joins_on_course_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7426,7 +9117,7 @@ CREATE INDEX index_course_tag_joins_on_course_id ON public.course_tag_joins USIN
 
 
 --
--- TOC entry 3751 (class 1259 OID 26939)
+-- TOC entry 3923 (class 1259 OID 17132)
 -- Name: index_course_tag_joins_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7434,7 +9125,7 @@ CREATE INDEX index_course_tag_joins_on_tag_id ON public.course_tag_joins USING b
 
 
 --
--- TOC entry 3756 (class 1259 OID 26942)
+-- TOC entry 3928 (class 1259 OID 17133)
 -- Name: index_division_course_joins_on_course_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7442,7 +9133,7 @@ CREATE INDEX index_division_course_joins_on_course_id ON public.division_course_
 
 
 --
--- TOC entry 3757 (class 1259 OID 26943)
+-- TOC entry 3929 (class 1259 OID 17134)
 -- Name: index_division_course_joins_on_division_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7450,7 +9141,7 @@ CREATE INDEX index_division_course_joins_on_division_id ON public.division_cours
 
 
 --
--- TOC entry 3760 (class 1259 OID 26944)
+-- TOC entry 3932 (class 1259 OID 17135)
 -- Name: index_division_translations_on_division_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7458,7 +9149,7 @@ CREATE INDEX index_division_translations_on_division_id ON public.division_trans
 
 
 --
--- TOC entry 3761 (class 1259 OID 26945)
+-- TOC entry 3933 (class 1259 OID 17136)
 -- Name: index_division_translations_on_locale; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7466,7 +9157,7 @@ CREATE INDEX index_division_translations_on_locale ON public.division_translatio
 
 
 --
--- TOC entry 3764 (class 1259 OID 26946)
+-- TOC entry 3936 (class 1259 OID 17137)
 -- Name: index_divisions_on_program_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7474,7 +9165,15 @@ CREATE INDEX index_divisions_on_program_id ON public.divisions USING btree (prog
 
 
 --
--- TOC entry 3771 (class 1259 OID 26947)
+-- TOC entry 4180 (class 1259 OID 17528)
+-- Name: index_feedbacks_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_feedbacks_on_user_id ON public.feedbacks USING btree (user_id);
+
+
+--
+-- TOC entry 3943 (class 1259 OID 17138)
 -- Name: index_friendly_id_slugs_on_slug_and_sluggable_type; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7482,7 +9181,7 @@ CREATE INDEX index_friendly_id_slugs_on_slug_and_sluggable_type ON public.friend
 
 
 --
--- TOC entry 3772 (class 1259 OID 26948)
+-- TOC entry 3944 (class 1259 OID 17139)
 -- Name: index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7490,7 +9189,7 @@ CREATE UNIQUE INDEX index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope
 
 
 --
--- TOC entry 3773 (class 1259 OID 26949)
+-- TOC entry 3945 (class 1259 OID 17140)
 -- Name: index_friendly_id_slugs_on_sluggable_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7498,7 +9197,7 @@ CREATE INDEX index_friendly_id_slugs_on_sluggable_id ON public.friendly_id_slugs
 
 
 --
--- TOC entry 3774 (class 1259 OID 26950)
+-- TOC entry 3946 (class 1259 OID 17141)
 -- Name: index_friendly_id_slugs_on_sluggable_type; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7506,7 +9205,7 @@ CREATE INDEX index_friendly_id_slugs_on_sluggable_type ON public.friendly_id_slu
 
 
 --
--- TOC entry 3777 (class 1259 OID 26951)
+-- TOC entry 3949 (class 1259 OID 17142)
 -- Name: index_imports_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7514,7 +9213,7 @@ CREATE INDEX index_imports_on_medium_id ON public.imports USING btree (medium_id
 
 
 --
--- TOC entry 3778 (class 1259 OID 26952)
+-- TOC entry 3950 (class 1259 OID 17143)
 -- Name: index_imports_on_teachable_type_and_teachable_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7522,7 +9221,7 @@ CREATE INDEX index_imports_on_teachable_type_and_teachable_id ON public.imports 
 
 
 --
--- TOC entry 3779 (class 1259 OID 26953)
+-- TOC entry 3951 (class 1259 OID 17144)
 -- Name: index_item_self_joins_on_item_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7530,7 +9229,7 @@ CREATE INDEX index_item_self_joins_on_item_id ON public.item_self_joins USING bt
 
 
 --
--- TOC entry 3780 (class 1259 OID 26954)
+-- TOC entry 3952 (class 1259 OID 17145)
 -- Name: index_item_self_joins_on_related_item_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7538,7 +9237,7 @@ CREATE INDEX index_item_self_joins_on_related_item_id ON public.item_self_joins 
 
 
 --
--- TOC entry 3783 (class 1259 OID 26955)
+-- TOC entry 3955 (class 1259 OID 17146)
 -- Name: index_items_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7546,7 +9245,7 @@ CREATE INDEX index_items_on_medium_id ON public.items USING btree (medium_id);
 
 
 --
--- TOC entry 3784 (class 1259 OID 26956)
+-- TOC entry 3956 (class 1259 OID 17147)
 -- Name: index_items_on_section_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7554,7 +9253,7 @@ CREATE INDEX index_items_on_section_id ON public.items USING btree (section_id);
 
 
 --
--- TOC entry 3787 (class 1259 OID 26957)
+-- TOC entry 3959 (class 1259 OID 17148)
 -- Name: index_lecture_user_joins_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7562,7 +9261,7 @@ CREATE INDEX index_lecture_user_joins_on_lecture_id ON public.lecture_user_joins
 
 
 --
--- TOC entry 3788 (class 1259 OID 26958)
+-- TOC entry 3960 (class 1259 OID 17149)
 -- Name: index_lecture_user_joins_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7570,7 +9269,7 @@ CREATE INDEX index_lecture_user_joins_on_user_id ON public.lecture_user_joins US
 
 
 --
--- TOC entry 3791 (class 1259 OID 26959)
+-- TOC entry 3963 (class 1259 OID 17150)
 -- Name: index_lectures_on_teacher_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7578,7 +9277,7 @@ CREATE INDEX index_lectures_on_teacher_id ON public.lectures USING btree (teache
 
 
 --
--- TOC entry 3792 (class 1259 OID 26960)
+-- TOC entry 3964 (class 1259 OID 17151)
 -- Name: index_lectures_on_term_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7586,7 +9285,7 @@ CREATE INDEX index_lectures_on_term_id ON public.lectures USING btree (term_id);
 
 
 --
--- TOC entry 3795 (class 1259 OID 26961)
+-- TOC entry 3967 (class 1259 OID 17152)
 -- Name: index_lesson_section_joins_on_lesson_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7594,7 +9293,7 @@ CREATE INDEX index_lesson_section_joins_on_lesson_id ON public.lesson_section_jo
 
 
 --
--- TOC entry 3796 (class 1259 OID 26962)
+-- TOC entry 3968 (class 1259 OID 17153)
 -- Name: index_lesson_section_joins_on_section_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7602,7 +9301,7 @@ CREATE INDEX index_lesson_section_joins_on_section_id ON public.lesson_section_j
 
 
 --
--- TOC entry 3799 (class 1259 OID 26963)
+-- TOC entry 3971 (class 1259 OID 17154)
 -- Name: index_lesson_tag_joins_on_lesson_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7610,7 +9309,7 @@ CREATE INDEX index_lesson_tag_joins_on_lesson_id ON public.lesson_tag_joins USIN
 
 
 --
--- TOC entry 3800 (class 1259 OID 26964)
+-- TOC entry 3972 (class 1259 OID 17155)
 -- Name: index_lesson_tag_joins_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7618,7 +9317,7 @@ CREATE INDEX index_lesson_tag_joins_on_tag_id ON public.lesson_tag_joins USING b
 
 
 --
--- TOC entry 3803 (class 1259 OID 26965)
+-- TOC entry 3975 (class 1259 OID 17156)
 -- Name: index_lessons_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7626,7 +9325,7 @@ CREATE INDEX index_lessons_on_lecture_id ON public.lessons USING btree (lecture_
 
 
 --
--- TOC entry 3806 (class 1259 OID 26966)
+-- TOC entry 3978 (class 1259 OID 17157)
 -- Name: index_links_on_linked_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7634,7 +9333,7 @@ CREATE INDEX index_links_on_linked_medium_id ON public.links USING btree (linked
 
 
 --
--- TOC entry 3807 (class 1259 OID 26967)
+-- TOC entry 3979 (class 1259 OID 17158)
 -- Name: index_links_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7642,7 +9341,7 @@ CREATE INDEX index_links_on_medium_id ON public.links USING btree (medium_id);
 
 
 --
--- TOC entry 3808 (class 1259 OID 26968)
+-- TOC entry 3980 (class 1259 OID 17159)
 -- Name: index_links_on_medium_id_and_linked_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7650,7 +9349,7 @@ CREATE UNIQUE INDEX index_links_on_medium_id_and_linked_medium_id ON public.link
 
 
 --
--- TOC entry 3811 (class 1259 OID 26969)
+-- TOC entry 3983 (class 1259 OID 17160)
 -- Name: index_media_on_quizzable_type_and_quizzable_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7658,7 +9357,7 @@ CREATE INDEX index_media_on_quizzable_type_and_quizzable_id ON public.media USIN
 
 
 --
--- TOC entry 3812 (class 1259 OID 26970)
+-- TOC entry 3984 (class 1259 OID 17161)
 -- Name: index_media_on_teachable_type_and_teachable_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7666,7 +9365,7 @@ CREATE INDEX index_media_on_teachable_type_and_teachable_id ON public.media USIN
 
 
 --
--- TOC entry 3815 (class 1259 OID 26971)
+-- TOC entry 3987 (class 1259 OID 17162)
 -- Name: index_medium_tag_joins_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7674,7 +9373,7 @@ CREATE INDEX index_medium_tag_joins_on_medium_id ON public.medium_tag_joins USIN
 
 
 --
--- TOC entry 3816 (class 1259 OID 26972)
+-- TOC entry 3988 (class 1259 OID 17163)
 -- Name: index_medium_tag_joins_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7682,7 +9381,7 @@ CREATE INDEX index_medium_tag_joins_on_tag_id ON public.medium_tag_joins USING b
 
 
 --
--- TOC entry 3819 (class 1259 OID 26973)
+-- TOC entry 3991 (class 1259 OID 17164)
 -- Name: index_notifications_on_notifiable_id_and_notifiable_type; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7690,7 +9389,7 @@ CREATE INDEX index_notifications_on_notifiable_id_and_notifiable_type ON public.
 
 
 --
--- TOC entry 3820 (class 1259 OID 26974)
+-- TOC entry 3992 (class 1259 OID 17165)
 -- Name: index_notifications_on_recipient_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7698,7 +9397,7 @@ CREATE INDEX index_notifications_on_recipient_id ON public.notifications USING b
 
 
 --
--- TOC entry 3823 (class 1259 OID 26975)
+-- TOC entry 3995 (class 1259 OID 17166)
 -- Name: index_notions_on_aliased_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7706,7 +9405,7 @@ CREATE INDEX index_notions_on_aliased_tag_id ON public.notions USING btree (alia
 
 
 --
--- TOC entry 3824 (class 1259 OID 26976)
+-- TOC entry 3996 (class 1259 OID 17167)
 -- Name: index_notions_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7714,7 +9413,7 @@ CREATE INDEX index_notions_on_tag_id ON public.notions USING btree (tag_id);
 
 
 --
--- TOC entry 3827 (class 1259 OID 26977)
+-- TOC entry 3999 (class 1259 OID 17168)
 -- Name: index_program_translations_on_locale; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7722,7 +9421,7 @@ CREATE INDEX index_program_translations_on_locale ON public.program_translations
 
 
 --
--- TOC entry 3828 (class 1259 OID 26978)
+-- TOC entry 4000 (class 1259 OID 17169)
 -- Name: index_program_translations_on_program_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7730,7 +9429,7 @@ CREATE INDEX index_program_translations_on_program_id ON public.program_translat
 
 
 --
--- TOC entry 3831 (class 1259 OID 26979)
+-- TOC entry 4003 (class 1259 OID 17170)
 -- Name: index_programs_on_subject_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7738,7 +9437,7 @@ CREATE INDEX index_programs_on_subject_id ON public.programs USING btree (subjec
 
 
 --
--- TOC entry 3834 (class 1259 OID 26980)
+-- TOC entry 4006 (class 1259 OID 17171)
 -- Name: index_quiz_certificates_on_quiz_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7746,7 +9445,7 @@ CREATE INDEX index_quiz_certificates_on_quiz_id ON public.quiz_certificates USIN
 
 
 --
--- TOC entry 3835 (class 1259 OID 26981)
+-- TOC entry 4007 (class 1259 OID 17172)
 -- Name: index_quiz_certificates_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7754,7 +9453,23 @@ CREATE INDEX index_quiz_certificates_on_user_id ON public.quiz_certificates USIN
 
 
 --
--- TOC entry 3840 (class 1259 OID 26982)
+-- TOC entry 4189 (class 1259 OID 17587)
+-- Name: index_redemptions_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_redemptions_on_user_id ON public.redemptions USING btree (user_id);
+
+
+--
+-- TOC entry 4190 (class 1259 OID 17586)
+-- Name: index_redemptions_on_voucher_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_redemptions_on_voucher_id ON public.redemptions USING btree (voucher_id);
+
+
+--
+-- TOC entry 4012 (class 1259 OID 17173)
 -- Name: index_referrals_on_item_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7762,7 +9477,7 @@ CREATE INDEX index_referrals_on_item_id ON public.referrals USING btree (item_id
 
 
 --
--- TOC entry 3841 (class 1259 OID 26983)
+-- TOC entry 4013 (class 1259 OID 17174)
 -- Name: index_referrals_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7770,7 +9485,7 @@ CREATE INDEX index_referrals_on_medium_id ON public.referrals USING btree (mediu
 
 
 --
--- TOC entry 3844 (class 1259 OID 26984)
+-- TOC entry 4016 (class 1259 OID 17175)
 -- Name: index_relations_on_related_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7778,7 +9493,7 @@ CREATE INDEX index_relations_on_related_tag_id ON public.relations USING btree (
 
 
 --
--- TOC entry 3845 (class 1259 OID 26985)
+-- TOC entry 4017 (class 1259 OID 17176)
 -- Name: index_relations_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7786,7 +9501,7 @@ CREATE INDEX index_relations_on_tag_id ON public.relations USING btree (tag_id);
 
 
 --
--- TOC entry 3846 (class 1259 OID 26986)
+-- TOC entry 4018 (class 1259 OID 17177)
 -- Name: index_relations_on_tag_id_and_related_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7794,7 +9509,7 @@ CREATE UNIQUE INDEX index_relations_on_tag_id_and_related_tag_id ON public.relat
 
 
 --
--- TOC entry 3851 (class 1259 OID 26987)
+-- TOC entry 4023 (class 1259 OID 17178)
 -- Name: index_section_tag_joins_on_section_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7802,7 +9517,7 @@ CREATE INDEX index_section_tag_joins_on_section_id ON public.section_tag_joins U
 
 
 --
--- TOC entry 3852 (class 1259 OID 26988)
+-- TOC entry 4024 (class 1259 OID 17179)
 -- Name: index_section_tag_joins_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7810,7 +9525,7 @@ CREATE INDEX index_section_tag_joins_on_tag_id ON public.section_tag_joins USING
 
 
 --
--- TOC entry 3855 (class 1259 OID 26989)
+-- TOC entry 4027 (class 1259 OID 17180)
 -- Name: index_sections_on_chapter_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7818,7 +9533,7 @@ CREATE INDEX index_sections_on_chapter_id ON public.sections USING btree (chapte
 
 
 --
--- TOC entry 3990 (class 1259 OID 27269)
+-- TOC entry 4030 (class 1259 OID 17181)
 -- Name: index_speaker_talk_joins_on_speaker_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7826,7 +9541,7 @@ CREATE INDEX index_speaker_talk_joins_on_speaker_id ON public.speaker_talk_joins
 
 
 --
--- TOC entry 3991 (class 1259 OID 27268)
+-- TOC entry 4031 (class 1259 OID 17182)
 -- Name: index_speaker_talk_joins_on_talk_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7834,7 +9549,7 @@ CREATE INDEX index_speaker_talk_joins_on_talk_id ON public.speaker_talk_joins US
 
 
 --
--- TOC entry 3858 (class 1259 OID 26990)
+-- TOC entry 4034 (class 1259 OID 17183)
 -- Name: index_subject_translations_on_locale; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7842,7 +9557,7 @@ CREATE INDEX index_subject_translations_on_locale ON public.subject_translations
 
 
 --
--- TOC entry 3859 (class 1259 OID 26991)
+-- TOC entry 4035 (class 1259 OID 17184)
 -- Name: index_subject_translations_on_subject_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7850,7 +9565,7 @@ CREATE INDEX index_subject_translations_on_subject_id ON public.subject_translat
 
 
 --
--- TOC entry 3864 (class 1259 OID 26992)
+-- TOC entry 4040 (class 1259 OID 17185)
 -- Name: index_submissions_on_assignment_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7858,7 +9573,7 @@ CREATE INDEX index_submissions_on_assignment_id ON public.submissions USING btre
 
 
 --
--- TOC entry 3865 (class 1259 OID 26993)
+-- TOC entry 4041 (class 1259 OID 17186)
 -- Name: index_submissions_on_token; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7866,7 +9581,7 @@ CREATE UNIQUE INDEX index_submissions_on_token ON public.submissions USING btree
 
 
 --
--- TOC entry 3866 (class 1259 OID 26994)
+-- TOC entry 4042 (class 1259 OID 17187)
 -- Name: index_submissions_on_tutorial_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7874,7 +9589,7 @@ CREATE INDEX index_submissions_on_tutorial_id ON public.submissions USING btree 
 
 
 --
--- TOC entry 4002 (class 1259 OID 27330)
+-- TOC entry 4047 (class 1259 OID 17188)
 -- Name: index_talk_tag_joins_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7882,7 +9597,7 @@ CREATE INDEX index_talk_tag_joins_on_tag_id ON public.talk_tag_joins USING btree
 
 
 --
--- TOC entry 4003 (class 1259 OID 27329)
+-- TOC entry 4048 (class 1259 OID 17189)
 -- Name: index_talk_tag_joins_on_talk_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7890,7 +9605,7 @@ CREATE INDEX index_talk_tag_joins_on_talk_id ON public.talk_tag_joins USING btre
 
 
 --
--- TOC entry 3987 (class 1259 OID 27250)
+-- TOC entry 4051 (class 1259 OID 17190)
 -- Name: index_talks_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7898,7 +9613,7 @@ CREATE INDEX index_talks_on_lecture_id ON public.talks USING btree (lecture_id);
 
 
 --
--- TOC entry 3873 (class 1259 OID 26995)
+-- TOC entry 4056 (class 1259 OID 17191)
 -- Name: index_thredded_categories_on_messageboard_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7906,7 +9621,7 @@ CREATE INDEX index_thredded_categories_on_messageboard_id ON public.thredded_cat
 
 
 --
--- TOC entry 3874 (class 1259 OID 26996)
+-- TOC entry 4057 (class 1259 OID 17192)
 -- Name: index_thredded_categories_on_messageboard_id_and_slug; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7914,7 +9629,7 @@ CREATE UNIQUE INDEX index_thredded_categories_on_messageboard_id_and_slug ON pub
 
 
 --
--- TOC entry 3883 (class 1259 OID 26997)
+-- TOC entry 4066 (class 1259 OID 17193)
 -- Name: index_thredded_messageboard_users_for_recently_active; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7922,7 +9637,7 @@ CREATE INDEX index_thredded_messageboard_users_for_recently_active ON public.thr
 
 
 --
--- TOC entry 3884 (class 1259 OID 26998)
+-- TOC entry 4067 (class 1259 OID 17194)
 -- Name: index_thredded_messageboard_users_primary; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7930,7 +9645,7 @@ CREATE UNIQUE INDEX index_thredded_messageboard_users_primary ON public.thredded
 
 
 --
--- TOC entry 3887 (class 1259 OID 26999)
+-- TOC entry 4070 (class 1259 OID 17195)
 -- Name: index_thredded_messageboards_on_messageboard_group_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7938,7 +9653,7 @@ CREATE INDEX index_thredded_messageboards_on_messageboard_group_id ON public.thr
 
 
 --
--- TOC entry 3888 (class 1259 OID 27000)
+-- TOC entry 4071 (class 1259 OID 17196)
 -- Name: index_thredded_messageboards_on_slug; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7946,7 +9661,7 @@ CREATE UNIQUE INDEX index_thredded_messageboards_on_slug ON public.thredded_mess
 
 
 --
--- TOC entry 3897 (class 1259 OID 27001)
+-- TOC entry 4080 (class 1259 OID 17197)
 -- Name: index_thredded_moderation_records_for_display; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7954,7 +9669,7 @@ CREATE INDEX index_thredded_moderation_records_for_display ON public.thredded_po
 
 
 --
--- TOC entry 3900 (class 1259 OID 27002)
+-- TOC entry 4083 (class 1259 OID 17198)
 -- Name: index_thredded_posts_for_display; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7962,7 +9677,7 @@ CREATE INDEX index_thredded_posts_for_display ON public.thredded_posts USING btr
 
 
 --
--- TOC entry 3901 (class 1259 OID 27003)
+-- TOC entry 4084 (class 1259 OID 17199)
 -- Name: index_thredded_posts_on_messageboard_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7970,7 +9685,7 @@ CREATE INDEX index_thredded_posts_on_messageboard_id ON public.thredded_posts US
 
 
 --
--- TOC entry 3902 (class 1259 OID 27004)
+-- TOC entry 4085 (class 1259 OID 17200)
 -- Name: index_thredded_posts_on_postable_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7978,7 +9693,7 @@ CREATE INDEX index_thredded_posts_on_postable_id ON public.thredded_posts USING 
 
 
 --
--- TOC entry 3903 (class 1259 OID 27005)
+-- TOC entry 4086 (class 1259 OID 17201)
 -- Name: index_thredded_posts_on_postable_id_and_created_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7986,7 +9701,7 @@ CREATE INDEX index_thredded_posts_on_postable_id_and_created_at ON public.thredd
 
 
 --
--- TOC entry 3904 (class 1259 OID 27006)
+-- TOC entry 4087 (class 1259 OID 17202)
 -- Name: index_thredded_posts_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -7994,7 +9709,7 @@ CREATE INDEX index_thredded_posts_on_user_id ON public.thredded_posts USING btre
 
 
 --
--- TOC entry 3908 (class 1259 OID 27007)
+-- TOC entry 4091 (class 1259 OID 17203)
 -- Name: index_thredded_private_posts_on_postable_id_and_created_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8002,7 +9717,7 @@ CREATE INDEX index_thredded_private_posts_on_postable_id_and_created_at ON publi
 
 
 --
--- TOC entry 3911 (class 1259 OID 27008)
+-- TOC entry 4094 (class 1259 OID 17204)
 -- Name: index_thredded_private_topics_on_hash_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8010,7 +9725,7 @@ CREATE INDEX index_thredded_private_topics_on_hash_id ON public.thredded_private
 
 
 --
--- TOC entry 3912 (class 1259 OID 27009)
+-- TOC entry 4095 (class 1259 OID 17205)
 -- Name: index_thredded_private_topics_on_last_post_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8018,7 +9733,7 @@ CREATE INDEX index_thredded_private_topics_on_last_post_at ON public.thredded_pr
 
 
 --
--- TOC entry 3913 (class 1259 OID 27010)
+-- TOC entry 4096 (class 1259 OID 17206)
 -- Name: index_thredded_private_topics_on_slug; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8026,7 +9741,7 @@ CREATE UNIQUE INDEX index_thredded_private_topics_on_slug ON public.thredded_pri
 
 
 --
--- TOC entry 3916 (class 1259 OID 27011)
+-- TOC entry 4099 (class 1259 OID 17207)
 -- Name: index_thredded_private_users_on_private_topic_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8034,7 +9749,7 @@ CREATE INDEX index_thredded_private_users_on_private_topic_id ON public.thredded
 
 
 --
--- TOC entry 3917 (class 1259 OID 27012)
+-- TOC entry 4100 (class 1259 OID 17208)
 -- Name: index_thredded_private_users_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8042,7 +9757,7 @@ CREATE INDEX index_thredded_private_users_on_user_id ON public.thredded_private_
 
 
 --
--- TOC entry 3920 (class 1259 OID 27013)
+-- TOC entry 4103 (class 1259 OID 17209)
 -- Name: index_thredded_topic_categories_on_category_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8050,7 +9765,7 @@ CREATE INDEX index_thredded_topic_categories_on_category_id ON public.thredded_t
 
 
 --
--- TOC entry 3921 (class 1259 OID 27014)
+-- TOC entry 4104 (class 1259 OID 17210)
 -- Name: index_thredded_topic_categories_on_topic_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8058,7 +9773,7 @@ CREATE INDEX index_thredded_topic_categories_on_topic_id ON public.thredded_topi
 
 
 --
--- TOC entry 3924 (class 1259 OID 27015)
+-- TOC entry 4107 (class 1259 OID 17211)
 -- Name: index_thredded_topics_for_display; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8066,7 +9781,7 @@ CREATE INDEX index_thredded_topics_for_display ON public.thredded_topics USING b
 
 
 --
--- TOC entry 3925 (class 1259 OID 27016)
+-- TOC entry 4108 (class 1259 OID 17212)
 -- Name: index_thredded_topics_on_hash_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8074,7 +9789,7 @@ CREATE INDEX index_thredded_topics_on_hash_id ON public.thredded_topics USING bt
 
 
 --
--- TOC entry 3926 (class 1259 OID 27017)
+-- TOC entry 4109 (class 1259 OID 17213)
 -- Name: index_thredded_topics_on_last_post_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8082,7 +9797,7 @@ CREATE INDEX index_thredded_topics_on_last_post_at ON public.thredded_topics USI
 
 
 --
--- TOC entry 3927 (class 1259 OID 27018)
+-- TOC entry 4110 (class 1259 OID 17214)
 -- Name: index_thredded_topics_on_messageboard_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8090,7 +9805,7 @@ CREATE INDEX index_thredded_topics_on_messageboard_id ON public.thredded_topics 
 
 
 --
--- TOC entry 3928 (class 1259 OID 27019)
+-- TOC entry 4111 (class 1259 OID 17215)
 -- Name: index_thredded_topics_on_slug; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8098,7 +9813,7 @@ CREATE UNIQUE INDEX index_thredded_topics_on_slug ON public.thredded_topics USIN
 
 
 --
--- TOC entry 3929 (class 1259 OID 27020)
+-- TOC entry 4112 (class 1259 OID 17216)
 -- Name: index_thredded_topics_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8106,7 +9821,7 @@ CREATE INDEX index_thredded_topics_on_user_id ON public.thredded_topics USING bt
 
 
 --
--- TOC entry 3933 (class 1259 OID 27021)
+-- TOC entry 4116 (class 1259 OID 17217)
 -- Name: index_thredded_user_details_for_moderations; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8114,7 +9829,7 @@ CREATE INDEX index_thredded_user_details_for_moderations ON public.thredded_user
 
 
 --
--- TOC entry 3934 (class 1259 OID 27022)
+-- TOC entry 4117 (class 1259 OID 17218)
 -- Name: index_thredded_user_details_on_latest_activity_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8122,7 +9837,7 @@ CREATE INDEX index_thredded_user_details_on_latest_activity_at ON public.thredde
 
 
 --
--- TOC entry 3935 (class 1259 OID 27023)
+-- TOC entry 4118 (class 1259 OID 17219)
 -- Name: index_thredded_user_details_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8130,7 +9845,7 @@ CREATE UNIQUE INDEX index_thredded_user_details_on_user_id ON public.thredded_us
 
 
 --
--- TOC entry 3941 (class 1259 OID 27024)
+-- TOC entry 4124 (class 1259 OID 17220)
 -- Name: index_thredded_user_post_notifications_on_post_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8138,7 +9853,7 @@ CREATE INDEX index_thredded_user_post_notifications_on_post_id ON public.thredde
 
 
 --
--- TOC entry 3942 (class 1259 OID 27025)
+-- TOC entry 4125 (class 1259 OID 17221)
 -- Name: index_thredded_user_post_notifications_on_user_id_and_post_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8146,7 +9861,7 @@ CREATE UNIQUE INDEX index_thredded_user_post_notifications_on_user_id_and_post_i
 
 
 --
--- TOC entry 3945 (class 1259 OID 27026)
+-- TOC entry 4128 (class 1259 OID 17222)
 -- Name: index_thredded_user_preferences_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8154,7 +9869,7 @@ CREATE UNIQUE INDEX index_thredded_user_preferences_on_user_id ON public.thredde
 
 
 --
--- TOC entry 3954 (class 1259 OID 27027)
+-- TOC entry 4137 (class 1259 OID 17223)
 -- Name: index_thredded_user_topic_read_states_on_messageboard_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8162,7 +9877,7 @@ CREATE INDEX index_thredded_user_topic_read_states_on_messageboard_id ON public.
 
 
 --
--- TOC entry 3959 (class 1259 OID 27028)
+-- TOC entry 4142 (class 1259 OID 17224)
 -- Name: index_tutor_tutorial_joins_on_tutor_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8170,7 +9885,7 @@ CREATE INDEX index_tutor_tutorial_joins_on_tutor_id ON public.tutor_tutorial_joi
 
 
 --
--- TOC entry 3960 (class 1259 OID 27029)
+-- TOC entry 4143 (class 1259 OID 17225)
 -- Name: index_tutor_tutorial_joins_on_tutorial_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8178,7 +9893,7 @@ CREATE INDEX index_tutor_tutorial_joins_on_tutorial_id ON public.tutor_tutorial_
 
 
 --
--- TOC entry 3963 (class 1259 OID 27030)
+-- TOC entry 4146 (class 1259 OID 17226)
 -- Name: index_tutorials_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8186,7 +9901,7 @@ CREATE INDEX index_tutorials_on_lecture_id ON public.tutorials USING btree (lect
 
 
 --
--- TOC entry 3966 (class 1259 OID 27031)
+-- TOC entry 4149 (class 1259 OID 17227)
 -- Name: index_user_favorite_lecture_joins_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8194,7 +9909,7 @@ CREATE INDEX index_user_favorite_lecture_joins_on_lecture_id ON public.user_favo
 
 
 --
--- TOC entry 3967 (class 1259 OID 27032)
+-- TOC entry 4150 (class 1259 OID 17228)
 -- Name: index_user_favorite_lecture_joins_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8202,7 +9917,7 @@ CREATE INDEX index_user_favorite_lecture_joins_on_user_id ON public.user_favorit
 
 
 --
--- TOC entry 3970 (class 1259 OID 27033)
+-- TOC entry 4153 (class 1259 OID 17229)
 -- Name: index_user_submission_joins_on_submission_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8210,7 +9925,7 @@ CREATE INDEX index_user_submission_joins_on_submission_id ON public.user_submiss
 
 
 --
--- TOC entry 3971 (class 1259 OID 27034)
+-- TOC entry 4154 (class 1259 OID 17230)
 -- Name: index_user_submission_joins_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8218,7 +9933,7 @@ CREATE INDEX index_user_submission_joins_on_user_id ON public.user_submission_jo
 
 
 --
--- TOC entry 3974 (class 1259 OID 27035)
+-- TOC entry 4157 (class 1259 OID 17231)
 -- Name: index_users_on_confirmation_token; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8226,7 +9941,7 @@ CREATE UNIQUE INDEX index_users_on_confirmation_token ON public.users USING btre
 
 
 --
--- TOC entry 3975 (class 1259 OID 27036)
+-- TOC entry 4158 (class 1259 OID 17232)
 -- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8234,7 +9949,7 @@ CREATE UNIQUE INDEX index_users_on_email ON public.users USING btree (email);
 
 
 --
--- TOC entry 3976 (class 1259 OID 27037)
+-- TOC entry 4159 (class 1259 OID 17233)
 -- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8242,7 +9957,135 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON public.users USING bt
 
 
 --
--- TOC entry 3979 (class 1259 OID 27038)
+-- TOC entry 4227 (class 1259 OID 17762)
+-- Name: index_vignettes_answers_on_vignettes_question_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_answers_on_vignettes_question_id ON public.vignettes_answers USING btree (vignettes_question_id);
+
+
+--
+-- TOC entry 4228 (class 1259 OID 17763)
+-- Name: index_vignettes_answers_on_vignettes_slide_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_answers_on_vignettes_slide_id ON public.vignettes_answers USING btree (vignettes_slide_id);
+
+
+--
+-- TOC entry 4229 (class 1259 OID 17764)
+-- Name: index_vignettes_answers_on_vignettes_user_answer_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_answers_on_vignettes_user_answer_id ON public.vignettes_answers USING btree (vignettes_user_answer_id);
+
+
+--
+-- TOC entry 4243 (class 1259 OID 17826)
+-- Name: index_vignettes_codenames_on_lecture_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_codenames_on_lecture_id ON public.vignettes_codenames USING btree (lecture_id);
+
+
+--
+-- TOC entry 4244 (class 1259 OID 17825)
+-- Name: index_vignettes_codenames_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_codenames_on_user_id ON public.vignettes_codenames USING btree (user_id);
+
+
+--
+-- TOC entry 4247 (class 1259 OID 17839)
+-- Name: index_vignettes_completion_messages_on_lecture_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_completion_messages_on_lecture_id ON public.vignettes_completion_messages USING btree (lecture_id);
+
+
+--
+-- TOC entry 4234 (class 1259 OID 17779)
+-- Name: index_vignettes_info_slides_on_vignettes_questionnaire_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_info_slides_on_vignettes_questionnaire_id ON public.vignettes_info_slides USING btree (vignettes_questionnaire_id);
+
+
+--
+-- TOC entry 4220 (class 1259 OID 17718)
+-- Name: index_vignettes_options_on_vignettes_question_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_options_on_vignettes_question_id ON public.vignettes_options USING btree (vignettes_question_id);
+
+
+--
+-- TOC entry 4210 (class 1259 OID 17670)
+-- Name: index_vignettes_questionnaires_on_lecture_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_questionnaires_on_lecture_id ON public.vignettes_questionnaires USING btree (lecture_id);
+
+
+--
+-- TOC entry 4217 (class 1259 OID 17703)
+-- Name: index_vignettes_questions_on_vignettes_slide_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_questions_on_vignettes_slide_id ON public.vignettes_questions USING btree (vignettes_slide_id);
+
+
+--
+-- TOC entry 4237 (class 1259 OID 17799)
+-- Name: index_vignettes_slide_statistics_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_slide_statistics_on_user_id ON public.vignettes_slide_statistics USING btree (user_id);
+
+
+--
+-- TOC entry 4238 (class 1259 OID 17800)
+-- Name: index_vignettes_slide_statistics_on_vignettes_answer_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_slide_statistics_on_vignettes_answer_id ON public.vignettes_slide_statistics USING btree (vignettes_answer_id);
+
+
+--
+-- TOC entry 4213 (class 1259 OID 17686)
+-- Name: index_vignettes_slides_on_position; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_slides_on_position ON public.vignettes_slides USING btree ("position");
+
+
+--
+-- TOC entry 4214 (class 1259 OID 17685)
+-- Name: index_vignettes_slides_on_vignettes_questionnaire_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_slides_on_vignettes_questionnaire_id ON public.vignettes_slides USING btree (vignettes_questionnaire_id);
+
+
+--
+-- TOC entry 4223 (class 1259 OID 17736)
+-- Name: index_vignettes_user_answers_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_user_answers_on_user_id ON public.vignettes_user_answers USING btree (user_id);
+
+
+--
+-- TOC entry 4224 (class 1259 OID 17737)
+-- Name: index_vignettes_user_answers_on_vignettes_questionnaire_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vignettes_user_answers_on_vignettes_questionnaire_id ON public.vignettes_user_answers USING btree (vignettes_questionnaire_id);
+
+
+--
+-- TOC entry 4162 (class 1259 OID 17234)
 -- Name: index_votes_on_votable_id_and_votable_type_and_vote_scope; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8250,7 +10093,7 @@ CREATE INDEX index_votes_on_votable_id_and_votable_type_and_vote_scope ON public
 
 
 --
--- TOC entry 3980 (class 1259 OID 27039)
+-- TOC entry 4163 (class 1259 OID 17235)
 -- Name: index_votes_on_votable_type_and_votable_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8258,7 +10101,7 @@ CREATE INDEX index_votes_on_votable_type_and_votable_id ON public.votes USING bt
 
 
 --
--- TOC entry 3981 (class 1259 OID 27040)
+-- TOC entry 4164 (class 1259 OID 17236)
 -- Name: index_votes_on_voter_id_and_voter_type_and_vote_scope; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8266,7 +10109,7 @@ CREATE INDEX index_votes_on_voter_id_and_voter_type_and_vote_scope ON public.vot
 
 
 --
--- TOC entry 3982 (class 1259 OID 27041)
+-- TOC entry 4165 (class 1259 OID 17237)
 -- Name: index_votes_on_voter_type_and_voter_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8274,7 +10117,23 @@ CREATE INDEX index_votes_on_voter_type_and_voter_id ON public.votes USING btree 
 
 
 --
--- TOC entry 3998 (class 1259 OID 27299)
+-- TOC entry 4185 (class 1259 OID 17567)
+-- Name: index_vouchers_on_lecture_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_vouchers_on_lecture_id ON public.vouchers USING btree (lecture_id);
+
+
+--
+-- TOC entry 4186 (class 1259 OID 17568)
+-- Name: index_vouchers_on_secure_hash; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_vouchers_on_secure_hash ON public.vouchers USING btree (secure_hash);
+
+
+--
+-- TOC entry 4170 (class 1259 OID 17238)
 -- Name: index_watchlist_entries_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8282,7 +10141,7 @@ CREATE INDEX index_watchlist_entries_on_medium_id ON public.watchlist_entries US
 
 
 --
--- TOC entry 3999 (class 1259 OID 27298)
+-- TOC entry 4171 (class 1259 OID 17239)
 -- Name: index_watchlist_entries_on_watchlist_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8290,7 +10149,7 @@ CREATE INDEX index_watchlist_entries_on_watchlist_id ON public.watchlist_entries
 
 
 --
--- TOC entry 3994 (class 1259 OID 27300)
+-- TOC entry 4174 (class 1259 OID 17240)
 -- Name: index_watchlists_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8298,7 +10157,7 @@ CREATE INDEX index_watchlists_on_user_id ON public.watchlists USING btree (user_
 
 
 --
--- TOC entry 3995 (class 1259 OID 27306)
+-- TOC entry 4175 (class 1259 OID 17241)
 -- Name: index_watchlists_on_watchlist_entry_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8306,7 +10165,7 @@ CREATE INDEX index_watchlists_on_watchlist_entry_id ON public.watchlists USING b
 
 
 --
--- TOC entry 3767 (class 1259 OID 27042)
+-- TOC entry 3939 (class 1259 OID 17242)
 -- Name: polymorphic_editable_idx; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8314,7 +10173,7 @@ CREATE INDEX polymorphic_editable_idx ON public.editable_user_joins USING btree 
 
 
 --
--- TOC entry 3768 (class 1259 OID 27043)
+-- TOC entry 3940 (class 1259 OID 17243)
 -- Name: polymorphic_many_to_many_idx; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8322,7 +10181,7 @@ CREATE INDEX polymorphic_many_to_many_idx ON public.editable_user_joins USING bt
 
 
 --
--- TOC entry 3875 (class 1259 OID 27044)
+-- TOC entry 4058 (class 1259 OID 17244)
 -- Name: thredded_categories_name_ci; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8330,7 +10189,7 @@ CREATE INDEX thredded_categories_name_ci ON public.thredded_categories USING btr
 
 
 --
--- TOC entry 3882 (class 1259 OID 27045)
+-- TOC entry 4065 (class 1259 OID 17245)
 -- Name: thredded_messageboard_notifications_for_followed_topics_unique; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8338,7 +10197,7 @@ CREATE UNIQUE INDEX thredded_messageboard_notifications_for_followed_topics_uniq
 
 
 --
--- TOC entry 3893 (class 1259 OID 27046)
+-- TOC entry 4076 (class 1259 OID 17246)
 -- Name: thredded_notifications_for_followed_topics_unique; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8346,7 +10205,7 @@ CREATE UNIQUE INDEX thredded_notifications_for_followed_topics_unique ON public.
 
 
 --
--- TOC entry 3896 (class 1259 OID 27047)
+-- TOC entry 4079 (class 1259 OID 17247)
 -- Name: thredded_notifications_for_private_topics_unique; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8354,7 +10213,7 @@ CREATE UNIQUE INDEX thredded_notifications_for_private_topics_unique ON public.t
 
 
 --
--- TOC entry 3905 (class 1259 OID 27048)
+-- TOC entry 4088 (class 1259 OID 17248)
 -- Name: thredded_posts_content_fts; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8362,7 +10221,7 @@ CREATE INDEX thredded_posts_content_fts ON public.thredded_posts USING gist (to_
 
 
 --
--- TOC entry 3932 (class 1259 OID 27049)
+-- TOC entry 4115 (class 1259 OID 17249)
 -- Name: thredded_topics_title_fts; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8370,7 +10229,7 @@ CREATE INDEX thredded_topics_title_fts ON public.thredded_topics USING gist (to_
 
 
 --
--- TOC entry 3940 (class 1259 OID 27050)
+-- TOC entry 4123 (class 1259 OID 17250)
 -- Name: thredded_user_messageboard_preferences_user_id_messageboard_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8378,7 +10237,7 @@ CREATE UNIQUE INDEX thredded_user_messageboard_preferences_user_id_messageboard_
 
 
 --
--- TOC entry 3950 (class 1259 OID 27051)
+-- TOC entry 4133 (class 1259 OID 17251)
 -- Name: thredded_user_private_topic_read_states_user_postable; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8386,7 +10245,7 @@ CREATE UNIQUE INDEX thredded_user_private_topic_read_states_user_postable ON pub
 
 
 --
--- TOC entry 3953 (class 1259 OID 27052)
+-- TOC entry 4136 (class 1259 OID 17252)
 -- Name: thredded_user_topic_follows_user_topic; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8394,7 +10253,7 @@ CREATE UNIQUE INDEX thredded_user_topic_follows_user_topic ON public.thredded_us
 
 
 --
--- TOC entry 3957 (class 1259 OID 27053)
+-- TOC entry 4140 (class 1259 OID 17253)
 -- Name: thredded_user_topic_read_states_user_messageboard; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8402,7 +10261,7 @@ CREATE INDEX thredded_user_topic_read_states_user_messageboard ON public.thredde
 
 
 --
--- TOC entry 3958 (class 1259 OID 27054)
+-- TOC entry 4141 (class 1259 OID 17254)
 -- Name: thredded_user_topic_read_states_user_postable; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -8410,7 +10269,7 @@ CREATE UNIQUE INDEX thredded_user_topic_read_states_user_postable ON public.thre
 
 
 --
--- TOC entry 4014 (class 2606 OID 27055)
+-- TOC entry 4258 (class 2606 OID 17255)
 -- Name: imports fk_rails_018d34d0a7; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8419,7 +10278,7 @@ ALTER TABLE ONLY public.imports
 
 
 --
--- TOC entry 4045 (class 2606 OID 27288)
+-- TOC entry 4289 (class 2606 OID 17260)
 -- Name: watchlist_entries fk_rails_021aafbf37; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8428,7 +10287,16 @@ ALTER TABLE ONLY public.watchlist_entries
 
 
 --
--- TOC entry 4030 (class 2606 OID 27060)
+-- TOC entry 4313 (class 2606 OID 17820)
+-- Name: vignettes_codenames fk_rails_02690186bc; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_codenames
+    ADD CONSTRAINT fk_rails_02690186bc FOREIGN KEY (lecture_id) REFERENCES public.lectures(id);
+
+
+--
+-- TOC entry 4279 (class 2606 OID 17265)
 -- Name: thredded_messageboard_users fk_rails_06e42c62f5; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8437,7 +10305,7 @@ ALTER TABLE ONLY public.thredded_messageboard_users
 
 
 --
--- TOC entry 4043 (class 2606 OID 27301)
+-- TOC entry 4291 (class 2606 OID 17270)
 -- Name: watchlists fk_rails_0dc1a4cbcb; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8446,7 +10314,7 @@ ALTER TABLE ONLY public.watchlists
 
 
 --
--- TOC entry 4040 (class 2606 OID 27245)
+-- TOC entry 4278 (class 2606 OID 17275)
 -- Name: talks fk_rails_1210911b58; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8455,7 +10323,7 @@ ALTER TABLE ONLY public.talks
 
 
 --
--- TOC entry 4039 (class 2606 OID 27065)
+-- TOC entry 4288 (class 2606 OID 17280)
 -- Name: user_submission_joins fk_rails_12d41a7e23; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8464,7 +10332,25 @@ ALTER TABLE ONLY public.user_submission_joins
 
 
 --
--- TOC entry 4023 (class 2606 OID 27070)
+-- TOC entry 4297 (class 2606 OID 17581)
+-- Name: redemptions fk_rails_14fa576d5b; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.redemptions
+    ADD CONSTRAINT fk_rails_14fa576d5b FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
+-- TOC entry 4304 (class 2606 OID 17698)
+-- Name: vignettes_questions fk_rails_166147907b; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_questions
+    ADD CONSTRAINT fk_rails_166147907b FOREIGN KEY (vignettes_slide_id) REFERENCES public.vignettes_slides(id);
+
+
+--
+-- TOC entry 4267 (class 2606 OID 17285)
 -- Name: programs fk_rails_174715887a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8473,7 +10359,7 @@ ALTER TABLE ONLY public.programs
 
 
 --
--- TOC entry 4041 (class 2606 OID 27263)
+-- TOC entry 4272 (class 2606 OID 17290)
 -- Name: speaker_talk_joins fk_rails_1d337b4d3d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8482,7 +10368,7 @@ ALTER TABLE ONLY public.speaker_talk_joins
 
 
 --
--- TOC entry 4017 (class 2606 OID 27075)
+-- TOC entry 4261 (class 2606 OID 17295)
 -- Name: lecture_user_joins fk_rails_1e48112fae; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8491,7 +10377,7 @@ ALTER TABLE ONLY public.lecture_user_joins
 
 
 --
--- TOC entry 4008 (class 2606 OID 27080)
+-- TOC entry 4252 (class 2606 OID 17300)
 -- Name: assignments fk_rails_2d7bf5a691; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8500,7 +10386,7 @@ ALTER TABLE ONLY public.assignments
 
 
 --
--- TOC entry 4046 (class 2606 OID 27293)
+-- TOC entry 4290 (class 2606 OID 17305)
 -- Name: watchlist_entries fk_rails_32f03600d9; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8509,7 +10395,16 @@ ALTER TABLE ONLY public.watchlist_entries
 
 
 --
--- TOC entry 4032 (class 2606 OID 27085)
+-- TOC entry 4308 (class 2606 OID 17747)
+-- Name: vignettes_answers fk_rails_341ebaf06f; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_answers
+    ADD CONSTRAINT fk_rails_341ebaf06f FOREIGN KEY (vignettes_question_id) REFERENCES public.vignettes_questions(id);
+
+
+--
+-- TOC entry 4281 (class 2606 OID 17310)
 -- Name: thredded_user_post_notifications fk_rails_364d7e370a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8518,7 +10413,7 @@ ALTER TABLE ONLY public.thredded_user_post_notifications
 
 
 --
--- TOC entry 4028 (class 2606 OID 27090)
+-- TOC entry 4274 (class 2606 OID 17315)
 -- Name: submissions fk_rails_3a2b44e658; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8527,7 +10422,25 @@ ALTER TABLE ONLY public.submissions
 
 
 --
--- TOC entry 4037 (class 2606 OID 27095)
+-- TOC entry 4305 (class 2606 OID 17713)
+-- Name: vignettes_options fk_rails_3fbca24de5; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_options
+    ADD CONSTRAINT fk_rails_3fbca24de5 FOREIGN KEY (vignettes_question_id) REFERENCES public.vignettes_questions(id);
+
+
+--
+-- TOC entry 4294 (class 2606 OID 17544)
+-- Name: annotations fk_rails_4043df79bf; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.annotations
+    ADD CONSTRAINT fk_rails_4043df79bf FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
+-- TOC entry 4286 (class 2606 OID 17320)
 -- Name: user_favorite_lecture_joins fk_rails_40985ebb4f; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8536,7 +10449,7 @@ ALTER TABLE ONLY public.user_favorite_lecture_joins
 
 
 --
--- TOC entry 4019 (class 2606 OID 27100)
+-- TOC entry 4263 (class 2606 OID 17325)
 -- Name: links fk_rails_49020b7472; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8545,7 +10458,16 @@ ALTER TABLE ONLY public.links
 
 
 --
--- TOC entry 4009 (class 2606 OID 27105)
+-- TOC entry 4295 (class 2606 OID 17539)
+-- Name: annotations fk_rails_4f1a0f89b4; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.annotations
+    ADD CONSTRAINT fk_rails_4f1a0f89b4 FOREIGN KEY (medium_id) REFERENCES public.media(id);
+
+
+--
+-- TOC entry 4253 (class 2606 OID 17330)
 -- Name: commontator_comments fk_rails_558e599d00; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8554,7 +10476,7 @@ ALTER TABLE ONLY public.commontator_comments
 
 
 --
--- TOC entry 4033 (class 2606 OID 27110)
+-- TOC entry 4282 (class 2606 OID 17335)
 -- Name: thredded_user_post_notifications fk_rails_5908eec802; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8563,7 +10485,7 @@ ALTER TABLE ONLY public.thredded_user_post_notifications
 
 
 --
--- TOC entry 4006 (class 2606 OID 27115)
+-- TOC entry 4250 (class 2606 OID 17340)
 -- Name: announcements fk_rails_5b3f1d7737; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8572,7 +10494,7 @@ ALTER TABLE ONLY public.announcements
 
 
 --
--- TOC entry 4029 (class 2606 OID 27120)
+-- TOC entry 4275 (class 2606 OID 17345)
 -- Name: submissions fk_rails_61cac0823d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8581,7 +10503,7 @@ ALTER TABLE ONLY public.submissions
 
 
 --
--- TOC entry 4036 (class 2606 OID 27125)
+-- TOC entry 4285 (class 2606 OID 17350)
 -- Name: tutorials fk_rails_66221d24a3; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8590,7 +10512,7 @@ ALTER TABLE ONLY public.tutorials
 
 
 --
--- TOC entry 4011 (class 2606 OID 27130)
+-- TOC entry 4255 (class 2606 OID 17355)
 -- Name: commontator_subscriptions fk_rails_68cc24d064; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8599,7 +10521,25 @@ ALTER TABLE ONLY public.commontator_subscriptions
 
 
 --
--- TOC entry 4020 (class 2606 OID 27135)
+-- TOC entry 4314 (class 2606 OID 17815)
+-- Name: vignettes_codenames fk_rails_69dbadb217; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_codenames
+    ADD CONSTRAINT fk_rails_69dbadb217 FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
+-- TOC entry 4315 (class 2606 OID 17834)
+-- Name: vignettes_completion_messages fk_rails_6aade677d3; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_completion_messages
+    ADD CONSTRAINT fk_rails_6aade677d3 FOREIGN KEY (lecture_id) REFERENCES public.lectures(id);
+
+
+--
+-- TOC entry 4264 (class 2606 OID 17360)
 -- Name: links fk_rails_6b5cb429ed; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8608,7 +10548,7 @@ ALTER TABLE ONLY public.links
 
 
 --
--- TOC entry 4047 (class 2606 OID 27319)
+-- TOC entry 4276 (class 2606 OID 17365)
 -- Name: talk_tag_joins fk_rails_6bcb0e8e5f; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8617,7 +10557,16 @@ ALTER TABLE ONLY public.talk_tag_joins
 
 
 --
--- TOC entry 4038 (class 2606 OID 27145)
+-- TOC entry 4296 (class 2606 OID 17562)
+-- Name: vouchers fk_rails_7676476332; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vouchers
+    ADD CONSTRAINT fk_rails_7676476332 FOREIGN KEY (lecture_id) REFERENCES public.lectures(id);
+
+
+--
+-- TOC entry 4287 (class 2606 OID 17370)
 -- Name: user_favorite_lecture_joins fk_rails_77bc049c12; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8626,7 +10575,16 @@ ALTER TABLE ONLY public.user_favorite_lecture_joins
 
 
 --
--- TOC entry 4048 (class 2606 OID 27324)
+-- TOC entry 4298 (class 2606 OID 17576)
+-- Name: redemptions fk_rails_8377a88a56; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.redemptions
+    ADD CONSTRAINT fk_rails_8377a88a56 FOREIGN KEY (voucher_id) REFERENCES public.vouchers(id);
+
+
+--
+-- TOC entry 4277 (class 2606 OID 17375)
 -- Name: talk_tag_joins fk_rails_85b7c429a2; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8635,7 +10593,7 @@ ALTER TABLE ONLY public.talk_tag_joins
 
 
 --
--- TOC entry 4044 (class 2606 OID 27307)
+-- TOC entry 4292 (class 2606 OID 17380)
 -- Name: watchlists fk_rails_8780bd5b5a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8644,7 +10602,34 @@ ALTER TABLE ONLY public.watchlists
 
 
 --
--- TOC entry 4010 (class 2606 OID 27150)
+-- TOC entry 4306 (class 2606 OID 17726)
+-- Name: vignettes_user_answers fk_rails_8c438b6e8e; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_user_answers
+    ADD CONSTRAINT fk_rails_8c438b6e8e FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
+-- TOC entry 4307 (class 2606 OID 17731)
+-- Name: vignettes_user_answers fk_rails_8dc710c13d; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_user_answers
+    ADD CONSTRAINT fk_rails_8dc710c13d FOREIGN KEY (vignettes_questionnaire_id) REFERENCES public.vignettes_questionnaires(id);
+
+
+--
+-- TOC entry 4311 (class 2606 OID 17789)
+-- Name: vignettes_slide_statistics fk_rails_8f79f13530; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_slide_statistics
+    ADD CONSTRAINT fk_rails_8f79f13530 FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
+-- TOC entry 4254 (class 2606 OID 17385)
 -- Name: commontator_comments fk_rails_96666eb19a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8653,7 +10638,7 @@ ALTER TABLE ONLY public.commontator_comments
 
 
 --
--- TOC entry 4031 (class 2606 OID 27155)
+-- TOC entry 4280 (class 2606 OID 17390)
 -- Name: thredded_messageboard_users fk_rails_966803d714; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8662,7 +10647,16 @@ ALTER TABLE ONLY public.thredded_messageboard_users
 
 
 --
--- TOC entry 4015 (class 2606 OID 27160)
+-- TOC entry 4301 (class 2606 OID 17639)
+-- Name: active_storage_variant_records fk_rails_993965df05; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.active_storage_variant_records
+    ADD CONSTRAINT fk_rails_993965df05 FOREIGN KEY (blob_id) REFERENCES public.active_storage_blobs(id);
+
+
+--
+-- TOC entry 4259 (class 2606 OID 17395)
 -- Name: items fk_rails_99dcbdef9f; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8671,7 +10665,25 @@ ALTER TABLE ONLY public.items
 
 
 --
--- TOC entry 4026 (class 2606 OID 27165)
+-- TOC entry 4312 (class 2606 OID 17794)
+-- Name: vignettes_slide_statistics fk_rails_9a8745e04d; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_slide_statistics
+    ADD CONSTRAINT fk_rails_9a8745e04d FOREIGN KEY (vignettes_answer_id) REFERENCES public.vignettes_answers(id);
+
+
+--
+-- TOC entry 4299 (class 2606 OID 17597)
+-- Name: claims fk_rails_9b419d5bd5; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.claims
+    ADD CONSTRAINT fk_rails_9b419d5bd5 FOREIGN KEY (redemption_id) REFERENCES public.redemptions(id);
+
+
+--
+-- TOC entry 4270 (class 2606 OID 17400)
 -- Name: referrals fk_rails_9c4f45c15c; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8680,7 +10692,7 @@ ALTER TABLE ONLY public.referrals
 
 
 --
--- TOC entry 4013 (class 2606 OID 27170)
+-- TOC entry 4257 (class 2606 OID 17405)
 -- Name: divisions fk_rails_a1b344ef36; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8689,7 +10701,7 @@ ALTER TABLE ONLY public.divisions
 
 
 --
--- TOC entry 4016 (class 2606 OID 27175)
+-- TOC entry 4260 (class 2606 OID 17410)
 -- Name: items fk_rails_add0a302a9; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8698,7 +10710,7 @@ ALTER TABLE ONLY public.items
 
 
 --
--- TOC entry 4021 (class 2606 OID 27180)
+-- TOC entry 4265 (class 2606 OID 17415)
 -- Name: medium_tag_joins fk_rails_b11130c931; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8707,7 +10719,7 @@ ALTER TABLE ONLY public.medium_tag_joins
 
 
 --
--- TOC entry 4022 (class 2606 OID 27185)
+-- TOC entry 4266 (class 2606 OID 17420)
 -- Name: medium_tag_joins fk_rails_b181027fb2; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8716,7 +10728,7 @@ ALTER TABLE ONLY public.medium_tag_joins
 
 
 --
--- TOC entry 4034 (class 2606 OID 27190)
+-- TOC entry 4283 (class 2606 OID 17425)
 -- Name: tutor_tutorial_joins fk_rails_b781447eb1; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8725,7 +10737,7 @@ ALTER TABLE ONLY public.tutor_tutorial_joins
 
 
 --
--- TOC entry 4018 (class 2606 OID 27200)
+-- TOC entry 4262 (class 2606 OID 17430)
 -- Name: lecture_user_joins fk_rails_bdbf7bc779; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8734,7 +10746,7 @@ ALTER TABLE ONLY public.lecture_user_joins
 
 
 --
--- TOC entry 4024 (class 2606 OID 27205)
+-- TOC entry 4268 (class 2606 OID 17435)
 -- Name: quiz_certificates fk_rails_c10d7b5c91; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8743,7 +10755,43 @@ ALTER TABLE ONLY public.quiz_certificates
 
 
 --
--- TOC entry 4025 (class 2606 OID 27210)
+-- TOC entry 4300 (class 2606 OID 17623)
+-- Name: active_storage_attachments fk_rails_c3b3935057; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.active_storage_attachments
+    ADD CONSTRAINT fk_rails_c3b3935057 FOREIGN KEY (blob_id) REFERENCES public.active_storage_blobs(id);
+
+
+--
+-- TOC entry 4293 (class 2606 OID 17523)
+-- Name: feedbacks fk_rails_c57bb6cf28; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.feedbacks
+    ADD CONSTRAINT fk_rails_c57bb6cf28 FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
+-- TOC entry 4309 (class 2606 OID 17752)
+-- Name: vignettes_answers fk_rails_cc5b64b41a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_answers
+    ADD CONSTRAINT fk_rails_cc5b64b41a FOREIGN KEY (vignettes_slide_id) REFERENCES public.vignettes_slides(id);
+
+
+--
+-- TOC entry 4302 (class 2606 OID 17665)
+-- Name: vignettes_questionnaires fk_rails_cf4ca40f5b; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_questionnaires
+    ADD CONSTRAINT fk_rails_cf4ca40f5b FOREIGN KEY (lecture_id) REFERENCES public.lectures(id);
+
+
+--
+-- TOC entry 4269 (class 2606 OID 17440)
 -- Name: quiz_certificates fk_rails_da91c72f96; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8752,7 +10800,7 @@ ALTER TABLE ONLY public.quiz_certificates
 
 
 --
--- TOC entry 4027 (class 2606 OID 27215)
+-- TOC entry 4271 (class 2606 OID 17445)
 -- Name: referrals fk_rails_dce931e0f7; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8761,7 +10809,16 @@ ALTER TABLE ONLY public.referrals
 
 
 --
--- TOC entry 4042 (class 2606 OID 27258)
+-- TOC entry 4310 (class 2606 OID 17757)
+-- Name: vignettes_answers fk_rails_dd314d5106; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_answers
+    ADD CONSTRAINT fk_rails_dd314d5106 FOREIGN KEY (vignettes_user_answer_id) REFERENCES public.vignettes_user_answers(id);
+
+
+--
+-- TOC entry 4273 (class 2606 OID 17450)
 -- Name: speaker_talk_joins fk_rails_e5bafe887c; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8770,7 +10827,16 @@ ALTER TABLE ONLY public.speaker_talk_joins
 
 
 --
--- TOC entry 4012 (class 2606 OID 27220)
+-- TOC entry 4303 (class 2606 OID 17680)
+-- Name: vignettes_slides fk_rails_e6d1817e26; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.vignettes_slides
+    ADD CONSTRAINT fk_rails_e6d1817e26 FOREIGN KEY (vignettes_questionnaire_id) REFERENCES public.vignettes_questionnaires(id);
+
+
+--
+-- TOC entry 4256 (class 2606 OID 17455)
 -- Name: course_self_joins fk_rails_ecb46f40b3; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8779,7 +10845,7 @@ ALTER TABLE ONLY public.course_self_joins
 
 
 --
--- TOC entry 4035 (class 2606 OID 27225)
+-- TOC entry 4284 (class 2606 OID 17460)
 -- Name: tutor_tutorial_joins fk_rails_f1a97a6dc5; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8788,7 +10854,7 @@ ALTER TABLE ONLY public.tutor_tutorial_joins
 
 
 --
--- TOC entry 4007 (class 2606 OID 27230)
+-- TOC entry 4251 (class 2606 OID 17465)
 -- Name: announcements fk_rails_fd9bbf1b15; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -8796,7 +10862,7 @@ ALTER TABLE ONLY public.announcements
     ADD CONSTRAINT fk_rails_fd9bbf1b15 FOREIGN KEY (announcer_id) REFERENCES public.users(id);
 
 
--- Completed on 2022-09-23 12:08:41 UTC
+-- Completed on 2025-07-15 12:20:02 UTC
 
 --
 -- PostgreSQL database dump complete
