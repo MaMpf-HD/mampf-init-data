@@ -2,12 +2,12 @@
 -- PostgreSQL database dump
 --
 
-\restrict iT3FrTwEhj9DbQP4SLlVzO24dcf1YhYxN3gT3xWDfKhAvts6iVK3uwly0wNQz93
+\restrict 0fQ0dytcvgXkBfx42Ae4YudU2NIshqcDN9QFcsN36L3I3sYNCjIlZawWKVW6Yf5
 
 -- Dumped from database version 18.4 (Debian 18.4-1.pgdg13+1)
 -- Dumped by pg_dump version 18.6 (Debian 18.6-1.pgdg13+2)
 
--- Started on 2026-08-26 19:51:53 UTC
+-- Started on 2026-08-26 20:20:00 UTC
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -30,7 +30,7 @@ CREATE EXTENSION IF NOT EXISTS pg_trgm WITH SCHEMA public;
 
 
 --
--- TOC entry 4962 (class 0 OID 0)
+-- TOC entry 4963 (class 0 OID 0)
 -- Dependencies: 3
 -- Name: EXTENSION pg_trgm; Type: COMMENT; Schema: -; Owner: -
 --
@@ -47,7 +47,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
 
 
 --
--- TOC entry 4963 (class 0 OID 0)
+-- TOC entry 4964 (class 0 OID 0)
 -- Dependencies: 2
 -- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: -
 --
@@ -64,7 +64,7 @@ CREATE EXTENSION IF NOT EXISTS unaccent WITH SCHEMA public;
 
 
 --
--- TOC entry 4964 (class 0 OID 0)
+-- TOC entry 4965 (class 0 OID 0)
 -- Dependencies: 4
 -- Name: EXTENSION unaccent; Type: COMMENT; Schema: -; Owner: -
 --
@@ -106,7 +106,7 @@ CREATE SEQUENCE public.action_text_rich_texts_id_seq
 
 
 --
--- TOC entry 4965 (class 0 OID 0)
+-- TOC entry 4966 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: action_text_rich_texts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -143,7 +143,7 @@ CREATE SEQUENCE public.active_storage_attachments_id_seq
 
 
 --
--- TOC entry 4966 (class 0 OID 0)
+-- TOC entry 4967 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: active_storage_attachments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -183,7 +183,7 @@ CREATE SEQUENCE public.active_storage_blobs_id_seq
 
 
 --
--- TOC entry 4967 (class 0 OID 0)
+-- TOC entry 4968 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: active_storage_blobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -217,7 +217,7 @@ CREATE SEQUENCE public.active_storage_variant_records_id_seq
 
 
 --
--- TOC entry 4968 (class 0 OID 0)
+-- TOC entry 4969 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: active_storage_variant_records_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -260,7 +260,7 @@ CREATE SEQUENCE public.annotations_id_seq
 
 
 --
--- TOC entry 4969 (class 0 OID 0)
+-- TOC entry 4970 (class 0 OID 0)
 -- Dependencies: 231
 -- Name: annotations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -298,7 +298,7 @@ CREATE SEQUENCE public.announcements_id_seq
 
 
 --
--- TOC entry 4970 (class 0 OID 0)
+-- TOC entry 4971 (class 0 OID 0)
 -- Dependencies: 233
 -- Name: announcements_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -336,7 +336,7 @@ CREATE SEQUENCE public.answers_id_seq
 
 
 --
--- TOC entry 4971 (class 0 OID 0)
+-- TOC entry 4972 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: answers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -389,7 +389,7 @@ CREATE SEQUENCE public.assignments_id_seq
 
 
 --
--- TOC entry 4972 (class 0 OID 0)
+-- TOC entry 4973 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: assignments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -429,7 +429,7 @@ CREATE SEQUENCE public.chapters_id_seq
 
 
 --
--- TOC entry 4973 (class 0 OID 0)
+-- TOC entry 4974 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: chapters_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -466,7 +466,7 @@ CREATE SEQUENCE public.claims_id_seq
 
 
 --
--- TOC entry 4974 (class 0 OID 0)
+-- TOC entry 4975 (class 0 OID 0)
 -- Dependencies: 242
 -- Name: claims_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -523,7 +523,7 @@ CREATE SEQUENCE public.cohorts_id_seq
 
 
 --
--- TOC entry 4975 (class 0 OID 0)
+-- TOC entry 4976 (class 0 OID 0)
 -- Dependencies: 415
 -- Name: cohorts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -567,7 +567,7 @@ CREATE SEQUENCE public.commontator_comments_id_seq
 
 
 --
--- TOC entry 4976 (class 0 OID 0)
+-- TOC entry 4977 (class 0 OID 0)
 -- Dependencies: 244
 -- Name: commontator_comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -604,7 +604,7 @@ CREATE SEQUENCE public.commontator_subscriptions_id_seq
 
 
 --
--- TOC entry 4977 (class 0 OID 0)
+-- TOC entry 4978 (class 0 OID 0)
 -- Dependencies: 246
 -- Name: commontator_subscriptions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -643,7 +643,7 @@ CREATE SEQUENCE public.commontator_threads_id_seq
 
 
 --
--- TOC entry 4978 (class 0 OID 0)
+-- TOC entry 4979 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: commontator_threads_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -679,7 +679,7 @@ CREATE SEQUENCE public.course_self_joins_id_seq
 
 
 --
--- TOC entry 4979 (class 0 OID 0)
+-- TOC entry 4980 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: course_self_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -715,7 +715,7 @@ CREATE SEQUENCE public.course_tag_joins_id_seq
 
 
 --
--- TOC entry 4980 (class 0 OID 0)
+-- TOC entry 4981 (class 0 OID 0)
 -- Dependencies: 252
 -- Name: course_tag_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -756,7 +756,7 @@ CREATE SEQUENCE public.courses_id_seq
 
 
 --
--- TOC entry 4981 (class 0 OID 0)
+-- TOC entry 4982 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: courses_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -792,7 +792,7 @@ CREATE SEQUENCE public.division_course_joins_id_seq
 
 
 --
--- TOC entry 4982 (class 0 OID 0)
+-- TOC entry 4983 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: division_course_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -829,7 +829,7 @@ CREATE SEQUENCE public.division_translations_id_seq
 
 
 --
--- TOC entry 4983 (class 0 OID 0)
+-- TOC entry 4984 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: division_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -864,7 +864,7 @@ CREATE SEQUENCE public.divisions_id_seq
 
 
 --
--- TOC entry 4984 (class 0 OID 0)
+-- TOC entry 4985 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: divisions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -899,7 +899,7 @@ CREATE SEQUENCE public.editable_user_joins_id_seq
 
 
 --
--- TOC entry 4985 (class 0 OID 0)
+-- TOC entry 4986 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: editable_user_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -937,7 +937,7 @@ CREATE SEQUENCE public.feedbacks_id_seq
 
 
 --
--- TOC entry 4986 (class 0 OID 0)
+-- TOC entry 4987 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: feedbacks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -972,7 +972,7 @@ CREATE SEQUENCE public.flipper_features_id_seq
 
 
 --
--- TOC entry 4987 (class 0 OID 0)
+-- TOC entry 4988 (class 0 OID 0)
 -- Dependencies: 411
 -- Name: flipper_features_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1009,7 +1009,7 @@ CREATE SEQUENCE public.flipper_gates_id_seq
 
 
 --
--- TOC entry 4988 (class 0 OID 0)
+-- TOC entry 4989 (class 0 OID 0)
 -- Dependencies: 413
 -- Name: flipper_gates_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1046,7 +1046,7 @@ CREATE SEQUENCE public.friendly_id_slugs_id_seq
 
 
 --
--- TOC entry 4989 (class 0 OID 0)
+-- TOC entry 4990 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: friendly_id_slugs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1083,7 +1083,7 @@ CREATE SEQUENCE public.imports_id_seq
 
 
 --
--- TOC entry 4990 (class 0 OID 0)
+-- TOC entry 4991 (class 0 OID 0)
 -- Dependencies: 268
 -- Name: imports_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1117,7 +1117,7 @@ CREATE SEQUENCE public.item_self_joins_id_seq
 
 
 --
--- TOC entry 4991 (class 0 OID 0)
+-- TOC entry 4992 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: item_self_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1164,7 +1164,7 @@ CREATE SEQUENCE public.items_id_seq
 
 
 --
--- TOC entry 4992 (class 0 OID 0)
+-- TOC entry 4993 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: items_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1215,7 +1215,7 @@ CREATE SEQUENCE public.lecture_user_joins_id_seq
 
 
 --
--- TOC entry 4993 (class 0 OID 0)
+-- TOC entry 4994 (class 0 OID 0)
 -- Dependencies: 274
 -- Name: lecture_user_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1274,7 +1274,7 @@ CREATE SEQUENCE public.lectures_id_seq
 
 
 --
--- TOC entry 4994 (class 0 OID 0)
+-- TOC entry 4995 (class 0 OID 0)
 -- Dependencies: 276
 -- Name: lectures_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1310,7 +1310,7 @@ CREATE SEQUENCE public.lesson_section_joins_id_seq
 
 
 --
--- TOC entry 4995 (class 0 OID 0)
+-- TOC entry 4996 (class 0 OID 0)
 -- Dependencies: 278
 -- Name: lesson_section_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1346,7 +1346,7 @@ CREATE SEQUENCE public.lesson_tag_joins_id_seq
 
 
 --
--- TOC entry 4996 (class 0 OID 0)
+-- TOC entry 4997 (class 0 OID 0)
 -- Dependencies: 280
 -- Name: lesson_tag_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1385,7 +1385,7 @@ CREATE SEQUENCE public.lessons_id_seq
 
 
 --
--- TOC entry 4997 (class 0 OID 0)
+-- TOC entry 4998 (class 0 OID 0)
 -- Dependencies: 282
 -- Name: lessons_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1421,7 +1421,7 @@ CREATE SEQUENCE public.links_id_seq
 
 
 --
--- TOC entry 4998 (class 0 OID 0)
+-- TOC entry 4999 (class 0 OID 0)
 -- Dependencies: 284
 -- Name: links_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1486,7 +1486,7 @@ CREATE SEQUENCE public.media_id_seq
 
 
 --
--- TOC entry 4999 (class 0 OID 0)
+-- TOC entry 5000 (class 0 OID 0)
 -- Dependencies: 286
 -- Name: media_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1522,7 +1522,7 @@ CREATE SEQUENCE public.medium_tag_joins_id_seq
 
 
 --
--- TOC entry 5000 (class 0 OID 0)
+-- TOC entry 5001 (class 0 OID 0)
 -- Dependencies: 288
 -- Name: medium_tag_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1560,7 +1560,7 @@ CREATE SEQUENCE public.notifications_id_seq
 
 
 --
--- TOC entry 5001 (class 0 OID 0)
+-- TOC entry 5002 (class 0 OID 0)
 -- Dependencies: 290
 -- Name: notifications_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1598,7 +1598,7 @@ CREATE SEQUENCE public.notions_id_seq
 
 
 --
--- TOC entry 5002 (class 0 OID 0)
+-- TOC entry 5003 (class 0 OID 0)
 -- Dependencies: 292
 -- Name: notions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1635,7 +1635,7 @@ CREATE SEQUENCE public.program_translations_id_seq
 
 
 --
--- TOC entry 5003 (class 0 OID 0)
+-- TOC entry 5004 (class 0 OID 0)
 -- Dependencies: 294
 -- Name: program_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1670,7 +1670,7 @@ CREATE SEQUENCE public.programs_id_seq
 
 
 --
--- TOC entry 5004 (class 0 OID 0)
+-- TOC entry 5005 (class 0 OID 0)
 -- Dependencies: 296
 -- Name: programs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1721,7 +1721,7 @@ CREATE SEQUENCE public.readers_id_seq
 
 
 --
--- TOC entry 5005 (class 0 OID 0)
+-- TOC entry 5006 (class 0 OID 0)
 -- Dependencies: 299
 -- Name: readers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1757,7 +1757,7 @@ CREATE SEQUENCE public.redemptions_id_seq
 
 
 --
--- TOC entry 5006 (class 0 OID 0)
+-- TOC entry 5007 (class 0 OID 0)
 -- Dependencies: 301
 -- Name: redemptions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1796,7 +1796,7 @@ CREATE SEQUENCE public.referrals_id_seq
 
 
 --
--- TOC entry 5007 (class 0 OID 0)
+-- TOC entry 5008 (class 0 OID 0)
 -- Dependencies: 303
 -- Name: referrals_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1891,7 +1891,7 @@ CREATE SEQUENCE public.registration_student_messages_id_seq
 
 
 --
--- TOC entry 5008 (class 0 OID 0)
+-- TOC entry 5009 (class 0 OID 0)
 -- Dependencies: 420
 -- Name: registration_student_messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1952,7 +1952,7 @@ CREATE SEQUENCE public.relations_id_seq
 
 
 --
--- TOC entry 5009 (class 0 OID 0)
+-- TOC entry 5010 (class 0 OID 0)
 -- Dependencies: 305
 -- Name: relations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -1999,7 +1999,7 @@ CREATE SEQUENCE public.section_tag_joins_id_seq
 
 
 --
--- TOC entry 5010 (class 0 OID 0)
+-- TOC entry 5011 (class 0 OID 0)
 -- Dependencies: 308
 -- Name: section_tag_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2040,7 +2040,7 @@ CREATE SEQUENCE public.sections_id_seq
 
 
 --
--- TOC entry 5011 (class 0 OID 0)
+-- TOC entry 5012 (class 0 OID 0)
 -- Dependencies: 310
 -- Name: sections_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2077,7 +2077,7 @@ CREATE SEQUENCE public.speaker_talk_joins_id_seq
 
 
 --
--- TOC entry 5012 (class 0 OID 0)
+-- TOC entry 5013 (class 0 OID 0)
 -- Dependencies: 312
 -- Name: speaker_talk_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2114,7 +2114,7 @@ CREATE SEQUENCE public.subject_translations_id_seq
 
 
 --
--- TOC entry 5013 (class 0 OID 0)
+-- TOC entry 5014 (class 0 OID 0)
 -- Dependencies: 314
 -- Name: subject_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2148,7 +2148,7 @@ CREATE SEQUENCE public.subjects_id_seq
 
 
 --
--- TOC entry 5014 (class 0 OID 0)
+-- TOC entry 5015 (class 0 OID 0)
 -- Dependencies: 316
 -- Name: subjects_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2202,7 +2202,7 @@ CREATE SEQUENCE public.tags_id_seq
 
 
 --
--- TOC entry 5015 (class 0 OID 0)
+-- TOC entry 5016 (class 0 OID 0)
 -- Dependencies: 319
 -- Name: tags_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2238,7 +2238,7 @@ CREATE SEQUENCE public.talk_tag_joins_id_seq
 
 
 --
--- TOC entry 5016 (class 0 OID 0)
+-- TOC entry 5017 (class 0 OID 0)
 -- Dependencies: 321
 -- Name: talk_tag_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2282,7 +2282,7 @@ CREATE SEQUENCE public.talks_id_seq
 
 
 --
--- TOC entry 5017 (class 0 OID 0)
+-- TOC entry 5018 (class 0 OID 0)
 -- Dependencies: 323
 -- Name: talks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2322,7 +2322,7 @@ CREATE SEQUENCE public.terms_id_seq
 
 
 --
--- TOC entry 5018 (class 0 OID 0)
+-- TOC entry 5019 (class 0 OID 0)
 -- Dependencies: 325
 -- Name: terms_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2360,7 +2360,7 @@ CREATE SEQUENCE public.thredded_categories_id_seq
 
 
 --
--- TOC entry 5019 (class 0 OID 0)
+-- TOC entry 5020 (class 0 OID 0)
 -- Dependencies: 327
 -- Name: thredded_categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2396,7 +2396,7 @@ CREATE SEQUENCE public.thredded_messageboard_groups_id_seq
 
 
 --
--- TOC entry 5020 (class 0 OID 0)
+-- TOC entry 5021 (class 0 OID 0)
 -- Dependencies: 329
 -- Name: thredded_messageboard_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2432,7 +2432,7 @@ CREATE SEQUENCE public.thredded_messageboard_notifications_for_followed_topics_i
 
 
 --
--- TOC entry 5021 (class 0 OID 0)
+-- TOC entry 5022 (class 0 OID 0)
 -- Dependencies: 331
 -- Name: thredded_messageboard_notifications_for_followed_topics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2467,7 +2467,7 @@ CREATE SEQUENCE public.thredded_messageboard_users_id_seq
 
 
 --
--- TOC entry 5022 (class 0 OID 0)
+-- TOC entry 5023 (class 0 OID 0)
 -- Dependencies: 333
 -- Name: thredded_messageboard_users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2510,7 +2510,7 @@ CREATE SEQUENCE public.thredded_messageboards_id_seq
 
 
 --
--- TOC entry 5023 (class 0 OID 0)
+-- TOC entry 5024 (class 0 OID 0)
 -- Dependencies: 335
 -- Name: thredded_messageboards_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2545,7 +2545,7 @@ CREATE SEQUENCE public.thredded_notifications_for_followed_topics_id_seq
 
 
 --
--- TOC entry 5024 (class 0 OID 0)
+-- TOC entry 5025 (class 0 OID 0)
 -- Dependencies: 337
 -- Name: thredded_notifications_for_followed_topics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2580,7 +2580,7 @@ CREATE SEQUENCE public.thredded_notifications_for_private_topics_id_seq
 
 
 --
--- TOC entry 5025 (class 0 OID 0)
+-- TOC entry 5026 (class 0 OID 0)
 -- Dependencies: 339
 -- Name: thredded_notifications_for_private_topics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2621,7 +2621,7 @@ CREATE SEQUENCE public.thredded_post_moderation_records_id_seq
 
 
 --
--- TOC entry 5026 (class 0 OID 0)
+-- TOC entry 5027 (class 0 OID 0)
 -- Dependencies: 341
 -- Name: thredded_post_moderation_records_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2661,7 +2661,7 @@ CREATE SEQUENCE public.thredded_posts_id_seq
 
 
 --
--- TOC entry 5027 (class 0 OID 0)
+-- TOC entry 5028 (class 0 OID 0)
 -- Dependencies: 343
 -- Name: thredded_posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2698,7 +2698,7 @@ CREATE SEQUENCE public.thredded_private_posts_id_seq
 
 
 --
--- TOC entry 5028 (class 0 OID 0)
+-- TOC entry 5029 (class 0 OID 0)
 -- Dependencies: 345
 -- Name: thredded_private_posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2739,7 +2739,7 @@ CREATE SEQUENCE public.thredded_private_topics_id_seq
 
 
 --
--- TOC entry 5029 (class 0 OID 0)
+-- TOC entry 5030 (class 0 OID 0)
 -- Dependencies: 347
 -- Name: thredded_private_topics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2775,7 +2775,7 @@ CREATE SEQUENCE public.thredded_private_users_id_seq
 
 
 --
--- TOC entry 5030 (class 0 OID 0)
+-- TOC entry 5031 (class 0 OID 0)
 -- Dependencies: 349
 -- Name: thredded_private_users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2809,7 +2809,7 @@ CREATE SEQUENCE public.thredded_topic_categories_id_seq
 
 
 --
--- TOC entry 5031 (class 0 OID 0)
+-- TOC entry 5032 (class 0 OID 0)
 -- Dependencies: 351
 -- Name: thredded_topic_categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2854,7 +2854,7 @@ CREATE SEQUENCE public.thredded_topics_id_seq
 
 
 --
--- TOC entry 5032 (class 0 OID 0)
+-- TOC entry 5033 (class 0 OID 0)
 -- Dependencies: 353
 -- Name: thredded_topics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2895,7 +2895,7 @@ CREATE SEQUENCE public.thredded_user_details_id_seq
 
 
 --
--- TOC entry 5033 (class 0 OID 0)
+-- TOC entry 5034 (class 0 OID 0)
 -- Dependencies: 355
 -- Name: thredded_user_details_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2933,7 +2933,7 @@ CREATE SEQUENCE public.thredded_user_messageboard_preferences_id_seq
 
 
 --
--- TOC entry 5034 (class 0 OID 0)
+-- TOC entry 5035 (class 0 OID 0)
 -- Dependencies: 357
 -- Name: thredded_user_messageboard_preferences_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -2968,7 +2968,7 @@ CREATE SEQUENCE public.thredded_user_post_notifications_id_seq
 
 
 --
--- TOC entry 5035 (class 0 OID 0)
+-- TOC entry 5036 (class 0 OID 0)
 -- Dependencies: 359
 -- Name: thredded_user_post_notifications_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3005,7 +3005,7 @@ CREATE SEQUENCE public.thredded_user_preferences_id_seq
 
 
 --
--- TOC entry 5036 (class 0 OID 0)
+-- TOC entry 5037 (class 0 OID 0)
 -- Dependencies: 361
 -- Name: thredded_user_preferences_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3043,7 +3043,7 @@ CREATE SEQUENCE public.thredded_user_private_topic_read_states_id_seq
 
 
 --
--- TOC entry 5037 (class 0 OID 0)
+-- TOC entry 5038 (class 0 OID 0)
 -- Dependencies: 363
 -- Name: thredded_user_private_topic_read_states_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3079,7 +3079,7 @@ CREATE SEQUENCE public.thredded_user_topic_follows_id_seq
 
 
 --
--- TOC entry 5038 (class 0 OID 0)
+-- TOC entry 5039 (class 0 OID 0)
 -- Dependencies: 365
 -- Name: thredded_user_topic_follows_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3118,7 +3118,7 @@ CREATE SEQUENCE public.thredded_user_topic_read_states_id_seq
 
 
 --
--- TOC entry 5039 (class 0 OID 0)
+-- TOC entry 5040 (class 0 OID 0)
 -- Dependencies: 367
 -- Name: thredded_user_topic_read_states_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3154,7 +3154,7 @@ CREATE SEQUENCE public.tutor_tutorial_joins_id_seq
 
 
 --
--- TOC entry 5040 (class 0 OID 0)
+-- TOC entry 5041 (class 0 OID 0)
 -- Dependencies: 369
 -- Name: tutor_tutorial_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3210,7 +3210,7 @@ CREATE SEQUENCE public.tutorials_id_seq
 
 
 --
--- TOC entry 5041 (class 0 OID 0)
+-- TOC entry 5042 (class 0 OID 0)
 -- Dependencies: 371
 -- Name: tutorials_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3246,7 +3246,7 @@ CREATE SEQUENCE public.user_favorite_lecture_joins_id_seq
 
 
 --
--- TOC entry 5042 (class 0 OID 0)
+-- TOC entry 5043 (class 0 OID 0)
 -- Dependencies: 373
 -- Name: user_favorite_lecture_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3282,7 +3282,7 @@ CREATE SEQUENCE public.user_submission_joins_id_seq
 
 
 --
--- TOC entry 5043 (class 0 OID 0)
+-- TOC entry 5044 (class 0 OID 0)
 -- Dependencies: 375
 -- Name: user_submission_joins_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3339,7 +3339,9 @@ CREATE TABLE public.users (
     last_sign_in_ip character varying,
     deletion_date date,
     failed_attempts integer DEFAULT 0 NOT NULL,
-    unlock_token character varying
+    unlock_token character varying,
+    password_policy_version integer DEFAULT 0 NOT NULL,
+    password_changed_at timestamp(6) without time zone
 );
 
 
@@ -3357,7 +3359,7 @@ CREATE SEQUENCE public.users_id_seq
 
 
 --
--- TOC entry 5044 (class 0 OID 0)
+-- TOC entry 5045 (class 0 OID 0)
 -- Dependencies: 377
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3397,7 +3399,7 @@ CREATE SEQUENCE public.vignettes_answers_id_seq
 
 
 --
--- TOC entry 5045 (class 0 OID 0)
+-- TOC entry 5046 (class 0 OID 0)
 -- Dependencies: 379
 -- Name: vignettes_answers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3445,7 +3447,7 @@ CREATE SEQUENCE public.vignettes_codenames_id_seq
 
 
 --
--- TOC entry 5046 (class 0 OID 0)
+-- TOC entry 5047 (class 0 OID 0)
 -- Dependencies: 382
 -- Name: vignettes_codenames_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3480,7 +3482,7 @@ CREATE SEQUENCE public.vignettes_completion_messages_id_seq
 
 
 --
--- TOC entry 5047 (class 0 OID 0)
+-- TOC entry 5048 (class 0 OID 0)
 -- Dependencies: 384
 -- Name: vignettes_completion_messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3517,7 +3519,7 @@ CREATE SEQUENCE public.vignettes_info_slides_id_seq
 
 
 --
--- TOC entry 5048 (class 0 OID 0)
+-- TOC entry 5049 (class 0 OID 0)
 -- Dependencies: 386
 -- Name: vignettes_info_slides_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3564,7 +3566,7 @@ CREATE SEQUENCE public.vignettes_options_id_seq
 
 
 --
--- TOC entry 5049 (class 0 OID 0)
+-- TOC entry 5050 (class 0 OID 0)
 -- Dependencies: 389
 -- Name: vignettes_options_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3602,7 +3604,7 @@ CREATE SEQUENCE public.vignettes_questionnaires_id_seq
 
 
 --
--- TOC entry 5050 (class 0 OID 0)
+-- TOC entry 5051 (class 0 OID 0)
 -- Dependencies: 391
 -- Name: vignettes_questionnaires_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3643,7 +3645,7 @@ CREATE SEQUENCE public.vignettes_questions_id_seq
 
 
 --
--- TOC entry 5051 (class 0 OID 0)
+-- TOC entry 5052 (class 0 OID 0)
 -- Dependencies: 393
 -- Name: vignettes_questions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3684,7 +3686,7 @@ CREATE SEQUENCE public.vignettes_slide_statistics_id_seq
 
 
 --
--- TOC entry 5052 (class 0 OID 0)
+-- TOC entry 5053 (class 0 OID 0)
 -- Dependencies: 395
 -- Name: vignettes_slide_statistics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3721,7 +3723,7 @@ CREATE SEQUENCE public.vignettes_slides_id_seq
 
 
 --
--- TOC entry 5053 (class 0 OID 0)
+-- TOC entry 5054 (class 0 OID 0)
 -- Dependencies: 397
 -- Name: vignettes_slides_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3757,7 +3759,7 @@ CREATE SEQUENCE public.vignettes_user_answers_id_seq
 
 
 --
--- TOC entry 5054 (class 0 OID 0)
+-- TOC entry 5055 (class 0 OID 0)
 -- Dependencies: 399
 -- Name: vignettes_user_answers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3798,7 +3800,7 @@ CREATE SEQUENCE public.votes_id_seq
 
 
 --
--- TOC entry 5055 (class 0 OID 0)
+-- TOC entry 5056 (class 0 OID 0)
 -- Dependencies: 401
 -- Name: votes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3852,7 +3854,7 @@ CREATE SEQUENCE public.watchlist_entries_id_seq
 
 
 --
--- TOC entry 5056 (class 0 OID 0)
+-- TOC entry 5057 (class 0 OID 0)
 -- Dependencies: 404
 -- Name: watchlist_entries_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3891,7 +3893,7 @@ CREATE SEQUENCE public.watchlists_id_seq
 
 
 --
--- TOC entry 5057 (class 0 OID 0)
+-- TOC entry 5058 (class 0 OID 0)
 -- Dependencies: 406
 -- Name: watchlists_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
@@ -3980,7 +3982,7 @@ ALTER TABLE ONLY public.claims ALTER COLUMN id SET DEFAULT nextval('public.claim
 
 
 --
--- TOC entry 4063 (class 2604 OID 7674613)
+-- TOC entry 4064 (class 2604 OID 7674613)
 -- Name: cohorts id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4076,7 +4078,7 @@ ALTER TABLE ONLY public.feedbacks ALTER COLUMN id SET DEFAULT nextval('public.fe
 
 
 --
--- TOC entry 4061 (class 2604 OID 7674581)
+-- TOC entry 4062 (class 2604 OID 7674581)
 -- Name: flipper_features id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4084,7 +4086,7 @@ ALTER TABLE ONLY public.flipper_features ALTER COLUMN id SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 4062 (class 2604 OID 7674595)
+-- TOC entry 4063 (class 2604 OID 7674595)
 -- Name: flipper_gates id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4244,7 +4246,7 @@ ALTER TABLE ONLY public.referrals ALTER COLUMN id SET DEFAULT nextval('public.re
 
 
 --
--- TOC entry 4070 (class 2604 OID 7674771)
+-- TOC entry 4071 (class 2604 OID 7674771)
 -- Name: registration_student_messages id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4540,7 +4542,7 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 
 --
--- TOC entry 4031 (class 2604 OID 7673485)
+-- TOC entry 4032 (class 2604 OID 7673485)
 -- Name: vignettes_answers id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4548,7 +4550,7 @@ ALTER TABLE ONLY public.vignettes_answers ALTER COLUMN id SET DEFAULT nextval('p
 
 
 --
--- TOC entry 4032 (class 2604 OID 7673486)
+-- TOC entry 4033 (class 2604 OID 7673486)
 -- Name: vignettes_codenames id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4556,7 +4558,7 @@ ALTER TABLE ONLY public.vignettes_codenames ALTER COLUMN id SET DEFAULT nextval(
 
 
 --
--- TOC entry 4033 (class 2604 OID 7673487)
+-- TOC entry 4034 (class 2604 OID 7673487)
 -- Name: vignettes_completion_messages id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4564,7 +4566,7 @@ ALTER TABLE ONLY public.vignettes_completion_messages ALTER COLUMN id SET DEFAUL
 
 
 --
--- TOC entry 4034 (class 2604 OID 7673488)
+-- TOC entry 4035 (class 2604 OID 7673488)
 -- Name: vignettes_info_slides id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4572,7 +4574,7 @@ ALTER TABLE ONLY public.vignettes_info_slides ALTER COLUMN id SET DEFAULT nextva
 
 
 --
--- TOC entry 4035 (class 2604 OID 7673489)
+-- TOC entry 4036 (class 2604 OID 7673489)
 -- Name: vignettes_options id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4580,7 +4582,7 @@ ALTER TABLE ONLY public.vignettes_options ALTER COLUMN id SET DEFAULT nextval('p
 
 
 --
--- TOC entry 4036 (class 2604 OID 7673490)
+-- TOC entry 4037 (class 2604 OID 7673490)
 -- Name: vignettes_questionnaires id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4588,7 +4590,7 @@ ALTER TABLE ONLY public.vignettes_questionnaires ALTER COLUMN id SET DEFAULT nex
 
 
 --
--- TOC entry 4038 (class 2604 OID 7673491)
+-- TOC entry 4039 (class 2604 OID 7673491)
 -- Name: vignettes_questions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4596,7 +4598,7 @@ ALTER TABLE ONLY public.vignettes_questions ALTER COLUMN id SET DEFAULT nextval(
 
 
 --
--- TOC entry 4041 (class 2604 OID 7673492)
+-- TOC entry 4042 (class 2604 OID 7673492)
 -- Name: vignettes_slide_statistics id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4604,7 +4606,7 @@ ALTER TABLE ONLY public.vignettes_slide_statistics ALTER COLUMN id SET DEFAULT n
 
 
 --
--- TOC entry 4042 (class 2604 OID 7673493)
+-- TOC entry 4043 (class 2604 OID 7673493)
 -- Name: vignettes_slides id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4612,7 +4614,7 @@ ALTER TABLE ONLY public.vignettes_slides ALTER COLUMN id SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 4043 (class 2604 OID 7673494)
+-- TOC entry 4044 (class 2604 OID 7673494)
 -- Name: vignettes_user_answers id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4620,7 +4622,7 @@ ALTER TABLE ONLY public.vignettes_user_answers ALTER COLUMN id SET DEFAULT nextv
 
 
 --
--- TOC entry 4044 (class 2604 OID 7673495)
+-- TOC entry 4045 (class 2604 OID 7673495)
 -- Name: votes id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4628,7 +4630,7 @@ ALTER TABLE ONLY public.votes ALTER COLUMN id SET DEFAULT nextval('public.votes_
 
 
 --
--- TOC entry 4046 (class 2604 OID 7673497)
+-- TOC entry 4047 (class 2604 OID 7673497)
 -- Name: watchlist_entries id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4636,7 +4638,7 @@ ALTER TABLE ONLY public.watchlist_entries ALTER COLUMN id SET DEFAULT nextval('p
 
 
 --
--- TOC entry 4047 (class 2604 OID 7673498)
+-- TOC entry 4048 (class 2604 OID 7673498)
 -- Name: watchlists id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -4644,7 +4646,7 @@ ALTER TABLE ONLY public.watchlists ALTER COLUMN id SET DEFAULT nextval('public.w
 
 
 --
--- TOC entry 4757 (class 0 OID 7672423)
+-- TOC entry 4758 (class 0 OID 7672423)
 -- Dependencies: 222
 -- Data for Name: action_text_rich_texts; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4658,7 +4660,7 @@ COPY public.action_text_rich_texts (id, name, body, record_type, record_id, crea
 
 
 --
--- TOC entry 4759 (class 0 OID 7672435)
+-- TOC entry 4760 (class 0 OID 7672435)
 -- Dependencies: 224
 -- Data for Name: active_storage_attachments; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4672,7 +4674,7 @@ COPY public.active_storage_attachments (id, name, record_type, record_id, blob_i
 
 
 --
--- TOC entry 4761 (class 0 OID 7672447)
+-- TOC entry 4762 (class 0 OID 7672447)
 -- Dependencies: 226
 -- Data for Name: active_storage_blobs; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4686,7 +4688,7 @@ COPY public.active_storage_blobs (id, key, filename, content_type, metadata, ser
 
 
 --
--- TOC entry 4763 (class 0 OID 7672459)
+-- TOC entry 4764 (class 0 OID 7672459)
 -- Dependencies: 228
 -- Data for Name: active_storage_variant_records; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4698,7 +4700,7 @@ COPY public.active_storage_variant_records (id, blob_id, variation_digest) FROM 
 
 
 --
--- TOC entry 4765 (class 0 OID 7672468)
+-- TOC entry 4766 (class 0 OID 7672468)
 -- Dependencies: 230
 -- Data for Name: annotations; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4735,7 +4737,7 @@ COPY public.annotations (id, medium_id, user_id, "timestamp", comment, color, ca
 
 
 --
--- TOC entry 4767 (class 0 OID 7672484)
+-- TOC entry 4768 (class 0 OID 7672484)
 -- Dependencies: 232
 -- Data for Name: announcements; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4759,7 +4761,7 @@ COPY public.announcements (id, lecture_id, announcer_id, details, created_at, up
 
 
 --
--- TOC entry 4769 (class 0 OID 7672494)
+-- TOC entry 4770 (class 0 OID 7672494)
 -- Dependencies: 234
 -- Data for Name: answers; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4808,7 +4810,7 @@ COPY public.answers (id, text, value, explanation, created_at, updated_at, quest
 
 
 --
--- TOC entry 4771 (class 0 OID 7672503)
+-- TOC entry 4772 (class 0 OID 7672503)
 -- Dependencies: 236
 -- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4819,7 +4821,7 @@ environment	development	2020-07-24 13:03:53.932392	2025-07-14 10:42:06.530578
 
 
 --
--- TOC entry 4772 (class 0 OID 7672511)
+-- TOC entry 4773 (class 0 OID 7672511)
 -- Dependencies: 237
 -- Data for Name: assignments; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4832,7 +4834,7 @@ COPY public.assignments (id, lecture_id, medium_id, title, deadline, created_at,
 
 
 --
--- TOC entry 4774 (class 0 OID 7672524)
+-- TOC entry 4775 (class 0 OID 7672524)
 -- Dependencies: 239
 -- Data for Name: chapters; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4851,7 +4853,7 @@ COPY public.chapters (id, lecture_id, title, created_at, updated_at, "position",
 
 
 --
--- TOC entry 4776 (class 0 OID 7672533)
+-- TOC entry 4777 (class 0 OID 7672533)
 -- Dependencies: 241
 -- Data for Name: claims; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4864,7 +4866,7 @@ COPY public.claims (id, redemption_id, claimable_type, claimable_id, created_at,
 
 
 --
--- TOC entry 4954 (class 0 OID 7674687)
+-- TOC entry 4955 (class 0 OID 7674687)
 -- Dependencies: 419
 -- Data for Name: cohort_memberships; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4874,7 +4876,7 @@ COPY public.cohort_memberships (id, user_id, cohort_id, source_campaign_id, crea
 
 
 --
--- TOC entry 4951 (class 0 OID 7674610)
+-- TOC entry 4952 (class 0 OID 7674610)
 -- Dependencies: 416
 -- Data for Name: cohorts; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4888,7 +4890,7 @@ COPY public.cohorts (id, title, description, capacity, context_type, context_id,
 
 
 --
--- TOC entry 4778 (class 0 OID 7672561)
+-- TOC entry 4779 (class 0 OID 7672561)
 -- Dependencies: 243
 -- Data for Name: commontator_comments; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4936,7 +4938,7 @@ COPY public.commontator_comments (id, thread_id, creator_type, creator_id, edito
 
 
 --
--- TOC entry 4780 (class 0 OID 7672576)
+-- TOC entry 4781 (class 0 OID 7672576)
 -- Dependencies: 245
 -- Data for Name: commontator_subscriptions; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -4946,7 +4948,7 @@ COPY public.commontator_subscriptions (id, thread_id, subscriber_type, subscribe
 
 
 --
--- TOC entry 4782 (class 0 OID 7672588)
+-- TOC entry 4783 (class 0 OID 7672588)
 -- Dependencies: 247
 -- Data for Name: commontator_threads; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5007,7 +5009,7 @@ COPY public.commontator_threads (id, commontable_type, commontable_id, closer_ty
 
 
 --
--- TOC entry 4784 (class 0 OID 7672597)
+-- TOC entry 4785 (class 0 OID 7672597)
 -- Dependencies: 249
 -- Data for Name: course_self_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5017,7 +5019,7 @@ COPY public.course_self_joins (id, course_id, preceding_course_id, created_at, u
 
 
 --
--- TOC entry 4786 (class 0 OID 7672604)
+-- TOC entry 4787 (class 0 OID 7672604)
 -- Dependencies: 251
 -- Data for Name: course_tag_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5075,7 +5077,7 @@ COPY public.course_tag_joins (id, course_id, tag_id, created_at, updated_at) FRO
 
 
 --
--- TOC entry 4788 (class 0 OID 7672611)
+-- TOC entry 4789 (class 0 OID 7672611)
 -- Dependencies: 253
 -- Data for Name: courses; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5101,7 +5103,7 @@ COPY public.courses (id, title, created_at, updated_at, short_title, organizatio
 
 
 --
--- TOC entry 4790 (class 0 OID 7672621)
+-- TOC entry 4791 (class 0 OID 7672621)
 -- Dependencies: 255
 -- Data for Name: division_course_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5118,7 +5120,7 @@ COPY public.division_course_joins (id, division_id, course_id, created_at, updat
 
 
 --
--- TOC entry 4792 (class 0 OID 7672630)
+-- TOC entry 4793 (class 0 OID 7672630)
 -- Dependencies: 257
 -- Data for Name: division_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5136,7 +5138,7 @@ COPY public.division_translations (id, division_id, locale, created_at, updated_
 
 
 --
--- TOC entry 4794 (class 0 OID 7672641)
+-- TOC entry 4795 (class 0 OID 7672641)
 -- Dependencies: 259
 -- Data for Name: divisions; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5150,7 +5152,7 @@ COPY public.divisions (id, program_id, created_at, updated_at) FROM stdin;
 
 
 --
--- TOC entry 4796 (class 0 OID 7672648)
+-- TOC entry 4797 (class 0 OID 7672648)
 -- Dependencies: 261
 -- Data for Name: editable_user_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5221,7 +5223,7 @@ COPY public.editable_user_joins (id, editable_id, editable_type, user_id) FROM s
 
 
 --
--- TOC entry 4798 (class 0 OID 7672655)
+-- TOC entry 4799 (class 0 OID 7672655)
 -- Dependencies: 263
 -- Data for Name: feedbacks; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5232,7 +5234,7 @@ COPY public.feedbacks (id, title, feedback, can_contact, user_id, created_at, up
 
 
 --
--- TOC entry 4947 (class 0 OID 7674578)
+-- TOC entry 4948 (class 0 OID 7674578)
 -- Dependencies: 412
 -- Data for Name: flipper_features; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5243,7 +5245,7 @@ COPY public.flipper_features (id, key, created_at, updated_at) FROM stdin;
 
 
 --
--- TOC entry 4949 (class 0 OID 7674592)
+-- TOC entry 4950 (class 0 OID 7674592)
 -- Dependencies: 414
 -- Data for Name: flipper_gates; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5254,7 +5256,7 @@ COPY public.flipper_gates (id, feature_key, key, value, created_at, updated_at) 
 
 
 --
--- TOC entry 4800 (class 0 OID 7672667)
+-- TOC entry 4801 (class 0 OID 7672667)
 -- Dependencies: 265
 -- Data for Name: friendly_id_slugs; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5282,7 +5284,7 @@ COPY public.friendly_id_slugs (id, slug, sluggable_id, sluggable_type, scope, cr
 
 
 --
--- TOC entry 4802 (class 0 OID 7672676)
+-- TOC entry 4803 (class 0 OID 7672676)
 -- Dependencies: 267
 -- Data for Name: imports; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5292,7 +5294,7 @@ COPY public.imports (id, medium_id, teachable_type, teachable_id, created_at, up
 
 
 --
--- TOC entry 4804 (class 0 OID 7672688)
+-- TOC entry 4805 (class 0 OID 7672688)
 -- Dependencies: 269
 -- Data for Name: item_self_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5302,7 +5304,7 @@ COPY public.item_self_joins (id, item_id, related_item_id) FROM stdin;
 
 
 --
--- TOC entry 4806 (class 0 OID 7672695)
+-- TOC entry 4807 (class 0 OID 7672695)
 -- Dependencies: 271
 -- Data for Name: items; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5699,7 +5701,7 @@ COPY public.items (id, start_time, sort, page, description, link, explanation, m
 
 
 --
--- TOC entry 4953 (class 0 OID 7674657)
+-- TOC entry 4954 (class 0 OID 7674657)
 -- Dependencies: 418
 -- Data for Name: lecture_memberships; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5751,7 +5753,7 @@ dca5c512-5cbc-4f5f-b78f-f5260459a18c	55	30	\N	2026-08-26 19:48:05.954904	2026-08
 
 
 --
--- TOC entry 4808 (class 0 OID 7672704)
+-- TOC entry 4809 (class 0 OID 7672704)
 -- Dependencies: 273
 -- Data for Name: lecture_user_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5841,7 +5843,7 @@ COPY public.lecture_user_joins (id, lecture_id, user_id, created_at, updated_at)
 
 
 --
--- TOC entry 4810 (class 0 OID 7672711)
+-- TOC entry 4811 (class 0 OID 7672711)
 -- Dependencies: 275
 -- Data for Name: lectures; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5870,7 +5872,7 @@ COPY public.lectures (id, created_at, updated_at, course_id, term_id, teacher_id
 
 
 --
--- TOC entry 4812 (class 0 OID 7672725)
+-- TOC entry 4813 (class 0 OID 7672725)
 -- Dependencies: 277
 -- Data for Name: lesson_section_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5891,7 +5893,7 @@ COPY public.lesson_section_joins (id, lesson_id, section_id, created_at, updated
 
 
 --
--- TOC entry 4814 (class 0 OID 7672732)
+-- TOC entry 4815 (class 0 OID 7672732)
 -- Dependencies: 279
 -- Data for Name: lesson_tag_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5930,7 +5932,7 @@ COPY public.lesson_tag_joins (id, lesson_id, tag_id, created_at, updated_at) FRO
 
 
 --
--- TOC entry 4816 (class 0 OID 7672739)
+-- TOC entry 4817 (class 0 OID 7672739)
 -- Dependencies: 281
 -- Data for Name: lessons; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5951,7 +5953,7 @@ COPY public.lessons (id, date, lecture_id, created_at, updated_at, start_destina
 
 
 --
--- TOC entry 4818 (class 0 OID 7672748)
+-- TOC entry 4819 (class 0 OID 7672748)
 -- Dependencies: 283
 -- Data for Name: links; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -5961,7 +5963,7 @@ COPY public.links (id, medium_id, linked_medium_id, created_at, updated_at) FROM
 
 
 --
--- TOC entry 4820 (class 0 OID 7672755)
+-- TOC entry 4821 (class 0 OID 7672755)
 -- Dependencies: 285
 -- Data for Name: media; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6022,7 +6024,7 @@ COPY public.media (id, external_reference_link, created_at, updated_at, sort, de
 
 
 --
--- TOC entry 4822 (class 0 OID 7672768)
+-- TOC entry 4823 (class 0 OID 7672768)
 -- Dependencies: 287
 -- Data for Name: medium_tag_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6079,7 +6081,7 @@ COPY public.medium_tag_joins (id, medium_id, tag_id, created_at, updated_at) FRO
 
 
 --
--- TOC entry 4824 (class 0 OID 7672775)
+-- TOC entry 4825 (class 0 OID 7672775)
 -- Dependencies: 289
 -- Data for Name: notifications; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6584,7 +6586,7 @@ COPY public.notifications (id, recipient_id, notifiable_id, notifiable_type, act
 
 
 --
--- TOC entry 4826 (class 0 OID 7672784)
+-- TOC entry 4827 (class 0 OID 7672784)
 -- Dependencies: 291
 -- Data for Name: notions; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6678,7 +6680,7 @@ COPY public.notions (id, created_at, updated_at, title, locale, tag_id, aliased_
 
 
 --
--- TOC entry 4828 (class 0 OID 7672793)
+-- TOC entry 4829 (class 0 OID 7672793)
 -- Dependencies: 293
 -- Data for Name: program_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6692,7 +6694,7 @@ COPY public.program_translations (id, program_id, locale, created_at, updated_at
 
 
 --
--- TOC entry 4830 (class 0 OID 7672804)
+-- TOC entry 4831 (class 0 OID 7672804)
 -- Dependencies: 295
 -- Data for Name: programs; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6704,7 +6706,7 @@ COPY public.programs (id, created_at, updated_at, subject_id) FROM stdin;
 
 
 --
--- TOC entry 4832 (class 0 OID 7672811)
+-- TOC entry 4833 (class 0 OID 7672811)
 -- Dependencies: 297
 -- Data for Name: quiz_certificates; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6714,7 +6716,7 @@ COPY public.quiz_certificates (id, quiz_id, user_id, code, created_at, updated_a
 
 
 --
--- TOC entry 4833 (class 0 OID 7672821)
+-- TOC entry 4834 (class 0 OID 7672821)
 -- Dependencies: 298
 -- Data for Name: readers; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6725,7 +6727,7 @@ COPY public.readers (id, user_id, thread_id, created_at, updated_at) FROM stdin;
 
 
 --
--- TOC entry 4835 (class 0 OID 7672828)
+-- TOC entry 4836 (class 0 OID 7672828)
 -- Dependencies: 300
 -- Data for Name: redemptions; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6738,7 +6740,7 @@ COPY public.redemptions (id, voucher_id, user_id, created_at, updated_at) FROM s
 
 
 --
--- TOC entry 4837 (class 0 OID 7672837)
+-- TOC entry 4838 (class 0 OID 7672837)
 -- Dependencies: 302
 -- Data for Name: referrals; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6760,7 +6762,7 @@ COPY public.referrals (id, start_time, end_time, explanation, item_id, medium_id
 
 
 --
--- TOC entry 4942 (class 0 OID 7674368)
+-- TOC entry 4943 (class 0 OID 7674368)
 -- Dependencies: 407
 -- Data for Name: registration_campaigns; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6782,7 +6784,7 @@ Lecture	38	Vergabe der Vortragsthemen	0	1	2027-08-26 19:49:15.895165	2026-08-26 
 
 
 --
--- TOC entry 4943 (class 0 OID 7674393)
+-- TOC entry 4944 (class 0 OID 7674393)
 -- Dependencies: 408
 -- Data for Name: registration_items; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6855,7 +6857,7 @@ Talk	42	2026-08-26 19:49:15.89046	2026-08-26 19:49:15.89046	75ec2f0a-bb37-4191-8
 
 
 --
--- TOC entry 4945 (class 0 OID 7674452)
+-- TOC entry 4946 (class 0 OID 7674452)
 -- Dependencies: 410
 -- Data for Name: registration_policies; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6868,7 +6870,7 @@ COPY public.registration_policies (kind, phase, "position", active, config, crea
 
 
 --
--- TOC entry 4956 (class 0 OID 7674768)
+-- TOC entry 4957 (class 0 OID 7674768)
 -- Dependencies: 421
 -- Data for Name: registration_student_messages; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -6878,7 +6880,7 @@ COPY public.registration_student_messages (id, lecture_id, sender_id, subject, b
 
 
 --
--- TOC entry 4944 (class 0 OID 7674416)
+-- TOC entry 4945 (class 0 OID 7674416)
 -- Dependencies: 409
 -- Data for Name: registration_user_registrations; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -7355,7 +7357,7 @@ COPY public.registration_user_registrations (user_id, preference_rank, status, c
 
 
 --
--- TOC entry 4839 (class 0 OID 7672846)
+-- TOC entry 4840 (class 0 OID 7672846)
 -- Dependencies: 304
 -- Data for Name: relations; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -7423,7 +7425,7 @@ COPY public.relations (id, tag_id, related_tag_id, created_at, updated_at) FROM 
 
 
 --
--- TOC entry 4841 (class 0 OID 7672853)
+-- TOC entry 4842 (class 0 OID 7672853)
 -- Dependencies: 306
 -- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -7777,11 +7779,12 @@ COPY public.schema_migrations (version) FROM stdin;
 20260718000000
 20260824000000
 20260824000001
+20260825000000
 \.
 
 
 --
--- TOC entry 4842 (class 0 OID 7672859)
+-- TOC entry 4843 (class 0 OID 7672859)
 -- Dependencies: 307
 -- Data for Name: section_tag_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -7833,7 +7836,7 @@ COPY public.section_tag_joins (id, section_id, tag_id, created_at, updated_at, t
 
 
 --
--- TOC entry 4844 (class 0 OID 7672866)
+-- TOC entry 4845 (class 0 OID 7672866)
 -- Dependencies: 309
 -- Data for Name: sections; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -7880,7 +7883,7 @@ COPY public.sections (id, chapter_id, title, created_at, updated_at, "position",
 
 
 --
--- TOC entry 4846 (class 0 OID 7672875)
+-- TOC entry 4847 (class 0 OID 7672875)
 -- Dependencies: 311
 -- Data for Name: speaker_talk_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -7905,7 +7908,7 @@ COPY public.speaker_talk_joins (id, talk_id, speaker_id, created_at, updated_at,
 
 
 --
--- TOC entry 4848 (class 0 OID 7672884)
+-- TOC entry 4849 (class 0 OID 7672884)
 -- Dependencies: 313
 -- Data for Name: subject_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -7919,7 +7922,7 @@ COPY public.subject_translations (id, subject_id, locale, created_at, updated_at
 
 
 --
--- TOC entry 4850 (class 0 OID 7672895)
+-- TOC entry 4851 (class 0 OID 7672895)
 -- Dependencies: 315
 -- Data for Name: subjects; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -7931,7 +7934,7 @@ COPY public.subjects (id, created_at, updated_at) FROM stdin;
 
 
 --
--- TOC entry 4852 (class 0 OID 7672902)
+-- TOC entry 4853 (class 0 OID 7672902)
 -- Dependencies: 317
 -- Data for Name: submissions; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -7946,7 +7949,7 @@ COPY public.submissions (tutorial_id, assignment_id, token, created_at, updated_
 
 
 --
--- TOC entry 4853 (class 0 OID 7672914)
+-- TOC entry 4854 (class 0 OID 7672914)
 -- Dependencies: 318
 -- Data for Name: tags; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8004,7 +8007,7 @@ COPY public.tags (id, created_at, updated_at) FROM stdin;
 
 
 --
--- TOC entry 4855 (class 0 OID 7672923)
+-- TOC entry 4856 (class 0 OID 7672923)
 -- Dependencies: 320
 -- Data for Name: talk_tag_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8019,7 +8022,7 @@ COPY public.talk_tag_joins (id, talk_id, tag_id, created_at, updated_at) FROM st
 
 
 --
--- TOC entry 4857 (class 0 OID 7672932)
+-- TOC entry 4858 (class 0 OID 7672932)
 -- Dependencies: 322
 -- Data for Name: talks; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8071,7 +8074,7 @@ COPY public.talks (id, lecture_id, created_at, updated_at, title, "position", de
 
 
 --
--- TOC entry 4859 (class 0 OID 7672944)
+-- TOC entry 4860 (class 0 OID 7672944)
 -- Dependencies: 324
 -- Data for Name: terms; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8091,7 +8094,7 @@ COPY public.terms (id, year, season, created_at, updated_at, active, submission_
 
 
 --
--- TOC entry 4861 (class 0 OID 7672954)
+-- TOC entry 4862 (class 0 OID 7672954)
 -- Dependencies: 326
 -- Data for Name: thredded_categories; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8101,7 +8104,7 @@ COPY public.thredded_categories (id, messageboard_id, name, description, created
 
 
 --
--- TOC entry 4863 (class 0 OID 7672966)
+-- TOC entry 4864 (class 0 OID 7672966)
 -- Dependencies: 328
 -- Data for Name: thredded_messageboard_groups; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8111,7 +8114,7 @@ COPY public.thredded_messageboard_groups (id, name, "position", created_at, upda
 
 
 --
--- TOC entry 4865 (class 0 OID 7672976)
+-- TOC entry 4866 (class 0 OID 7672976)
 -- Dependencies: 330
 -- Data for Name: thredded_messageboard_notifications_for_followed_topics; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8121,7 +8124,7 @@ COPY public.thredded_messageboard_notifications_for_followed_topics (id, user_id
 
 
 --
--- TOC entry 4867 (class 0 OID 7672986)
+-- TOC entry 4868 (class 0 OID 7672986)
 -- Dependencies: 332
 -- Data for Name: thredded_messageboard_users; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8132,7 +8135,7 @@ COPY public.thredded_messageboard_users (id, thredded_user_detail_id, thredded_m
 
 
 --
--- TOC entry 4869 (class 0 OID 7672994)
+-- TOC entry 4870 (class 0 OID 7672994)
 -- Dependencies: 334
 -- Data for Name: thredded_messageboards; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8151,7 +8154,7 @@ COPY public.thredded_messageboards (id, name, slug, description, topics_count, p
 
 
 --
--- TOC entry 4871 (class 0 OID 7673009)
+-- TOC entry 4872 (class 0 OID 7673009)
 -- Dependencies: 336
 -- Data for Name: thredded_notifications_for_followed_topics; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8161,7 +8164,7 @@ COPY public.thredded_notifications_for_followed_topics (id, user_id, notifier_ke
 
 
 --
--- TOC entry 4873 (class 0 OID 7673018)
+-- TOC entry 4874 (class 0 OID 7673018)
 -- Dependencies: 338
 -- Data for Name: thredded_notifications_for_private_topics; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8171,7 +8174,7 @@ COPY public.thredded_notifications_for_private_topics (id, user_id, notifier_key
 
 
 --
--- TOC entry 4875 (class 0 OID 7673027)
+-- TOC entry 4876 (class 0 OID 7673027)
 -- Dependencies: 340
 -- Data for Name: thredded_post_moderation_records; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8181,7 +8184,7 @@ COPY public.thredded_post_moderation_records (id, post_id, messageboard_id, post
 
 
 --
--- TOC entry 4877 (class 0 OID 7673037)
+-- TOC entry 4878 (class 0 OID 7673037)
 -- Dependencies: 342
 -- Data for Name: thredded_posts; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8241,7 +8244,7 @@ COPY public.thredded_posts (id, user_id, content, source, postable_id, messagebo
 
 
 --
--- TOC entry 4879 (class 0 OID 7673050)
+-- TOC entry 4880 (class 0 OID 7673050)
 -- Dependencies: 344
 -- Data for Name: thredded_private_posts; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8251,7 +8254,7 @@ COPY public.thredded_private_posts (id, user_id, content, postable_id, created_a
 
 
 --
--- TOC entry 4881 (class 0 OID 7673060)
+-- TOC entry 4882 (class 0 OID 7673060)
 -- Dependencies: 346
 -- Data for Name: thredded_private_topics; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8261,7 +8264,7 @@ COPY public.thredded_private_topics (id, user_id, last_user_id, title, slug, pos
 
 
 --
--- TOC entry 4883 (class 0 OID 7673073)
+-- TOC entry 4884 (class 0 OID 7673073)
 -- Dependencies: 348
 -- Data for Name: thredded_private_users; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8271,7 +8274,7 @@ COPY public.thredded_private_users (id, private_topic_id, user_id, created_at, u
 
 
 --
--- TOC entry 4885 (class 0 OID 7673080)
+-- TOC entry 4886 (class 0 OID 7673080)
 -- Dependencies: 350
 -- Data for Name: thredded_topic_categories; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8281,7 +8284,7 @@ COPY public.thredded_topic_categories (id, topic_id, category_id) FROM stdin;
 
 
 --
--- TOC entry 4887 (class 0 OID 7673087)
+-- TOC entry 4888 (class 0 OID 7673087)
 -- Dependencies: 352
 -- Data for Name: thredded_topics; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8309,7 +8312,7 @@ COPY public.thredded_topics (id, user_id, last_user_id, title, slug, messageboar
 
 
 --
--- TOC entry 4889 (class 0 OID 7673107)
+-- TOC entry 4890 (class 0 OID 7673107)
 -- Dependencies: 354
 -- Data for Name: thredded_user_details; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8322,7 +8325,7 @@ COPY public.thredded_user_details (id, user_id, latest_activity_at, posts_count,
 
 
 --
--- TOC entry 4891 (class 0 OID 7673119)
+-- TOC entry 4892 (class 0 OID 7673119)
 -- Dependencies: 356
 -- Data for Name: thredded_user_messageboard_preferences; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8332,7 +8335,7 @@ COPY public.thredded_user_messageboard_preferences (id, user_id, messageboard_id
 
 
 --
--- TOC entry 4893 (class 0 OID 7673132)
+-- TOC entry 4894 (class 0 OID 7673132)
 -- Dependencies: 358
 -- Data for Name: thredded_user_post_notifications; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8342,7 +8345,7 @@ COPY public.thredded_user_post_notifications (id, user_id, post_id, notified_at)
 
 
 --
--- TOC entry 4895 (class 0 OID 7673140)
+-- TOC entry 4896 (class 0 OID 7673140)
 -- Dependencies: 360
 -- Data for Name: thredded_user_preferences; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8352,7 +8355,7 @@ COPY public.thredded_user_preferences (id, user_id, follow_topics_on_mention, au
 
 
 --
--- TOC entry 4897 (class 0 OID 7673152)
+-- TOC entry 4898 (class 0 OID 7673152)
 -- Dependencies: 362
 -- Data for Name: thredded_user_private_topic_read_states; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8362,7 +8365,7 @@ COPY public.thredded_user_private_topic_read_states (id, user_id, postable_id, u
 
 
 --
--- TOC entry 4899 (class 0 OID 7673166)
+-- TOC entry 4900 (class 0 OID 7673166)
 -- Dependencies: 364
 -- Data for Name: thredded_user_topic_follows; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8421,7 +8424,7 @@ COPY public.thredded_user_topic_follows (id, user_id, topic_id, created_at, reas
 
 
 --
--- TOC entry 4901 (class 0 OID 7673174)
+-- TOC entry 4902 (class 0 OID 7673174)
 -- Dependencies: 366
 -- Data for Name: thredded_user_topic_read_states; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8432,7 +8435,7 @@ COPY public.thredded_user_topic_read_states (id, messageboard_id, user_id, posta
 
 
 --
--- TOC entry 4903 (class 0 OID 7673189)
+-- TOC entry 4904 (class 0 OID 7673189)
 -- Dependencies: 368
 -- Data for Name: tutor_tutorial_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8443,7 +8446,7 @@ COPY public.tutor_tutorial_joins (id, tutorial_id, tutor_id, created_at, updated
 
 
 --
--- TOC entry 4952 (class 0 OID 7674627)
+-- TOC entry 4953 (class 0 OID 7674627)
 -- Dependencies: 417
 -- Data for Name: tutorial_memberships; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8485,7 +8488,7 @@ edb1656b-a9a7-495c-8adc-672299e90c42	45	3	63f553cc-8a8a-4d58-9c15-c1e3292550f6	2
 
 
 --
--- TOC entry 4905 (class 0 OID 7673198)
+-- TOC entry 4906 (class 0 OID 7673198)
 -- Dependencies: 370
 -- Data for Name: tutorials; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8517,7 +8520,7 @@ COPY public.tutorials (id, title, lecture_id, created_at, updated_at, capacity, 
 
 
 --
--- TOC entry 4907 (class 0 OID 7673208)
+-- TOC entry 4908 (class 0 OID 7673208)
 -- Dependencies: 372
 -- Data for Name: user_favorite_lecture_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8534,7 +8537,7 @@ COPY public.user_favorite_lecture_joins (id, user_id, lecture_id, created_at, up
 
 
 --
--- TOC entry 4909 (class 0 OID 7673217)
+-- TOC entry 4910 (class 0 OID 7673217)
 -- Dependencies: 374
 -- Data for Name: user_submission_joins; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8552,197 +8555,197 @@ COPY public.user_submission_joins (id, user_id, created_at, updated_at, submissi
 
 
 --
--- TOC entry 4911 (class 0 OID 7673225)
+-- TOC entry 4912 (class 0 OID 7673225)
 -- Dependencies: 376
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, created_at, updated_at, admin, subscription_type, consents, consented_at, name, homepage, no_notifications, locale, email_for_medium, email_for_announcement, email_for_teachable, email_for_news, current_lecture_id, confirmation_token, confirmed_at, confirmation_sent_at, unconfirmed_email, unread_comments, email_for_submission_upload, email_for_submission_removal, email_for_submission_join, email_for_submission_leave, email_for_correction_upload, email_for_submission_decision, name_in_tutorials, archived, locked_at, image_data, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, deletion_date, failed_attempts, unlock_token) FROM stdin;
-12	moded@mampf.edu	$2a$11$eKuw9w/rMMXl3.DltyxXnOCvPVmk2zN6W9Zl1G.LGfSO5X.S9kfYu	\N	\N	\N	2022-08-05 13:13:27.138526	2026-08-26 19:49:22.404179	f	1	t	2022-08-05 13:13:27.140572	moded	\N	f	en	f	f	f	f	\N	GEw-LMkj1zw73bsu-Jy5	2022-08-05 13:13:35.913881	2022-08-05 13:13:27.138906	\N	f	f	f	f	f	f	f		\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-6	student2@mampf.edu	$2a$11$YjHi/ngKpbyfNQTinqA3je.eV375jPZ5t79F85zKzfZD.lGGLsTt6	\N	\N	\N	2020-11-28 16:26:55.50289	2026-08-26 19:51:17.690523	f	1	t	2020-11-28 16:26:55.504637	student2	\N	f	en	t	t	t	f	\N	4DVzmJnsA4PJx9StS_Js	2020-11-28 16:27:07.826099	2020-11-28 16:26:55.502947	\N	t	f	f	f	f	f	f	Max Musterfrau	\N	\N	\N	5	2026-08-26 19:51:17.687287	2025-07-15 12:15:20.813542	\N	\N	\N	0	\N
-1	admin@mampf.edu	$2a$11$7r0YFqSS81..FVX3tuaAcujZa4RLesde/kmT9yjdeM.k5G/Xa8/sO	\N	\N	\N	2020-07-24 13:07:48.807973	2026-08-26 19:49:19.504102	t	1	t	2020-07-24 13:07:48.811417	admin	\N	f	en	t	t	t	t	\N	UguwyiyL_B65bQkMZMQf	2020-07-24 13:07:56.770723	2020-07-24 13:07:48.808231	\N	t	f	f	f	f	f	f		\N	\N	\N	3	2025-07-15 12:02:24.48997	2025-07-14 11:35:13.666864	\N	\N	\N	0	\N
-2	teacher@mampf.edu	$2a$11$zwc3y1GFv0v7TyvspOADherYPJddoge3W561ADSBe5BfrSolc4UEe	\N	\N	\N	2020-07-24 13:14:59.543985	2026-08-26 19:49:19.871654	f	1	t	2020-07-24 13:14:59.547776	DozentIn	\N	f	en	t	t	t	t	\N	quSs9sq1VAMQCbDgRyhU	2020-07-24 13:15:13.670023	2020-07-24 13:14:59.544082	\N	t	f	f	f	f	f	f		\N	\N	\N	12	2025-07-15 12:03:11.254407	2025-07-15 11:59:27.082351	\N	\N	\N	0	\N
-5	student1@mampf.edu	$2a$11$ksW..sn.BLwGMaCdUNm00eeLMsyPqKtBkmrikxOxn2/E1swn2gj7y	\N	\N	\N	2020-11-28 16:25:23.437946	2026-08-26 19:49:20.243139	f	1	t	2020-11-28 16:25:23.440059	student1	\N	f	en	f	f	f	t	\N	qwPPGpBwzjn7o_NE1cMd	2020-11-28 16:25:28.248539	2020-11-28 16:25:23.438158	\N	t	t	t	t	t	t	t	Max Mustermann	\N	\N	\N	6	2025-07-15 12:12:31.120017	2025-07-15 12:10:11.284039	\N	\N	\N	0	\N
-7	student3@mampf.edu	$2a$11$ddUeqzE7DUMC7zHXRVxpjenqCZJ239XyVsGCzSAV3EfP7D4iAF9uu	\N	\N	\N	2020-11-28 16:28:02.121432	2026-08-26 19:49:20.960712	f	1	t	2020-11-28 16:28:02.123082	student3	\N	f	en	t	t	t	f	\N	ZUzqyXACyQrBNVGGrWxm	2020-11-28 16:28:09.870025	2020-11-28 16:28:02.121486	\N	t	f	f	f	f	f	f	Berta Musterfrau	\N	\N	\N	3	2025-07-15 12:11:49.670511	2025-07-14 15:04:06.537713	\N	\N	\N	0	\N
-8	student4@mampf.edu	$2a$11$FOBPVbwMTUSWyYrqcSoPQe2gHX/uLlWpMldHDs17sy7TEB8Ss.kEu	\N	\N	\N	2020-11-28 16:29:07.923841	2026-08-26 19:49:21.317798	f	1	t	2020-11-28 16:29:07.925959	student4	\N	f	en	t	t	t	f	\N	j5hzKj7ePDPVbKGJsyqx	2020-11-28 16:29:14.406097	2020-11-28 16:29:07.923915	\N	t	f	f	f	f	f	f	Berta Mustermann	\N	\N	\N	1	2025-07-14 11:29:25.560481	2025-07-14 11:29:25.560481	\N	\N	\N	0	\N
-9	student5@mampf.edu	$2a$11$Flov23DlxDweBtwh9Jir4Obkyeqa.Izz5/BHK7QI85UVXdvUB6k36	\N	\N	\N	2020-11-28 16:30:12.956799	2026-08-26 19:49:21.678066	f	1	t	2020-11-28 16:30:12.958778	student5	\N	f	en	f	f	f	t	\N	eWAAGQqtUt9P31_dpHey	2020-11-28 16:30:18.870235	2020-11-28 16:30:12.956859	\N	t	t	t	t	t	t	t	Erika Musterfrau	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-10	tutor@mampf.edu	$2a$11$zMTGiZeqZQfnGmUA4QvnlORXXA/CRKyw/0VAoXoeDcTroChoc7lX.	\N	\N	\N	2020-11-28 16:34:08.325163	2026-08-26 19:49:22.043524	f	1	t	2020-11-28 16:34:08.326859	tutor	\N	f	en	t	t	t	f	\N	dbg8mcD6CmtfAfgAfX4Q	2020-11-28 16:34:11.824042	2020-11-28 16:34:08.325214	\N	t	f	f	f	f	f	f	Benjamin Tutor	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-13	ed@mampf.edu	$2a$11$wYYT9FyYYLj1GYLCVk3hiuRONeEtNPjDJJZbbEyA.uryloLwh54Wq	\N	\N	\N	2022-08-05 13:14:08.705536	2026-08-26 19:49:22.765607	f	1	t	2022-08-05 13:14:08.706967	ed	\N	f	en	f	f	f	f	\N	NhEfb358TxX5788uqSZy	2022-08-05 13:14:16.480332	2022-08-05 13:14:08.705583	\N	f	f	f	f	f	f	f		\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-14	demo_lecture_student_0@example.com	$2a$11$DYTX19kqD6C2Go90AFK4B.Jzwnj3UtMmRCrOpQw67xGj99bXkFknS	\N	\N	\N	2026-08-26 19:48:07.214925	2026-08-26 19:49:23.135307	f	1	t	2026-08-26 19:48:07.214846	Demo Lecture Student 0	\N	f	en	\N	\N	\N	\N	\N	z_YGpnA-TN8KnzG3sLjM	2026-08-26 19:48:07.232542	2026-08-26 19:48:07.215757	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-15	demo_lecture_student_1@example.com	$2a$11$rt/b4DTXuGIbLaKbyPnI2eQ4nCM9nAxPex1gVMMFssTylsVG6pEAa	\N	\N	\N	2026-08-26 19:48:07.809522	2026-08-26 19:49:23.533675	f	1	t	2026-08-26 19:48:07.809474	Demo Lecture Student 1	\N	f	en	\N	\N	\N	\N	\N	re-1t-yEsB_YZG7PHZRG	2026-08-26 19:48:07.814687	2026-08-26 19:48:07.809561	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-16	demo_lecture_student_2@example.com	$2a$11$yEEZRn5wIq3udgcze9OnQOfhhyiblxZf143QY/kM3sTsuwxfmjr7q	\N	\N	\N	2026-08-26 19:48:08.365155	2026-08-26 19:49:23.934421	f	1	t	2026-08-26 19:48:08.365075	Demo Lecture Student 2	\N	f	en	\N	\N	\N	\N	\N	WsnLyjxV3fS7szcn-pCg	2026-08-26 19:48:08.368977	2026-08-26 19:48:08.365207	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-17	demo_lecture_student_3@example.com	$2a$11$QxGiafM8q3yD6ZBv3/C3S.T4GJSXfwClThewvmQt1PM.YthNEw.Bi	\N	\N	\N	2026-08-26 19:48:08.927997	2026-08-26 19:49:24.313699	f	1	t	2026-08-26 19:48:08.927851	Demo Lecture Student 3	\N	f	en	\N	\N	\N	\N	\N	RGXSH9EzPaLzDTrdmpLC	2026-08-26 19:48:08.929793	2026-08-26 19:48:08.928046	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-18	demo_lecture_student_4@example.com	$2a$11$SpjewJU.0WWIzCQz.DLqcufnnIMW/3oWntNmIzkV4YxA3QJOQczf2	\N	\N	\N	2026-08-26 19:48:09.342082	2026-08-26 19:49:24.701126	f	1	t	2026-08-26 19:48:09.342037	Demo Lecture Student 4	\N	f	en	\N	\N	\N	\N	\N	1xueoytYbn468cDHiK1u	2026-08-26 19:48:09.344055	2026-08-26 19:48:09.34245	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-19	demo_lecture_student_5@example.com	$2a$11$dpOdFQ.8/Q6DdRetlo2ksuIHa5iDh1aWbcyNcaKJ/2nh1BzSagnoa	\N	\N	\N	2026-08-26 19:48:09.764081	2026-08-26 19:49:25.084762	f	1	t	2026-08-26 19:48:09.764032	Demo Lecture Student 5	\N	f	en	\N	\N	\N	\N	\N	GUYx_hwQbyZPxFZEkL3-	2026-08-26 19:48:09.765377	2026-08-26 19:48:09.764116	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-20	demo_lecture_student_6@example.com	$2a$11$vSakpmMmW31yBdqif1j6RuwkAKpgASUALqKpAlszPZMUS93j1fs9i	\N	\N	\N	2026-08-26 19:48:10.137806	2026-08-26 19:49:25.45365	f	1	t	2026-08-26 19:48:10.137712	Demo Lecture Student 6	\N	f	en	\N	\N	\N	\N	\N	m3ypBPiQBjEiJALpiTuV	2026-08-26 19:48:10.139577	2026-08-26 19:48:10.137847	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-21	demo_lecture_student_7@example.com	$2a$11$lRS2LqY.G26njYtmerR2/elIxpn88zPYUpvX69YK46f7jFEklwJUy	\N	\N	\N	2026-08-26 19:48:10.558701	2026-08-26 19:49:25.824371	f	1	t	2026-08-26 19:48:10.558655	Demo Lecture Student 7	\N	f	en	\N	\N	\N	\N	\N	S-FGSsxuUC2DKDyKjzwW	2026-08-26 19:48:10.562155	2026-08-26 19:48:10.558771	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-22	demo_lecture_student_8@example.com	$2a$11$Tpnxg4N/H5t46zXFWGzk5ucZvX6torAanCTa9cT/q8G6lggBmzs7y	\N	\N	\N	2026-08-26 19:48:10.941096	2026-08-26 19:49:26.205393	f	1	t	2026-08-26 19:48:10.941055	Demo Lecture Student 8	\N	f	en	\N	\N	\N	\N	\N	EDKTJ1bK8Mz7qZ6fq1wJ	2026-08-26 19:48:10.948131	2026-08-26 19:48:10.941493	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-23	demo_lecture_student_9@example.com	$2a$11$8aqNKSZZRLZnp7FQcXvPwul3xOWSR8.acP0NcJWZGO1qfMqcQZriu	\N	\N	\N	2026-08-26 19:48:11.347141	2026-08-26 19:49:26.562446	f	1	t	2026-08-26 19:48:11.347018	Demo Lecture Student 9	\N	f	en	\N	\N	\N	\N	\N	dGsc8yrt12a_yNgmHFHd	2026-08-26 19:48:11.354067	2026-08-26 19:48:11.347176	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-24	demo_lecture_student_10@example.com	$2a$11$HOqftJ4AziDikmGxuFSQ3uJf1p1ytTJSfpY5ZQYunIkgf604WNSim	\N	\N	\N	2026-08-26 19:48:11.746935	2026-08-26 19:49:26.920798	f	1	t	2026-08-26 19:48:11.746881	Demo Lecture Student 10	\N	f	en	\N	\N	\N	\N	\N	cj4USzWcz6ZBptE1PUb5	2026-08-26 19:48:11.748509	2026-08-26 19:48:11.746973	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-25	demo_lecture_student_11@example.com	$2a$11$YZhgYM6jWDFudxxWTI3AkuRH2iBcNtkApfEK0G0TipuNZyrfqi7/u	\N	\N	\N	2026-08-26 19:48:12.137225	2026-08-26 19:49:27.269646	f	1	t	2026-08-26 19:48:12.13718	Demo Lecture Student 11	\N	f	en	\N	\N	\N	\N	\N	Zbx3hSYa1b7jmZbY-uDt	2026-08-26 19:48:12.138682	2026-08-26 19:48:12.137257	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-26	demo_lecture_student_12@example.com	$2a$11$BNoXIDqpQsNnRfdhtg5qDO6VmlyzVNkws8eMaVhLxpQ.kTkJL4Luy	\N	\N	\N	2026-08-26 19:48:12.527363	2026-08-26 19:49:27.62003	f	1	t	2026-08-26 19:48:12.527215	Demo Lecture Student 12	\N	f	en	\N	\N	\N	\N	\N	7-E77vspWzpDQkVkCzSP	2026-08-26 19:48:12.528888	2026-08-26 19:48:12.527406	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-27	demo_lecture_student_13@example.com	$2a$11$D/hZRd6ymCILWwgTiV5NYOOOlHSDMYW7.03qHU0pBdAjAGHwfb2nC	\N	\N	\N	2026-08-26 19:48:12.911069	2026-08-26 19:49:27.973502	f	1	t	2026-08-26 19:48:12.911027	Demo Lecture Student 13	\N	f	en	\N	\N	\N	\N	\N	p6NCVAuY8uY2mDAR5_BE	2026-08-26 19:48:12.912761	2026-08-26 19:48:12.911102	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-28	demo_lecture_student_14@example.com	$2a$11$B4YXrzeI0a3USh1W0DnC4.SiQtIoGGBuedcOsU/pl/6I4DF8EJB8i	\N	\N	\N	2026-08-26 19:48:13.286724	2026-08-26 19:49:28.319857	f	1	t	2026-08-26 19:48:13.286676	Demo Lecture Student 14	\N	f	en	\N	\N	\N	\N	\N	jeAXcSFAJeQZynyiv4t9	2026-08-26 19:48:13.288394	2026-08-26 19:48:13.286758	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-29	demo_lecture_student_15@example.com	$2a$11$fgM6xRrsa9HAaNIUdjk1Sed06Cfr5pEuwaBFRXiM45k8G90T7p7a.	\N	\N	\N	2026-08-26 19:48:13.683043	2026-08-26 19:49:28.668784	f	1	t	2026-08-26 19:48:13.682978	Demo Lecture Student 15	\N	f	en	\N	\N	\N	\N	\N	y4hHVy2DTVZSiLG55rpk	2026-08-26 19:48:13.684784	2026-08-26 19:48:13.683105	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-30	demo_lecture_student_16@example.com	$2a$11$aDv9f6Xk.RSDltrsNR0HBe0sjYS3Mts3Ls7cS2XhG6Cd7dA8PVj96	\N	\N	\N	2026-08-26 19:48:14.060239	2026-08-26 19:49:29.017652	f	1	t	2026-08-26 19:48:14.059848	Demo Lecture Student 16	\N	f	en	\N	\N	\N	\N	\N	Y-BQdE3CRGaaNj_xcQKk	2026-08-26 19:48:14.062919	2026-08-26 19:48:14.060316	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-31	demo_lecture_student_17@example.com	$2a$11$MuX5tQhvkjQXrOAV7PxCNeRYrSs5jLm9cPIHkF0RY.YScQIGObt9y	\N	\N	\N	2026-08-26 19:48:14.43704	2026-08-26 19:49:29.374459	f	1	t	2026-08-26 19:48:14.436998	Demo Lecture Student 17	\N	f	en	\N	\N	\N	\N	\N	z2Ms-i3dR4DBR5qBBhVE	2026-08-26 19:48:14.438323	2026-08-26 19:48:14.437074	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-32	demo_lecture_student_18@example.com	$2a$11$YB4z2JtmYvvxz1G3PPznSehci0z6AgKBTrlePlL7s20xBcBruWetK	\N	\N	\N	2026-08-26 19:48:14.826853	2026-08-26 19:49:29.728511	f	1	t	2026-08-26 19:48:14.826811	Demo Lecture Student 18	\N	f	en	\N	\N	\N	\N	\N	zDHr7z-J5eJsvK3rY157	2026-08-26 19:48:14.828083	2026-08-26 19:48:14.826889	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-33	demo_lecture_student_19@example.com	$2a$11$i/gpZ1xEl3CU9StLTkJAaeEHaKwvffA3Ep/9fga.urRlc59o1CIcW	\N	\N	\N	2026-08-26 19:48:15.207163	2026-08-26 19:49:30.113436	f	1	t	2026-08-26 19:48:15.207122	Demo Lecture Student 19	\N	f	en	\N	\N	\N	\N	\N	tT8Q1maryAmpGjxRYhpM	2026-08-26 19:48:15.208569	2026-08-26 19:48:15.207195	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-34	demo_lecture_student_20@example.com	$2a$11$a1Zpblu/IURvwj.DuANm2uuTbE3vaWVSt4VzUNdkRbPhIKylrfPHa	\N	\N	\N	2026-08-26 19:48:15.603818	2026-08-26 19:49:30.505832	f	1	t	2026-08-26 19:48:15.603775	Demo Lecture Student 20	\N	f	en	\N	\N	\N	\N	\N	KtCvdseRBQkBAxKsRteC	2026-08-26 19:48:15.605363	2026-08-26 19:48:15.603855	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-35	demo_lecture_student_21@example.com	$2a$11$NUWzXNrJR7pb0D/kdDJA5uaGeTJz39qSp3LAQSSgZcvS7AH6G6TL2	\N	\N	\N	2026-08-26 19:48:15.981463	2026-08-26 19:49:30.906712	f	1	t	2026-08-26 19:48:15.981425	Demo Lecture Student 21	\N	f	en	\N	\N	\N	\N	\N	oXyyQFqL-76ti2D2szUQ	2026-08-26 19:48:15.982649	2026-08-26 19:48:15.981495	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-36	demo_lecture_student_22@example.com	$2a$11$tu5tlZm1Vg59VNrvg6ISluyppxigV/9aFKpFKvYDQ/uoJm.EaAaDu	\N	\N	\N	2026-08-26 19:48:16.36663	2026-08-26 19:49:31.276925	f	1	t	2026-08-26 19:48:16.366589	Demo Lecture Student 22	\N	f	en	\N	\N	\N	\N	\N	zoettit89ZGCM7tTfnrR	2026-08-26 19:48:16.368112	2026-08-26 19:48:16.366663	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-37	demo_lecture_student_23@example.com	$2a$11$PSGv2h/PggBNbMBQ3.kfA.OgxX.HHtOf2Bklyc9rSvyZMUsSezwh.	\N	\N	\N	2026-08-26 19:48:16.756622	2026-08-26 19:49:31.641237	f	1	t	2026-08-26 19:48:16.756585	Demo Lecture Student 23	\N	f	en	\N	\N	\N	\N	\N	_wAgQVhEqW44NrFGB6Xy	2026-08-26 19:48:16.757721	2026-08-26 19:48:16.756652	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-38	demo_lecture_student_24@example.com	$2a$11$HfXwGqk30GG9.nEyXOGsNumZGU60/vYE/AX07MrtpzrYtl33o5YzS	\N	\N	\N	2026-08-26 19:48:17.14132	2026-08-26 19:49:32.0143	f	1	t	2026-08-26 19:48:17.141284	Demo Lecture Student 24	\N	f	en	\N	\N	\N	\N	\N	-XKNd2yjpdWWZyBYxWpn	2026-08-26 19:48:17.142493	2026-08-26 19:48:17.141391	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-39	demo_lecture_student_25@example.com	$2a$11$ejRRzL7R7vFDDT.ELZmhpuOnogKby5TqFTboXRchnijhymtU5j2We	\N	\N	\N	2026-08-26 19:48:17.524694	2026-08-26 19:49:32.383076	f	1	t	2026-08-26 19:48:17.524023	Demo Lecture Student 25	\N	f	en	\N	\N	\N	\N	\N	1RTXpByHFusEMN-n9xkC	2026-08-26 19:48:17.526235	2026-08-26 19:48:17.524735	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-40	demo_lecture_student_26@example.com	$2a$11$oLW/NH1w6taP6odS61Fpi.mtxXnIVt/HCPDFgz47zSsA6NBlEkSAq	\N	\N	\N	2026-08-26 19:48:17.904308	2026-08-26 19:49:32.750626	f	1	t	2026-08-26 19:48:17.90427	Demo Lecture Student 26	\N	f	en	\N	\N	\N	\N	\N	_y4iBrf1_A5FDwNmvtov	2026-08-26 19:48:17.905466	2026-08-26 19:48:17.904339	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-41	demo_lecture_student_27@example.com	$2a$11$5jBpzuVNq9xeMATTqZRhgupFlKIfR8k1evTXGUcrMNuJQ9o/nP/V.	\N	\N	\N	2026-08-26 19:48:18.282456	2026-08-26 19:49:33.117939	f	1	t	2026-08-26 19:48:18.282419	Demo Lecture Student 27	\N	f	en	\N	\N	\N	\N	\N	y5zcKsj2eSsd9GiPcetk	2026-08-26 19:48:18.283562	2026-08-26 19:48:18.282488	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-42	demo_lecture_student_28@example.com	$2a$11$ZxU2X3wP4YPV0tpLwuYebOFovbMjOj.BdeSSPICDbvN7/.NPBAIai	\N	\N	\N	2026-08-26 19:48:18.659858	2026-08-26 19:49:33.481851	f	1	t	2026-08-26 19:48:18.659822	Demo Lecture Student 28	\N	f	en	\N	\N	\N	\N	\N	mMdUaaebtBJFJnbScRgw	2026-08-26 19:48:18.661458	2026-08-26 19:48:18.659887	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-43	demo_lecture_student_29@example.com	$2a$11$0EPXBmuVOdVOU7o9OUmRtOTmZBVE7yf7jkFkv.FXZfXs3Pf.NSwuS	\N	\N	\N	2026-08-26 19:48:19.041229	2026-08-26 19:49:33.857443	f	1	t	2026-08-26 19:48:19.041193	Demo Lecture Student 29	\N	f	en	\N	\N	\N	\N	\N	8FLnmoe7XtxxF3pEQdmt	2026-08-26 19:48:19.042522	2026-08-26 19:48:19.041259	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-44	demo_lecture_student_30@example.com	$2a$11$XGYZ8w5NJFtKW2jo13QMQ.dI/VoV/L8gcVq65D4lKog1EkkrYxe2a	\N	\N	\N	2026-08-26 19:48:19.414755	2026-08-26 19:49:34.232101	f	1	t	2026-08-26 19:48:19.414719	Demo Lecture Student 30	\N	f	en	\N	\N	\N	\N	\N	ngiKay5Hh4hFHess6YLN	2026-08-26 19:48:19.416212	2026-08-26 19:48:19.414785	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-45	demo_lecture_student_31@example.com	$2a$11$cc8UQAkPqKyhEN/uAQOAB.bpnIXx53XPhNhgGCsFNy4nPBoov6Wc2	\N	\N	\N	2026-08-26 19:48:19.793031	2026-08-26 19:49:34.602606	f	1	t	2026-08-26 19:48:19.792993	Demo Lecture Student 31	\N	f	en	\N	\N	\N	\N	\N	gLg1XHucCxiyYQGeeCkx	2026-08-26 19:48:19.794394	2026-08-26 19:48:19.793067	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-46	demo_seminar_student_0@mampf.edu	$2a$11$JZMu/yPqEiNr7WzCoJyBsOwteY7VWkZ7lxt5NTGD807lwPT8j4yXW	\N	\N	\N	2026-08-26 19:48:21.667102	2026-08-26 19:49:34.972673	f	1	t	2026-08-26 19:48:21.666825	Demo Seminar Student 0	\N	f	en	\N	\N	\N	\N	\N	Bez1V5NYMcKtfBB1g8LZ	2026-08-26 19:48:21.668969	2026-08-26 19:48:21.667235	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-47	demo_seminar_student_1@mampf.edu	$2a$11$VZdruCOt3WmkN5FTs8vqrOtXNOiJ/ScqvTf8Rh3rlDS6/RLtxVGke	\N	\N	\N	2026-08-26 19:48:22.070093	2026-08-26 19:49:35.334304	f	1	t	2026-08-26 19:48:22.070056	Demo Seminar Student 1	\N	f	en	\N	\N	\N	\N	\N	sr1FfqjSFSHW87gc7V-g	2026-08-26 19:48:22.071198	2026-08-26 19:48:22.070129	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-48	demo_seminar_student_2@mampf.edu	$2a$11$vcaEUSoER9TOBa5p3PjBy.lX7fN7KVd9CdreJqLdATxyqcB6mAzZa	\N	\N	\N	2026-08-26 19:48:22.43313	2026-08-26 19:49:35.685847	f	1	t	2026-08-26 19:48:22.433092	Demo Seminar Student 2	\N	f	en	\N	\N	\N	\N	\N	CFX4Xvrfx68mYkywV_-b	2026-08-26 19:48:22.434311	2026-08-26 19:48:22.433179	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-49	demo_seminar_student_3@mampf.edu	$2a$11$UFatEriBVeL4JHas.YRA3utsWzgA2A/hWjSoCSXV1ROaKBU93DhsW	\N	\N	\N	2026-08-26 19:48:22.806947	2026-08-26 19:49:36.036832	f	1	t	2026-08-26 19:48:22.806911	Demo Seminar Student 3	\N	f	en	\N	\N	\N	\N	\N	DViz-FcSqXSzVNjrb2BB	2026-08-26 19:48:22.808035	2026-08-26 19:48:22.80698	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-50	demo_seminar_student_4@mampf.edu	$2a$11$5.lYWhPFUXdnNJExExhQk.1850shCzpgRuStdu8Q0501c8CaKlaRG	\N	\N	\N	2026-08-26 19:48:23.164034	2026-08-26 19:49:36.392101	f	1	t	2026-08-26 19:48:23.163988	Demo Seminar Student 4	\N	f	en	\N	\N	\N	\N	\N	Y3k6twnJ3zMnN52NekWN	2026-08-26 19:48:23.165327	2026-08-26 19:48:23.164073	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-51	demo_seminar_student_5@mampf.edu	$2a$11$Go/GmLbssdpqF5OEmI6xy.twi1iOWfP6MMefBe1kIQVeWnDY1xoGG	\N	\N	\N	2026-08-26 19:48:23.660159	2026-08-26 19:49:36.749183	f	1	t	2026-08-26 19:48:23.660118	Demo Seminar Student 5	\N	f	en	\N	\N	\N	\N	\N	zmbZjJ2PNtMeiE6v2eLZ	2026-08-26 19:48:23.661385	2026-08-26 19:48:23.660206	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-52	demo_seminar_student_6@mampf.edu	$2a$11$/H4qqtWcZuuuuooJOLeOWerLJP8.TEovSBM1wLrStGL.Ah6tTsyIu	\N	\N	\N	2026-08-26 19:48:24.022698	2026-08-26 19:49:37.101154	f	1	t	2026-08-26 19:48:24.022663	Demo Seminar Student 6	\N	f	en	\N	\N	\N	\N	\N	6QqvvLNemQq5ACqrCxz3	2026-08-26 19:48:24.023795	2026-08-26 19:48:24.022734	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-53	demo_seminar_student_7@mampf.edu	$2a$11$2dg9/LPw.a5sPE7UhutBCO233M5nRMxkG3zC6D/L67qI6vBmO06em	\N	\N	\N	2026-08-26 19:48:24.429429	2026-08-26 19:49:37.452725	f	1	t	2026-08-26 19:48:24.429393	Demo Seminar Student 7	\N	f	en	\N	\N	\N	\N	\N	HpMzYZQ2S1QEnCgw2sSE	2026-08-26 19:48:24.430856	2026-08-26 19:48:24.429465	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-54	demo_seminar_student_8@mampf.edu	$2a$11$0tnTrxbwQIE0nO9QHKKxium8kKI6Ztm8ILDQtFzS4VMYwzDsAkyrO	\N	\N	\N	2026-08-26 19:48:24.778494	2026-08-26 19:49:37.806256	f	1	t	2026-08-26 19:48:24.778455	Demo Seminar Student 8	\N	f	en	\N	\N	\N	\N	\N	KzDDMcwSB17BahNBWyRr	2026-08-26 19:48:24.779645	2026-08-26 19:48:24.778534	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-55	demo_seminar_student_9@mampf.edu	$2a$11$eysDBuvgArdqEj0lWws8duan/fG7/B/rJ7SF5RBlOqlMmNk15vIHu	\N	\N	\N	2026-08-26 19:48:25.151005	2026-08-26 19:49:38.157528	f	1	t	2026-08-26 19:48:25.150961	Demo Seminar Student 9	\N	f	en	\N	\N	\N	\N	\N	t3FjNsRjckHx7GkAv6Gu	2026-08-26 19:48:25.152273	2026-08-26 19:48:25.151048	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-56	demo_seminar_student_10@mampf.edu	$2a$11$hX8.xJc5lG7FF.uyS1QwY.Tbl/3Vj9dAHnnjXNueqy1igotyCnPQa	\N	\N	\N	2026-08-26 19:48:25.50142	2026-08-26 19:49:38.509197	f	1	t	2026-08-26 19:48:25.500969	Demo Seminar Student 10	\N	f	en	\N	\N	\N	\N	\N	yhmZxNP7r9wgvkNXiNbL	2026-08-26 19:48:25.502932	2026-08-26 19:48:25.501469	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-57	demo_seminar_student_11@mampf.edu	$2a$11$v3OXFLx6iXPhmyaQD.tN7uEzwZnnUqo6Pj9/iXELcpHyQ1KA7ScxS	\N	\N	\N	2026-08-26 19:48:25.877974	2026-08-26 19:49:38.865288	f	1	t	2026-08-26 19:48:25.877686	Demo Seminar Student 11	\N	f	en	\N	\N	\N	\N	\N	5fnjws97WUsqW8EEboLK	2026-08-26 19:48:25.879618	2026-08-26 19:48:25.87849	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-58	demo_seminar_rejected_0@example.com	$2a$11$bOXEUHRB4seEaUfJWnDAPuidt15MkeNl1WDwtV52hb.ypNyOqTGBu	\N	\N	\N	2026-08-26 19:48:26.217589	2026-08-26 19:49:39.220275	f	1	t	2026-08-26 19:48:26.217556	Demo Seminar Rejected 0	\N	f	en	\N	\N	\N	\N	\N	87ovjJE3eGwGsZ1HtawD	2026-08-26 19:48:26.218782	2026-08-26 19:48:26.217622	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-59	demo_seminar_rejected_1@example.com	$2a$11$0vCMb2P0SuyVUbzxy2oq.uO/dpDKzonIDr3GBn8Ct8WGwA6iKu.4S	\N	\N	\N	2026-08-26 19:48:26.584305	2026-08-26 19:49:39.571484	f	1	t	2026-08-26 19:48:26.584273	Demo Seminar Rejected 1	\N	f	en	\N	\N	\N	\N	\N	9V_JULqBMpbWRVQysUZn	2026-08-26 19:48:26.585473	2026-08-26 19:48:26.584336	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-60	solver_user_0@example.com	$2a$11$lcNfqWSIsrXOkjA17uxtxOtvKzSjGZ3Hd2dnM61Sswj3jNmvERFq2	\N	\N	\N	2026-08-26 19:48:27.51481	2026-08-26 19:49:39.92384	f	1	t	2026-08-26 19:48:27.514766	Solver User 0	\N	f	en	\N	\N	\N	\N	\N	V-s657wkamGfuWHLzxr_	2026-08-26 19:48:27.51596	2026-08-26 19:48:27.514854	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-61	solver_user_1@example.com	$2a$11$b/rlwbDTO6evZNcS.qfOkOW3yDl2oCkRXqOrKgVZkwRvlOvnM7fz2	\N	\N	\N	2026-08-26 19:48:27.889997	2026-08-26 19:49:40.279586	f	1	t	2026-08-26 19:48:27.889945	Solver User 1	\N	f	en	\N	\N	\N	\N	\N	UeuyaVLmqwwmK_gPRmQF	2026-08-26 19:48:27.891128	2026-08-26 19:48:27.890036	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-62	solver_user_2@example.com	$2a$11$yxRWWRLGAJt5ZG.c7uxqs.4l7ilvMbgTD2CDxXITjcZTr3YKFcxC6	\N	\N	\N	2026-08-26 19:48:28.277957	2026-08-26 19:49:40.671109	f	1	t	2026-08-26 19:48:28.277923	Solver User 2	\N	f	en	\N	\N	\N	\N	\N	VFuadniEjbsyztTtEy_N	2026-08-26 19:48:28.279126	2026-08-26 19:48:28.27799	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-63	solver_user_3@example.com	$2a$11$mnNsha1d7k0AAwK09gTvCOx59hBnBA4eCZsWquQKb20wjl29tAU.2	\N	\N	\N	2026-08-26 19:48:28.650515	2026-08-26 19:49:41.022676	f	1	t	2026-08-26 19:48:28.650483	Solver User 3	\N	f	en	\N	\N	\N	\N	\N	_ynBNH8v6VxdNxMKRxRq	2026-08-26 19:48:28.651677	2026-08-26 19:48:28.650553	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-64	solver_user_4@example.com	$2a$11$6oLR9igHfD5WtyUlurjwoOgk/6j6l1x0Jw8UqaJBTqkTChKF2AzVW	\N	\N	\N	2026-08-26 19:48:29.029028	2026-08-26 19:49:41.377041	f	1	t	2026-08-26 19:48:29.028993	Solver User 4	\N	f	en	\N	\N	\N	\N	\N	D-nbT8Xzzi2MUhW-g6rt	2026-08-26 19:48:29.030264	2026-08-26 19:48:29.029064	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-65	solver_user_5@example.com	$2a$11$xzC8ePQPkHIXIt8mJ8Q.8eTTaaJs8lAVHVEcYpeHihsl8SmIdI7tS	\N	\N	\N	2026-08-26 19:48:29.420129	2026-08-26 19:49:41.733686	f	1	t	2026-08-26 19:48:29.420096	Solver User 5	\N	f	en	\N	\N	\N	\N	\N	CMafyCfD3yVfEnFN3-aq	2026-08-26 19:48:29.421263	2026-08-26 19:48:29.420166	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-66	solver_user_6@example.com	$2a$11$4aWOACwK2DA0.SwsOKK4NO.WQ4Tn/AIhdAiklq5gCQ88dVOO5xC3u	\N	\N	\N	2026-08-26 19:48:29.794009	2026-08-26 19:49:42.091749	f	1	t	2026-08-26 19:48:29.793974	Solver User 6	\N	f	en	\N	\N	\N	\N	\N	jHFS2qWvMP6YYvVfCxU_	2026-08-26 19:48:29.795233	2026-08-26 19:48:29.794063	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-67	solver_user_7@example.com	$2a$11$BsUMht.I5gN7oFkospeS/ecwgQCfmt7ExGzsiDQ4guG94HOe97oy2	\N	\N	\N	2026-08-26 19:48:30.189193	2026-08-26 19:49:42.451606	f	1	t	2026-08-26 19:48:30.189159	Solver User 7	\N	f	en	\N	\N	\N	\N	\N	mbmNxusKB5VzgBQzQsks	2026-08-26 19:48:30.190555	2026-08-26 19:48:30.189229	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-68	solver_user_8@example.com	$2a$11$Rjp9KPSVowFy8bRB.HifsuGWFk73U8Rdql9Qb2bBRr0t8JaDTpXIi	\N	\N	\N	2026-08-26 19:48:30.56596	2026-08-26 19:49:42.811467	f	1	t	2026-08-26 19:48:30.565921	Solver User 8	\N	f	en	\N	\N	\N	\N	\N	5vKG6hjzFBW2CypqYCoN	2026-08-26 19:48:30.567206	2026-08-26 19:48:30.565997	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-69	solver_user_9@example.com	$2a$11$iYFpFjE/kFlPb1AA3ps1HO2OO1Ss2t1BsoqesNS.N8hMDH/E4oDea	\N	\N	\N	2026-08-26 19:48:30.92305	2026-08-26 19:49:43.174141	f	1	t	2026-08-26 19:48:30.923016	Solver User 9	\N	f	en	\N	\N	\N	\N	\N	612XG-eb-DDxE7xcD6Jo	2026-08-26 19:48:30.924151	2026-08-26 19:48:30.923085	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-70	solver_user_10@example.com	$2a$11$GdbD1vUchSaRx8XlCz3.e.u5/oHTOKKQ3iXYzdlN047VFPwZQPeBG	\N	\N	\N	2026-08-26 19:48:31.301441	2026-08-26 19:49:43.533288	f	1	t	2026-08-26 19:48:31.301408	Solver User 10	\N	f	en	\N	\N	\N	\N	\N	y9HSBTZ-1UGDiAe5UFKs	2026-08-26 19:48:31.302594	2026-08-26 19:48:31.301474	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-71	solver_user_11@example.com	$2a$11$680fqdJywLVGO5xanLnk3e8pGQiF6mWGs7r.IE9TdkPjPjcwdAHWC	\N	\N	\N	2026-08-26 19:48:31.659411	2026-08-26 19:49:43.888798	f	1	t	2026-08-26 19:48:31.65938	Solver User 11	\N	f	en	\N	\N	\N	\N	\N	c9affA9SLtomwDoxqo3x	2026-08-26 19:48:31.66059	2026-08-26 19:48:31.659443	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-72	solver_user_12@example.com	$2a$11$fiINlD/oRs6mYaLouC.p5OGMq02P2vPefq1PDNXXgDrmoNURekS1C	\N	\N	\N	2026-08-26 19:48:32.029917	2026-08-26 19:49:44.246821	f	1	t	2026-08-26 19:48:32.029883	Solver User 12	\N	f	en	\N	\N	\N	\N	\N	VEA4TB4PxRv_z2dva7zD	2026-08-26 19:48:32.031003	2026-08-26 19:48:32.029953	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-73	solver_user_13@example.com	$2a$11$GoAW/FOGfiz1ONAV9ol72OxOda.KpvhlF4/pJsiZ5QJpsmt.IMywi	\N	\N	\N	2026-08-26 19:48:32.398932	2026-08-26 19:49:44.615154	f	1	t	2026-08-26 19:48:32.398899	Solver User 13	\N	f	en	\N	\N	\N	\N	\N	NyDej8SSeamRMySiVGNZ	2026-08-26 19:48:32.401516	2026-08-26 19:48:32.39959	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-74	solver_user_14@example.com	$2a$11$dcL3sWx51gUwvSee3FLQeu26BeOL4l/ljHSsKC299P1M8NVGdd0Ni	\N	\N	\N	2026-08-26 19:48:32.748551	2026-08-26 19:49:44.979558	f	1	t	2026-08-26 19:48:32.748515	Solver User 14	\N	f	en	\N	\N	\N	\N	\N	zKn66VKgNjzQRL8to82y	2026-08-26 19:48:32.749766	2026-08-26 19:48:32.748583	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-75	solver_user_15@example.com	$2a$11$u0GmySdw/Wf7neGg0bFAaO5haBgWCJQPk/PFoVbbvKqcumFU47fcK	\N	\N	\N	2026-08-26 19:48:33.117156	2026-08-26 19:49:45.334282	f	1	t	2026-08-26 19:48:33.116896	Solver User 15	\N	f	en	\N	\N	\N	\N	\N	tyza6eaRacRMz_zYc4jQ	2026-08-26 19:48:33.118383	2026-08-26 19:48:33.117196	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-76	solver_user_16@example.com	$2a$11$aXFnXVBOLP54lIjnPqnqiuY2CZyS7KcJi/xUcjz9LAG0Y7E9ujAVC	\N	\N	\N	2026-08-26 19:48:33.48573	2026-08-26 19:49:45.692493	f	1	t	2026-08-26 19:48:33.485698	Solver User 16	\N	f	en	\N	\N	\N	\N	\N	Vy9SEGpKzxS3A89yCyM2	2026-08-26 19:48:33.487118	2026-08-26 19:48:33.485761	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-77	solver_user_17@example.com	$2a$11$H4ezH23YNErK9uxGNsqZOu/37KqgaboUeASx5rsFjIJ3ybRLsc5v2	\N	\N	\N	2026-08-26 19:48:33.840001	2026-08-26 19:49:46.049462	f	1	t	2026-08-26 19:48:33.839968	Solver User 17	\N	f	en	\N	\N	\N	\N	\N	S4W2jWdsmgGwQH9C5asz	2026-08-26 19:48:33.841086	2026-08-26 19:48:33.840033	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-78	solver_user_18@example.com	$2a$11$gQfzZsLBDdkuh7U9VuYgXe3JVQOILRUqlPY7GTmitjrl1X5MaNGnu	\N	\N	\N	2026-08-26 19:48:34.207645	2026-08-26 19:49:46.424747	f	1	t	2026-08-26 19:48:34.207613	Solver User 18	\N	f	en	\N	\N	\N	\N	\N	kEef2LWZgwNnTV4GANAj	2026-08-26 19:48:34.208909	2026-08-26 19:48:34.207678	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-79	solver_user_19@example.com	$2a$11$xslyyInMV6KMoE6XrMu16uYCDZxgatyC1d8M.N2A8yYk8AR7nac6e	\N	\N	\N	2026-08-26 19:48:34.562486	2026-08-26 19:49:46.792784	f	1	t	2026-08-26 19:48:34.562444	Solver User 19	\N	f	en	\N	\N	\N	\N	\N	AyBJK3PsyzLysHxYvUS-	2026-08-26 19:48:34.564079	2026-08-26 19:48:34.56252	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-80	solver_user_20@example.com	$2a$11$r7dQbmLWrl5VB5/t2CCi1uQh/es3dJK2CaIafJ25Nsbv4h2zZVx5q	\N	\N	\N	2026-08-26 19:48:34.932963	2026-08-26 19:49:47.15266	f	1	t	2026-08-26 19:48:34.932924	Solver User 20	\N	f	en	\N	\N	\N	\N	\N	xzSzDzPTTo8CYfynp7ac	2026-08-26 19:48:34.934409	2026-08-26 19:48:34.932999	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-81	solver_user_21@example.com	$2a$11$SiS8AkKkb.CMFDixgBJH4eRjn0T6OLRXczMaOhwCDMSlutuFioyeG	\N	\N	\N	2026-08-26 19:48:35.31679	2026-08-26 19:49:47.51625	f	1	t	2026-08-26 19:48:35.316756	Solver User 21	\N	f	en	\N	\N	\N	\N	\N	4dHzJoPdo4YQYNbTUzG3	2026-08-26 19:48:35.318046	2026-08-26 19:48:35.316822	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-82	solver_user_22@example.com	$2a$11$mFK7BYpPRoRA0YdJqKHxkOKrraqW6mh9URfL7yVHRXHLDjI9EHCYS	\N	\N	\N	2026-08-26 19:48:35.706971	2026-08-26 19:49:47.877807	f	1	t	2026-08-26 19:48:35.706887	Solver User 22	\N	f	en	\N	\N	\N	\N	\N	JeSfLfNREbtWn1y6Hosm	2026-08-26 19:48:35.708352	2026-08-26 19:48:35.707023	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-83	solver_user_23@example.com	$2a$11$R.Xz3govGq/ID92FDWZSGeB/edwIXmQTq9JEpaRYjXeF6F0at.xTS	\N	\N	\N	2026-08-26 19:48:36.101474	2026-08-26 19:49:48.229248	f	1	t	2026-08-26 19:48:36.101431	Solver User 23	\N	f	en	\N	\N	\N	\N	\N	btxVCAz2kf8tA3YvoFw7	2026-08-26 19:48:36.102809	2026-08-26 19:48:36.101511	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-84	solver_user_24@example.com	$2a$11$5bO/hC.T4CMZbIJ75tI0seeEpzSOqWzocGhYLMj6lTxSpcLeidbs.	\N	\N	\N	2026-08-26 19:48:36.497327	2026-08-26 19:49:48.58517	f	1	t	2026-08-26 19:48:36.497293	Solver User 24	\N	f	en	\N	\N	\N	\N	\N	VgdFsxP742ps9EMEZZgs	2026-08-26 19:48:36.498558	2026-08-26 19:48:36.497361	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-85	solver_user_25@example.com	$2a$11$57pylDEj/JmkEdNNJU5eUeeyPzVu1tZrbD11U3W63fB8RY0Mcobra	\N	\N	\N	2026-08-26 19:48:36.892575	2026-08-26 19:49:48.948163	f	1	t	2026-08-26 19:48:36.892542	Solver User 25	\N	f	en	\N	\N	\N	\N	\N	JuxgET6z7LtutDYKbrtx	2026-08-26 19:48:36.893709	2026-08-26 19:48:36.892605	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-86	solver_user_26@example.com	$2a$11$QRT9LCzbtGRv4wt7HKuKBO4TceRlT7bFaSuf5GvWAWAb/eo8LKVpC	\N	\N	\N	2026-08-26 19:48:37.274405	2026-08-26 19:49:49.305423	f	1	t	2026-08-26 19:48:37.27437	Solver User 26	\N	f	en	\N	\N	\N	\N	\N	jdwDNSsdWN-mky99Y3UC	2026-08-26 19:48:37.27586	2026-08-26 19:48:37.27444	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-87	solver_user_27@example.com	$2a$11$I8FqGFsS6cqo8mbNEI8zjOzp8Uv/vd.xj.AY5uDjNSYt..Yts1W4W	\N	\N	\N	2026-08-26 19:48:37.647646	2026-08-26 19:49:49.667816	f	1	t	2026-08-26 19:48:37.647613	Solver User 27	\N	f	en	\N	\N	\N	\N	\N	T2ZsNhHS_f4TzkxBeZKg	2026-08-26 19:48:37.648764	2026-08-26 19:48:37.647679	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-88	solver_user_28@example.com	$2a$11$Hc8xXerOATWJujysiCjlfO4oolxC6ZyGqKBIa2sJSZig9aKY/sRca	\N	\N	\N	2026-08-26 19:48:38.008577	2026-08-26 19:49:50.030726	f	1	t	2026-08-26 19:48:38.00854	Solver User 28	\N	f	en	\N	\N	\N	\N	\N	hE-nEiJF78EqzqqNX87i	2026-08-26 19:48:38.010149	2026-08-26 19:48:38.008635	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-89	solver_user_29@example.com	$2a$11$ge2jZdYDOK1amb3pmQJp2uSJtsDibUujO9X2ij3ZsnnosMx0Zn782	\N	\N	\N	2026-08-26 19:48:38.40139	2026-08-26 19:49:50.393399	f	1	t	2026-08-26 19:48:38.40135	Solver User 29	\N	f	en	\N	\N	\N	\N	\N	YJ1jpWzkX9cTybaes7AW	2026-08-26 19:48:38.402826	2026-08-26 19:48:38.401432	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-90	solver_user_30@example.com	$2a$11$7.o3xzIV92fiB0fCepMw2.ZMWEBvYPaiaA/gTQSl.u/mTo/1UL8u2	\N	\N	\N	2026-08-26 19:48:38.773417	2026-08-26 19:49:50.745429	f	1	t	2026-08-26 19:48:38.773384	Solver User 30	\N	f	en	\N	\N	\N	\N	\N	R47sKsJ3jiUaFTg46J_T	2026-08-26 19:48:38.774981	2026-08-26 19:48:38.773452	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-91	solver_user_31@example.com	$2a$11$4hY76wCECFKvLXPgkpGkKORhA8HAuLK8NGa4ePp9i3OT.HpccWg5O	\N	\N	\N	2026-08-26 19:48:39.149572	2026-08-26 19:49:51.09895	f	1	t	2026-08-26 19:48:39.149533	Solver User 31	\N	f	en	\N	\N	\N	\N	\N	3AFJvpz_3nLqr6KNQP41	2026-08-26 19:48:39.151066	2026-08-26 19:48:39.149629	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-92	solver_user_32@example.com	$2a$11$agrhWy/JqNyaVx/pN1Grw.vDyAZiwCIvdJqJ5Li7jaV9iqZbX9EEK	\N	\N	\N	2026-08-26 19:48:39.552711	2026-08-26 19:49:51.457855	f	1	t	2026-08-26 19:48:39.552677	Solver User 32	\N	f	en	\N	\N	\N	\N	\N	e89WdwMHsN3DgsnxGhFP	2026-08-26 19:48:39.554023	2026-08-26 19:48:39.552745	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-93	solver_user_33@example.com	$2a$11$3pXNWeZCIhmLLw37BnQ8HeItF2foNC5GpgAeus0RyJKcJs9am.yW.	\N	\N	\N	2026-08-26 19:48:39.923175	2026-08-26 19:49:51.811773	f	1	t	2026-08-26 19:48:39.923134	Solver User 33	\N	f	en	\N	\N	\N	\N	\N	djRpJeuxxHy9TiDYbsyg	2026-08-26 19:48:39.924566	2026-08-26 19:48:39.923217	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-94	solver_user_34@example.com	$2a$11$mX9kgMSc.l0OFY.qFAd8tuA.TFx4RKliKJDqFn93svDXQ09lp3UkK	\N	\N	\N	2026-08-26 19:48:40.305242	2026-08-26 19:49:52.164426	f	1	t	2026-08-26 19:48:40.305206	Solver User 34	\N	f	en	\N	\N	\N	\N	\N	tq6bVr-QJzAu1KtYehwy	2026-08-26 19:48:40.306532	2026-08-26 19:48:40.305279	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-95	solver_user_35@example.com	$2a$11$M6xWI0KoZJXZeu6XQ3eic.w72z.H5DDZ0/rRV0BTtax5wxWkAZeO6	\N	\N	\N	2026-08-26 19:48:40.730029	2026-08-26 19:49:52.519509	f	1	t	2026-08-26 19:48:40.729995	Solver User 35	\N	f	en	\N	\N	\N	\N	\N	4fNP78u5pB-YjrJpKR8i	2026-08-26 19:48:40.732497	2026-08-26 19:48:40.730062	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-96	solver_user_36@example.com	$2a$11$WF4MruprXXdx0qfWehuQueNu9veqFzpiHuGTmPk/YGZjjZKLusTPy	\N	\N	\N	2026-08-26 19:48:41.103435	2026-08-26 19:49:52.876616	f	1	t	2026-08-26 19:48:41.103401	Solver User 36	\N	f	en	\N	\N	\N	\N	\N	GMgx7Ff8txUfzZKRGxyL	2026-08-26 19:48:41.104643	2026-08-26 19:48:41.103469	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-97	solver_user_37@example.com	$2a$11$snAcSyxufsue3TNCVYEHFOVKqygI31/RyGQotpOHQQ9rkZKwPGb.q	\N	\N	\N	2026-08-26 19:48:41.4944	2026-08-26 19:49:53.22649	f	1	t	2026-08-26 19:48:41.494366	Solver User 37	\N	f	en	\N	\N	\N	\N	\N	zjUBDsPuJCyQ_Hsi6tdn	2026-08-26 19:48:41.495673	2026-08-26 19:48:41.494432	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-98	solver_user_38@example.com	$2a$11$dFo.gEZOmVzSh7Fx0fBcFe14x9vVwS6NOZ7NErTHbZj0U5P2VwmkK	\N	\N	\N	2026-08-26 19:48:41.862229	2026-08-26 19:49:53.580174	f	1	t	2026-08-26 19:48:41.862196	Solver User 38	\N	f	en	\N	\N	\N	\N	\N	58P_duxP8UjDkceJCYLq	2026-08-26 19:48:41.863353	2026-08-26 19:48:41.862262	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-99	solver_user_39@example.com	$2a$11$BCiBrxJhvtlW/TtefAZLj.8cvDFd1GyrQqF3Jbu/eQ6xk2bi3zsYe	\N	\N	\N	2026-08-26 19:48:42.239841	2026-08-26 19:49:53.934861	f	1	t	2026-08-26 19:48:42.239808	Solver User 39	\N	f	en	\N	\N	\N	\N	\N	eBziXWBbDzpsjXz_-2C1	2026-08-26 19:48:42.241115	2026-08-26 19:48:42.239873	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-100	solver_user_40@example.com	$2a$11$.AI0RnlZxnWPLvH28t/0lOntWxwvgccxu2se2w5b..NtpLfiuXnXm	\N	\N	\N	2026-08-26 19:48:42.624455	2026-08-26 19:49:54.296857	f	1	t	2026-08-26 19:48:42.624423	Solver User 40	\N	f	en	\N	\N	\N	\N	\N	RgwzcaUQncACkTpxBLm4	2026-08-26 19:48:42.625568	2026-08-26 19:48:42.624486	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-101	solver_user_41@example.com	$2a$11$h3WhX6073jXsy76PEQN6v.KL.H3BTCvEG96Ok6.k3CC9P/z9NJpbW	\N	\N	\N	2026-08-26 19:48:42.9974	2026-08-26 19:49:54.650178	f	1	t	2026-08-26 19:48:42.997364	Solver User 41	\N	f	en	\N	\N	\N	\N	\N	rGemd-g5YYNV5X_pgwcf	2026-08-26 19:48:42.99875	2026-08-26 19:48:42.997432	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-102	solver_user_42@example.com	$2a$11$GKUq2APsTco0932sA1GTpO2hdteg7nfPy85XmADW/K5YYED9B0v3G	\N	\N	\N	2026-08-26 19:48:43.398829	2026-08-26 19:49:55.016774	f	1	t	2026-08-26 19:48:43.398794	Solver User 42	\N	f	en	\N	\N	\N	\N	\N	4SdABSqtkmJZHhRbUcPW	2026-08-26 19:48:43.400026	2026-08-26 19:48:43.398864	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-103	solver_user_43@example.com	$2a$11$6OWBV.OJqRzp8EvWilw6Z.HnvoXKL/F8Gn4Sr3lBbkd4QMXGVsgwa	\N	\N	\N	2026-08-26 19:48:43.808352	2026-08-26 19:49:55.374848	f	1	t	2026-08-26 19:48:43.808318	Solver User 43	\N	f	en	\N	\N	\N	\N	\N	LsgyCCQFoFJVgLKPWz-9	2026-08-26 19:48:43.809524	2026-08-26 19:48:43.808389	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-104	solver_user_44@example.com	$2a$11$3ncew.5WsiBK5wsbE1H5CeFOssNpxD.YO74if..xH/9IKxIXxquqS	\N	\N	\N	2026-08-26 19:48:44.201047	2026-08-26 19:49:55.739024	f	1	t	2026-08-26 19:48:44.201012	Solver User 44	\N	f	en	\N	\N	\N	\N	\N	j3LNQCaMWSWdDfPQsJRa	2026-08-26 19:48:44.202187	2026-08-26 19:48:44.201079	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-105	solver_user_45@example.com	$2a$11$PvO7/DGfvkCguuYWHJ.CLOZPdX4O/j4mr5jSvUsIuNSreOc8KWFYO	\N	\N	\N	2026-08-26 19:48:44.607021	2026-08-26 19:49:56.088957	f	1	t	2026-08-26 19:48:44.606974	Solver User 45	\N	f	en	\N	\N	\N	\N	\N	_fsP8-UJQ3WKVLcZQVBs	2026-08-26 19:48:44.609389	2026-08-26 19:48:44.607063	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-106	solver_user_46@example.com	$2a$11$jOaqrIwun52s27UOjoYL2Ob/V9K4kX/1aSgJNhjMEL9LKsLKciGsu	\N	\N	\N	2026-08-26 19:48:45.005309	2026-08-26 19:49:56.436419	f	1	t	2026-08-26 19:48:45.005266	Solver User 46	\N	f	en	\N	\N	\N	\N	\N	H_KXi1qFgJGADoumLWYw	2026-08-26 19:48:45.006732	2026-08-26 19:48:45.005348	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-107	solver_user_47@example.com	$2a$11$UYM99M.cVVCqB/BJCOgobewdKXyruGm/aOjicx0eoS1OQnNMBNQTi	\N	\N	\N	2026-08-26 19:48:45.406275	2026-08-26 19:49:56.785076	f	1	t	2026-08-26 19:48:45.406231	Solver User 47	\N	f	en	\N	\N	\N	\N	\N	kh7Svii9Tj_JbDZo974Q	2026-08-26 19:48:45.408029	2026-08-26 19:48:45.406314	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-108	solver_user_48@example.com	$2a$11$v8LqjJTIfGq9/xledAx4ve0y67gU3wxgNtbywe3rMb1Qbjx/Cbhsy	\N	\N	\N	2026-08-26 19:48:45.806639	2026-08-26 19:49:57.134272	f	1	t	2026-08-26 19:48:45.806606	Solver User 48	\N	f	en	\N	\N	\N	\N	\N	75xzmBn4egh4SLCNoztz	2026-08-26 19:48:45.807738	2026-08-26 19:48:45.806669	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-109	solver_user_49@example.com	$2a$11$8ODJTh7XxarOzq2UVJODN.DJWoLTSrANZM8Bjy8Wlt.2iO4CDF3V6	\N	\N	\N	2026-08-26 19:48:46.186853	2026-08-26 19:49:57.482714	f	1	t	2026-08-26 19:48:46.186819	Solver User 49	\N	f	en	\N	\N	\N	\N	\N	4U48qS_BAQwj5-yWY784	2026-08-26 19:48:46.188038	2026-08-26 19:48:46.186885	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-110	solver_user_50@example.com	$2a$11$LFhGV3Iwu5ZTQxjIxgS9S.NhWL4TsvS.Q9gWvaCtsip/Tl9o6wG3q	\N	\N	\N	2026-08-26 19:48:46.592361	2026-08-26 19:49:57.837617	f	1	t	2026-08-26 19:48:46.592329	Solver User 50	\N	f	en	\N	\N	\N	\N	\N	c99BN5Fs1kfa9WNG7xsE	2026-08-26 19:48:46.593713	2026-08-26 19:48:46.592391	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-111	solver_user_51@example.com	$2a$11$YmKX.37jWNJcRmHUCkBdPOLWrAXr7DVBcJnledfo1A/wNck0H/MNG	\N	\N	\N	2026-08-26 19:48:46.960592	2026-08-26 19:49:58.185358	f	1	t	2026-08-26 19:48:46.960561	Solver User 51	\N	f	en	\N	\N	\N	\N	\N	rjz_fqXWBTY36GqjxYpC	2026-08-26 19:48:46.961712	2026-08-26 19:48:46.960624	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-112	solver_user_52@example.com	$2a$11$8MvMq8ZJUlenud4JPrQvSuHkhLjncXpzpsmZ2ml.zoawN109nTnZ2	\N	\N	\N	2026-08-26 19:48:47.312663	2026-08-26 19:49:58.531606	f	1	t	2026-08-26 19:48:47.3126	Solver User 52	\N	f	en	\N	\N	\N	\N	\N	Qs4KM8j5uyHRTZrXKwCe	2026-08-26 19:48:47.313762	2026-08-26 19:48:47.312699	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-113	solver_user_53@example.com	$2a$11$xtVeYGA4rUpUH2k8qXMNGekYyrMtWQoEsgSApzVdIl.dK4LQ/G8Ma	\N	\N	\N	2026-08-26 19:48:47.811715	2026-08-26 19:49:58.883993	f	1	t	2026-08-26 19:48:47.811676	Solver User 53	\N	f	en	\N	\N	\N	\N	\N	xt2Rzwz1sRt-F69g7dbd	2026-08-26 19:48:47.813295	2026-08-26 19:48:47.811762	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-114	solver_user_54@example.com	$2a$11$jf5F1JYzIaHtqxAWwF84reLpTdbdm12eKuDXpHxP.x.OcAfxFMvwO	\N	\N	\N	2026-08-26 19:48:48.211566	2026-08-26 19:49:59.235039	f	1	t	2026-08-26 19:48:48.211526	Solver User 54	\N	f	en	\N	\N	\N	\N	\N	t-yPMcoMhNZFjAxmzzDR	2026-08-26 19:48:48.212952	2026-08-26 19:48:48.211604	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-115	cohort_user_0@example.com	$2a$11$NePFaajhEDAggBjORWdSgOt.LFBsRRf.J/XymTQ34AEeV6tR6XpRS	\N	\N	\N	2026-08-26 19:48:48.755642	2026-08-26 19:49:59.585449	f	1	t	2026-08-26 19:48:48.755606	Cohort User 0	\N	f	en	\N	\N	\N	\N	\N	j3UetLFZjzxFEuRE2tX2	2026-08-26 19:48:48.756968	2026-08-26 19:48:48.755682	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-116	cohort_user_1@example.com	$2a$11$6lz5l7qogDM.0SPtgrfK9eoqS.rf1lYn8biU9fAfNJ0jXlk31/P5G	\N	\N	\N	2026-08-26 19:48:49.175811	2026-08-26 19:49:59.936574	f	1	t	2026-08-26 19:48:49.17577	Cohort User 1	\N	f	en	\N	\N	\N	\N	\N	R9r1njjsxywm1xhxccQz	2026-08-26 19:48:49.17717	2026-08-26 19:48:49.175855	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-117	cohort_user_2@external.org	$2a$11$LSSfqCaC8pwmExTkpwuAnOp9ukkUsUL7GU6otRgEFrAD6jetu8Xri	\N	\N	\N	2026-08-26 19:48:49.700036	2026-08-26 19:50:00.296381	f	1	t	2026-08-26 19:48:49.700004	Cohort User 2	\N	f	en	\N	\N	\N	\N	\N	to6rQ-T9sVxTaUdsYeNq	2026-08-26 19:48:49.701212	2026-08-26 19:48:49.700073	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-118	cohort_user_3@example.com	$2a$11$G9Y0zxk73O..ENpFjRG1YuVOCGnGWIoT4D/vSGuicDP4PDb5iuxba	\N	\N	\N	2026-08-26 19:48:50.075554	2026-08-26 19:50:00.654959	f	1	t	2026-08-26 19:48:50.075521	Cohort User 3	\N	f	en	\N	\N	\N	\N	\N	yt4PsEyVCLRfiYxhsdC6	2026-08-26 19:48:50.076698	2026-08-26 19:48:50.075587	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-119	cohort_user_4@example.com	$2a$11$RWjBVwGuRuAjX6r7IOC0c.p2R.O/fMrPtRK0g2FXhP/UjfgEC7Oge	\N	\N	\N	2026-08-26 19:48:50.446068	2026-08-26 19:50:01.006009	f	1	t	2026-08-26 19:48:50.44602	Cohort User 4	\N	f	en	\N	\N	\N	\N	\N	6ewyrJBCLbuWLBFyPvzX	2026-08-26 19:48:50.447871	2026-08-26 19:48:50.446125	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-120	cohort_user_5@example.com	$2a$11$kpBvNPlQkbLBCJl4bYLNeu2NHghM.drF8EKPxPlcY/KpkHwWwAX9m	\N	\N	\N	2026-08-26 19:48:50.824304	2026-08-26 19:50:01.360402	f	1	t	2026-08-26 19:48:50.824272	Cohort User 5	\N	f	en	\N	\N	\N	\N	\N	GZu-n7fZx2LhpvvGfNFy	2026-08-26 19:48:50.82547	2026-08-26 19:48:50.824337	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-121	cohort_user_6@example.com	$2a$11$Ex/BNNRTRA8i6Ht5m4.A/emhMu5YwMWVrMMRN9WWgpi.Lrz5KXHHK	\N	\N	\N	2026-08-26 19:48:51.182835	2026-08-26 19:50:01.713143	f	1	t	2026-08-26 19:48:51.182802	Cohort User 6	\N	f	en	\N	\N	\N	\N	\N	paSc_kzjdfbU1zYSeBQK	2026-08-26 19:48:51.184103	2026-08-26 19:48:51.182868	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-122	cohort_user_7@external.org	$2a$11$dXekh0B/UUoAccpWg8bA9OUm.0PDLJiIjQ3WxEMg/7nQeuxslYhVy	\N	\N	\N	2026-08-26 19:48:51.551795	2026-08-26 19:50:02.073435	f	1	t	2026-08-26 19:48:51.551759	Cohort User 7	\N	f	en	\N	\N	\N	\N	\N	w9W3jau374jKdeZiK1ZG	2026-08-26 19:48:51.553365	2026-08-26 19:48:51.55183	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-123	cohort_user_8@example.com	$2a$11$hyBjiL.gTXhNXXa98iwE7etUKTjeisubXujsn/DpYku8W.1OMZWZC	\N	\N	\N	2026-08-26 19:48:51.925838	2026-08-26 19:50:02.425546	f	1	t	2026-08-26 19:48:51.9258	Cohort User 8	\N	f	en	\N	\N	\N	\N	\N	4SZtGvswQ6M_quzyMyAv	2026-08-26 19:48:51.926992	2026-08-26 19:48:51.92589	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-124	cohort_user_9@example.com	$2a$11$XaXgxUrfq3WTaPJRDKnw1.Rm1skWPisEtBeApPkwBdsQuOPXX.wwK	\N	\N	\N	2026-08-26 19:48:52.285548	2026-08-26 19:50:02.782375	f	1	t	2026-08-26 19:48:52.285512	Cohort User 9	\N	f	en	\N	\N	\N	\N	\N	GGkyPQ22ZpHQRyFUoryR	2026-08-26 19:48:52.286663	2026-08-26 19:48:52.285583	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-125	cohort_user_10@example.com	$2a$11$pPcGF/sV1/JXmi2Gn2HFeevd1Oz0UGzTOYPQ93nrDYjRabFEfIZ9u	\N	\N	\N	2026-08-26 19:48:52.669263	2026-08-26 19:50:03.134514	f	1	t	2026-08-26 19:48:52.669227	Cohort User 10	\N	f	en	\N	\N	\N	\N	\N	zeVbBshoqnCktL3s-FjK	2026-08-26 19:48:52.670942	2026-08-26 19:48:52.6693	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-126	cohort_user_11@example.com	$2a$11$tEBlqSO1n87NARdK/QEEtOVYfbhnoDiRK7TRGgRqMWQxvNlJpbPCu	\N	\N	\N	2026-08-26 19:48:53.043884	2026-08-26 19:50:03.489568	f	1	t	2026-08-26 19:48:53.04385	Cohort User 11	\N	f	en	\N	\N	\N	\N	\N	kRpLovZPbThYvsyKiemL	2026-08-26 19:48:53.045114	2026-08-26 19:48:53.043918	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-127	cohort_user_12@example.com	$2a$11$TIqTADUdYWbogBQhzkPyeeoSqJpmFPTLgjHb8Aq6mIUke0neLQ4pC	\N	\N	\N	2026-08-26 19:48:53.450104	2026-08-26 19:50:03.841997	f	1	t	2026-08-26 19:48:53.450067	Cohort User 12	\N	f	en	\N	\N	\N	\N	\N	q3PsXGgL_9yA2p39tuY5	2026-08-26 19:48:53.451405	2026-08-26 19:48:53.450139	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-128	cohort_user_13@example.com	$2a$11$pVJ3Gb/ztzBRndelJZuWhuSB81o65/E3f/vMlswUuaZUIJ3fPkCkW	\N	\N	\N	2026-08-26 19:48:53.819468	2026-08-26 19:50:04.193359	f	1	t	2026-08-26 19:48:53.819433	Cohort User 13	\N	f	en	\N	\N	\N	\N	\N	rzJfDntCXkNV9iyGoHy2	2026-08-26 19:48:53.820657	2026-08-26 19:48:53.819504	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-129	cohort_user_14@external.org	$2a$11$n15EM9L3iKucGl9AYgRSgemKCJUwxTDDOuvx.L3aPsIlT49AtXhou	\N	\N	\N	2026-08-26 19:48:54.196646	2026-08-26 19:50:04.544166	f	1	t	2026-08-26 19:48:54.196561	Cohort User 14	\N	f	en	\N	\N	\N	\N	\N	AjvBDdbcy5NKN_UePjHz	2026-08-26 19:48:54.20294	2026-08-26 19:48:54.196691	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-130	cohort_user_15@example.com	$2a$11$WuweciSI7.05Lm3bAFr39esyj4tND6nPW9e9sKNUSUOpqeSo8.5ju	\N	\N	\N	2026-08-26 19:48:54.564805	2026-08-26 19:50:04.892545	f	1	t	2026-08-26 19:48:54.564772	Cohort User 15	\N	f	en	\N	\N	\N	\N	\N	R6JrFtnHe85z4xvwxEmQ	2026-08-26 19:48:54.566206	2026-08-26 19:48:54.564836	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-131	cohort_user_16@example.com	$2a$11$VvOGFKclepI3G1eq9I8qvOyCBT0NO0yaHBgL3Ha9Uubb/DUkve3uK	\N	\N	\N	2026-08-26 19:48:54.925797	2026-08-26 19:50:05.250924	f	1	t	2026-08-26 19:48:54.925754	Cohort User 16	\N	f	en	\N	\N	\N	\N	\N	ibXeHe8fz8qY5cw1rug8	2026-08-26 19:48:54.927107	2026-08-26 19:48:54.925837	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-132	cohort_user_17@example.com	$2a$11$E4fjaMGytqGg2emfq5lrSe7MCYCAJf8AeQQTFHVaN2kyeXb4R6NHG	\N	\N	\N	2026-08-26 19:48:55.281257	2026-08-26 19:50:05.606745	f	1	t	2026-08-26 19:48:55.281223	Cohort User 17	\N	f	en	\N	\N	\N	\N	\N	KVzmciyv6zzjUByRXT_8	2026-08-26 19:48:55.282375	2026-08-26 19:48:55.281289	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-133	cohort_user_18@example.com	$2a$11$gcZSuCqMF8lVNRnFMvgoxezNR7g18uHuqOH5HTwvDvoA9amDnwWxa	\N	\N	\N	2026-08-26 19:48:55.648568	2026-08-26 19:50:05.96144	f	1	t	2026-08-26 19:48:55.648291	Cohort User 18	\N	f	en	\N	\N	\N	\N	\N	CBiWfjxrzo1x7FGnwB9x	2026-08-26 19:48:55.653411	2026-08-26 19:48:55.650069	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-134	cohort_user_19@external.org	$2a$11$n/2.mRxVOnq7YQOAi7g2SO8/tV3wYndv0zub7NcX8M3h2MpYljStK	\N	\N	\N	2026-08-26 19:48:56.170754	2026-08-26 19:50:06.327395	f	1	t	2026-08-26 19:48:56.170721	Cohort User 19	\N	f	en	\N	\N	\N	\N	\N	Rag3NoM6eTCnp4oxTP5E	2026-08-26 19:48:56.171848	2026-08-26 19:48:56.170783	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-135	cohort_user_20@example.com	$2a$11$rcPI4zCyXiGJ7/WI.OVpLOMsXpuLQlCLIplBOEZCiay.6LefNPBnW	\N	\N	\N	2026-08-26 19:48:56.550042	2026-08-26 19:50:06.685891	f	1	t	2026-08-26 19:48:56.549988	Cohort User 20	\N	f	en	\N	\N	\N	\N	\N	4TL5D2MFdFyG8rdxasDm	2026-08-26 19:48:56.55129	2026-08-26 19:48:56.550072	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-136	cohort_user_21@example.com	$2a$11$/U4lnxq5YoE6MPjDZqICKuYDy9dIgKFxmloeAqQCmWhiWFMScXJF6	\N	\N	\N	2026-08-26 19:48:56.91773	2026-08-26 19:50:07.038527	f	1	t	2026-08-26 19:48:56.917701	Cohort User 21	\N	f	en	\N	\N	\N	\N	\N	ozVYL9_Js8inTJawSfmi	2026-08-26 19:48:56.918837	2026-08-26 19:48:56.917755	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-137	cohort_user_22@example.com	$2a$11$.Qji5JWpAZV2.AXazF4NV.X2RDrM.i8hdd0ARYmeXpQGyMA/ydQby	\N	\N	\N	2026-08-26 19:48:57.283039	2026-08-26 19:50:07.395807	f	1	t	2026-08-26 19:48:57.28301	Cohort User 22	\N	f	en	\N	\N	\N	\N	\N	E8x7kHQyNyMtmSD-kCkQ	2026-08-26 19:48:57.284122	2026-08-26 19:48:57.283064	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-138	cohort_user_23@example.com	$2a$11$kDrDOO8dOhzyLFO.wmz0TOB56vXbvczITqOFOLye62HhUqrQoFvTC	\N	\N	\N	2026-08-26 19:48:57.755354	2026-08-26 19:50:07.751889	f	1	t	2026-08-26 19:48:57.755324	Cohort User 23	\N	f	en	\N	\N	\N	\N	\N	9aue6B7v-sfGL9rgUjiC	2026-08-26 19:48:57.756508	2026-08-26 19:48:57.755381	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-139	cohort_user_24@example.com	$2a$11$sGjX/IFccmOzlO83OhGZt.uvCdZcj2520xJt7k9XhxD.UKhwJGEnW	\N	\N	\N	2026-08-26 19:48:58.112259	2026-08-26 19:50:08.102154	f	1	t	2026-08-26 19:48:58.11223	Cohort User 24	\N	f	en	\N	\N	\N	\N	\N	4UWBWAyNppxa4uNSCoJ2	2026-08-26 19:48:58.113342	2026-08-26 19:48:58.112284	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-140	cohort_user_25@example.com	$2a$11$uwZW6ZUX8KoteZsxCT3lU.WaJCyM6PjRTMXZ7qsQwg4PLeSioK4hq	\N	\N	\N	2026-08-26 19:48:58.48861	2026-08-26 19:50:08.448887	f	1	t	2026-08-26 19:48:58.488564	Cohort User 25	\N	f	en	\N	\N	\N	\N	\N	BWE3ZVN7v-DRZhxUT3rP	2026-08-26 19:48:58.489847	2026-08-26 19:48:58.488661	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-141	cohort_user_26@example.com	$2a$11$uzD3wYINnZJ.3K4EJYO13O8cWsbBkLUPS//Ua0dAQ8nTwUNcgp9q6	\N	\N	\N	2026-08-26 19:48:58.86665	2026-08-26 19:50:08.797422	f	1	t	2026-08-26 19:48:58.866616	Cohort User 26	\N	f	en	\N	\N	\N	\N	\N	hhSyiB9XjcCPLhgo1emf	2026-08-26 19:48:58.867768	2026-08-26 19:48:58.866679	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-142	cohort_user_27@example.com	$2a$11$s14MLfoopVTq/XlaIN4RWegO60M2Kd8lF77Jd6zMxoHsuegJpmUyC	\N	\N	\N	2026-08-26 19:48:59.220201	2026-08-26 19:50:09.145604	f	1	t	2026-08-26 19:48:59.220172	Cohort User 27	\N	f	en	\N	\N	\N	\N	\N	eHvGSqq1iDnsN6xf9fZV	2026-08-26 19:48:59.221268	2026-08-26 19:48:59.220226	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-143	cohort_user_28@example.com	$2a$11$unomke7Xdg067MRdcskhf.vXEZ2s6Y7rDpD0WYEZiJ0LLpZQywxqe	\N	\N	\N	2026-08-26 19:48:59.675657	2026-08-26 19:50:09.498063	f	1	t	2026-08-26 19:48:59.675625	Cohort User 28	\N	f	en	\N	\N	\N	\N	\N	xLuR8pjmcwDR_U96EwYJ	2026-08-26 19:48:59.676756	2026-08-26 19:48:59.675682	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-144	cohort_user_29@example.com	$2a$11$lfiGwLEiTo1/B0giy4A5v.k0G.3TEPtmom.lkzLyXI2unzDjfecLS	\N	\N	\N	2026-08-26 19:49:00.015238	2026-08-26 19:50:09.854521	f	1	t	2026-08-26 19:49:00.015207	Cohort User 29	\N	f	en	\N	\N	\N	\N	\N	eyyi-QAu34Tq-hJv_vDy	2026-08-26 19:49:00.016388	2026-08-26 19:49:00.015262	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-145	cohort_user_30@example.com	$2a$11$YfGnoj2iV51FfEUhLiNym.Ep9S3lHG/MS4SVCbEnc98XapDXNkgqW	\N	\N	\N	2026-08-26 19:49:00.384646	2026-08-26 19:50:10.201452	f	1	t	2026-08-26 19:49:00.384606	Cohort User 30	\N	f	en	\N	\N	\N	\N	\N	65S82T-fSf9dsPrGx24R	2026-08-26 19:49:00.385704	2026-08-26 19:49:00.384673	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-146	cohort_user_31@example.com	$2a$11$KoawxFyVXEIbhHomEvIvL.yaFWDwxIdgP5M6L63BKJTfr1LxQDgea	\N	\N	\N	2026-08-26 19:49:00.739188	2026-08-26 19:50:10.554544	f	1	t	2026-08-26 19:49:00.739157	Cohort User 31	\N	f	en	\N	\N	\N	\N	\N	3_-9VNCz3p8_2etYShF6	2026-08-26 19:49:00.740323	2026-08-26 19:49:00.739214	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-147	cohort_user_32@example.com	$2a$11$ZXHTf0Oop3V8r10ghI89/.4HGaRxnc.lJhRnuGU3wKTCt3zya7lTO	\N	\N	\N	2026-08-26 19:49:01.083851	2026-08-26 19:50:10.947591	f	1	t	2026-08-26 19:49:01.08381	Cohort User 32	\N	f	en	\N	\N	\N	\N	\N	jX-8gCfsTgS4xaq1EnWe	2026-08-26 19:49:01.085034	2026-08-26 19:49:01.083881	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-148	cohort_user_33@external.org	$2a$11$CnihICtVmWW7A2Y1U1UJ2OmMR5CCWoz4r5qSJTZEN4/NLf33vqDfe	\N	\N	\N	2026-08-26 19:49:01.548803	2026-08-26 19:50:11.297767	f	1	t	2026-08-26 19:49:01.548772	Cohort User 33	\N	f	en	\N	\N	\N	\N	\N	3kW6sdsEK4ykXyM5hjzz	2026-08-26 19:49:01.54993	2026-08-26 19:49:01.548828	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-149	cohort_user_34@example.com	$2a$11$4OqgmtIz4dstF2Ymu9mF0.mGVIf1mmUKemLTe2Z/BzI3ZGGY089kG	\N	\N	\N	2026-08-26 19:49:01.913335	2026-08-26 19:50:11.656138	f	1	t	2026-08-26 19:49:01.913305	Cohort User 34	\N	f	en	\N	\N	\N	\N	\N	1LUwbuoX8mDvyss7dWbC	2026-08-26 19:49:01.914648	2026-08-26 19:49:01.913361	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-150	cohort_user_35@example.com	$2a$11$zhEP6qqzL7FdM3Adr9ltIu97Nw7sS2HMMxEUgfkcZtu45bGkNcyC.	\N	\N	\N	2026-08-26 19:49:02.26714	2026-08-26 19:50:12.025164	f	1	t	2026-08-26 19:49:02.267109	Cohort User 35	\N	f	en	\N	\N	\N	\N	\N	g_9z4wSRZsmmq9eFgqA6	2026-08-26 19:49:02.268167	2026-08-26 19:49:02.267167	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-151	cohort_user_36@example.com	$2a$11$CtGcjzVMmQiyIjx4WS4t/.azDYriic548bXX2oGGThRz.ZCm4DIWy	\N	\N	\N	2026-08-26 19:49:02.608377	2026-08-26 19:50:12.378022	f	1	t	2026-08-26 19:49:02.608347	Cohort User 36	\N	f	en	\N	\N	\N	\N	\N	Um2gVT4Cbs26Th8yCxH9	2026-08-26 19:49:02.609496	2026-08-26 19:49:02.608401	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-152	cohort_user_37@example.com	$2a$11$zgaCQWR8fubhynMsUu2tq.W5WZ9ZxG0fFXV1qTFkuDU.j5DUVpYUS	\N	\N	\N	2026-08-26 19:49:02.977824	2026-08-26 19:50:12.73828	f	1	t	2026-08-26 19:49:02.977792	Cohort User 37	\N	f	en	\N	\N	\N	\N	\N	-mXksvwMbJ1qFPHAG3mm	2026-08-26 19:49:02.979036	2026-08-26 19:49:02.977851	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-153	cohort_user_38@example.com	$2a$11$WyVEJGNBPOoj9Txv6pcbxe6z31s9WrKZwO7xeZ07xkjFoGFCp9PcS	\N	\N	\N	2026-08-26 19:49:03.440905	2026-08-26 19:50:13.094484	f	1	t	2026-08-26 19:49:03.440871	Cohort User 38	\N	f	en	\N	\N	\N	\N	\N	qaq6jWuy5tsxmC11yn3c	2026-08-26 19:49:03.442302	2026-08-26 19:49:03.440938	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-154	cohort_user_39@example.com	$2a$11$t79mTCEaCl1FQFHeI233oe1su//rLKXC2TKcfWzrJHxE0tILR4smy	\N	\N	\N	2026-08-26 19:49:03.787501	2026-08-26 19:50:13.445379	f	1	t	2026-08-26 19:49:03.787467	Cohort User 39	\N	f	en	\N	\N	\N	\N	\N	mt_KYekbyJ696TvTPEmb	2026-08-26 19:49:03.7887	2026-08-26 19:49:03.78753	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-155	cohort_user_40@example.com	$2a$11$fZoaJs.1vOGywNIreHMKt.XJHtdSKbFQxbEagkt9WijI5BjIP6uVy	\N	\N	\N	2026-08-26 19:49:04.16075	2026-08-26 19:50:13.810977	f	1	t	2026-08-26 19:49:04.160706	Cohort User 40	\N	f	en	\N	\N	\N	\N	\N	8h-FsYgyrcLau9xPtyo7	2026-08-26 19:49:04.161955	2026-08-26 19:49:04.16078	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-156	cohort_user_41@example.com	$2a$11$22e3B9hZ5Vr1mPTW9SI7CueUsRwHUWhkIM/PEHeq95cfwCMr82AAK	\N	\N	\N	2026-08-26 19:49:04.507082	2026-08-26 19:50:14.170572	f	1	t	2026-08-26 19:49:04.507051	Cohort User 41	\N	f	en	\N	\N	\N	\N	\N	Q9R8EYhzB8PWxNPZFg1E	2026-08-26 19:49:04.508189	2026-08-26 19:49:04.507108	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-157	cohort_user_42@example.com	$2a$11$LqNmMEL922.5RrfsGfTC7.l6q8h2VgRcnnGkSGfXoJ0Xkr48G31Oa	\N	\N	\N	2026-08-26 19:49:04.883203	2026-08-26 19:50:14.521259	f	1	t	2026-08-26 19:49:04.883173	Cohort User 42	\N	f	en	\N	\N	\N	\N	\N	NjrQq27HC6Pcr_VNCpzn	2026-08-26 19:49:04.884332	2026-08-26 19:49:04.883229	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-158	cohort_user_43@example.com	$2a$11$aBd3h9pa9FcZGgg8J2Zl8uHYzvlxNs3SFVQkOoqP79uuOtEiu/iae	\N	\N	\N	2026-08-26 19:49:05.255865	2026-08-26 19:50:14.871844	f	1	t	2026-08-26 19:49:05.255832	Cohort User 43	\N	f	en	\N	\N	\N	\N	\N	dP6McyFDah5hp9ta3HtH	2026-08-26 19:49:05.257029	2026-08-26 19:49:05.255891	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-159	cohort_user_44@example.com	$2a$11$C.H4C9jGuYdEcxFksloZIufNzQhc1euq3263EoFoMJSvcETsrr622	\N	\N	\N	2026-08-26 19:49:05.617487	2026-08-26 19:50:15.223501	f	1	t	2026-08-26 19:49:05.617453	Cohort User 44	\N	f	en	\N	\N	\N	\N	\N	_VvbRQggzJ6n95tzWFJU	2026-08-26 19:49:05.618679	2026-08-26 19:49:05.617515	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-160	cohort_user_45@example.com	$2a$11$VEiL/UqtKrSz4UPJTaLpqO2.7AyB47JL6R25V1iv9tvfrsR0rOC0C	\N	\N	\N	2026-08-26 19:49:05.98615	2026-08-26 19:50:15.580311	f	1	t	2026-08-26 19:49:05.98612	Cohort User 45	\N	f	en	\N	\N	\N	\N	\N	hfT7ustuQKaLacDDsH6c	2026-08-26 19:49:05.98719	2026-08-26 19:49:05.986176	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-161	cohort_user_46@example.com	$2a$11$Xl3/QZDzdM10DEZKquIXjOOrJo7J7zTc9qbyY4WuSQ.9GWRI1KyJy	\N	\N	\N	2026-08-26 19:49:06.356013	2026-08-26 19:50:15.934557	f	1	t	2026-08-26 19:49:06.355975	Cohort User 46	\N	f	en	\N	\N	\N	\N	\N	GB1-d4hZxw4k8Fb-Qr1d	2026-08-26 19:49:06.357409	2026-08-26 19:49:06.356042	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-162	seminar_student_0@mampf.edu	$2a$11$h2TTav2B428aoUyfEVIEIedXnMKiTNsKFTvxRHa83ybSxxFxDJXkq	\N	\N	\N	2026-08-26 19:49:06.839909	2026-08-26 19:50:16.28416	f	1	t	2026-08-26 19:49:06.839877	Seminar Student 0	\N	f	en	\N	\N	\N	\N	\N	KSsj9UMqzyMY65zT9FpG	2026-08-26 19:49:06.841306	2026-08-26 19:49:06.839934	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-163	seminar_student_1@mampf.edu	$2a$11$Op6nPsncrJjYew89ELUi/enCfZ1xN7bc1vC.cUCXtfrhOK9dahdtS	\N	\N	\N	2026-08-26 19:49:07.212604	2026-08-26 19:50:16.635485	f	1	t	2026-08-26 19:49:07.212564	Seminar Student 1	\N	f	en	\N	\N	\N	\N	\N	SyMT1aHfsCLPKXea-oTe	2026-08-26 19:49:07.213909	2026-08-26 19:49:07.212675	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-164	seminar_student_2@mampf.edu	$2a$11$N2NgPx.bibPGXX5cJZ3t9uGC8wA0V9SpfNM9RaHvBvyjWgNXMPve2	\N	\N	\N	2026-08-26 19:49:07.608118	2026-08-26 19:50:16.988029	f	1	t	2026-08-26 19:49:07.608085	Seminar Student 2	\N	f	en	\N	\N	\N	\N	\N	zQotxxfLNCf74HU3ioTw	2026-08-26 19:49:07.609509	2026-08-26 19:49:07.608148	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-165	seminar_student_3@mampf.edu	$2a$11$/kzyZmjb0QTtKBVUM3FTj.k9BtPJSzJhS45VPxgHCuuytZBX2EvXi	\N	\N	\N	2026-08-26 19:49:07.986028	2026-08-26 19:50:17.335895	f	1	t	2026-08-26 19:49:07.985997	Seminar Student 3	\N	f	en	\N	\N	\N	\N	\N	zeiFd1DsRN9zeLwVxBHM	2026-08-26 19:49:07.987127	2026-08-26 19:49:07.986054	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-166	seminar_student_4@mampf.edu	$2a$11$9Ifb0/Lq4Qm0GSmVd7MaFOejow91FPrRzEpg66IWEgpPPxq7cXq6e	\N	\N	\N	2026-08-26 19:49:08.348105	2026-08-26 19:50:17.688341	f	1	t	2026-08-26 19:49:08.348073	Seminar Student 4	\N	f	en	\N	\N	\N	\N	\N	1PUZgsTMGH7LAwa9jxud	2026-08-26 19:49:08.349249	2026-08-26 19:49:08.348131	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-167	seminar_student_5@mampf.edu	$2a$11$Tf.mj0loIZH5aJoz3iiI2eUQdmtvPTaGTwGZPBgQn.zMGml6mGOc6	\N	\N	\N	2026-08-26 19:49:08.725561	2026-08-26 19:50:18.044336	f	1	t	2026-08-26 19:49:08.725523	Seminar Student 5	\N	f	en	\N	\N	\N	\N	\N	Q184oVSzs13EFzrX9gXv	2026-08-26 19:49:08.72684	2026-08-26 19:49:08.725599	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-168	seminar_student_6@mampf.edu	$2a$11$M3m32LkiUeqcbtMWOAVLjuJJghU4/d2KWa6AvcntZaIG/fSvXORiq	\N	\N	\N	2026-08-26 19:49:09.105464	2026-08-26 19:50:18.393578	f	1	t	2026-08-26 19:49:09.105434	Seminar Student 6	\N	f	en	\N	\N	\N	\N	\N	4FV6TXM7f__xECh7p3U-	2026-08-26 19:49:09.106678	2026-08-26 19:49:09.105488	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-169	seminar_student_7@mampf.edu	$2a$11$WnPF2zwArMdb8UdlBFSO/ez8d4Iv8buT8sP9flkta/90D.cAGMGkm	\N	\N	\N	2026-08-26 19:49:09.484028	2026-08-26 19:50:18.746507	f	1	t	2026-08-26 19:49:09.483998	Seminar Student 7	\N	f	en	\N	\N	\N	\N	\N	Dc4bhCzEZe6NFC2W2Mwk	2026-08-26 19:49:09.485255	2026-08-26 19:49:09.484053	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-170	seminar_student_8@mampf.edu	$2a$11$I.ZIGGViE37eagxrjIQOwesNrdaV/1b89z8ZOEKdeFuZdbU5KezzG	\N	\N	\N	2026-08-26 19:49:09.860674	2026-08-26 19:50:19.097465	f	1	t	2026-08-26 19:49:09.860606	Seminar Student 8	\N	f	en	\N	\N	\N	\N	\N	WG6N7YytstRYrgzqyRhf	2026-08-26 19:49:09.861738	2026-08-26 19:49:09.860699	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-171	seminar_student_9@mampf.edu	$2a$11$U4MlrblpBCdtzA7T0nVjyeB3f2I.vkVZYxcGgVQyTUt15x.o.3fqW	\N	\N	\N	2026-08-26 19:49:10.233142	2026-08-26 19:50:19.464002	f	1	t	2026-08-26 19:49:10.233108	Seminar Student 9	\N	f	en	\N	\N	\N	\N	\N	pWY22vUGS2rYNF6wj5ZM	2026-08-26 19:49:10.234386	2026-08-26 19:49:10.233168	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-172	seminar_student_10@mampf.edu	$2a$11$yANeTj2Kopf/ua0ImChRv.GpmhSgVBMR6v3O.Ny0h8ycqyK.HJRD2	\N	\N	\N	2026-08-26 19:49:10.645526	2026-08-26 19:50:19.81631	f	1	t	2026-08-26 19:49:10.645495	Seminar Student 10	\N	f	en	\N	\N	\N	\N	\N	gFxKngprgPxr9DJaSY5y	2026-08-26 19:49:10.64709	2026-08-26 19:49:10.645551	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-173	seminar_student_11@mampf.edu	$2a$11$O6IM01Ev/TwfWYgTXcw3g.NejCuuaUSGNMZjjAZ33.ocCTfL7/1l.	\N	\N	\N	2026-08-26 19:49:11.017304	2026-08-26 19:50:20.169808	f	1	t	2026-08-26 19:49:11.017275	Seminar Student 11	\N	f	en	\N	\N	\N	\N	\N	wjqB6MJofAVoHyK3AtXc	2026-08-26 19:49:11.018421	2026-08-26 19:49:11.017329	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-174	external_student_0@mampf.edu	$2a$11$osj7Vtf9Mdc2FLpxSvdPRuNysE4C8u1FWSD5fmv4Zx7YY2GZpqbFO	\N	\N	\N	2026-08-26 19:49:11.542474	2026-08-26 19:50:20.538295	f	1	t	2026-08-26 19:49:11.542442	External Student 0	\N	f	en	\N	\N	\N	\N	\N	_w8WH3rayxMdNVp7Atox	2026-08-26 19:49:11.543709	2026-08-26 19:49:11.542503	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-175	external_student_1@mampf.edu	$2a$11$kNTCA7DxbP2kBhnr0N1cv.qrvlnXVpEFbNwc1fXksr.NjKqVM3lm2	\N	\N	\N	2026-08-26 19:49:11.944519	2026-08-26 19:50:20.896051	f	1	t	2026-08-26 19:49:11.944487	External Student 1	\N	f	en	\N	\N	\N	\N	\N	Jp1yo7is46LfnAUXxhkb	2026-08-26 19:49:11.945618	2026-08-26 19:49:11.944545	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-176	nachruecker_0@mampf.edu	$2a$11$fV3OdAHKq5sYPm4cFXxWqegDckD2nLDoV6glo2ZsAqyK6zDcIanSK	\N	\N	\N	2026-08-26 19:49:12.343176	2026-08-26 19:50:21.253356	f	1	t	2026-08-26 19:49:12.343135	Nachrücker 0	\N	f	en	\N	\N	\N	\N	\N	nqYxEXM2uMsQ9LyNtRxx	2026-08-26 19:49:12.344483	2026-08-26 19:49:12.343209	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-177	nachruecker_1@mampf.edu	$2a$11$4bcrBX6mcH0BDej9Vqzbm.aewbphzdTxNMCUN6dPgAG8OXshwvweq	\N	\N	\N	2026-08-26 19:49:12.755363	2026-08-26 19:50:21.613934	f	1	t	2026-08-26 19:49:12.755322	Nachrücker 1	\N	f	en	\N	\N	\N	\N	\N	pDFvxa6eas-y_ucSRkKJ	2026-08-26 19:49:12.756598	2026-08-26 19:49:12.755394	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-178	nachruecker_2@mampf.edu	$2a$11$RJfYNUIjxPC7V1pdu7e9YeSTnczg4KmHRC5p4xXMJmq6IXegUB5X.	\N	\N	\N	2026-08-26 19:49:13.135653	2026-08-26 19:50:21.97413	f	1	t	2026-08-26 19:49:13.135618	Nachrücker 2	\N	f	en	\N	\N	\N	\N	\N	RXJHqLj7_SP2CTa3Utko	2026-08-26 19:49:13.136942	2026-08-26 19:49:13.135682	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-179	nachruecker_3@mampf.edu	$2a$11$grhHS6kcpYVgwD5mVa262.6cCfjAvUW4YN23HhTBPCxvsE0qcvoLu	\N	\N	\N	2026-08-26 19:49:13.511281	2026-08-26 19:50:22.332025	f	1	t	2026-08-26 19:49:13.51125	Nachrücker 3	\N	f	en	\N	\N	\N	\N	\N	jH5bXcQ2e5J6AvTtoob8	2026-08-26 19:49:13.512424	2026-08-26 19:49:13.511308	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-180	nachruecker_4@mampf.edu	$2a$11$71Q.XC9mz24JeBmviD2Ud.Uq9T54GM6xs8qVl9cwPouJJplXu5g7K	\N	\N	\N	2026-08-26 19:49:13.888892	2026-08-26 19:50:22.690723	f	1	t	2026-08-26 19:49:13.888852	Nachrücker 4	\N	f	en	\N	\N	\N	\N	\N	WSL3UBqzMp_csTxe6wxF	2026-08-26 19:49:13.890224	2026-08-26 19:49:13.888922	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-181	yahaira.glover@skiles-skiles.test	$2a$11$APvabGH0Kq8LeR/4aOWmW.h5c8SlNyMQ/gEW0Wpp11W8vdGfTUa4a	\N	\N	\N	2026-08-26 19:49:14.359724	2026-08-26 19:50:23.048665	f	1	t	2026-08-26 19:49:14.359692	Valerie von Eifert	\N	f	en	\N	\N	\N	\N	\N	kAtuqafkxsS_RrajR4LQ	2026-08-26 19:49:14.361743	2026-08-26 19:49:14.359751	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-182	adena_von@ziemann.test	$2a$11$jiWAIV7yvh27wgiogsT3SO7yfK6loucO6Qb7BaF4c85SpgXmoU/.C	\N	\N	\N	2026-08-26 19:49:14.81331	2026-08-26 19:50:23.404537	f	1	t	2026-08-26 19:49:14.813278	Mathis Steinert	\N	f	en	\N	\N	\N	\N	\N	KDCxbQqTxtunzX2iBPVU	2026-08-26 19:49:14.815229	2026-08-26 19:49:14.813339	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
-183	alexis_bayer@mcclure.test	$2a$11$uF65NBX6e/cWaJkuS/DTLu3JObojd5K5pqH/NNj5E1HtlT49um5mC	\N	\N	\N	2026-08-26 19:49:15.258682	2026-08-26 19:50:23.752055	f	1	t	2026-08-26 19:49:15.258648	Hr. Sönke Weigel	\N	f	en	\N	\N	\N	\N	\N	GupsnKZS2GKszd_yQQyU	2026-08-26 19:49:15.260875	2026-08-26 19:49:15.258712	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N
+COPY public.users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, created_at, updated_at, admin, subscription_type, consents, consented_at, name, homepage, no_notifications, locale, email_for_medium, email_for_announcement, email_for_teachable, email_for_news, current_lecture_id, confirmation_token, confirmed_at, confirmation_sent_at, unconfirmed_email, unread_comments, email_for_submission_upload, email_for_submission_removal, email_for_submission_join, email_for_submission_leave, email_for_correction_upload, email_for_submission_decision, name_in_tutorials, archived, locked_at, image_data, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, deletion_date, failed_attempts, unlock_token, password_policy_version, password_changed_at) FROM stdin;
+10	tutor@mampf.edu	$2a$11$Hb.BxlWjI8D4McZZF9sv3evpxAvS4B.xspkdlfH0XmCpaaw3naS3.	\N	\N	\N	2020-11-28 16:34:08.325163	2026-08-26 20:14:47.067802	f	1	t	2020-11-28 16:34:08.326859	tutor	\N	f	en	t	t	t	f	\N	dbg8mcD6CmtfAfgAfX4Q	2020-11-28 16:34:11.824042	2020-11-28 16:34:08.325214	\N	t	f	f	f	f	f	f	Benjamin Tutor	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:47.067576
+22	demo_lecture_student_8@example.com	$2a$11$CtEARxY/A9UqNrAqgQH4fOL9g3dF6nco6arKb4yrQM2A7Ty8FybQS	\N	\N	\N	2026-08-26 19:48:10.941096	2026-08-26 20:14:52.543159	f	1	t	2026-08-26 19:48:10.941055	Demo Lecture Student 8	\N	f	en	\N	\N	\N	\N	\N	EDKTJ1bK8Mz7qZ6fq1wJ	2026-08-26 19:48:10.948131	2026-08-26 19:48:10.941493	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:52.54296
+13	ed@mampf.edu	$2a$11$qHTDBQsGD8YFKdhklJRPw.hZv.xAo.s5dIkamegnXZVwGz6OWrWye	\N	\N	\N	2022-08-05 13:14:08.705536	2026-08-26 20:14:48.073751	f	1	t	2022-08-05 13:14:08.706967	ed	\N	f	en	f	f	f	f	\N	NhEfb358TxX5788uqSZy	2022-08-05 13:14:16.480332	2022-08-05 13:14:08.705583	\N	f	f	f	f	f	f	f		\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:48.073473
+14	demo_lecture_student_0@example.com	$2a$11$7tHy5hYTMFAaRqW1mJQYoOZrEBIWjtVs7jMuUDi2FhncvmI83oMnS	\N	\N	\N	2026-08-26 19:48:07.214925	2026-08-26 20:14:48.588478	f	1	t	2026-08-26 19:48:07.214846	Demo Lecture Student 0	\N	f	en	\N	\N	\N	\N	\N	z_YGpnA-TN8KnzG3sLjM	2026-08-26 19:48:07.232542	2026-08-26 19:48:07.215757	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:48.587966
+15	demo_lecture_student_1@example.com	$2a$11$sDy1j1DfMImE/LCPooyILeQSvLCu41ahpoz0RErqh5hIRQ/.pE98i	\N	\N	\N	2026-08-26 19:48:07.809522	2026-08-26 20:14:49.093086	f	1	t	2026-08-26 19:48:07.809474	Demo Lecture Student 1	\N	f	en	\N	\N	\N	\N	\N	re-1t-yEsB_YZG7PHZRG	2026-08-26 19:48:07.814687	2026-08-26 19:48:07.809561	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:49.092851
+16	demo_lecture_student_2@example.com	$2a$11$WnZTQFnVdrPoaUtBFeEcRO/hWMHtoMZIUAtcQX.xeyqhYUyZYsdAK	\N	\N	\N	2026-08-26 19:48:08.365155	2026-08-26 20:14:49.581421	f	1	t	2026-08-26 19:48:08.365075	Demo Lecture Student 2	\N	f	en	\N	\N	\N	\N	\N	WsnLyjxV3fS7szcn-pCg	2026-08-26 19:48:08.368977	2026-08-26 19:48:08.365207	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:49.581183
+17	demo_lecture_student_3@example.com	$2a$11$E9LYHSd5pERJRUIEqSszd.85gT6Pe/SQCzqeQFPmiv88F8nAEukLK	\N	\N	\N	2026-08-26 19:48:08.927997	2026-08-26 20:14:50.066831	f	1	t	2026-08-26 19:48:08.927851	Demo Lecture Student 3	\N	f	en	\N	\N	\N	\N	\N	RGXSH9EzPaLzDTrdmpLC	2026-08-26 19:48:08.929793	2026-08-26 19:48:08.928046	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:50.066634
+18	demo_lecture_student_4@example.com	$2a$11$UxqoYx6uVuoJB9bQs6eus.5yrfqkVtdMGHQyfQm7.zCOiyNOVAE5y	\N	\N	\N	2026-08-26 19:48:09.342082	2026-08-26 20:14:50.570264	f	1	t	2026-08-26 19:48:09.342037	Demo Lecture Student 4	\N	f	en	\N	\N	\N	\N	\N	1xueoytYbn468cDHiK1u	2026-08-26 19:48:09.344055	2026-08-26 19:48:09.34245	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:50.570066
+19	demo_lecture_student_5@example.com	$2a$11$tb97A.daYg8gaO3SbLQyL.LTzM7uDIHOjrkckOY0j0vQLmWkAfphW	\N	\N	\N	2026-08-26 19:48:09.764081	2026-08-26 20:14:51.064883	f	1	t	2026-08-26 19:48:09.764032	Demo Lecture Student 5	\N	f	en	\N	\N	\N	\N	\N	GUYx_hwQbyZPxFZEkL3-	2026-08-26 19:48:09.765377	2026-08-26 19:48:09.764116	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:51.064665
+20	demo_lecture_student_6@example.com	$2a$11$eMjcGK.hx.7zbL.dzMmxMeuvt7bg5hkpPIqJ4lK8lf2jRo/PSd1BW	\N	\N	\N	2026-08-26 19:48:10.137806	2026-08-26 20:14:51.549082	f	1	t	2026-08-26 19:48:10.137712	Demo Lecture Student 6	\N	f	en	\N	\N	\N	\N	\N	m3ypBPiQBjEiJALpiTuV	2026-08-26 19:48:10.139577	2026-08-26 19:48:10.137847	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:51.548795
+21	demo_lecture_student_7@example.com	$2a$11$xP873od..9U7dWqxBHDCce63pMXX07L3Ks6NyxpNYdizAQsXTtBH2	\N	\N	\N	2026-08-26 19:48:10.558701	2026-08-26 20:14:52.051875	f	1	t	2026-08-26 19:48:10.558655	Demo Lecture Student 7	\N	f	en	\N	\N	\N	\N	\N	S-FGSsxuUC2DKDyKjzwW	2026-08-26 19:48:10.562155	2026-08-26 19:48:10.558771	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:52.051675
+23	demo_lecture_student_9@example.com	$2a$11$k7vTwHW6WXiSIUb.CONBJu1nYYIwlHK6Bi2zcA0c624Jpii.iet86	\N	\N	\N	2026-08-26 19:48:11.347141	2026-08-26 20:14:53.033993	f	1	t	2026-08-26 19:48:11.347018	Demo Lecture Student 9	\N	f	en	\N	\N	\N	\N	\N	dGsc8yrt12a_yNgmHFHd	2026-08-26 19:48:11.354067	2026-08-26 19:48:11.347176	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:53.033802
+24	demo_lecture_student_10@example.com	$2a$11$p3DqbAdEQx0vwTPmfK15MO2wo8MI8QNjpUEEN4e8jhv4inhTJbXjG	\N	\N	\N	2026-08-26 19:48:11.746935	2026-08-26 20:14:53.521813	f	1	t	2026-08-26 19:48:11.746881	Demo Lecture Student 10	\N	f	en	\N	\N	\N	\N	\N	cj4USzWcz6ZBptE1PUb5	2026-08-26 19:48:11.748509	2026-08-26 19:48:11.746973	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:53.521548
+25	demo_lecture_student_11@example.com	$2a$11$Wo2.6Wx8.8sAXYojZZWmZeSWHS5KPC2yYVpbgmqy6MV337N3ewvCG	\N	\N	\N	2026-08-26 19:48:12.137225	2026-08-26 20:14:54.010905	f	1	t	2026-08-26 19:48:12.13718	Demo Lecture Student 11	\N	f	en	\N	\N	\N	\N	\N	Zbx3hSYa1b7jmZbY-uDt	2026-08-26 19:48:12.138682	2026-08-26 19:48:12.137257	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:54.010706
+26	demo_lecture_student_12@example.com	$2a$11$XYJqv.VNRxXGc07Nud0DoesMKgE8.CQhF54myxR0x0It3tWdKAitm	\N	\N	\N	2026-08-26 19:48:12.527363	2026-08-26 20:14:54.494413	f	1	t	2026-08-26 19:48:12.527215	Demo Lecture Student 12	\N	f	en	\N	\N	\N	\N	\N	7-E77vspWzpDQkVkCzSP	2026-08-26 19:48:12.528888	2026-08-26 19:48:12.527406	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:54.494212
+27	demo_lecture_student_13@example.com	$2a$11$tsbkm7R/UuWiM.uUHo9hLO9mITDkd5uN3lZdbHsu2ZOAOdZT8kZJ6	\N	\N	\N	2026-08-26 19:48:12.911069	2026-08-26 20:14:54.974391	f	1	t	2026-08-26 19:48:12.911027	Demo Lecture Student 13	\N	f	en	\N	\N	\N	\N	\N	p6NCVAuY8uY2mDAR5_BE	2026-08-26 19:48:12.912761	2026-08-26 19:48:12.911102	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:54.974197
+28	demo_lecture_student_14@example.com	$2a$11$ciBCXc9KA.tD6j3VCYtcfe/3heY31JbpzJGxJQE7ZaqJcTsmXKF4m	\N	\N	\N	2026-08-26 19:48:13.286724	2026-08-26 20:14:55.493505	f	1	t	2026-08-26 19:48:13.286676	Demo Lecture Student 14	\N	f	en	\N	\N	\N	\N	\N	jeAXcSFAJeQZynyiv4t9	2026-08-26 19:48:13.288394	2026-08-26 19:48:13.286758	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:55.493309
+29	demo_lecture_student_15@example.com	$2a$11$RF87AcORfYC0V4vVJsrjke/g2ChrXYE8Smivdv9f7lYlDdsZFDpiK	\N	\N	\N	2026-08-26 19:48:13.683043	2026-08-26 20:14:55.9878	f	1	t	2026-08-26 19:48:13.682978	Demo Lecture Student 15	\N	f	en	\N	\N	\N	\N	\N	y4hHVy2DTVZSiLG55rpk	2026-08-26 19:48:13.684784	2026-08-26 19:48:13.683105	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:55.987611
+30	demo_lecture_student_16@example.com	$2a$11$Dhriq.anK2hNfDZMOPQTXeTR1oJFVZrIM.kQ9OVeZCFYewIgkOMKu	\N	\N	\N	2026-08-26 19:48:14.060239	2026-08-26 20:14:56.470876	f	1	t	2026-08-26 19:48:14.059848	Demo Lecture Student 16	\N	f	en	\N	\N	\N	\N	\N	Y-BQdE3CRGaaNj_xcQKk	2026-08-26 19:48:14.062919	2026-08-26 19:48:14.060316	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:56.47067
+31	demo_lecture_student_17@example.com	$2a$11$2y.dMEoPstqQSv.b/o309Obnhjy4UM3s/jdwdcqARK0hap1txfpGy	\N	\N	\N	2026-08-26 19:48:14.43704	2026-08-26 20:14:56.968887	f	1	t	2026-08-26 19:48:14.436998	Demo Lecture Student 17	\N	f	en	\N	\N	\N	\N	\N	z2Ms-i3dR4DBR5qBBhVE	2026-08-26 19:48:14.438323	2026-08-26 19:48:14.437074	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:56.968702
+32	demo_lecture_student_18@example.com	$2a$11$3eMT5ZJsxyU7e4RgRZyM1.1oXBng5TAnL8dRgfP./Pr6hRNrLsUnu	\N	\N	\N	2026-08-26 19:48:14.826853	2026-08-26 20:14:57.459461	f	1	t	2026-08-26 19:48:14.826811	Demo Lecture Student 18	\N	f	en	\N	\N	\N	\N	\N	zDHr7z-J5eJsvK3rY157	2026-08-26 19:48:14.828083	2026-08-26 19:48:14.826889	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:57.459214
+33	demo_lecture_student_19@example.com	$2a$11$J/7M.7ypUwAD/uSiFv5O0etzaxp7bfkhbPYL5ldPvuOdurQsCWdE2	\N	\N	\N	2026-08-26 19:48:15.207163	2026-08-26 20:14:57.954544	f	1	t	2026-08-26 19:48:15.207122	Demo Lecture Student 19	\N	f	en	\N	\N	\N	\N	\N	tT8Q1maryAmpGjxRYhpM	2026-08-26 19:48:15.208569	2026-08-26 19:48:15.207195	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:57.954356
+34	demo_lecture_student_20@example.com	$2a$11$KhnXxHJjIemVdqwm.ObYPeVS/.4OXy7k9iMidkvGcPJneo3iRRasS	\N	\N	\N	2026-08-26 19:48:15.603818	2026-08-26 20:14:58.44676	f	1	t	2026-08-26 19:48:15.603775	Demo Lecture Student 20	\N	f	en	\N	\N	\N	\N	\N	KtCvdseRBQkBAxKsRteC	2026-08-26 19:48:15.605363	2026-08-26 19:48:15.603855	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:58.44603
+35	demo_lecture_student_21@example.com	$2a$11$9eLyTUtBpomKXsiOhR/.AeZgXiYotd1NATgpobkFBcmd2duJQ2WaG	\N	\N	\N	2026-08-26 19:48:15.981463	2026-08-26 20:14:58.940825	f	1	t	2026-08-26 19:48:15.981425	Demo Lecture Student 21	\N	f	en	\N	\N	\N	\N	\N	oXyyQFqL-76ti2D2szUQ	2026-08-26 19:48:15.982649	2026-08-26 19:48:15.981495	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:58.940655
+36	demo_lecture_student_22@example.com	$2a$11$GsO3AwCfpBjhybtKVZ2euuxUq3Kxvnt59udHUgYXQXrAcqRXPCPwG	\N	\N	\N	2026-08-26 19:48:16.36663	2026-08-26 20:14:59.431438	f	1	t	2026-08-26 19:48:16.366589	Demo Lecture Student 22	\N	f	en	\N	\N	\N	\N	\N	zoettit89ZGCM7tTfnrR	2026-08-26 19:48:16.368112	2026-08-26 19:48:16.366663	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:59.431086
+37	demo_lecture_student_23@example.com	$2a$11$0JSFSTKwiu2oRc4hEURnOen/HTcWcRuWKhgjGIKOn575buw8uDz6e	\N	\N	\N	2026-08-26 19:48:16.756622	2026-08-26 20:14:59.925873	f	1	t	2026-08-26 19:48:16.756585	Demo Lecture Student 23	\N	f	en	\N	\N	\N	\N	\N	_wAgQVhEqW44NrFGB6Xy	2026-08-26 19:48:16.757721	2026-08-26 19:48:16.756652	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:14:59.925532
+38	demo_lecture_student_24@example.com	$2a$11$7I12nVSs0GdAOfBvAPsWQe3a99sO4VAvw0kpnXiXNVT7adcVmCedW	\N	\N	\N	2026-08-26 19:48:17.14132	2026-08-26 20:15:00.420128	f	1	t	2026-08-26 19:48:17.141284	Demo Lecture Student 24	\N	f	en	\N	\N	\N	\N	\N	-XKNd2yjpdWWZyBYxWpn	2026-08-26 19:48:17.142493	2026-08-26 19:48:17.141391	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:00.419966
+12	moded@mampf.edu	$2a$11$KkrMjDO61iO//WqYuc/4M.SPbc8iw7RxY/lW1r/Db9NHJ1d5wuxsm	\N	\N	\N	2022-08-05 13:13:27.138526	2026-08-26 20:14:47.569845	f	1	t	2022-08-05 13:13:27.140572	moded	\N	f	en	f	f	f	f	\N	GEw-LMkj1zw73bsu-Jy5	2022-08-05 13:13:35.913881	2022-08-05 13:13:27.138906	\N	f	f	f	f	f	f	f		\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	0	\N
+39	demo_lecture_student_25@example.com	$2a$11$KOAzs22hDst5DOJCw3IUJuxkzp5wGUZPp0lyOBehFyfQCbvj1l/J6	\N	\N	\N	2026-08-26 19:48:17.524694	2026-08-26 20:15:00.93039	f	1	t	2026-08-26 19:48:17.524023	Demo Lecture Student 25	\N	f	en	\N	\N	\N	\N	\N	1RTXpByHFusEMN-n9xkC	2026-08-26 19:48:17.526235	2026-08-26 19:48:17.524735	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:00.930216
+40	demo_lecture_student_26@example.com	$2a$11$dWXym95DLdKvEmOqDI3lruVbiumLF4CwX9u6JQHpGeez5v8toTiOe	\N	\N	\N	2026-08-26 19:48:17.904308	2026-08-26 20:15:01.433267	f	1	t	2026-08-26 19:48:17.90427	Demo Lecture Student 26	\N	f	en	\N	\N	\N	\N	\N	_y4iBrf1_A5FDwNmvtov	2026-08-26 19:48:17.905466	2026-08-26 19:48:17.904339	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:01.433105
+41	demo_lecture_student_27@example.com	$2a$11$Fe2.wkAJPf.zinOO0/zmquiASZ.Xpjb3WsmWVbdLZaNKgtj298B46	\N	\N	\N	2026-08-26 19:48:18.282456	2026-08-26 20:15:01.921814	f	1	t	2026-08-26 19:48:18.282419	Demo Lecture Student 27	\N	f	en	\N	\N	\N	\N	\N	y5zcKsj2eSsd9GiPcetk	2026-08-26 19:48:18.283562	2026-08-26 19:48:18.282488	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:01.921654
+42	demo_lecture_student_28@example.com	$2a$11$Ql0Ijo.eHvDtWjNrXnVlMewUMtN6uQWtWr.DKJo7dYRCt4weAVepK	\N	\N	\N	2026-08-26 19:48:18.659858	2026-08-26 20:15:02.4028	f	1	t	2026-08-26 19:48:18.659822	Demo Lecture Student 28	\N	f	en	\N	\N	\N	\N	\N	mMdUaaebtBJFJnbScRgw	2026-08-26 19:48:18.661458	2026-08-26 19:48:18.659887	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:02.402636
+43	demo_lecture_student_29@example.com	$2a$11$RxQEr1UrzRZLqZd7e0PvE.aFzx1EPLI/DRQgPbxkMSzj67RjVilda	\N	\N	\N	2026-08-26 19:48:19.041229	2026-08-26 20:15:02.894548	f	1	t	2026-08-26 19:48:19.041193	Demo Lecture Student 29	\N	f	en	\N	\N	\N	\N	\N	8FLnmoe7XtxxF3pEQdmt	2026-08-26 19:48:19.042522	2026-08-26 19:48:19.041259	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:02.893823
+44	demo_lecture_student_30@example.com	$2a$11$bgVajTnuqbrWo9Dk8XthNerzK3UoRjkwMk5WuVfc54mNppITtGOce	\N	\N	\N	2026-08-26 19:48:19.414755	2026-08-26 20:15:03.383304	f	1	t	2026-08-26 19:48:19.414719	Demo Lecture Student 30	\N	f	en	\N	\N	\N	\N	\N	ngiKay5Hh4hFHess6YLN	2026-08-26 19:48:19.416212	2026-08-26 19:48:19.414785	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:03.383147
+45	demo_lecture_student_31@example.com	$2a$11$srn3M5gr2MDQo1gqlUyD4uwUzRkoMv5Dvnx3vJyccjnYORjoWwHz.	\N	\N	\N	2026-08-26 19:48:19.793031	2026-08-26 20:15:03.871564	f	1	t	2026-08-26 19:48:19.792993	Demo Lecture Student 31	\N	f	en	\N	\N	\N	\N	\N	gLg1XHucCxiyYQGeeCkx	2026-08-26 19:48:19.794394	2026-08-26 19:48:19.793067	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:03.871401
+46	demo_seminar_student_0@mampf.edu	$2a$11$5Z/MT8kJKI8EaI1BG2Sr0uy1rZYU.qeQjeUPSQXq3VfIqZSVDr7Ie	\N	\N	\N	2026-08-26 19:48:21.667102	2026-08-26 20:15:04.383043	f	1	t	2026-08-26 19:48:21.666825	Demo Seminar Student 0	\N	f	en	\N	\N	\N	\N	\N	Bez1V5NYMcKtfBB1g8LZ	2026-08-26 19:48:21.668969	2026-08-26 19:48:21.667235	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:04.382884
+47	demo_seminar_student_1@mampf.edu	$2a$11$IyyZPx92Z1GQAhmDqHJjTerR3.cCsRNUadnAPcMW/YTqHfzfExRPm	\N	\N	\N	2026-08-26 19:48:22.070093	2026-08-26 20:15:04.897348	f	1	t	2026-08-26 19:48:22.070056	Demo Seminar Student 1	\N	f	en	\N	\N	\N	\N	\N	sr1FfqjSFSHW87gc7V-g	2026-08-26 19:48:22.071198	2026-08-26 19:48:22.070129	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:04.897174
+48	demo_seminar_student_2@mampf.edu	$2a$11$Sg3v71zTLzwYtqjUPykUheTV805cpf43jXsFugIhxv5LoaQw8Ju2y	\N	\N	\N	2026-08-26 19:48:22.43313	2026-08-26 20:15:05.423286	f	1	t	2026-08-26 19:48:22.433092	Demo Seminar Student 2	\N	f	en	\N	\N	\N	\N	\N	CFX4Xvrfx68mYkywV_-b	2026-08-26 19:48:22.434311	2026-08-26 19:48:22.433179	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:05.423107
+49	demo_seminar_student_3@mampf.edu	$2a$11$tPP6cEJzoQpCpdsd7u5U/uwLnzKvgX0YkuP0cXQCKFGyEa..DXHlG	\N	\N	\N	2026-08-26 19:48:22.806947	2026-08-26 20:15:05.935667	f	1	t	2026-08-26 19:48:22.806911	Demo Seminar Student 3	\N	f	en	\N	\N	\N	\N	\N	DViz-FcSqXSzVNjrb2BB	2026-08-26 19:48:22.808035	2026-08-26 19:48:22.80698	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:05.935509
+50	demo_seminar_student_4@mampf.edu	$2a$11$H5uPvQIEMMsTxh.L.oy/WupI8xZ9bqPrKhPmyHfmA7V0vSaZlu0qS	\N	\N	\N	2026-08-26 19:48:23.164034	2026-08-26 20:15:06.434561	f	1	t	2026-08-26 19:48:23.163988	Demo Seminar Student 4	\N	f	en	\N	\N	\N	\N	\N	Y3k6twnJ3zMnN52NekWN	2026-08-26 19:48:23.165327	2026-08-26 19:48:23.164073	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:06.43441
+51	demo_seminar_student_5@mampf.edu	$2a$11$z80zIK2cvR5kbx.eJfrnPOmc57Ts30Tg0mRaJ84pwGb6.5A5i8wI2	\N	\N	\N	2026-08-26 19:48:23.660159	2026-08-26 20:15:06.939165	f	1	t	2026-08-26 19:48:23.660118	Demo Seminar Student 5	\N	f	en	\N	\N	\N	\N	\N	zmbZjJ2PNtMeiE6v2eLZ	2026-08-26 19:48:23.661385	2026-08-26 19:48:23.660206	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:06.939004
+52	demo_seminar_student_6@mampf.edu	$2a$11$UISCd/Ae28ANX2cCo46lGe9USWP.noBz0O8iUYYA0prkK55eb4Fvi	\N	\N	\N	2026-08-26 19:48:24.022698	2026-08-26 20:15:07.420678	f	1	t	2026-08-26 19:48:24.022663	Demo Seminar Student 6	\N	f	en	\N	\N	\N	\N	\N	6QqvvLNemQq5ACqrCxz3	2026-08-26 19:48:24.023795	2026-08-26 19:48:24.022734	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:07.420519
+53	demo_seminar_student_7@mampf.edu	$2a$11$2CAhO0pIBjroOoGjhGFwhutKqFB6/95CikRA05r4Saca.7xhYSj5m	\N	\N	\N	2026-08-26 19:48:24.429429	2026-08-26 20:15:07.907722	f	1	t	2026-08-26 19:48:24.429393	Demo Seminar Student 7	\N	f	en	\N	\N	\N	\N	\N	HpMzYZQ2S1QEnCgw2sSE	2026-08-26 19:48:24.430856	2026-08-26 19:48:24.429465	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:07.907561
+54	demo_seminar_student_8@mampf.edu	$2a$11$T6Idgcap7mg8pA1TokALbO8rBn2elQBE1n3wQaZftIwM5O9IIp0aC	\N	\N	\N	2026-08-26 19:48:24.778494	2026-08-26 20:15:08.386749	f	1	t	2026-08-26 19:48:24.778455	Demo Seminar Student 8	\N	f	en	\N	\N	\N	\N	\N	KzDDMcwSB17BahNBWyRr	2026-08-26 19:48:24.779645	2026-08-26 19:48:24.778534	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:08.386587
+55	demo_seminar_student_9@mampf.edu	$2a$11$kZN9CTIsZnxvDp.6GzBoXeEYvHuxmayo2o.AKXcH8e.YJhuyq81/y	\N	\N	\N	2026-08-26 19:48:25.151005	2026-08-26 20:15:08.874393	f	1	t	2026-08-26 19:48:25.150961	Demo Seminar Student 9	\N	f	en	\N	\N	\N	\N	\N	t3FjNsRjckHx7GkAv6Gu	2026-08-26 19:48:25.152273	2026-08-26 19:48:25.151048	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:08.874126
+56	demo_seminar_student_10@mampf.edu	$2a$11$DKRCQSLaulK2YrHCQcOSx.9lXuP5w/t6uv3pLlaY3JVzc1YqpDmNm	\N	\N	\N	2026-08-26 19:48:25.50142	2026-08-26 20:15:09.357012	f	1	t	2026-08-26 19:48:25.500969	Demo Seminar Student 10	\N	f	en	\N	\N	\N	\N	\N	yhmZxNP7r9wgvkNXiNbL	2026-08-26 19:48:25.502932	2026-08-26 19:48:25.501469	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:09.356787
+57	demo_seminar_student_11@mampf.edu	$2a$11$RY1AlPyxrO6thXu/24SaUuU16iavCrTPR28QvJc/Tzp5VGSVEl752	\N	\N	\N	2026-08-26 19:48:25.877974	2026-08-26 20:15:09.837697	f	1	t	2026-08-26 19:48:25.877686	Demo Seminar Student 11	\N	f	en	\N	\N	\N	\N	\N	5fnjws97WUsqW8EEboLK	2026-08-26 19:48:25.879618	2026-08-26 19:48:25.87849	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:09.837523
+58	demo_seminar_rejected_0@example.com	$2a$11$I7QoWCio0lnQpAa3Szwj5eFWSWR7DIm0ci6cswNo0SsA1HsMGOr3a	\N	\N	\N	2026-08-26 19:48:26.217589	2026-08-26 20:15:10.324055	f	1	t	2026-08-26 19:48:26.217556	Demo Seminar Rejected 0	\N	f	en	\N	\N	\N	\N	\N	87ovjJE3eGwGsZ1HtawD	2026-08-26 19:48:26.218782	2026-08-26 19:48:26.217622	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:10.32388
+60	solver_user_0@example.com	$2a$11$BYgVUqvJRX2P2aDBFG/slO5S2HK7toIPeELHnriHj5u4G1qsacTOG	\N	\N	\N	2026-08-26 19:48:27.51481	2026-08-26 20:15:11.310515	f	1	t	2026-08-26 19:48:27.514766	Solver User 0	\N	f	en	\N	\N	\N	\N	\N	V-s657wkamGfuWHLzxr_	2026-08-26 19:48:27.51596	2026-08-26 19:48:27.514854	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:11.310325
+61	solver_user_1@example.com	$2a$11$owthDPSUQWQe1Unzh9imm.Gnx2RSfgE28KpuGrPpcUgilYrOoECi6	\N	\N	\N	2026-08-26 19:48:27.889997	2026-08-26 20:15:11.836114	f	1	t	2026-08-26 19:48:27.889945	Solver User 1	\N	f	en	\N	\N	\N	\N	\N	UeuyaVLmqwwmK_gPRmQF	2026-08-26 19:48:27.891128	2026-08-26 19:48:27.890036	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:11.835624
+62	solver_user_2@example.com	$2a$11$RnEpYNiU9e1mGWNjXBarL.iYBgWpsE7eh8Qfdv3buWyEhupOaQrkK	\N	\N	\N	2026-08-26 19:48:28.277957	2026-08-26 20:15:12.365933	f	1	t	2026-08-26 19:48:28.277923	Solver User 2	\N	f	en	\N	\N	\N	\N	\N	VFuadniEjbsyztTtEy_N	2026-08-26 19:48:28.279126	2026-08-26 19:48:28.27799	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:12.365751
+63	solver_user_3@example.com	$2a$11$iI94F3FlWhclW93yV1qv0.sxcL7hoHM/gBrwWCEAC1aPefKqjcaVa	\N	\N	\N	2026-08-26 19:48:28.650515	2026-08-26 20:15:12.948126	f	1	t	2026-08-26 19:48:28.650483	Solver User 3	\N	f	en	\N	\N	\N	\N	\N	_ynBNH8v6VxdNxMKRxRq	2026-08-26 19:48:28.651677	2026-08-26 19:48:28.650553	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:12.947394
+64	solver_user_4@example.com	$2a$11$uTcUJP016mYO.mr2.B81Nu4Ots5MyPhZXOBQOIPfXqNgP1cnDcQAu	\N	\N	\N	2026-08-26 19:48:29.029028	2026-08-26 20:15:13.61909	f	1	t	2026-08-26 19:48:29.028993	Solver User 4	\N	f	en	\N	\N	\N	\N	\N	D-nbT8Xzzi2MUhW-g6rt	2026-08-26 19:48:29.030264	2026-08-26 19:48:29.029064	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:13.617869
+65	solver_user_5@example.com	$2a$11$Qbm7VZUzmyPgfyHw16IM5uTR4YM66cZ8FaBShNlbg5K8G/OodfXZ2	\N	\N	\N	2026-08-26 19:48:29.420129	2026-08-26 20:15:14.19754	f	1	t	2026-08-26 19:48:29.420096	Solver User 5	\N	f	en	\N	\N	\N	\N	\N	CMafyCfD3yVfEnFN3-aq	2026-08-26 19:48:29.421263	2026-08-26 19:48:29.420166	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:14.197383
+66	solver_user_6@example.com	$2a$11$Fzifavk4OSxFlZM1E081Q.b/eQhhJ9rR3WnrOR1pwG9V5wUmJz022	\N	\N	\N	2026-08-26 19:48:29.794009	2026-08-26 20:15:14.740606	f	1	t	2026-08-26 19:48:29.793974	Solver User 6	\N	f	en	\N	\N	\N	\N	\N	jHFS2qWvMP6YYvVfCxU_	2026-08-26 19:48:29.795233	2026-08-26 19:48:29.794063	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:14.7404
+67	solver_user_7@example.com	$2a$11$mCK9V8VbrzBSiBtgdBHzaO.W.pUsfGFXZZ7zJ3WbJsSopsNtEJqle	\N	\N	\N	2026-08-26 19:48:30.189193	2026-08-26 20:15:15.311114	f	1	t	2026-08-26 19:48:30.189159	Solver User 7	\N	f	en	\N	\N	\N	\N	\N	mbmNxusKB5VzgBQzQsks	2026-08-26 19:48:30.190555	2026-08-26 19:48:30.189229	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:15.310933
+69	solver_user_9@example.com	$2a$11$Sr9XXT2IPbN7kg0MsdU1BucDkOU9baLE7b4KuLB4LHSQgibL90jiu	\N	\N	\N	2026-08-26 19:48:30.92305	2026-08-26 20:15:16.485647	f	1	t	2026-08-26 19:48:30.923016	Solver User 9	\N	f	en	\N	\N	\N	\N	\N	612XG-eb-DDxE7xcD6Jo	2026-08-26 19:48:30.924151	2026-08-26 19:48:30.923085	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:16.485496
+70	solver_user_10@example.com	$2a$11$9DtT5He6uTUkcy6UdwTbbed9.5XE4hmsr9IvwcPTpZe74kVgrOgIK	\N	\N	\N	2026-08-26 19:48:31.301441	2026-08-26 20:15:17.078648	f	1	t	2026-08-26 19:48:31.301408	Solver User 10	\N	f	en	\N	\N	\N	\N	\N	y9HSBTZ-1UGDiAe5UFKs	2026-08-26 19:48:31.302594	2026-08-26 19:48:31.301474	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:17.078491
+71	solver_user_11@example.com	$2a$11$/KwZz8qHr.8x9fUQfOpEQukg7G6UdjyDtNFjqsePJ2iqj86ykp7be	\N	\N	\N	2026-08-26 19:48:31.659411	2026-08-26 20:15:17.602498	f	1	t	2026-08-26 19:48:31.65938	Solver User 11	\N	f	en	\N	\N	\N	\N	\N	c9affA9SLtomwDoxqo3x	2026-08-26 19:48:31.66059	2026-08-26 19:48:31.659443	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:17.602287
+72	solver_user_12@example.com	$2a$11$ROisMTtVg/k/uI7d3OhAzeVqTQBz1sqGKFTtpFtWmLgb.bkimCqy.	\N	\N	\N	2026-08-26 19:48:32.029917	2026-08-26 20:15:18.114868	f	1	t	2026-08-26 19:48:32.029883	Solver User 12	\N	f	en	\N	\N	\N	\N	\N	VEA4TB4PxRv_z2dva7zD	2026-08-26 19:48:32.031003	2026-08-26 19:48:32.029953	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:18.114722
+73	solver_user_13@example.com	$2a$11$EX.5.GuSrOfwwQ8oV/3Rye4P3IcHyxHVLTOy7YVNBLgppmV.0I6uu	\N	\N	\N	2026-08-26 19:48:32.398932	2026-08-26 20:15:18.615321	f	1	t	2026-08-26 19:48:32.398899	Solver User 13	\N	f	en	\N	\N	\N	\N	\N	NyDej8SSeamRMySiVGNZ	2026-08-26 19:48:32.401516	2026-08-26 19:48:32.39959	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:18.615167
+74	solver_user_14@example.com	$2a$11$5tK90Y6D1hhGUmuTzLVkkOGxYFSy6zgx4g7eqQVqO0KalK2vGKw8G	\N	\N	\N	2026-08-26 19:48:32.748551	2026-08-26 20:15:19.107195	f	1	t	2026-08-26 19:48:32.748515	Solver User 14	\N	f	en	\N	\N	\N	\N	\N	zKn66VKgNjzQRL8to82y	2026-08-26 19:48:32.749766	2026-08-26 19:48:32.748583	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:19.107041
+75	solver_user_15@example.com	$2a$11$EBpMCTuCx9pGX4l.CWd5qOjaHTG5y21dRqSI5Ewl/wD3Vp1Bx6q96	\N	\N	\N	2026-08-26 19:48:33.117156	2026-08-26 20:15:19.642125	f	1	t	2026-08-26 19:48:33.116896	Solver User 15	\N	f	en	\N	\N	\N	\N	\N	tyza6eaRacRMz_zYc4jQ	2026-08-26 19:48:33.118383	2026-08-26 19:48:33.117196	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:19.641963
+76	solver_user_16@example.com	$2a$11$F2CD6bWff5Z.zruUml4/7OgKG9FQXoKmDpokRWJEVA7U6CfxpH8r.	\N	\N	\N	2026-08-26 19:48:33.48573	2026-08-26 20:15:20.164628	f	1	t	2026-08-26 19:48:33.485698	Solver User 16	\N	f	en	\N	\N	\N	\N	\N	Vy9SEGpKzxS3A89yCyM2	2026-08-26 19:48:33.487118	2026-08-26 19:48:33.485761	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:20.164467
+77	solver_user_17@example.com	$2a$11$kaIFTAzCE6JtagkMgwrQxuzkc5BxbQ6541D9mPWyGFSo9BL3DLGyS	\N	\N	\N	2026-08-26 19:48:33.840001	2026-08-26 20:15:20.727248	f	1	t	2026-08-26 19:48:33.839968	Solver User 17	\N	f	en	\N	\N	\N	\N	\N	S4W2jWdsmgGwQH9C5asz	2026-08-26 19:48:33.841086	2026-08-26 19:48:33.840033	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:20.727103
+78	solver_user_18@example.com	$2a$11$9o5/P8GBb72ZHsVywzPd6eMDtRSpKRBFH80xecL3JHCO3M6K49GDO	\N	\N	\N	2026-08-26 19:48:34.207645	2026-08-26 20:15:21.241255	f	1	t	2026-08-26 19:48:34.207613	Solver User 18	\N	f	en	\N	\N	\N	\N	\N	kEef2LWZgwNnTV4GANAj	2026-08-26 19:48:34.208909	2026-08-26 19:48:34.207678	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:21.241095
+79	solver_user_19@example.com	$2a$11$7jAJ94X1cdS7b3VvdC6FPOTroWVfd80paujtMqMLSFSmxru1XBuYu	\N	\N	\N	2026-08-26 19:48:34.562486	2026-08-26 20:15:21.736072	f	1	t	2026-08-26 19:48:34.562444	Solver User 19	\N	f	en	\N	\N	\N	\N	\N	AyBJK3PsyzLysHxYvUS-	2026-08-26 19:48:34.564079	2026-08-26 19:48:34.56252	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:21.735927
+80	solver_user_20@example.com	$2a$11$SuU28MqverYzuJIN2u9iVOZMHdJEr5S/Q5KG0mZ/A/mqXSrB.UrLS	\N	\N	\N	2026-08-26 19:48:34.932963	2026-08-26 20:15:22.24696	f	1	t	2026-08-26 19:48:34.932924	Solver User 20	\N	f	en	\N	\N	\N	\N	\N	xzSzDzPTTo8CYfynp7ac	2026-08-26 19:48:34.934409	2026-08-26 19:48:34.932999	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:22.246792
+81	solver_user_21@example.com	$2a$11$uVWE0lTgEAaxsRRURJrideSQwiOkUW5vkkp6oriEdFvRfNLYntdG.	\N	\N	\N	2026-08-26 19:48:35.31679	2026-08-26 20:15:22.767082	f	1	t	2026-08-26 19:48:35.316756	Solver User 21	\N	f	en	\N	\N	\N	\N	\N	4dHzJoPdo4YQYNbTUzG3	2026-08-26 19:48:35.318046	2026-08-26 19:48:35.316822	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:22.766923
+82	solver_user_22@example.com	$2a$11$.CCT1C0HRyblEuldaFt4q.QxU7WHjXi2H1NYrOR8f4XYsDo9zdJEm	\N	\N	\N	2026-08-26 19:48:35.706971	2026-08-26 20:15:23.269825	f	1	t	2026-08-26 19:48:35.706887	Solver User 22	\N	f	en	\N	\N	\N	\N	\N	JeSfLfNREbtWn1y6Hosm	2026-08-26 19:48:35.708352	2026-08-26 19:48:35.707023	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:23.269678
+83	solver_user_23@example.com	$2a$11$jhZkmSHCsA22I75yLiDWU.8z/9qWfMM2/u7Be7euulRjsqeLNtQuK	\N	\N	\N	2026-08-26 19:48:36.101474	2026-08-26 20:15:23.753772	f	1	t	2026-08-26 19:48:36.101431	Solver User 23	\N	f	en	\N	\N	\N	\N	\N	btxVCAz2kf8tA3YvoFw7	2026-08-26 19:48:36.102809	2026-08-26 19:48:36.101511	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:23.753625
+84	solver_user_24@example.com	$2a$11$VwbE5XH2htVNljvXeQHCieJoEcbGEDonw22EXg0Pd8T3wBrDZcHtG	\N	\N	\N	2026-08-26 19:48:36.497327	2026-08-26 20:15:24.247514	f	1	t	2026-08-26 19:48:36.497293	Solver User 24	\N	f	en	\N	\N	\N	\N	\N	VgdFsxP742ps9EMEZZgs	2026-08-26 19:48:36.498558	2026-08-26 19:48:36.497361	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:24.247363
+85	solver_user_25@example.com	$2a$11$FZ5Oxz166J5vYFyPSVrZe.IE.Kallz5sY56X7ok8z5BUNmU7XGwhu	\N	\N	\N	2026-08-26 19:48:36.892575	2026-08-26 20:15:24.789582	f	1	t	2026-08-26 19:48:36.892542	Solver User 25	\N	f	en	\N	\N	\N	\N	\N	JuxgET6z7LtutDYKbrtx	2026-08-26 19:48:36.893709	2026-08-26 19:48:36.892605	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:24.789427
+86	solver_user_26@example.com	$2a$11$UJLPDTM.bGRAze4IUT6bYuellm12Ktn2mvtryVIuvN6/vvRVCT8kC	\N	\N	\N	2026-08-26 19:48:37.274405	2026-08-26 20:15:25.290824	f	1	t	2026-08-26 19:48:37.27437	Solver User 26	\N	f	en	\N	\N	\N	\N	\N	jdwDNSsdWN-mky99Y3UC	2026-08-26 19:48:37.27586	2026-08-26 19:48:37.27444	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:25.290664
+87	solver_user_27@example.com	$2a$11$8mUAFkPpIXJ2xWGjsV8Mi.nA1e3uVOig7gdJru7.Kdh8nYe0tDg2u	\N	\N	\N	2026-08-26 19:48:37.647646	2026-08-26 20:15:25.812249	f	1	t	2026-08-26 19:48:37.647613	Solver User 27	\N	f	en	\N	\N	\N	\N	\N	T2ZsNhHS_f4TzkxBeZKg	2026-08-26 19:48:37.648764	2026-08-26 19:48:37.647679	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:25.812068
+88	solver_user_28@example.com	$2a$11$9YModcgiom9vbfWOBNStg.yNBKCp1drZ2fyjK1.jvfNBDdet5lsyG	\N	\N	\N	2026-08-26 19:48:38.008577	2026-08-26 20:15:26.31071	f	1	t	2026-08-26 19:48:38.00854	Solver User 28	\N	f	en	\N	\N	\N	\N	\N	hE-nEiJF78EqzqqNX87i	2026-08-26 19:48:38.010149	2026-08-26 19:48:38.008635	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:26.310556
+89	solver_user_29@example.com	$2a$11$eJMoRnAQvlVufRpkLcke7euuD/EJAqKwnst4FrsOza/V4e8GxVrKy	\N	\N	\N	2026-08-26 19:48:38.40139	2026-08-26 20:15:26.807259	f	1	t	2026-08-26 19:48:38.40135	Solver User 29	\N	f	en	\N	\N	\N	\N	\N	YJ1jpWzkX9cTybaes7AW	2026-08-26 19:48:38.402826	2026-08-26 19:48:38.401432	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:26.80692
+90	solver_user_30@example.com	$2a$11$Z0vq9oq1GWRGuJUTwPusn.HngS5lCXrh3xlvlZmTHU/9IHX9X9tT2	\N	\N	\N	2026-08-26 19:48:38.773417	2026-08-26 20:15:27.294575	f	1	t	2026-08-26 19:48:38.773384	Solver User 30	\N	f	en	\N	\N	\N	\N	\N	R47sKsJ3jiUaFTg46J_T	2026-08-26 19:48:38.774981	2026-08-26 19:48:38.773452	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:27.294431
+91	solver_user_31@example.com	$2a$11$b2ef5b/lLMBbnyw3ZZGjtOk/KfCaJGaRuLCA5vW2MLEpkuNNWmIRK	\N	\N	\N	2026-08-26 19:48:39.149572	2026-08-26 20:15:27.778793	f	1	t	2026-08-26 19:48:39.149533	Solver User 31	\N	f	en	\N	\N	\N	\N	\N	3AFJvpz_3nLqr6KNQP41	2026-08-26 19:48:39.151066	2026-08-26 19:48:39.149629	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:27.778644
+92	solver_user_32@example.com	$2a$11$ss8QcifUBxc61Uqoez4L/eaij7gQX45/XqSKXk42k7ekXxFOx3A3G	\N	\N	\N	2026-08-26 19:48:39.552711	2026-08-26 20:15:28.277191	f	1	t	2026-08-26 19:48:39.552677	Solver User 32	\N	f	en	\N	\N	\N	\N	\N	e89WdwMHsN3DgsnxGhFP	2026-08-26 19:48:39.554023	2026-08-26 19:48:39.552745	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:28.277044
+93	solver_user_33@example.com	$2a$11$RpwS9KhU33fYUZn227TTcOake9.jybPfgHVXDUlp8UHMR0HdK8ycy	\N	\N	\N	2026-08-26 19:48:39.923175	2026-08-26 20:15:28.768085	f	1	t	2026-08-26 19:48:39.923134	Solver User 33	\N	f	en	\N	\N	\N	\N	\N	djRpJeuxxHy9TiDYbsyg	2026-08-26 19:48:39.924566	2026-08-26 19:48:39.923217	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:28.767937
+94	solver_user_34@example.com	$2a$11$Oy3lWtWEEGiTLVKDUbKCse/SkoYRWWaxVMoWM.bQwwGdlnjS4GoQu	\N	\N	\N	2026-08-26 19:48:40.305242	2026-08-26 20:15:29.249923	f	1	t	2026-08-26 19:48:40.305206	Solver User 34	\N	f	en	\N	\N	\N	\N	\N	tq6bVr-QJzAu1KtYehwy	2026-08-26 19:48:40.306532	2026-08-26 19:48:40.305279	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:29.249772
+96	solver_user_36@example.com	$2a$11$NCO571ir2f74l6tavPoNwuTtARbYed.sn7rBG4bmWVuw0tZtKlLmO	\N	\N	\N	2026-08-26 19:48:41.103435	2026-08-26 20:15:30.228083	f	1	t	2026-08-26 19:48:41.103401	Solver User 36	\N	f	en	\N	\N	\N	\N	\N	GMgx7Ff8txUfzZKRGxyL	2026-08-26 19:48:41.104643	2026-08-26 19:48:41.103469	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:30.227903
+97	solver_user_37@example.com	$2a$11$9DZTuqoaE4152gERPA3.ZuAc3d/8zYpZ5bFSpBE5WwKrdDZGVHM.m	\N	\N	\N	2026-08-26 19:48:41.4944	2026-08-26 20:15:30.763006	f	1	t	2026-08-26 19:48:41.494366	Solver User 37	\N	f	en	\N	\N	\N	\N	\N	zjUBDsPuJCyQ_Hsi6tdn	2026-08-26 19:48:41.495673	2026-08-26 19:48:41.494432	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:30.762838
+98	solver_user_38@example.com	$2a$11$uqoI28D6a34PS7R1DTi94.qORwxaQa1VQE2j771eyOHRPAqzwVrBS	\N	\N	\N	2026-08-26 19:48:41.862229	2026-08-26 20:15:31.249184	f	1	t	2026-08-26 19:48:41.862196	Solver User 38	\N	f	en	\N	\N	\N	\N	\N	58P_duxP8UjDkceJCYLq	2026-08-26 19:48:41.863353	2026-08-26 19:48:41.862262	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:31.249035
+99	solver_user_39@example.com	$2a$11$XQtMol5gHBtbzoJiCDd.fuKnicVFWDeh.jBfExFcfNRFd58jHxCZe	\N	\N	\N	2026-08-26 19:48:42.239841	2026-08-26 20:15:31.763207	f	1	t	2026-08-26 19:48:42.239808	Solver User 39	\N	f	en	\N	\N	\N	\N	\N	eBziXWBbDzpsjXz_-2C1	2026-08-26 19:48:42.241115	2026-08-26 19:48:42.239873	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:31.763058
+101	solver_user_41@example.com	$2a$11$I0RNEnbk3FXY4k5lKGTHnefB4vAvhZV/18vBopqFzXCtNfgE/7Mf.	\N	\N	\N	2026-08-26 19:48:42.9974	2026-08-26 20:15:32.786952	f	1	t	2026-08-26 19:48:42.997364	Solver User 41	\N	f	en	\N	\N	\N	\N	\N	rGemd-g5YYNV5X_pgwcf	2026-08-26 19:48:42.99875	2026-08-26 19:48:42.997432	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:32.786807
+102	solver_user_42@example.com	$2a$11$legLTiuw36Mb6sV5Lg/V1u76NtRZkMHmBOtmGaglxKzDbAdW8Ztpe	\N	\N	\N	2026-08-26 19:48:43.398829	2026-08-26 20:15:33.298008	f	1	t	2026-08-26 19:48:43.398794	Solver User 42	\N	f	en	\N	\N	\N	\N	\N	4SdABSqtkmJZHhRbUcPW	2026-08-26 19:48:43.400026	2026-08-26 19:48:43.398864	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:33.297864
+103	solver_user_43@example.com	$2a$11$pCRWjCG3ZxvCoWnZHY.s5ud1GRNNWwyrlwPAVyYxf6aNbjX96r.86	\N	\N	\N	2026-08-26 19:48:43.808352	2026-08-26 20:15:33.778448	f	1	t	2026-08-26 19:48:43.808318	Solver User 43	\N	f	en	\N	\N	\N	\N	\N	LsgyCCQFoFJVgLKPWz-9	2026-08-26 19:48:43.809524	2026-08-26 19:48:43.808389	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:33.7783
+104	solver_user_44@example.com	$2a$11$hPUcW0oJnGdTiz4QyLO.s.M20LGSMjy6t1f1k9AXzfzrqAfxgHqQe	\N	\N	\N	2026-08-26 19:48:44.201047	2026-08-26 20:15:34.285613	f	1	t	2026-08-26 19:48:44.201012	Solver User 44	\N	f	en	\N	\N	\N	\N	\N	j3LNQCaMWSWdDfPQsJRa	2026-08-26 19:48:44.202187	2026-08-26 19:48:44.201079	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:34.285453
+105	solver_user_45@example.com	$2a$11$dtTTqfVBmEbg3itY8DW4IewVOskwTfc.Jz.2.IERYizxrHxzx1ZZG	\N	\N	\N	2026-08-26 19:48:44.607021	2026-08-26 20:15:34.82564	f	1	t	2026-08-26 19:48:44.606974	Solver User 45	\N	f	en	\N	\N	\N	\N	\N	_fsP8-UJQ3WKVLcZQVBs	2026-08-26 19:48:44.609389	2026-08-26 19:48:44.607063	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:34.825488
+106	solver_user_46@example.com	$2a$11$kzfCzJ3WcLUvT3z2K2QxHuYlaz1hf.KxDmSsYPzvRYyz2Q8Ps2qAS	\N	\N	\N	2026-08-26 19:48:45.005309	2026-08-26 20:15:35.390921	f	1	t	2026-08-26 19:48:45.005266	Solver User 46	\N	f	en	\N	\N	\N	\N	\N	H_KXi1qFgJGADoumLWYw	2026-08-26 19:48:45.006732	2026-08-26 19:48:45.005348	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:35.390772
+107	solver_user_47@example.com	$2a$11$fzW.Foy8w1RXZJFHGXN4Zu84GNIMhyQ0zE04H1c12Gua1305QsXci	\N	\N	\N	2026-08-26 19:48:45.406275	2026-08-26 20:15:35.9367	f	1	t	2026-08-26 19:48:45.406231	Solver User 47	\N	f	en	\N	\N	\N	\N	\N	kh7Svii9Tj_JbDZo974Q	2026-08-26 19:48:45.408029	2026-08-26 19:48:45.406314	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:35.936505
+108	solver_user_48@example.com	$2a$11$x/93X7nw6Lk248OGMT86XuopqGdB.2WaZOLPFhcm/hl1qk1C/Fyl6	\N	\N	\N	2026-08-26 19:48:45.806639	2026-08-26 20:15:36.488252	f	1	t	2026-08-26 19:48:45.806606	Solver User 48	\N	f	en	\N	\N	\N	\N	\N	75xzmBn4egh4SLCNoztz	2026-08-26 19:48:45.807738	2026-08-26 19:48:45.806669	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:36.488098
+109	solver_user_49@example.com	$2a$11$.2MKrLd2ABYAPACPgnqgEOJRFHumyBW4NCM3swUqwwiOGrEg5y4yK	\N	\N	\N	2026-08-26 19:48:46.186853	2026-08-26 20:15:36.993746	f	1	t	2026-08-26 19:48:46.186819	Solver User 49	\N	f	en	\N	\N	\N	\N	\N	4U48qS_BAQwj5-yWY784	2026-08-26 19:48:46.188038	2026-08-26 19:48:46.186885	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:36.99357
+110	solver_user_50@example.com	$2a$11$cHZV5ZmVEQV/Oir2AQeqq.79ytR3njDJZ3E0zq.dxHZUSEVIR6Gv2	\N	\N	\N	2026-08-26 19:48:46.592361	2026-08-26 20:15:37.488061	f	1	t	2026-08-26 19:48:46.592329	Solver User 50	\N	f	en	\N	\N	\N	\N	\N	c99BN5Fs1kfa9WNG7xsE	2026-08-26 19:48:46.593713	2026-08-26 19:48:46.592391	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:37.487905
+111	solver_user_51@example.com	$2a$11$NhraafLwnGx8wEwtp8S34OHZjgwM67.mAchJFzlukIMTluAZRLH1C	\N	\N	\N	2026-08-26 19:48:46.960592	2026-08-26 20:15:38.028087	f	1	t	2026-08-26 19:48:46.960561	Solver User 51	\N	f	en	\N	\N	\N	\N	\N	rjz_fqXWBTY36GqjxYpC	2026-08-26 19:48:46.961712	2026-08-26 19:48:46.960624	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:38.027914
+112	solver_user_52@example.com	$2a$11$gdJ8YWyVdJ5tb6roFVGaE.x7KxZWEjXbFALzMRT.1Mu/oBtdkERNa	\N	\N	\N	2026-08-26 19:48:47.312663	2026-08-26 20:15:38.549462	f	1	t	2026-08-26 19:48:47.3126	Solver User 52	\N	f	en	\N	\N	\N	\N	\N	Qs4KM8j5uyHRTZrXKwCe	2026-08-26 19:48:47.313762	2026-08-26 19:48:47.312699	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:38.549299
+113	solver_user_53@example.com	$2a$11$wnRiaR89PoO8TJ8cX/F0J.Tj7FkBOKgVZxvYJgFTonM0arlg8Lz7O	\N	\N	\N	2026-08-26 19:48:47.811715	2026-08-26 20:15:39.048229	f	1	t	2026-08-26 19:48:47.811676	Solver User 53	\N	f	en	\N	\N	\N	\N	\N	xt2Rzwz1sRt-F69g7dbd	2026-08-26 19:48:47.813295	2026-08-26 19:48:47.811762	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:39.048078
+114	solver_user_54@example.com	$2a$11$8ymQjzoX7sZeFQKP9BkzTeIV11lVeBkaPEavFAcnmpdtVb2ahOd1G	\N	\N	\N	2026-08-26 19:48:48.211566	2026-08-26 20:15:39.55485	f	1	t	2026-08-26 19:48:48.211526	Solver User 54	\N	f	en	\N	\N	\N	\N	\N	t-yPMcoMhNZFjAxmzzDR	2026-08-26 19:48:48.212952	2026-08-26 19:48:48.211604	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:39.5547
+115	cohort_user_0@example.com	$2a$11$.4CZ/cqa22Cu0quM54A59eKlCuYEjulAfHz.AXH7Qz2mEOr8h6yCS	\N	\N	\N	2026-08-26 19:48:48.755642	2026-08-26 20:15:40.038055	f	1	t	2026-08-26 19:48:48.755606	Cohort User 0	\N	f	en	\N	\N	\N	\N	\N	j3UetLFZjzxFEuRE2tX2	2026-08-26 19:48:48.756968	2026-08-26 19:48:48.755682	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:40.03789
+116	cohort_user_1@example.com	$2a$11$/zuBTp1B.vxaR0/Jkj/Uzutdpc7VFC8jFYVy3y/KKJgKEMdAG81Wi	\N	\N	\N	2026-08-26 19:48:49.175811	2026-08-26 20:15:40.538274	f	1	t	2026-08-26 19:48:49.17577	Cohort User 1	\N	f	en	\N	\N	\N	\N	\N	R9r1njjsxywm1xhxccQz	2026-08-26 19:48:49.17717	2026-08-26 19:48:49.175855	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:40.538125
+117	cohort_user_2@external.org	$2a$11$Afxb2TIVnsV96Y/MfvDHAuNr8j1FXBvvGWILTtuzZOWwMH9OmFnWm	\N	\N	\N	2026-08-26 19:48:49.700036	2026-08-26 20:15:41.027066	f	1	t	2026-08-26 19:48:49.700004	Cohort User 2	\N	f	en	\N	\N	\N	\N	\N	to6rQ-T9sVxTaUdsYeNq	2026-08-26 19:48:49.701212	2026-08-26 19:48:49.700073	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:41.026917
+118	cohort_user_3@example.com	$2a$11$hgMdIiEjxy9EQnrzQm06ZOnGlxjjp0iEnQEIdznF81HRwjnuxZzCa	\N	\N	\N	2026-08-26 19:48:50.075554	2026-08-26 20:15:41.511338	f	1	t	2026-08-26 19:48:50.075521	Cohort User 3	\N	f	en	\N	\N	\N	\N	\N	yt4PsEyVCLRfiYxhsdC6	2026-08-26 19:48:50.076698	2026-08-26 19:48:50.075587	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:41.511164
+119	cohort_user_4@example.com	$2a$11$PekMWECdKltUHLDKAjpzYOoxnl97vgMzigy2Vol3d8aPH6zBJbnQe	\N	\N	\N	2026-08-26 19:48:50.446068	2026-08-26 20:15:42.01115	f	1	t	2026-08-26 19:48:50.44602	Cohort User 4	\N	f	en	\N	\N	\N	\N	\N	6ewyrJBCLbuWLBFyPvzX	2026-08-26 19:48:50.447871	2026-08-26 19:48:50.446125	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:42.011001
+120	cohort_user_5@example.com	$2a$11$c5O65p9UlC9GC1M/JGPtoeAS9KNDy5Nxajv3AeALlV0W4.y5Aq1jC	\N	\N	\N	2026-08-26 19:48:50.824304	2026-08-26 20:15:42.50806	f	1	t	2026-08-26 19:48:50.824272	Cohort User 5	\N	f	en	\N	\N	\N	\N	\N	GZu-n7fZx2LhpvvGfNFy	2026-08-26 19:48:50.82547	2026-08-26 19:48:50.824337	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:42.507915
+121	cohort_user_6@example.com	$2a$11$vEYObHJZvpACEmBDBX0S2u9t7FsjtnHPjrgpsW.abFecV/Ldz7/Vq	\N	\N	\N	2026-08-26 19:48:51.182835	2026-08-26 20:15:42.995229	f	1	t	2026-08-26 19:48:51.182802	Cohort User 6	\N	f	en	\N	\N	\N	\N	\N	paSc_kzjdfbU1zYSeBQK	2026-08-26 19:48:51.184103	2026-08-26 19:48:51.182868	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:42.995079
+122	cohort_user_7@external.org	$2a$11$ARIPw.vIcxQ8kh1xLOgRhOH.z29n1Ilt6OvywuIQaAonuFV6z6oTa	\N	\N	\N	2026-08-26 19:48:51.551795	2026-08-26 20:15:43.543789	f	1	t	2026-08-26 19:48:51.551759	Cohort User 7	\N	f	en	\N	\N	\N	\N	\N	w9W3jau374jKdeZiK1ZG	2026-08-26 19:48:51.553365	2026-08-26 19:48:51.55183	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:43.543642
+123	cohort_user_8@example.com	$2a$11$Pah9onxq5Na9K4fVxFhRvO1SeIZ427BOLAFvW8mym64TBlyoK44AC	\N	\N	\N	2026-08-26 19:48:51.925838	2026-08-26 20:15:44.125479	f	1	t	2026-08-26 19:48:51.9258	Cohort User 8	\N	f	en	\N	\N	\N	\N	\N	4SZtGvswQ6M_quzyMyAv	2026-08-26 19:48:51.926992	2026-08-26 19:48:51.92589	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:44.122618
+124	cohort_user_9@example.com	$2a$11$ey51CbiCALuOZ0FcNBIagusbr5CQTv83HzYEJYmPVWDyHtSfd6DU6	\N	\N	\N	2026-08-26 19:48:52.285548	2026-08-26 20:15:44.665791	f	1	t	2026-08-26 19:48:52.285512	Cohort User 9	\N	f	en	\N	\N	\N	\N	\N	GGkyPQ22ZpHQRyFUoryR	2026-08-26 19:48:52.286663	2026-08-26 19:48:52.285583	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:44.665675
+126	cohort_user_11@example.com	$2a$11$bX2EjinyDePF//3KDvvyt.h8Z6Jiq8R2YrG.A2FzUK28XijD51lxS	\N	\N	\N	2026-08-26 19:48:53.043884	2026-08-26 20:15:45.732059	f	1	t	2026-08-26 19:48:53.04385	Cohort User 11	\N	f	en	\N	\N	\N	\N	\N	kRpLovZPbThYvsyKiemL	2026-08-26 19:48:53.045114	2026-08-26 19:48:53.043918	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:45.731952
+127	cohort_user_12@example.com	$2a$11$vzaUueQWGT2qQgWgq16vH.t/dwdBkiztmGJKsPT3qf.2CfKTFAfxa	\N	\N	\N	2026-08-26 19:48:53.450104	2026-08-26 20:15:46.233018	f	1	t	2026-08-26 19:48:53.450067	Cohort User 12	\N	f	en	\N	\N	\N	\N	\N	q3PsXGgL_9yA2p39tuY5	2026-08-26 19:48:53.451405	2026-08-26 19:48:53.450139	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:46.232918
+128	cohort_user_13@example.com	$2a$11$M4pAyi1gYjUJlzS4/05bKOPuFUUakkmW3DXgq0UKR3KdhuX6kMCfW	\N	\N	\N	2026-08-26 19:48:53.819468	2026-08-26 20:15:46.730274	f	1	t	2026-08-26 19:48:53.819433	Cohort User 13	\N	f	en	\N	\N	\N	\N	\N	rzJfDntCXkNV9iyGoHy2	2026-08-26 19:48:53.820657	2026-08-26 19:48:53.819504	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:46.73017
+129	cohort_user_14@external.org	$2a$11$Ov05XrCZVt3MJaGQ3r0/aufkyt2MeFQbYl22Yp7vESkrApxAnBg6m	\N	\N	\N	2026-08-26 19:48:54.196646	2026-08-26 20:15:47.219842	f	1	t	2026-08-26 19:48:54.196561	Cohort User 14	\N	f	en	\N	\N	\N	\N	\N	AjvBDdbcy5NKN_UePjHz	2026-08-26 19:48:54.20294	2026-08-26 19:48:54.196691	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:47.219736
+130	cohort_user_15@example.com	$2a$11$NjZvOrcDQUh1Viu7hbSLweAHM/L5jPesKAEFOiEb8CO2ZVgAdZM86	\N	\N	\N	2026-08-26 19:48:54.564805	2026-08-26 20:15:47.713101	f	1	t	2026-08-26 19:48:54.564772	Cohort User 15	\N	f	en	\N	\N	\N	\N	\N	R6JrFtnHe85z4xvwxEmQ	2026-08-26 19:48:54.566206	2026-08-26 19:48:54.564836	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:47.712999
+131	cohort_user_16@example.com	$2a$11$zsJ4n3aKMRMpOoATkFw89OM6/bv99i0Ru/j/eVv5SMoauv26Xexoa	\N	\N	\N	2026-08-26 19:48:54.925797	2026-08-26 20:15:48.229471	f	1	t	2026-08-26 19:48:54.925754	Cohort User 16	\N	f	en	\N	\N	\N	\N	\N	ibXeHe8fz8qY5cw1rug8	2026-08-26 19:48:54.927107	2026-08-26 19:48:54.925837	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:48.22936
+133	cohort_user_18@example.com	$2a$11$5POrVT./TN5YJCMGDSGoWOa/x0VL4zDWYKZWOcxftFLGaqEouzdV6	\N	\N	\N	2026-08-26 19:48:55.648568	2026-08-26 20:15:49.225417	f	1	t	2026-08-26 19:48:55.648291	Cohort User 18	\N	f	en	\N	\N	\N	\N	\N	CBiWfjxrzo1x7FGnwB9x	2026-08-26 19:48:55.653411	2026-08-26 19:48:55.650069	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:49.225313
+134	cohort_user_19@external.org	$2a$11$lTPtO2S4JHJUaxjV6dts4uVl7qoFT0D1FK6iVuBnTmp8GVgT3AEe2	\N	\N	\N	2026-08-26 19:48:56.170754	2026-08-26 20:15:49.719771	f	1	t	2026-08-26 19:48:56.170721	Cohort User 19	\N	f	en	\N	\N	\N	\N	\N	Rag3NoM6eTCnp4oxTP5E	2026-08-26 19:48:56.171848	2026-08-26 19:48:56.170783	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:49.719669
+135	cohort_user_20@example.com	$2a$11$YSvc.jfQddiZLwqO7D9PpeNuGcvuTMdVaDtpLMoZoHCcM7pSksEVS	\N	\N	\N	2026-08-26 19:48:56.550042	2026-08-26 20:15:50.210064	f	1	t	2026-08-26 19:48:56.549988	Cohort User 20	\N	f	en	\N	\N	\N	\N	\N	4TL5D2MFdFyG8rdxasDm	2026-08-26 19:48:56.55129	2026-08-26 19:48:56.550072	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:50.209959
+136	cohort_user_21@example.com	$2a$11$.Tc8CXgBzR5SiJsMPjX5.uXxk1gXziCKrLcVxKPSIv2AH3wBnZnP2	\N	\N	\N	2026-08-26 19:48:56.91773	2026-08-26 20:15:50.716318	f	1	t	2026-08-26 19:48:56.917701	Cohort User 21	\N	f	en	\N	\N	\N	\N	\N	ozVYL9_Js8inTJawSfmi	2026-08-26 19:48:56.918837	2026-08-26 19:48:56.917755	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:50.716211
+137	cohort_user_22@example.com	$2a$11$lBvj13aUJa1FIPturfRRd.flR7UIaKhOjhsPXc.Tac2W2Z1IIdTVW	\N	\N	\N	2026-08-26 19:48:57.283039	2026-08-26 20:15:51.209457	f	1	t	2026-08-26 19:48:57.28301	Cohort User 22	\N	f	en	\N	\N	\N	\N	\N	E8x7kHQyNyMtmSD-kCkQ	2026-08-26 19:48:57.284122	2026-08-26 19:48:57.283064	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:51.209355
+138	cohort_user_23@example.com	$2a$11$o3lWnl2faRRPFu4qJOtAseaeQqXZARlOECNM0NZse2vTIUXZYFa3m	\N	\N	\N	2026-08-26 19:48:57.755354	2026-08-26 20:15:51.712456	f	1	t	2026-08-26 19:48:57.755324	Cohort User 23	\N	f	en	\N	\N	\N	\N	\N	9aue6B7v-sfGL9rgUjiC	2026-08-26 19:48:57.756508	2026-08-26 19:48:57.755381	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:51.712356
+139	cohort_user_24@example.com	$2a$11$ThLcunuEGBURDcdkBecUg.C0gWtv9RkSo8yQ9NDt8KFzy7FYnflWi	\N	\N	\N	2026-08-26 19:48:58.112259	2026-08-26 20:15:52.20216	f	1	t	2026-08-26 19:48:58.11223	Cohort User 24	\N	f	en	\N	\N	\N	\N	\N	4UWBWAyNppxa4uNSCoJ2	2026-08-26 19:48:58.113342	2026-08-26 19:48:58.112284	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:52.202061
+140	cohort_user_25@example.com	$2a$11$KP4T1IAXrHgeZFo2ljUMA.89AQdxGqid/VFkkUlGY3I461Wqhxfza	\N	\N	\N	2026-08-26 19:48:58.48861	2026-08-26 20:15:52.718877	f	1	t	2026-08-26 19:48:58.488564	Cohort User 25	\N	f	en	\N	\N	\N	\N	\N	BWE3ZVN7v-DRZhxUT3rP	2026-08-26 19:48:58.489847	2026-08-26 19:48:58.488661	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:52.718712
+141	cohort_user_26@example.com	$2a$11$.2qlcj8vvKzL03jTjbd9Vexs.x13tQTv24CwXHbQQrA/dpQxn4IOW	\N	\N	\N	2026-08-26 19:48:58.86665	2026-08-26 20:15:53.255858	f	1	t	2026-08-26 19:48:58.866616	Cohort User 26	\N	f	en	\N	\N	\N	\N	\N	hhSyiB9XjcCPLhgo1emf	2026-08-26 19:48:58.867768	2026-08-26 19:48:58.866679	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:53.255746
+142	cohort_user_27@example.com	$2a$11$1eoonobrc4rMvRj9zRjqyu4EN4RmPReXqChXiSoWXRi6QS3N2FzR.	\N	\N	\N	2026-08-26 19:48:59.220201	2026-08-26 20:15:53.75813	f	1	t	2026-08-26 19:48:59.220172	Cohort User 27	\N	f	en	\N	\N	\N	\N	\N	eHvGSqq1iDnsN6xf9fZV	2026-08-26 19:48:59.221268	2026-08-26 19:48:59.220226	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:53.758023
+143	cohort_user_28@example.com	$2a$11$q1wnG9nbfOV7fAUxzMLH4O/6356HQ123a1FPkAjq871kvq5wux2lW	\N	\N	\N	2026-08-26 19:48:59.675657	2026-08-26 20:15:54.2494	f	1	t	2026-08-26 19:48:59.675625	Cohort User 28	\N	f	en	\N	\N	\N	\N	\N	xLuR8pjmcwDR_U96EwYJ	2026-08-26 19:48:59.676756	2026-08-26 19:48:59.675682	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:54.249294
+144	cohort_user_29@example.com	$2a$11$9wklMcwg6C8Cwo/yyr2HsuugPjSCTvfFU3cSoAhzQrdrSn7rSjM7u	\N	\N	\N	2026-08-26 19:49:00.015238	2026-08-26 20:15:54.743332	f	1	t	2026-08-26 19:49:00.015207	Cohort User 29	\N	f	en	\N	\N	\N	\N	\N	eyyi-QAu34Tq-hJv_vDy	2026-08-26 19:49:00.016388	2026-08-26 19:49:00.015262	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:54.743228
+145	cohort_user_30@example.com	$2a$11$q0KzQiojyXS2ObP4orDKZ.ujVv7RKaPF7pX1gAYhdn4sY8iprSAA.	\N	\N	\N	2026-08-26 19:49:00.384646	2026-08-26 20:15:55.237015	f	1	t	2026-08-26 19:49:00.384606	Cohort User 30	\N	f	en	\N	\N	\N	\N	\N	65S82T-fSf9dsPrGx24R	2026-08-26 19:49:00.385704	2026-08-26 19:49:00.384673	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:55.236912
+146	cohort_user_31@example.com	$2a$11$T.Mwb6JfDgz3I6kNDjxEi.u7QpOLYzVFlvBIc.ffcUA47plGF0e9W	\N	\N	\N	2026-08-26 19:49:00.739188	2026-08-26 20:15:55.73187	f	1	t	2026-08-26 19:49:00.739157	Cohort User 31	\N	f	en	\N	\N	\N	\N	\N	3_-9VNCz3p8_2etYShF6	2026-08-26 19:49:00.740323	2026-08-26 19:49:00.739214	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:55.731766
+148	cohort_user_33@external.org	$2a$11$/gR2OqaNQPhwY0lSzd.0neksbq70mszqAsRz2fuKldhi81fq3bT8u	\N	\N	\N	2026-08-26 19:49:01.548803	2026-08-26 20:15:56.714921	f	1	t	2026-08-26 19:49:01.548772	Cohort User 33	\N	f	en	\N	\N	\N	\N	\N	3kW6sdsEK4ykXyM5hjzz	2026-08-26 19:49:01.54993	2026-08-26 19:49:01.548828	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:56.714815
+149	cohort_user_34@example.com	$2a$11$HpkwPsygaew2WjSQvJqGgOAa1sp/OojXurEqiNV6rQtyJuJfJkYDy	\N	\N	\N	2026-08-26 19:49:01.913335	2026-08-26 20:15:57.199442	f	1	t	2026-08-26 19:49:01.913305	Cohort User 34	\N	f	en	\N	\N	\N	\N	\N	1LUwbuoX8mDvyss7dWbC	2026-08-26 19:49:01.914648	2026-08-26 19:49:01.913361	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:57.199337
+150	cohort_user_35@example.com	$2a$11$vugfxbMjOwSy.SNCzyveouE8ihdzHwfsKcNIskDn.mRwJVkbSfFQS	\N	\N	\N	2026-08-26 19:49:02.26714	2026-08-26 20:15:57.676095	f	1	t	2026-08-26 19:49:02.267109	Cohort User 35	\N	f	en	\N	\N	\N	\N	\N	g_9z4wSRZsmmq9eFgqA6	2026-08-26 19:49:02.268167	2026-08-26 19:49:02.267167	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:57.675991
+151	cohort_user_36@example.com	$2a$11$0B9B9dhJ0HH1vgeK10QqquUEj9AOtW6z73n/URPeqJEWiuDorKlAW	\N	\N	\N	2026-08-26 19:49:02.608377	2026-08-26 20:15:58.158389	f	1	t	2026-08-26 19:49:02.608347	Cohort User 36	\N	f	en	\N	\N	\N	\N	\N	Um2gVT4Cbs26Th8yCxH9	2026-08-26 19:49:02.609496	2026-08-26 19:49:02.608401	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:58.15829
+152	cohort_user_37@example.com	$2a$11$kRy9NF0NJK1/T/StjV81uOTuFfTw7Dx1DWlAqWRB7r2cjrFJPrjri	\N	\N	\N	2026-08-26 19:49:02.977824	2026-08-26 20:15:58.657883	f	1	t	2026-08-26 19:49:02.977792	Cohort User 37	\N	f	en	\N	\N	\N	\N	\N	-mXksvwMbJ1qFPHAG3mm	2026-08-26 19:49:02.979036	2026-08-26 19:49:02.977851	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:58.657763
+153	cohort_user_38@example.com	$2a$11$m5Rc4CWBSz2L3zxZs/55n.vmpGcHwKFxp8hQoycx633YXPwTgygcy	\N	\N	\N	2026-08-26 19:49:03.440905	2026-08-26 20:15:59.162559	f	1	t	2026-08-26 19:49:03.440871	Cohort User 38	\N	f	en	\N	\N	\N	\N	\N	qaq6jWuy5tsxmC11yn3c	2026-08-26 19:49:03.442302	2026-08-26 19:49:03.440938	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:59.162443
+154	cohort_user_39@example.com	$2a$11$JuyC8sQ9F98J2B9hzj/Axuj0PuOiqT5L76sYXgjezmxNLuXsHptc2	\N	\N	\N	2026-08-26 19:49:03.787501	2026-08-26 20:15:59.648232	f	1	t	2026-08-26 19:49:03.787467	Cohort User 39	\N	f	en	\N	\N	\N	\N	\N	mt_KYekbyJ696TvTPEmb	2026-08-26 19:49:03.7887	2026-08-26 19:49:03.78753	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:59.648133
+155	cohort_user_40@example.com	$2a$11$nPH/r/P2CTzqKqiq2XALVuqTZhLjDaXwi1sXlRz//3Bg1KOcju35e	\N	\N	\N	2026-08-26 19:49:04.16075	2026-08-26 20:16:00.136457	f	1	t	2026-08-26 19:49:04.160706	Cohort User 40	\N	f	en	\N	\N	\N	\N	\N	8h-FsYgyrcLau9xPtyo7	2026-08-26 19:49:04.161955	2026-08-26 19:49:04.16078	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:00.136351
+156	cohort_user_41@example.com	$2a$11$JgDcZBXSgrBgxzY2i3xOfefQx/0//PUnBm7SuPe3Tr8JS7Cb4KsH.	\N	\N	\N	2026-08-26 19:49:04.507082	2026-08-26 20:16:00.645399	f	1	t	2026-08-26 19:49:04.507051	Cohort User 41	\N	f	en	\N	\N	\N	\N	\N	Q9R8EYhzB8PWxNPZFg1E	2026-08-26 19:49:04.508189	2026-08-26 19:49:04.507108	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:00.645298
+157	cohort_user_42@example.com	$2a$11$u9SqWE7Q8cxKmucqI5DXzOtGbZXgwZ5E3UTN9rp9tiacGlOIOaVpW	\N	\N	\N	2026-08-26 19:49:04.883203	2026-08-26 20:16:01.153832	f	1	t	2026-08-26 19:49:04.883173	Cohort User 42	\N	f	en	\N	\N	\N	\N	\N	NjrQq27HC6Pcr_VNCpzn	2026-08-26 19:49:04.884332	2026-08-26 19:49:04.883229	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:01.153731
+158	cohort_user_43@example.com	$2a$11$z6sWoDRCvSDFoF6uDJGTFOJDTUa7YThwppW0wKPv6TxjBfvvQPPJ6	\N	\N	\N	2026-08-26 19:49:05.255865	2026-08-26 20:16:01.641005	f	1	t	2026-08-26 19:49:05.255832	Cohort User 43	\N	f	en	\N	\N	\N	\N	\N	dP6McyFDah5hp9ta3HtH	2026-08-26 19:49:05.257029	2026-08-26 19:49:05.255891	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:01.640906
+159	cohort_user_44@example.com	$2a$11$zp6cSFHkYVoHsJZcWVqwc.lxYZPjz9/4h8Rmbs.fyGmBiB3/X4t4G	\N	\N	\N	2026-08-26 19:49:05.617487	2026-08-26 20:16:02.151062	f	1	t	2026-08-26 19:49:05.617453	Cohort User 44	\N	f	en	\N	\N	\N	\N	\N	_VvbRQggzJ6n95tzWFJU	2026-08-26 19:49:05.618679	2026-08-26 19:49:05.617515	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:02.150952
+160	cohort_user_45@example.com	$2a$11$8u49lTfpHfRmtBwkz8NKXe97AdVhd/vOXgLmKqmtjg4rp4ThfYBPK	\N	\N	\N	2026-08-26 19:49:05.98615	2026-08-26 20:16:02.683057	f	1	t	2026-08-26 19:49:05.98612	Cohort User 45	\N	f	en	\N	\N	\N	\N	\N	hfT7ustuQKaLacDDsH6c	2026-08-26 19:49:05.98719	2026-08-26 19:49:05.986176	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:02.68296
+161	cohort_user_46@example.com	$2a$11$ZrV4FIKvc.i/rmu2OJmN9ODgBRuiAKilkIE.J327/cXVFPsGe.Ule	\N	\N	\N	2026-08-26 19:49:06.356013	2026-08-26 20:16:03.177718	f	1	t	2026-08-26 19:49:06.355975	Cohort User 46	\N	f	en	\N	\N	\N	\N	\N	GB1-d4hZxw4k8Fb-Qr1d	2026-08-26 19:49:06.357409	2026-08-26 19:49:06.356042	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:03.177592
+162	seminar_student_0@mampf.edu	$2a$11$X.7.lsWcURa20fzF7OJ70e9SvcW1.pp/0jUyjQKqchwF58TzxSvwK	\N	\N	\N	2026-08-26 19:49:06.839909	2026-08-26 20:16:03.661958	f	1	t	2026-08-26 19:49:06.839877	Seminar Student 0	\N	f	en	\N	\N	\N	\N	\N	KSsj9UMqzyMY65zT9FpG	2026-08-26 19:49:06.841306	2026-08-26 19:49:06.839934	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:03.661819
+163	seminar_student_1@mampf.edu	$2a$11$wuDWTJWACIiHf837dbvbwO5H6Z7/3HECnhDHNjltdTF3mrWhpktla	\N	\N	\N	2026-08-26 19:49:07.212604	2026-08-26 20:16:04.145919	f	1	t	2026-08-26 19:49:07.212564	Seminar Student 1	\N	f	en	\N	\N	\N	\N	\N	SyMT1aHfsCLPKXea-oTe	2026-08-26 19:49:07.213909	2026-08-26 19:49:07.212675	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:04.145781
+59	demo_seminar_rejected_1@example.com	$2a$11$dtMdMPh/KJEBUhB/9cc0GeW3/YxSaOhVDJ3Q2i0p860sRdSLf5GvG	\N	\N	\N	2026-08-26 19:48:26.584305	2026-08-26 20:15:10.809101	f	1	t	2026-08-26 19:48:26.584273	Demo Seminar Rejected 1	\N	f	en	\N	\N	\N	\N	\N	9V_JULqBMpbWRVQysUZn	2026-08-26 19:48:26.585473	2026-08-26 19:48:26.584336	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:10.808703
+68	solver_user_8@example.com	$2a$11$n.wtHDXf2NKXyevmEz8EaepWY2pcanogsbXD3yy/GHjZe.aWEMuyi	\N	\N	\N	2026-08-26 19:48:30.56596	2026-08-26 20:15:15.905298	f	1	t	2026-08-26 19:48:30.565921	Solver User 8	\N	f	en	\N	\N	\N	\N	\N	5vKG6hjzFBW2CypqYCoN	2026-08-26 19:48:30.567206	2026-08-26 19:48:30.565997	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:15.905121
+95	solver_user_35@example.com	$2a$11$gP2D9CCbgirw4j8402lUFee/FyCKrfny3HDC5ErI.0gn3s1eGT5oq	\N	\N	\N	2026-08-26 19:48:40.730029	2026-08-26 20:15:29.741907	f	1	t	2026-08-26 19:48:40.729995	Solver User 35	\N	f	en	\N	\N	\N	\N	\N	4fNP78u5pB-YjrJpKR8i	2026-08-26 19:48:40.732497	2026-08-26 19:48:40.730062	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:29.741743
+100	solver_user_40@example.com	$2a$11$LOaDAWP/eYDZwsHGHTM.HOZcZmA8dH7wlZ3DzBrk9hb.Wd2p9ilaS	\N	\N	\N	2026-08-26 19:48:42.624455	2026-08-26 20:15:32.273089	f	1	t	2026-08-26 19:48:42.624423	Solver User 40	\N	f	en	\N	\N	\N	\N	\N	RgwzcaUQncACkTpxBLm4	2026-08-26 19:48:42.625568	2026-08-26 19:48:42.624486	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:32.272944
+125	cohort_user_10@example.com	$2a$11$QCTEaowPBrT7XPLGazXJDOo/WtQvTorTYqjmc1WJA0EbD4t64Wcf6	\N	\N	\N	2026-08-26 19:48:52.669263	2026-08-26 20:15:45.191638	f	1	t	2026-08-26 19:48:52.669227	Cohort User 10	\N	f	en	\N	\N	\N	\N	\N	zeVbBshoqnCktL3s-FjK	2026-08-26 19:48:52.670942	2026-08-26 19:48:52.6693	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:45.191536
+132	cohort_user_17@example.com	$2a$11$l9NCEelIblbDBGtpYYGlY.nSOFh7NyRhmBYXuQcWrz3cnOqF3yAJq	\N	\N	\N	2026-08-26 19:48:55.281257	2026-08-26 20:15:48.728329	f	1	t	2026-08-26 19:48:55.281223	Cohort User 17	\N	f	en	\N	\N	\N	\N	\N	KVzmciyv6zzjUByRXT_8	2026-08-26 19:48:55.282375	2026-08-26 19:48:55.281289	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:48.728222
+164	seminar_student_2@mampf.edu	$2a$11$UQLXb79/1SikPzIqh2lJMeHtE9L.APWbjVdEIkKWNcOmeLuxgSCS6	\N	\N	\N	2026-08-26 19:49:07.608118	2026-08-26 20:16:04.65	f	1	t	2026-08-26 19:49:07.608085	Seminar Student 2	\N	f	en	\N	\N	\N	\N	\N	zQotxxfLNCf74HU3ioTw	2026-08-26 19:49:07.609509	2026-08-26 19:49:07.608148	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:04.649858
+165	seminar_student_3@mampf.edu	$2a$11$uPrLX8EavEPcv/Hn0EW2P.BJnS4QypT2ZJq7J70DOcJ/Jm6zCP7ou	\N	\N	\N	2026-08-26 19:49:07.986028	2026-08-26 20:16:05.133807	f	1	t	2026-08-26 19:49:07.985997	Seminar Student 3	\N	f	en	\N	\N	\N	\N	\N	zeiFd1DsRN9zeLwVxBHM	2026-08-26 19:49:07.987127	2026-08-26 19:49:07.986054	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:05.133702
+166	seminar_student_4@mampf.edu	$2a$11$WjdRW35ZDcWZcLZKbG1MHeKp3IfXPLhS7dth.Tr1qBYLCGe1F.hkm	\N	\N	\N	2026-08-26 19:49:08.348105	2026-08-26 20:16:05.629553	f	1	t	2026-08-26 19:49:08.348073	Seminar Student 4	\N	f	en	\N	\N	\N	\N	\N	1PUZgsTMGH7LAwa9jxud	2026-08-26 19:49:08.349249	2026-08-26 19:49:08.348131	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:05.629447
+167	seminar_student_5@mampf.edu	$2a$11$jMZRw2fGksyQSdgNRWmizeg4nRZJTNjNa45s4j0D96Ir9hnLULmlm	\N	\N	\N	2026-08-26 19:49:08.725561	2026-08-26 20:16:06.119387	f	1	t	2026-08-26 19:49:08.725523	Seminar Student 5	\N	f	en	\N	\N	\N	\N	\N	Q184oVSzs13EFzrX9gXv	2026-08-26 19:49:08.72684	2026-08-26 19:49:08.725599	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:06.119283
+168	seminar_student_6@mampf.edu	$2a$11$pssWFuj2RhjN6AXwO7PGNusOvyM7yFTDgNIIliMTPn7tZwOEgxLRy	\N	\N	\N	2026-08-26 19:49:09.105464	2026-08-26 20:16:06.618812	f	1	t	2026-08-26 19:49:09.105434	Seminar Student 6	\N	f	en	\N	\N	\N	\N	\N	4FV6TXM7f__xECh7p3U-	2026-08-26 19:49:09.106678	2026-08-26 19:49:09.105488	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:06.618634
+169	seminar_student_7@mampf.edu	$2a$11$5NSH6qZ.l6IfV//OmH5lnu1QDBV8m3FPjY9TDuL1DKstCpctIQY.G	\N	\N	\N	2026-08-26 19:49:09.484028	2026-08-26 20:16:07.106337	f	1	t	2026-08-26 19:49:09.483998	Seminar Student 7	\N	f	en	\N	\N	\N	\N	\N	Dc4bhCzEZe6NFC2W2Mwk	2026-08-26 19:49:09.485255	2026-08-26 19:49:09.484053	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:07.106239
+9	student5@mampf.edu	$2a$11$MyJ5cEw2uX4kfizY8ofV4e68Ga1Yr6II.oZ4vhtNbDijJ2RmLu09C	\N	\N	\N	2020-11-28 16:30:12.956799	2026-08-26 20:14:46.560699	f	1	t	2020-11-28 16:30:12.958778	student5	\N	f	en	f	f	f	t	\N	eWAAGQqtUt9P31_dpHey	2020-11-28 16:30:18.870235	2020-11-28 16:30:12.956859	\N	t	t	t	t	t	t	t	Erika Musterfrau	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	0	\N
+147	cohort_user_32@example.com	$2a$11$lZUHluBoOnvwUNS9wVleZuBYZ4s/XUslNWYuXOcdbgF3IBAv3.G3W	\N	\N	\N	2026-08-26 19:49:01.083851	2026-08-26 20:15:56.225556	f	1	t	2026-08-26 19:49:01.08381	Cohort User 32	\N	f	en	\N	\N	\N	\N	\N	jX-8gCfsTgS4xaq1EnWe	2026-08-26 19:49:01.085034	2026-08-26 19:49:01.083881	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:15:56.225455
+1	admin@mampf.edu	$2a$11$u9RsfkctBbjHpP4pCV1Oa.0ikqULTd3fEfOxBf/oJMqEQPIsN.TAq	\N	\N	\N	2020-07-24 13:07:48.807973	2026-08-26 20:14:43.472272	t	1	t	2020-07-24 13:07:48.811417	admin	\N	f	en	t	t	t	t	\N	UguwyiyL_B65bQkMZMQf	2020-07-24 13:07:56.770723	2020-07-24 13:07:48.808231	\N	t	f	f	f	f	f	f		\N	\N	\N	3	2025-07-15 12:02:24.48997	2025-07-14 11:35:13.666864	\N	\N	\N	0	\N	1	2026-08-26 20:14:43.468419
+2	teacher@mampf.edu	$2a$11$XEqZANV.CCDbD55M/cqfkeymGdg4Yloivbr/qvVnqxkwItpR.kxRm	\N	\N	\N	2020-07-24 13:14:59.543985	2026-08-26 20:14:43.971474	f	1	t	2020-07-24 13:14:59.547776	DozentIn	\N	f	en	t	t	t	t	\N	quSs9sq1VAMQCbDgRyhU	2020-07-24 13:15:13.670023	2020-07-24 13:14:59.544082	\N	t	f	f	f	f	f	f		\N	\N	\N	12	2025-07-15 12:03:11.254407	2025-07-15 11:59:27.082351	\N	\N	\N	0	\N	1	2026-08-26 20:14:43.970079
+5	student1@mampf.edu	$2a$11$q7rggimqQrIueSH0yNzWde73jsEYUXCMZP6l75L9SB.RArDs4laSu	\N	\N	\N	2020-11-28 16:25:23.437946	2026-08-26 20:14:44.512739	f	1	t	2020-11-28 16:25:23.440059	student1	\N	f	en	f	f	f	t	\N	qwPPGpBwzjn7o_NE1cMd	2020-11-28 16:25:28.248539	2020-11-28 16:25:23.438158	\N	t	t	t	t	t	t	t	Max Mustermann	\N	\N	\N	6	2025-07-15 12:12:31.120017	2025-07-15 12:10:11.284039	\N	\N	\N	0	\N	1	2026-08-26 20:14:44.512117
+6	student2@mampf.edu	$2a$11$oO.lWPpTjEpBCva6KvKs/urKBpkIN4r3jj.Pvk2GhOqGFNp9ObI2K	\N	\N	\N	2020-11-28 16:26:55.50289	2026-08-26 20:14:45.011225	f	1	t	2020-11-28 16:26:55.504637	student2	\N	f	en	t	t	t	f	\N	4DVzmJnsA4PJx9StS_Js	2020-11-28 16:27:07.826099	2020-11-28 16:26:55.502947	\N	t	f	f	f	f	f	f	Max Musterfrau	\N	\N	\N	5	2026-08-26 19:51:17.687287	2025-07-15 12:15:20.813542	\N	\N	\N	0	\N	1	2026-08-26 20:14:45.011013
+7	student3@mampf.edu	$2a$11$pMi3PM3VrbsH3SUyEwC.0eHTMB7HUSsG7S6B/MgNPJVJEGgtDZzdi	\N	\N	\N	2020-11-28 16:28:02.121432	2026-08-26 20:14:45.517699	f	1	t	2020-11-28 16:28:02.123082	student3	\N	f	en	t	t	t	f	\N	ZUzqyXACyQrBNVGGrWxm	2020-11-28 16:28:09.870025	2020-11-28 16:28:02.121486	\N	t	f	f	f	f	f	f	Berta Musterfrau	\N	\N	\N	3	2025-07-15 12:11:49.670511	2025-07-14 15:04:06.537713	\N	\N	\N	0	\N	1	2026-08-26 20:14:45.517486
+8	student4@mampf.edu	$2a$11$gEGEXu.A46.I3tzJTSbFZuCTjbfF8vq/sT/plgIiMPU9mnyGD0rD.	\N	\N	\N	2020-11-28 16:29:07.923841	2026-08-26 20:14:46.042643	f	1	t	2020-11-28 16:29:07.925959	student4	\N	f	en	t	t	t	f	\N	j5hzKj7ePDPVbKGJsyqx	2020-11-28 16:29:14.406097	2020-11-28 16:29:07.923915	\N	t	f	f	f	f	f	f	Berta Mustermann	\N	\N	\N	1	2025-07-14 11:29:25.560481	2025-07-14 11:29:25.560481	\N	\N	\N	0	\N	1	2026-08-26 20:14:46.042391
+170	seminar_student_8@mampf.edu	$2a$11$AfN0iyIUiBRlLP869onpDekSWLVAll6fLMVgQPq28oF0pqnIIokC2	\N	\N	\N	2026-08-26 19:49:09.860674	2026-08-26 20:16:07.595263	f	1	t	2026-08-26 19:49:09.860606	Seminar Student 8	\N	f	en	\N	\N	\N	\N	\N	WG6N7YytstRYrgzqyRhf	2026-08-26 19:49:09.861738	2026-08-26 19:49:09.860699	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:07.595166
+171	seminar_student_9@mampf.edu	$2a$11$MwhLQttou8p6XfDC.DtkQu7zydlDeLyjiDvu8InMmvE1DDwADsW2y	\N	\N	\N	2026-08-26 19:49:10.233142	2026-08-26 20:16:08.077531	f	1	t	2026-08-26 19:49:10.233108	Seminar Student 9	\N	f	en	\N	\N	\N	\N	\N	pWY22vUGS2rYNF6wj5ZM	2026-08-26 19:49:10.234386	2026-08-26 19:49:10.233168	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:08.077432
+172	seminar_student_10@mampf.edu	$2a$11$wGoeHaTCECQoA1IGByFRSeD/dJiHhOc3npc3Ez/wHxpxHJQTOjIsi	\N	\N	\N	2026-08-26 19:49:10.645526	2026-08-26 20:16:08.560292	f	1	t	2026-08-26 19:49:10.645495	Seminar Student 10	\N	f	en	\N	\N	\N	\N	\N	gFxKngprgPxr9DJaSY5y	2026-08-26 19:49:10.64709	2026-08-26 19:49:10.645551	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:08.560193
+173	seminar_student_11@mampf.edu	$2a$11$ddog3YccZBQ1.ZcHsL/sQ.Sg.Qa/gYQzj8lH.ShC6bRRI8JImjCG6	\N	\N	\N	2026-08-26 19:49:11.017304	2026-08-26 20:16:09.05563	f	1	t	2026-08-26 19:49:11.017275	Seminar Student 11	\N	f	en	\N	\N	\N	\N	\N	wjqB6MJofAVoHyK3AtXc	2026-08-26 19:49:11.018421	2026-08-26 19:49:11.017329	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:09.055526
+174	external_student_0@mampf.edu	$2a$11$0gwmPbNeuhENG/8EW0UXj.RVA.biNiyuwqFwLhI4FUA4A8yN0pQ5e	\N	\N	\N	2026-08-26 19:49:11.542474	2026-08-26 20:16:09.537715	f	1	t	2026-08-26 19:49:11.542442	External Student 0	\N	f	en	\N	\N	\N	\N	\N	_w8WH3rayxMdNVp7Atox	2026-08-26 19:49:11.543709	2026-08-26 19:49:11.542503	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:09.537615
+175	external_student_1@mampf.edu	$2a$11$.B8/pn7OjHUXmIWUa381R.gzYlh.5qyTcbqcTeBPERqcomGFRbgpa	\N	\N	\N	2026-08-26 19:49:11.944519	2026-08-26 20:16:10.016867	f	1	t	2026-08-26 19:49:11.944487	External Student 1	\N	f	en	\N	\N	\N	\N	\N	Jp1yo7is46LfnAUXxhkb	2026-08-26 19:49:11.945618	2026-08-26 19:49:11.944545	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:10.016767
+176	nachruecker_0@mampf.edu	$2a$11$izZL0TSjH5XrzenKa0l3BuNnPpFw0CF5FFbRTduDCSXwtIuo682vO	\N	\N	\N	2026-08-26 19:49:12.343176	2026-08-26 20:16:10.506368	f	1	t	2026-08-26 19:49:12.343135	Nachrücker 0	\N	f	en	\N	\N	\N	\N	\N	nqYxEXM2uMsQ9LyNtRxx	2026-08-26 19:49:12.344483	2026-08-26 19:49:12.343209	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:10.506268
+177	nachruecker_1@mampf.edu	$2a$11$wQ59PvM.KUZmlHjFeukX8.wDk5VjoVWS3.q2J6WGCgIlbvtl/kipG	\N	\N	\N	2026-08-26 19:49:12.755363	2026-08-26 20:16:10.996773	f	1	t	2026-08-26 19:49:12.755322	Nachrücker 1	\N	f	en	\N	\N	\N	\N	\N	pDFvxa6eas-y_ucSRkKJ	2026-08-26 19:49:12.756598	2026-08-26 19:49:12.755394	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:10.996674
+178	nachruecker_2@mampf.edu	$2a$11$FfzCfS.ovYrhnlv9SQwjGueqWsysTlP3j6smyCTBr6S/5ueeRZhi.	\N	\N	\N	2026-08-26 19:49:13.135653	2026-08-26 20:16:11.488313	f	1	t	2026-08-26 19:49:13.135618	Nachrücker 2	\N	f	en	\N	\N	\N	\N	\N	RXJHqLj7_SP2CTa3Utko	2026-08-26 19:49:13.136942	2026-08-26 19:49:13.135682	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:11.488202
+179	nachruecker_3@mampf.edu	$2a$11$3VG4BmqiqWnTojWGB7qc7eVX/ewv5Smn8iHd/gpNFgb9sdu69vNaG	\N	\N	\N	2026-08-26 19:49:13.511281	2026-08-26 20:16:11.977771	f	1	t	2026-08-26 19:49:13.51125	Nachrücker 3	\N	f	en	\N	\N	\N	\N	\N	jH5bXcQ2e5J6AvTtoob8	2026-08-26 19:49:13.512424	2026-08-26 19:49:13.511308	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:11.977664
+180	nachruecker_4@mampf.edu	$2a$11$o1etmkLMKsH/K12UFDtDZOiLJn3B811OHjXKS6K.MYv8KhB07BdDW	\N	\N	\N	2026-08-26 19:49:13.888892	2026-08-26 20:16:12.456857	f	1	t	2026-08-26 19:49:13.888852	Nachrücker 4	\N	f	en	\N	\N	\N	\N	\N	WSL3UBqzMp_csTxe6wxF	2026-08-26 19:49:13.890224	2026-08-26 19:49:13.888922	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:12.456759
+181	yahaira.glover@skiles-skiles.test	$2a$11$NR.7yGycHYXiZDktsckYTOr3J5haR9a.ZNDwm4nJxIIIVX.1A86Km	\N	\N	\N	2026-08-26 19:49:14.359724	2026-08-26 20:16:12.942524	f	1	t	2026-08-26 19:49:14.359692	Valerie von Eifert	\N	f	en	\N	\N	\N	\N	\N	kAtuqafkxsS_RrajR4LQ	2026-08-26 19:49:14.361743	2026-08-26 19:49:14.359751	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:12.942422
+182	adena_von@ziemann.test	$2a$11$OpUzx4JmWHxoCP1QFs2cLehDwelF3UA5lwkouiFk/krSb1MMNx.Me	\N	\N	\N	2026-08-26 19:49:14.81331	2026-08-26 20:16:13.437585	f	1	t	2026-08-26 19:49:14.813278	Mathis Steinert	\N	f	en	\N	\N	\N	\N	\N	KDCxbQqTxtunzX2iBPVU	2026-08-26 19:49:14.815229	2026-08-26 19:49:14.813339	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:13.437482
+183	alexis_bayer@mcclure.test	$2a$11$busXgrZ7mGaN3MxjVmLHTeqie5008fiNr7hiKackUCOLLvtwjR9ES	\N	\N	\N	2026-08-26 19:49:15.258682	2026-08-26 20:16:13.988685	f	1	t	2026-08-26 19:49:15.258648	Hr. Sönke Weigel	\N	f	en	\N	\N	\N	\N	\N	GupsnKZS2GKszd_yQQyU	2026-08-26 19:49:15.260875	2026-08-26 19:49:15.258712	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	0	\N	\N	\N	\N	\N	0	\N	1	2026-08-26 20:16:13.988584
 \.
 
 
 --
--- TOC entry 4913 (class 0 OID 7673243)
+-- TOC entry 4914 (class 0 OID 7673243)
 -- Dependencies: 378
 -- Data for Name: vignettes_answers; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8755,7 +8758,7 @@ COPY public.vignettes_answers (id, type, vignettes_question_id, vignettes_slide_
 
 
 --
--- TOC entry 4915 (class 0 OID 7673255)
+-- TOC entry 4916 (class 0 OID 7673255)
 -- Dependencies: 380
 -- Data for Name: vignettes_answers_options; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8766,7 +8769,7 @@ COPY public.vignettes_answers_options (vignettes_answer_id, vignettes_option_id)
 
 
 --
--- TOC entry 4916 (class 0 OID 7673260)
+-- TOC entry 4917 (class 0 OID 7673260)
 -- Dependencies: 381
 -- Data for Name: vignettes_codenames; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8779,7 +8782,7 @@ COPY public.vignettes_codenames (id, pseudonym, user_id, lecture_id, created_at,
 
 
 --
--- TOC entry 4918 (class 0 OID 7673269)
+-- TOC entry 4919 (class 0 OID 7673269)
 -- Dependencies: 383
 -- Data for Name: vignettes_completion_messages; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8789,7 +8792,7 @@ COPY public.vignettes_completion_messages (id, lecture_id, created_at, updated_a
 
 
 --
--- TOC entry 4920 (class 0 OID 7673277)
+-- TOC entry 4921 (class 0 OID 7673277)
 -- Dependencies: 385
 -- Data for Name: vignettes_info_slides; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8800,7 +8803,7 @@ COPY public.vignettes_info_slides (id, title, vignettes_questionnaire_id, icon_t
 
 
 --
--- TOC entry 4922 (class 0 OID 7673288)
+-- TOC entry 4923 (class 0 OID 7673288)
 -- Dependencies: 387
 -- Data for Name: vignettes_info_slides_slides; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8811,7 +8814,7 @@ COPY public.vignettes_info_slides_slides (vignettes_info_slide_id, vignettes_sli
 
 
 --
--- TOC entry 4923 (class 0 OID 7673293)
+-- TOC entry 4924 (class 0 OID 7673293)
 -- Dependencies: 388
 -- Data for Name: vignettes_options; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8825,7 +8828,7 @@ COPY public.vignettes_options (id, text, vignettes_question_id, created_at, upda
 
 
 --
--- TOC entry 4925 (class 0 OID 7673303)
+-- TOC entry 4926 (class 0 OID 7673303)
 -- Dependencies: 390
 -- Data for Name: vignettes_questionnaires; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8836,7 +8839,7 @@ COPY public.vignettes_questionnaires (id, title, lecture_id, published, editable
 
 
 --
--- TOC entry 4927 (class 0 OID 7673314)
+-- TOC entry 4928 (class 0 OID 7673314)
 -- Dependencies: 392
 -- Data for Name: vignettes_questions; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8849,7 +8852,7 @@ COPY public.vignettes_questions (id, type, question_text, vignettes_slide_id, on
 
 
 --
--- TOC entry 4929 (class 0 OID 7673326)
+-- TOC entry 4930 (class 0 OID 7673326)
 -- Dependencies: 394
 -- Data for Name: vignettes_slide_statistics; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8862,7 +8865,7 @@ COPY public.vignettes_slide_statistics (id, user_id, vignettes_answer_id, time_o
 
 
 --
--- TOC entry 4931 (class 0 OID 7673336)
+-- TOC entry 4932 (class 0 OID 7673336)
 -- Dependencies: 396
 -- Data for Name: vignettes_slides; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8875,7 +8878,7 @@ COPY public.vignettes_slides (id, title, vignettes_questionnaire_id, "position",
 
 
 --
--- TOC entry 4933 (class 0 OID 7673348)
+-- TOC entry 4934 (class 0 OID 7673348)
 -- Dependencies: 398
 -- Data for Name: vignettes_user_answers; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8886,7 +8889,7 @@ COPY public.vignettes_user_answers (id, user_id, vignettes_questionnaire_id, cre
 
 
 --
--- TOC entry 4935 (class 0 OID 7673357)
+-- TOC entry 4936 (class 0 OID 7673357)
 -- Dependencies: 400
 -- Data for Name: votes; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8897,7 +8900,7 @@ COPY public.votes (id, votable_type, votable_id, voter_type, voter_id, vote_flag
 
 
 --
--- TOC entry 4937 (class 0 OID 7673366)
+-- TOC entry 4938 (class 0 OID 7673366)
 -- Dependencies: 402
 -- Data for Name: vouchers; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8911,7 +8914,7 @@ ccc50df8-0262-4372-bb3e-d8cc1650663e	0	3	551e12e67488e373418dd0ea9e22acbc	\N	202
 
 
 --
--- TOC entry 4938 (class 0 OID 7673387)
+-- TOC entry 4939 (class 0 OID 7673387)
 -- Dependencies: 403
 -- Data for Name: watchlist_entries; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8935,7 +8938,7 @@ COPY public.watchlist_entries (id, watchlist_id, medium_id, medium_position, cre
 
 
 --
--- TOC entry 4940 (class 0 OID 7673396)
+-- TOC entry 4941 (class 0 OID 7673396)
 -- Dependencies: 405
 -- Data for Name: watchlists; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -8951,7 +8954,7 @@ COPY public.watchlists (id, user_id, watchlist_entry_id, created_at, updated_at,
 
 
 --
--- TOC entry 5058 (class 0 OID 0)
+-- TOC entry 5059 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: action_text_rich_texts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -8960,7 +8963,7 @@ SELECT pg_catalog.setval('public.action_text_rich_texts_id_seq', 8, true);
 
 
 --
--- TOC entry 5059 (class 0 OID 0)
+-- TOC entry 5060 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: active_storage_attachments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -8969,7 +8972,7 @@ SELECT pg_catalog.setval('public.active_storage_attachments_id_seq', 8, true);
 
 
 --
--- TOC entry 5060 (class 0 OID 0)
+-- TOC entry 5061 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: active_storage_blobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -8978,7 +8981,7 @@ SELECT pg_catalog.setval('public.active_storage_blobs_id_seq', 8, true);
 
 
 --
--- TOC entry 5061 (class 0 OID 0)
+-- TOC entry 5062 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: active_storage_variant_records_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -8987,7 +8990,7 @@ SELECT pg_catalog.setval('public.active_storage_variant_records_id_seq', 4, true
 
 
 --
--- TOC entry 5062 (class 0 OID 0)
+-- TOC entry 5063 (class 0 OID 0)
 -- Dependencies: 231
 -- Name: annotations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -8996,7 +8999,7 @@ SELECT pg_catalog.setval('public.annotations_id_seq', 27, true);
 
 
 --
--- TOC entry 5063 (class 0 OID 0)
+-- TOC entry 5064 (class 0 OID 0)
 -- Dependencies: 233
 -- Name: announcements_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9005,7 +9008,7 @@ SELECT pg_catalog.setval('public.announcements_id_seq', 14, true);
 
 
 --
--- TOC entry 5064 (class 0 OID 0)
+-- TOC entry 5065 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: answers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9014,7 +9017,7 @@ SELECT pg_catalog.setval('public.answers_id_seq', 39, true);
 
 
 --
--- TOC entry 5065 (class 0 OID 0)
+-- TOC entry 5066 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: assignments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9023,7 +9026,7 @@ SELECT pg_catalog.setval('public.assignments_id_seq', 3, true);
 
 
 --
--- TOC entry 5066 (class 0 OID 0)
+-- TOC entry 5067 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: chapters_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9032,7 +9035,7 @@ SELECT pg_catalog.setval('public.chapters_id_seq', 10, true);
 
 
 --
--- TOC entry 5067 (class 0 OID 0)
+-- TOC entry 5068 (class 0 OID 0)
 -- Dependencies: 242
 -- Name: claims_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9041,7 +9044,7 @@ SELECT pg_catalog.setval('public.claims_id_seq', 3, true);
 
 
 --
--- TOC entry 5068 (class 0 OID 0)
+-- TOC entry 5069 (class 0 OID 0)
 -- Dependencies: 415
 -- Name: cohorts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9050,7 +9053,7 @@ SELECT pg_catalog.setval('public.cohorts_id_seq', 4, true);
 
 
 --
--- TOC entry 5069 (class 0 OID 0)
+-- TOC entry 5070 (class 0 OID 0)
 -- Dependencies: 244
 -- Name: commontator_comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9059,7 +9062,7 @@ SELECT pg_catalog.setval('public.commontator_comments_id_seq', 40, true);
 
 
 --
--- TOC entry 5070 (class 0 OID 0)
+-- TOC entry 5071 (class 0 OID 0)
 -- Dependencies: 246
 -- Name: commontator_subscriptions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9068,7 +9071,7 @@ SELECT pg_catalog.setval('public.commontator_subscriptions_id_seq', 1, false);
 
 
 --
--- TOC entry 5071 (class 0 OID 0)
+-- TOC entry 5072 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: commontator_threads_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9077,7 +9080,7 @@ SELECT pg_catalog.setval('public.commontator_threads_id_seq', 52, true);
 
 
 --
--- TOC entry 5072 (class 0 OID 0)
+-- TOC entry 5073 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: course_self_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9086,7 +9089,7 @@ SELECT pg_catalog.setval('public.course_self_joins_id_seq', 1, false);
 
 
 --
--- TOC entry 5073 (class 0 OID 0)
+-- TOC entry 5074 (class 0 OID 0)
 -- Dependencies: 252
 -- Name: course_tag_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9095,7 +9098,7 @@ SELECT pg_catalog.setval('public.course_tag_joins_id_seq', 48, true);
 
 
 --
--- TOC entry 5074 (class 0 OID 0)
+-- TOC entry 5075 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: courses_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9104,7 +9107,7 @@ SELECT pg_catalog.setval('public.courses_id_seq', 19, true);
 
 
 --
--- TOC entry 5075 (class 0 OID 0)
+-- TOC entry 5076 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: division_course_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9113,7 +9116,7 @@ SELECT pg_catalog.setval('public.division_course_joins_id_seq', 9, true);
 
 
 --
--- TOC entry 5076 (class 0 OID 0)
+-- TOC entry 5077 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: division_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9122,7 +9125,7 @@ SELECT pg_catalog.setval('public.division_translations_id_seq', 8, true);
 
 
 --
--- TOC entry 5077 (class 0 OID 0)
+-- TOC entry 5078 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: divisions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9131,7 +9134,7 @@ SELECT pg_catalog.setval('public.divisions_id_seq', 4, true);
 
 
 --
--- TOC entry 5078 (class 0 OID 0)
+-- TOC entry 5079 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: editable_user_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9140,7 +9143,7 @@ SELECT pg_catalog.setval('public.editable_user_joins_id_seq', 187, true);
 
 
 --
--- TOC entry 5079 (class 0 OID 0)
+-- TOC entry 5080 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: feedbacks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9149,7 +9152,7 @@ SELECT pg_catalog.setval('public.feedbacks_id_seq', 1, true);
 
 
 --
--- TOC entry 5080 (class 0 OID 0)
+-- TOC entry 5081 (class 0 OID 0)
 -- Dependencies: 411
 -- Name: flipper_features_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9158,7 +9161,7 @@ SELECT pg_catalog.setval('public.flipper_features_id_seq', 1, true);
 
 
 --
--- TOC entry 5081 (class 0 OID 0)
+-- TOC entry 5082 (class 0 OID 0)
 -- Dependencies: 413
 -- Name: flipper_gates_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9167,7 +9170,7 @@ SELECT pg_catalog.setval('public.flipper_gates_id_seq', 1, true);
 
 
 --
--- TOC entry 5082 (class 0 OID 0)
+-- TOC entry 5083 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: friendly_id_slugs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9176,7 +9179,7 @@ SELECT pg_catalog.setval('public.friendly_id_slugs_id_seq', 18, true);
 
 
 --
--- TOC entry 5083 (class 0 OID 0)
+-- TOC entry 5084 (class 0 OID 0)
 -- Dependencies: 268
 -- Name: imports_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9185,7 +9188,7 @@ SELECT pg_catalog.setval('public.imports_id_seq', 1, false);
 
 
 --
--- TOC entry 5084 (class 0 OID 0)
+-- TOC entry 5085 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: item_self_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9194,7 +9197,7 @@ SELECT pg_catalog.setval('public.item_self_joins_id_seq', 1, false);
 
 
 --
--- TOC entry 5085 (class 0 OID 0)
+-- TOC entry 5086 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: items_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9203,7 +9206,7 @@ SELECT pg_catalog.setval('public.items_id_seq', 388, true);
 
 
 --
--- TOC entry 5086 (class 0 OID 0)
+-- TOC entry 5087 (class 0 OID 0)
 -- Dependencies: 274
 -- Name: lecture_user_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9212,7 +9215,7 @@ SELECT pg_catalog.setval('public.lecture_user_joins_id_seq', 137, true);
 
 
 --
--- TOC entry 5087 (class 0 OID 0)
+-- TOC entry 5088 (class 0 OID 0)
 -- Dependencies: 276
 -- Name: lectures_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9221,7 +9224,7 @@ SELECT pg_catalog.setval('public.lectures_id_seq', 38, true);
 
 
 --
--- TOC entry 5088 (class 0 OID 0)
+-- TOC entry 5089 (class 0 OID 0)
 -- Dependencies: 278
 -- Name: lesson_section_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9230,7 +9233,7 @@ SELECT pg_catalog.setval('public.lesson_section_joins_id_seq', 12, true);
 
 
 --
--- TOC entry 5089 (class 0 OID 0)
+-- TOC entry 5090 (class 0 OID 0)
 -- Dependencies: 280
 -- Name: lesson_tag_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9239,7 +9242,7 @@ SELECT pg_catalog.setval('public.lesson_tag_joins_id_seq', 55, true);
 
 
 --
--- TOC entry 5090 (class 0 OID 0)
+-- TOC entry 5091 (class 0 OID 0)
 -- Dependencies: 282
 -- Name: lessons_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9248,7 +9251,7 @@ SELECT pg_catalog.setval('public.lessons_id_seq', 12, true);
 
 
 --
--- TOC entry 5091 (class 0 OID 0)
+-- TOC entry 5092 (class 0 OID 0)
 -- Dependencies: 284
 -- Name: links_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9257,7 +9260,7 @@ SELECT pg_catalog.setval('public.links_id_seq', 1, false);
 
 
 --
--- TOC entry 5092 (class 0 OID 0)
+-- TOC entry 5093 (class 0 OID 0)
 -- Dependencies: 286
 -- Name: media_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9266,7 +9269,7 @@ SELECT pg_catalog.setval('public.media_id_seq', 52, true);
 
 
 --
--- TOC entry 5093 (class 0 OID 0)
+-- TOC entry 5094 (class 0 OID 0)
 -- Dependencies: 288
 -- Name: medium_tag_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9275,7 +9278,7 @@ SELECT pg_catalog.setval('public.medium_tag_joins_id_seq', 49, true);
 
 
 --
--- TOC entry 5094 (class 0 OID 0)
+-- TOC entry 5095 (class 0 OID 0)
 -- Dependencies: 290
 -- Name: notifications_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9284,7 +9287,7 @@ SELECT pg_catalog.setval('public.notifications_id_seq', 570, true);
 
 
 --
--- TOC entry 5095 (class 0 OID 0)
+-- TOC entry 5096 (class 0 OID 0)
 -- Dependencies: 292
 -- Name: notions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9293,7 +9296,7 @@ SELECT pg_catalog.setval('public.notions_id_seq', 84, true);
 
 
 --
--- TOC entry 5096 (class 0 OID 0)
+-- TOC entry 5097 (class 0 OID 0)
 -- Dependencies: 294
 -- Name: program_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9302,7 +9305,7 @@ SELECT pg_catalog.setval('public.program_translations_id_seq', 4, true);
 
 
 --
--- TOC entry 5097 (class 0 OID 0)
+-- TOC entry 5098 (class 0 OID 0)
 -- Dependencies: 296
 -- Name: programs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9311,7 +9314,7 @@ SELECT pg_catalog.setval('public.programs_id_seq', 2, true);
 
 
 --
--- TOC entry 5098 (class 0 OID 0)
+-- TOC entry 5099 (class 0 OID 0)
 -- Dependencies: 299
 -- Name: readers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9320,7 +9323,7 @@ SELECT pg_catalog.setval('public.readers_id_seq', 1, true);
 
 
 --
--- TOC entry 5099 (class 0 OID 0)
+-- TOC entry 5100 (class 0 OID 0)
 -- Dependencies: 301
 -- Name: redemptions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9329,7 +9332,7 @@ SELECT pg_catalog.setval('public.redemptions_id_seq', 3, true);
 
 
 --
--- TOC entry 5100 (class 0 OID 0)
+-- TOC entry 5101 (class 0 OID 0)
 -- Dependencies: 303
 -- Name: referrals_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9338,7 +9341,7 @@ SELECT pg_catalog.setval('public.referrals_id_seq', 12, true);
 
 
 --
--- TOC entry 5101 (class 0 OID 0)
+-- TOC entry 5102 (class 0 OID 0)
 -- Dependencies: 420
 -- Name: registration_student_messages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9347,7 +9350,7 @@ SELECT pg_catalog.setval('public.registration_student_messages_id_seq', 1, false
 
 
 --
--- TOC entry 5102 (class 0 OID 0)
+-- TOC entry 5103 (class 0 OID 0)
 -- Dependencies: 305
 -- Name: relations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9356,7 +9359,7 @@ SELECT pg_catalog.setval('public.relations_id_seq', 58, true);
 
 
 --
--- TOC entry 5103 (class 0 OID 0)
+-- TOC entry 5104 (class 0 OID 0)
 -- Dependencies: 308
 -- Name: section_tag_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9365,7 +9368,7 @@ SELECT pg_catalog.setval('public.section_tag_joins_id_seq', 45, true);
 
 
 --
--- TOC entry 5104 (class 0 OID 0)
+-- TOC entry 5105 (class 0 OID 0)
 -- Dependencies: 310
 -- Name: sections_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9374,7 +9377,7 @@ SELECT pg_catalog.setval('public.sections_id_seq', 37, true);
 
 
 --
--- TOC entry 5105 (class 0 OID 0)
+-- TOC entry 5106 (class 0 OID 0)
 -- Dependencies: 312
 -- Name: speaker_talk_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9383,7 +9386,7 @@ SELECT pg_catalog.setval('public.speaker_talk_joins_id_seq', 15, true);
 
 
 --
--- TOC entry 5106 (class 0 OID 0)
+-- TOC entry 5107 (class 0 OID 0)
 -- Dependencies: 314
 -- Name: subject_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9392,7 +9395,7 @@ SELECT pg_catalog.setval('public.subject_translations_id_seq', 4, true);
 
 
 --
--- TOC entry 5107 (class 0 OID 0)
+-- TOC entry 5108 (class 0 OID 0)
 -- Dependencies: 316
 -- Name: subjects_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9401,7 +9404,7 @@ SELECT pg_catalog.setval('public.subjects_id_seq', 2, true);
 
 
 --
--- TOC entry 5108 (class 0 OID 0)
+-- TOC entry 5109 (class 0 OID 0)
 -- Dependencies: 319
 -- Name: tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9410,7 +9413,7 @@ SELECT pg_catalog.setval('public.tags_id_seq', 48, true);
 
 
 --
--- TOC entry 5109 (class 0 OID 0)
+-- TOC entry 5110 (class 0 OID 0)
 -- Dependencies: 321
 -- Name: talk_tag_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9419,7 +9422,7 @@ SELECT pg_catalog.setval('public.talk_tag_joins_id_seq', 5, true);
 
 
 --
--- TOC entry 5110 (class 0 OID 0)
+-- TOC entry 5111 (class 0 OID 0)
 -- Dependencies: 323
 -- Name: talks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9428,7 +9431,7 @@ SELECT pg_catalog.setval('public.talks_id_seq', 42, true);
 
 
 --
--- TOC entry 5111 (class 0 OID 0)
+-- TOC entry 5112 (class 0 OID 0)
 -- Dependencies: 325
 -- Name: terms_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9437,7 +9440,7 @@ SELECT pg_catalog.setval('public.terms_id_seq', 10, true);
 
 
 --
--- TOC entry 5112 (class 0 OID 0)
+-- TOC entry 5113 (class 0 OID 0)
 -- Dependencies: 327
 -- Name: thredded_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9446,7 +9449,7 @@ SELECT pg_catalog.setval('public.thredded_categories_id_seq', 1, false);
 
 
 --
--- TOC entry 5113 (class 0 OID 0)
+-- TOC entry 5114 (class 0 OID 0)
 -- Dependencies: 329
 -- Name: thredded_messageboard_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9455,7 +9458,7 @@ SELECT pg_catalog.setval('public.thredded_messageboard_groups_id_seq', 1, false)
 
 
 --
--- TOC entry 5114 (class 0 OID 0)
+-- TOC entry 5115 (class 0 OID 0)
 -- Dependencies: 331
 -- Name: thredded_messageboard_notifications_for_followed_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9464,7 +9467,7 @@ SELECT pg_catalog.setval('public.thredded_messageboard_notifications_for_followe
 
 
 --
--- TOC entry 5115 (class 0 OID 0)
+-- TOC entry 5116 (class 0 OID 0)
 -- Dependencies: 333
 -- Name: thredded_messageboard_users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9473,7 +9476,7 @@ SELECT pg_catalog.setval('public.thredded_messageboard_users_id_seq', 2, true);
 
 
 --
--- TOC entry 5116 (class 0 OID 0)
+-- TOC entry 5117 (class 0 OID 0)
 -- Dependencies: 335
 -- Name: thredded_messageboards_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9482,7 +9485,7 @@ SELECT pg_catalog.setval('public.thredded_messageboards_id_seq', 9, true);
 
 
 --
--- TOC entry 5117 (class 0 OID 0)
+-- TOC entry 5118 (class 0 OID 0)
 -- Dependencies: 337
 -- Name: thredded_notifications_for_followed_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9491,7 +9494,7 @@ SELECT pg_catalog.setval('public.thredded_notifications_for_followed_topics_id_s
 
 
 --
--- TOC entry 5118 (class 0 OID 0)
+-- TOC entry 5119 (class 0 OID 0)
 -- Dependencies: 339
 -- Name: thredded_notifications_for_private_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9500,7 +9503,7 @@ SELECT pg_catalog.setval('public.thredded_notifications_for_private_topics_id_se
 
 
 --
--- TOC entry 5119 (class 0 OID 0)
+-- TOC entry 5120 (class 0 OID 0)
 -- Dependencies: 341
 -- Name: thredded_post_moderation_records_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9509,7 +9512,7 @@ SELECT pg_catalog.setval('public.thredded_post_moderation_records_id_seq', 1, fa
 
 
 --
--- TOC entry 5120 (class 0 OID 0)
+-- TOC entry 5121 (class 0 OID 0)
 -- Dependencies: 343
 -- Name: thredded_posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9518,7 +9521,7 @@ SELECT pg_catalog.setval('public.thredded_posts_id_seq', 50, true);
 
 
 --
--- TOC entry 5121 (class 0 OID 0)
+-- TOC entry 5122 (class 0 OID 0)
 -- Dependencies: 345
 -- Name: thredded_private_posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9527,7 +9530,7 @@ SELECT pg_catalog.setval('public.thredded_private_posts_id_seq', 1, false);
 
 
 --
--- TOC entry 5122 (class 0 OID 0)
+-- TOC entry 5123 (class 0 OID 0)
 -- Dependencies: 347
 -- Name: thredded_private_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9536,7 +9539,7 @@ SELECT pg_catalog.setval('public.thredded_private_topics_id_seq', 1, false);
 
 
 --
--- TOC entry 5123 (class 0 OID 0)
+-- TOC entry 5124 (class 0 OID 0)
 -- Dependencies: 349
 -- Name: thredded_private_users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9545,7 +9548,7 @@ SELECT pg_catalog.setval('public.thredded_private_users_id_seq', 1, false);
 
 
 --
--- TOC entry 5124 (class 0 OID 0)
+-- TOC entry 5125 (class 0 OID 0)
 -- Dependencies: 351
 -- Name: thredded_topic_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9554,7 +9557,7 @@ SELECT pg_catalog.setval('public.thredded_topic_categories_id_seq', 1, false);
 
 
 --
--- TOC entry 5125 (class 0 OID 0)
+-- TOC entry 5126 (class 0 OID 0)
 -- Dependencies: 353
 -- Name: thredded_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9563,7 +9566,7 @@ SELECT pg_catalog.setval('public.thredded_topics_id_seq', 18, true);
 
 
 --
--- TOC entry 5126 (class 0 OID 0)
+-- TOC entry 5127 (class 0 OID 0)
 -- Dependencies: 355
 -- Name: thredded_user_details_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9572,7 +9575,7 @@ SELECT pg_catalog.setval('public.thredded_user_details_id_seq', 4, true);
 
 
 --
--- TOC entry 5127 (class 0 OID 0)
+-- TOC entry 5128 (class 0 OID 0)
 -- Dependencies: 357
 -- Name: thredded_user_messageboard_preferences_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9581,7 +9584,7 @@ SELECT pg_catalog.setval('public.thredded_user_messageboard_preferences_id_seq',
 
 
 --
--- TOC entry 5128 (class 0 OID 0)
+-- TOC entry 5129 (class 0 OID 0)
 -- Dependencies: 359
 -- Name: thredded_user_post_notifications_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9590,7 +9593,7 @@ SELECT pg_catalog.setval('public.thredded_user_post_notifications_id_seq', 1, fa
 
 
 --
--- TOC entry 5129 (class 0 OID 0)
+-- TOC entry 5130 (class 0 OID 0)
 -- Dependencies: 361
 -- Name: thredded_user_preferences_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9599,7 +9602,7 @@ SELECT pg_catalog.setval('public.thredded_user_preferences_id_seq', 1, false);
 
 
 --
--- TOC entry 5130 (class 0 OID 0)
+-- TOC entry 5131 (class 0 OID 0)
 -- Dependencies: 363
 -- Name: thredded_user_private_topic_read_states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9608,7 +9611,7 @@ SELECT pg_catalog.setval('public.thredded_user_private_topic_read_states_id_seq'
 
 
 --
--- TOC entry 5131 (class 0 OID 0)
+-- TOC entry 5132 (class 0 OID 0)
 -- Dependencies: 365
 -- Name: thredded_user_topic_follows_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9617,7 +9620,7 @@ SELECT pg_catalog.setval('public.thredded_user_topic_follows_id_seq', 50, true);
 
 
 --
--- TOC entry 5132 (class 0 OID 0)
+-- TOC entry 5133 (class 0 OID 0)
 -- Dependencies: 367
 -- Name: thredded_user_topic_read_states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9626,7 +9629,7 @@ SELECT pg_catalog.setval('public.thredded_user_topic_read_states_id_seq', 2, tru
 
 
 --
--- TOC entry 5133 (class 0 OID 0)
+-- TOC entry 5134 (class 0 OID 0)
 -- Dependencies: 369
 -- Name: tutor_tutorial_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9635,7 +9638,7 @@ SELECT pg_catalog.setval('public.tutor_tutorial_joins_id_seq', 1, true);
 
 
 --
--- TOC entry 5134 (class 0 OID 0)
+-- TOC entry 5135 (class 0 OID 0)
 -- Dependencies: 371
 -- Name: tutorials_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9644,7 +9647,7 @@ SELECT pg_catalog.setval('public.tutorials_id_seq', 22, true);
 
 
 --
--- TOC entry 5135 (class 0 OID 0)
+-- TOC entry 5136 (class 0 OID 0)
 -- Dependencies: 373
 -- Name: user_favorite_lecture_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9653,7 +9656,7 @@ SELECT pg_catalog.setval('public.user_favorite_lecture_joins_id_seq', 7, true);
 
 
 --
--- TOC entry 5136 (class 0 OID 0)
+-- TOC entry 5137 (class 0 OID 0)
 -- Dependencies: 375
 -- Name: user_submission_joins_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9662,7 +9665,7 @@ SELECT pg_catalog.setval('public.user_submission_joins_id_seq', 8, true);
 
 
 --
--- TOC entry 5137 (class 0 OID 0)
+-- TOC entry 5138 (class 0 OID 0)
 -- Dependencies: 377
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9671,7 +9674,7 @@ SELECT pg_catalog.setval('public.users_id_seq', 183, true);
 
 
 --
--- TOC entry 5138 (class 0 OID 0)
+-- TOC entry 5139 (class 0 OID 0)
 -- Dependencies: 379
 -- Name: vignettes_answers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9680,7 +9683,7 @@ SELECT pg_catalog.setval('public.vignettes_answers_id_seq', 10, true);
 
 
 --
--- TOC entry 5139 (class 0 OID 0)
+-- TOC entry 5140 (class 0 OID 0)
 -- Dependencies: 382
 -- Name: vignettes_codenames_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9689,7 +9692,7 @@ SELECT pg_catalog.setval('public.vignettes_codenames_id_seq', 3, true);
 
 
 --
--- TOC entry 5140 (class 0 OID 0)
+-- TOC entry 5141 (class 0 OID 0)
 -- Dependencies: 384
 -- Name: vignettes_completion_messages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9698,7 +9701,7 @@ SELECT pg_catalog.setval('public.vignettes_completion_messages_id_seq', 1, false
 
 
 --
--- TOC entry 5141 (class 0 OID 0)
+-- TOC entry 5142 (class 0 OID 0)
 -- Dependencies: 386
 -- Name: vignettes_info_slides_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9707,7 +9710,7 @@ SELECT pg_catalog.setval('public.vignettes_info_slides_id_seq', 2, true);
 
 
 --
--- TOC entry 5142 (class 0 OID 0)
+-- TOC entry 5143 (class 0 OID 0)
 -- Dependencies: 389
 -- Name: vignettes_options_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9716,7 +9719,7 @@ SELECT pg_catalog.setval('public.vignettes_options_id_seq', 8, true);
 
 
 --
--- TOC entry 5143 (class 0 OID 0)
+-- TOC entry 5144 (class 0 OID 0)
 -- Dependencies: 391
 -- Name: vignettes_questionnaires_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9725,7 +9728,7 @@ SELECT pg_catalog.setval('public.vignettes_questionnaires_id_seq', 2, true);
 
 
 --
--- TOC entry 5144 (class 0 OID 0)
+-- TOC entry 5145 (class 0 OID 0)
 -- Dependencies: 393
 -- Name: vignettes_questions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9734,7 +9737,7 @@ SELECT pg_catalog.setval('public.vignettes_questions_id_seq', 6, true);
 
 
 --
--- TOC entry 5145 (class 0 OID 0)
+-- TOC entry 5146 (class 0 OID 0)
 -- Dependencies: 395
 -- Name: vignettes_slide_statistics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9743,7 +9746,7 @@ SELECT pg_catalog.setval('public.vignettes_slide_statistics_id_seq', 4, true);
 
 
 --
--- TOC entry 5146 (class 0 OID 0)
+-- TOC entry 5147 (class 0 OID 0)
 -- Dependencies: 397
 -- Name: vignettes_slides_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9752,7 +9755,7 @@ SELECT pg_catalog.setval('public.vignettes_slides_id_seq', 6, true);
 
 
 --
--- TOC entry 5147 (class 0 OID 0)
+-- TOC entry 5148 (class 0 OID 0)
 -- Dependencies: 399
 -- Name: vignettes_user_answers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9761,7 +9764,7 @@ SELECT pg_catalog.setval('public.vignettes_user_answers_id_seq', 4, true);
 
 
 --
--- TOC entry 5148 (class 0 OID 0)
+-- TOC entry 5149 (class 0 OID 0)
 -- Dependencies: 401
 -- Name: votes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9770,7 +9773,7 @@ SELECT pg_catalog.setval('public.votes_id_seq', 1, true);
 
 
 --
--- TOC entry 5149 (class 0 OID 0)
+-- TOC entry 5150 (class 0 OID 0)
 -- Dependencies: 404
 -- Name: watchlist_entries_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9779,7 +9782,7 @@ SELECT pg_catalog.setval('public.watchlist_entries_id_seq', 14, true);
 
 
 --
--- TOC entry 5150 (class 0 OID 0)
+-- TOC entry 5151 (class 0 OID 0)
 -- Dependencies: 406
 -- Name: watchlists_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
@@ -9788,7 +9791,7 @@ SELECT pg_catalog.setval('public.watchlists_id_seq', 8, true);
 
 
 --
--- TOC entry 4074 (class 2606 OID 7673509)
+-- TOC entry 4075 (class 2606 OID 7673509)
 -- Name: action_text_rich_texts action_text_rich_texts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9797,7 +9800,7 @@ ALTER TABLE ONLY public.action_text_rich_texts
 
 
 --
--- TOC entry 4077 (class 2606 OID 7673511)
+-- TOC entry 4078 (class 2606 OID 7673511)
 -- Name: active_storage_attachments active_storage_attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9806,7 +9809,7 @@ ALTER TABLE ONLY public.active_storage_attachments
 
 
 --
--- TOC entry 4081 (class 2606 OID 7673513)
+-- TOC entry 4082 (class 2606 OID 7673513)
 -- Name: active_storage_blobs active_storage_blobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9815,7 +9818,7 @@ ALTER TABLE ONLY public.active_storage_blobs
 
 
 --
--- TOC entry 4084 (class 2606 OID 7673515)
+-- TOC entry 4085 (class 2606 OID 7673515)
 -- Name: active_storage_variant_records active_storage_variant_records_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9824,7 +9827,7 @@ ALTER TABLE ONLY public.active_storage_variant_records
 
 
 --
--- TOC entry 4087 (class 2606 OID 7673517)
+-- TOC entry 4088 (class 2606 OID 7673517)
 -- Name: annotations annotations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9833,7 +9836,7 @@ ALTER TABLE ONLY public.annotations
 
 
 --
--- TOC entry 4091 (class 2606 OID 7673519)
+-- TOC entry 4092 (class 2606 OID 7673519)
 -- Name: announcements announcements_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9842,7 +9845,7 @@ ALTER TABLE ONLY public.announcements
 
 
 --
--- TOC entry 4095 (class 2606 OID 7673521)
+-- TOC entry 4096 (class 2606 OID 7673521)
 -- Name: answers answers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9851,7 +9854,7 @@ ALTER TABLE ONLY public.answers
 
 
 --
--- TOC entry 4100 (class 2606 OID 7673523)
+-- TOC entry 4101 (class 2606 OID 7673523)
 -- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9860,7 +9863,7 @@ ALTER TABLE ONLY public.ar_internal_metadata
 
 
 --
--- TOC entry 4102 (class 2606 OID 7673525)
+-- TOC entry 4103 (class 2606 OID 7673525)
 -- Name: assignments assignments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9869,7 +9872,7 @@ ALTER TABLE ONLY public.assignments
 
 
 --
--- TOC entry 4106 (class 2606 OID 7673527)
+-- TOC entry 4107 (class 2606 OID 7673527)
 -- Name: chapters chapters_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9878,7 +9881,7 @@ ALTER TABLE ONLY public.chapters
 
 
 --
--- TOC entry 4109 (class 2606 OID 7673529)
+-- TOC entry 4110 (class 2606 OID 7673529)
 -- Name: claims claims_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9887,7 +9890,7 @@ ALTER TABLE ONLY public.claims
 
 
 --
--- TOC entry 4516 (class 2606 OID 7674697)
+-- TOC entry 4517 (class 2606 OID 7674697)
 -- Name: cohort_memberships cohort_memberships_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9896,7 +9899,7 @@ ALTER TABLE ONLY public.cohort_memberships
 
 
 --
--- TOC entry 4498 (class 2606 OID 7674625)
+-- TOC entry 4499 (class 2606 OID 7674625)
 -- Name: cohorts cohorts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9905,7 +9908,7 @@ ALTER TABLE ONLY public.cohorts
 
 
 --
--- TOC entry 4113 (class 2606 OID 7673535)
+-- TOC entry 4114 (class 2606 OID 7673535)
 -- Name: commontator_comments commontator_comments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9914,7 +9917,7 @@ ALTER TABLE ONLY public.commontator_comments
 
 
 --
--- TOC entry 4121 (class 2606 OID 7673537)
+-- TOC entry 4122 (class 2606 OID 7673537)
 -- Name: commontator_subscriptions commontator_subscriptions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9923,7 +9926,7 @@ ALTER TABLE ONLY public.commontator_subscriptions
 
 
 --
--- TOC entry 4125 (class 2606 OID 7673539)
+-- TOC entry 4126 (class 2606 OID 7673539)
 -- Name: commontator_threads commontator_threads_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9932,7 +9935,7 @@ ALTER TABLE ONLY public.commontator_threads
 
 
 --
--- TOC entry 4129 (class 2606 OID 7673541)
+-- TOC entry 4130 (class 2606 OID 7673541)
 -- Name: course_self_joins course_self_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9941,7 +9944,7 @@ ALTER TABLE ONLY public.course_self_joins
 
 
 --
--- TOC entry 4134 (class 2606 OID 7673543)
+-- TOC entry 4135 (class 2606 OID 7673543)
 -- Name: course_tag_joins course_tag_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9950,7 +9953,7 @@ ALTER TABLE ONLY public.course_tag_joins
 
 
 --
--- TOC entry 4138 (class 2606 OID 7673545)
+-- TOC entry 4139 (class 2606 OID 7673545)
 -- Name: courses courses_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9959,7 +9962,7 @@ ALTER TABLE ONLY public.courses
 
 
 --
--- TOC entry 4144 (class 2606 OID 7673547)
+-- TOC entry 4145 (class 2606 OID 7673547)
 -- Name: division_course_joins division_course_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9968,7 +9971,7 @@ ALTER TABLE ONLY public.division_course_joins
 
 
 --
--- TOC entry 4148 (class 2606 OID 7673549)
+-- TOC entry 4149 (class 2606 OID 7673549)
 -- Name: division_translations division_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9977,7 +9980,7 @@ ALTER TABLE ONLY public.division_translations
 
 
 --
--- TOC entry 4152 (class 2606 OID 7673551)
+-- TOC entry 4153 (class 2606 OID 7673551)
 -- Name: divisions divisions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9986,7 +9989,7 @@ ALTER TABLE ONLY public.divisions
 
 
 --
--- TOC entry 4155 (class 2606 OID 7673553)
+-- TOC entry 4156 (class 2606 OID 7673553)
 -- Name: editable_user_joins editable_user_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -9995,7 +9998,7 @@ ALTER TABLE ONLY public.editable_user_joins
 
 
 --
--- TOC entry 4159 (class 2606 OID 7673555)
+-- TOC entry 4160 (class 2606 OID 7673555)
 -- Name: feedbacks feedbacks_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10004,7 +10007,7 @@ ALTER TABLE ONLY public.feedbacks
 
 
 --
--- TOC entry 4492 (class 2606 OID 7674589)
+-- TOC entry 4493 (class 2606 OID 7674589)
 -- Name: flipper_features flipper_features_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10013,7 +10016,7 @@ ALTER TABLE ONLY public.flipper_features
 
 
 --
--- TOC entry 4495 (class 2606 OID 7674604)
+-- TOC entry 4496 (class 2606 OID 7674604)
 -- Name: flipper_gates flipper_gates_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10022,7 +10025,7 @@ ALTER TABLE ONLY public.flipper_gates
 
 
 --
--- TOC entry 4162 (class 2606 OID 7673557)
+-- TOC entry 4163 (class 2606 OID 7673557)
 -- Name: friendly_id_slugs friendly_id_slugs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10031,7 +10034,7 @@ ALTER TABLE ONLY public.friendly_id_slugs
 
 
 --
--- TOC entry 4168 (class 2606 OID 7673559)
+-- TOC entry 4169 (class 2606 OID 7673559)
 -- Name: imports imports_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10040,7 +10043,7 @@ ALTER TABLE ONLY public.imports
 
 
 --
--- TOC entry 4174 (class 2606 OID 7673561)
+-- TOC entry 4175 (class 2606 OID 7673561)
 -- Name: item_self_joins item_self_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10049,7 +10052,7 @@ ALTER TABLE ONLY public.item_self_joins
 
 
 --
--- TOC entry 4178 (class 2606 OID 7673563)
+-- TOC entry 4179 (class 2606 OID 7673563)
 -- Name: items items_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10058,7 +10061,7 @@ ALTER TABLE ONLY public.items
 
 
 --
--- TOC entry 4514 (class 2606 OID 7674667)
+-- TOC entry 4515 (class 2606 OID 7674667)
 -- Name: lecture_memberships lecture_memberships_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10067,7 +10070,7 @@ ALTER TABLE ONLY public.lecture_memberships
 
 
 --
--- TOC entry 4183 (class 2606 OID 7673565)
+-- TOC entry 4184 (class 2606 OID 7673565)
 -- Name: lecture_user_joins lecture_user_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10076,7 +10079,7 @@ ALTER TABLE ONLY public.lecture_user_joins
 
 
 --
--- TOC entry 4189 (class 2606 OID 7673567)
+-- TOC entry 4190 (class 2606 OID 7673567)
 -- Name: lectures lectures_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10085,7 +10088,7 @@ ALTER TABLE ONLY public.lectures
 
 
 --
--- TOC entry 4193 (class 2606 OID 7673569)
+-- TOC entry 4194 (class 2606 OID 7673569)
 -- Name: lesson_section_joins lesson_section_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10094,7 +10097,7 @@ ALTER TABLE ONLY public.lesson_section_joins
 
 
 --
--- TOC entry 4197 (class 2606 OID 7673571)
+-- TOC entry 4198 (class 2606 OID 7673571)
 -- Name: lesson_tag_joins lesson_tag_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10103,7 +10106,7 @@ ALTER TABLE ONLY public.lesson_tag_joins
 
 
 --
--- TOC entry 4200 (class 2606 OID 7673573)
+-- TOC entry 4201 (class 2606 OID 7673573)
 -- Name: lessons lessons_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10112,7 +10115,7 @@ ALTER TABLE ONLY public.lessons
 
 
 --
--- TOC entry 4205 (class 2606 OID 7673575)
+-- TOC entry 4206 (class 2606 OID 7673575)
 -- Name: links links_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10121,7 +10124,7 @@ ALTER TABLE ONLY public.links
 
 
 --
--- TOC entry 4215 (class 2606 OID 7673577)
+-- TOC entry 4216 (class 2606 OID 7673577)
 -- Name: media media_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10130,7 +10133,7 @@ ALTER TABLE ONLY public.media
 
 
 --
--- TOC entry 4219 (class 2606 OID 7673579)
+-- TOC entry 4220 (class 2606 OID 7673579)
 -- Name: medium_tag_joins medium_tag_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10139,7 +10142,7 @@ ALTER TABLE ONLY public.medium_tag_joins
 
 
 --
--- TOC entry 4223 (class 2606 OID 7673581)
+-- TOC entry 4224 (class 2606 OID 7673581)
 -- Name: notifications notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10148,7 +10151,7 @@ ALTER TABLE ONLY public.notifications
 
 
 --
--- TOC entry 4229 (class 2606 OID 7673583)
+-- TOC entry 4230 (class 2606 OID 7673583)
 -- Name: notions notions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10157,7 +10160,7 @@ ALTER TABLE ONLY public.notions
 
 
 --
--- TOC entry 4233 (class 2606 OID 7673585)
+-- TOC entry 4234 (class 2606 OID 7673585)
 -- Name: program_translations program_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10166,7 +10169,7 @@ ALTER TABLE ONLY public.program_translations
 
 
 --
--- TOC entry 4236 (class 2606 OID 7673587)
+-- TOC entry 4237 (class 2606 OID 7673587)
 -- Name: programs programs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10175,7 +10178,7 @@ ALTER TABLE ONLY public.programs
 
 
 --
--- TOC entry 4240 (class 2606 OID 7673589)
+-- TOC entry 4241 (class 2606 OID 7673589)
 -- Name: quiz_certificates quiz_certificates_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10184,7 +10187,7 @@ ALTER TABLE ONLY public.quiz_certificates
 
 
 --
--- TOC entry 4242 (class 2606 OID 7673591)
+-- TOC entry 4243 (class 2606 OID 7673591)
 -- Name: readers readers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10193,7 +10196,7 @@ ALTER TABLE ONLY public.readers
 
 
 --
--- TOC entry 4246 (class 2606 OID 7673593)
+-- TOC entry 4247 (class 2606 OID 7673593)
 -- Name: redemptions redemptions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10202,7 +10205,7 @@ ALTER TABLE ONLY public.redemptions
 
 
 --
--- TOC entry 4250 (class 2606 OID 7673595)
+-- TOC entry 4251 (class 2606 OID 7673595)
 -- Name: referrals referrals_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10211,7 +10214,7 @@ ALTER TABLE ONLY public.referrals
 
 
 --
--- TOC entry 4468 (class 2606 OID 7674496)
+-- TOC entry 4469 (class 2606 OID 7674496)
 -- Name: registration_campaigns registration_campaigns_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10220,7 +10223,7 @@ ALTER TABLE ONLY public.registration_campaigns
 
 
 --
--- TOC entry 4472 (class 2606 OID 7674509)
+-- TOC entry 4473 (class 2606 OID 7674509)
 -- Name: registration_items registration_items_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10229,7 +10232,7 @@ ALTER TABLE ONLY public.registration_items
 
 
 --
--- TOC entry 4490 (class 2606 OID 7674523)
+-- TOC entry 4491 (class 2606 OID 7674523)
 -- Name: registration_policies registration_policies_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10238,7 +10241,7 @@ ALTER TABLE ONLY public.registration_policies
 
 
 --
--- TOC entry 4524 (class 2606 OID 7674786)
+-- TOC entry 4525 (class 2606 OID 7674786)
 -- Name: registration_student_messages registration_student_messages_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10247,7 +10250,7 @@ ALTER TABLE ONLY public.registration_student_messages
 
 
 --
--- TOC entry 4483 (class 2606 OID 7674539)
+-- TOC entry 4484 (class 2606 OID 7674539)
 -- Name: registration_user_registrations registration_user_registrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10256,7 +10259,7 @@ ALTER TABLE ONLY public.registration_user_registrations
 
 
 --
--- TOC entry 4255 (class 2606 OID 7673597)
+-- TOC entry 4256 (class 2606 OID 7673597)
 -- Name: relations relations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10265,7 +10268,7 @@ ALTER TABLE ONLY public.relations
 
 
 --
--- TOC entry 4257 (class 2606 OID 7673599)
+-- TOC entry 4258 (class 2606 OID 7673599)
 -- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10274,7 +10277,7 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
--- TOC entry 4261 (class 2606 OID 7673601)
+-- TOC entry 4262 (class 2606 OID 7673601)
 -- Name: section_tag_joins section_tag_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10283,7 +10286,7 @@ ALTER TABLE ONLY public.section_tag_joins
 
 
 --
--- TOC entry 4265 (class 2606 OID 7673603)
+-- TOC entry 4266 (class 2606 OID 7673603)
 -- Name: sections sections_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10292,7 +10295,7 @@ ALTER TABLE ONLY public.sections
 
 
 --
--- TOC entry 4271 (class 2606 OID 7673605)
+-- TOC entry 4272 (class 2606 OID 7673605)
 -- Name: speaker_talk_joins speaker_talk_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10301,7 +10304,7 @@ ALTER TABLE ONLY public.speaker_talk_joins
 
 
 --
--- TOC entry 4275 (class 2606 OID 7673607)
+-- TOC entry 4276 (class 2606 OID 7673607)
 -- Name: subject_translations subject_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10310,7 +10313,7 @@ ALTER TABLE ONLY public.subject_translations
 
 
 --
--- TOC entry 4277 (class 2606 OID 7673609)
+-- TOC entry 4278 (class 2606 OID 7673609)
 -- Name: subjects subjects_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10319,7 +10322,7 @@ ALTER TABLE ONLY public.subjects
 
 
 --
--- TOC entry 4282 (class 2606 OID 7673611)
+-- TOC entry 4283 (class 2606 OID 7673611)
 -- Name: submissions submissions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10328,7 +10331,7 @@ ALTER TABLE ONLY public.submissions
 
 
 --
--- TOC entry 4284 (class 2606 OID 7673613)
+-- TOC entry 4285 (class 2606 OID 7673613)
 -- Name: tags tags_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10337,7 +10340,7 @@ ALTER TABLE ONLY public.tags
 
 
 --
--- TOC entry 4288 (class 2606 OID 7673615)
+-- TOC entry 4289 (class 2606 OID 7673615)
 -- Name: talk_tag_joins talk_tag_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10346,7 +10349,7 @@ ALTER TABLE ONLY public.talk_tag_joins
 
 
 --
--- TOC entry 4292 (class 2606 OID 7673617)
+-- TOC entry 4293 (class 2606 OID 7673617)
 -- Name: talks talks_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10355,7 +10358,7 @@ ALTER TABLE ONLY public.talks
 
 
 --
--- TOC entry 4295 (class 2606 OID 7673619)
+-- TOC entry 4296 (class 2606 OID 7673619)
 -- Name: terms terms_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10364,7 +10367,7 @@ ALTER TABLE ONLY public.terms
 
 
 --
--- TOC entry 4300 (class 2606 OID 7673621)
+-- TOC entry 4301 (class 2606 OID 7673621)
 -- Name: thredded_categories thredded_categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10373,7 +10376,7 @@ ALTER TABLE ONLY public.thredded_categories
 
 
 --
--- TOC entry 4302 (class 2606 OID 7673623)
+-- TOC entry 4303 (class 2606 OID 7673623)
 -- Name: thredded_messageboard_groups thredded_messageboard_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10382,7 +10385,7 @@ ALTER TABLE ONLY public.thredded_messageboard_groups
 
 
 --
--- TOC entry 4304 (class 2606 OID 7673625)
+-- TOC entry 4305 (class 2606 OID 7673625)
 -- Name: thredded_messageboard_notifications_for_followed_topics thredded_messageboard_notifications_for_followed_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10391,7 +10394,7 @@ ALTER TABLE ONLY public.thredded_messageboard_notifications_for_followed_topics
 
 
 --
--- TOC entry 4309 (class 2606 OID 7673627)
+-- TOC entry 4310 (class 2606 OID 7673627)
 -- Name: thredded_messageboard_users thredded_messageboard_users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10400,7 +10403,7 @@ ALTER TABLE ONLY public.thredded_messageboard_users
 
 
 --
--- TOC entry 4313 (class 2606 OID 7673629)
+-- TOC entry 4314 (class 2606 OID 7673629)
 -- Name: thredded_messageboards thredded_messageboards_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10409,7 +10412,7 @@ ALTER TABLE ONLY public.thredded_messageboards
 
 
 --
--- TOC entry 4315 (class 2606 OID 7673631)
+-- TOC entry 4316 (class 2606 OID 7673631)
 -- Name: thredded_notifications_for_followed_topics thredded_notifications_for_followed_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10418,7 +10421,7 @@ ALTER TABLE ONLY public.thredded_notifications_for_followed_topics
 
 
 --
--- TOC entry 4318 (class 2606 OID 7673633)
+-- TOC entry 4319 (class 2606 OID 7673633)
 -- Name: thredded_notifications_for_private_topics thredded_notifications_for_private_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10427,7 +10430,7 @@ ALTER TABLE ONLY public.thredded_notifications_for_private_topics
 
 
 --
--- TOC entry 4322 (class 2606 OID 7673635)
+-- TOC entry 4323 (class 2606 OID 7673635)
 -- Name: thredded_post_moderation_records thredded_post_moderation_records_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10436,7 +10439,7 @@ ALTER TABLE ONLY public.thredded_post_moderation_records
 
 
 --
--- TOC entry 4330 (class 2606 OID 7673637)
+-- TOC entry 4331 (class 2606 OID 7673637)
 -- Name: thredded_posts thredded_posts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10445,7 +10448,7 @@ ALTER TABLE ONLY public.thredded_posts
 
 
 --
--- TOC entry 4333 (class 2606 OID 7673639)
+-- TOC entry 4334 (class 2606 OID 7673639)
 -- Name: thredded_private_posts thredded_private_posts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10454,7 +10457,7 @@ ALTER TABLE ONLY public.thredded_private_posts
 
 
 --
--- TOC entry 4338 (class 2606 OID 7673641)
+-- TOC entry 4339 (class 2606 OID 7673641)
 -- Name: thredded_private_topics thredded_private_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10463,7 +10466,7 @@ ALTER TABLE ONLY public.thredded_private_topics
 
 
 --
--- TOC entry 4342 (class 2606 OID 7673643)
+-- TOC entry 4343 (class 2606 OID 7673643)
 -- Name: thredded_private_users thredded_private_users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10472,7 +10475,7 @@ ALTER TABLE ONLY public.thredded_private_users
 
 
 --
--- TOC entry 4346 (class 2606 OID 7673645)
+-- TOC entry 4347 (class 2606 OID 7673645)
 -- Name: thredded_topic_categories thredded_topic_categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10481,7 +10484,7 @@ ALTER TABLE ONLY public.thredded_topic_categories
 
 
 --
--- TOC entry 4354 (class 2606 OID 7673647)
+-- TOC entry 4355 (class 2606 OID 7673647)
 -- Name: thredded_topics thredded_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10490,7 +10493,7 @@ ALTER TABLE ONLY public.thredded_topics
 
 
 --
--- TOC entry 4360 (class 2606 OID 7673649)
+-- TOC entry 4361 (class 2606 OID 7673649)
 -- Name: thredded_user_details thredded_user_details_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10499,7 +10502,7 @@ ALTER TABLE ONLY public.thredded_user_details
 
 
 --
--- TOC entry 4362 (class 2606 OID 7673651)
+-- TOC entry 4363 (class 2606 OID 7673651)
 -- Name: thredded_user_messageboard_preferences thredded_user_messageboard_preferences_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10508,7 +10511,7 @@ ALTER TABLE ONLY public.thredded_user_messageboard_preferences
 
 
 --
--- TOC entry 4367 (class 2606 OID 7673653)
+-- TOC entry 4368 (class 2606 OID 7673653)
 -- Name: thredded_user_post_notifications thredded_user_post_notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10517,7 +10520,7 @@ ALTER TABLE ONLY public.thredded_user_post_notifications
 
 
 --
--- TOC entry 4370 (class 2606 OID 7673655)
+-- TOC entry 4371 (class 2606 OID 7673655)
 -- Name: thredded_user_preferences thredded_user_preferences_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10526,7 +10529,7 @@ ALTER TABLE ONLY public.thredded_user_preferences
 
 
 --
--- TOC entry 4372 (class 2606 OID 7673657)
+-- TOC entry 4373 (class 2606 OID 7673657)
 -- Name: thredded_user_private_topic_read_states thredded_user_private_topic_read_states_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10535,7 +10538,7 @@ ALTER TABLE ONLY public.thredded_user_private_topic_read_states
 
 
 --
--- TOC entry 4375 (class 2606 OID 7673659)
+-- TOC entry 4376 (class 2606 OID 7673659)
 -- Name: thredded_user_topic_follows thredded_user_topic_follows_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10544,7 +10547,7 @@ ALTER TABLE ONLY public.thredded_user_topic_follows
 
 
 --
--- TOC entry 4379 (class 2606 OID 7673661)
+-- TOC entry 4380 (class 2606 OID 7673661)
 -- Name: thredded_user_topic_read_states thredded_user_topic_read_states_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10553,7 +10556,7 @@ ALTER TABLE ONLY public.thredded_user_topic_read_states
 
 
 --
--- TOC entry 4386 (class 2606 OID 7673663)
+-- TOC entry 4387 (class 2606 OID 7673663)
 -- Name: tutor_tutorial_joins tutor_tutorial_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10562,7 +10565,7 @@ ALTER TABLE ONLY public.tutor_tutorial_joins
 
 
 --
--- TOC entry 4508 (class 2606 OID 7674637)
+-- TOC entry 4509 (class 2606 OID 7674637)
 -- Name: tutorial_memberships tutorial_memberships_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10571,7 +10574,7 @@ ALTER TABLE ONLY public.tutorial_memberships
 
 
 --
--- TOC entry 4391 (class 2606 OID 7673665)
+-- TOC entry 4392 (class 2606 OID 7673665)
 -- Name: tutorials tutorials_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10580,7 +10583,7 @@ ALTER TABLE ONLY public.tutorials
 
 
 --
--- TOC entry 4395 (class 2606 OID 7673667)
+-- TOC entry 4396 (class 2606 OID 7673667)
 -- Name: user_favorite_lecture_joins user_favorite_lecture_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10589,7 +10592,7 @@ ALTER TABLE ONLY public.user_favorite_lecture_joins
 
 
 --
--- TOC entry 4399 (class 2606 OID 7673669)
+-- TOC entry 4400 (class 2606 OID 7673669)
 -- Name: user_submission_joins user_submission_joins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10598,7 +10601,7 @@ ALTER TABLE ONLY public.user_submission_joins
 
 
 --
--- TOC entry 4405 (class 2606 OID 7673671)
+-- TOC entry 4406 (class 2606 OID 7673671)
 -- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10607,7 +10610,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 4410 (class 2606 OID 7673673)
+-- TOC entry 4411 (class 2606 OID 7673673)
 -- Name: vignettes_answers vignettes_answers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10616,7 +10619,7 @@ ALTER TABLE ONLY public.vignettes_answers
 
 
 --
--- TOC entry 4416 (class 2606 OID 7673675)
+-- TOC entry 4417 (class 2606 OID 7673675)
 -- Name: vignettes_codenames vignettes_codenames_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10625,7 +10628,7 @@ ALTER TABLE ONLY public.vignettes_codenames
 
 
 --
--- TOC entry 4419 (class 2606 OID 7673677)
+-- TOC entry 4420 (class 2606 OID 7673677)
 -- Name: vignettes_completion_messages vignettes_completion_messages_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10634,7 +10637,7 @@ ALTER TABLE ONLY public.vignettes_completion_messages
 
 
 --
--- TOC entry 4422 (class 2606 OID 7673679)
+-- TOC entry 4423 (class 2606 OID 7673679)
 -- Name: vignettes_info_slides vignettes_info_slides_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10643,7 +10646,7 @@ ALTER TABLE ONLY public.vignettes_info_slides
 
 
 --
--- TOC entry 4427 (class 2606 OID 7673681)
+-- TOC entry 4428 (class 2606 OID 7673681)
 -- Name: vignettes_options vignettes_options_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10652,7 +10655,7 @@ ALTER TABLE ONLY public.vignettes_options
 
 
 --
--- TOC entry 4430 (class 2606 OID 7673683)
+-- TOC entry 4431 (class 2606 OID 7673683)
 -- Name: vignettes_questionnaires vignettes_questionnaires_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10661,7 +10664,7 @@ ALTER TABLE ONLY public.vignettes_questionnaires
 
 
 --
--- TOC entry 4433 (class 2606 OID 7673685)
+-- TOC entry 4434 (class 2606 OID 7673685)
 -- Name: vignettes_questions vignettes_questions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10670,7 +10673,7 @@ ALTER TABLE ONLY public.vignettes_questions
 
 
 --
--- TOC entry 4437 (class 2606 OID 7673687)
+-- TOC entry 4438 (class 2606 OID 7673687)
 -- Name: vignettes_slide_statistics vignettes_slide_statistics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10679,7 +10682,7 @@ ALTER TABLE ONLY public.vignettes_slide_statistics
 
 
 --
--- TOC entry 4441 (class 2606 OID 7673689)
+-- TOC entry 4442 (class 2606 OID 7673689)
 -- Name: vignettes_slides vignettes_slides_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10688,7 +10691,7 @@ ALTER TABLE ONLY public.vignettes_slides
 
 
 --
--- TOC entry 4445 (class 2606 OID 7673691)
+-- TOC entry 4446 (class 2606 OID 7673691)
 -- Name: vignettes_user_answers vignettes_user_answers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10697,7 +10700,7 @@ ALTER TABLE ONLY public.vignettes_user_answers
 
 
 --
--- TOC entry 4451 (class 2606 OID 7673693)
+-- TOC entry 4452 (class 2606 OID 7673693)
 -- Name: votes votes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10706,7 +10709,7 @@ ALTER TABLE ONLY public.votes
 
 
 --
--- TOC entry 4455 (class 2606 OID 7673695)
+-- TOC entry 4456 (class 2606 OID 7673695)
 -- Name: vouchers vouchers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10715,7 +10718,7 @@ ALTER TABLE ONLY public.vouchers
 
 
 --
--- TOC entry 4459 (class 2606 OID 7673699)
+-- TOC entry 4460 (class 2606 OID 7673699)
 -- Name: watchlist_entries watchlist_entries_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10724,7 +10727,7 @@ ALTER TABLE ONLY public.watchlist_entries
 
 
 --
--- TOC entry 4463 (class 2606 OID 7673701)
+-- TOC entry 4464 (class 2606 OID 7673701)
 -- Name: watchlists watchlists_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -10733,7 +10736,7 @@ ALTER TABLE ONLY public.watchlists
 
 
 --
--- TOC entry 4423 (class 1259 OID 7673702)
+-- TOC entry 4424 (class 1259 OID 7673702)
 -- Name: idx_on_vignettes_info_slide_id_vignettes_slide_id_2bdc65ab76; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10741,7 +10744,7 @@ CREATE INDEX idx_on_vignettes_info_slide_id_vignettes_slide_id_2bdc65ab76 ON pub
 
 
 --
--- TOC entry 4424 (class 1259 OID 7673703)
+-- TOC entry 4425 (class 1259 OID 7673703)
 -- Name: idx_on_vignettes_slide_id_vignettes_info_slide_id_c74f04e951; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10749,7 +10752,7 @@ CREATE INDEX idx_on_vignettes_slide_id_vignettes_info_slide_id_c74f04e951 ON pub
 
 
 --
--- TOC entry 4075 (class 1259 OID 7673704)
+-- TOC entry 4076 (class 1259 OID 7673704)
 -- Name: index_action_text_rich_texts_uniqueness; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10757,7 +10760,7 @@ CREATE UNIQUE INDEX index_action_text_rich_texts_uniqueness ON public.action_tex
 
 
 --
--- TOC entry 4078 (class 1259 OID 7673705)
+-- TOC entry 4079 (class 1259 OID 7673705)
 -- Name: index_active_storage_attachments_on_blob_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10765,7 +10768,7 @@ CREATE INDEX index_active_storage_attachments_on_blob_id ON public.active_storag
 
 
 --
--- TOC entry 4079 (class 1259 OID 7673706)
+-- TOC entry 4080 (class 1259 OID 7673706)
 -- Name: index_active_storage_attachments_uniqueness; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10773,7 +10776,7 @@ CREATE UNIQUE INDEX index_active_storage_attachments_uniqueness ON public.active
 
 
 --
--- TOC entry 4082 (class 1259 OID 7673707)
+-- TOC entry 4083 (class 1259 OID 7673707)
 -- Name: index_active_storage_blobs_on_key; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10781,7 +10784,7 @@ CREATE UNIQUE INDEX index_active_storage_blobs_on_key ON public.active_storage_b
 
 
 --
--- TOC entry 4085 (class 1259 OID 7673708)
+-- TOC entry 4086 (class 1259 OID 7673708)
 -- Name: index_active_storage_variant_records_uniqueness; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10789,7 +10792,7 @@ CREATE UNIQUE INDEX index_active_storage_variant_records_uniqueness ON public.ac
 
 
 --
--- TOC entry 4088 (class 1259 OID 7673709)
+-- TOC entry 4089 (class 1259 OID 7673709)
 -- Name: index_annotations_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10797,7 +10800,7 @@ CREATE INDEX index_annotations_on_medium_id ON public.annotations USING btree (m
 
 
 --
--- TOC entry 4089 (class 1259 OID 7673710)
+-- TOC entry 4090 (class 1259 OID 7673710)
 -- Name: index_annotations_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10805,7 +10808,7 @@ CREATE INDEX index_annotations_on_user_id ON public.annotations USING btree (use
 
 
 --
--- TOC entry 4092 (class 1259 OID 7673711)
+-- TOC entry 4093 (class 1259 OID 7673711)
 -- Name: index_announcements_on_announcer_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10813,7 +10816,7 @@ CREATE INDEX index_announcements_on_announcer_id ON public.announcements USING b
 
 
 --
--- TOC entry 4093 (class 1259 OID 7673712)
+-- TOC entry 4094 (class 1259 OID 7673712)
 -- Name: index_announcements_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10821,7 +10824,7 @@ CREATE INDEX index_announcements_on_lecture_id ON public.announcements USING btr
 
 
 --
--- TOC entry 4096 (class 1259 OID 7674364)
+-- TOC entry 4097 (class 1259 OID 7674364)
 -- Name: index_answers_on_explanation_trgm; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10829,7 +10832,7 @@ CREATE INDEX index_answers_on_explanation_trgm ON public.answers USING gin (expl
 
 
 --
--- TOC entry 4097 (class 1259 OID 7673713)
+-- TOC entry 4098 (class 1259 OID 7673713)
 -- Name: index_answers_on_question_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10837,7 +10840,7 @@ CREATE INDEX index_answers_on_question_id ON public.answers USING btree (questio
 
 
 --
--- TOC entry 4098 (class 1259 OID 7674363)
+-- TOC entry 4099 (class 1259 OID 7674363)
 -- Name: index_answers_on_text_trgm; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10845,7 +10848,7 @@ CREATE INDEX index_answers_on_text_trgm ON public.answers USING gin (text public
 
 
 --
--- TOC entry 4411 (class 1259 OID 7673714)
+-- TOC entry 4412 (class 1259 OID 7673714)
 -- Name: index_answers_options_on_answer_id_and_option_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10853,7 +10856,7 @@ CREATE INDEX index_answers_options_on_answer_id_and_option_id ON public.vignette
 
 
 --
--- TOC entry 4412 (class 1259 OID 7673715)
+-- TOC entry 4413 (class 1259 OID 7673715)
 -- Name: index_answers_options_on_option_id_and_answer_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10861,7 +10864,7 @@ CREATE INDEX index_answers_options_on_option_id_and_answer_id ON public.vignette
 
 
 --
--- TOC entry 4103 (class 1259 OID 7673716)
+-- TOC entry 4104 (class 1259 OID 7673716)
 -- Name: index_assignments_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10869,7 +10872,7 @@ CREATE INDEX index_assignments_on_lecture_id ON public.assignments USING btree (
 
 
 --
--- TOC entry 4104 (class 1259 OID 7673717)
+-- TOC entry 4105 (class 1259 OID 7673717)
 -- Name: index_assignments_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10877,7 +10880,7 @@ CREATE INDEX index_assignments_on_medium_id ON public.assignments USING btree (m
 
 
 --
--- TOC entry 4107 (class 1259 OID 7673718)
+-- TOC entry 4108 (class 1259 OID 7673718)
 -- Name: index_chapters_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10885,7 +10888,7 @@ CREATE INDEX index_chapters_on_lecture_id ON public.chapters USING btree (lectur
 
 
 --
--- TOC entry 4110 (class 1259 OID 7673719)
+-- TOC entry 4111 (class 1259 OID 7673719)
 -- Name: index_claims_on_claimable; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10893,7 +10896,7 @@ CREATE INDEX index_claims_on_claimable ON public.claims USING btree (claimable_t
 
 
 --
--- TOC entry 4111 (class 1259 OID 7673720)
+-- TOC entry 4112 (class 1259 OID 7673720)
 -- Name: index_claims_on_redemption_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10901,7 +10904,7 @@ CREATE INDEX index_claims_on_redemption_id ON public.claims USING btree (redempt
 
 
 --
--- TOC entry 4517 (class 1259 OID 7674714)
+-- TOC entry 4518 (class 1259 OID 7674714)
 -- Name: index_cohort_memberships_on_cohort_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10909,7 +10912,7 @@ CREATE INDEX index_cohort_memberships_on_cohort_id ON public.cohort_memberships 
 
 
 --
--- TOC entry 4518 (class 1259 OID 7674715)
+-- TOC entry 4519 (class 1259 OID 7674715)
 -- Name: index_cohort_memberships_on_source_campaign_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10917,7 +10920,7 @@ CREATE INDEX index_cohort_memberships_on_source_campaign_id ON public.cohort_mem
 
 
 --
--- TOC entry 4519 (class 1259 OID 7674713)
+-- TOC entry 4520 (class 1259 OID 7674713)
 -- Name: index_cohort_memberships_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10925,7 +10928,7 @@ CREATE INDEX index_cohort_memberships_on_user_id ON public.cohort_memberships US
 
 
 --
--- TOC entry 4520 (class 1259 OID 7674716)
+-- TOC entry 4521 (class 1259 OID 7674716)
 -- Name: index_cohort_memberships_on_user_id_and_cohort_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10933,7 +10936,7 @@ CREATE UNIQUE INDEX index_cohort_memberships_on_user_id_and_cohort_id ON public.
 
 
 --
--- TOC entry 4499 (class 1259 OID 7674626)
+-- TOC entry 4500 (class 1259 OID 7674626)
 -- Name: index_cohorts_on_context; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10941,7 +10944,7 @@ CREATE INDEX index_cohorts_on_context ON public.cohorts USING btree (context_typ
 
 
 --
--- TOC entry 4500 (class 1259 OID 7674744)
+-- TOC entry 4501 (class 1259 OID 7674744)
 -- Name: index_cohorts_on_context_and_title_unique; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10949,7 +10952,7 @@ CREATE UNIQUE INDEX index_cohorts_on_context_and_title_unique ON public.cohorts 
 
 
 --
--- TOC entry 4501 (class 1259 OID 7674741)
+-- TOC entry 4502 (class 1259 OID 7674741)
 -- Name: index_cohorts_on_self_materialization_mode; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10957,7 +10960,7 @@ CREATE INDEX index_cohorts_on_self_materialization_mode ON public.cohorts USING 
 
 
 --
--- TOC entry 4114 (class 1259 OID 7673722)
+-- TOC entry 4115 (class 1259 OID 7673722)
 -- Name: index_commontator_comments_on_c_id_and_c_type_and_t_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10965,7 +10968,7 @@ CREATE INDEX index_commontator_comments_on_c_id_and_c_type_and_t_id ON public.co
 
 
 --
--- TOC entry 4115 (class 1259 OID 7673723)
+-- TOC entry 4116 (class 1259 OID 7673723)
 -- Name: index_commontator_comments_on_cached_votes_down; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10973,7 +10976,7 @@ CREATE INDEX index_commontator_comments_on_cached_votes_down ON public.commontat
 
 
 --
--- TOC entry 4116 (class 1259 OID 7673724)
+-- TOC entry 4117 (class 1259 OID 7673724)
 -- Name: index_commontator_comments_on_cached_votes_up; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10981,7 +10984,7 @@ CREATE INDEX index_commontator_comments_on_cached_votes_up ON public.commontator
 
 
 --
--- TOC entry 4117 (class 1259 OID 7673725)
+-- TOC entry 4118 (class 1259 OID 7673725)
 -- Name: index_commontator_comments_on_editor_type_and_editor_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10989,7 +10992,7 @@ CREATE INDEX index_commontator_comments_on_editor_type_and_editor_id ON public.c
 
 
 --
--- TOC entry 4118 (class 1259 OID 7673726)
+-- TOC entry 4119 (class 1259 OID 7673726)
 -- Name: index_commontator_comments_on_parent_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -10997,7 +11000,7 @@ CREATE INDEX index_commontator_comments_on_parent_id ON public.commontator_comme
 
 
 --
--- TOC entry 4119 (class 1259 OID 7673727)
+-- TOC entry 4120 (class 1259 OID 7673727)
 -- Name: index_commontator_comments_on_thread_id_and_created_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11005,7 +11008,7 @@ CREATE INDEX index_commontator_comments_on_thread_id_and_created_at ON public.co
 
 
 --
--- TOC entry 4122 (class 1259 OID 7673728)
+-- TOC entry 4123 (class 1259 OID 7673728)
 -- Name: index_commontator_subscriptions_on_s_id_and_s_type_and_t_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11013,7 +11016,7 @@ CREATE UNIQUE INDEX index_commontator_subscriptions_on_s_id_and_s_type_and_t_id 
 
 
 --
--- TOC entry 4123 (class 1259 OID 7673729)
+-- TOC entry 4124 (class 1259 OID 7673729)
 -- Name: index_commontator_subscriptions_on_thread_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11021,7 +11024,7 @@ CREATE INDEX index_commontator_subscriptions_on_thread_id ON public.commontator_
 
 
 --
--- TOC entry 4126 (class 1259 OID 7673730)
+-- TOC entry 4127 (class 1259 OID 7673730)
 -- Name: index_commontator_threads_on_c_id_and_c_type; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11029,7 +11032,7 @@ CREATE UNIQUE INDEX index_commontator_threads_on_c_id_and_c_type ON public.commo
 
 
 --
--- TOC entry 4127 (class 1259 OID 7673731)
+-- TOC entry 4128 (class 1259 OID 7673731)
 -- Name: index_commontator_threads_on_closer_type_and_closer_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11037,7 +11040,7 @@ CREATE INDEX index_commontator_threads_on_closer_type_and_closer_id ON public.co
 
 
 --
--- TOC entry 4130 (class 1259 OID 7673732)
+-- TOC entry 4131 (class 1259 OID 7673732)
 -- Name: index_course_self_joins_on_course_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11045,7 +11048,7 @@ CREATE INDEX index_course_self_joins_on_course_id ON public.course_self_joins US
 
 
 --
--- TOC entry 4131 (class 1259 OID 7673733)
+-- TOC entry 4132 (class 1259 OID 7673733)
 -- Name: index_course_self_joins_on_course_id_and_preceding_course_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11053,7 +11056,7 @@ CREATE UNIQUE INDEX index_course_self_joins_on_course_id_and_preceding_course_id
 
 
 --
--- TOC entry 4132 (class 1259 OID 7673734)
+-- TOC entry 4133 (class 1259 OID 7673734)
 -- Name: index_course_self_joins_on_preceding_course_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11061,7 +11064,7 @@ CREATE INDEX index_course_self_joins_on_preceding_course_id ON public.course_sel
 
 
 --
--- TOC entry 4135 (class 1259 OID 7673735)
+-- TOC entry 4136 (class 1259 OID 7673735)
 -- Name: index_course_tag_joins_on_course_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11069,7 +11072,7 @@ CREATE INDEX index_course_tag_joins_on_course_id ON public.course_tag_joins USIN
 
 
 --
--- TOC entry 4136 (class 1259 OID 7673736)
+-- TOC entry 4137 (class 1259 OID 7673736)
 -- Name: index_course_tag_joins_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11077,7 +11080,7 @@ CREATE INDEX index_course_tag_joins_on_tag_id ON public.course_tag_joins USING b
 
 
 --
--- TOC entry 4139 (class 1259 OID 7674366)
+-- TOC entry 4140 (class 1259 OID 7674366)
 -- Name: index_courses_on_short_title_trgm; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11085,7 +11088,7 @@ CREATE INDEX index_courses_on_short_title_trgm ON public.courses USING gin (shor
 
 
 --
--- TOC entry 4140 (class 1259 OID 7674350)
+-- TOC entry 4141 (class 1259 OID 7674350)
 -- Name: index_courses_on_term_independent; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11093,7 +11096,7 @@ CREATE INDEX index_courses_on_term_independent ON public.courses USING btree (te
 
 
 --
--- TOC entry 4141 (class 1259 OID 7674346)
+-- TOC entry 4142 (class 1259 OID 7674346)
 -- Name: index_courses_on_title_trigram; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11101,7 +11104,7 @@ CREATE INDEX index_courses_on_title_trigram ON public.courses USING gin (title p
 
 
 --
--- TOC entry 4142 (class 1259 OID 7674347)
+-- TOC entry 4143 (class 1259 OID 7674347)
 -- Name: index_courses_on_title_tsearch; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11109,7 +11112,7 @@ CREATE INDEX index_courses_on_title_tsearch ON public.courses USING gin (to_tsve
 
 
 --
--- TOC entry 4145 (class 1259 OID 7673737)
+-- TOC entry 4146 (class 1259 OID 7673737)
 -- Name: index_division_course_joins_on_course_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11117,7 +11120,7 @@ CREATE INDEX index_division_course_joins_on_course_id ON public.division_course_
 
 
 --
--- TOC entry 4146 (class 1259 OID 7673738)
+-- TOC entry 4147 (class 1259 OID 7673738)
 -- Name: index_division_course_joins_on_division_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11125,7 +11128,7 @@ CREATE INDEX index_division_course_joins_on_division_id ON public.division_cours
 
 
 --
--- TOC entry 4149 (class 1259 OID 7673739)
+-- TOC entry 4150 (class 1259 OID 7673739)
 -- Name: index_division_translations_on_division_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11133,7 +11136,7 @@ CREATE INDEX index_division_translations_on_division_id ON public.division_trans
 
 
 --
--- TOC entry 4150 (class 1259 OID 7673740)
+-- TOC entry 4151 (class 1259 OID 7673740)
 -- Name: index_division_translations_on_locale; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11141,7 +11144,7 @@ CREATE INDEX index_division_translations_on_locale ON public.division_translatio
 
 
 --
--- TOC entry 4153 (class 1259 OID 7673741)
+-- TOC entry 4154 (class 1259 OID 7673741)
 -- Name: index_divisions_on_program_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11149,7 +11152,7 @@ CREATE INDEX index_divisions_on_program_id ON public.divisions USING btree (prog
 
 
 --
--- TOC entry 4160 (class 1259 OID 7673742)
+-- TOC entry 4161 (class 1259 OID 7673742)
 -- Name: index_feedbacks_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11157,7 +11160,7 @@ CREATE INDEX index_feedbacks_on_user_id ON public.feedbacks USING btree (user_id
 
 
 --
--- TOC entry 4493 (class 1259 OID 7674590)
+-- TOC entry 4494 (class 1259 OID 7674590)
 -- Name: index_flipper_features_on_key; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11165,7 +11168,7 @@ CREATE UNIQUE INDEX index_flipper_features_on_key ON public.flipper_features USI
 
 
 --
--- TOC entry 4496 (class 1259 OID 7674605)
+-- TOC entry 4497 (class 1259 OID 7674605)
 -- Name: index_flipper_gates_on_feature_key_and_key_and_value; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11173,7 +11176,7 @@ CREATE UNIQUE INDEX index_flipper_gates_on_feature_key_and_key_and_value ON publ
 
 
 --
--- TOC entry 4163 (class 1259 OID 7673743)
+-- TOC entry 4164 (class 1259 OID 7673743)
 -- Name: index_friendly_id_slugs_on_slug_and_sluggable_type; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11181,7 +11184,7 @@ CREATE INDEX index_friendly_id_slugs_on_slug_and_sluggable_type ON public.friend
 
 
 --
--- TOC entry 4164 (class 1259 OID 7673744)
+-- TOC entry 4165 (class 1259 OID 7673744)
 -- Name: index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11189,7 +11192,7 @@ CREATE UNIQUE INDEX index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope
 
 
 --
--- TOC entry 4165 (class 1259 OID 7673745)
+-- TOC entry 4166 (class 1259 OID 7673745)
 -- Name: index_friendly_id_slugs_on_sluggable_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11197,7 +11200,7 @@ CREATE INDEX index_friendly_id_slugs_on_sluggable_id ON public.friendly_id_slugs
 
 
 --
--- TOC entry 4166 (class 1259 OID 7673746)
+-- TOC entry 4167 (class 1259 OID 7673746)
 -- Name: index_friendly_id_slugs_on_sluggable_type; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11205,7 +11208,7 @@ CREATE INDEX index_friendly_id_slugs_on_sluggable_type ON public.friendly_id_slu
 
 
 --
--- TOC entry 4169 (class 1259 OID 7673747)
+-- TOC entry 4170 (class 1259 OID 7673747)
 -- Name: index_imports_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11213,7 +11216,7 @@ CREATE INDEX index_imports_on_medium_id ON public.imports USING btree (medium_id
 
 
 --
--- TOC entry 4170 (class 1259 OID 7673748)
+-- TOC entry 4171 (class 1259 OID 7673748)
 -- Name: index_imports_on_teachable_type_and_teachable_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11221,7 +11224,7 @@ CREATE INDEX index_imports_on_teachable_type_and_teachable_id ON public.imports 
 
 
 --
--- TOC entry 4171 (class 1259 OID 7673749)
+-- TOC entry 4172 (class 1259 OID 7673749)
 -- Name: index_item_self_joins_on_item_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11229,7 +11232,7 @@ CREATE INDEX index_item_self_joins_on_item_id ON public.item_self_joins USING bt
 
 
 --
--- TOC entry 4172 (class 1259 OID 7673750)
+-- TOC entry 4173 (class 1259 OID 7673750)
 -- Name: index_item_self_joins_on_related_item_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11237,7 +11240,7 @@ CREATE INDEX index_item_self_joins_on_related_item_id ON public.item_self_joins 
 
 
 --
--- TOC entry 4175 (class 1259 OID 7673751)
+-- TOC entry 4176 (class 1259 OID 7673751)
 -- Name: index_items_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11245,7 +11248,7 @@ CREATE INDEX index_items_on_medium_id ON public.items USING btree (medium_id);
 
 
 --
--- TOC entry 4176 (class 1259 OID 7673752)
+-- TOC entry 4177 (class 1259 OID 7673752)
 -- Name: index_items_on_section_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11253,7 +11256,7 @@ CREATE INDEX index_items_on_section_id ON public.items USING btree (section_id);
 
 
 --
--- TOC entry 4509 (class 1259 OID 7674684)
+-- TOC entry 4510 (class 1259 OID 7674684)
 -- Name: index_lecture_memberships_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11261,7 +11264,7 @@ CREATE INDEX index_lecture_memberships_on_lecture_id ON public.lecture_membershi
 
 
 --
--- TOC entry 4510 (class 1259 OID 7674685)
+-- TOC entry 4511 (class 1259 OID 7674685)
 -- Name: index_lecture_memberships_on_source_campaign_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11269,7 +11272,7 @@ CREATE INDEX index_lecture_memberships_on_source_campaign_id ON public.lecture_m
 
 
 --
--- TOC entry 4511 (class 1259 OID 7674683)
+-- TOC entry 4512 (class 1259 OID 7674683)
 -- Name: index_lecture_memberships_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11277,7 +11280,7 @@ CREATE INDEX index_lecture_memberships_on_user_id ON public.lecture_memberships 
 
 
 --
--- TOC entry 4512 (class 1259 OID 7674686)
+-- TOC entry 4513 (class 1259 OID 7674686)
 -- Name: index_lecture_memberships_on_user_id_and_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11285,7 +11288,7 @@ CREATE UNIQUE INDEX index_lecture_memberships_on_user_id_and_lecture_id ON publi
 
 
 --
--- TOC entry 4179 (class 1259 OID 7673753)
+-- TOC entry 4180 (class 1259 OID 7673753)
 -- Name: index_lecture_user_joins_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11293,7 +11296,7 @@ CREATE INDEX index_lecture_user_joins_on_lecture_id ON public.lecture_user_joins
 
 
 --
--- TOC entry 4180 (class 1259 OID 7674574)
+-- TOC entry 4181 (class 1259 OID 7674574)
 -- Name: index_lecture_user_joins_on_lecture_id_and_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11301,7 +11304,7 @@ CREATE UNIQUE INDEX index_lecture_user_joins_on_lecture_id_and_user_id ON public
 
 
 --
--- TOC entry 4181 (class 1259 OID 7673754)
+-- TOC entry 4182 (class 1259 OID 7673754)
 -- Name: index_lecture_user_joins_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11309,7 +11312,7 @@ CREATE INDEX index_lecture_user_joins_on_user_id ON public.lecture_user_joins US
 
 
 --
--- TOC entry 4184 (class 1259 OID 7674352)
+-- TOC entry 4185 (class 1259 OID 7674352)
 -- Name: index_lectures_on_released; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11317,7 +11320,7 @@ CREATE INDEX index_lectures_on_released ON public.lectures USING btree (released
 
 
 --
--- TOC entry 4185 (class 1259 OID 7674351)
+-- TOC entry 4186 (class 1259 OID 7674351)
 -- Name: index_lectures_on_sort; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11325,7 +11328,7 @@ CREATE INDEX index_lectures_on_sort ON public.lectures USING btree (sort);
 
 
 --
--- TOC entry 4186 (class 1259 OID 7673755)
+-- TOC entry 4187 (class 1259 OID 7673755)
 -- Name: index_lectures_on_teacher_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11333,7 +11336,7 @@ CREATE INDEX index_lectures_on_teacher_id ON public.lectures USING btree (teache
 
 
 --
--- TOC entry 4187 (class 1259 OID 7673756)
+-- TOC entry 4188 (class 1259 OID 7673756)
 -- Name: index_lectures_on_term_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11341,7 +11344,7 @@ CREATE INDEX index_lectures_on_term_id ON public.lectures USING btree (term_id);
 
 
 --
--- TOC entry 4190 (class 1259 OID 7673757)
+-- TOC entry 4191 (class 1259 OID 7673757)
 -- Name: index_lesson_section_joins_on_lesson_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11349,7 +11352,7 @@ CREATE INDEX index_lesson_section_joins_on_lesson_id ON public.lesson_section_jo
 
 
 --
--- TOC entry 4191 (class 1259 OID 7673758)
+-- TOC entry 4192 (class 1259 OID 7673758)
 -- Name: index_lesson_section_joins_on_section_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11357,7 +11360,7 @@ CREATE INDEX index_lesson_section_joins_on_section_id ON public.lesson_section_j
 
 
 --
--- TOC entry 4194 (class 1259 OID 7673759)
+-- TOC entry 4195 (class 1259 OID 7673759)
 -- Name: index_lesson_tag_joins_on_lesson_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11365,7 +11368,7 @@ CREATE INDEX index_lesson_tag_joins_on_lesson_id ON public.lesson_tag_joins USIN
 
 
 --
--- TOC entry 4195 (class 1259 OID 7673760)
+-- TOC entry 4196 (class 1259 OID 7673760)
 -- Name: index_lesson_tag_joins_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11373,7 +11376,7 @@ CREATE INDEX index_lesson_tag_joins_on_tag_id ON public.lesson_tag_joins USING b
 
 
 --
--- TOC entry 4198 (class 1259 OID 7673761)
+-- TOC entry 4199 (class 1259 OID 7673761)
 -- Name: index_lessons_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11381,7 +11384,7 @@ CREATE INDEX index_lessons_on_lecture_id ON public.lessons USING btree (lecture_
 
 
 --
--- TOC entry 4201 (class 1259 OID 7673762)
+-- TOC entry 4202 (class 1259 OID 7673762)
 -- Name: index_links_on_linked_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11389,7 +11392,7 @@ CREATE INDEX index_links_on_linked_medium_id ON public.links USING btree (linked
 
 
 --
--- TOC entry 4202 (class 1259 OID 7673763)
+-- TOC entry 4203 (class 1259 OID 7673763)
 -- Name: index_links_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11397,7 +11400,7 @@ CREATE INDEX index_links_on_medium_id ON public.links USING btree (medium_id);
 
 
 --
--- TOC entry 4203 (class 1259 OID 7673764)
+-- TOC entry 4204 (class 1259 OID 7673764)
 -- Name: index_links_on_medium_id_and_linked_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11405,7 +11408,7 @@ CREATE UNIQUE INDEX index_links_on_medium_id_and_linked_medium_id ON public.link
 
 
 --
--- TOC entry 4206 (class 1259 OID 7674356)
+-- TOC entry 4207 (class 1259 OID 7674356)
 -- Name: index_media_on_answers_count; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11413,7 +11416,7 @@ CREATE INDEX index_media_on_answers_count ON public.media USING btree (answers_c
 
 
 --
--- TOC entry 4207 (class 1259 OID 7674360)
+-- TOC entry 4208 (class 1259 OID 7674360)
 -- Name: index_media_on_content_trgm; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11421,7 +11424,7 @@ CREATE INDEX index_media_on_content_trgm ON public.media USING gin (content publ
 
 
 --
--- TOC entry 4208 (class 1259 OID 7674359)
+-- TOC entry 4209 (class 1259 OID 7674359)
 -- Name: index_media_on_description_trgm; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11429,7 +11432,7 @@ CREATE INDEX index_media_on_description_trgm ON public.media USING gin (descript
 
 
 --
--- TOC entry 4209 (class 1259 OID 7674361)
+-- TOC entry 4210 (class 1259 OID 7674361)
 -- Name: index_media_on_external_link_description_trgm; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11437,7 +11440,7 @@ CREATE INDEX index_media_on_external_link_description_trgm ON public.media USING
 
 
 --
--- TOC entry 4210 (class 1259 OID 7674358)
+-- TOC entry 4211 (class 1259 OID 7674358)
 -- Name: index_media_on_released; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11445,7 +11448,7 @@ CREATE INDEX index_media_on_released ON public.media USING btree (released);
 
 
 --
--- TOC entry 4211 (class 1259 OID 7674357)
+-- TOC entry 4212 (class 1259 OID 7674357)
 -- Name: index_media_on_sort; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11453,7 +11456,7 @@ CREATE INDEX index_media_on_sort ON public.media USING btree (sort);
 
 
 --
--- TOC entry 4212 (class 1259 OID 7673766)
+-- TOC entry 4213 (class 1259 OID 7673766)
 -- Name: index_media_on_teachable_type_and_teachable_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11461,7 +11464,7 @@ CREATE INDEX index_media_on_teachable_type_and_teachable_id ON public.media USIN
 
 
 --
--- TOC entry 4213 (class 1259 OID 7674362)
+-- TOC entry 4214 (class 1259 OID 7674362)
 -- Name: index_media_on_text_trgm; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11469,7 +11472,7 @@ CREATE INDEX index_media_on_text_trgm ON public.media USING gin (text public.gin
 
 
 --
--- TOC entry 4216 (class 1259 OID 7673767)
+-- TOC entry 4217 (class 1259 OID 7673767)
 -- Name: index_medium_tag_joins_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11477,7 +11480,7 @@ CREATE INDEX index_medium_tag_joins_on_medium_id ON public.medium_tag_joins USIN
 
 
 --
--- TOC entry 4217 (class 1259 OID 7673768)
+-- TOC entry 4218 (class 1259 OID 7673768)
 -- Name: index_medium_tag_joins_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11485,7 +11488,7 @@ CREATE INDEX index_medium_tag_joins_on_tag_id ON public.medium_tag_joins USING b
 
 
 --
--- TOC entry 4220 (class 1259 OID 7673769)
+-- TOC entry 4221 (class 1259 OID 7673769)
 -- Name: index_notifications_on_notifiable_id_and_notifiable_type; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11493,7 +11496,7 @@ CREATE INDEX index_notifications_on_notifiable_id_and_notifiable_type ON public.
 
 
 --
--- TOC entry 4221 (class 1259 OID 7673770)
+-- TOC entry 4222 (class 1259 OID 7673770)
 -- Name: index_notifications_on_recipient_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11501,7 +11504,7 @@ CREATE INDEX index_notifications_on_recipient_id ON public.notifications USING b
 
 
 --
--- TOC entry 4224 (class 1259 OID 7673771)
+-- TOC entry 4225 (class 1259 OID 7673771)
 -- Name: index_notions_on_aliased_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11509,7 +11512,7 @@ CREATE INDEX index_notions_on_aliased_tag_id ON public.notions USING btree (alia
 
 
 --
--- TOC entry 4225 (class 1259 OID 7673772)
+-- TOC entry 4226 (class 1259 OID 7673772)
 -- Name: index_notions_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11517,7 +11520,7 @@ CREATE INDEX index_notions_on_tag_id ON public.notions USING btree (tag_id);
 
 
 --
--- TOC entry 4226 (class 1259 OID 7674348)
+-- TOC entry 4227 (class 1259 OID 7674348)
 -- Name: index_notions_on_title_trigram; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11525,7 +11528,7 @@ CREATE INDEX index_notions_on_title_trigram ON public.notions USING gin (title p
 
 
 --
--- TOC entry 4227 (class 1259 OID 7674349)
+-- TOC entry 4228 (class 1259 OID 7674349)
 -- Name: index_notions_on_title_tsearch; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11533,7 +11536,7 @@ CREATE INDEX index_notions_on_title_tsearch ON public.notions USING gin (to_tsve
 
 
 --
--- TOC entry 4230 (class 1259 OID 7673773)
+-- TOC entry 4231 (class 1259 OID 7673773)
 -- Name: index_program_translations_on_locale; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11541,7 +11544,7 @@ CREATE INDEX index_program_translations_on_locale ON public.program_translations
 
 
 --
--- TOC entry 4231 (class 1259 OID 7673774)
+-- TOC entry 4232 (class 1259 OID 7673774)
 -- Name: index_program_translations_on_program_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11549,7 +11552,7 @@ CREATE INDEX index_program_translations_on_program_id ON public.program_translat
 
 
 --
--- TOC entry 4234 (class 1259 OID 7673775)
+-- TOC entry 4235 (class 1259 OID 7673775)
 -- Name: index_programs_on_subject_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11557,7 +11560,7 @@ CREATE INDEX index_programs_on_subject_id ON public.programs USING btree (subjec
 
 
 --
--- TOC entry 4237 (class 1259 OID 7673776)
+-- TOC entry 4238 (class 1259 OID 7673776)
 -- Name: index_quiz_certificates_on_quiz_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11565,7 +11568,7 @@ CREATE INDEX index_quiz_certificates_on_quiz_id ON public.quiz_certificates USIN
 
 
 --
--- TOC entry 4238 (class 1259 OID 7673777)
+-- TOC entry 4239 (class 1259 OID 7673777)
 -- Name: index_quiz_certificates_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11573,7 +11576,7 @@ CREATE INDEX index_quiz_certificates_on_user_id ON public.quiz_certificates USIN
 
 
 --
--- TOC entry 4243 (class 1259 OID 7673778)
+-- TOC entry 4244 (class 1259 OID 7673778)
 -- Name: index_redemptions_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11581,7 +11584,7 @@ CREATE INDEX index_redemptions_on_user_id ON public.redemptions USING btree (use
 
 
 --
--- TOC entry 4244 (class 1259 OID 7673779)
+-- TOC entry 4245 (class 1259 OID 7673779)
 -- Name: index_redemptions_on_voucher_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11589,7 +11592,7 @@ CREATE INDEX index_redemptions_on_voucher_id ON public.redemptions USING btree (
 
 
 --
--- TOC entry 4247 (class 1259 OID 7673780)
+-- TOC entry 4248 (class 1259 OID 7673780)
 -- Name: index_referrals_on_item_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11597,7 +11600,7 @@ CREATE INDEX index_referrals_on_item_id ON public.referrals USING btree (item_id
 
 
 --
--- TOC entry 4248 (class 1259 OID 7673781)
+-- TOC entry 4249 (class 1259 OID 7673781)
 -- Name: index_referrals_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11605,7 +11608,7 @@ CREATE INDEX index_referrals_on_medium_id ON public.referrals USING btree (mediu
 
 
 --
--- TOC entry 4473 (class 1259 OID 7674548)
+-- TOC entry 4474 (class 1259 OID 7674548)
 -- Name: index_reg_user_regs_on_campaign_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11613,7 +11616,7 @@ CREATE INDEX index_reg_user_regs_on_campaign_id ON public.registration_user_regi
 
 
 --
--- TOC entry 4474 (class 1259 OID 7674759)
+-- TOC entry 4475 (class 1259 OID 7674759)
 -- Name: index_reg_user_regs_on_rejection_overridden_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11621,7 +11624,7 @@ CREATE INDEX index_reg_user_regs_on_rejection_overridden_at ON public.registrati
 
 
 --
--- TOC entry 4475 (class 1259 OID 7674748)
+-- TOC entry 4476 (class 1259 OID 7674748)
 -- Name: index_reg_user_regs_unique_exclusive_assignment_unranked; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11629,7 +11632,7 @@ CREATE UNIQUE INDEX index_reg_user_regs_unique_exclusive_assignment_unranked ON 
 
 
 --
--- TOC entry 4476 (class 1259 OID 7674749)
+-- TOC entry 4477 (class 1259 OID 7674749)
 -- Name: index_reg_user_regs_unique_item_user; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11637,7 +11640,7 @@ CREATE UNIQUE INDEX index_reg_user_regs_unique_item_user ON public.registration_
 
 
 --
--- TOC entry 4477 (class 1259 OID 7674550)
+-- TOC entry 4478 (class 1259 OID 7674550)
 -- Name: index_reg_user_regs_unique_ranked; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11645,7 +11648,7 @@ CREATE UNIQUE INDEX index_reg_user_regs_unique_ranked ON public.registration_use
 
 
 --
--- TOC entry 4464 (class 1259 OID 7674391)
+-- TOC entry 4465 (class 1259 OID 7674391)
 -- Name: index_registration_campaigns_on_allocation_mode; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11653,7 +11656,7 @@ CREATE INDEX index_registration_campaigns_on_allocation_mode ON public.registrat
 
 
 --
--- TOC entry 4465 (class 1259 OID 7674389)
+-- TOC entry 4466 (class 1259 OID 7674389)
 -- Name: index_registration_campaigns_on_campaignable; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11661,7 +11664,7 @@ CREATE INDEX index_registration_campaigns_on_campaignable ON public.registration
 
 
 --
--- TOC entry 4466 (class 1259 OID 7674390)
+-- TOC entry 4467 (class 1259 OID 7674390)
 -- Name: index_registration_campaigns_on_status; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11669,7 +11672,7 @@ CREATE INDEX index_registration_campaigns_on_status ON public.registration_campa
 
 
 --
--- TOC entry 4469 (class 1259 OID 7674518)
+-- TOC entry 4470 (class 1259 OID 7674518)
 -- Name: index_registration_items_on_registration_campaign_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11677,7 +11680,7 @@ CREATE INDEX index_registration_items_on_registration_campaign_id ON public.regi
 
 
 --
--- TOC entry 4470 (class 1259 OID 7674608)
+-- TOC entry 4471 (class 1259 OID 7674608)
 -- Name: index_registration_items_on_unique_registerable; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11685,7 +11688,7 @@ CREATE UNIQUE INDEX index_registration_items_on_unique_registerable ON public.re
 
 
 --
--- TOC entry 4484 (class 1259 OID 7674479)
+-- TOC entry 4485 (class 1259 OID 7674479)
 -- Name: index_registration_policies_on_active; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11693,7 +11696,7 @@ CREATE INDEX index_registration_policies_on_active ON public.registration_polici
 
 
 --
--- TOC entry 4485 (class 1259 OID 7674477)
+-- TOC entry 4486 (class 1259 OID 7674477)
 -- Name: index_registration_policies_on_kind; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11701,7 +11704,7 @@ CREATE INDEX index_registration_policies_on_kind ON public.registration_policies
 
 
 --
--- TOC entry 4486 (class 1259 OID 7674478)
+-- TOC entry 4487 (class 1259 OID 7674478)
 -- Name: index_registration_policies_on_phase; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11709,7 +11712,7 @@ CREATE INDEX index_registration_policies_on_phase ON public.registration_policie
 
 
 --
--- TOC entry 4487 (class 1259 OID 7674534)
+-- TOC entry 4488 (class 1259 OID 7674534)
 -- Name: index_registration_policies_on_registration_campaign_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11717,7 +11720,7 @@ CREATE INDEX index_registration_policies_on_registration_campaign_id ON public.r
 
 
 --
--- TOC entry 4488 (class 1259 OID 7674576)
+-- TOC entry 4489 (class 1259 OID 7674576)
 -- Name: index_registration_policies_position; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11725,7 +11728,7 @@ CREATE INDEX index_registration_policies_position ON public.registration_policie
 
 
 --
--- TOC entry 4521 (class 1259 OID 7674797)
+-- TOC entry 4522 (class 1259 OID 7674797)
 -- Name: index_registration_student_messages_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11733,7 +11736,7 @@ CREATE INDEX index_registration_student_messages_on_lecture_id ON public.registr
 
 
 --
--- TOC entry 4522 (class 1259 OID 7674798)
+-- TOC entry 4523 (class 1259 OID 7674798)
 -- Name: index_registration_student_messages_on_sender_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11741,7 +11744,7 @@ CREATE INDEX index_registration_student_messages_on_sender_id ON public.registra
 
 
 --
--- TOC entry 4478 (class 1259 OID 7674549)
+-- TOC entry 4479 (class 1259 OID 7674549)
 -- Name: index_registration_user_registrations_on_registration_item_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11749,7 +11752,7 @@ CREATE INDEX index_registration_user_registrations_on_registration_item_id ON pu
 
 
 --
--- TOC entry 4479 (class 1259 OID 7674761)
+-- TOC entry 4480 (class 1259 OID 7674761)
 -- Name: index_registration_user_registrations_on_rejection_policy_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11757,7 +11760,7 @@ CREATE INDEX index_registration_user_registrations_on_rejection_policy_id ON pub
 
 
 --
--- TOC entry 4480 (class 1259 OID 7674450)
+-- TOC entry 4481 (class 1259 OID 7674450)
 -- Name: index_registration_user_registrations_on_status; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11765,7 +11768,7 @@ CREATE INDEX index_registration_user_registrations_on_status ON public.registrat
 
 
 --
--- TOC entry 4481 (class 1259 OID 7674446)
+-- TOC entry 4482 (class 1259 OID 7674446)
 -- Name: index_registration_user_registrations_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11773,7 +11776,7 @@ CREATE INDEX index_registration_user_registrations_on_user_id ON public.registra
 
 
 --
--- TOC entry 4251 (class 1259 OID 7673782)
+-- TOC entry 4252 (class 1259 OID 7673782)
 -- Name: index_relations_on_related_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11781,7 +11784,7 @@ CREATE INDEX index_relations_on_related_tag_id ON public.relations USING btree (
 
 
 --
--- TOC entry 4252 (class 1259 OID 7673783)
+-- TOC entry 4253 (class 1259 OID 7673783)
 -- Name: index_relations_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11789,7 +11792,7 @@ CREATE INDEX index_relations_on_tag_id ON public.relations USING btree (tag_id);
 
 
 --
--- TOC entry 4253 (class 1259 OID 7673784)
+-- TOC entry 4254 (class 1259 OID 7673784)
 -- Name: index_relations_on_tag_id_and_related_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11797,7 +11800,7 @@ CREATE UNIQUE INDEX index_relations_on_tag_id_and_related_tag_id ON public.relat
 
 
 --
--- TOC entry 4258 (class 1259 OID 7673785)
+-- TOC entry 4259 (class 1259 OID 7673785)
 -- Name: index_section_tag_joins_on_section_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11805,7 +11808,7 @@ CREATE INDEX index_section_tag_joins_on_section_id ON public.section_tag_joins U
 
 
 --
--- TOC entry 4259 (class 1259 OID 7673786)
+-- TOC entry 4260 (class 1259 OID 7673786)
 -- Name: index_section_tag_joins_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11813,7 +11816,7 @@ CREATE INDEX index_section_tag_joins_on_tag_id ON public.section_tag_joins USING
 
 
 --
--- TOC entry 4262 (class 1259 OID 7673787)
+-- TOC entry 4263 (class 1259 OID 7673787)
 -- Name: index_sections_on_chapter_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11821,7 +11824,7 @@ CREATE INDEX index_sections_on_chapter_id ON public.sections USING btree (chapte
 
 
 --
--- TOC entry 4263 (class 1259 OID 7674365)
+-- TOC entry 4264 (class 1259 OID 7674365)
 -- Name: index_sections_on_title_trgm; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11829,7 +11832,7 @@ CREATE INDEX index_sections_on_title_trgm ON public.sections USING gin (title pu
 
 
 --
--- TOC entry 4266 (class 1259 OID 7674717)
+-- TOC entry 4267 (class 1259 OID 7674717)
 -- Name: index_speaker_talk_joins_on_source_campaign_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11837,7 +11840,7 @@ CREATE INDEX index_speaker_talk_joins_on_source_campaign_id ON public.speaker_ta
 
 
 --
--- TOC entry 4267 (class 1259 OID 7673788)
+-- TOC entry 4268 (class 1259 OID 7673788)
 -- Name: index_speaker_talk_joins_on_speaker_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11845,7 +11848,7 @@ CREATE INDEX index_speaker_talk_joins_on_speaker_id ON public.speaker_talk_joins
 
 
 --
--- TOC entry 4268 (class 1259 OID 7673789)
+-- TOC entry 4269 (class 1259 OID 7673789)
 -- Name: index_speaker_talk_joins_on_talk_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11853,7 +11856,7 @@ CREATE INDEX index_speaker_talk_joins_on_talk_id ON public.speaker_talk_joins US
 
 
 --
--- TOC entry 4269 (class 1259 OID 7674723)
+-- TOC entry 4270 (class 1259 OID 7674723)
 -- Name: index_speaker_talk_joins_on_talk_id_and_speaker_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11861,7 +11864,7 @@ CREATE UNIQUE INDEX index_speaker_talk_joins_on_talk_id_and_speaker_id ON public
 
 
 --
--- TOC entry 4272 (class 1259 OID 7673790)
+-- TOC entry 4273 (class 1259 OID 7673790)
 -- Name: index_subject_translations_on_locale; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11869,7 +11872,7 @@ CREATE INDEX index_subject_translations_on_locale ON public.subject_translations
 
 
 --
--- TOC entry 4273 (class 1259 OID 7673791)
+-- TOC entry 4274 (class 1259 OID 7673791)
 -- Name: index_subject_translations_on_subject_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11877,7 +11880,7 @@ CREATE INDEX index_subject_translations_on_subject_id ON public.subject_translat
 
 
 --
--- TOC entry 4278 (class 1259 OID 7673792)
+-- TOC entry 4279 (class 1259 OID 7673792)
 -- Name: index_submissions_on_assignment_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11885,7 +11888,7 @@ CREATE INDEX index_submissions_on_assignment_id ON public.submissions USING btre
 
 
 --
--- TOC entry 4279 (class 1259 OID 7673793)
+-- TOC entry 4280 (class 1259 OID 7673793)
 -- Name: index_submissions_on_token; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11893,7 +11896,7 @@ CREATE UNIQUE INDEX index_submissions_on_token ON public.submissions USING btree
 
 
 --
--- TOC entry 4280 (class 1259 OID 7673794)
+-- TOC entry 4281 (class 1259 OID 7673794)
 -- Name: index_submissions_on_tutorial_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11901,7 +11904,7 @@ CREATE INDEX index_submissions_on_tutorial_id ON public.submissions USING btree 
 
 
 --
--- TOC entry 4285 (class 1259 OID 7673795)
+-- TOC entry 4286 (class 1259 OID 7673795)
 -- Name: index_talk_tag_joins_on_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11909,7 +11912,7 @@ CREATE INDEX index_talk_tag_joins_on_tag_id ON public.talk_tag_joins USING btree
 
 
 --
--- TOC entry 4286 (class 1259 OID 7673796)
+-- TOC entry 4287 (class 1259 OID 7673796)
 -- Name: index_talk_tag_joins_on_talk_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11917,7 +11920,7 @@ CREATE INDEX index_talk_tag_joins_on_talk_id ON public.talk_tag_joins USING btre
 
 
 --
--- TOC entry 4289 (class 1259 OID 7673797)
+-- TOC entry 4290 (class 1259 OID 7673797)
 -- Name: index_talks_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11925,7 +11928,7 @@ CREATE INDEX index_talks_on_lecture_id ON public.talks USING btree (lecture_id);
 
 
 --
--- TOC entry 4290 (class 1259 OID 7674742)
+-- TOC entry 4291 (class 1259 OID 7674742)
 -- Name: index_talks_on_self_materialization_mode; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11933,7 +11936,7 @@ CREATE INDEX index_talks_on_self_materialization_mode ON public.talks USING btre
 
 
 --
--- TOC entry 4293 (class 1259 OID 7674353)
+-- TOC entry 4294 (class 1259 OID 7674353)
 -- Name: index_terms_on_year_and_season; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11941,7 +11944,7 @@ CREATE INDEX index_terms_on_year_and_season ON public.terms USING btree (year, s
 
 
 --
--- TOC entry 4296 (class 1259 OID 7673798)
+-- TOC entry 4297 (class 1259 OID 7673798)
 -- Name: index_thredded_categories_on_messageboard_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11949,7 +11952,7 @@ CREATE INDEX index_thredded_categories_on_messageboard_id ON public.thredded_cat
 
 
 --
--- TOC entry 4297 (class 1259 OID 7673799)
+-- TOC entry 4298 (class 1259 OID 7673799)
 -- Name: index_thredded_categories_on_messageboard_id_and_slug; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11957,7 +11960,7 @@ CREATE UNIQUE INDEX index_thredded_categories_on_messageboard_id_and_slug ON pub
 
 
 --
--- TOC entry 4306 (class 1259 OID 7673800)
+-- TOC entry 4307 (class 1259 OID 7673800)
 -- Name: index_thredded_messageboard_users_for_recently_active; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11965,7 +11968,7 @@ CREATE INDEX index_thredded_messageboard_users_for_recently_active ON public.thr
 
 
 --
--- TOC entry 4307 (class 1259 OID 7673801)
+-- TOC entry 4308 (class 1259 OID 7673801)
 -- Name: index_thredded_messageboard_users_primary; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11973,7 +11976,7 @@ CREATE UNIQUE INDEX index_thredded_messageboard_users_primary ON public.thredded
 
 
 --
--- TOC entry 4310 (class 1259 OID 7673802)
+-- TOC entry 4311 (class 1259 OID 7673802)
 -- Name: index_thredded_messageboards_on_messageboard_group_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11981,7 +11984,7 @@ CREATE INDEX index_thredded_messageboards_on_messageboard_group_id ON public.thr
 
 
 --
--- TOC entry 4311 (class 1259 OID 7673803)
+-- TOC entry 4312 (class 1259 OID 7673803)
 -- Name: index_thredded_messageboards_on_slug; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11989,7 +11992,7 @@ CREATE UNIQUE INDEX index_thredded_messageboards_on_slug ON public.thredded_mess
 
 
 --
--- TOC entry 4320 (class 1259 OID 7673804)
+-- TOC entry 4321 (class 1259 OID 7673804)
 -- Name: index_thredded_moderation_records_for_display; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11997,7 +12000,7 @@ CREATE INDEX index_thredded_moderation_records_for_display ON public.thredded_po
 
 
 --
--- TOC entry 4323 (class 1259 OID 7673805)
+-- TOC entry 4324 (class 1259 OID 7673805)
 -- Name: index_thredded_posts_for_display; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12005,7 +12008,7 @@ CREATE INDEX index_thredded_posts_for_display ON public.thredded_posts USING btr
 
 
 --
--- TOC entry 4324 (class 1259 OID 7673806)
+-- TOC entry 4325 (class 1259 OID 7673806)
 -- Name: index_thredded_posts_on_messageboard_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12013,7 +12016,7 @@ CREATE INDEX index_thredded_posts_on_messageboard_id ON public.thredded_posts US
 
 
 --
--- TOC entry 4325 (class 1259 OID 7673807)
+-- TOC entry 4326 (class 1259 OID 7673807)
 -- Name: index_thredded_posts_on_postable_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12021,7 +12024,7 @@ CREATE INDEX index_thredded_posts_on_postable_id ON public.thredded_posts USING 
 
 
 --
--- TOC entry 4326 (class 1259 OID 7673808)
+-- TOC entry 4327 (class 1259 OID 7673808)
 -- Name: index_thredded_posts_on_postable_id_and_created_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12029,7 +12032,7 @@ CREATE INDEX index_thredded_posts_on_postable_id_and_created_at ON public.thredd
 
 
 --
--- TOC entry 4327 (class 1259 OID 7673809)
+-- TOC entry 4328 (class 1259 OID 7673809)
 -- Name: index_thredded_posts_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12037,7 +12040,7 @@ CREATE INDEX index_thredded_posts_on_user_id ON public.thredded_posts USING btre
 
 
 --
--- TOC entry 4331 (class 1259 OID 7673810)
+-- TOC entry 4332 (class 1259 OID 7673810)
 -- Name: index_thredded_private_posts_on_postable_id_and_created_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12045,7 +12048,7 @@ CREATE INDEX index_thredded_private_posts_on_postable_id_and_created_at ON publi
 
 
 --
--- TOC entry 4334 (class 1259 OID 7673811)
+-- TOC entry 4335 (class 1259 OID 7673811)
 -- Name: index_thredded_private_topics_on_hash_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12053,7 +12056,7 @@ CREATE INDEX index_thredded_private_topics_on_hash_id ON public.thredded_private
 
 
 --
--- TOC entry 4335 (class 1259 OID 7673812)
+-- TOC entry 4336 (class 1259 OID 7673812)
 -- Name: index_thredded_private_topics_on_last_post_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12061,7 +12064,7 @@ CREATE INDEX index_thredded_private_topics_on_last_post_at ON public.thredded_pr
 
 
 --
--- TOC entry 4336 (class 1259 OID 7673813)
+-- TOC entry 4337 (class 1259 OID 7673813)
 -- Name: index_thredded_private_topics_on_slug; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12069,7 +12072,7 @@ CREATE UNIQUE INDEX index_thredded_private_topics_on_slug ON public.thredded_pri
 
 
 --
--- TOC entry 4339 (class 1259 OID 7673814)
+-- TOC entry 4340 (class 1259 OID 7673814)
 -- Name: index_thredded_private_users_on_private_topic_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12077,7 +12080,7 @@ CREATE INDEX index_thredded_private_users_on_private_topic_id ON public.thredded
 
 
 --
--- TOC entry 4340 (class 1259 OID 7673815)
+-- TOC entry 4341 (class 1259 OID 7673815)
 -- Name: index_thredded_private_users_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12085,7 +12088,7 @@ CREATE INDEX index_thredded_private_users_on_user_id ON public.thredded_private_
 
 
 --
--- TOC entry 4343 (class 1259 OID 7673816)
+-- TOC entry 4344 (class 1259 OID 7673816)
 -- Name: index_thredded_topic_categories_on_category_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12093,7 +12096,7 @@ CREATE INDEX index_thredded_topic_categories_on_category_id ON public.thredded_t
 
 
 --
--- TOC entry 4344 (class 1259 OID 7673817)
+-- TOC entry 4345 (class 1259 OID 7673817)
 -- Name: index_thredded_topic_categories_on_topic_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12101,7 +12104,7 @@ CREATE INDEX index_thredded_topic_categories_on_topic_id ON public.thredded_topi
 
 
 --
--- TOC entry 4347 (class 1259 OID 7673818)
+-- TOC entry 4348 (class 1259 OID 7673818)
 -- Name: index_thredded_topics_for_display; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12109,7 +12112,7 @@ CREATE INDEX index_thredded_topics_for_display ON public.thredded_topics USING b
 
 
 --
--- TOC entry 4348 (class 1259 OID 7673819)
+-- TOC entry 4349 (class 1259 OID 7673819)
 -- Name: index_thredded_topics_on_hash_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12117,7 +12120,7 @@ CREATE INDEX index_thredded_topics_on_hash_id ON public.thredded_topics USING bt
 
 
 --
--- TOC entry 4349 (class 1259 OID 7673820)
+-- TOC entry 4350 (class 1259 OID 7673820)
 -- Name: index_thredded_topics_on_last_post_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12125,7 +12128,7 @@ CREATE INDEX index_thredded_topics_on_last_post_at ON public.thredded_topics USI
 
 
 --
--- TOC entry 4350 (class 1259 OID 7673821)
+-- TOC entry 4351 (class 1259 OID 7673821)
 -- Name: index_thredded_topics_on_messageboard_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12133,7 +12136,7 @@ CREATE INDEX index_thredded_topics_on_messageboard_id ON public.thredded_topics 
 
 
 --
--- TOC entry 4351 (class 1259 OID 7673822)
+-- TOC entry 4352 (class 1259 OID 7673822)
 -- Name: index_thredded_topics_on_slug; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12141,7 +12144,7 @@ CREATE UNIQUE INDEX index_thredded_topics_on_slug ON public.thredded_topics USIN
 
 
 --
--- TOC entry 4352 (class 1259 OID 7673823)
+-- TOC entry 4353 (class 1259 OID 7673823)
 -- Name: index_thredded_topics_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12149,7 +12152,7 @@ CREATE INDEX index_thredded_topics_on_user_id ON public.thredded_topics USING bt
 
 
 --
--- TOC entry 4356 (class 1259 OID 7673824)
+-- TOC entry 4357 (class 1259 OID 7673824)
 -- Name: index_thredded_user_details_for_moderations; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12157,7 +12160,7 @@ CREATE INDEX index_thredded_user_details_for_moderations ON public.thredded_user
 
 
 --
--- TOC entry 4357 (class 1259 OID 7673825)
+-- TOC entry 4358 (class 1259 OID 7673825)
 -- Name: index_thredded_user_details_on_latest_activity_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12165,7 +12168,7 @@ CREATE INDEX index_thredded_user_details_on_latest_activity_at ON public.thredde
 
 
 --
--- TOC entry 4358 (class 1259 OID 7673826)
+-- TOC entry 4359 (class 1259 OID 7673826)
 -- Name: index_thredded_user_details_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12173,7 +12176,7 @@ CREATE UNIQUE INDEX index_thredded_user_details_on_user_id ON public.thredded_us
 
 
 --
--- TOC entry 4364 (class 1259 OID 7673827)
+-- TOC entry 4365 (class 1259 OID 7673827)
 -- Name: index_thredded_user_post_notifications_on_post_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12181,7 +12184,7 @@ CREATE INDEX index_thredded_user_post_notifications_on_post_id ON public.thredde
 
 
 --
--- TOC entry 4365 (class 1259 OID 7673828)
+-- TOC entry 4366 (class 1259 OID 7673828)
 -- Name: index_thredded_user_post_notifications_on_user_id_and_post_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12189,7 +12192,7 @@ CREATE UNIQUE INDEX index_thredded_user_post_notifications_on_user_id_and_post_i
 
 
 --
--- TOC entry 4368 (class 1259 OID 7673829)
+-- TOC entry 4369 (class 1259 OID 7673829)
 -- Name: index_thredded_user_preferences_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12197,7 +12200,7 @@ CREATE UNIQUE INDEX index_thredded_user_preferences_on_user_id ON public.thredde
 
 
 --
--- TOC entry 4377 (class 1259 OID 7673830)
+-- TOC entry 4378 (class 1259 OID 7673830)
 -- Name: index_thredded_user_topic_read_states_on_messageboard_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12205,7 +12208,7 @@ CREATE INDEX index_thredded_user_topic_read_states_on_messageboard_id ON public.
 
 
 --
--- TOC entry 4382 (class 1259 OID 7673831)
+-- TOC entry 4383 (class 1259 OID 7673831)
 -- Name: index_tutor_tutorial_joins_on_tutor_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12213,7 +12216,7 @@ CREATE INDEX index_tutor_tutorial_joins_on_tutor_id ON public.tutor_tutorial_joi
 
 
 --
--- TOC entry 4383 (class 1259 OID 7673832)
+-- TOC entry 4384 (class 1259 OID 7673832)
 -- Name: index_tutor_tutorial_joins_on_tutorial_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12221,7 +12224,7 @@ CREATE INDEX index_tutor_tutorial_joins_on_tutorial_id ON public.tutor_tutorial_
 
 
 --
--- TOC entry 4384 (class 1259 OID 7674575)
+-- TOC entry 4385 (class 1259 OID 7674575)
 -- Name: index_tutor_tutorial_joins_on_tutorial_id_and_tutor_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12229,7 +12232,7 @@ CREATE UNIQUE INDEX index_tutor_tutorial_joins_on_tutorial_id_and_tutor_id ON pu
 
 
 --
--- TOC entry 4502 (class 1259 OID 7674655)
+-- TOC entry 4503 (class 1259 OID 7674655)
 -- Name: index_tutorial_memberships_on_source_campaign_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12237,7 +12240,7 @@ CREATE INDEX index_tutorial_memberships_on_source_campaign_id ON public.tutorial
 
 
 --
--- TOC entry 4503 (class 1259 OID 7674654)
+-- TOC entry 4504 (class 1259 OID 7674654)
 -- Name: index_tutorial_memberships_on_tutorial_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12245,7 +12248,7 @@ CREATE INDEX index_tutorial_memberships_on_tutorial_id ON public.tutorial_member
 
 
 --
--- TOC entry 4504 (class 1259 OID 7674653)
+-- TOC entry 4505 (class 1259 OID 7674653)
 -- Name: index_tutorial_memberships_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12253,7 +12256,7 @@ CREATE INDEX index_tutorial_memberships_on_user_id ON public.tutorial_membership
 
 
 --
--- TOC entry 4505 (class 1259 OID 7674751)
+-- TOC entry 4506 (class 1259 OID 7674751)
 -- Name: index_tutorial_memberships_on_user_id_and_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12261,7 +12264,7 @@ CREATE UNIQUE INDEX index_tutorial_memberships_on_user_id_and_lecture_id ON publ
 
 
 --
--- TOC entry 4506 (class 1259 OID 7674656)
+-- TOC entry 4507 (class 1259 OID 7674656)
 -- Name: index_tutorial_memberships_on_user_id_and_tutorial_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12269,7 +12272,7 @@ CREATE UNIQUE INDEX index_tutorial_memberships_on_user_id_and_tutorial_id ON pub
 
 
 --
--- TOC entry 4387 (class 1259 OID 7673833)
+-- TOC entry 4388 (class 1259 OID 7673833)
 -- Name: index_tutorials_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12277,7 +12280,7 @@ CREATE INDEX index_tutorials_on_lecture_id ON public.tutorials USING btree (lect
 
 
 --
--- TOC entry 4388 (class 1259 OID 7674743)
+-- TOC entry 4389 (class 1259 OID 7674743)
 -- Name: index_tutorials_on_lecture_id_and_title_unique; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12285,7 +12288,7 @@ CREATE UNIQUE INDEX index_tutorials_on_lecture_id_and_title_unique ON public.tut
 
 
 --
--- TOC entry 4389 (class 1259 OID 7674740)
+-- TOC entry 4390 (class 1259 OID 7674740)
 -- Name: index_tutorials_on_self_materialization_mode; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12293,7 +12296,7 @@ CREATE INDEX index_tutorials_on_self_materialization_mode ON public.tutorials US
 
 
 --
--- TOC entry 4392 (class 1259 OID 7673834)
+-- TOC entry 4393 (class 1259 OID 7673834)
 -- Name: index_user_favorite_lecture_joins_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12301,7 +12304,7 @@ CREATE INDEX index_user_favorite_lecture_joins_on_lecture_id ON public.user_favo
 
 
 --
--- TOC entry 4393 (class 1259 OID 7673835)
+-- TOC entry 4394 (class 1259 OID 7673835)
 -- Name: index_user_favorite_lecture_joins_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12309,7 +12312,7 @@ CREATE INDEX index_user_favorite_lecture_joins_on_user_id ON public.user_favorit
 
 
 --
--- TOC entry 4396 (class 1259 OID 7673836)
+-- TOC entry 4397 (class 1259 OID 7673836)
 -- Name: index_user_submission_joins_on_submission_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12317,7 +12320,7 @@ CREATE INDEX index_user_submission_joins_on_submission_id ON public.user_submiss
 
 
 --
--- TOC entry 4397 (class 1259 OID 7673837)
+-- TOC entry 4398 (class 1259 OID 7673837)
 -- Name: index_user_submission_joins_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12325,7 +12328,7 @@ CREATE INDEX index_user_submission_joins_on_user_id ON public.user_submission_jo
 
 
 --
--- TOC entry 4400 (class 1259 OID 7673838)
+-- TOC entry 4401 (class 1259 OID 7673838)
 -- Name: index_users_on_confirmation_token; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12333,7 +12336,7 @@ CREATE UNIQUE INDEX index_users_on_confirmation_token ON public.users USING btre
 
 
 --
--- TOC entry 4401 (class 1259 OID 7673839)
+-- TOC entry 4402 (class 1259 OID 7673839)
 -- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12341,7 +12344,7 @@ CREATE UNIQUE INDEX index_users_on_email ON public.users USING btree (email);
 
 
 --
--- TOC entry 4402 (class 1259 OID 7673840)
+-- TOC entry 4403 (class 1259 OID 7673840)
 -- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12349,7 +12352,7 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON public.users USING bt
 
 
 --
--- TOC entry 4403 (class 1259 OID 7674801)
+-- TOC entry 4404 (class 1259 OID 7674801)
 -- Name: index_users_on_unlock_token; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12357,7 +12360,7 @@ CREATE UNIQUE INDEX index_users_on_unlock_token ON public.users USING btree (unl
 
 
 --
--- TOC entry 4406 (class 1259 OID 7673841)
+-- TOC entry 4407 (class 1259 OID 7673841)
 -- Name: index_vignettes_answers_on_vignettes_question_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12365,7 +12368,7 @@ CREATE INDEX index_vignettes_answers_on_vignettes_question_id ON public.vignette
 
 
 --
--- TOC entry 4407 (class 1259 OID 7673842)
+-- TOC entry 4408 (class 1259 OID 7673842)
 -- Name: index_vignettes_answers_on_vignettes_slide_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12373,7 +12376,7 @@ CREATE INDEX index_vignettes_answers_on_vignettes_slide_id ON public.vignettes_a
 
 
 --
--- TOC entry 4408 (class 1259 OID 7673843)
+-- TOC entry 4409 (class 1259 OID 7673843)
 -- Name: index_vignettes_answers_on_vignettes_user_answer_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12381,7 +12384,7 @@ CREATE INDEX index_vignettes_answers_on_vignettes_user_answer_id ON public.vigne
 
 
 --
--- TOC entry 4413 (class 1259 OID 7673844)
+-- TOC entry 4414 (class 1259 OID 7673844)
 -- Name: index_vignettes_codenames_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12389,7 +12392,7 @@ CREATE INDEX index_vignettes_codenames_on_lecture_id ON public.vignettes_codenam
 
 
 --
--- TOC entry 4414 (class 1259 OID 7673845)
+-- TOC entry 4415 (class 1259 OID 7673845)
 -- Name: index_vignettes_codenames_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12397,7 +12400,7 @@ CREATE INDEX index_vignettes_codenames_on_user_id ON public.vignettes_codenames 
 
 
 --
--- TOC entry 4417 (class 1259 OID 7673846)
+-- TOC entry 4418 (class 1259 OID 7673846)
 -- Name: index_vignettes_completion_messages_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12405,7 +12408,7 @@ CREATE INDEX index_vignettes_completion_messages_on_lecture_id ON public.vignett
 
 
 --
--- TOC entry 4420 (class 1259 OID 7673847)
+-- TOC entry 4421 (class 1259 OID 7673847)
 -- Name: index_vignettes_info_slides_on_vignettes_questionnaire_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12413,7 +12416,7 @@ CREATE INDEX index_vignettes_info_slides_on_vignettes_questionnaire_id ON public
 
 
 --
--- TOC entry 4425 (class 1259 OID 7673848)
+-- TOC entry 4426 (class 1259 OID 7673848)
 -- Name: index_vignettes_options_on_vignettes_question_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12421,7 +12424,7 @@ CREATE INDEX index_vignettes_options_on_vignettes_question_id ON public.vignette
 
 
 --
--- TOC entry 4428 (class 1259 OID 7673849)
+-- TOC entry 4429 (class 1259 OID 7673849)
 -- Name: index_vignettes_questionnaires_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12429,7 +12432,7 @@ CREATE INDEX index_vignettes_questionnaires_on_lecture_id ON public.vignettes_qu
 
 
 --
--- TOC entry 4431 (class 1259 OID 7673850)
+-- TOC entry 4432 (class 1259 OID 7673850)
 -- Name: index_vignettes_questions_on_vignettes_slide_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12437,7 +12440,7 @@ CREATE INDEX index_vignettes_questions_on_vignettes_slide_id ON public.vignettes
 
 
 --
--- TOC entry 4434 (class 1259 OID 7673851)
+-- TOC entry 4435 (class 1259 OID 7673851)
 -- Name: index_vignettes_slide_statistics_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12445,7 +12448,7 @@ CREATE INDEX index_vignettes_slide_statistics_on_user_id ON public.vignettes_sli
 
 
 --
--- TOC entry 4435 (class 1259 OID 7673852)
+-- TOC entry 4436 (class 1259 OID 7673852)
 -- Name: index_vignettes_slide_statistics_on_vignettes_answer_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12453,7 +12456,7 @@ CREATE INDEX index_vignettes_slide_statistics_on_vignettes_answer_id ON public.v
 
 
 --
--- TOC entry 4438 (class 1259 OID 7673853)
+-- TOC entry 4439 (class 1259 OID 7673853)
 -- Name: index_vignettes_slides_on_position; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12461,7 +12464,7 @@ CREATE INDEX index_vignettes_slides_on_position ON public.vignettes_slides USING
 
 
 --
--- TOC entry 4439 (class 1259 OID 7673854)
+-- TOC entry 4440 (class 1259 OID 7673854)
 -- Name: index_vignettes_slides_on_vignettes_questionnaire_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12469,7 +12472,7 @@ CREATE INDEX index_vignettes_slides_on_vignettes_questionnaire_id ON public.vign
 
 
 --
--- TOC entry 4442 (class 1259 OID 7673855)
+-- TOC entry 4443 (class 1259 OID 7673855)
 -- Name: index_vignettes_user_answers_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12477,7 +12480,7 @@ CREATE INDEX index_vignettes_user_answers_on_user_id ON public.vignettes_user_an
 
 
 --
--- TOC entry 4443 (class 1259 OID 7673856)
+-- TOC entry 4444 (class 1259 OID 7673856)
 -- Name: index_vignettes_user_answers_on_vignettes_questionnaire_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12485,7 +12488,7 @@ CREATE INDEX index_vignettes_user_answers_on_vignettes_questionnaire_id ON publi
 
 
 --
--- TOC entry 4446 (class 1259 OID 7673857)
+-- TOC entry 4447 (class 1259 OID 7673857)
 -- Name: index_votes_on_votable_id_and_votable_type_and_vote_scope; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12493,7 +12496,7 @@ CREATE INDEX index_votes_on_votable_id_and_votable_type_and_vote_scope ON public
 
 
 --
--- TOC entry 4447 (class 1259 OID 7673858)
+-- TOC entry 4448 (class 1259 OID 7673858)
 -- Name: index_votes_on_votable_type_and_votable_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12501,7 +12504,7 @@ CREATE INDEX index_votes_on_votable_type_and_votable_id ON public.votes USING bt
 
 
 --
--- TOC entry 4448 (class 1259 OID 7673859)
+-- TOC entry 4449 (class 1259 OID 7673859)
 -- Name: index_votes_on_voter_id_and_voter_type_and_vote_scope; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12509,7 +12512,7 @@ CREATE INDEX index_votes_on_voter_id_and_voter_type_and_vote_scope ON public.vot
 
 
 --
--- TOC entry 4449 (class 1259 OID 7673860)
+-- TOC entry 4450 (class 1259 OID 7673860)
 -- Name: index_votes_on_voter_type_and_voter_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12517,7 +12520,7 @@ CREATE INDEX index_votes_on_voter_type_and_voter_id ON public.votes USING btree 
 
 
 --
--- TOC entry 4452 (class 1259 OID 7673861)
+-- TOC entry 4453 (class 1259 OID 7673861)
 -- Name: index_vouchers_on_lecture_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12525,7 +12528,7 @@ CREATE INDEX index_vouchers_on_lecture_id ON public.vouchers USING btree (lectur
 
 
 --
--- TOC entry 4453 (class 1259 OID 7673862)
+-- TOC entry 4454 (class 1259 OID 7673862)
 -- Name: index_vouchers_on_secure_hash; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12533,7 +12536,7 @@ CREATE UNIQUE INDEX index_vouchers_on_secure_hash ON public.vouchers USING btree
 
 
 --
--- TOC entry 4456 (class 1259 OID 7673863)
+-- TOC entry 4457 (class 1259 OID 7673863)
 -- Name: index_watchlist_entries_on_medium_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12541,7 +12544,7 @@ CREATE INDEX index_watchlist_entries_on_medium_id ON public.watchlist_entries US
 
 
 --
--- TOC entry 4457 (class 1259 OID 7673864)
+-- TOC entry 4458 (class 1259 OID 7673864)
 -- Name: index_watchlist_entries_on_watchlist_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12549,7 +12552,7 @@ CREATE INDEX index_watchlist_entries_on_watchlist_id ON public.watchlist_entries
 
 
 --
--- TOC entry 4460 (class 1259 OID 7673865)
+-- TOC entry 4461 (class 1259 OID 7673865)
 -- Name: index_watchlists_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12557,7 +12560,7 @@ CREATE INDEX index_watchlists_on_user_id ON public.watchlists USING btree (user_
 
 
 --
--- TOC entry 4461 (class 1259 OID 7673866)
+-- TOC entry 4462 (class 1259 OID 7673866)
 -- Name: index_watchlists_on_watchlist_entry_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12565,7 +12568,7 @@ CREATE INDEX index_watchlists_on_watchlist_entry_id ON public.watchlists USING b
 
 
 --
--- TOC entry 4156 (class 1259 OID 7673867)
+-- TOC entry 4157 (class 1259 OID 7673867)
 -- Name: polymorphic_editable_idx; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12573,7 +12576,7 @@ CREATE INDEX polymorphic_editable_idx ON public.editable_user_joins USING btree 
 
 
 --
--- TOC entry 4157 (class 1259 OID 7673868)
+-- TOC entry 4158 (class 1259 OID 7673868)
 -- Name: polymorphic_many_to_many_idx; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12581,7 +12584,7 @@ CREATE INDEX polymorphic_many_to_many_idx ON public.editable_user_joins USING bt
 
 
 --
--- TOC entry 4298 (class 1259 OID 7673869)
+-- TOC entry 4299 (class 1259 OID 7673869)
 -- Name: thredded_categories_name_ci; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12589,7 +12592,7 @@ CREATE INDEX thredded_categories_name_ci ON public.thredded_categories USING btr
 
 
 --
--- TOC entry 4305 (class 1259 OID 7673870)
+-- TOC entry 4306 (class 1259 OID 7673870)
 -- Name: thredded_messageboard_notifications_for_followed_topics_unique; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12597,7 +12600,7 @@ CREATE UNIQUE INDEX thredded_messageboard_notifications_for_followed_topics_uniq
 
 
 --
--- TOC entry 4316 (class 1259 OID 7673871)
+-- TOC entry 4317 (class 1259 OID 7673871)
 -- Name: thredded_notifications_for_followed_topics_unique; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12605,7 +12608,7 @@ CREATE UNIQUE INDEX thredded_notifications_for_followed_topics_unique ON public.
 
 
 --
--- TOC entry 4319 (class 1259 OID 7673872)
+-- TOC entry 4320 (class 1259 OID 7673872)
 -- Name: thredded_notifications_for_private_topics_unique; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12613,7 +12616,7 @@ CREATE UNIQUE INDEX thredded_notifications_for_private_topics_unique ON public.t
 
 
 --
--- TOC entry 4328 (class 1259 OID 7673873)
+-- TOC entry 4329 (class 1259 OID 7673873)
 -- Name: thredded_posts_content_fts; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12621,7 +12624,7 @@ CREATE INDEX thredded_posts_content_fts ON public.thredded_posts USING gist (to_
 
 
 --
--- TOC entry 4355 (class 1259 OID 7673874)
+-- TOC entry 4356 (class 1259 OID 7673874)
 -- Name: thredded_topics_title_fts; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12629,7 +12632,7 @@ CREATE INDEX thredded_topics_title_fts ON public.thredded_topics USING gist (to_
 
 
 --
--- TOC entry 4363 (class 1259 OID 7673875)
+-- TOC entry 4364 (class 1259 OID 7673875)
 -- Name: thredded_user_messageboard_preferences_user_id_messageboard_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12637,7 +12640,7 @@ CREATE UNIQUE INDEX thredded_user_messageboard_preferences_user_id_messageboard_
 
 
 --
--- TOC entry 4373 (class 1259 OID 7673876)
+-- TOC entry 4374 (class 1259 OID 7673876)
 -- Name: thredded_user_private_topic_read_states_user_postable; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12645,7 +12648,7 @@ CREATE UNIQUE INDEX thredded_user_private_topic_read_states_user_postable ON pub
 
 
 --
--- TOC entry 4376 (class 1259 OID 7673877)
+-- TOC entry 4377 (class 1259 OID 7673877)
 -- Name: thredded_user_topic_follows_user_topic; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12653,7 +12656,7 @@ CREATE UNIQUE INDEX thredded_user_topic_follows_user_topic ON public.thredded_us
 
 
 --
--- TOC entry 4380 (class 1259 OID 7673878)
+-- TOC entry 4381 (class 1259 OID 7673878)
 -- Name: thredded_user_topic_read_states_user_messageboard; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12661,7 +12664,7 @@ CREATE INDEX thredded_user_topic_read_states_user_messageboard ON public.thredde
 
 
 --
--- TOC entry 4381 (class 1259 OID 7673879)
+-- TOC entry 4382 (class 1259 OID 7673879)
 -- Name: thredded_user_topic_read_states_user_postable; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -12669,7 +12672,7 @@ CREATE UNIQUE INDEX thredded_user_topic_read_states_user_postable ON public.thre
 
 
 --
--- TOC entry 4539 (class 2606 OID 7673880)
+-- TOC entry 4540 (class 2606 OID 7673880)
 -- Name: imports fk_rails_018d34d0a7; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12678,7 +12681,7 @@ ALTER TABLE ONLY public.imports
 
 
 --
--- TOC entry 4588 (class 2606 OID 7673885)
+-- TOC entry 4589 (class 2606 OID 7673885)
 -- Name: watchlist_entries fk_rails_021aafbf37; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12687,7 +12690,7 @@ ALTER TABLE ONLY public.watchlist_entries
 
 
 --
--- TOC entry 4576 (class 2606 OID 7673890)
+-- TOC entry 4577 (class 2606 OID 7673890)
 -- Name: vignettes_codenames fk_rails_02690186bc; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12696,7 +12699,7 @@ ALTER TABLE ONLY public.vignettes_codenames
 
 
 --
--- TOC entry 4555 (class 2606 OID 7674718)
+-- TOC entry 4556 (class 2606 OID 7674718)
 -- Name: speaker_talk_joins fk_rails_06579d230c; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12705,7 +12708,7 @@ ALTER TABLE ONLY public.speaker_talk_joins
 
 
 --
--- TOC entry 4563 (class 2606 OID 7673895)
+-- TOC entry 4564 (class 2606 OID 7673895)
 -- Name: thredded_messageboard_users fk_rails_06e42c62f5; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12714,7 +12717,7 @@ ALTER TABLE ONLY public.thredded_messageboard_users
 
 
 --
--- TOC entry 4590 (class 2606 OID 7673900)
+-- TOC entry 4591 (class 2606 OID 7673900)
 -- Name: watchlists fk_rails_0dc1a4cbcb; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12723,7 +12726,7 @@ ALTER TABLE ONLY public.watchlists
 
 
 --
--- TOC entry 4608 (class 2606 OID 7674787)
+-- TOC entry 4609 (class 2606 OID 7674787)
 -- Name: registration_student_messages fk_rails_11439afa9f; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12732,7 +12735,7 @@ ALTER TABLE ONLY public.registration_student_messages
 
 
 --
--- TOC entry 4562 (class 2606 OID 7673905)
+-- TOC entry 4563 (class 2606 OID 7673905)
 -- Name: talks fk_rails_1210911b58; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12741,7 +12744,7 @@ ALTER TABLE ONLY public.talks
 
 
 --
--- TOC entry 4572 (class 2606 OID 7673910)
+-- TOC entry 4573 (class 2606 OID 7673910)
 -- Name: user_submission_joins fk_rails_12d41a7e23; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12750,7 +12753,7 @@ ALTER TABLE ONLY public.user_submission_joins
 
 
 --
--- TOC entry 4551 (class 2606 OID 7673915)
+-- TOC entry 4552 (class 2606 OID 7673915)
 -- Name: redemptions fk_rails_14fa576d5b; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12759,7 +12762,7 @@ ALTER TABLE ONLY public.redemptions
 
 
 --
--- TOC entry 4581 (class 2606 OID 7673920)
+-- TOC entry 4582 (class 2606 OID 7673920)
 -- Name: vignettes_questions fk_rails_166147907b; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12768,7 +12771,7 @@ ALTER TABLE ONLY public.vignettes_questions
 
 
 --
--- TOC entry 4548 (class 2606 OID 7673925)
+-- TOC entry 4549 (class 2606 OID 7673925)
 -- Name: programs fk_rails_174715887a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12777,7 +12780,7 @@ ALTER TABLE ONLY public.programs
 
 
 --
--- TOC entry 4556 (class 2606 OID 7673930)
+-- TOC entry 4557 (class 2606 OID 7673930)
 -- Name: speaker_talk_joins fk_rails_1d337b4d3d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12786,7 +12789,7 @@ ALTER TABLE ONLY public.speaker_talk_joins
 
 
 --
--- TOC entry 4542 (class 2606 OID 7673935)
+-- TOC entry 4543 (class 2606 OID 7673935)
 -- Name: lecture_user_joins fk_rails_1e48112fae; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12795,7 +12798,7 @@ ALTER TABLE ONLY public.lecture_user_joins
 
 
 --
--- TOC entry 4593 (class 2606 OID 7674435)
+-- TOC entry 4594 (class 2606 OID 7674435)
 -- Name: registration_user_registrations fk_rails_2c25a6b50a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12804,7 +12807,7 @@ ALTER TABLE ONLY public.registration_user_registrations
 
 
 --
--- TOC entry 4531 (class 2606 OID 7673940)
+-- TOC entry 4532 (class 2606 OID 7673940)
 -- Name: assignments fk_rails_2d7bf5a691; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12813,7 +12816,7 @@ ALTER TABLE ONLY public.assignments
 
 
 --
--- TOC entry 4602 (class 2606 OID 7674668)
+-- TOC entry 4603 (class 2606 OID 7674668)
 -- Name: lecture_memberships fk_rails_32871c16bd; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12822,7 +12825,7 @@ ALTER TABLE ONLY public.lecture_memberships
 
 
 --
--- TOC entry 4589 (class 2606 OID 7673945)
+-- TOC entry 4590 (class 2606 OID 7673945)
 -- Name: watchlist_entries fk_rails_32f03600d9; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12831,7 +12834,7 @@ ALTER TABLE ONLY public.watchlist_entries
 
 
 --
--- TOC entry 4573 (class 2606 OID 7673950)
+-- TOC entry 4574 (class 2606 OID 7673950)
 -- Name: vignettes_answers fk_rails_341ebaf06f; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12840,7 +12843,7 @@ ALTER TABLE ONLY public.vignettes_answers
 
 
 --
--- TOC entry 4565 (class 2606 OID 7673955)
+-- TOC entry 4566 (class 2606 OID 7673955)
 -- Name: thredded_user_post_notifications fk_rails_364d7e370a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12849,7 +12852,7 @@ ALTER TABLE ONLY public.thredded_user_post_notifications
 
 
 --
--- TOC entry 4558 (class 2606 OID 7673960)
+-- TOC entry 4559 (class 2606 OID 7673960)
 -- Name: submissions fk_rails_3a2b44e658; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12858,7 +12861,7 @@ ALTER TABLE ONLY public.submissions
 
 
 --
--- TOC entry 4579 (class 2606 OID 7673965)
+-- TOC entry 4580 (class 2606 OID 7673965)
 -- Name: vignettes_options fk_rails_3fbca24de5; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12867,7 +12870,7 @@ ALTER TABLE ONLY public.vignettes_options
 
 
 --
--- TOC entry 4527 (class 2606 OID 7673970)
+-- TOC entry 4528 (class 2606 OID 7673970)
 -- Name: annotations fk_rails_4043df79bf; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12876,7 +12879,7 @@ ALTER TABLE ONLY public.annotations
 
 
 --
--- TOC entry 4570 (class 2606 OID 7673975)
+-- TOC entry 4571 (class 2606 OID 7673975)
 -- Name: user_favorite_lecture_joins fk_rails_40985ebb4f; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12885,7 +12888,7 @@ ALTER TABLE ONLY public.user_favorite_lecture_joins
 
 
 --
--- TOC entry 4544 (class 2606 OID 7673980)
+-- TOC entry 4545 (class 2606 OID 7673980)
 -- Name: links fk_rails_49020b7472; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12894,7 +12897,7 @@ ALTER TABLE ONLY public.links
 
 
 --
--- TOC entry 4528 (class 2606 OID 7673985)
+-- TOC entry 4529 (class 2606 OID 7673985)
 -- Name: annotations fk_rails_4f1a0f89b4; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12903,7 +12906,7 @@ ALTER TABLE ONLY public.annotations
 
 
 --
--- TOC entry 4533 (class 2606 OID 7673990)
+-- TOC entry 4534 (class 2606 OID 7673990)
 -- Name: commontator_comments fk_rails_558e599d00; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12912,7 +12915,7 @@ ALTER TABLE ONLY public.commontator_comments
 
 
 --
--- TOC entry 4566 (class 2606 OID 7673995)
+-- TOC entry 4567 (class 2606 OID 7673995)
 -- Name: thredded_user_post_notifications fk_rails_5908eec802; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12921,7 +12924,7 @@ ALTER TABLE ONLY public.thredded_user_post_notifications
 
 
 --
--- TOC entry 4529 (class 2606 OID 7674000)
+-- TOC entry 4530 (class 2606 OID 7674000)
 -- Name: announcements fk_rails_5b3f1d7737; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12930,7 +12933,7 @@ ALTER TABLE ONLY public.announcements
 
 
 --
--- TOC entry 4594 (class 2606 OID 7674562)
+-- TOC entry 4595 (class 2606 OID 7674562)
 -- Name: registration_user_registrations fk_rails_5c6f8c15b3; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12939,7 +12942,7 @@ ALTER TABLE ONLY public.registration_user_registrations
 
 
 --
--- TOC entry 4559 (class 2606 OID 7674005)
+-- TOC entry 4560 (class 2606 OID 7674005)
 -- Name: submissions fk_rails_61cac0823d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12948,7 +12951,7 @@ ALTER TABLE ONLY public.submissions
 
 
 --
--- TOC entry 4605 (class 2606 OID 7674703)
+-- TOC entry 4606 (class 2606 OID 7674703)
 -- Name: cohort_memberships fk_rails_65ac42442f; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12957,7 +12960,7 @@ ALTER TABLE ONLY public.cohort_memberships
 
 
 --
--- TOC entry 4569 (class 2606 OID 7674010)
+-- TOC entry 4570 (class 2606 OID 7674010)
 -- Name: tutorials fk_rails_66221d24a3; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12966,7 +12969,7 @@ ALTER TABLE ONLY public.tutorials
 
 
 --
--- TOC entry 4597 (class 2606 OID 7674557)
+-- TOC entry 4598 (class 2606 OID 7674557)
 -- Name: registration_policies fk_rails_6664a314dd; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12975,7 +12978,7 @@ ALTER TABLE ONLY public.registration_policies
 
 
 --
--- TOC entry 4535 (class 2606 OID 7674015)
+-- TOC entry 4536 (class 2606 OID 7674015)
 -- Name: commontator_subscriptions fk_rails_68cc24d064; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12984,7 +12987,7 @@ ALTER TABLE ONLY public.commontator_subscriptions
 
 
 --
--- TOC entry 4577 (class 2606 OID 7674020)
+-- TOC entry 4578 (class 2606 OID 7674020)
 -- Name: vignettes_codenames fk_rails_69dbadb217; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -12993,7 +12996,7 @@ ALTER TABLE ONLY public.vignettes_codenames
 
 
 --
--- TOC entry 4578 (class 2606 OID 7674025)
+-- TOC entry 4579 (class 2606 OID 7674025)
 -- Name: vignettes_completion_messages fk_rails_6aade677d3; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13002,7 +13005,7 @@ ALTER TABLE ONLY public.vignettes_completion_messages
 
 
 --
--- TOC entry 4545 (class 2606 OID 7674030)
+-- TOC entry 4546 (class 2606 OID 7674030)
 -- Name: links fk_rails_6b5cb429ed; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13011,7 +13014,7 @@ ALTER TABLE ONLY public.links
 
 
 --
--- TOC entry 4560 (class 2606 OID 7674035)
+-- TOC entry 4561 (class 2606 OID 7674035)
 -- Name: talk_tag_joins fk_rails_6bcb0e8e5f; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13020,7 +13023,7 @@ ALTER TABLE ONLY public.talk_tag_joins
 
 
 --
--- TOC entry 4587 (class 2606 OID 7674040)
+-- TOC entry 4588 (class 2606 OID 7674040)
 -- Name: vouchers fk_rails_7676476332; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13029,7 +13032,7 @@ ALTER TABLE ONLY public.vouchers
 
 
 --
--- TOC entry 4571 (class 2606 OID 7674045)
+-- TOC entry 4572 (class 2606 OID 7674045)
 -- Name: user_favorite_lecture_joins fk_rails_77bc049c12; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13038,7 +13041,7 @@ ALTER TABLE ONLY public.user_favorite_lecture_joins
 
 
 --
--- TOC entry 4606 (class 2606 OID 7674698)
+-- TOC entry 4607 (class 2606 OID 7674698)
 -- Name: cohort_memberships fk_rails_7bc5d74a9d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13047,7 +13050,7 @@ ALTER TABLE ONLY public.cohort_memberships
 
 
 --
--- TOC entry 4552 (class 2606 OID 7674050)
+-- TOC entry 4553 (class 2606 OID 7674050)
 -- Name: redemptions fk_rails_8377a88a56; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13056,7 +13059,7 @@ ALTER TABLE ONLY public.redemptions
 
 
 --
--- TOC entry 4561 (class 2606 OID 7674055)
+-- TOC entry 4562 (class 2606 OID 7674055)
 -- Name: talk_tag_joins fk_rails_85b7c429a2; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13065,7 +13068,7 @@ ALTER TABLE ONLY public.talk_tag_joins
 
 
 --
--- TOC entry 4591 (class 2606 OID 7674060)
+-- TOC entry 4592 (class 2606 OID 7674060)
 -- Name: watchlists fk_rails_8780bd5b5a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13074,7 +13077,7 @@ ALTER TABLE ONLY public.watchlists
 
 
 --
--- TOC entry 4585 (class 2606 OID 7674065)
+-- TOC entry 4586 (class 2606 OID 7674065)
 -- Name: vignettes_user_answers fk_rails_8c438b6e8e; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13083,7 +13086,7 @@ ALTER TABLE ONLY public.vignettes_user_answers
 
 
 --
--- TOC entry 4586 (class 2606 OID 7674070)
+-- TOC entry 4587 (class 2606 OID 7674070)
 -- Name: vignettes_user_answers fk_rails_8dc710c13d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13092,7 +13095,7 @@ ALTER TABLE ONLY public.vignettes_user_answers
 
 
 --
--- TOC entry 4582 (class 2606 OID 7674075)
+-- TOC entry 4583 (class 2606 OID 7674075)
 -- Name: vignettes_slide_statistics fk_rails_8f79f13530; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13101,7 +13104,7 @@ ALTER TABLE ONLY public.vignettes_slide_statistics
 
 
 --
--- TOC entry 4595 (class 2606 OID 7674567)
+-- TOC entry 4596 (class 2606 OID 7674567)
 -- Name: registration_user_registrations fk_rails_95b64a53dc; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13110,7 +13113,7 @@ ALTER TABLE ONLY public.registration_user_registrations
 
 
 --
--- TOC entry 4534 (class 2606 OID 7674080)
+-- TOC entry 4535 (class 2606 OID 7674080)
 -- Name: commontator_comments fk_rails_96666eb19a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13119,7 +13122,7 @@ ALTER TABLE ONLY public.commontator_comments
 
 
 --
--- TOC entry 4564 (class 2606 OID 7674085)
+-- TOC entry 4565 (class 2606 OID 7674085)
 -- Name: thredded_messageboard_users fk_rails_966803d714; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13128,7 +13131,7 @@ ALTER TABLE ONLY public.thredded_messageboard_users
 
 
 --
--- TOC entry 4526 (class 2606 OID 7674090)
+-- TOC entry 4527 (class 2606 OID 7674090)
 -- Name: active_storage_variant_records fk_rails_993965df05; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13137,7 +13140,7 @@ ALTER TABLE ONLY public.active_storage_variant_records
 
 
 --
--- TOC entry 4592 (class 2606 OID 7674552)
+-- TOC entry 4593 (class 2606 OID 7674552)
 -- Name: registration_items fk_rails_998ff8f041; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13146,7 +13149,7 @@ ALTER TABLE ONLY public.registration_items
 
 
 --
--- TOC entry 4540 (class 2606 OID 7674095)
+-- TOC entry 4541 (class 2606 OID 7674095)
 -- Name: items fk_rails_99dcbdef9f; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13155,7 +13158,7 @@ ALTER TABLE ONLY public.items
 
 
 --
--- TOC entry 4583 (class 2606 OID 7674100)
+-- TOC entry 4584 (class 2606 OID 7674100)
 -- Name: vignettes_slide_statistics fk_rails_9a8745e04d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13164,7 +13167,7 @@ ALTER TABLE ONLY public.vignettes_slide_statistics
 
 
 --
--- TOC entry 4532 (class 2606 OID 7674105)
+-- TOC entry 4533 (class 2606 OID 7674105)
 -- Name: claims fk_rails_9b419d5bd5; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13173,7 +13176,7 @@ ALTER TABLE ONLY public.claims
 
 
 --
--- TOC entry 4553 (class 2606 OID 7674110)
+-- TOC entry 4554 (class 2606 OID 7674110)
 -- Name: referrals fk_rails_9c4f45c15c; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13182,7 +13185,7 @@ ALTER TABLE ONLY public.referrals
 
 
 --
--- TOC entry 4537 (class 2606 OID 7674115)
+-- TOC entry 4538 (class 2606 OID 7674115)
 -- Name: divisions fk_rails_a1b344ef36; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13191,7 +13194,7 @@ ALTER TABLE ONLY public.divisions
 
 
 --
--- TOC entry 4607 (class 2606 OID 7674708)
+-- TOC entry 4608 (class 2606 OID 7674708)
 -- Name: cohort_memberships fk_rails_a81dcb9b7f; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13200,7 +13203,7 @@ ALTER TABLE ONLY public.cohort_memberships
 
 
 --
--- TOC entry 4541 (class 2606 OID 7674120)
+-- TOC entry 4542 (class 2606 OID 7674120)
 -- Name: items fk_rails_add0a302a9; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13209,7 +13212,7 @@ ALTER TABLE ONLY public.items
 
 
 --
--- TOC entry 4546 (class 2606 OID 7674125)
+-- TOC entry 4547 (class 2606 OID 7674125)
 -- Name: medium_tag_joins fk_rails_b11130c931; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13218,7 +13221,7 @@ ALTER TABLE ONLY public.medium_tag_joins
 
 
 --
--- TOC entry 4547 (class 2606 OID 7674130)
+-- TOC entry 4548 (class 2606 OID 7674130)
 -- Name: medium_tag_joins fk_rails_b181027fb2; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13227,7 +13230,7 @@ ALTER TABLE ONLY public.medium_tag_joins
 
 
 --
--- TOC entry 4567 (class 2606 OID 7674135)
+-- TOC entry 4568 (class 2606 OID 7674135)
 -- Name: tutor_tutorial_joins fk_rails_b781447eb1; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13236,7 +13239,7 @@ ALTER TABLE ONLY public.tutor_tutorial_joins
 
 
 --
--- TOC entry 4603 (class 2606 OID 7674673)
+-- TOC entry 4604 (class 2606 OID 7674673)
 -- Name: lecture_memberships fk_rails_b952417d8f; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13245,7 +13248,7 @@ ALTER TABLE ONLY public.lecture_memberships
 
 
 --
--- TOC entry 4598 (class 2606 OID 7674648)
+-- TOC entry 4599 (class 2606 OID 7674648)
 -- Name: tutorial_memberships fk_rails_bc5fc1eb43; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13254,7 +13257,7 @@ ALTER TABLE ONLY public.tutorial_memberships
 
 
 --
--- TOC entry 4543 (class 2606 OID 7674140)
+-- TOC entry 4544 (class 2606 OID 7674140)
 -- Name: lecture_user_joins fk_rails_bdbf7bc779; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13263,7 +13266,7 @@ ALTER TABLE ONLY public.lecture_user_joins
 
 
 --
--- TOC entry 4549 (class 2606 OID 7674145)
+-- TOC entry 4550 (class 2606 OID 7674145)
 -- Name: quiz_certificates fk_rails_c10d7b5c91; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13272,7 +13275,7 @@ ALTER TABLE ONLY public.quiz_certificates
 
 
 --
--- TOC entry 4525 (class 2606 OID 7674150)
+-- TOC entry 4526 (class 2606 OID 7674150)
 -- Name: active_storage_attachments fk_rails_c3b3935057; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13281,7 +13284,7 @@ ALTER TABLE ONLY public.active_storage_attachments
 
 
 --
--- TOC entry 4604 (class 2606 OID 7674678)
+-- TOC entry 4605 (class 2606 OID 7674678)
 -- Name: lecture_memberships fk_rails_c4d0979517; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13290,7 +13293,7 @@ ALTER TABLE ONLY public.lecture_memberships
 
 
 --
--- TOC entry 4538 (class 2606 OID 7674155)
+-- TOC entry 4539 (class 2606 OID 7674155)
 -- Name: feedbacks fk_rails_c57bb6cf28; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13299,7 +13302,7 @@ ALTER TABLE ONLY public.feedbacks
 
 
 --
--- TOC entry 4609 (class 2606 OID 7674792)
+-- TOC entry 4610 (class 2606 OID 7674792)
 -- Name: registration_student_messages fk_rails_c97d206d38; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13308,7 +13311,7 @@ ALTER TABLE ONLY public.registration_student_messages
 
 
 --
--- TOC entry 4599 (class 2606 OID 7674752)
+-- TOC entry 4600 (class 2606 OID 7674752)
 -- Name: tutorial_memberships fk_rails_cb8342e46b; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13317,7 +13320,7 @@ ALTER TABLE ONLY public.tutorial_memberships
 
 
 --
--- TOC entry 4574 (class 2606 OID 7674160)
+-- TOC entry 4575 (class 2606 OID 7674160)
 -- Name: vignettes_answers fk_rails_cc5b64b41a; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13326,7 +13329,7 @@ ALTER TABLE ONLY public.vignettes_answers
 
 
 --
--- TOC entry 4580 (class 2606 OID 7674165)
+-- TOC entry 4581 (class 2606 OID 7674165)
 -- Name: vignettes_questionnaires fk_rails_cf4ca40f5b; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13335,7 +13338,7 @@ ALTER TABLE ONLY public.vignettes_questionnaires
 
 
 --
--- TOC entry 4600 (class 2606 OID 7674643)
+-- TOC entry 4601 (class 2606 OID 7674643)
 -- Name: tutorial_memberships fk_rails_d9260fbd52; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13344,7 +13347,7 @@ ALTER TABLE ONLY public.tutorial_memberships
 
 
 --
--- TOC entry 4550 (class 2606 OID 7674170)
+-- TOC entry 4551 (class 2606 OID 7674170)
 -- Name: quiz_certificates fk_rails_da91c72f96; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13353,7 +13356,7 @@ ALTER TABLE ONLY public.quiz_certificates
 
 
 --
--- TOC entry 4554 (class 2606 OID 7674175)
+-- TOC entry 4555 (class 2606 OID 7674175)
 -- Name: referrals fk_rails_dce931e0f7; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13362,7 +13365,7 @@ ALTER TABLE ONLY public.referrals
 
 
 --
--- TOC entry 4575 (class 2606 OID 7674180)
+-- TOC entry 4576 (class 2606 OID 7674180)
 -- Name: vignettes_answers fk_rails_dd314d5106; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13371,7 +13374,7 @@ ALTER TABLE ONLY public.vignettes_answers
 
 
 --
--- TOC entry 4557 (class 2606 OID 7674185)
+-- TOC entry 4558 (class 2606 OID 7674185)
 -- Name: speaker_talk_joins fk_rails_e5bafe887c; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13380,7 +13383,7 @@ ALTER TABLE ONLY public.speaker_talk_joins
 
 
 --
--- TOC entry 4584 (class 2606 OID 7674190)
+-- TOC entry 4585 (class 2606 OID 7674190)
 -- Name: vignettes_slides fk_rails_e6d1817e26; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13389,7 +13392,7 @@ ALTER TABLE ONLY public.vignettes_slides
 
 
 --
--- TOC entry 4596 (class 2606 OID 7674762)
+-- TOC entry 4597 (class 2606 OID 7674762)
 -- Name: registration_user_registrations fk_rails_ead649079d; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13398,7 +13401,7 @@ ALTER TABLE ONLY public.registration_user_registrations
 
 
 --
--- TOC entry 4536 (class 2606 OID 7674195)
+-- TOC entry 4537 (class 2606 OID 7674195)
 -- Name: course_self_joins fk_rails_ecb46f40b3; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13407,7 +13410,7 @@ ALTER TABLE ONLY public.course_self_joins
 
 
 --
--- TOC entry 4568 (class 2606 OID 7674200)
+-- TOC entry 4569 (class 2606 OID 7674200)
 -- Name: tutor_tutorial_joins fk_rails_f1a97a6dc5; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13416,7 +13419,7 @@ ALTER TABLE ONLY public.tutor_tutorial_joins
 
 
 --
--- TOC entry 4601 (class 2606 OID 7674638)
+-- TOC entry 4602 (class 2606 OID 7674638)
 -- Name: tutorial_memberships fk_rails_fc3a3973e1; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13425,7 +13428,7 @@ ALTER TABLE ONLY public.tutorial_memberships
 
 
 --
--- TOC entry 4530 (class 2606 OID 7674205)
+-- TOC entry 4531 (class 2606 OID 7674205)
 -- Name: announcements fk_rails_fd9bbf1b15; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -13433,11 +13436,11 @@ ALTER TABLE ONLY public.announcements
     ADD CONSTRAINT fk_rails_fd9bbf1b15 FOREIGN KEY (announcer_id) REFERENCES public.users(id);
 
 
--- Completed on 2026-08-26 19:51:53 UTC
+-- Completed on 2026-08-26 20:20:00 UTC
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict iT3FrTwEhj9DbQP4SLlVzO24dcf1YhYxN3gT3xWDfKhAvts6iVK3uwly0wNQz93
+\unrestrict 0fQ0dytcvgXkBfx42Ae4YudU2NIshqcDN9QFcsN36L3I3sYNCjIlZawWKVW6Yf5
 
