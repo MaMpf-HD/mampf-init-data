@@ -33,6 +33,11 @@ The usual entry points are `admin@mampf.edu`, `teacher@mampf.edu`,
 `student1@mampf.edu` … `student5@mampf.edu` and `tutor@mampf.edu`; the demo
 scenarios add further students.
 
+Two of them, `student5@mampf.edu` and `moded@mampf.edu`, are still on the old
+password policy and have to set a new password before they can go anywhere. That
+is deliberate: it is the only way to see the forced change without editing the
+database.
+
 ## Rebuilding the dump
 
 The data is rebuilt from the MaMpf repository, not edited by hand:
