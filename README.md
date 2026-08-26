@@ -16,12 +16,17 @@ solver and cohort scenarios), finalized rosters, announcements for lectures and
 from the administration, forum discussions, comments and annotations on media,
 and a few watchlists. Nothing greets you on the landing page.
 
+Every lecture home page carries a short welcome text, and the term after the
+current one is staged the way students meet it before it starts: the banner is
+on, with lectures that are published with an open registration, published
+without one, and not published yet.
+
 ## Accounts
 
 Every account in the dump uses the password
 
 ```
-zitrone-diskette-vorhang-42
+lemon-floppy-curtain-42
 ```
 
 The usual entry points are `admin@mampf.edu`, `teacher@mampf.edu`,
