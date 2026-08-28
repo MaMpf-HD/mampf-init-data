@@ -53,9 +53,10 @@ The data is rebuilt from the MaMpf repository, not edited by hand:
 rails seeds:build                  # one semester on, the usual next edition
 rails seeds:build term="SS 2026"   # or: rebuild the edition where it stands
 rails db:dump format=sql
+rails seeds:package
 ```
 
 `data/uploads.zip` holds exactly the files the dump refers to — the attachments
 of its records, their derivatives and the Trix blobs — packed as an `uploads/`
-tree. A local development store collects far more than that over time, so it is
-not the whole directory.
+tree. A local development store collects far more than that over time, which is
+why the last step reads the records rather than the directory.
