@@ -9,17 +9,23 @@ UPLOADS_PRESEED_URL: "https://github.com/MaMpf-HD/mampf-init-data/raw/main/data/
 
 ## What is inside
 
-The current term is **SS 2026**, with eight events in it. Besides the lectures
-and their media, the dump carries registration campaigns that are open right
-now (a lecture and a seminar in the current and in the next term, plus the
-solver and cohort scenarios), finalized rosters, announcements for lectures and
-from the administration, forum discussions, comments and annotations on media,
-and a few watchlists. Nothing greets you on the landing page.
+The current term is **SS 2026**, and it is a term under way: registration for it
+is over, its lecture has a finalized roster, students sit in tutorials with
+tutors in front of them, and exercise sheets have been handed in and partly
+corrected. Everything still being registered for lives in the term after it —
+the ordinary registrations for a lecture and a seminar, and the solver, cohort
+and two-stage scenarios.
 
-Every lecture home page carries a short welcome text, and the term after the
-current one is staged the way students meet it before it starts: the banner is
-on, with lectures that are published with an open registration, published
-without one, and not published yet.
+Besides the lectures and their media, the dump carries announcements for
+lectures and from the administration, forum discussions, comments, annotations
+on every video (the teacher keeps their own notes) and watchlists for the
+students and the teacher. Nothing greets you on the landing page.
+
+Every lecture home page carries a welcome text in the language of its lecture,
+one of them with a program attached, and the term after the current one is
+staged the way students meet it before it starts: the banner is on, with
+lectures that are published with an open registration, published without one,
+and not published yet.
 
 ## Accounts
 
@@ -43,6 +49,13 @@ database.
 The data is rebuilt from the MaMpf repository, not edited by hand:
 
 ```sh
-rails seeds:build   # moves the set one year on and bakes in the demo material
-pg_dump -F p -O -w -U <user> -h <host> -d <db> -f data/mampf.sql
+# Start from the dump that is published here, then:
+rails seeds:build                  # one semester on, the usual next edition
+rails seeds:build term="SS 2026"   # or: rebuild the edition where it stands
+rails db:dump format=sql
 ```
+
+`data/uploads.zip` holds exactly the files the dump refers to — the attachments
+of its records, their derivatives and the Trix blobs — packed as an `uploads/`
+tree. A local development store collects far more than that over time, so it is
+not the whole directory.
