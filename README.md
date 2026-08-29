@@ -21,6 +21,11 @@ lectures and from the administration, forum discussions, comments, annotations
 on every video (the teacher keeps their own notes) and watchlists for the
 students and the teacher. Nothing greets you on the landing page.
 
+Lecture 1 has vignettes switched on and carries six of them, one for every
+state a vignette can be in: two drafts, one published without data collection,
+one published with answers under three codes, one collecting but unanswered,
+and one withdrawn while locked.
+
 Every lecture home page carries a welcome text in the language of its lecture,
 one of them with a program attached, and the term after the current one is
 staged the way students meet it before it starts: the banner is on, with
