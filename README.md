@@ -1,6 +1,6 @@
 # MaMpf Init Data
 
-This repo holds a dump of a dummy MaMpf database alongside some dummy uploads (ca. 70 MB big). To preseed your local DB with this data, add the following env variables to your `docker/development/docker-compose.yml` file (in the `services -> mampf -> environment` section):
+This repo holds a dump of a dummy MaMpf database alongside some dummy uploads (ca. 65 MB big). To preseed your local DB with this data, add the following env variables to your `docker/development/docker-compose.yml` file (in the `services -> mampf -> environment` section):
 
 ```sh
 DB_SQL_PRESEED_URL: "https://github.com/MaMpf-HD/mampf-init-data/raw/main/data/mampf.sql"
@@ -46,13 +46,17 @@ scenarios add further students.
 
 These accounts sign in without a detour: students have a name, a matriculation
 number and a study program, and admins and teachers have declined to give them.
-Four further accounts exist only for the questions MaMpf asks after sign-in,
+They count as signed in once before, so no first-sign-in notice shows either.
+Seven further accounts exist only for the questions MaMpf asks after sign-in,
 because that is the only way to see them without editing the database:
 
 | Account | Asked for |
 |---|---|
-| `ask-data@mampf.edu` | name, matriculation number and study program |
-| `ask-teacher@mampf.edu` | the same, as the teacher of a lecture of its own |
+| `ask-data@mampf.edu` | name, matriculation number and study program; may answer no |
+| `ask-data-registered@mampf.edu` | the same while registered for a tutorial: enter them or give up the registration |
+| `ask-data-roster@mampf.edu` | the same while on a tutorial roster: enter them or give up the place |
+| `ask-declined-roster@mampf.edu` | the same again, after a no, since it got a place on a roster afterwards |
+| `ask-teacher@mampf.edu` | name, matriculation number and study program, as the teacher of a lecture of its own |
 | `ask-password@mampf.edu` | a new password (old password policy) |
 | `ask-both@mampf.edu` | both, the password first |
 
