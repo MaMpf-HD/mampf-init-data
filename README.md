@@ -1,6 +1,6 @@
 # MaMpf Init Data
 
-This repo holds a dump of a dummy MaMpf database alongside some dummy uploads (ca. 50 MB big). To preseed your local DB with this data, add the following env variables to your `docker/development/docker-compose.yml` file (in the `services -> mampf -> environment` section):
+This repo holds a dump of a dummy MaMpf database alongside some dummy uploads (ca. 70 MB big). To preseed your local DB with this data, add the following env variables to your `docker/development/docker-compose.yml` file (in the `services -> mampf -> environment` section):
 
 ```sh
 DB_SQL_PRESEED_URL: "https://github.com/MaMpf-HD/mampf-init-data/raw/main/data/mampf.sql"
@@ -44,10 +44,17 @@ The usual entry points are `admin@mampf.edu`, `teacher@mampf.edu`,
 `student1@mampf.edu` … `student5@mampf.edu` and `tutor@mampf.edu`; the demo
 scenarios add further students.
 
-Two of them, `student5@mampf.edu` and `moded@mampf.edu`, are still on the old
-password policy and have to set a new password before they can go anywhere. That
-is deliberate: it is the only way to see the forced change without editing the
-database.
+These accounts sign in without a detour: students have a name, a matriculation
+number and a study program, and admins and teachers have declined to give them.
+Four further accounts exist only for the questions MaMpf asks after sign-in,
+because that is the only way to see them without editing the database:
+
+| Account | Asked for |
+|---|---|
+| `ask-data@mampf.edu` | name, matriculation number and study program |
+| `ask-teacher@mampf.edu` | the same, as the teacher of a lecture of its own |
+| `ask-password@mampf.edu` | a new password (old password policy) |
+| `ask-both@mampf.edu` | both, the password first |
 
 ## Rebuilding the dump
 
@@ -55,9 +62,11 @@ The data is rebuilt from the MaMpf repository, not edited by hand:
 
 ```sh
 # Start from the dump that is published here, then:
+rails db:migrate
 rails seeds:build                  # one semester on, the usual next edition
 rails seeds:build term="SS 2026"   # or: rebuild the edition where it stands
 rails db:dump format=sql
+rails seeds:package
 ```
 
 `data/uploads.zip` holds exactly the files the dump refers to — the attachments
